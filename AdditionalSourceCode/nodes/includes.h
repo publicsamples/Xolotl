@@ -11,6 +11,7 @@
 
 #include "harmonic.h"
 #include "scriptnode_syntesiser1_networkdata.h"
+#include "_4wayswitch_networkdata.h"
 
 #if (defined (_WIN32) || defined (_WIN64))
 #pragma warning( pop )

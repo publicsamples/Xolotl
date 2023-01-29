@@ -23,6 +23,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		
 		registerPolyNode<project::harmonic<1>, project::harmonic<NUM_POLYPHONIC_VOICES>>();
 		registerDataNode<project::scriptnode_syntesiser1_networkdata>();
+		registerDataNode<project::_4wayswitch_networkdata>();
 	}
 };
 }
