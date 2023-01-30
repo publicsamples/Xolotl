@@ -9,9 +9,17 @@
 
 // Include compiled network files ------------------
 
-#include "harmonic.h"
+#include "chain3_networkdata.h"
+#include "Harm2_networkdata.h"
+#include "harmonic_networkdata.h"
+#include "MainPage_networkdata.h"
+#include "main_networkdata.h"
+#include "mod_networkdata.h"
 #include "scriptnode_syntesiser1_networkdata.h"
+#include "shaper_networkdata.h"
+#include "synth_networkdata.h"
 #include "_4wayswitch_networkdata.h"
+#include "_networkdata.h"
 
 #if (defined (_WIN32) || defined (_WIN64))
 #pragma warning( pop )

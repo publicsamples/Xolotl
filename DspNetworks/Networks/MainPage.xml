@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="MainPage" AllowPolyphonic="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="MainPage" Bypassed="0">
+    <Nodes>
+      <Node ID="frame2_block" FactoryPath="container.frame2_block" Bypassed="1">
+        <Nodes>
+          <Node ID="extra_mod" FactoryPath="core.extra_mod" Bypassed="0">
+            <ModulationTargets>
+              <Connection NodeId="harmonic1" ParameterId="sprval1"/>
+            </ModulationTargets>
+            <ComplexData>
+              <DisplayBuffers>
+                <DisplayBuffer Index="-1"/>
+              </DisplayBuffers>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Index" Value="0.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="harmonic1" FactoryPath="project.harmonic" Bypassed="0">
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="pitchmode-toggle" Value="0.050812744140625"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="sprval1" Automated="1"/>
+              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="clones" Value="16.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="gamma" Value="0.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="mode" Value="0.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="volvalue" Value="0.9514599609375"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="volclones" Value="1.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="volgamma" Value="0.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="volmode" Value="0.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="cutval" Value="0.504455078125"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="cutclones" Value="1.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="cutgamma" Value="1.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmode" Value="0.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="RES" Value="0.4965778887271881"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="FTYPE" Value="0.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="resgamm" Value="1.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="resmode" Value="0.0"/>
+            </Parameters>
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="-1" EmbeddedData="64.tdTX9fqGE5SJb8nOov0i97nv04iqGElOMyLS9nv0i3yiBWeOrGEt87nv00yiBWOO......................"/>
+                <SliderPack Index="-1" EmbeddedData="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
+                <SliderPack Index="-1" EmbeddedData="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
+              </SliderPacks>
+              <AudioFiles>
+                <AudioFile Index="-1" EmbeddedData="{XYZ::SampleMap}HR Sqr 6" MinValue="0"
+                           MaxValue="0"/>
+              </AudioFiles>
+            </ComplexData>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>

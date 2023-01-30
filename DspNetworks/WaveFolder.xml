@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="WaveFolder" Version="0.0.0" AllowPolyphonic="1" AllowCompilation="1">
+  <Node FactoryPath="container.chain" ID="WaveFolder" Bypassed="0" ShowParameters="1">
+    <Nodes>
+      <Node ID="faust" FactoryPath="core.faust" Bypassed="0">
+        <Properties>
+          <Property ID="ClassId" Value="b259wf"/>
+          <Property ID="NumParameters" Value="0"/>
+        </Properties>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                     ID="fold" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                     ID="lowpass" Automated="1"/>
+          <Parameter MinValue="-1.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                     ID="offset" Automated="1"/>
+        </Parameters>
+        <SwitchTargets/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="fold" MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                 Value="0.7880000374279916">
+        <Connections>
+          <Connection NodeId="faust" ParameterId="fold"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="lp" MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                 Value="0.5130000243661925">
+        <Connections>
+          <Connection NodeId="faust" ParameterId="lowpass"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="offset" MinValue="-1.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                 Value="0.01000004797242582">
+        <Connections>
+          <Connection NodeId="faust" ParameterId="offset"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

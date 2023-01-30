@@ -310,7 +310,7 @@
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="peak" FactoryPath="core.peak" Bypassed="0">
+                              <Node ID="peak" FactoryPath="core.peak" Bypassed="1">
                                 <ModulationTargets>
                                   <Connection NodeId="pma" ParameterId="Value"/>
                                 </ModulationTargets>
@@ -329,7 +329,7 @@
                                 </Connections>
                               </Parameter>
                               <Parameter ID="Attac1" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                         SkewFactor="0.1976716816425323">
+                                         SkewFactor="0.1976716816425323" Value="3305.700049258768">
                                 <Connections>
                                   <Connection NodeId="ahdsr" ParameterId="Attack"/>
                                 </Connections>
@@ -434,20 +434,64 @@
                 </Nodes>
                 <Parameters/>
               </Node>
+              <Node ID="mod" FactoryPath="project.mod" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Switch" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="a1" Value="0.169203125"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="d1" Value="0.638859375"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="s1" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="r1" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="h1" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="a2" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="d2" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="s2" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="r2" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="h2" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tempo1" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="muli1" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="type1" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tempo2" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="mul2" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="type2" Value="1.0"/>
+                </Parameters>
+                <ComplexData>
+                  <Tables>
+                    <Table Index="-1" EmbeddedData="36...............vOmOFL+PjHQ5C...vO...f+....9C...vO"/>
+                    <Table Index="-1"/>
+                    <Table Index="-1"/>
+                  </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1" EmbeddedData="64.MyLy9XOJb6iYlYtOtdT39T35Q6iqGEtOeT359fT356CWOJvOw0iB+ziBW7iqGExOWOJL+XOJb8C...3O...f+."/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
+                </ComplexData>
+              </Node>
+              <Node ID="peak1" FactoryPath="core.peak" Bypassed="0">
+                <ComplexData>
+                  <DisplayBuffers>
+                    <DisplayBuffer Index="-1"/>
+                  </DisplayBuffers>
+                </ComplexData>
+                <Parameters/>
+              </Node>
               <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Value="0.0"/>
                 </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="harmonic1" ParameterId="sprval1"/>
+                </ModulationTargets>
               </Node>
               <Node ID="harmonic1" FactoryPath="project.harmonic" Bypassed="0">
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="pitchmode-toggle" Value="0.36421875"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="sprval1" Value="0.635625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="pitchmode-toggle" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="sprval1" Automated="1"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="clones" Value="16.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="gamma" Value="0.5033125000000001"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="mode" Value="0.31396875"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="gamma" Value="0.3121845703125"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="mode" Value="0.841828125"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="volvalue" Value="0.194573238492012"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="volclones" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="volgamma" Value="0.0"/>
@@ -463,7 +507,7 @@
                 </Parameters>
                 <ComplexData>
                   <SliderPacks>
-                    <SliderPack Index="-1" EmbeddedData="64.ov0C9fqGE3yiBWeOtdT3835Qg2SyLybOMyLy8zLyL2SyLybOOJb89jBWO7iBWOxOrGEN+jBWO8iYlY1OjBWe+."/>
+                    <SliderPack Index="-1" EmbeddedData="64.T35w9....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
                     <SliderPack Index="-1" EmbeddedData="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
                     <SliderPack Index="-1" EmbeddedData="52....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
                   </SliderPacks>
@@ -482,7 +526,7 @@
     </Nodes>
     <Parameters>
       <Parameter ID="attack1" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" Value="10000.0">
+                 SkewFactor="0.1976716816425323" Value="6297.500093840062">
         <Connections/>
       </Parameter>
       <Parameter ID="decay1" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
