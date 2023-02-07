@@ -13,15 +13,16 @@
                     <Nodes>
                       <Node ID="pitch" FactoryPath="control.clone_pack" Bypassed="0">
                         <ModulationTargets>
-                          <Connection NodeId="PITCH-IN" ParameterId="Value"/>
+                          <Connection NodeId="FILES" ParameterId="FreqRatio"/>
                         </ModulationTargets>
                         <ComplexData>
                           <SliderPacks>
-                            <SliderPack Index="0"/>
+                            <SliderPack Index="0" EmbeddedData="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
                           </SliderPacks>
                         </ComplexData>
                         <Parameters>
-                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"/>
+                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                                     Value="16.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
@@ -70,48 +71,6 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="PITCHMIN" FactoryPath="control.clone_cable" Bypassed="0">
-                        <Properties>
-                          <Property ID="Mode" Value="Fixed"/>
-                        </Properties>
-                        <ModulationTargets>
-                          <Connection NodeId="PITCH-IN" ParameterId="Minimum"/>
-                        </ModulationTargets>
-                        <Parameters>
-                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
-                                     Value="1.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="PITCHMAX" FactoryPath="control.clone_cable" Bypassed="0">
-                        <Properties>
-                          <Property ID="Mode" Value="Fixed"/>
-                        </Properties>
-                        <ModulationTargets>
-                          <Connection NodeId="PITCH-IN" ParameterId="Maximum"/>
-                        </ModulationTargets>
-                        <Parameters>
-                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
-                                     Value="16.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="PITCHSTEP" FactoryPath="control.clone_cable" Bypassed="0">
-                        <Properties>
-                          <Property ID="Mode" Value="Fixed"/>
-                        </Properties>
-                        <ModulationTargets>
-                          <Connection NodeId="PITCH-IN" ParameterId="Step"/>
-                        </ModulationTargets>
-                        <Parameters>
-                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
-                                     Value="1.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                        </Parameters>
-                      </Node>
                       <Node ID="FILTERMODE" FactoryPath="control.clone_cable" Bypassed="0">
                         <Properties>
                           <Property ID="Mode" Value="Fixed"/>
@@ -147,45 +106,6 @@
           <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" NodeColour="4287927444"
                 ShowParameters="0">
             <Nodes>
-              <Node ID="modchain1" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
               <Node ID="FILES" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
@@ -201,10 +121,15 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
+              <Node ID="feedback_delay1" FactoryPath="container.fix32_block" Bypassed="0">
+                <Nodes>
+                  <Node ID="clip" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
               </Node>
               <Node ID="chain1" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
@@ -232,7 +157,7 @@
               <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -242,49 +167,10 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="clone_child36" FactoryPath="container.chain" Bypassed="0"
+          <Node ID="clone_child15" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="0">
             <Nodes>
-              <Node ID="modchain67" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi67" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain119" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN36" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES66" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES66" FactoryPath="core.file_player" Bypassed="0">
+              <Node ID="FILES46" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
@@ -299,502 +185,17 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip51" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain120" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="feedback_delay47" FactoryPath="container.fix32_block" Bypassed="0">
                 <Nodes>
-                  <Node ID="svf51" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
+                  <Node ID="clip15" FactoryPath="math.clip" Bypassed="0">
                     <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                     </Parameters>
                   </Node>
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="gain67" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child35" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain66" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi66" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain117" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN35" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES65" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES65" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip50" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain118" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf50" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain66" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child34" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain65" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi65" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain115" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN34" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES64" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES64" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip49" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain116" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf49" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain65" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child33" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain64" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi64" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain113" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN33" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES63" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES63" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip48" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain114" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf48" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain64" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child32" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain63" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi63" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain111" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN32" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES62" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES62" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip47" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain112" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf47" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain63" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child31" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain62" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi62" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain109" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN31" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES61" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES61" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip46" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain110" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain47" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
                   <Node ID="svf46" FactoryPath="filters.svf" Bypassed="0">
                     <ComplexData>
@@ -817,10 +218,10 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="gain62" FactoryPath="core.gain" Bypassed="0">
+              <Node ID="gain46" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -830,49 +231,10 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="clone_child30" FactoryPath="container.chain" Bypassed="0"
+          <Node ID="clone_child14" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="0">
             <Nodes>
-              <Node ID="modchain61" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi61" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain107" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN30" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES60" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES60" FactoryPath="core.file_player" Bypassed="0">
+              <Node ID="FILES45" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
@@ -887,12 +249,17 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip45" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
+              <Node ID="feedback_delay46" FactoryPath="container.fix32_block" Bypassed="0">
+                <Nodes>
+                  <Node ID="clip14" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
               </Node>
-              <Node ID="chain108" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain46" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
                   <Node ID="svf45" FactoryPath="filters.svf" Bypassed="0">
                     <ComplexData>
@@ -915,1186 +282,10 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="gain61" FactoryPath="core.gain" Bypassed="0">
+              <Node ID="gain45" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child29" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain60" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi60" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain105" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN29" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES59" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES59" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip44" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain106" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf44" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain60" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child28" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain59" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi59" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain103" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN28" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES58" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES58" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip43" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain104" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf43" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain59" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child27" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain58" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi58" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain101" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN27" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES57" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES57" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip42" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain102" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf42" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain58" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child26" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain57" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi57" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain99" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN26" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES56" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES56" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip41" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain100" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf41" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain57" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child25" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain56" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi56" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain97" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN25" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES55" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES55" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip40" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain98" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf40" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain56" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child24" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain55" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi55" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain95" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN24" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES54" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES54" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip39" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain96" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf39" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain55" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child23" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain54" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi54" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain93" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN23" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES53" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES53" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip38" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain94" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf38" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain54" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child22" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain53" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi53" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain91" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN22" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES52" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES52" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip37" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain92" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf37" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain53" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child21" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain52" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi52" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain89" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN21" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES51" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES51" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip36" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain90" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf36" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain52" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child20" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain51" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi51" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain87" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN20" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES50" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES50" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip35" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain88" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf35" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain51" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child19" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain50" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi50" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain85" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN19" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES49" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES49" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip34" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain86" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf34" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain50" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child18" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
-            <Nodes>
-              <Node ID="modchain49" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi49" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain83" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN18" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES48" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES48" FactoryPath="core.file_player" Bypassed="0">
-                <ComplexData>
-                  <AudioFiles>
-                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
-                  </AudioFiles>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                             Value="2.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
-                             Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="clip33" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain84" FactoryPath="container.chain" Bypassed="0">
-                <Nodes>
-                  <Node ID="svf33" FactoryPath="filters.svf" Bypassed="0">
-                    <ComplexData>
-                      <Filters>
-                        <Filter Index="-1" EmbeddedData=""/>
-                      </Filters>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                 ID="Frequency" Automated="1"/>
-                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                 ID="Q" Automated="1"/>
-                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                 ID="Smoothing" Value="0.009999999776482582"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="gain49" FactoryPath="core.gain" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -2107,46 +298,7 @@
           <Node ID="clone_child13" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="0">
             <Nodes>
-              <Node ID="modchain44" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi44" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain73" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN13" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES43" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES43" FactoryPath="core.file_player" Bypassed="0">
+              <Node ID="FILES44" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
@@ -2161,14 +313,19 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip28" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain74" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="feedback_delay45" FactoryPath="container.fix32_block" Bypassed="0">
                 <Nodes>
-                  <Node ID="svf28" FactoryPath="filters.svf" Bypassed="0">
+                  <Node ID="clip13" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain45" FactoryPath="container.chain" Bypassed="0">
+                <Nodes>
+                  <Node ID="svf44" FactoryPath="filters.svf" Bypassed="0">
                     <ComplexData>
                       <Filters>
                         <Filter Index="-1" EmbeddedData=""/>
@@ -2192,7 +349,7 @@
               <Node ID="gain44" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -2205,46 +362,7 @@
           <Node ID="clone_child12" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="0">
             <Nodes>
-              <Node ID="modchain43" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi43" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain71" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN12" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES42" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES42" FactoryPath="core.file_player" Bypassed="0">
+              <Node ID="FILES43" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
@@ -2259,14 +377,19 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip27" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain72" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="feedback_delay44" FactoryPath="container.fix32_block" Bypassed="0">
                 <Nodes>
-                  <Node ID="svf27" FactoryPath="filters.svf" Bypassed="0">
+                  <Node ID="clip12" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain44" FactoryPath="container.chain" Bypassed="0">
+                <Nodes>
+                  <Node ID="svf43" FactoryPath="filters.svf" Bypassed="0">
                     <ComplexData>
                       <Filters>
                         <Filter Index="-1" EmbeddedData=""/>
@@ -2290,7 +413,7 @@
               <Node ID="gain43" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -2303,46 +426,7 @@
           <Node ID="clone_child11" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="0">
             <Nodes>
-              <Node ID="modchain42" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi42" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain69" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN11" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES41" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES41" FactoryPath="core.file_player" Bypassed="0">
+              <Node ID="FILES42" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
@@ -2357,14 +441,19 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip26" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain70" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="feedback_delay43" FactoryPath="container.fix32_block" Bypassed="0">
                 <Nodes>
-                  <Node ID="svf26" FactoryPath="filters.svf" Bypassed="0">
+                  <Node ID="clip11" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain43" FactoryPath="container.chain" Bypassed="0">
+                <Nodes>
+                  <Node ID="svf42" FactoryPath="filters.svf" Bypassed="0">
                     <ComplexData>
                       <Filters>
                         <Filter Index="-1" EmbeddedData=""/>
@@ -2388,7 +477,7 @@
               <Node ID="gain42" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -2401,46 +490,7 @@
           <Node ID="clone_child10" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="0">
             <Nodes>
-              <Node ID="modchain41" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi41" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain67" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN10" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES40" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES40" FactoryPath="core.file_player" Bypassed="0">
+              <Node ID="FILES41" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
@@ -2455,14 +505,19 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip25" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain68" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="feedback_delay42" FactoryPath="container.fix32_block" Bypassed="0">
                 <Nodes>
-                  <Node ID="svf25" FactoryPath="filters.svf" Bypassed="0">
+                  <Node ID="clip10" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain42" FactoryPath="container.chain" Bypassed="0">
+                <Nodes>
+                  <Node ID="svf41" FactoryPath="filters.svf" Bypassed="0">
                     <ComplexData>
                       <Filters>
                         <Filter Index="-1" EmbeddedData=""/>
@@ -2486,7 +541,7 @@
               <Node ID="gain41" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -2499,46 +554,7 @@
           <Node ID="clone_child9" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="0">
             <Nodes>
-              <Node ID="modchain40" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi40" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain65" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN9" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES39" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES39" FactoryPath="core.file_player" Bypassed="0">
+              <Node ID="FILES40" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
@@ -2553,14 +569,19 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip24" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain66" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="feedback_delay41" FactoryPath="container.fix32_block" Bypassed="0">
                 <Nodes>
-                  <Node ID="svf24" FactoryPath="filters.svf" Bypassed="0">
+                  <Node ID="clip9" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain41" FactoryPath="container.chain" Bypassed="0">
+                <Nodes>
+                  <Node ID="svf40" FactoryPath="filters.svf" Bypassed="0">
                     <ComplexData>
                       <Filters>
                         <Filter Index="-1" EmbeddedData=""/>
@@ -2584,7 +605,7 @@
               <Node ID="gain40" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -2597,46 +618,7 @@
           <Node ID="clone_child8" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="0">
             <Nodes>
-              <Node ID="modchain39" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi39" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain63" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN8" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES38" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES38" FactoryPath="core.file_player" Bypassed="0">
+              <Node ID="FILES39" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
@@ -2651,14 +633,19 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip23" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain64" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="feedback_delay40" FactoryPath="container.fix32_block" Bypassed="0">
                 <Nodes>
-                  <Node ID="svf23" FactoryPath="filters.svf" Bypassed="0">
+                  <Node ID="clip8" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain40" FactoryPath="container.chain" Bypassed="0">
+                <Nodes>
+                  <Node ID="svf39" FactoryPath="filters.svf" Bypassed="0">
                     <ComplexData>
                       <Filters>
                         <Filter Index="-1" EmbeddedData=""/>
@@ -2682,7 +669,7 @@
               <Node ID="gain39" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -2695,46 +682,7 @@
           <Node ID="clone_child7" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="0">
             <Nodes>
-              <Node ID="modchain38" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi38" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain61" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN7" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES37" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES37" FactoryPath="core.file_player" Bypassed="0">
+              <Node ID="FILES38" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
@@ -2749,14 +697,19 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip22" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain62" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="feedback_delay39" FactoryPath="container.fix32_block" Bypassed="0">
                 <Nodes>
-                  <Node ID="svf22" FactoryPath="filters.svf" Bypassed="0">
+                  <Node ID="clip7" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain39" FactoryPath="container.chain" Bypassed="0">
+                <Nodes>
+                  <Node ID="svf38" FactoryPath="filters.svf" Bypassed="0">
                     <ComplexData>
                       <Filters>
                         <Filter Index="-1" EmbeddedData=""/>
@@ -2780,7 +733,7 @@
               <Node ID="gain38" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -2793,46 +746,7 @@
           <Node ID="clone_child6" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="0">
             <Nodes>
-              <Node ID="modchain37" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi37" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain59" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN6" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES36" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES36" FactoryPath="core.file_player" Bypassed="0">
+              <Node ID="FILES37" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
@@ -2847,14 +761,19 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip21" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain60" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="feedback_delay38" FactoryPath="container.fix32_block" Bypassed="0">
                 <Nodes>
-                  <Node ID="svf21" FactoryPath="filters.svf" Bypassed="0">
+                  <Node ID="clip6" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain38" FactoryPath="container.chain" Bypassed="0">
+                <Nodes>
+                  <Node ID="svf37" FactoryPath="filters.svf" Bypassed="0">
                     <ComplexData>
                       <Filters>
                         <Filter Index="-1" EmbeddedData=""/>
@@ -2878,7 +797,7 @@
               <Node ID="gain37" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -2891,46 +810,7 @@
           <Node ID="clone_child5" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="0">
             <Nodes>
-              <Node ID="modchain36" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi36" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain57" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN5" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES35" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES35" FactoryPath="core.file_player" Bypassed="0">
+              <Node ID="FILES36" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
@@ -2945,14 +825,19 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip20" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain58" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="feedback_delay37" FactoryPath="container.fix32_block" Bypassed="0">
                 <Nodes>
-                  <Node ID="svf20" FactoryPath="filters.svf" Bypassed="0">
+                  <Node ID="clip5" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain37" FactoryPath="container.chain" Bypassed="0">
+                <Nodes>
+                  <Node ID="svf36" FactoryPath="filters.svf" Bypassed="0">
                     <ComplexData>
                       <Filters>
                         <Filter Index="-1" EmbeddedData=""/>
@@ -2976,7 +861,7 @@
               <Node ID="gain36" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -2989,46 +874,7 @@
           <Node ID="clone_child4" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="0">
             <Nodes>
-              <Node ID="modchain35" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi35" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain55" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN4" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES34" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES34" FactoryPath="core.file_player" Bypassed="0">
+              <Node ID="FILES35" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
@@ -3043,14 +889,19 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip19" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain56" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="feedback_delay36" FactoryPath="container.fix32_block" Bypassed="0">
                 <Nodes>
-                  <Node ID="svf19" FactoryPath="filters.svf" Bypassed="0">
+                  <Node ID="clip4" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain36" FactoryPath="container.chain" Bypassed="0">
+                <Nodes>
+                  <Node ID="svf35" FactoryPath="filters.svf" Bypassed="0">
                     <ComplexData>
                       <Filters>
                         <Filter Index="-1" EmbeddedData=""/>
@@ -3074,7 +925,7 @@
               <Node ID="gain35" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -3087,46 +938,7 @@
           <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="0">
             <Nodes>
-              <Node ID="modchain34" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi34" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain53" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN3" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES33" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES33" FactoryPath="core.file_player" Bypassed="0">
+              <Node ID="FILES34" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
@@ -3141,14 +953,19 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip18" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain54" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="feedback_delay35" FactoryPath="container.fix32_block" Bypassed="0">
                 <Nodes>
-                  <Node ID="svf18" FactoryPath="filters.svf" Bypassed="0">
+                  <Node ID="clip3" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain35" FactoryPath="container.chain" Bypassed="0">
+                <Nodes>
+                  <Node ID="svf34" FactoryPath="filters.svf" Bypassed="0">
                     <ComplexData>
                       <Filters>
                         <Filter Index="-1" EmbeddedData=""/>
@@ -3172,7 +989,7 @@
               <Node ID="gain34" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -3185,46 +1002,7 @@
           <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="0">
             <Nodes>
-              <Node ID="modchain33" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="no_midi33" FactoryPath="container.no_midi" Bypassed="0">
-                    <Nodes>
-                      <Node ID="chain51" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-                        <Nodes>
-                          <Node ID="PITCH-IN2" FactoryPath="control.minmax" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Maximum" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
-                                         ID="Skew" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
-                            </Parameters>
-                            <ModulationTargets>
-                              <Connection NodeId="FILES32" ParameterId="FreqRatio"/>
-                            </ModulationTargets>
-                          </Node>
-                        </Nodes>
-                        <Parameters>
-                          <Parameter ID="pitch-min" MinValue="1.0" MaxValue="16.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-max" MinValue="1.0" MaxValue="128.0" StepSize="1.0">
-                            <Connections/>
-                          </Parameter>
-                          <Parameter ID="pitch-step" MinValue="0.0" MaxValue="1.0">
-                            <Connections/>
-                          </Parameter>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="FILES32" FactoryPath="core.file_player" Bypassed="0">
+              <Node ID="FILES33" FactoryPath="core.file_player" Bypassed="0">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
@@ -3239,14 +1017,19 @@
                              Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="clip17" FactoryPath="math.clip" Bypassed="0">
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="chain52" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="feedback_delay34" FactoryPath="container.fix32_block" Bypassed="0">
                 <Nodes>
-                  <Node ID="svf17" FactoryPath="filters.svf" Bypassed="0">
+                  <Node ID="clip2" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain34" FactoryPath="container.chain" Bypassed="0">
+                <Nodes>
+                  <Node ID="svf33" FactoryPath="filters.svf" Bypassed="0">
                     <ComplexData>
                       <Filters>
                         <Filter Index="-1" EmbeddedData=""/>
@@ -3270,7 +1053,71 @@
               <Node ID="gain33" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-13.09999870508911"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
+                NodeColour="4287927444" ShowParameters="0">
+            <Nodes>
+              <Node ID="FILES32" FactoryPath="core.file_player" Bypassed="0">
+                <ComplexData>
+                  <AudioFiles>
+                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                  </AudioFiles>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                             Value="2.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FreqRatio"
+                             Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="feedback_delay33" FactoryPath="container.fix32_block" Bypassed="0">
+                <Nodes>
+                  <Node ID="clip1" FactoryPath="math.clip" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain33" FactoryPath="container.chain" Bypassed="0">
+                <Nodes>
+                  <Node ID="svf32" FactoryPath="filters.svf" Bypassed="0">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1" EmbeddedData=""/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" Automated="1"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="gain32" FactoryPath="core.gain" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-11.89999868720771"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.000000029802322"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -3282,29 +1129,29 @@
           </Node>
         </Nodes>
         <Parameters>
-          <Parameter MinValue="1.0" MaxValue="32" StepSize="1.0" ID="NumClones" Automated="1"/>
+          <Parameter MinValue="1.0" MaxValue="16" StepSize="1.0" ID="NumClones" Value="16.0"/>
           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
                      Value="1.0"/>
         </Parameters>
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="PITCH" MinValue="0.0" MaxValue="1.0" Value="0.09728213500976569">
+      <Parameter ID="PITCH" MinValue="0.0" MaxValue="1.0" Value="0.4849847106933596">
         <Connections>
           <Connection NodeId="pitch" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="SHAPE" MinValue="0.0" MaxValue="1.0" Value="0.652489990234375">
+      <Parameter ID="SHAPE" MinValue="0.0" MaxValue="1.0" Value="0.555348388671875">
         <Connections>
           <Connection NodeId="shape" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="CUT" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="CUT" MinValue="0.0" MaxValue="1.0" Value="0.5646672363281251">
         <Connections>
           <Connection NodeId="cut" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="RES" MinValue="0.0" MaxValue="1.0" Value="0.9372552490234375">
+      <Parameter ID="RES" MinValue="0.0" MaxValue="1.0" Value="0.0">
         <Connections>
           <Connection NodeId="res" ParameterId="Value"/>
         </Connections>
@@ -3314,25 +1161,17 @@
           <Connection NodeId="FILTERMODE" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="CLONES" MinValue="1.0" MaxValue="32.0" Value="16.0" StepSize="1.0">
-        <Connections>
-          <Connection NodeId="clone" ParameterId="NumClones"/>
-        </Connections>
+      <Parameter ID="CLONES" MinValue="1.0" MaxValue="32.0" Value="32.0" StepSize="1.0">
+        <Connections/>
       </Parameter>
       <Parameter ID="pitchmin" MinValue="0.0" MaxValue="1.0" Value="0.0">
-        <Connections>
-          <Connection NodeId="PITCHMIN" ParameterId="Value"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="PITCHMAX" MinValue="0.0" MaxValue="1.0" Value="0.2427240600585937">
-        <Connections>
-          <Connection NodeId="PITCHMAX" ParameterId="Value"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="PITCHSTEP" MinValue="0.0" MaxValue="1.0" Value="0.0">
-        <Connections>
-          <Connection NodeId="PITCHSTEP" ParameterId="Value"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="XX" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections/>

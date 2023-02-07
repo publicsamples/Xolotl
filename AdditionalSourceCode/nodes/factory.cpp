@@ -22,15 +22,20 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		// Node registrations ------------------------------------------------
 		
 		registerDataNode<project::chain3_networkdata>();
+		registerDataNode<project::contain_networkdata>();
 		registerDataNode<project::_networkdata>();
+		registerDataNode<project::fold_networkdata>();
 		registerDataNode<project::Harm2_networkdata>();
 		registerDataNode<project::harmonic_networkdata>();
+		registerDataNode<project::harmosc_networkdata>();
 		registerDataNode<project::main_networkdata>();
-		registerDataNode<project::MainPage_networkdata>();
 		registerDataNode<project::mod_networkdata>();
+		registerDataNode<project::Q_Node_networkdata>();
 		registerDataNode<project::scriptnode_syntesiser1_networkdata>();
 		registerDataNode<project::shaper_networkdata>();
 		registerDataNode<project::synth_networkdata>();
+		registerDataNode<project::_networkdata>();
+		registerDataNode<project::the_networkdata>();
 		registerDataNode<project::_4wayswitch_networkdata>();
 	}
 };

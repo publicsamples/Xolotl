@@ -10,14 +10,18 @@
 // Include compiled network files ------------------
 
 #include "chain3_networkdata.h"
+#include "contain_networkdata.h"
+#include "fold_networkdata.h"
 #include "Harm2_networkdata.h"
 #include "harmonic_networkdata.h"
-#include "MainPage_networkdata.h"
+#include "harmosc_networkdata.h"
 #include "main_networkdata.h"
 #include "mod_networkdata.h"
+#include "Q_Node_networkdata.h"
 #include "scriptnode_syntesiser1_networkdata.h"
 #include "shaper_networkdata.h"
 #include "synth_networkdata.h"
+#include "the_networkdata.h"
 #include "_4wayswitch_networkdata.h"
 #include "_networkdata.h"
 

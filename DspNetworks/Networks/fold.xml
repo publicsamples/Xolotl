@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="fold" AllowPolyphonic="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="fold" Bypassed="0" ShowParameters="1">
+    <Nodes>
+      <Node ID="faust" FactoryPath="core.faust" Bypassed="0">
+        <Properties>
+          <Property ID="ClassId" Value="b259wf"/>
+          <Property ID="NumParameters" Value="0"/>
+        </Properties>
+        <Parameters/>
+        <SwitchTargets/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="fold" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="faust" ParameterId="fold"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="lp" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="faust" ParameterId="lowpass"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="off" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="faust" ParameterId="offset"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>
