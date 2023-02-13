@@ -1,187 +1,519 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ContentProperties DeviceType="Desktop">
+  <Component type="ScriptPanel" id="Panel1" x="0.0" y="0.0" width="910.0"
+             height="710.0" bgColour="4278190080" itemColour="4289433385"
+             itemColour2="4290154505" locked="1"/>
   <Component type="ScriptPanel" id="SETTINGS" x="20.0" y="17.0" width="470.0"
-             height="50.0">
-    <Component type="ScriptFloatingTile" id="FloatingTile1" x="60.0" y="-46.0"
-               parentComponent="SETTINGS" width="360.0" height="390.0" ContentType="CustomSettings"
-               bgColour="4278190080" itemColour="0" itemColour2="0" Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: false,&#10;  &quot;ScaleFactor&quot;: false,&#10;  &quot;VoiceAmountMultiplier&quot;: false,&#10;  &quot;ClearMidiCC&quot;: false,&#10;  &quot;SampleLocation&quot;: true,&#10;  &quot;DebugMode&quot;: false,&#10;  &quot;UseOpenGL&quot;: false,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
-               FontSize="12.0"/>
+             height="50.0" itemColour="4280098197" itemColour2="4280363686"
+             bgColour="1430400675">
+    <Component type="ScriptSlider" id="SHAPE8" x="265.0" y="1.0" width="50.0"
+               height="30.0" parentComponent="SETTINGS" processorId="Phase FX1"
+               parameterId="Frequency2" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
+               visible="0"/>
+    <Component type="ScriptButton" id="PRESETBUTTON" x="212.0" y="9.0" width="30.0"
+               height="30.0" parentComponent="SETTINGS" filmstripImage="{PROJECT_FOLDER}button1.png"
+               scaleFactor="0.300000011920929" isVertical="0"/>
+    <Component type="ScriptLabel" id="PRESETSW" x="130.0" y="15.0" parentComponent="SETTINGS"
+               text="PRESETS" fontName="Montserrat" width="80.0" height="20.0"
+               fontSize="20.0" editable="0"/>
+    <Component type="ScriptLabel" id="PRESETSW1" x="7.0" y="14.0" parentComponent="SETTINGS"
+               text="MODE" fontName="Montserrat" width="80.0" height="20.0"
+               fontSize="20.0" editable="0"/>
+    <Component type="ScriptButton" id="mode" x="87.0" y="9.0" parentComponent="SETTINGS"
+               width="40.0" height="30.0" filmstripImage="{PROJECT_FOLDER}button1.png"
+               scaleFactor="0.300000011920929" isVertical="0"/>
+    <Component type="ScriptSlider" id="SHAPE9" x="296.0" y="1.0" width="50.0"
+               height="30.0" parentComponent="SETTINGS" processorId="LFO Modulator1"
+               parameterId="Frequency" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
+               mode="Frequency" min="0.1000000014901161" max="20000.0" stepSize="1.0"
+               suffix=" Hz" middlePosition="1500.0" visible="0"/>
+    <Component type="ScriptSlider" id="SHAPE10" x="359.0" y="1.0" width="50.0"
+               height="30.0" parentComponent="SETTINGS" processorId="LFO Modulator2"
+               parameterId="Frequency" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
+               mode="Frequency" min="0.1000000014901161" max="20000.0" stepSize="1.0"
+               suffix=" Hz" middlePosition="1500.0" visible="0"/>
+    <Component type="ScriptSlider" id="SHAPE11" x="390.0" y="1.0" width="50.0"
+               height="30.0" parentComponent="SETTINGS" processorId="Phase FX1"
+               parameterId="Feedback" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
+               visible="0"/>
+    <Component type="ScriptSlider" id="SHAPE12" x="422.0" y="1.0" width="50.0"
+               height="30.0" parentComponent="SETTINGS" processorId="Phase FX1"
+               parameterId="Mix" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
+               visible="0"/>
+    <Component type="ScriptSlider" id="SHAPE13" x="328.0" y="1.0" width="50.0"
+               height="30.0" parentComponent="SETTINGS" processorId="Phase FX1"
+               parameterId="Frequency2" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
+               visible="0"/>
+    <Component type="ScriptLabel" id="PRESETSW2" x="246.0" y="31.0" parentComponent="SETTINGS"
+               text="freq1" fontName="Montserrat" width="80.0" height="20.0"
+               editable="0" visible="0"/>
+    <Component type="ScriptLabel" id="PRESETSW3" x="295.0" y="31.0" parentComponent="SETTINGS"
+               text="spd1" fontName="Montserrat" width="40.0" height="20.0"
+               editable="0" visible="0"/>
+    <Component type="ScriptLabel" id="PRESETSW4" x="356.0" y="31.0" parentComponent="SETTINGS"
+               text="spd2" fontName="Montserrat" width="40.0" height="20.0"
+               editable="0" visible="0"/>
+    <Component type="ScriptLabel" id="PRESETSW5" x="307.0" y="31.0" parentComponent="SETTINGS"
+               text="freq2" fontName="Montserrat" width="80.0" height="20.0"
+               editable="0" visible="0"/>
+    <Component type="ScriptLabel" id="PRESETSW6" x="390.0" y="31.0" parentComponent="SETTINGS"
+               text="feed" fontName="Montserrat" width="40.0" height="20.0"
+               editable="0" visible="0"/>
+    <Component type="ScriptLabel" id="PRESETSW7" x="422.0" y="31.0" parentComponent="SETTINGS"
+               text="mix" fontName="Montserrat" width="40.0" height="20.0" editable="0"
+               visible="0"/>
   </Component>
-  <Component type="ScriptImage" id="Image1" x="531.0" y="2.0" fileName="{PROJECT_FOLDER}XO.png"
+  <Component type="ScriptImage" id="Image1" x="643.0" y="0.0" fileName="{PROJECT_FOLDER}XO.png"
              width="130.0" height="80.0"/>
-  <Component type="ScriptPanel" id="HARMONIC" x="25.0" y="70.0" width="750.0"
-             height="420.0" itemColour="4278190080" itemColour2="4278190080">
-    <Component type="ScriptSliderPack" id="pitch-sp" x="175.0" y="31.0" width="230.0"
-               height="100.0" parentComponent="HARMONIC" processorId="HARMONIC"/>
-    <Component type="ScriptSliderPack" id="shape-sp" x="175.0" y="231.0" width="230.0"
-               height="100.0" parentComponent="HARMONIC" processorId="HARMONIC"
-               SliderPackIndex="1"/>
-    <Component type="ScriptSliderPack" id="Cut-sp" x="463.0" y="31.0" width="230.0"
-               height="100.0" parentComponent="HARMONIC" processorId="HARMONIC"
-               SliderPackIndex="2"/>
-    <Component type="ScriptSliderPack" id="Res-sp" x="463.0" y="231.0" width="230.0"
-               height="100.0" parentComponent="HARMONIC" processorId="HARMONIC"
-               SliderPackIndex="3"/>
-    <Component type="ScriptSlider" id="SHAPE" x="185.0" y="340.0" width="40.0"
-               height="50.0" parentComponent="HARMONIC" processorId="HARMONIC"
-               parameterId="SHP"/>
-    <Component type="ScriptSlider" id="SHAPEMOD" x="264.0" y="340.0" width="40.0"
-               height="50.0" parentComponent="HARMONIC" processorId="HARMONIC"
-               parameterId="SHPMOD" min="-2.0" middlePosition="0.0"/>
-    <Component type="ScriptSlider" id="RES" x="503.0" y="338.0" width="40.0"
-               height="50.0" parentComponent="HARMONIC" processorId="HARMONIC"
-               parameterId="RES"/>
+  <Component type="ScriptPanel" id="HARMONICSYNTH" x="20.0" y="70.0" width="750.0"
+             height="420.0" itemColour="4280098197" itemColour2="4280363686"
+             bgColour="1430400675" locked="1" visible="0">
+    <Component type="ScriptSliderPack" id="pitch-sp" x="166.0" y="16.0" width="250.0"
+               height="180.0" parentComponent="HARMONICSYNTH" processorId="HARMONIC"
+               itemColour="4294962344" itemColour2="0"/>
+    <Component type="ScriptSliderPack" id="Cut-sp" x="460.0" y="19.0" width="230.0"
+               height="90.0" parentComponent="HARMONICSYNTH" processorId="HARMONIC"
+               SliderPackIndex="2" itemColour="4278807217" itemColour2="0"/>
+    <Component type="ScriptSliderPack" id="Res-sp" x="463.0" y="224.0" width="230.0"
+               height="90.0" parentComponent="HARMONICSYNTH" processorId="HARMONIC"
+               SliderPackIndex="3" itemColour="4294312962" itemColour2="789516"/>
+    <Component type="ScriptSlider" id="SHAPE" x="164.0" y="296.0" width="80.0"
+               height="80.0" parentComponent="HARMONICSYNTH" processorId="HARMONIC"
+               parameterId="harm-min" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5" min="1.0"
+               max="16.0" stepSize="1.0" middlePosition="8.0"/>
+    <Component type="ScriptSlider" id="RES" x="466.0" y="306.0" width="80.0"
+               height="80.0" parentComponent="HARMONICSYNTH" processorId="HARMONIC"
+               parameterId="RES" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5"/>
     <Component type="ScriptComboBox" id="SAMPLE" x="35.0" y="110.0" width="100.0"
-               height="40.0" max="54" parentComponent="HARMONIC" fontSize="3.0"
+               height="40.0" max="54" parentComponent="HARMONICSYNTH" fontSize="51.0"
                items="1st&#10;4op Sin 1&#10;Bell Source&#10;Belles&#10;Big&#10;BigElectric&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Double Bass&#10;EP1&#10;EP2&#10;EP3&#10;Euro Organ&#10;Fold DF 8&#10;GateAR&#10;HR Sqr 8&#10;Hard Bass&#10;LP Square 8&#10;Leap&#10;Lingo&#10;More Bell&#10;Odd Keys&#10;Rousing&#10;Sad Ring&#10;Scrd&#10;Shape B 2&#10;Shape B 4&#10;Shape B 6&#10;Shape B 8&#10;Shape C 2&#10;Shape C 4&#10;Shape C 6&#10;Shape C 8&#10;Simple Guitar&#10;SinFFM 1&#10;Special K&#10;Spook&#10;Thick Tri 4&#10;Tinkly&#10;TriSaw FFM 1&#10;TriSaw FFM 8&#10;mth&#10;nsty1&#10;nsty2&#10;pswp&#10;sawd&#10;simr"/>
-    <Component type="ScriptSlider" id="CLONES" x="65.0" y="198.0" width="40.0"
-               height="50.0" parentComponent="HARMONIC" processorId="HARMONIC"
-               parameterId="CLONES" max="32.0" stepSize="1.0" middlePosition="16.0"
-               defaultValue="32.0"/>
-    <Component type="ScriptSlider" id="SHAPE1" x="475.0" y="151.0" width="40.0"
-               height="50.0" parentComponent="HARMONIC" processorId="HARMONIC"
-               parameterId="CUT"/>
-    <Component type="ScriptSlider" id="SHAPEMOD1" x="554.0" y="151.0" width="40.0"
-               height="50.0" parentComponent="HARMONIC" processorId="HARMONIC"
-               parameterId="CUTMOD" min="-1.0" middlePosition="0.0"/>
-    <Component type="ScriptSlider" id="PITCHMOD" x="265.0" y="140.0" width="40.0"
-               height="50.0" parentComponent="HARMONIC" processorId="HARMONIC"
-               parameterId="PITCHMOD" min="-1.0" middlePosition="0.0"/>
-    <Component type="ScriptSlider" id="PITCH" x="178.0" y="142.0" width="40.0"
-               height="50.0" parentComponent="HARMONIC" processorId="HARMONIC"
-               parameterId="PITCH"/>
-    <Component type="ScriptSlider" id="Knob7" x="625.0" y="150.0" parentComponent="HARMONIC"
-               width="50.0" height="50.0" processorId="HARMONIC" parameterId="CUTMODSOURCE"/>
-    <Component type="ScriptSlider" id="FTYPE" x="615.0" y="339.0" width="40.0"
-               height="50.0" parentComponent="HARMONIC" processorId="HARMONIC"
-               parameterId="FTYPE" middlePosition="0.5"/>
+    <Component type="ScriptSlider" id="SHAPE1" x="458.0" y="107.0" width="80.0"
+               height="80.0" parentComponent="HARMONICSYNTH" processorId="HARMONIC"
+               parameterId="CUT" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptSlider" id="SHAPEMOD1" x="537.0" y="107.0" width="80.0"
+               height="80.0" parentComponent="HARMONICSYNTH" processorId="HARMONIC"
+               parameterId="CUTMOD" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptSlider" id="PITCH" x="164.0" y="191.0" width="85.0"
+               height="80.0" parentComponent="HARMONICSYNTH" processorId="HARMONIC"
+               parameterId="HARMPITCH" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5" middlePosition="0.5"/>
+    <Component type="ScriptSlider" id="Knob7" x="605.0" y="106.0" parentComponent="HARMONICSYNTH"
+               width="80.0" height="80.0" processorId="HARMONIC" parameterId="CUTMODSOURCE"
+               filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+               isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptSlider" id="FTYPE" x="596.0" y="306.0" width="80.0"
+               height="80.0" parentComponent="HARMONICSYNTH" processorId="HARMONIC"
+               parameterId="FTYPE" middlePosition="0.25" max="0.5" stepSize="0.1000000014901161"
+               filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+               isVertical="0" scaleFactor="0.5"/>
     <Component type="ScriptLabel" id="WAVE" x="35.0" y="150.0" width="100.0"
-               height="40.0" parentComponent="HARMONIC"/>
-    <Component type="ScriptLabel" id="LAYERS" x="35.0" y="247.0" width="100.0"
-               height="40.0" parentComponent="HARMONIC"/>
-    <Component type="ScriptLabel" id="PITCH-MABEL" x="168.0" y="183.0" width="60.0"
-               height="30.0" parentComponent="HARMONIC" text="PITCH"/>
-    <Component type="ScriptLabel" id="PITCH-MABEL1" x="253.0" y="182.0" width="60.0"
-               height="30.0" parentComponent="HARMONIC" text="MOD"/>
-    <Component type="ScriptLabel" id="PITCH-MABEL2" x="342.0" y="192.0" width="60.0"
-               height="30.0" parentComponent="HARMONIC" text="MOD SOURCE"/>
-    <Component type="ScriptLabel" id="PITCH-MABEL6" x="174.0" y="390.0" width="60.0"
-               height="30.0" parentComponent="HARMONIC" text="SHAPE"/>
-    <Component type="ScriptLabel" id="PITCH-MABEL7" x="255.0" y="390.0" width="60.0"
-               height="30.0" parentComponent="HARMONIC" text="MOD"/>
-    <Component type="ScriptLabel" id="PITCH-MABEL8" x="330.0" y="387.0" width="60.0"
-               height="30.0" parentComponent="HARMONIC" text="MOD SOURCE"/>
-    <Component type="ScriptLabel" id="PITCH-MABEL9" x="622.0" y="194.0" width="60.0"
-               height="30.0" parentComponent="HARMONIC" text="MOD SOURCE"/>
-    <Component type="ScriptLabel" id="PITCH-MABEL10" x="547.0" y="197.0" width="60.0"
-               height="30.0" parentComponent="HARMONIC" text="MOD"/>
-    <Component type="ScriptLabel" id="PITCH-MABEL11" x="466.0" y="197.0" width="60.0"
-               height="30.0" parentComponent="HARMONIC" text="CUTOFF"/>
-    <Component type="ScriptLabel" id="PITCH-MABEL12" x="485.0" y="381.0" width="80.0"
-               height="30.0" parentComponent="HARMONIC" text="RESONANCE"/>
-    <Component type="ScriptLabel" id="PITCH-MABEL13" x="595.0" y="382.0" width="80.0"
-               height="30.0" parentComponent="HARMONIC" text="TYPE"/>
+               height="40.0" parentComponent="HARMONICSYNTH" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL" x="187.0" y="279.0" width="60.0"
+               height="30.0" parentComponent="HARMONICSYNTH" text="PITCH" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL6" x="180.0" y="382.0" width="60.0"
+               height="30.0" parentComponent="HARMONICSYNTH" text="MIN" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL9" x="622.0" y="183.0" width="60.0"
+               height="30.0" parentComponent="HARMONICSYNTH" text="MOD SOURCE"
+               editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL10" x="547.0" y="186.0" width="60.0"
+               height="30.0" parentComponent="HARMONICSYNTH" text="MOD" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL11" x="466.0" y="186.0" width="60.0"
+               height="30.0" parentComponent="HARMONICSYNTH" text="CUTOFF" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL12" x="470.0" y="389.0" width="80.0"
+               height="30.0" parentComponent="HARMONICSYNTH" text="RESONANCE"
+               editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL13" x="605.0" y="388.0" width="80.0"
+               height="30.0" parentComponent="HARMONICSYNTH" text="TYPE" editable="0"/>
     <Component type="ScriptLabel" id="WAVE1" x="25.0" y="20.0" width="120.0"
-               height="60.0" parentComponent="HARMONIC" text="HARMONIC OSCILLATOR "
-               fontSize="15.0"/>
+               height="60.0" parentComponent="HARMONICSYNTH" text="HARMONIC OSCILLATOR "
+               fontSize="15.0" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL16" x="265.0" y="278.0" width="60.0"
+               height="30.0" parentComponent="HARMONICSYNTH" text="MOD" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL29" x="340.0" y="275.0" width="60.0"
+               height="30.0" parentComponent="HARMONICSYNTH" text="MOD SOURCE"
+               editable="0"/>
+    <Component type="ScriptSlider" id="Knob11" x="328.0" y="191.0" parentComponent="HARMONICSYNTH"
+               width="85.0" height="80.0" processorId="HARMONIC" parameterId="PITCHMODSOURCE"
+               filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+               isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptSlider" id="SHAPEMOD11" x="244.0" y="192.0" width="85.0"
+               height="80.0" parentComponent="HARMONICSYNTH" processorId="HARMONIC"
+               parameterId="PITCHMOD" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptSlider" id="SHAPE6" x="244.0" y="296.0" width="80.0"
+               height="80.0" parentComponent="HARMONICSYNTH" processorId="HARMONIC"
+               parameterId="harm-max" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5" max="16.0"
+               stepSize="1.0" middlePosition="8.0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL7" x="265.0" y="382.0" width="60.0"
+               height="30.0" parentComponent="HARMONICSYNTH" text="MAX" editable="0"/>
+    <Component type="ScriptSlider" id="SHAPE7" x="321.0" y="296.0" width="80.0"
+               height="80.0" parentComponent="HARMONICSYNTH" processorId="HARMONIC"
+               parameterId="harm-step" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5" middlePosition="0.5"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL8" x="343.0" y="382.0" width="60.0"
+               height="30.0" parentComponent="HARMONICSYNTH" text="STEP" editable="0"/>
   </Component>
-  <Component type="ScriptPanel" id="FILTER" x="438.0" y="500.0" width="160.0"
-             height="140.0">
-    <Component type="ScriptSlider" id="SHAPEMOD3" x="12.0" y="83.0" width="40.0"
-               height="50.0" parentComponent="FILTER" processorId="HARMONIC"
-               parameterId="filtermod"/>
-    <Component type="ScriptSlider" id="SHAPE3" x="12.0" y="7.0" width="40.0"
-               height="50.0" parentComponent="FILTER" processorId="HARMONIC"
-               parameterId="master-cut"/>
-    <Component type="ScriptSlider" id="RES1" x="102.0" y="10.0" width="40.0"
-               height="50.0" parentComponent="FILTER" processorId="HARMONIC"
-               parameterId="master-res"/>
-    <Component type="ScriptSlider" id="SHAPEMOD4" x="102.0" y="82.0" width="40.0"
-               height="50.0" parentComponent="FILTER" processorId="HARMONIC"
-               parameterId="MASTERCUTMODSOURCE"/>
+  <Component type="ScriptPanel" id="FILTER" x="438.0" y="499.0" width="160.0"
+             height="160.0" itemColour="4280098197" itemColour2="4280363686"
+             bgColour="1430400675">
+    <Component type="ScriptLabel" id="Label16" x="-24.0" y="68.0" text="CUTOFF"
+               editable="0" parentComponent="FILTER" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label17" x="49.0" y="68.0" text="RESONANCE"
+               editable="0" parentComponent="FILTER" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label18" x="-24.0" y="130.0" text="MOD"
+               editable="0" parentComponent="FILTER" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label19" x="49.0" y="129.0" text="MOD SOURCE"
+               editable="0" parentComponent="FILTER" fontName="Montserrat"/>
+    <Component type="ScriptSlider" id="SHAPEMOD3" x="10.0" y="87.0" width="65.0"
+               height="60.0" parentComponent="FILTER" processorId="HARMONIC"
+               parameterId="filtermod" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.300000011920929"/>
+    <Component type="ScriptSlider" id="SHAPE3" x="10.0" y="25.0" width="65.0"
+               height="60.0" parentComponent="FILTER" processorId="HARMONIC"
+               parameterId="master-cut" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.300000011920929"/>
+    <Component type="ScriptSlider" id="RES1" x="85.0" y="25.0" width="65.0"
+               height="60.0" parentComponent="FILTER" processorId="HARMONIC"
+               parameterId="master-res" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.300000011920929"/>
+    <Component type="ScriptSlider" id="SHAPEMOD4" x="85.0" y="87.0" width="65.0"
+               height="60.0" parentComponent="FILTER" processorId="HARMONIC"
+               parameterId="MASTERCUTMODSOURCE" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.300000011920929"/>
+    <Component type="ScriptLabel" id="Label28" x="17.0" y="5.0" text="FILTER"
+               editable="0" parentComponent="FILTER" fontName="Montserrat" fontSize="20.0"/>
   </Component>
-  <Component type="ScriptPanel" id="AMP" x="613.0" y="499.0" width="160.0"
-             height="140.0">
-    <Component type="ScriptSlider" id="Knob1" x="29.0" y="21.0" style="Vertical"
+  <Component type="ScriptPanel" id="AMP" x="613.0" y="500.0" width="160.0"
+             height="160.0" itemColour="4280098197" itemColour2="4280363686"
+             bgColour="1430400675">
+    <Component type="ScriptLabel" id="Label26" x="65.0" y="120.0" width="60.0"
+               height="20.0" fontSize="12.0" alignment="left" text="VOLUME"
+               editable="0" parentComponent="AMP" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label20" x="106.0" y="96.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="R" editable="0"
+               parentComponent="AMP" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label21" x="82.0" y="96.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="S" editable="0"
+               parentComponent="AMP" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label22" x="31.0" y="96.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="A" editable="0"
+               parentComponent="AMP" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label23" x="57.0" y="96.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="D" editable="0"
+               parentComponent="AMP" fontName="Montserrat"/>
+    <Component type="ScriptSlider" id="SHAPEMOD5" x="21.0" y="112.0" width="50.0"
+               height="50.0" parentComponent="AMP" processorId="HARMONIC" parameterId="Gain"
+               filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+               isVertical="0" scaleFactor="0.239999994635582"/>
+    <Component type="ScriptSlider" id="Knob1" x="29.0" y="28.0" style="Vertical"
                width="20.0" height="70.0" parentComponent="AMP" processorId="AHDSR Envelope1"
                parameterId="Attack" mode="Time" max="20000.0" stepSize="1.0"
                suffix=" ms" middlePosition="1000.0"/>
-    <Component type="ScriptSlider" id="Knob3" x="56.0" y="21.0" style="Vertical"
+    <Component type="ScriptSlider" id="Knob3" x="56.0" y="28.0" style="Vertical"
                width="20.0" height="70.0" parentComponent="AMP" processorId="AHDSR Envelope1"
                parameterId="Decay" max="10000.0" middlePosition="300.0"/>
-    <Component type="ScriptSlider" id="Knob4" x="83.0" y="21.0" style="Vertical"
+    <Component type="ScriptSlider" id="Knob4" x="83.0" y="28.0" style="Vertical"
                width="20.0" height="70.0" parentComponent="AMP" processorId="AHDSR Envelope1"
                parameterId="Sustain"/>
-    <Component type="ScriptSlider" id="Knob5" x="111.0" y="21.0" style="Vertical"
+    <Component type="ScriptSlider" id="Knob5" x="111.0" y="30.0" style="Vertical"
                width="20.0" height="70.0" parentComponent="AMP" processorId="AHDSR Envelope1"
                parameterId="Release" mode="Time" max="20000.0" stepSize="1.0"
                suffix=" ms" middlePosition="1000.0"/>
-    <Component type="ScriptSlider" id="ScriptSlider5" x="28.0" y="101.0" width="25.0"
-               height="25.0" parentComponent="AMP"/>
-    <Component type="ScriptSlider" id="ScriptSlider6" x="68.0" y="101.0" width="25.0"
-               height="25.0" parentComponent="AMP"/>
-    <Component type="ScriptSlider" id="ScriptSlider7" x="108.0" y="101.0" width="25.0"
-               height="25.0" parentComponent="AMP"/>
+    <Component type="ScriptLabel" id="Label29" x="47.0" y="5.0" width="60.0"
+               height="20.0" fontSize="20.0" alignment="left" text="AMP" editable="0"
+               parentComponent="AMP" fontName="Montserrat"/>
   </Component>
   <Component type="ScriptPanel" id="MOD" x="26.0" y="499.0" width="400.0"
-             height="140.0">
-    <Component type="ScriptTable" id="Table1" x="264.0" y="12.0" width="100.0"
-               height="50.0" parentComponent="MOD" processorId="HARMONIC"/>
-    <Component type="ScriptTable" id="Table2" x="264.0" y="73.0" width="100.0"
-               height="50.0" parentComponent="MOD" processorId="HARMONIC" tableIndex="1"/>
-    <Component type="ScriptSlider" id="ScriptSlider1" x="10.0" y="105.0" width="25.0"
+             height="160.0" itemColour="4280098197" itemColour2="4280363686"
+             bgColour="1430400675">
+    <Component type="ScriptLabel" id="Label27" x="10.0" y="3.0" width="120.0"
+               height="20.0" fontSize="20.0" alignment="left" text="MODULATION"
+               editable="0" parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label6" x="129.0" y="138.0" width="40.0"
+               height="20.0" fontSize="12.0" alignment="left" text="TEMPO" editable="0"
+               parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label7" x="14.0" y="96.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="A" editable="0"
+               parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label8" x="29.0" y="235.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="A" parentComponent="MOD"
+               fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label9" x="40.0" y="96.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="D" editable="0"
+               parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label10" x="65.0" y="96.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="S" editable="0"
+               parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label11" x="89.0" y="96.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="R" editable="0"
+               parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label12" x="174.0" y="96.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="S" editable="0"
+               parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label13" x="149.0" y="96.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="D" editable="0"
+               parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label14" x="123.0" y="96.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="A" editable="0"
+               parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label15" x="198.0" y="96.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="R" editable="0"
+               parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label2" x="4.0" y="138.0" width="40.0"
+               height="20.0" fontSize="12.0" alignment="left" text="TEMPO" editable="0"
+               parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label3" x="42.0" y="194.0" width="40.0"
+               height="20.0" fontSize="12.0" alignment="left" text="TEMPO" parentComponent="MOD"
+               fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label4" x="51.0" y="139.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="DIV" editable="0"
+               parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label5" x="178.0" y="138.0" width="30.0"
+               height="20.0" fontSize="12.0" alignment="left" text="DIV" editable="0"
+               parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptSliderPack" id="slidermod1" x="257.0" y="13.0" width="130.0"
+               height="60.0" itemColour="4294312962" itemColour2="4278807217"
+               processorId="HARMONIC" SliderPackIndex="4" parentComponent="MOD"
+               visible="0"/>
+    <Component type="ScriptSliderPack" id="slidermod2" x="259.0" y="89.0" width="130.0"
+               height="60.0" itemColour="4294596358" itemColour2="4294962344"
+               SliderPackIndex="5" processorId="HARMONIC" parentComponent="MOD"
+               visible="0"/>
+    <Component type="ScriptLabel" id="Label24" x="206.0" y="138.0" width="40.0"
+               height="20.0" fontSize="12.0" alignment="left" text="TYPE" editable="0"
+               parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptLabel" id="Label25" x="82.0" y="138.0" width="40.0"
+               height="20.0" fontSize="12.0" alignment="left" text="TYPE" editable="0"
+               parentComponent="MOD" fontName="Montserrat"/>
+    <Component type="ScriptButton" id="modtype1" x="89.0" y="117.0" width="30.0"
+               height="30.0" filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.2199999988079071"
+               isVertical="0" parentComponent="MOD"/>
+    <Component type="ScriptButton" id="modtype2" x="214.0" y="120.0" width="30.0"
+               height="30.0" filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.2199999988079071"
+               isVertical="0" parentComponent="MOD"/>
+    <Component type="ScriptTable" id="Table1" x="257.0" y="13.0" width="130.0"
+               height="60.0" parentComponent="MOD" processorId="HARMONIC" itemColour="4294312962"
+               itemColour2="4278807217" bgColour="16772264" customColours="1"/>
+    <Component type="ScriptTable" id="Table2" x="259.0" y="89.0" width="130.0"
+               height="60.0" parentComponent="MOD" processorId="HARMONIC" tableIndex="1"
+               customColours="1" itemColour="4294596358" itemColour2="4294962344"
+               bgColour="0"/>
+    <Component type="ScriptSlider" id="ScriptSlider1" x="7.0" y="115.0" width="25.0"
                height="25.0" parentComponent="MOD" processorId="HARMONIC" parameterId="tempo1"
-               mode="TempoSync" max="18.0" stepSize="1.0" middlePosition="9.0"/>
-    <Component type="ScriptSlider" id="ScriptSlider2" x="52.0" y="105.0" width="25.0"
-               height="25.0" parentComponent="MOD" processorId="HARMONIC" parameterId="mul1"/>
-    <Component type="ScriptPanel" id="ENVS" x="9.0" y="9.0" width="240.0" height="90.0"
-               parentComponent="MOD" bgColour="4294967295" itemColour="4290882732"
-               itemColour2="4291803320">
-      <Component type="ScriptSlider" id="RELEASE1" x="80.0" y="9.0" style="Vertical"
-                 width="20.0" height="70.0" parentComponent="ENVS" mode="Time"
-                 max="20000.0" stepSize="1.0" suffix=" ms" middlePosition="1000.0"
-                 processorId="HARMONIC" parameterId="r1"/>
-      <Component type="ScriptSlider" id="SUSTAIN1" x="55.0" y="9.0" style="Vertical"
-                 width="20.0" height="70.0" parentComponent="ENVS" processorId="HARMONIC"
-                 parameterId="s1"/>
-      <Component type="ScriptSlider" id="DECAY1" x="30.0" y="9.0" style="Vertical"
-                 width="20.0" height="70.0" parentComponent="ENVS" max="10000.0"
-                 middlePosition="300.0" processorId="HARMONIC" parameterId="d1"/>
-      <Component type="ScriptSlider" id="ATTACK1" x="5.0" y="9.0" style="Vertical"
-                 width="20.0" height="70.0" parentComponent="ENVS" mode="Time"
-                 max="20000.0" stepSize="1.0" suffix=" ms" middlePosition="1000.0"
-                 processorId="HARMONIC" parameterId="a1"/>
-      <Component type="ScriptSlider" id="RELEASE2" x="190.0" y="9.0" style="Vertical"
-                 width="20.0" height="70.0" parentComponent="ENVS" mode="Time"
-                 max="20000.0" stepSize="1.0" suffix=" ms" middlePosition="1000.0"
-                 processorId="HARMONIC" parameterId="r2"/>
-      <Component type="ScriptSlider" id="SUSTAIN2" x="165.0" y="9.0" style="Vertical"
-                 width="20.0" height="70.0" parentComponent="ENVS" processorId="HARMONIC"
-                 parameterId="s2"/>
-      <Component type="ScriptSlider" id="DECAY2" x="140.0" y="9.0" style="Vertical"
-                 width="20.0" height="70.0" parentComponent="ENVS" max="10000.0"
-                 middlePosition="300.0" processorId="HARMONIC" parameterId="d2"/>
-      <Component type="ScriptSlider" id="ATTACK2" x="115.0" y="9.0" style="Vertical"
-                 width="20.0" height="70.0" parentComponent="ENVS" mode="Time"
-                 max="20000.0" stepSize="1.0" suffix=" ms" middlePosition="1000.0"
-                 processorId="HARMONIC" parameterId="a2"/>
-    </Component>
-    <Component type="ScriptSlider" id="ScriptSlider3" x="136.0" y="105.0" width="25.0"
+               mode="TempoSync" max="18.0" stepSize="1.0" middlePosition="9.0"
+               filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+               scaleFactor="0.1500000059604645" isVertical="0"/>
+    <Component type="ScriptSlider" id="ScriptSlider2" x="51.0" y="115.0" width="25.0"
+               height="25.0" parentComponent="MOD" processorId="HARMONIC" parameterId="mul1"
+               filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+               scaleFactor="0.1500000059604645" isVertical="0"/>
+    <Component type="ScriptSlider" id="RELEASE1" x="88.0" y="26.0" style="Vertical"
+               width="20.0" height="70.0" parentComponent="MOD" mode="Time"
+               max="20000.0" stepSize="1.0" suffix=" ms" middlePosition="1000.0"
+               processorId="HARMONIC" parameterId="r1"/>
+    <Component type="ScriptSlider" id="SUSTAIN1" x="63.0" y="26.0" style="Vertical"
+               width="20.0" height="70.0" parentComponent="MOD" processorId="HARMONIC"
+               parameterId="s1"/>
+    <Component type="ScriptSlider" id="DECAY1" x="38.0" y="26.0" style="Vertical"
+               width="20.0" height="70.0" parentComponent="MOD" max="10000.0"
+               middlePosition="300.0" processorId="HARMONIC" parameterId="d1"/>
+    <Component type="ScriptSlider" id="ATTACK1" x="13.0" y="26.0" style="Vertical"
+               width="20.0" height="70.0" parentComponent="MOD" mode="Time"
+               max="20000.0" stepSize="1.0" suffix=" ms" middlePosition="1000.0"
+               processorId="HARMONIC" parameterId="a1"/>
+    <Component type="ScriptSlider" id="RELEASE2" x="198.0" y="26.0" style="Vertical"
+               width="20.0" height="70.0" parentComponent="MOD" mode="Time"
+               max="20000.0" stepSize="1.0" suffix=" ms" middlePosition="1000.0"
+               processorId="HARMONIC" parameterId="r2"/>
+    <Component type="ScriptSlider" id="SUSTAIN2" x="173.0" y="26.0" style="Vertical"
+               width="20.0" height="70.0" parentComponent="MOD" processorId="HARMONIC"
+               parameterId="s2"/>
+    <Component type="ScriptSlider" id="DECAY2" x="148.0" y="26.0" style="Vertical"
+               width="20.0" height="70.0" parentComponent="MOD" max="10000.0"
+               middlePosition="300.0" processorId="HARMONIC" parameterId="d2"/>
+    <Component type="ScriptSlider" id="ATTACK2" x="123.0" y="26.0" style="Vertical"
+               width="20.0" height="70.0" parentComponent="MOD" mode="Time"
+               max="20000.0" stepSize="1.0" suffix=" ms" middlePosition="1000.0"
+               processorId="HARMONIC" parameterId="a2"/>
+    <Component type="ScriptSlider" id="ScriptSlider3" x="136.0" y="117.0" width="25.0"
                height="25.0" parentComponent="MOD" processorId="HARMONIC" parameterId="tempo2"
-               mode="TempoSync" max="18.0" stepSize="1.0" middlePosition="9.0"/>
-    <Component type="ScriptSlider" id="ScriptSlider8" x="178.0" y="105.0" width="25.0"
+               mode="TempoSync" max="18.0" stepSize="1.0" middlePosition="9.0"
+               filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+               scaleFactor="0.1500000059604645" isVertical="0"/>
+    <Component type="ScriptSlider" id="ScriptSlider8" x="178.0" y="117.0" width="25.0"
                height="25.0" parentComponent="MOD" processorId="HARMONIC" parameterId="mul2"
-               max="16.0" stepSize="1.0"/>
+               max="16.0" stepSize="1.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" scaleFactor="0.1500000059604645" isVertical="0"/>
+    <Component type="ScriptSlider" id="ScriptSlider4" x="24.0" y="91.0" width="25.0"
+               height="25.0" parentComponent="MOD" processorId="HARMONIC" parameterId="tempo1"
+               mode="TempoSync" max="18.0" stepSize="1.0" middlePosition="9.0"
+               filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+               scaleFactor="0.1500000059604645" isVertical="0"/>
   </Component>
-  <Component type="ScriptSlider" id="Knob2" x="370.0" y="210.0" width="50.0"
-             height="60.0" processorId="HARMONIC" parameterId="PITCHMODSOURCE"/>
-  <Component type="ScriptSlider" id="Knob6" x="360.0" y="410.0" width="50.0"
-             height="50.0" processorId="HARMONIC" parameterId="SHAPEMODSOURCE"/>
-  <Component type="ScriptLabel" id="Label1" x="661.0" y="20.0" text="Xolotl"
-             fontSize="30.0" width="130.0" height="30.0"/>
-  <Component type="ScriptButton" id="Button1" x="114.0" y="604.0" width="30.0"
-             height="30.0"/>
-  <Component type="ScriptButton" id="Button2" x="240.0" y="604.0" width="30.0"
-             height="30.0"/>
+  <Component type="ScriptLabel" id="Label1" x="503.0" y="-1.0" text="Xolotl"
+             fontSize="40.0" width="130.0" height="40.0" fontName="Montserrat"/>
+  <Component type="ScriptPanel" id="PRESETS" x="25.0" y="70.0" width="750.0"
+             height="420.0" itemColour="4280363686" itemColour2="4280098197"
+             visible="0">
+    <Component type="ScriptFloatingTile" id="FloatingTile1" x="448.0" y="9.0"
+               parentComponent="PRESETS" width="270.0" height="260.0" ContentType="CustomSettings"
+               bgColour="4278190080" itemColour="0" itemColour2="0" Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: true,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: false,&#10;  &quot;ClearMidiCC&quot;: true,&#10;  &quot;SampleLocation&quot;: true,&#10;  &quot;DebugMode&quot;: true,&#10;  &quot;UseOpenGL&quot;: false,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
+               FontSize="12.0"/>
+    <Component type="ScriptFloatingTile" id="ScriptFloatingTile1" x="25.0" y="10.0"
+               width="410.0" height="390.0" parentComponent="PRESETS" ContentType="PresetBrowser"
+               bgColour="4143972352" itemColour="4287692721" itemColour2="0"
+               Data="{&#10;  &quot;ShowSaveButton&quot;: true,&#10;  &quot;ShowExpansionsAsColumn&quot;: false,&#10;  &quot;ShowFolderButton&quot;: true,&#10;  &quot;ShowNotes&quot;: true,&#10;  &quot;ShowEditButtons&quot;: true,&#10;  &quot;EditButtonOffset&quot;: 10,&#10;  &quot;ShowAddButton&quot;: true,&#10;  &quot;ShowRenameButton&quot;: true,&#10;  &quot;ShowDeleteButton&quot;: true,&#10;  &quot;ShowFavoriteIcon&quot;: true,&#10;  &quot;ButtonsInsideBorder&quot;: false,&#10;  &quot;NumColumns&quot;: 3,&#10;  &quot;ColumnWidthRatio&quot;: [&#10;    0.3333333333333333,&#10;    0.3333333333333333,&#10;    0.3333333333333333&#10;  ],&#10;  &quot;ListAreaOffset&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;ColumnRowPadding&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;SearchBarBounds&quot;: [],&#10;  &quot;MoreButtonBounds&quot;: [],&#10;  &quot;SaveButtonBounds&quot;: [],&#10;  &quot;FavoriteButtonBounds&quot;: []&#10;}"/>
+  </Component>
+  <Component type="ScriptPanel" id="FMSynth" x="30.0" y="70.0" width="750.0"
+             height="420.0" itemColour="4280098197" itemColour2="4280363686"
+             bgColour="1430400675" locked="1">
+    <Component type="ScriptButton" id="Button1" x="306.0" y="360.0" filmstripImage="{PROJECT_FOLDER}button1.png"
+               scaleFactor="0.4000000059604645" isVertical="0" width="40.0"
+               height="40.0" processorId="HARMONIC" parameterId="fm-osc2track"
+               parentComponent="FMSynth"/>
+    <Component type="ScriptSlider" id="SHAPE2" x="104.0" y="107.0" width="100.0"
+               height="100.0" parentComponent="FMSynth" processorId="HARMONIC"
+               parameterId="FM-Fmamount" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5" middlePosition="0.5"
+               defaultValue="0.5"/>
+    <Component type="ScriptSlider" id="SHAPEMOD2" x="186.0" y="168.0" width="100.0"
+               height="100.0" parentComponent="FMSynth" processorId="HARMONIC"
+               parameterId="FM-mix" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" text="MAX" isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptSlider" id="RES2" x="561.0" y="170.0" width="100.0"
+               height="100.0" parentComponent="FMSynth" processorId="HARMONIC"
+               parameterId="FM-filterres" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5" min="0.300000011920929"
+               max="9.899999618530273"/>
+    <Component type="ScriptComboBox" id="FMWAVE1" x="29.0" y="59.0" width="150.0"
+               height="40.0" max="54" parentComponent="FMSynth" fontSize="51.0"
+               items="1st&#10;4op Sin 1&#10;Bell Source&#10;Belles&#10;Big&#10;BigElectric&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Double Bass&#10;EP1&#10;EP2&#10;EP3&#10;Euro Organ&#10;Fold DF 8&#10;GateAR&#10;HR Sqr 8&#10;Hard Bass&#10;LP Square 8&#10;Leap&#10;Lingo&#10;More Bell&#10;Odd Keys&#10;Rousing&#10;Sad Ring&#10;Scrd&#10;Shape B 2&#10;Shape B 4&#10;Shape B 6&#10;Shape B 8&#10;Shape C 2&#10;Shape C 4&#10;Shape C 6&#10;Shape C 8&#10;Simple Guitar&#10;SinFFM 1&#10;Special K&#10;Spook&#10;Thick Tri 4&#10;Tinkly&#10;TriSaw FFM 1&#10;TriSaw FFM 8&#10;mth&#10;nsty1&#10;nsty2&#10;pswp&#10;sawd&#10;simr"/>
+    <Component type="ScriptSlider" id="SHAPE4" x="487.0" y="33.0" width="100.0"
+               height="100.0" parentComponent="FMSynth" processorId="HARMONIC"
+               parameterId="CUT" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptSlider" id="SHAPEMOD6" x="571.0" y="34.0" width="100.0"
+               height="100.0" parentComponent="FMSynth" processorId="HARMONIC"
+               parameterId="CUTMOD" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptSlider" id="PITCHMOD1" x="267.0" y="107.0" width="100.0"
+               height="100.0" parentComponent="FMSynth" processorId="HARMONIC"
+               parameterId="FM-osc-2pitch" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5" defaultValue="0.5"/>
+    <Component type="ScriptSlider" id="PITCH1" x="3.0" y="107.0" width="100.0"
+               height="100.0" parentComponent="FMSynth" processorId="HARMONIC"
+               parameterId="FM-osc1-pitch" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5" middlePosition="0.5"
+               defaultValue="0.5"/>
+    <Component type="ScriptSlider" id="Knob8" x="642.0" y="33.0" parentComponent="FMSynth"
+               width="100.0" height="100.0" processorId="HARMONIC" parameterId="CUTMODSOURCE"
+               filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+               isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptSlider" id="FTYPE1" x="646.0" y="170.0" width="100.0"
+               height="100.0" parentComponent="FMSynth" processorId="HARMONIC"
+               parameterId="FM-filtertype" middlePosition="0.25" stepSize="0.1000000014901161"
+               filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+               isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL3" x="21.0" y="188.0" width="60.0"
+               height="30.0" parentComponent="FMSynth" text="PITCH" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL14" x="123.0" y="190.0" width="60.0"
+               height="30.0" parentComponent="FMSynth" text="FM" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL17" x="663.0" y="129.0" width="60.0"
+               height="30.0" parentComponent="FMSynth" text="MOD SOURCE" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL18" x="590.0" y="129.0" width="60.0"
+               height="30.0" parentComponent="FMSynth" text="MOD" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL19" x="513.0" y="129.0" width="60.0"
+               height="30.0" parentComponent="FMSynth" text="CUTOFF" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL20" x="572.0" y="258.0" width="80.0"
+               height="30.0" parentComponent="FMSynth" text="RESONANCE" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL21" x="656.0" y="260.0" width="80.0"
+               height="30.0" parentComponent="FMSynth" text="TYPE" editable="0"/>
+    <Component type="ScriptLabel" id="WAVE3" x="40.0" y="0.0" width="120.0"
+               height="60.0" parentComponent="FMSynth" text="OSC 1" fontSize="20.0"
+               editable="0"/>
+    <Component type="ScriptSlider" id="PITCHMOD2" x="369.0" y="107.0" width="100.0"
+               height="100.0" parentComponent="FMSynth" processorId="HARMONIC"
+               parameterId="feedback" middlePosition="0.4950000047683716" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5" max="0.9900000095367432"/>
+    <Component type="ScriptSlider" id="SHAPEMOD7" x="486.0" y="170.0" width="100.0"
+               height="100.0" parentComponent="FMSynth" processorId="HARMONIC"
+               parameterId="FM-filtermod" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5" defaultValue="0.5"
+               min="-1.0"/>
+    <Component type="ScriptSlider" id="SHAPEMOD8" x="486.0" y="290.0" width="100.0"
+               height="100.0" parentComponent="FMSynth" processorId="HARMONIC"
+               parameterId="FM-ampmod" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptSlider" id="SHAPEMOD9" x="568.0" y="283.0" width="100.0"
+               height="100.0" parentComponent="FMSynth" processorId="HARMONIC"
+               parameterId="FM-ampmodmod" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL4" x="286.0" y="188.0" width="60.0"
+               height="30.0" parentComponent="FMSynth" text="PITCH" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL15" x="205.0" y="263.0" width="60.0"
+               height="30.0" parentComponent="FMSynth" text="MIX" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL5" x="373.0" y="189.0" width="90.0"
+               height="30.0" parentComponent="FMSynth" text="FEEDBACK" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL22" x="496.0" y="260.0" width="80.0"
+               height="30.0" parentComponent="FMSynth" text="FFM" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL23" x="496.0" y="380.0" width="80.0"
+               height="30.0" parentComponent="FMSynth" text="AM" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL24" x="576.0" y="380.0" width="80.0"
+               height="30.0" parentComponent="FMSynth" text="VOLUME" editable="0"/>
+    <Component type="ScriptComboBox" id="FMWAVE2" x="296.0" y="59.0" width="150.0"
+               height="40.0" max="54" parentComponent="FMSynth" fontSize="51.0"
+               items="1st&#10;4op Sin 1&#10;Bell Source&#10;Belles&#10;Big&#10;BigElectric&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Double Bass&#10;EP1&#10;EP2&#10;EP3&#10;Euro Organ&#10;Fold DF 8&#10;GateAR&#10;HR Sqr 8&#10;Hard Bass&#10;LP Square 8&#10;Leap&#10;Lingo&#10;More Bell&#10;Odd Keys&#10;Rousing&#10;Sad Ring&#10;Scrd&#10;Shape B 2&#10;Shape B 4&#10;Shape B 6&#10;Shape B 8&#10;Shape C 2&#10;Shape C 4&#10;Shape C 6&#10;Shape C 8&#10;Simple Guitar&#10;SinFFM 1&#10;Special K&#10;Spook&#10;Thick Tri 4&#10;Tinkly&#10;TriSaw FFM 1&#10;TriSaw FFM 8&#10;mth&#10;nsty1&#10;nsty2&#10;pswp&#10;sawd&#10;simr"/>
+    <Component type="ScriptSlider" id="SHAPE5" x="3.0" y="213.0" width="100.0"
+               height="100.0" parentComponent="FMSynth" processorId="HARMONIC"
+               parameterId="FM-modmod" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5" middlePosition="0.0"
+               min="-1.0"/>
+    <Component type="ScriptSlider" id="Knob9" x="90.0" y="213.0" parentComponent="FMSynth"
+               width="100.0" height="100.0" processorId="HARMONIC" parameterId="PITCHMODSOURCE"
+               filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+               isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptSlider" id="SHAPEMOD10" x="267.0" y="213.0" width="100.0"
+               height="100.0" parentComponent="FMSynth" processorId="HARMONIC"
+               parameterId="SHPMOD" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptSlider" id="Knob10" x="369.0" y="213.0" parentComponent="FMSynth"
+               width="100.0" height="100.0" processorId="HARMONIC" parameterId="SHAPEMODSOURCE"
+               filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+               isVertical="0" scaleFactor="0.5"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL25" x="386.0" y="310.0" width="60.0"
+               height="30.0" parentComponent="FMSynth" text="MOD SOURCE" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL26" x="286.0" y="310.0" width="60.0"
+               height="30.0" parentComponent="FMSynth" text="MOD" editable="0"/>
+    <Component type="ScriptLabel" id="WAVE4" x="310.0" y="0.0" width="120.0"
+               height="60.0" parentComponent="FMSynth" text="OSC 2" fontSize="20.0"
+               editable="0"/>
+    <Component type="ScriptLabel" id="WAVE5" x="560.0" y="0.0" width="120.0"
+               height="60.0" parentComponent="FMSynth" text="FILTER" fontSize="20.0"
+               editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL27" x="329.0" y="410.0" width="60.0"
+               height="30.0" parentComponent="FMSynth" text="MOD" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL28" x="346.0" y="365.0" width="60.0"
+               height="30.0" parentComponent="FMSynth" text="TRACK" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL30" x="20.0" y="310.0" width="60.0"
+               height="30.0" parentComponent="FMSynth" text="MOD" editable="0"/>
+    <Component type="ScriptLabel" id="PITCH-MABEL31" x="120.0" y="310.0" width="60.0"
+               height="30.0" parentComponent="FMSynth" text="MOD SOURCE" editable="0"/>
+    <Component type="ScriptLabel" id="WAVE6" x="26.0" y="355.0" width="120.0"
+               height="60.0" parentComponent="FMSynth" text="2 OP FM" fontSize="30.0"
+               editable="0"/>
+  </Component>
+  <Component type="ScriptLabel" id="Label30" x="500.0" y="32.0" text="SUPER FUNTIME SYNTHESIZER"
+             fontSize="15.0" width="140.0" height="40.0" fontName="Montserrat"/>
 </ContentProperties>
