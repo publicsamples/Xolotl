@@ -2,7 +2,7 @@
 
 <ProjectSettings>
   <Name value="Xolotl"/>
-  <Version value="0.0.1"/>
+  <Version value="0.2.0"/>
   <Description value=""/>
   <BundleIdentifier value="com.modularsamples.product"/>
   <PluginCode value="Msxo"/>
@@ -23,7 +23,7 @@
   <EnableMidiInputFX value="No"/>
   <EnableMidiOut value="No"/>
   <EnableSoundGeneratorsFX value="No"/>
-  <VST3Support value="No"/>
+  <VST3Support value="1"/>
   <UseRawFrontend value="No"/>
   <ExpansionType value="Disabled"/>
   <EncryptionKey value=""/>

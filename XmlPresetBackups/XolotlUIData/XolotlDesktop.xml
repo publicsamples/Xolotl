@@ -71,7 +71,7 @@
              width="157.0" height="170.0"/>
   <Component type="ScriptPanel" id="HARMONICSYNTH" x="20.0" y="70.0" width="750.0"
              height="420.0" itemColour="4280098197" itemColour2="4280363686"
-             bgColour="1430400675" locked="1">
+             bgColour="1430400675" locked="1" visible="0">
     <Component type="ScriptSliderPack" id="pitch-sp" x="166.0" y="16.0" width="250.0"
                height="180.0" parentComponent="HARMONICSYNTH" processorId="HARMONIC"
                itemColour="4294962344" itemColour2="0"/>
@@ -369,9 +369,9 @@
                bgColour="4143972352" itemColour="4287692721" itemColour2="0"
                Data="{&#10;  &quot;ShowSaveButton&quot;: true,&#10;  &quot;ShowExpansionsAsColumn&quot;: false,&#10;  &quot;ShowFolderButton&quot;: true,&#10;  &quot;ShowNotes&quot;: true,&#10;  &quot;ShowEditButtons&quot;: true,&#10;  &quot;EditButtonOffset&quot;: 10,&#10;  &quot;ShowAddButton&quot;: true,&#10;  &quot;ShowRenameButton&quot;: true,&#10;  &quot;ShowDeleteButton&quot;: true,&#10;  &quot;ShowFavoriteIcon&quot;: true,&#10;  &quot;ButtonsInsideBorder&quot;: false,&#10;  &quot;NumColumns&quot;: 3,&#10;  &quot;ColumnWidthRatio&quot;: [&#10;    0.3333333333333333,&#10;    0.3333333333333333,&#10;    0.3333333333333333&#10;  ],&#10;  &quot;ListAreaOffset&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;ColumnRowPadding&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;SearchBarBounds&quot;: [],&#10;  &quot;MoreButtonBounds&quot;: [],&#10;  &quot;SaveButtonBounds&quot;: [],&#10;  &quot;FavoriteButtonBounds&quot;: []&#10;}"/>
   </Component>
-  <Component type="ScriptPanel" id="FMSynth" x="30.0" y="70.0" width="750.0"
+  <Component type="ScriptPanel" id="FMSynth" x="20.0" y="70.0" width="750.0"
              height="420.0" itemColour="4280098197" itemColour2="4280363686"
-             bgColour="1430400675" locked="1" visible="0">
+             bgColour="1430400675" locked="1">
     <Component type="ScriptButton" id="Button1" x="306.0" y="360.0" filmstripImage="{PROJECT_FOLDER}button1.png"
                scaleFactor="0.4000000059604645" isVertical="0" width="40.0"
                height="40.0" processorId="HARMONIC" parameterId="fm-osc2track"

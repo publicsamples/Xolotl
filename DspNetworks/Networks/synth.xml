@@ -833,7 +833,7 @@
               </SwitchTarget>
             </SwitchTargets>
             <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
             </Parameters>
           </Node>
           <Node ID="sb_container" FactoryPath="container.chain" NodeColour="4284979609"
@@ -2081,9 +2081,9 @@
                                   <Connection NodeId="gain4" ParameterId="Gain"/>
                                 </ModulationTargets>
                                 <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Add"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                                 </Parameters>
                               </Node>
                             </Nodes>
