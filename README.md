@@ -1,6 +1,12 @@
-# Xolotl
+# Xolotl: Super Funtime Synthesizer
 
- A harmonic syntheszer that uses the Quetzalcoatl sound library 
+ A a dual mode, easy to use synth with crazy sounds.
+ 
+ **Harmonic Mode**
+
+![Xolot Harmonic](https://raw.githubusercontent.com/publicsamples/Xolotl/main/Xolotl-hatm.png)
 
 
-![Xolotl](https://raw.githubusercontent.com/publicsamples/Xolotl/main/Xolotl.png)
+**FM Mode**
+
+![Xolot FM](https://raw.githubusercontent.com/publicsamples/Xolotl/main/Xolotl-fm.png)
