@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentProperties DeviceType="Desktop">
+  <Component type="ScriptAudioWaveform" id="AudioWaveform1" x="10.0" y="310.0"
+             width="580.0" height="200.0" processorId="Sampler1" saveInPreset="0"/>
+  <Component type="ScriptPanel" id="LoopPanel" x="10.0" y="310.0" height="200.0"
+             width="580.0" allowCallbacks="All Callbacks" visible="0"/>
+  <Component type="ScriptButton" id="Loop" x="10.0" y="530.0" saveInPreset="0"/>
+  <Component type="ScriptSlider" id="XFade" x="290.0" y="140.0" saveInPreset="0"/>
+  <Component type="ScriptButton" id="DetectPitch" x="150.0" y="530.0" enableMidiLearn="0"
+             saveInPreset="0" isMomentary="1"/>
+  <Component type="ScriptPanel" id="SampleDropper" x="20.0" y="310.0" width="540.0"
+             allowCallbacks="Clicks &amp; Hover" height="200.0" saveInPreset="1"
+             visible="0"/>
+  <Component type="ScriptButton" id="ShowDropper" x="100.0" y="260.0" enableMidiLearn="0"
+             saveInPreset="0" radioGroup="1.0"/>
+  <Component type="ScriptButton" id="EditRange" x="235.0" y="260.0" enableMidiLearn="0"
+             saveInPreset="0" radioGroup="1.0"/>
+  <Component type="ScriptButton" id="EditLoop" x="373.0" y="260.0" enableMidiLearn="0"
+             saveInPreset="0" radioGroup="1.0"/>
+  <Component type="ScriptButton" id="ReferenceTone" x="150.0" y="561.0" processorId="Sine Wave Generator1"
+             parameterId="Enabled" saveInPreset="0"/>
+  <Component type="ScriptComboBox" id="SampleMapLoader" x="10.0" y="560.0"
+             max="158" saveInPreset="0" items="../SampleMaps&#10;/Users/rick/Music/Audio Music Apps/Xolotl/Xolotl/SampleMaps.xml&#10;1st&#10;4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Bell Source&#10;Belles&#10;Big&#10;BigElectric&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;CS30/2nd Finger&#10;CS30/3rd Day&#10;CS30/Astonished&#10;CS30/Bargain&#10;CS30/Basic&#10;CS30/Brew&#10;CS30/Bumpy&#10;CS30/Busy&#10;CS30/Bypass&#10;CS30/Cream&#10;CS30/Curious&#10;CS30/Devistator&#10;CS30/Drama&#10;CS30/FM Rings&#10;CS30/Feed Fwd&#10;CS30/Grizzle&#10;CS30/Hell Cat&#10;CS30/K-Legs&#10;CS30/K30L&#10;CS30/LoopG&#10;CS30/Maybe Strings&#10;CS30/Messing Around&#10;CS30/Pseudo Sync&#10;CS30/RM&#10;CS30/Says Things&#10;CS30/Screamer&#10;CS30/Shakey Bass&#10;CS30/Spl Git&#10;CS30/Twinkle toes&#10;CS30/stix&#10;Double Bass&#10;EP1&#10;EP2&#10;EP3&#10;Euro Organ&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;GateAR&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;Hard Bass&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Leap&#10;Lingo&#10;More Bell&#10;Object 0x1c921c18&#10;Object 0x1c9c1e18&#10;Object 0x1cb16e18&#10;Object 0x1cfa0418&#10;Object 0x9902f020&#10;Odd Keys&#10;Rousing&#10;Sad Ring&#10;Scrd&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;Simple Guitar&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Special K&#10;Spook&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;Tinkly&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;em25/Brass 16&#10;em25/Brass 4&#10;em25/Brass 8&#10;em25/Organ 16&#10;em25/Organ 2&#10;em25/Organ 4&#10;em25/Organ 8&#10;em25/String 16&#10;em25/String 4&#10;em25/String 8&#10;items&#10;mth&#10;name&#10;nsty1&#10;nsty2&#10;pswp&#10;sawd&#10;simr&#10;slotgetFilename&#10;user&#10;{XYZ::SampleMap}"
+             text="Select internal"/>
+  <Component type="ScriptButton" id="Reverse" x="460.0" y="540.0" processorId="Sampler1"
+             parameterId="Reversed"/>
+  <Component type="ScriptButton" id="SaveAudioButton1" x="470.0" y="570.0"/>
+  <Component type="ScriptLabel" id="name" x="320.0" y="540.0" fontSize="32.0"
+             width="120.0" height="40.0" text="ttytyt"/>
+</ContentProperties>

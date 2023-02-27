@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Preset Version="0.2.0">
+  <Content Processor="Interface">
+    <Control type="ScriptAudioWaveform" id="OldWaveform" value="0.0" data="/Users/rick/Music/slight.wav"
+             rangeStart="0" rangeEnd="2616872"/>
+  </Content>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+</Preset>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentProperties DeviceType="Desktop">
+  <Component type="ScriptPanel" id="Panel3" x="28.0" y="25.0" itemColour="587202559"
+             itemColour2="436207615" textColour="2080374783" width="598.0"
+             height="510.0" borderSize="1.0">
+    <Component type="ScriptedViewport" id="Viewport1" x="48.0" y="192.0" width="230.0"
+               height="150.0" parentComponent="Panel3">
+      <Component type="ScriptPanel" id="Panel1" x="250.0" y="310.0" height="60"
+                 width="210.0" parentComponent="Viewport1"/>
+    </Component>
+    <Component type="ScriptedViewport" id="Viewport2" x="350.0" y="192.0" width="230.0"
+               height="122.0" parentComponent="Panel3">
+      <Component type="ScriptPanel" id="Panel2" x="560.0" y="330.0" width="210.0"
+                 height="900" parentComponent="Viewport2"/>
+    </Component>
+    <Component type="ScriptLabel" id="HiddenLabel" x="48.0" y="463.0" width="498.0"
+               text="{EXP::CS30l}3rd Day" saveInPreset="1" editable="0" parentComponent="Panel3"/>
+    <Component type="ScriptLabel" id="CatLabel" x="48.0" y="143.0" width="208.0"
+               bgColour="503316479" fontName="Oxygen" editable="0" text="Select Expansion"
+               fontSize="21.0" parentComponent="Panel3"/>
+    <Component type="ScriptLabel" id="CatLabel1" x="348.0" y="143.0" width="208.0"
+               bgColour="503316479" fontName="Oxygen" editable="0" text="Select SampleMap"
+               fontSize="21.0" parentComponent="Panel3"/>
+    <Component type="ScriptAudioWaveform" id="AudioWaveform1" x="48.0" y="353.0"
+               processorId="Sampler1" width="510.0" parentComponent="Panel3"/>
+    <Component type="ScriptLabel" id="CatLabel2" x="48.0" y="30.0" width="508.0"
+               bgColour="503316479" fontName="Oxygen" editable="0" text="Sample Map Test"
+               fontSize="25.0" height="38.0" parentComponent="Panel3"/>
+  </Component>
+</ContentProperties>

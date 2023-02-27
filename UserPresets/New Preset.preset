@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Preset Version="0.2.0">
+  <Content Processor="Interface">
+    <Control type="ScriptAudioWaveform" id="OldWaveform" value="0.0" data="/Users/rick/Music/bounccee.wav"
+             rangeStart="75791" rangeEnd="1418043"/>
+  </Content>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+</Preset>
