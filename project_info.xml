@@ -2,11 +2,11 @@
 
 <ProjectSettings>
   <Name value="Xolotl"/>
-  <Version value="0.2.0"/>
+  <Version value="0.4.1"/>
   <Description value=""/>
   <BundleIdentifier value="com.modularsamples.product"/>
   <PluginCode value="Msxo"/>
-  <EmbedAudioFiles value="Yes"/>
+  <EmbedAudioFiles value="1"/>
   <EmbedImageFiles value="Yes"/>
   <SupportFullDynamicsHLAC value="No"/>
   <AdditionalDspLibraries value=""/>
@@ -25,8 +25,8 @@
   <EnableSoundGeneratorsFX value="No"/>
   <VST3Support value="1"/>
   <UseRawFrontend value="No"/>
-  <ExpansionType value="FilesOnly"/>
-  <EncryptionKey value=""/>
+  <ExpansionType value="Encrypted"/>
+  <EncryptionKey value="msxo"/>
   <LinkExpansionsToProject value="No"/>
   <ReadOnlyFactoryPresets value="No"/>
   <ForceStereoOutput value="No"/>

@@ -1,45 +1,6 @@
 Content.makeFrontInterface(800, 720);
+
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
-
-
-include("factory_waves.js");
-include("exp_waves.js");
-
-
-var Maps = [];
-
-Maps.push(Basic);
-Maps.push(ESQ1);
-Maps.push(FM);
-Maps.push(K3);
-Maps.push(misc);
-Maps.push(cs30);
-Maps.push(em25);
-Maps.push(sys101);
-Maps.push(jx3p);
-
-const var LoadExp = Content.getComponent("LoadExp");
-
-
-inline function onLoadExpControl(component, value)
-{
-		Categories.showControl(value);        
-		Categoriesexp.showControl(1-value);
-		CategoriesB.showControl(value);        
-				CategoriesexpB.showControl(1-value);
-	
-};
-
-Content.getComponent("LoadExp").setControlCallback(onLoadExpControl);
-
-
-var SMAPS = ["Basic", "ESQ1", "FM","K3", "misc"];
-
-
-var SMAPSexp = ["Basic", "ESQ1", "FM","K3", "misc", "cs30", "em25", "sys101", "jx3p"];
-
-var Cats = [];
-Cats.push(SMAPS);
 
 const audio = Engine.createAndRegisterAudioFile(0);
 
@@ -51,103 +12,151 @@ const slot1 = harm.getAudioFile(1);
 const slot2 = harm.getAudioFile(2);
 const slot3 = harm.getAudioFile(3);
 
-const var HARMONIC = Synth.getChildSynth("HARMONIC");
+const var HARMONIC = Synth.getChildSynth("HARMONIC")
+const var BankA = Content.getComponent("BankA");
+const var BankA1 = Content.getComponent("BankA1");
+const var ExpansionSelector = Content.getComponent("ExpansionSelector");
 
-const var SAMPLE = Content.getComponent("SAMPLE");
+const var expHandler = Engine.createExpansionHandler();
 
+const var expansions = expHandler.getExpansionList();
 
-inline function onSAMPLEControl(component, value)
+expHandler.setAllowedExpansionTypes([expHandler.FileBased, 
+                                     expHandler.Intermediate, 
+                                     expHandler.Encrypted]);
+
+                                     
+const var expansionNames = [];
+
+reg hr;
+inline function onLoadExpControl(component, value)
 {
-	slot.loadFile("{XYZ::SampleMap}" + component.getItemText());
+    if (value)
+    {
+        FileSystem.browse("", false, "", function(result)
+        {
+            hr = result;
+	        
+            FileSystem.browseForDirectory("", function(dir)
+            {
+                expHandler.installExpansionFromPackage(hr, dir);
+            });
+        });
+    }
 };
 
-SAMPLE.setControlCallback(onSAMPLEControl);
+Content.getComponent("LoadExp").setControlCallback(onLoadExpControl);
+
+expansionNames.push("FACTORY");
+
+for(e in expHandler.getExpansionList())
+    expansionNames.push(e.getProperties().Name);
 
 
-const var SAMPLEb = Content.getComponent("SAMPLEb");
+ExpansionSelector.set("items", expansionNames.join("\n"));
 
 
-inline function onSAMPLEbControl(component, value)
+
+
+inline function onExpansionSelectorControl(component, value)
 {
-	slot1.loadFile("{XYZ::SampleMap}" + component.getItemText());
+	local expansionToLoad = component.getItemText();
+	
+
+	if(expansionToLoad == expansionNames[0])
+        expansionToLoad = "";
+    
+	expHandler.setCurrentExpansion(expansionToLoad);
 };
 
-SAMPLEb.setControlCallback(onSAMPLEbControl);
+Content.getComponent("ExpansionSelector").setControlCallback(onExpansionSelectorControl);
 
-const var Categories = Content.getComponent("Categories");
-
-Categories.set("items", SMAPS.join("\n"));
-
-inline function onCategoriesControl(component, value)
-{
-
-	SAMPLE.set("items", [].join("\n")); 
-	SAMPLE.set("items", Maps[value-1].join("\n"));
-	SAMPLE.setValue(1);
+var sampleMaps = Sampler.getSampleMapList();
+var sampleMapsed = Sampler.getSampleMapList();
 
 
 
-};
-
-Content.getComponent("Categories").setControlCallback(onCategoriesControl);
-
-
-
-const var Categoriesexp = Content.getComponent("Categoriesexp");
-
-Categoriesexp.set("items", SMAPSexp.join("\n"));
-
-
-inline function onCategoriesexpControl(component, value)
-{	SAMPLE.set("items", [].join("\n")); // remove the old list
-	SAMPLE.set("items", Maps[value-1].join("\n"));
-	SAMPLE.setValue(1);
-
-
-};
-
-Content.getComponent("Categoriesexp").setControlCallback(onCategoriesexpControl);
-
-
-
-const var CategoriesB = Content.getComponent("CategoriesB");
-
-CategoriesB.set("items", SMAPS.join("\n"));
-
-inline function onCategoriesBControl(component, value)
+inline function newcombobox(newExpansion)
 {
 
-	SAMPLEb.set("items", [].join("\n")); 
-	SAMPLEb.set("items", Maps[value-1].join("\n"));
-	SAMPLEb.setValue(1);
+       if(isDefined(newExpansion))
+        
+       
+    {
+        local cx = expHandler.getCurrentExpansion();
+        sampleMaps = cx.getSampleMapList();
+        sampleMapsed = cx.getSampleMapList();
+        local expansionProps = cx.getProperties();
+        local expName = expansionProps.Name;
+        
+        for (i = 0; i < sampleMapsed.length; i++)
+        {
+   //     sampleMapsed[i] = sampleMapsed[i].replace("{EXP::");
+  //   sampleMapsed[i] = sampleMapsed[i].replace("}");
+   //    sampleMapsed[i] = sampleMapsed[i].replace(expName);
 
+        }
+       
+        BankA.set("items", "");
+        BankA.set("items", sampleMapsed.join("\n"));
+BankA1.set("items", "");
+      BankA1.set("items", sampleMapsed.join("\n"));
+
+    }
+    
+    else
+    
+    {
+        sampleMaps = Sampler.getSampleMapList();
+        BankA.set("items", "");
+        BankA.set("items", sampleMaps.join("\n"));
+		BankA1.set("items", "");
+        BankA1.set("items", sampleMaps.join("\n"));
+    }
+    
+    
+}
+
+expHandler.setExpansionCallback(newcombobox);
+
+newcombobox(undefined);
+
+const var ShapeLabel = Content.getComponent("ShapeLabel");
+
+
+
+inline function onBankAControl(component, value)
+{
+
+  slot.loadFile("{XYZ::SampleMap}"  + component.getItemText());
+//slot.loadFile("{XYZ::SampleMap}" + "{EXP::Expansion}" + component.getItemText());
+//  	slot.setFile(Maps[value-1]);
+
+
+ShapeLabel.set("text",BankA.get("items").split("\n")[value-1].replace("EXP::","").replace("}").replace(expName).replace("{").replace("cs30").replace("K3").replace("FM").replace("misc").replace("sys101").replace("XP1").replace("XP2").replace("Basic"));
 
 
 };
 
-Content.getComponent("CategoriesB").setControlCallback(onCategoriesBControl);
+
+Content.getComponent("BankA").setControlCallback(onBankAControl);
 
 
 
-const var CategoriesexpB = Content.getComponent("CategoriesexpB");
-
-CategoriesexpB.set("items", SMAPSexp.join("\n"));
+const var ShapeLabel1 = Content.getComponent("ShapeLabel1");
 
 
-inline function onCategoriesexpBControl(component, value)
-{	SAMPLEb.set("items", [].join("\n")); // remove the old list
-	SAMPLEb.set("items", Maps[value-1].join("\n"));
-	SAMPLEb.setValue(1);
+inline function onBankA1Control(component, value)
+{
+  slot1.loadFile("{XYZ::SampleMap}"  + component.getItemText());
+//slot.loadFile("{XYZ::SampleMap}" + "{EXP::Expansion}" + component.getItemText());
+//  	slot.setFile(Maps[value-1]);
 
 
+ShapeLabel1.set("text",BankA1.get("items").split("\n")[value-1].replace("EXP::","").replace("}").replace(expName).replace("{").replace("cs30").replace("K3").replace("FM").replace("misc").replace("sys101").replace("XP1").replace("XP2").replace("Basic"));
 };
 
-Content.getComponent("CategoriesexpB").setControlCallback(onCategoriesexpBControl);
-
-
-
-
-
+Content.getComponent("BankA1").setControlCallback(onBankA1Control);
 
 
 const var modtype1 = Content.getComponent("modtype1");
@@ -194,22 +203,6 @@ inline function onPRESETBUTTONControl(component, value)
 
 Content.getComponent("PRESETBUTTON").setControlCallback(onPRESETBUTTONControl);
 
-const var mode = Content.getComponent("mode");
-
-const var HARMONICSYNTH = Content.getComponent("HARMONICSYNTH");
-
-const var FMSynth = Content.getComponent("FMSynth");
-
-
-inline function onmodeControl(component, value)
-{
-		HARMONICSYNTH.showControl(value);         FMSynth.showControl(1-value);
-	 HARMONIC.setAttribute(HARMONIC.synthmode, 0);
-	 HARMONIC.setAttribute(HARMONIC.synthmode,1-value);
-       
-};
-
-Content.getComponent("mode").setControlCallback(onmodeControl);
 
 
 //Draw Combobox
@@ -220,7 +213,7 @@ laf.registerFunction("drawComboBox", function(g, obj)
     g.setColour(obj.bgColour);
     g.drawRoundedRectangle(obj.area, 3.0, 3.0);
     g.setColour(Colours.withAlpha(obj.textColour, (obj.enabled && obj.active) ? 1.0 : 0.2));
-    g.setFont("Montserrat", 16.0);
+ //  g.setFont("Montserrat", 16.0);
    
   
     var a = obj.area;
@@ -229,22 +222,21 @@ laf.registerFunction("drawComboBox", function(g, obj)
 
 });
 
-const var dsync = Content.getComponent("dsync");
-const var dsmooth = Content.getComponent("dsmooth");
-const var ddiv = Content.getComponent("ddiv");
-
-const var ScriptFX1 = Synth.getEffect("Script FX1");
+const var ulp = Content.getComponent("expansionad");
 
 
-inline function ondsyncControl(component, value)
+ulp.setMouseCallback(function(event)
 {
-	ddiv.showControl(value);        
-	 dsmooth.showControl(1-value);
-	 ScriptFX1.setAttribute(ScriptFX1.sync, 0);
-	 ScriptFX1.setAttribute(ScriptFX1.sync,1-value);
-};
-
-Content.getComponent("dsync").setControlCallback(ondsyncControl);
+  if (event.clicked)
+  {
+    Engine.openWebsite("https://modularsamples.gumroad.com/l/rhnqwh");
+  } 
+  else 
+  {
+    link_hover = event.hover;
+    this.repaint();
+  }
+});
 
 function onNoteOn()
 {

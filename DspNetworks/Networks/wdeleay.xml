@@ -87,8 +87,7 @@
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
             </Parameters>
           </Node>
-          <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
-                Folded="1">
+          <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0">
             <Properties>
               <Property ID="Mode" Value="Fixed"/>
             </Properties>
@@ -230,7 +229,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -249,7 +250,7 @@
                           <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -375,7 +376,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain30" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -394,7 +397,7 @@
                           <Node ID="gain30" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -520,7 +523,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain28" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -539,7 +544,7 @@
                           <Node ID="gain28" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -665,7 +670,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain26" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -684,7 +691,7 @@
                           <Node ID="gain26" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -810,7 +817,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain24" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -829,7 +838,7 @@
                           <Node ID="gain24" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -955,7 +964,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain22" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -974,7 +985,7 @@
                           <Node ID="gain22" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -1100,7 +1111,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain20" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -1119,7 +1132,7 @@
                           <Node ID="gain20" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -1245,7 +1258,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain18" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -1264,7 +1279,7 @@
                           <Node ID="gain18" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -1390,7 +1405,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain16" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -1409,7 +1426,7 @@
                           <Node ID="gain16" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -1535,7 +1552,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain14" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -1554,7 +1573,7 @@
                           <Node ID="gain14" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -1680,7 +1699,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain12" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -1699,7 +1720,7 @@
                           <Node ID="gain12" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -1825,7 +1846,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain10" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -1844,7 +1867,7 @@
                           <Node ID="gain10" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -1970,7 +1993,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain8" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -1989,7 +2014,7 @@
                           <Node ID="gain8" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -2115,7 +2140,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain6" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -2134,7 +2161,7 @@
                           <Node ID="gain6" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -2260,7 +2287,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain4" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -2279,7 +2308,7 @@
                           <Node ID="gain4" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -2405,7 +2434,9 @@
                     </Properties>
                     <SwitchTargets>
                       <SwitchTarget>
-                        <Connections/>
+                        <Connections>
+                          <Connection NodeId="gain2" ParameterId="Gain"/>
+                        </Connections>
                       </SwitchTarget>
                       <SwitchTarget>
                         <Connections>
@@ -2424,7 +2455,7 @@
                           <Node ID="gain2" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
