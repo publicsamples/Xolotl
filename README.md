@@ -2,7 +2,7 @@
 
 A dual oscillator, harmonic synthesizer. 
 
-![Xolot](https://raw.githubusercontent.com/publicsamples/Xolotl/main/Xolotl-hatm.png)
+![Xolot](https://raw.githubusercontent.com/publicsamples/Xolotl/main/Xolotl.png)
 
 The bars represent different stages in the oscillator.
 
