@@ -9,8 +9,7 @@ const var harm = Synth.getAudioSampleProcessor("HARMONIC");
                 
 const slot = harm.getAudioFile(0);
 const slot1 = harm.getAudioFile(1);
-const slot2 = harm.getAudioFile(2);
-const slot3 = harm.getAudioFile(3);
+
 
 const var HARMONIC = Synth.getChildSynth("HARMONIC")
 const var BankA = Content.getComponent("BankA");
@@ -130,10 +129,10 @@ inline function onBankAControl(component, value)
 
   slot.loadFile("{XYZ::SampleMap}"  + component.getItemText());
 //slot.loadFile("{XYZ::SampleMap}" + "{EXP::Expansion}" + component.getItemText());
-//  	slot.setFile(Maps[value-1]);
+//maps.setFile(sampleMaps[value-1]);
 
 
-ShapeLabel.set("text",BankA.get("items").split("\n")[value-1].replace("EXP::","").replace("}").replace(expName).replace("{").replace("cs30").replace("K3").replace("FM").replace("misc").replace("sys101").replace("XP1").replace("XP2").replace("Basic"));
+ShapeLabel.set("text",BankA.get("items").split("\n")[value-1].replace("EXP::","").replace("}").replace("em25").replace("{").replace("cs30").replace("K3").replace("FM").replace("misc").replace("sys101").replace("XP1").replace("XP2").replace("Basic"));
 
 
 };
@@ -150,45 +149,16 @@ inline function onBankA1Control(component, value)
 {
   slot1.loadFile("{XYZ::SampleMap}"  + component.getItemText());
 //slot.loadFile("{XYZ::SampleMap}" + "{EXP::Expansion}" + component.getItemText());
-//  	slot.setFile(Maps[value-1]);
+	//slot.setFile(maps[value-1]);
 
 
-ShapeLabel1.set("text",BankA1.get("items").split("\n")[value-1].replace("EXP::","").replace("}").replace(expName).replace("{").replace("cs30").replace("K3").replace("FM").replace("misc").replace("sys101").replace("XP1").replace("XP2").replace("Basic"));
+ShapeLabel1.set("text",BankA1.get("items").split("\n")[value-1].replace("EXP::","").replace("}").replace("em25").replace("{").replace("cs30").replace("K3").replace("FM").replace("misc").replace("sys101").replace("XP1").replace("XP2").replace("Basic"));
 };
 
 Content.getComponent("BankA1").setControlCallback(onBankA1Control);
 
 
-const var modtype1 = Content.getComponent("modtype1");
-const var slidermod1 = Content.getComponent("slidermod1");
-const var Table1 = Content.getComponent("Table1");
 
-const var pmod = Synth.getModulator("pmod");
-const var emod = Synth.getModulator("emod");
-inline function onmodtype1Control(component, value)
-{
-	Table1.showControl(value); 
-        slidermod1.showControl(1-value);
-        pmod.setAttribute(pmod.gmodtype, 0);
-        pmod.setAttribute(pmod.gmodtype,1-value);
-};
-
-Content.getComponent("modtype1").setControlCallback(onmodtype1Control);
-
-const var modtype2 = Content.getComponent("modtype2");
-const var slidermod2 = Content.getComponent("slidermod2");
-const var Table2 = Content.getComponent("Table2");
-
-
-inline function onmodtype2Control(component, value)
-{
-	Table2.showControl(value); 
-        slidermod2.showControl(1-value);
-        emod.setAttribute(emod.gmodtype, 0);
-        emod.setAttribute(emod.gmodtype,1-value);
-};
-
-Content.getComponent("modtype2").setControlCallback(onmodtype2Control);
 
 const var PRESETS = Content.getComponent("PRESETS");
 

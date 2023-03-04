@@ -3,7 +3,8 @@
 <Network ID="synth" AllowPolyphonic="1" Version="0.0.0">
   <Node FactoryPath="container.chain" ID="synth" Bypassed="0" ShowParameters="1">
     <Nodes>
-      <Node ID="mods" FactoryPath="container.modchain" Bypassed="0" ShowParameters="0">
+      <Node ID="mods" FactoryPath="container.modchain" Bypassed="0" ShowParameters="0"
+            Folded="1">
         <Nodes>
           <Node ID="splits" FactoryPath="container.split" Bypassed="0" ShowParameters="0">
             <Nodes>
@@ -305,52 +306,16 @@
               </Node>
               <Node ID="chain3" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
-                  <Node ID="tempo_sync2" FactoryPath="control.tempo_sync" Bypassed="0">
+                  <Node ID="pitch_mod" FactoryPath="core.pitch_mod" Bypassed="0">
                     <ModulationTargets>
-                      <Connection NodeId="ramp2" ParameterId="PeriodTime"/>
-                    </ModulationTargets>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
-                      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Multiplier"
-                                 Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="10.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                 ID="UnsyncedTime" Value="200.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="ramp2" FactoryPath="core.ramp" Bypassed="0">
-                    <ModulationTargets>
-                      <Connection NodeId="cable_table3" ParameterId="Value"/>
+                      <Connection NodeId="pma3" ParameterId="Add"/>
                     </ModulationTargets>
                     <ComplexData>
                       <DisplayBuffers>
                         <DisplayBuffer Index="-1"/>
                       </DisplayBuffers>
                     </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                 ID="PeriodTime" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="LoopStart" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Gate" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="clear2" FactoryPath="math.clear" Bypassed="0">
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="cable_table3" FactoryPath="control.cable_table" Bypassed="0">
-                    <ModulationTargets>
-                      <Connection NodeId="pma3" ParameterId="Add"/>
-                    </ModulationTargets>
-                    <ComplexData>
-                      <Tables>
-                        <Table Index="0"/>
-                      </Tables>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                    </Parameters>
+                    <Parameters/>
                   </Node>
                   <Node ID="extra_mod3" FactoryPath="core.extra_mod" Bypassed="0">
                     <ModulationTargets>
@@ -383,22 +348,9 @@
               </Node>
               <Node ID="chain9" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
-                  <Node ID="tempo_sync3" FactoryPath="control.tempo_sync" Bypassed="0">
+                  <Node ID="extra_mod1" FactoryPath="core.extra_mod" Bypassed="0">
                     <ModulationTargets>
-                      <Connection NodeId="ramp3" ParameterId="PeriodTime"/>
-                    </ModulationTargets>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
-                      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Multiplier"
-                                 Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                 ID="UnsyncedTime" Value="200.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="ramp3" FactoryPath="core.ramp" Bypassed="0">
-                    <ModulationTargets>
-                      <Connection NodeId="cable_table2" ParameterId="Value"/>
+                      <Connection NodeId="pma4" ParameterId="Add"/>
                     </ModulationTargets>
                     <ComplexData>
                       <DisplayBuffers>
@@ -406,28 +358,7 @@
                       </DisplayBuffers>
                     </ComplexData>
                     <Parameters>
-                      <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                 ID="PeriodTime" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="LoopStart" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Gate" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="clear3" FactoryPath="math.clear" Bypassed="0">
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="cable_table2" FactoryPath="control.cable_table" Bypassed="0">
-                    <ModulationTargets>
-                      <Connection NodeId="pma4" ParameterId="Add"/>
-                    </ModulationTargets>
-                    <ComplexData>
-                      <Tables>
-                        <Table Index="1"/>
-                      </Tables>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Index" Value="1.0"/>
                     </Parameters>
                   </Node>
                   <Node ID="extra_mod4" FactoryPath="core.extra_mod" Bypassed="0">
@@ -823,7 +754,7 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="harmpitch" FactoryPath="control.pma" Bypassed="0">
+          <Node ID="harmpitch" FactoryPath="control.pma" Bypassed="0" Folded="1">
             <ModulationTargets>
               <Connection NodeId="pitch" ParameterId="Value"/>
             </ModulationTargets>
@@ -880,8 +811,7 @@
         </Nodes>
         <Parameters/>
       </Node>
-      <Node ID="no_midi1" FactoryPath="container.no_midi" Bypassed="0" ShowParameters="0"
-            Folded="1">
+      <Node ID="no_midi1" FactoryPath="container.no_midi" Bypassed="0" ShowParameters="0">
         <Nodes>
           <Node ID="modchain1" FactoryPath="container.modchain" Bypassed="0"
                 ShowParameters="1">
@@ -1049,19 +979,19 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="clone_cable5" FactoryPath="control.clone_cable" Bypassed="0"
-                    Folded="1">
+              <Node ID="clone_cable5" FactoryPath="control.clone_cable" Bypassed="0">
                 <Properties>
                   <Property ID="Mode" Value="Fixed"/>
                 </Properties>
                 <Parameters>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
                              Value="16.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="clone_cable6" FactoryPath="control.clone_cable" Bypassed="0">
+              <Node ID="clone_cable6" FactoryPath="control.clone_cable" Bypassed="0"
+                    Folded="1">
                 <Properties>
                   <Property ID="Mode" Value="Fixed"/>
                 </Properties>
@@ -1135,7 +1065,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="clone_cable11" FactoryPath="control.clone_cable" Bypassed="0">
+              <Node ID="clone_cable11" FactoryPath="control.clone_cable" Bypassed="0"
+                    Folded="1">
                 <Properties>
                   <Property ID="Mode" Value="Fixed"/>
                 </Properties>
@@ -1162,7 +1093,7 @@
         </Properties>
         <Nodes>
           <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" NodeColour="4287927444"
-                ShowParameters="0">
+                ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader1" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -1185,7 +1116,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split6" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split6" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain17" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -1522,7 +1453,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child15" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader45" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -1545,7 +1476,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split35" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split35" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain56" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -1882,7 +1813,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child14" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader42" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -1905,7 +1836,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split33" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split33" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain53" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -2242,7 +2173,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child13" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader39" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -2265,7 +2196,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split31" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split31" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain50" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -2602,7 +2533,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child12" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader36" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -2625,7 +2556,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split29" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split29" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain47" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -2962,7 +2893,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child11" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader33" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -2985,7 +2916,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split27" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split27" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain44" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -3322,7 +3253,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child10" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader30" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -3345,7 +3276,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split25" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split25" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain41" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -3682,7 +3613,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child9" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader27" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -3705,7 +3636,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split23" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split23" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain38" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -4042,7 +3973,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child8" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader24" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -4065,7 +3996,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split21" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split21" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain35" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -4402,7 +4333,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child7" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader14" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -4425,7 +4356,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split19" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split19" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain32" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -4762,7 +4693,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child6" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader12" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -4785,7 +4716,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split17" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split17" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain29" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -5122,7 +5053,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child5" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader10" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -5145,7 +5076,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split15" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split15" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain26" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -5482,7 +5413,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child4" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader8" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -5505,7 +5436,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split13" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split13" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain24" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -5842,7 +5773,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader6" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -5865,7 +5796,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split11" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split11" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain22" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -6202,7 +6133,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader4" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -6225,7 +6156,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split9" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split9" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain20" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -6562,7 +6493,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Folded="1">
             <Nodes>
               <Node ID="xfader2" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -6585,7 +6516,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split7" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split7" FactoryPath="container.split" Bypassed="0" Folded="1">
                 <Nodes>
                   <Node ID="chain18" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -6931,7 +6862,7 @@
       <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
         <Parameters>
           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                     SkewFactor="5.422270774841309" ID="Gain" Value="-17.69999877363445"/>
+                     SkewFactor="5.422270774841309" ID="Gain" Value="-4.899998582899585"/>
           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                      SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -7028,13 +6959,11 @@
       <Parameter ID="tempo1" MinValue="0.0" MaxValue="18.0" Value="1.0" StepSize="1.0">
         <Connections>
           <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
-          <Connection NodeId="tempo_sync2" ParameterId="Tempo"/>
         </Connections>
       </Parameter>
       <Parameter ID="mul1" MinValue="1.0" MaxValue="16.0" Value="1.0" StepSize="1.0">
         <Connections>
           <Connection NodeId="tempo_sync" ParameterId="Multiplier"/>
-          <Connection NodeId="tempo_sync2" ParameterId="Multiplier"/>
         </Connections>
       </Parameter>
       <Parameter ID="typ1" MinValue="0.0" MaxValue="1.0" Value="1.0" StepSize="1.0">
@@ -7045,13 +6974,11 @@
       <Parameter ID="tempo2" MinValue="0.0" MaxValue="18.0" Value="1.0" StepSize="1.0">
         <Connections>
           <Connection NodeId="tempo_sync1" ParameterId="Tempo"/>
-          <Connection NodeId="tempo_sync3" ParameterId="Tempo"/>
         </Connections>
       </Parameter>
       <Parameter ID="mul2" MinValue="1.0" MaxValue="16.0" Value="1.0" StepSize="1.0">
         <Connections>
           <Connection NodeId="tempo_sync1" ParameterId="Multiplier"/>
-          <Connection NodeId="tempo_sync3" ParameterId="Multiplier"/>
         </Connections>
       </Parameter>
       <Parameter ID="type2" MinValue="0.0" MaxValue="1.0" Value="0.0" StepSize="1.0">
@@ -7063,6 +6990,10 @@
         <Connections>
           <Connection NodeId="master-cut" ParameterId="Add"/>
         </Connections>
+      </Parameter>
+      <Parameter ID="master-res" MinValue="0.3" MaxValue="9.899999618530273" Value="0.0"
+                 SkewFactor="0.2647178173065186">
+        <Connections/>
       </Parameter>
       <Parameter ID="filtermod" MinValue="-1.0" MaxValue="1.0" Value="0.4912929687499999">
         <Connections>
@@ -7089,14 +7020,25 @@
           <Connection NodeId="chain6" ParameterId="Switch4"/>
         </Connections>
       </Parameter>
+      <Parameter ID="FM-osc1-pitch" MinValue="0.0" MaxValue="1.0" Value="0.461198486328125">
+        <Connections/>
+      </Parameter>
       <Parameter ID="FM-osc-2pitch" MinValue="0.0" MaxValue="1.0" Value="0.06174456787109328">
         <Connections>
           <Connection NodeId="harm-off" ParameterId="Add"/>
         </Connections>
       </Parameter>
+      <Parameter ID="FM-mix" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections/>
+      </Parameter>
       <Parameter ID="FM-Fmamount" MinValue="0.0" MaxValue="1.0" Value="0.4952275390624999">
         <Connections>
           <Connection NodeId="FMpitchmod" ParameterId="Add"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="fm-osc2track" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="clone_cable5" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter ID="FM-modmod" MinValue="-1.0" MaxValue="1.0" Value="1.0">
@@ -7104,8 +7046,36 @@
           <Connection NodeId="FMpitchmod" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
+      <Parameter ID="FM-modamount" MinValue="0.0" MaxValue="1.0" Value="0.4990576171875">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="FM-filtercut" MinValue="0.0" MaxValue="1.0" Value="0.13578125">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="FM-filterres" MinValue="0.300000011920929" MaxValue="9.899999618530273"
+                 SkewFactor="0.2647178173065186" Value="7.672794222685652">
+        <Connections/>
+      </Parameter>
       <Parameter ID="FM-filtertype" MinValue="0.0" MaxValue="3.0" StepSize="1.0"
                  Value="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="FM-filtermod" MinValue="-1.0" MaxValue="1.0" Value="0.002499999999999947">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="FM-ampmod" MinValue="-1.0" MaxValue="1.0" Value="-0.003591064453124959">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="FM-ampmodmod" MinValue="0.0" MaxValue="1.0" Value="0.5555938720703124">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="feedback" MinValue="0.0" MaxValue="1.0" Value="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="Parameter" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="synthmode" MinValue="0.0" MaxValue="4.0" Value="0.0">
         <Connections/>
       </Parameter>
       <Parameter ID="harm-min" MinValue="0.0" MaxValue="16.0" StepSize="1" Value="0.0">
@@ -7143,6 +7113,16 @@
           <Connection NodeId="clone_cable4" ParameterId="Value"/>
         </Connections>
       </Parameter>
+      <Parameter ID="STEPS" MinValue="16.0" MaxValue="16.0" StepSize="1.0" Value="16.0">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="FMosc1file" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="FMOSC2fine" MinValue="-1.0" MaxValue="1.0" SkewFactor="0.8054835760966002"
+                 Value="0.0">
+        <Connections/>
+      </Parameter>
       <Parameter ID="harmfiltermix" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="clone_cable8" ParameterId="Value"/>
@@ -7168,6 +7148,12 @@
           <Connection NodeId="pma4" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
+      <Parameter ID="FFM-MOD" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="M-MODIN" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections/>
+      </Parameter>
       <Parameter ID="pan" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="clone_cable7" ParameterId="Value"/>
@@ -7192,9 +7178,6 @@
         <Connections>
           <Connection NodeId="clone_cable11" ParameterId="Value"/>
         </Connections>
-      </Parameter>
-      <Parameter ID="" MinValue="0.0" MaxValue="1.0" Value="1.0">
-        <Connections/>
       </Parameter>
     </Parameters>
   </Node>

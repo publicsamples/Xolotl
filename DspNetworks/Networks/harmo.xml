@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="synth" AllowPolyphonic="1" Version="0.0.0">
-  <Node FactoryPath="container.chain" ID="synth" Bypassed="0" ShowParameters="1">
+<Network ID="harmo" AllowPolyphonic="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="harmo" Bypassed="0" ShowParameters="1">
     <Nodes>
       <Node ID="mods" FactoryPath="container.modchain" Bypassed="0" ShowParameters="0">
         <Nodes>
