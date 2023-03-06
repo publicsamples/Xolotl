@@ -1,4 +1,4 @@
-Content.makeFrontInterface(800, 720);
+Content.makeFrontInterface(782, 695);
 
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
 
@@ -173,7 +173,39 @@ inline function onPRESETBUTTONControl(component, value)
 
 Content.getComponent("PRESETBUTTON").setControlCallback(onPRESETBUTTONControl);
 
+const var mod1 = Content.getComponent("mod1");
 
+const var modB1 = Content.getComponent("modB1");
+
+const var modtype1 = Content.getComponent("modtype1");
+
+
+inline function onmodtype1Control(component, value)
+{
+	HARMONIC.setAttribute(HARMONIC.modslotsel1, value);
+	modB1.showControl(value); 
+        modB1.showControl(1-value);
+      
+};
+
+Content.getComponent("modtype1").setControlCallback(onmodtype1Control);
+
+const var mod2 = Content.getComponent("mod2");
+
+const var modB2 = Content.getComponent("modB2");
+
+const var modtype2 = Content.getComponent("modtype2");
+
+
+inline function onmodtype2Control(component, value)
+{
+	
+HARMONIC.setAttribute(HARMONIC.modslotsel2, value);
+	modB2.showControl(value); 
+        modB2.showControl(1-value);
+};
+
+Content.getComponent("modtype2").setControlCallback(onmodtype2Control);
 
 //Draw Combobox
 

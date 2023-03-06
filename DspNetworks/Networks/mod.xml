@@ -171,7 +171,7 @@
           </Node>
           <Node ID="add" FactoryPath="math.add" Bypassed="0">
             <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
             </Parameters>
           </Node>
         </Nodes>
