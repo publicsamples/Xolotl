@@ -54,14 +54,12 @@ inline function onSampleDropperControl(component, value)
 			// otherwise we load it as ID
 
 			if(value.value.length == 0)
-				
 				Sampler1.clearSampleMap();
 			else
 				Sampler1.loadSampleMap(value.value);
 		}
 		else
 			Sampler1.loadSampleMapFromBase64(value.value);
-		
 	}
 };
 
@@ -70,17 +68,15 @@ Content.getComponent("SampleDropper").setControlCallback(onSampleDropperControl)
 // This function will be called whenever a samplemap is loaded (at the end of a preloading task)
 inline function initAfterSampleLoad()
 {
-slot.loadFile("Sampler1");
 	local id = Sampler1.getCurrentSampleMapId();
-	slot.loadFile("CustomJSON");
+	
 	isCustomMap = id == "CustomJSON";
 	
 	if(isCustomMap || id.length == 0)
 		SampleMapLoader.setValue(0);
-		
 	else
 		SampleMapLoader.setValue(Sampler.getSampleMapList().indexOf(id) + 1);
-	
+		
 	// fetch the first sound
 	sound = Sampler1.createSelection(".*")[0];
 	totalSamples = 0;
@@ -104,7 +100,7 @@ slot.loadFile("Sampler1");
 	Content.getComponent("XFade").setValue(fadeValue);
 	Content.getComponent("Loop").setValue(sound.get(Sampler.LoopEnabled));
 	
-
+	LoopPointDragger.updateLoopPoints();
 	storeSampleMapData();
 }
 
@@ -116,7 +112,7 @@ inline function loadSample(file)
 	// and create a relative reference if the sample's in
 	// the sample folder
 	local s = [Sampler1.parseSampleFile(file)];
-
+	
 	Sampler1.loadSampleMapFromJSON(s);
 }
 
@@ -147,7 +143,6 @@ SampleDropper.setLoadingCallback(function(isPreloading)
 		  // back into the sample dropper's value and update all non persistent
 		  // controls
 		  initAfterSampleLoad();
-		  
 	 }
 });
 
@@ -157,7 +152,7 @@ SampleDropper.setFileDropCallback("Drop & Hover", "*.wav", function(obj)
 
 	if(obj.drop)
 		loadSample(FileSystem.fromAbsolutePath(obj.fileName));
-		slot.loadFile("Sampler1");
+		
 	this.repaint();
 });
 

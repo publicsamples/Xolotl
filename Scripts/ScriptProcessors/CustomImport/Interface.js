@@ -4,23 +4,6 @@ const var Sampler1 = Synth.getSampler("Sampler1");
 reg sound;
 reg totalSamples = 0;
 reg isCustomMap = false;
-const var ScriptnodeSyntesiser1 = Synth.getChildSynth("Scriptnode Syntesiser1");
-const var harm = Synth.getAudioSampleProcessor("Scriptnode Syntesiser1");
-const audio = Engine.createAndRegisterAudioFile(0);
-
-const slot = harm.getAudioFile(0);
-
-const var SaveAudioButton1 = Content.getComponent("SaveAudioButton1");
-
-const var name = Content.getComponent("name");
-
-
-inline function onSaveAudioButton1Control(component, value)
-{
-	Sampler1.saveCurrentSampleMap("user");
-};
-
-Content.getComponent("SaveAudioButton1").setControlCallback(onSaveAudioButton1Control);
 
 
 //! "Page" Logic
@@ -64,7 +47,6 @@ inline function onSampleMapLoaderControl(component, value)
 	{
 		local id = Sampler.getSampleMapList()[value - 1];
 		Sampler1.loadSampleMap(id);
-		slot.loadFile("{XYZ::SampleMap}" + component.getItemText());
 	}
 };
 
