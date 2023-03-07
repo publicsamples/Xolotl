@@ -1,5 +1,7 @@
 Content.makeFrontInterface(782, 695);
 
+Settings.setVoiceMultiplier(8);
+
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
 
 const audio = Engine.createAndRegisterAudioFile(0);
