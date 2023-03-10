@@ -1012,7 +1012,7 @@
     <Component type="ScriptPanel" id="expansionad" x="485.0" y="188.0" width="230.0"
                height="170.0" parentComponent="PRESETS" allowCallbacks="Clicks Only"/>
   </Component>
-  <Component type="ScriptLabel" id="Label1" x="780.0" y="13.0" text="Xolotl V.0.40"
+  <Component type="ScriptLabel" id="Label1" x="780.0" y="13.0" text="Xolotl V.0.42"
              fontSize="20.0" width="100.0" height="20.0" fontName="Montserrat"
              editable="0" textColour="4280885536" alignment="left"/>
   <Component type="ScriptButton" id="modtype2" x="854.0" y="400.0" width="30.0"
