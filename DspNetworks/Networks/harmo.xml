@@ -2818,7 +2818,7 @@
         </Properties>
         <Nodes>
           <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" NodeColour="4287927444"
-                ShowParameters="0" Folded="1">
+                ShowParameters="0">
             <Nodes>
               <Node ID="xfader1" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -3281,7 +3281,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child15" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader30" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -3744,7 +3744,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child14" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader28" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -4207,7 +4207,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child13" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader26" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -4670,7 +4670,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child12" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader24" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -5133,7 +5133,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child11" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader22" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -5596,7 +5596,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child10" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader20" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -6059,7 +6059,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child9" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader18" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -6522,7 +6522,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child8" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader16" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -6985,7 +6985,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child7" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader14" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -7448,7 +7448,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child6" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader12" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -7911,7 +7911,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child5" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader10" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -8374,7 +8374,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child4" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader8" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -8837,7 +8837,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader6" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -9300,7 +9300,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader4" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>
@@ -9763,7 +9763,7 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0" Folded="1">
+                NodeColour="4287927444" ShowParameters="0">
             <Nodes>
               <Node ID="xfader2" FactoryPath="control.xfader" Bypassed="0" Folded="1">
                 <Properties>

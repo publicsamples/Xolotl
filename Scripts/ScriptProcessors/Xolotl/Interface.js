@@ -128,9 +128,14 @@ var sampleMapsed = Sampler.getSampleMapList();
 // BANK A
 BankA.set("items", "");
 BankA.set("items", maps.join("\n"));
+const var SampleA = Content.getComponent("SampleA");
+
 
 inline function onBankAControl(component, value)
 {
+
+
+
 	slot.loadFile("{XYZ::SampleMap}" + component.getItemText());
 };
 
