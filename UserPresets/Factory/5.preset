@@ -38,7 +38,7 @@
     <Control type="ScriptSlider" id="ScriptSlider7" value="8.0"/>
     <Control type="ScriptSlider" id="ScriptSlider8" value="0.0"/>
     <Control type="ScriptSlider" id="ScriptSlider13" value="0.6700000166893005"/>
-    <Control type="ScriptSlider" id="SHAPEMOD5" value="0.02999999932944775"/>
+    <Control type="ScriptSlider" id="SHAPEMOD5" value="0.1500000059604645"/>
     <Control type="ScriptSlider" id="Knob1" value="0.0"/>
     <Control type="ScriptSlider" id="Knob3" value="10000.0"/>
     <Control type="ScriptSlider" id="Knob4" value="0.0"/>
@@ -59,15 +59,17 @@
     <Control type="ScriptSlider" id="SHAPEMOD25" value="0.5"/>
     <Control type="ScriptSlider" id="SHAPEMOD26" value="0.5"/>
     <Control type="ScriptComboBox" id="SOURC3" value="2.0"/>
-    <Control type="ScriptSliderPack" id="pitch-sp" value="3" data="64.................gqGE+................................................................."/>
+    <Control type="ScriptSliderPack" id="pitch-sp" value="0.0" data="64......................................................................................."/>
     <Control type="ScriptSlider" id="SHAPEMOD11" value="0.0"/>
-    <Control type="ScriptSlider" id="SHAPEMOD12" value="0.9200000166893005"/>
+    <Control type="ScriptSlider" id="SHAPEMOD12" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD32" value="0.0"/>
-    <Control type="ScriptSliderPack" id="pitch-sp1" value="4" data="64...........Pb8nvO.....vdT33C...............fqGE1O......................................"/>
+    <Control type="ScriptSliderPack" id="pitch-sp1" value="14.0" data="64......................................................................................."/>
     <Control type="ScriptPanel" id="A" value="0.0"/>
     <Control type="ScriptPanel" id="B" value="0.0"/>
+    <Control type="ScriptLabel" id="WAVELABEL1" value="EP2"/>
     <Control type="ScriptPanel" id="A1" value="0.0"/>
     <Control type="ScriptPanel" id="B1" value="0.0"/>
+    <Control type="ScriptLabel" id="WAVELABEL2" value="mth"/>
     <Control type="ScriptSliderPack" id="Cut-sp" value="0.0" data="64....f+rGEt8SOJb0Ow0iR+....8yLyLyOrGEN+fT357C6QgyOyLyL+7nv07S35Q0ORgqW+35Qg8iBWO1OlYlY+."/>
     <Control type="ScriptSlider" id="SHAPEMOD1" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD3" value="0.6299999952316284"/>
@@ -116,9 +118,9 @@
     <Control type="ScriptButton" id="leATO" value="1.0"/>
     <Control type="ScriptButton" id="track" value="0.0"/>
     <Control type="ScriptButton" id="MODPAGEBUTTON" value="1.0"/>
-    <Control type="ScriptAudioWaveform" id="AudioWaveform1" value="0.0" data="{XYZ::SampleMap}4op Sin 4"
+    <Control type="ScriptAudioWaveform" id="AudioWaveform1" value="0.0" data="{XYZ::SampleMap}EP2"
              rangeStart="0" rangeEnd="0"/>
-    <Control type="ScriptAudioWaveform" id="AudioWaveform2" value="0.0" data="{XYZ::SampleMap}4op Sin 7"
+    <Control type="ScriptAudioWaveform" id="AudioWaveform2" value="0.0" data="{XYZ::SampleMap}mth"
              rangeStart="0" rangeEnd="0"/>
   </Content>
   <MidiAutomation>

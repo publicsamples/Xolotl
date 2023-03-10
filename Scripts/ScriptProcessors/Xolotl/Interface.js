@@ -128,12 +128,13 @@ var sampleMapsed = Sampler.getSampleMapList();
 // BANK A
 BankA.set("items", "");
 BankA.set("items", maps.join("\n"));
-const var SampleA = Content.getComponent("SampleA");
+const var WAVELABEL1 = Content.getComponent("WAVELABEL1");
 
-
+const var WAVELABEL2 = Content.getComponent("WAVELABEL2");
 inline function onBankAControl(component, value)
 {
-
+	WAVELABEL1.set("text",BankA.get("items").split("\n")[value-1]);
+	
 
 
 	slot.loadFile("{XYZ::SampleMap}" + component.getItemText());
@@ -163,6 +164,9 @@ BankB.set("items", maps.join("\n"));
 
 inline function onBankBControl(component, value)
 {
+	WAVELABEL1.set("text",BankB.get("items").split("\n")[value-1]);
+	
+
 	slot.loadFile("{XYZ::SampleMap}" + "{EXP::Expansion}" +  component.getItemText());
 };
 
@@ -184,13 +188,18 @@ inline function onCategoriesBControl(component, value)
 Content.getComponent("CategoriesB").setControlCallback(onCategoriesBControl);
 
 
+
 // BANK A1
 BankA1.set("items", "");
 BankA1.set("items", maps.join("\n"));
 
 inline function onBankA1Control(component, value)
 {
+	WAVELABEL2.set("text",BankA1.get("items").split("\n")[value-1]);
+
 	slot1.loadFile("{XYZ::SampleMap}" + component.getItemText());
+	
+
 };
 
 Content.getComponent("BankA1").setControlCallback(onBankA1Control);
@@ -218,6 +227,8 @@ BankB1.set("items", maps.join("\n"));
 
 inline function onBankB1Control(component, value)
 {
+	WAVELABEL2.set("text",BankB1.get("items").split("\n")[value-1]);
+
 	slot1.loadFile("{XYZ::SampleMap}" + "{EXP::Expansion}" +  component.getItemText());
 };
 
