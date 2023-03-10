@@ -1,1 +1,1 @@
-var SMAPS = ["Basic", "ESQ1", "FM","K3", "misc", "EM25", "cs30"];
+var SMAPS = ["BasicWaveforms", "GM", "ModularShape","ModularFM", "ModularFiltered", "ModularNoise", "Kits"];
