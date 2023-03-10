@@ -25,10 +25,11 @@ MapsF.push(GM);
 MapsF.push(ModularShape);
 MapsF.push(ModularFM);
 MapsF.push(ModularFiltered);
-MapsF.push(ModularFM);
+MapsF.push(ModularNoise);
+MapsF.push(Hybrids);
 MapsF.push(Kits);
 
-var SMAPS = ["BasicWaveforms", "GM", "ModularShape","ModularFM", "ModularFiltered", "ModularNoise", "Kits"];
+var SMAPS = ["BasicWaveforms", "GM", "ModularShape","ModularFM", "ModularFiltered", "ModularNoise", "Hybrids", "Kits"];
 
 var SMAPSexp = ["cs30", "em25", "sys101","jx3p", "hybrids", "kraftzwerg", "XP-FM", "XP-Misc","XP-PWM" ];
 
@@ -145,6 +146,7 @@ inline function onCategoriesControl(component, value)
 	BankA.set("items", [].join("\n")); 
 	BankA.set("items", MapsF[value-1].join("\n"));
 	BankA.setValue(1);
+	
 
 };
 
@@ -198,6 +200,8 @@ inline function onCategories1Control(component, value)
 	BankA1.set("items", [].join("\n")); 
 	BankA1.set("items", MapsF[value-1].join("\n"));
 	BankA1.setValue(1);
+
+
 
 };
 

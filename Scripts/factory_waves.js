@@ -8,6 +8,8 @@ var ModularFM = ["4op Sin 1","4op Sin 2","4op Sin 3","4op Sin 4","4op Sin 5","4o
 
 var ModularFiltered = ["Dark BP 1" ,"Dark BP 2" ,"Dark BP 3" ,"Dark BP 4" ,"Etrash" ,"HR Sqr 1" ,"HR Sqr 2" ,"HR Sqr 3" ,"HR Sqr 4" ,"HR Sqr 5" ,"HR Sqr 6" ,"HR Sqr 7" ,"HR Sqr 8" ,"LP Square 1" ,"LP Square 2" ,"LP Square 3" ,"LP Square 4" ,"LP Square 5" ,"LP Square 6" ,"LP Square 7" ,"LP Square 8"];
 
-var ModularFM = ["Cy2OP1","Cy2OP2","Cy2OP3","Cy2OP4","Cy2OP5","Cy2OP6","Cy2OP7","Cy2OP8"];
+var ModularNoise = ["Cy2OP1","Cy2OP2","Cy2OP3","Cy2OP4","Cy2OP5","Cy2OP6","Cy2OP7","Cy2OP8"];
 
 var Hybrids = ["EP1", "EP2", "EP3", "mth", "nsty1", "nsty2", "pswp", "sawd", "Scrd", "simr", "1st", "Bell Source", "Belles", "Big", "BigElectric", "Double Bass", "Euro Organ", "GateAR", "Hard Bass", "Leap", "Lingo", "More Bell", "Odd Keys", "Rousing", "Sad Ring", "Simple Guitar", "Special K", "Tinkly"];
+
+var Kits = ["612perc","cs30 kit","MonoPoly Kit","Super SH2 Kit","XP Kit"];
