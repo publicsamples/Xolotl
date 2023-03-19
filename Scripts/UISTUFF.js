@@ -82,14 +82,3 @@ ulp.setMouseCallback(function(event)
 });
 
 
-
-const var MODPAGE = Content.getComponent("MODPAGE");
-
-
-inline function onMODPAGEBUTTONControl(component, value)
-{
-	MODPAGE.showControl(value); 
-        MODPAGE.showControl(1-value);
-};
-
-Content.getComponent("MODPAGEBUTTON").setControlCallback(onMODPAGEBUTTONControl);

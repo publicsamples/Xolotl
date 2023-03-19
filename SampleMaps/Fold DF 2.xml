@@ -3,33 +3,33 @@
 <samplemap CrossfadeGamma="1.0" ID="Fold DF 2" RRGroupAmount="1.0" MicPositions=";"
            SaveMode="2">
   <sample Root="36" LoKey="0" HiKey="47" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}Fold-DF/dfam-fold#03-C1.wav" Duplicate="0"
-          LoopEnabled="1" LoopStart="259075" LoopEnd="375108" SampleEnd="375117"
-          MonolithOffset="0" MonolithLength="376832" SampleRate="44100.0"
-          Normalized="1" NormalizedPeak="2.068362474441528" Volume="-6"/>
+          FileName="{PROJECT_FOLDER}Fold-DF/dfam-fold#11-C1.wav" Duplicate="0"
+          LoopEnabled="1" LoopStart="46814" LoopEnd="150859" SampleEnd="150868"
+          MonolithOffset="0" MonolithLength="151552" SampleRate="44100.0"
+          Normalized="1" NormalizedPeak="1.99531102180481" Volume="-6"/>
   <sample Root="48" LoKey="48" HiKey="59" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}Fold-DF/dfam-fold#03-C2.wav" Duplicate="0"
-          LoopEnabled="1" LoopStart="291943" LoopEnd="405218" SampleEnd="405227"
-          MonolithOffset="376832" MonolithLength="405504" SampleRate="44100.0"
-          Normalized="1" NormalizedPeak="1.99531102180481" Volume="-6"/>
+          FileName="{PROJECT_FOLDER}Fold-DF/dfam-fold#11-C2.wav" Duplicate="0"
+          LoopEnabled="1" LoopStart="82716" LoopEnd="143491" SampleEnd="143500"
+          MonolithOffset="151552" MonolithLength="147456" SampleRate="44100.0"
+          Normalized="1" NormalizedPeak="2.00030517578125" Volume="-6"/>
   <sample Root="60" LoKey="60" HiKey="71" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}Fold-DF/dfam-fold#03-C3.wav" Duplicate="0"
-          LoopEnabled="1" LoopStart="194654" LoopEnd="318798" SampleEnd="318807"
-          MonolithOffset="782336" MonolithLength="319488" SampleRate="44100.0"
-          Normalized="1" NormalizedPeak="1.99531102180481" Volume="-6"/>
+          FileName="{PROJECT_FOLDER}Fold-DF/dfam-fold#11-C3.wav" Duplicate="0"
+          LoopEnabled="1" LoopStart="85755" LoopEnd="146231" SampleEnd="146240"
+          MonolithOffset="299008" MonolithLength="147456" SampleRate="44100.0"
+          Normalized="1" NormalizedPeak="2.003362655639648" Volume="-6"/>
   <sample Root="72" LoKey="72" HiKey="83" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}Fold-DF/dfam-fold#03-C4.wav" Duplicate="0"
-          LoopEnabled="1" LoopStart="181007" LoopEnd="248435" SampleEnd="248444"
-          MonolithOffset="1101824" MonolithLength="249856" SampleRate="44100.0"
-          Normalized="1" NormalizedPeak="1.99531102180481" Volume="-6"/>
+          FileName="{PROJECT_FOLDER}Fold-DF/dfam-fold#11-C4.wav" Duplicate="0"
+          LoopEnabled="1" LoopStart="10440" LoopEnd="71728" SampleEnd="71737"
+          MonolithOffset="446464" MonolithLength="73728" SampleRate="44100.0"
+          Normalized="1" NormalizedPeak="1.996283769607544" Volume="-6"/>
   <sample Root="84" LoKey="84" HiKey="95" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}Fold-DF/dfam-fold#03-C5.wav" Duplicate="0"
-          LoopEnabled="1" LoopStart="233755" LoopEnd="308918" SampleEnd="308927"
-          MonolithOffset="1351680" MonolithLength="311296" SampleRate="44100.0"
-          Normalized="1" NormalizedPeak="1.99531102180481" Volume="-6"/>
+          FileName="{PROJECT_FOLDER}Fold-DF/dfam-fold#11-C5.wav" Duplicate="0"
+          LoopEnabled="1" LoopStart="107884" LoopEnd="181171" SampleEnd="181180"
+          MonolithOffset="520192" MonolithLength="184320" SampleRate="44100.0"
+          Normalized="1" NormalizedPeak="2.00042724609375" Volume="-6"/>
   <sample Root="96" LoKey="96" HiKey="120" LoVel="0" HiVel="127" RRGroup="1"
-          FileName="{PROJECT_FOLDER}Fold-DF/dfam-fold#03-C6.wav" Duplicate="0"
-          LoopEnabled="1" LoopStart="237974" LoopEnd="323058" SampleEnd="323067"
-          MonolithOffset="1662976" MonolithLength="323584" SampleRate="44100.0"
-          Normalized="1" NormalizedPeak="1.99531102180481" Volume="-6"/>
+          FileName="{PROJECT_FOLDER}Fold-DF/dfam-fold#11-C6.wav" Duplicate="0"
+          LoopEnabled="1" LoopStart="33444" LoopEnd="97444" SampleEnd="97453"
+          MonolithOffset="704512" MonolithLength="98304" SampleRate="44100.0"
+          Normalized="1" NormalizedPeak="1.996405363082886" Volume="-6"/>
 </samplemap>

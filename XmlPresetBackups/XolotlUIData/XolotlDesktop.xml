@@ -20,16 +20,16 @@
       <Component type="ScriptSlider" id="ScriptSlider1" x="156.0" y="39.0" width="35.0"
                  height="35.0" parentComponent="mod1" processorId="HARMONIC" parameterId="tempo1"
                  mode="TempoSync" max="18.0" stepSize="1.0" middlePosition="9.0"
-                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire2.png" numStrips="201.0"
+                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
                  scaleFactor="0.1500000059604645" showValuePopup="Below"/>
       <Component type="ScriptSlider" id="ScriptSlider2" x="156.0" y="77.0" width="35.0"
                  height="35.0" parentComponent="mod1" processorId="HARMONIC" parameterId="mul1"
-                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire2.png" numStrips="201.0"
+                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
                  scaleFactor="0.1500000059604645" max="16.0" stepSize="1.0" showValuePopup="Below"/>
       <Component type="ScriptSlider" id="ScriptSlider23" x="156.0" y="115.0" width="35.0"
                  height="35.0" parentComponent="mod1" processorId="HARMONIC" parameterId="MOD3VEL"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire2.png"
-                 numStrips="201.0" scaleFactor="0.1500000059604645" showValuePopup="Below"/>
+                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.1500000059604645" showValuePopup="Below"/>
     </Component>
     <Component type="ScriptPanel" id="modB1" x="411.0" y="389.0" width="230.0"
                height="155.0" itemColour="4293975957" itemColour2="4293975957"
@@ -39,7 +39,7 @@
                  editable="0" fontName="Montserrat" textColour="4280885536" parentComponent="modB1"/>
       <Component type="ScriptTable" id="Table3" x="10.0" y="38.0" width="140.0"
                  height="110.0" parentComponent="modB1" processorId="Script Time Variant Modulator1"
-                 itemColour="1660901376" itemColour2="1024528657" bgColour="16772264"
+                 itemColour="1660901376" itemColour2="1660901376" bgColour="16772264"
                  customColours="1"/>
       <Component type="ScriptSlider" id="ScriptSlider9" x="156.0" y="39.0" width="35.0"
                  height="35.0" parentComponent="modB1" processorId="Script Time Variant Modulator1"
@@ -104,16 +104,16 @@
                  height="34.0" parentComponent="modB2" processorId="Script Time Variant Modulator2"
                  parameterId="tempo" mode="TempoSync" max="18.0" stepSize="1.0"
                  middlePosition="9.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206s" scaleFactor="0.1500000059604645" showValuePopup="Below"/>
+                 numStrips="206.0" scaleFactor="0.1500000059604645" showValuePopup="Below"/>
       <Component type="ScriptSlider" id="ScriptSlider14" x="13.0" y="64.0" width="34.0"
                  height="34.0" parentComponent="modB2" processorId="Script Time Variant Modulator2"
                  parameterId="div" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206s" scaleFactor="0.1500000059604645" max="16.0"
+                 numStrips="206.0" scaleFactor="0.1500000059604645" max="16.0"
                  stepSize="1.0" showValuePopup="Below"/>
       <Component type="ScriptSlider" id="ScriptSlider26" x="118.0" y="48.0" width="40.0"
                  height="40.0" parentComponent="modB2" processorId="Script Time Variant Modulator2"
                  parameterId="track" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206" scaleFactor="0.1500000059604645" showValuePopup="Below"/>
+                 numStrips="201.0" scaleFactor="0.1500000059604645" showValuePopup="Below"/>
       <Component type="ScriptLabel" id="Label31" x="130.0" y="5.0" width="70.0"
                  height="20.0" fontSize="12.0" alignment="left" text="POLY MOD"
                  editable="0" parentComponent="modB2" fontName="Montserrat" textColour="4280885536"/>
@@ -124,12 +124,12 @@
       <Component type="ScriptSlider" id="ScriptSlider27" x="12.0" y="106.0" width="34.0"
                  height="34.0" parentComponent="modB2" processorId="Script Time Variant Modulator2"
                  parameterId="smooth" middlePosition="50.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206s" scaleFactor="0.1500000059604645" showValuePopup="Below"
+                 numStrips="206.0" scaleFactor="0.1500000059604645" showValuePopup="Below"
                  max="100.0"/>
       <Component type="ScriptSlider" id="ScriptSlider28" x="13.0" y="21.0" width="34.0"
                  height="34.0" parentComponent="modB2" processorId="Script Time Variant Modulator2"
                  parameterId="lfo-mix" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206s" scaleFactor="0.1500000059604645" showValuePopup="Below"/>
+                 numStrips="206.0" scaleFactor="0.1500000059604645" showValuePopup="Below"/>
       <Component type="ScriptComboBox" id="ScriptComboBox2" x="63.0" y="109.0"
                  width="30.0" height="30.0" max="4" parentComponent="modB2" items="Sine&#10;Saw&#10;Triangle&#10;Noise"
                  processorId="Script Time Variant Modulator2" parameterId="in-wave"
@@ -159,151 +159,151 @@
       <Component type="ScriptSlider" id="ScriptSlider29" x="59.0" y="64.0" width="34.0"
                  height="34.0" parentComponent="modB2" processorId="HARMONIC"
                  parameterId="MOD4VEL" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206s" scaleFactor="0.1500000059604645" showValuePopup="Below"/>
+                 numStrips="206.0" scaleFactor="0.1500000059604645" showValuePopup="Below"/>
       <Component type="ScriptLabel" id="Label47" x="62.0" y="92.0" width="40.0"
                  height="20.0" fontSize="11.0" alignment="left" text="VEL" editable="0"
                  parentComponent="modB2" fontName="Montserrat" textColour="4280885536"/>
     </Component>
     <Component type="ScriptPanel" id="env1" x="9.0" y="389.0" width="190.0"
-               height="105.0" parentComponent="HARMONICSYNTH" itemColour="2700143531"
+               height="155.0" parentComponent="HARMONICSYNTH" itemColour="2700143531"
                itemColour2="2700143531" textColour="1091637521">
-      <Component type="ScriptLabel" id="Label7" x="10.0" y="84.0" width="30.0"
+      <Component type="ScriptLabel" id="Label7" x="10.0" y="132.0" width="30.0"
                  height="10.0" fontSize="12.0" alignment="left" text="A" editable="0"
                  parentComponent="env1" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptLabel" id="Label9" x="37.0" y="84.0" width="30.0"
+      <Component type="ScriptLabel" id="Label9" x="37.0" y="132.0" width="30.0"
                  height="10.0" fontSize="12.0" alignment="left" text="D" editable="0"
                  parentComponent="env1" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptLabel" id="Label10" x="65.0" y="84.0" width="30.0"
+      <Component type="ScriptLabel" id="Label10" x="65.0" y="132.0" width="30.0"
                  height="10.0" fontSize="12.0" alignment="left" text="S" editable="0"
                  parentComponent="env1" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptLabel" id="Label11" x="90.0" y="84.0" width="30.0"
+      <Component type="ScriptLabel" id="Label11" x="90.0" y="132.0" width="30.0"
                  height="10.0" fontSize="12.0" alignment="left" text="R" editable="0"
                  parentComponent="env1" fontName="Montserrat" textColour="4280885536"/>
       <Component type="ScriptSlider" id="RELEASE1" x="90.0" y="24.0" style="Vertical"
-                 width="20.0" height="55.0" parentComponent="env1" mode="Time"
+                 width="20.0" height="100.0" parentComponent="env1" mode="Time"
                  max="20000.0" stepSize="1.0" middlePosition="1000.0" processorId="HARMONIC"
                  parameterId="r1" textColour="16777215" itemColour="2399119104"
                  itemColour2="1307368892" bgColour="1024528657"/>
       <Component type="ScriptSlider" id="SUSTAIN1" x="63.0" y="24.0" style="Vertical"
-                 width="20.0" height="55.0" parentComponent="env1" processorId="HARMONIC"
+                 width="20.0" height="100.0" parentComponent="env1" processorId="HARMONIC"
                  parameterId="s1" textColour="16777215" itemColour="2399119104"
                  itemColour2="1307368892" bgColour="1024528657"/>
       <Component type="ScriptSlider" id="DECAY1" x="36.0" y="24.0" style="Vertical"
-                 width="20.0" height="55.0" parentComponent="env1" max="10000.0"
+                 width="20.0" height="100.0" parentComponent="env1" max="10000.0"
                  middlePosition="300.0" processorId="HARMONIC" parameterId="d1"
                  textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
                  bgColour="1024528657"/>
       <Component type="ScriptSlider" id="ATTACK1" x="9.0" y="24.0" style="Vertical"
-                 width="20.0" height="55.0" parentComponent="env1" mode="Time"
+                 width="20.0" height="100.0" parentComponent="env1" mode="Time"
                  max="20000.0" stepSize="1.0" middlePosition="1000.0" processorId="HARMONIC"
                  parameterId="a1" textColour="16777215" itemColour="2399119104"
                  itemColour2="1307368892" bgColour="1024528657"/>
       <Component type="ScriptLabel" id="Label6" x="5.0" y="8.0" width="110.0"
                  height="10.0" fontSize="15.0" alignment="left" text="MOD ENV 1"
                  editable="0" parentComponent="env1" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptButton" id="modtype8" x="119.0" y="10.0" width="30.0"
+      <Component type="ScriptButton" id="modtype8" x="119.0" y="29.0" width="30.0"
                  height="30.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.2199999988079071"
                  isVertical="0" parentComponent="env1" processorId="HARMONIC"
                  parameterId="typ1"/>
-      <Component type="ScriptLabel" id="Label30" x="113.0" y="37.0" width="40.0"
+      <Component type="ScriptLabel" id="Label30" x="113.0" y="56.0" width="40.0"
                  height="15.0" fontSize="12.0" alignment="left" text="LOOP" editable="0"
                  parentComponent="env1" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptSlider" id="ScriptSlider5" x="151.0" y="50.0" width="35.0"
+      <Component type="ScriptSlider" id="ScriptSlider5" x="151.0" y="81.0" width="35.0"
                  height="35.0" parentComponent="env1" processorId="HARMONIC" parameterId="mul1"
                  filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
                  scaleFactor="0.1400000005960464" max="16.0" stepSize="1.0" showValuePopup="Below"/>
-      <Component type="ScriptSlider" id="ScriptSlider6" x="151.0" y="4.0" width="35.0"
+      <Component type="ScriptSlider" id="ScriptSlider6" x="151.0" y="27.0" width="35.0"
                  height="35.0" parentComponent="env1" processorId="HARMONIC" parameterId="tempo1"
                  mode="TempoSync" max="18.0" stepSize="1.0" middlePosition="9.0"
                  filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
                  scaleFactor="0.1400000005960464" showValuePopup="Below"/>
-      <Component type="ScriptLabel" id="Label13" x="155.0" y="81.0" width="30.0"
+      <Component type="ScriptLabel" id="Label13" x="155.0" y="112.0" width="30.0"
                  height="15.0" fontSize="12.0" alignment="left" text="DIV" editable="0"
                  parentComponent="env1" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptLabel" id="Label14" x="149.0" y="38.0" width="40.0"
+      <Component type="ScriptLabel" id="Label14" x="149.0" y="57.0" width="40.0"
                  height="15.0" fontSize="12.0" alignment="left" text="TEMPO" editable="0"
                  parentComponent="env1" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptSlider" id="ScriptSlider12" x="115.0" y="50.0" width="35.0"
+      <Component type="ScriptSlider" id="ScriptSlider12" x="115.0" y="81.0" width="35.0"
                  height="35.0" parentComponent="env1" processorId="HARMONIC" parameterId="MOD1VEL"
                  filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
                  scaleFactor="0.1400000005960464" showValuePopup="Below" middlePosition="0.5"
                  defaultValue="0.5"/>
-      <Component type="ScriptLabel" id="Label19" x="119.0" y="81.0" width="30.0"
+      <Component type="ScriptLabel" id="Label19" x="119.0" y="112.0" width="30.0"
                  height="15.0" fontSize="12.0" alignment="left" text="VEL" editable="0"
                  parentComponent="env1" fontName="Montserrat" textColour="4280885536"/>
     </Component>
     <Component type="ScriptPanel" id="env2" x="208.0" y="389.0" width="190.0"
-               height="105.0" parentComponent="HARMONICSYNTH" itemColour="2700143531"
+               height="155.0" parentComponent="HARMONICSYNTH" itemColour="2700143531"
                itemColour2="2700143531" textColour="1091637521">
-      <Component type="ScriptLabel" id="Label8" x="10.0" y="84.0" width="30.0"
+      <Component type="ScriptLabel" id="Label8" x="10.0" y="131.0" width="30.0"
                  height="10.0" fontSize="12.0" alignment="left" text="A" editable="0"
                  parentComponent="env2" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptLabel" id="Label12" x="37.0" y="84.0" width="30.0"
+      <Component type="ScriptLabel" id="Label12" x="37.0" y="131.0" width="30.0"
                  height="10.0" fontSize="12.0" alignment="left" text="D" editable="0"
                  parentComponent="env2" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptLabel" id="Label15" x="65.0" y="84.0" width="30.0"
+      <Component type="ScriptLabel" id="Label15" x="65.0" y="131.0" width="30.0"
                  height="10.0" fontSize="12.0" alignment="left" text="S" editable="0"
                  parentComponent="env2" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptLabel" id="Label16" x="90.0" y="84.0" width="30.0"
+      <Component type="ScriptLabel" id="Label16" x="90.0" y="131.0" width="30.0"
                  height="10.0" fontSize="12.0" alignment="left" text="R" editable="0"
                  parentComponent="env2" fontName="Montserrat" textColour="4280885536"/>
       <Component type="ScriptSlider" id="RELEASE2" x="90.0" y="24.0" style="Vertical"
-                 width="20.0" height="55.0" parentComponent="env2" mode="Time"
+                 width="20.0" height="100.0" parentComponent="env2" mode="Time"
                  max="20000.0" stepSize="1.0" middlePosition="1000.0" processorId="HARMONIC"
                  parameterId="r2" textColour="16777215" itemColour="2399119104"
                  itemColour2="1307368892" bgColour="1024528657"/>
       <Component type="ScriptSlider" id="SUSTAIN2" x="63.0" y="24.0" style="Vertical"
-                 width="20.0" height="55.0" parentComponent="env2" processorId="HARMONIC"
+                 width="20.0" height="100.0" parentComponent="env2" processorId="HARMONIC"
                  parameterId="s2" textColour="16777215" itemColour="2399119104"
                  itemColour2="1307368892" bgColour="1024528657"/>
       <Component type="ScriptSlider" id="DECAY2" x="36.0" y="24.0" style="Vertical"
-                 width="20.0" height="55.0" parentComponent="env2" max="10000.0"
+                 width="20.0" height="100.0" parentComponent="env2" max="10000.0"
                  middlePosition="300.0" processorId="HARMONIC" parameterId="d2"
                  textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
                  bgColour="1024528657"/>
       <Component type="ScriptSlider" id="ATTACK2" x="9.0" y="24.0" style="Vertical"
-                 width="20.0" height="55.0" parentComponent="env2" mode="Time"
+                 width="20.0" height="100.0" parentComponent="env2" mode="Time"
                  max="20000.0" stepSize="1.0" middlePosition="1000.0" processorId="HARMONIC"
                  parameterId="a2" textColour="16777215" itemColour="2399119104"
                  itemColour2="1307368892" bgColour="1024528657"/>
       <Component type="ScriptLabel" id="Label17" x="5.0" y="8.0" width="110.0"
                  height="10.0" fontSize="15.0" alignment="left" text="MOD ENV 2"
                  editable="0" parentComponent="env2" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptButton" id="modtype9" x="121.0" y="15.0" width="30.0"
+      <Component type="ScriptButton" id="modtype9" x="121.0" y="21.0" width="30.0"
                  height="30.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.2199999988079071"
                  isVertical="0" parentComponent="env2" processorId="HARMONIC"
                  parameterId="type2"/>
-      <Component type="ScriptLabel" id="Label33" x="112.0" y="37.0" width="40.0"
+      <Component type="ScriptLabel" id="Label33" x="112.0" y="48.0" width="40.0"
                  height="15.0" fontSize="12.0" alignment="left" text="LOOP" editable="0"
                  parentComponent="env2" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptSlider" id="ScriptSlider7" x="150.0" y="50.0" width="35.0"
+      <Component type="ScriptSlider" id="ScriptSlider7" x="150.0" y="79.0" width="35.0"
                  height="35.0" parentComponent="env2" processorId="HARMONIC" parameterId="mul2"
                  filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
                  scaleFactor="0.1400000005960464" max="16.0" stepSize="1.0" showValuePopup="Below"/>
-      <Component type="ScriptSlider" id="ScriptSlider8" x="150.0" y="4.0" width="35.0"
+      <Component type="ScriptSlider" id="ScriptSlider8" x="150.0" y="15.0" width="35.0"
                  height="35.0" parentComponent="env2" processorId="HARMONIC" parameterId="tempo2"
                  mode="TempoSync" max="18.0" stepSize="1.0" middlePosition="9.0"
                  filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
                  scaleFactor="0.1400000005960464" showValuePopup="Below"/>
-      <Component type="ScriptLabel" id="Label18" x="154.0" y="81.0" width="30.0"
+      <Component type="ScriptLabel" id="Label18" x="154.0" y="110.0" width="30.0"
                  height="15.0" fontSize="12.0" alignment="left" text="DIV" editable="0"
                  parentComponent="env2" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptLabel" id="Label24" x="148.0" y="38.0" width="40.0"
+      <Component type="ScriptLabel" id="Label24" x="148.0" y="49.0" width="40.0"
                  height="15.0" fontSize="12.0" alignment="left" text="TEMPO" editable="0"
                  parentComponent="env2" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptSlider" id="ScriptSlider13" x="114.0" y="50.0" width="35.0"
+      <Component type="ScriptSlider" id="ScriptSlider13" x="114.0" y="79.0" width="35.0"
                  height="35.0" parentComponent="env2" processorId="HARMONIC" parameterId="MOD2VEL"
                  filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
                  scaleFactor="0.1400000005960464" showValuePopup="Below" middlePosition="0.5"
                  defaultValue="0.5"/>
-      <Component type="ScriptLabel" id="Label34" x="118.0" y="81.0" width="30.0"
+      <Component type="ScriptLabel" id="Label34" x="118.0" y="110.0" width="30.0"
                  height="15.0" fontSize="12.0" alignment="left" text="VEL" editable="0"
                  parentComponent="env2" fontName="Montserrat" textColour="4280885536"/>
     </Component>
-    <Component type="ScriptPanel" id="AMP" x="761.0" y="31.0" width="120.0"
-               height="240.0" itemColour="2700143531" itemColour2="2700143531"
+    <Component type="ScriptPanel" id="AMP" x="761.0" y="27.0" width="120.0"
+               height="250.0" itemColour="2700143531" itemColour2="2700143531"
                bgColour="1441080099" parentComponent="HARMONICSYNTH">
-      <Component type="ScriptLabel" id="Label26" x="56.0" y="130.0" width="60.0"
+      <Component type="ScriptLabel" id="Label26" x="50.0" y="130.0" width="60.0"
                  height="20.0" fontSize="12.0" alignment="left" text="VOLUME"
                  editable="0" parentComponent="AMP" fontName="Montserrat" textColour="4280885536"/>
       <Component type="ScriptLabel" id="Label20" x="92.0" y="101.0" width="30.0"
@@ -321,7 +321,7 @@
       <Component type="ScriptSlider" id="SHAPEMOD5" x="9.0" y="124.0" width="40.0"
                  height="35.0" parentComponent="AMP" processorId="HARMONIC" parameterId="Gain"
                  filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
-                 scaleFactor="0.1400000005960464" middlePosition="0.25"/>
+                 scaleFactor="0.1400000005960464" middlePosition="0.5" defaultValue="0.5"/>
       <Component type="ScriptSlider" id="Knob1" x="9.0" y="33.0" style="Vertical"
                  width="20.0" height="70.0" parentComponent="AMP" processorId="AHDSR Envelope1"
                  parameterId="Attack" mode="Time" max="40000.0" stepSize="1.0"
@@ -345,249 +345,146 @@
       <Component type="ScriptLabel" id="Label29" x="36.0" y="0.0" width="60.0"
                  height="30.0" fontSize="20.0" alignment="left" text="AMP" editable="0"
                  parentComponent="AMP" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptSlider" id="SHAPEMOD19" x="11.0" y="196.0" width="40.0"
+      <Component type="ScriptSlider" id="SHAPEMOD19" x="9.0" y="185.0" width="40.0"
                  height="35.0" parentComponent="AMP" processorId="Velocity Modulator1"
                  parameterId="Intensity" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                  numStrips="206.0" scaleFactor="0.1400000005960464"/>
-      <Component type="ScriptLabel" id="Label28" x="50.0" y="201.0" width="60.0"
+      <Component type="ScriptLabel" id="Label28" x="50.0" y="192.0" width="60.0"
                  height="20.0" fontSize="12.0" alignment="left" text="VELOCITY"
                  editable="0" parentComponent="AMP" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptLabel" id="Label57" x="56.0" y="166.0" width="50.0"
+      <Component type="ScriptLabel" id="Label57" x="50.0" y="161.0" width="50.0"
                  height="20.0" fontSize="12.0" alignment="left" text="SPREAD"
                  editable="0" parentComponent="AMP" fontName="Montserrat" textColour="4280885536"/>
-      <Component type="ScriptSlider" id="SHAPEMOD6" x="10.0" y="159.0" width="40.0"
+      <Component type="ScriptSlider" id="SHAPEMOD6" x="9.0" y="154.0" width="40.0"
                  height="35.0" parentComponent="AMP" processorId="HARMONIC" parameterId="pan"
                  filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
                  scaleFactor="0.1400000005960464" middlePosition="0.5" defaultValue="0.05000000074505806"/>
+      <Component type="ScriptSlider" id="SHAPEMOD7" x="9.0" y="216.0" width="40.0"
+                 height="35.0" parentComponent="AMP" processorId="HARMONIC" parameterId="snappy"
+                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+                 scaleFactor="0.1400000005960464" middlePosition="-12.0" mode="Decibel"
+                 min="-100.0" max="0.0" stepSize="1.0"/>
+      <Component type="ScriptLabel" id="Label35" x="50.0" y="223.0" width="60.0"
+                 height="20.0" fontSize="12.0" alignment="left" text="SNAPPY"
+                 editable="0" parentComponent="AMP" fontName="Montserrat" textColour="4280885536"/>
     </Component>
-    <Component type="ScriptPanel" id="osc1" x="8.0" y="11.0" width="420.0" height="371.0"
-               parentComponent="HARMONICSYNTH" itemColour="2700143531" itemColour2="2699288760"
-               bgColour="1441080099" textColour="1091637521" locked="1">
-      <Component type="ScriptSlider" id="SHAPEMOD14" x="164.0" y="228.0" width="45.0"
-                 height="45.0" parentComponent="osc1" processorId="HARMONIC" parameterId="master-cut"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206.0" scaleFactor="0.1800000071525574" defaultValue="0.5"/>
-      <Component type="ScriptSlider" id="SHAPEMOD15" x="164.0" y="311.0" width="40.0"
-                 height="40.0" parentComponent="osc1" processorId="HARMONIC" parameterId="filtermod"
-                 min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206.0" scaleFactor="0.1800000071525574"/>
-      <Component type="ScriptComboBox" id="SOURC2" x="163.0" y="285.0" max="4"
-                 width="40.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
-                 parentComponent="osc1" processorId="HARMONIC" parameterId="O2MODSWITCH1"
-                 itemColour2="4294905615" textColour="4283119672" bgColour="4282974208"
-                 itemColour="4279592703" fontName="Montserrat"/>
-      <Component type="ScriptSlider" id="SHAPEMOD21" x="111.0" y="262.0" width="45.0"
-                 height="45.0" parentComponent="osc1" processorId="HARMONIC" parameterId="SHPITCH2"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206.0" scaleFactor="0.1800000071525574"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL42" x="106.0" y="301.0" width="50.0"
-                 height="15.0" parentComponent="osc1" text="S&amp;H IN" editable="0"
-                 fontSize="12.0" fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL43" x="106.0" y="249.0" width="50.0"
-                 height="15.0" parentComponent="osc1" text="DETUNE" editable="0"
-                 fontSize="12.0" fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptSlider" id="SHAPEMOD24" x="111.0" y="208.0" width="45.0"
-                 height="45.0" parentComponent="osc1" processorId="HARMONIC" parameterId="PITCH22TUNE"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206.0" scaleFactor="0.1800000071525574"/>
-      <Component type="ScriptSlider" id="SHAPEMOD27" x="111.0" y="313.0" width="45.0"
-                 height="45.0" parentComponent="osc1" processorId="HARMONIC" parameterId="os2phase"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206.0" scaleFactor="0.1800000071525574" itemColour2="3723003269"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL53" x="106.0" y="351.0" width="50.0"
-                 height="15.0" parentComponent="osc1" text="PHASE" editable="0"
-                 fontSize="12.0" fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptSlider" id="SHAPE" x="163.0" y="153.0" width="45.0"
-                 height="40.0" parentComponent="osc1" processorId="HARMONIC" parameterId="harm-min"
-                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
-                 scaleFactor="0.1800000071525574" stepSize="1.0" middlePosition="8.0"
-                 max="16.0"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL6" x="158.0" y="191.0" width="50.0"
-                 height="15.0" parentComponent="osc1" text="MIN" editable="0"
-                 fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptSlider" id="SHAPE6" x="224.0" y="153.0" width="45.0"
-                 height="40.0" parentComponent="osc1" processorId="HARMONIC" parameterId="harm-max"
-                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
-                 scaleFactor="0.1800000071525574" max="16.0" middlePosition="8.0"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL7" x="219.0" y="191.0" width="50.0"
-                 height="15.0" parentComponent="osc1" text="MAX" editable="0"
-                 fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL41" x="339.0" y="191.0" width="50.0"
-                 height="15.0" parentComponent="osc1" text="MIX" editable="0"
-                 fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptSlider" id="SHAPE8" x="344.0" y="153.0" width="45.0"
-                 height="40.0" parentComponent="osc1" processorId="HARMONIC" parameterId="HrmOSCMIX"
-                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
-                 scaleFactor="0.1800000071525574" middlePosition="0.5" defaultValue="0.5"/>
-      <Component type="ScriptSlider" id="SHAPE7" x="285.0" y="153.0" width="45.0"
-                 height="40.0" parentComponent="osc1" processorId="HARMONIC" parameterId="harm-step"
-                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
-                 scaleFactor="0.1800000071525574" middlePosition="0.5"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL8" x="280.0" y="191.0" width="50.0"
-                 height="15.0" parentComponent="osc1" text="STEP" editable="0"
-                 fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptComboBox" id="ExpansionSelector" x="16.0" y="152.0"
-                 width="80.0" height="30.0" max="2" parentComponent="osc1" items="FACTORY&#10;Expansion"
-                 textColour="4283119672" bgColour="4282974208" itemColour="4279592703"
-                 itemColour2="4294905615" fontName="Montserrat"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL14" x="18.0" y="191.0" width="70.0"
-                 height="15.0" parentComponent="osc1" text="EXPANSION" editable="0"
-                 fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptSlider" id="SHAPEMOD25" x="111.0" y="13.0" width="45.0"
-                 height="45.0" parentComponent="osc1" processorId="HARMONIC" parameterId="PITCH1TUNE"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206.0" scaleFactor="0.1800000071525574" defaultValue="0.5"
-                 enabled="0" visible="0"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL44" x="106.0" y="55.0" width="50.0"
-                 height="15.0" parentComponent="osc1" text="DETUNE" editable="0"
-                 fontSize="11.0" fontName="Montserrat" textColour="4282132775"
-                 enabled="0" visible="0"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL45" x="106.0" y="87.0" width="50.0"
-                 height="15.0" parentComponent="osc1" text="S&amp;H IN" editable="0"
-                 fontSize="11.0" fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptSlider" id="SHAPEMOD26" x="111.0" y="44.0" width="45.0"
-                 height="45.0" parentComponent="osc1" processorId="HARMONIC" parameterId="SHPITCH1"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206.0" scaleFactor="0.1800000071525574" defaultValue="0.5"/>
-      <Component type="ScriptLabel" id="WAVE" x="13.0" y="21.0" width="80.0" height="20.0"
-                 parentComponent="osc1" editable="0" text="WAVE 1" fontSize="25.0"
-                 fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptComboBox" id="SOURC3" x="164.0" y="72.0" max="4"
-                 width="40.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
-                 parentComponent="osc1" processorId="HARMONIC" parameterId="OSCENVMOD1SWITCH"
-                 textColour="4283119672" bgColour="4292508966" itemColour="4279592703"
-                 itemColour2="4294905615" fontName="Montserrat"/>
-      <Component type="ScriptSliderPack" id="pitch-sp" x="217.0" y="228.0" width="190.0"
-                 height="120.0" parentComponent="osc1" processorId="HARMONIC"
-                 itemColour="3168582198" itemColour2="14465590" textColour="0"
-                 bgColour="16711680" flashActive="0" SliderPackIndex="1" defaultValue="0.0"/>
-      <Component type="ScriptSlider" id="SHAPEMOD11" x="164.0" y="96.0" width="45.0"
-                 height="45.0" parentComponent="osc1" processorId="HARMONIC" parameterId="PITCHMOD"
-                 min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206.0" scaleFactor="0.1800000071525574"/>
-      <Component type="ScriptSlider" id="SHAPEMOD12" x="164.0" y="13.0" width="45.0"
-                 height="45.0" parentComponent="osc1" processorId="HARMONIC" parameterId="HARMPITCH"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206.0" scaleFactor="0.1800000071525574" defaultValue="0.5"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL47" x="159.0" y="54.0" width="50.0"
-                 height="15.0" parentComponent="osc1" text="OFFSET" editable="0"
-                 fontSize="12.0" textColour="4282132775" fontName="Montserrat"/>
-      <Component type="ScriptSlider" id="SHAPEMOD32" x="81.0" y="109.0" width="30.0"
-                 height="30.0" parentComponent="osc1" processorId="HARMONIC" parameterId="osc1shmod"
-                 min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire2.png"
-                 numStrips="201.0" scaleFactor="0.119999997317791" stepSize="0.1000000014901161"
-                 visible="0" locked="1"/>
-      <Component type="ScriptSliderPack" id="pitch-sp1" x="217.0" y="13.0" width="190.0"
-                 height="120.0" parentComponent="osc1" processorId="HARMONIC"
-                 itemColour="3168582198" itemColour2="14465590" textColour="0"
-                 bgColour="16711680" flashActive="0" defaultValue="0.0"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL62" x="158.0" y="268.0" width="50.0"
-                 height="15.0" parentComponent="osc1" text="OFFSET" editable="0"
-                 fontSize="12.0" fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL35" x="213.0" y="118.0" width="40.0"
-                 height="20.0" parentComponent="osc1" text="PITCH" editable="0"
-                 fontSize="12.0" fontName="Montserrat" alignment="left" itemColour2="3723003269"
-                 textColour="4288883499"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL38" x="217.0" y="332.0" width="40.0"
-                 height="20.0" parentComponent="osc1" text="PITCH" editable="0"
-                 fontSize="12.0" fontName="Montserrat" alignment="left" itemColour2="3723003269"
-                 textColour="4288883499"/>
-      <Component type="ScriptLabel" id="WAVE2" x="18.0" y="224.0" width="80.0"
-                 height="30.0" parentComponent="osc1" editable="0" text="WAVE 1"
-                 fontSize="25.0" fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptPanel" id="A" x="6.0" y="39.0" width="100.0" height="90.0"
-                 parentComponent="osc1" text="*" itemColour="4293975957" itemColour2="4293975957"
-                 saveInPreset="1">
-        <Component type="ScriptComboBox" id="Categories" x="55.0" y="46.0" width="40.0"
-                   height="30.0" max="8" parentComponent="A" fontSize="1.0" textColour="0"
-                   itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
-                   items="BasicWaveforms&#10;GM&#10;ModularShape&#10;ModularFM&#10;ModularFiltered&#10;ModularNoise&#10;Hybrids&#10;Kits"
-                   defaultValue="0.0" saveInPreset="0"/>
-        <Component type="ScriptComboBox" id="BankA" x="6.0" y="10.0" width="90.0"
-                   height="30.0" max="167" parentComponent="A" fontSize="1.0" textColour="4293975957"
-                   itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
-                   defaultValue="0.0" saveInPreset="0" items="&#10;001_Piano&#10;002_BrightPiano&#10;004_HonkyTonkPiano&#10;005_ElectricPiano1&#10;006_ElectricPiano2&#10;014_Xylophone&#10;015_TubularBells&#10;017_DrawbarOrgan&#10;018_PercussiveOrgan&#10;019_RockOrgan&#10;020_ChurchOrgan&#10;025_GuitarNylon&#10;026_GuitarSteel&#10;027_ElectricGuitarJazz&#10;028_ElectricGuitarClean&#10;029_ElectricGuitarMuted&#10;031_DistortionGuitar&#10;034_ElectricBassFinger&#10;039_SynthBass1&#10;040_SynthBass2&#10;047_OrchestralHarp&#10;048_Timpani&#10;051_SynthStrings1&#10;052_SynthStrings2&#10;063_SynthBrass1&#10;064_SynthBrass2&#10;067_TenorSaxophone&#10;072_Clarinet&#10;075_Recorder&#10;080_Ocarina&#10;081_SynthSquare&#10;083_SynthCalliope&#10;087_SynthFifths&#10;088_SynthBassLead&#10;089_SynthNewAge&#10;092_SynthPadChoir&#10;093_SynthPadBowed&#10;096_SynthPadSweep&#10;098_SynthSoundtrack&#10;099_SynthCrystal&#10;102_SynthGoblins&#10;104_SynthSciFi&#10;109_Kalimba&#10;127_Applause&#10;129_Percussion&#10;1st&#10;4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;612perc&#10;Bell Source&#10;Belles&#10;Big&#10;BigElectric&#10;CS-Noise&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Cy2OP1&#10;Cy2OP2&#10;Cy2OP3&#10;Cy2OP4&#10;Cy2OP5&#10;Cy2OP6&#10;Cy2OP7&#10;Cy2OP8&#10;Dark BP 1&#10;Dark BP 2&#10;Dark BP 3&#10;Dark BP 4&#10;Drug Wave&#10;EP1&#10;EP2&#10;EP3&#10;Etrash&#10;Euro Organ&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;GateAR&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Leap&#10;Lingo&#10;MonoPoly Kit&#10;More Bell&#10;Rousing&#10;Sad Ring&#10;Scrd&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Special K&#10;Spl Git&#10;Super SH2 Kit&#10;Tinkly&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XP Kit&#10;ZstringA&#10;ZstringB&#10;cs30 kit&#10;eggcelent&#10;mr clicky&#10;mth&#10;nsty1&#10;nsty2&#10;pswp&#10;simr&#10;walls"/>
-      </Component>
-      <Component type="ScriptPanel" id="B" x="6.0" y="39.0" width="100.0" height="90.0"
-                 parentComponent="osc1" text="*" itemColour="4294954075" itemColour2="4294954075"
-                 visible="0" saveInPreset="1">
-        <Component type="ScriptComboBox" id="CategoriesB" x="55.0" y="46.0" width="40.0"
-                   height="30.0" max="9" parentComponent="B" fontSize="1.0" textColour="0"
-                   itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
-                   items="cs30&#10;em25&#10;sys101&#10;jx3p&#10;hybrids&#10;kraftzwerg&#10;XP-FM&#10;XP-Misc&#10;XP-PWM"
-                   saveInPreset="0"/>
-        <Component type="ScriptComboBox" id="BankB" x="6.0" y="10.0" width="90.0"
-                   height="30.0" max="167" parentComponent="B" fontSize="1.0" textColour="4293975957"
-                   itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
-                   saveInPreset="0" items="&#10;001_Piano&#10;002_BrightPiano&#10;004_HonkyTonkPiano&#10;005_ElectricPiano1&#10;006_ElectricPiano2&#10;014_Xylophone&#10;015_TubularBells&#10;017_DrawbarOrgan&#10;018_PercussiveOrgan&#10;019_RockOrgan&#10;020_ChurchOrgan&#10;025_GuitarNylon&#10;026_GuitarSteel&#10;027_ElectricGuitarJazz&#10;028_ElectricGuitarClean&#10;029_ElectricGuitarMuted&#10;031_DistortionGuitar&#10;034_ElectricBassFinger&#10;039_SynthBass1&#10;040_SynthBass2&#10;047_OrchestralHarp&#10;048_Timpani&#10;051_SynthStrings1&#10;052_SynthStrings2&#10;063_SynthBrass1&#10;064_SynthBrass2&#10;067_TenorSaxophone&#10;072_Clarinet&#10;075_Recorder&#10;080_Ocarina&#10;081_SynthSquare&#10;083_SynthCalliope&#10;087_SynthFifths&#10;088_SynthBassLead&#10;089_SynthNewAge&#10;092_SynthPadChoir&#10;093_SynthPadBowed&#10;096_SynthPadSweep&#10;098_SynthSoundtrack&#10;099_SynthCrystal&#10;102_SynthGoblins&#10;104_SynthSciFi&#10;109_Kalimba&#10;127_Applause&#10;129_Percussion&#10;1st&#10;4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;612perc&#10;Bell Source&#10;Belles&#10;Big&#10;BigElectric&#10;CS-Noise&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Cy2OP1&#10;Cy2OP2&#10;Cy2OP3&#10;Cy2OP4&#10;Cy2OP5&#10;Cy2OP6&#10;Cy2OP7&#10;Cy2OP8&#10;Dark BP 1&#10;Dark BP 2&#10;Dark BP 3&#10;Dark BP 4&#10;Drug Wave&#10;EP1&#10;EP2&#10;EP3&#10;Etrash&#10;Euro Organ&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;GateAR&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Leap&#10;Lingo&#10;MonoPoly Kit&#10;More Bell&#10;Rousing&#10;Sad Ring&#10;Scrd&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Special K&#10;Spl Git&#10;Super SH2 Kit&#10;Tinkly&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XP Kit&#10;ZstringA&#10;ZstringB&#10;cs30 kit&#10;eggcelent&#10;mr clicky&#10;mth&#10;nsty1&#10;nsty2&#10;pswp&#10;simr&#10;walls"/>
-      </Component>
-      <Component type="ScriptLabel" id="WAVELABEL1" x="13.0" y="49.0" width="90.0"
-                 height="30.0" parentComponent="osc1" textColour="4281936169"
-                 fontName="Montserrat" fontSize="17.0" editable="0" text="CS-Sine"
-                 saveInPreset="1"/>
-      <Component type="ScriptPanel" id="A1" x="6.0" y="251.0" width="100.0" height="90.0"
-                 parentComponent="osc1" text="*" itemColour="4293975957" itemColour2="4293975957"
-                 saveInPreset="1">
-        <Component type="ScriptComboBox" id="Categories1" x="55.0" y="46.0" width="40.0"
-                   height="30.0" max="8" parentComponent="A1" fontSize="1.0" textColour="0"
-                   itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
-                   items="BasicWaveforms&#10;GM&#10;ModularShape&#10;ModularFM&#10;ModularFiltered&#10;ModularNoise&#10;Hybrids&#10;Kits"
-                   defaultValue="0.0" saveInPreset="0"/>
-        <Component type="ScriptComboBox" id="BankA1" x="6.0" y="10.0" width="90.0"
-                   height="30.0" max="167" parentComponent="A1" fontSize="1.0" textColour="4293975957"
-                   itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
-                   defaultValue="0.0" saveInPreset="0" items="&#10;001_Piano&#10;002_BrightPiano&#10;004_HonkyTonkPiano&#10;005_ElectricPiano1&#10;006_ElectricPiano2&#10;014_Xylophone&#10;015_TubularBells&#10;017_DrawbarOrgan&#10;018_PercussiveOrgan&#10;019_RockOrgan&#10;020_ChurchOrgan&#10;025_GuitarNylon&#10;026_GuitarSteel&#10;027_ElectricGuitarJazz&#10;028_ElectricGuitarClean&#10;029_ElectricGuitarMuted&#10;031_DistortionGuitar&#10;034_ElectricBassFinger&#10;039_SynthBass1&#10;040_SynthBass2&#10;047_OrchestralHarp&#10;048_Timpani&#10;051_SynthStrings1&#10;052_SynthStrings2&#10;063_SynthBrass1&#10;064_SynthBrass2&#10;067_TenorSaxophone&#10;072_Clarinet&#10;075_Recorder&#10;080_Ocarina&#10;081_SynthSquare&#10;083_SynthCalliope&#10;087_SynthFifths&#10;088_SynthBassLead&#10;089_SynthNewAge&#10;092_SynthPadChoir&#10;093_SynthPadBowed&#10;096_SynthPadSweep&#10;098_SynthSoundtrack&#10;099_SynthCrystal&#10;102_SynthGoblins&#10;104_SynthSciFi&#10;109_Kalimba&#10;127_Applause&#10;129_Percussion&#10;1st&#10;4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;612perc&#10;Bell Source&#10;Belles&#10;Big&#10;BigElectric&#10;CS-Noise&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Cy2OP1&#10;Cy2OP2&#10;Cy2OP3&#10;Cy2OP4&#10;Cy2OP5&#10;Cy2OP6&#10;Cy2OP7&#10;Cy2OP8&#10;Dark BP 1&#10;Dark BP 2&#10;Dark BP 3&#10;Dark BP 4&#10;Drug Wave&#10;EP1&#10;EP2&#10;EP3&#10;Etrash&#10;Euro Organ&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;GateAR&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Leap&#10;Lingo&#10;MonoPoly Kit&#10;More Bell&#10;Rousing&#10;Sad Ring&#10;Scrd&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Special K&#10;Spl Git&#10;Super SH2 Kit&#10;Tinkly&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XP Kit&#10;ZstringA&#10;ZstringB&#10;cs30 kit&#10;eggcelent&#10;mr clicky&#10;mth&#10;nsty1&#10;nsty2&#10;pswp&#10;simr&#10;walls"/>
-      </Component>
-      <Component type="ScriptPanel" id="B1" x="6.0" y="251.0" width="100.0" height="90.0"
-                 parentComponent="osc1" text="*" itemColour="4293975957" itemColour2="4293975957"
-                 saveInPreset="1" visible="0">
-        <Component type="ScriptComboBox" id="CategoriesB1" x="55.0" y="46.0" width="40.0"
-                   height="30.0" max="9" parentComponent="B1" fontSize="1.0" textColour="0"
-                   itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
-                   items="cs30&#10;em25&#10;sys101&#10;jx3p&#10;hybrids&#10;kraftzwerg&#10;XP-FM&#10;XP-Misc&#10;XP-PWM"
-                   saveInPreset="0"/>
-        <Component type="ScriptComboBox" id="BankB1" x="6.0" y="10.0" width="90.0"
-                   height="30.0" max="167" parentComponent="B1" fontSize="1.0" textColour="4293975957"
-                   itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
-                   saveInPreset="0" items="&#10;001_Piano&#10;002_BrightPiano&#10;004_HonkyTonkPiano&#10;005_ElectricPiano1&#10;006_ElectricPiano2&#10;014_Xylophone&#10;015_TubularBells&#10;017_DrawbarOrgan&#10;018_PercussiveOrgan&#10;019_RockOrgan&#10;020_ChurchOrgan&#10;025_GuitarNylon&#10;026_GuitarSteel&#10;027_ElectricGuitarJazz&#10;028_ElectricGuitarClean&#10;029_ElectricGuitarMuted&#10;031_DistortionGuitar&#10;034_ElectricBassFinger&#10;039_SynthBass1&#10;040_SynthBass2&#10;047_OrchestralHarp&#10;048_Timpani&#10;051_SynthStrings1&#10;052_SynthStrings2&#10;063_SynthBrass1&#10;064_SynthBrass2&#10;067_TenorSaxophone&#10;072_Clarinet&#10;075_Recorder&#10;080_Ocarina&#10;081_SynthSquare&#10;083_SynthCalliope&#10;087_SynthFifths&#10;088_SynthBassLead&#10;089_SynthNewAge&#10;092_SynthPadChoir&#10;093_SynthPadBowed&#10;096_SynthPadSweep&#10;098_SynthSoundtrack&#10;099_SynthCrystal&#10;102_SynthGoblins&#10;104_SynthSciFi&#10;109_Kalimba&#10;127_Applause&#10;129_Percussion&#10;1st&#10;4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;612perc&#10;Bell Source&#10;Belles&#10;Big&#10;BigElectric&#10;CS-Noise&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Cy2OP1&#10;Cy2OP2&#10;Cy2OP3&#10;Cy2OP4&#10;Cy2OP5&#10;Cy2OP6&#10;Cy2OP7&#10;Cy2OP8&#10;Dark BP 1&#10;Dark BP 2&#10;Dark BP 3&#10;Dark BP 4&#10;Drug Wave&#10;EP1&#10;EP2&#10;EP3&#10;Etrash&#10;Euro Organ&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;GateAR&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Leap&#10;Lingo&#10;MonoPoly Kit&#10;More Bell&#10;Rousing&#10;Sad Ring&#10;Scrd&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Special K&#10;Spl Git&#10;Super SH2 Kit&#10;Tinkly&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XP Kit&#10;ZstringA&#10;ZstringB&#10;cs30 kit&#10;eggcelent&#10;mr clicky&#10;mth&#10;nsty1&#10;nsty2&#10;pswp&#10;simr&#10;walls"/>
-      </Component>
-      <Component type="ScriptLabel" id="WAVELABEL2" x="13.0" y="261.0" width="90.0"
-                 height="30.0" parentComponent="osc1" textColour="4281936169"
-                 fontName="Montserrat" fontSize="17.0" editable="0" text="CS-Sine"
-                 saveInPreset="1"/>
-      <Component type="ScriptLabel" id="WAVE1" x="8.0" y="90.0" width="50.0" height="20.0"
-                 parentComponent="osc1" editable="0" text="BANK" fontSize="18.0"
-                 fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptLabel" id="WAVE3" x="7.0" y="302.0" width="50.0"
-                 height="20.0" parentComponent="osc1" editable="0" text="BANK"
-                 fontSize="18.0" fontName="Montserrat" textColour="4282132775"/>
+    <Component type="ScriptPanel" id="importer" x="4.0" y="13.0" width="420.0"
+               height="370.0" itemColour="4293910409" itemColour2="4293910409"
+               parentComponent="HARMONICSYNTH" visible="0">
+      <Component type="ScriptLabel" id="PITCH-MABEL18" x="64.0" y="26.0" width="90.0"
+                 height="30.0" parentComponent="importer" text="LOAD SAMPLE" editable="0"
+                 fontName="Montserrat" textColour="4282132775" enabled="0" alignment="left"/>
+      <Component type="ScriptAudioWaveform" id="AudioWaveform1" x="15.0" y="70.0"
+                 width="390.0" height="220.0" parentComponent="importer" showFileName="0"
+                 saveInPreset="0" processorId="Sampler1" bgColour="4175215158"
+                 itemColour2="1660901376" enableRange="0"/>
+      <Component type="ScriptLabel" id="SampleName" x="270.0" y="303.0" width="80.0"
+                 height="30.0" parentComponent="importer" bgColour="4292854320"
+                 textColour="4278190080" text="nn"/>
+      <Component type="ScriptPanel" id="LoopPanel" x="15.0" y="70.0" height="220.0"
+                 width="390.0" allowCallbacks="All Callbacks" parentComponent="importer"
+                 visible="0"/>
+      <Component type="ScriptButton" id="Loop" x="14.0" y="335.0" saveInPreset="0"
+                 parentComponent="importer" width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}button1.png"
+                 scaleFactor="0.2000000029802322" isVertical="0"/>
+      <Component type="ScriptSlider" id="XFade" x="199.0" y="299.0" saveInPreset="0"
+                 parentComponent="importer" numStrips="206.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 scaleFactor="0.2000000029802322" width="50.0" height="50.0"/>
+      <Component type="ScriptButton" id="DetectPitch" x="15.0" y="307.0" enableMidiLearn="0"
+                 saveInPreset="0" isMomentary="1" parentComponent="importer" filmstripImage="{PROJECT_FOLDER}button1.png"
+                 scaleFactor="0.2000000029802322" isVertical="0" width="20.0"
+                 height="20.0"/>
+      <Component type="ScriptPanel" id="SampleDropper" x="15.0" y="70.0" width="390.0"
+                 allowCallbacks="Clicks &amp; Hover" height="220.0" saveInPreset="1"
+                 parentComponent="importer" itemColour="14465590" itemColour2="14465590"
+                 textColour="1880166673" bgColour="1118481"/>
+      <Component type="ScriptButton" id="ShowDropper" x="40.0" y="30.0" enableMidiLearn="0"
+                 saveInPreset="0" radioGroup="1.0" parentComponent="importer"
+                 filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.2000000029802322"
+                 isVertical="0" width="20.0" height="20.0"/>
+      <Component type="ScriptButton" id="EditRange" x="165.0" y="30.0" enableMidiLearn="0"
+                 saveInPreset="0" radioGroup="1.0" parentComponent="importer"
+                 filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.2000000029802322"
+                 isVertical="0" width="20.0" height="20.0"/>
+      <Component type="ScriptButton" id="EditLoop" x="303.0" y="30.0" enableMidiLearn="0"
+                 saveInPreset="0" radioGroup="1.0" parentComponent="importer"
+                 filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.2000000029802322"
+                 isVertical="0" width="20.0" height="20.0"/>
+      <Component type="ScriptButton" id="Save" x="366.0" y="307.0" enableMidiLearn="0"
+                 saveInPreset="0" parentComponent="importer" width="20.0" height="20.0"
+                 filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.2000000029802322"
+                 isVertical="0"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL20" x="191.0" y="24.0" width="90.0"
+                 height="30.0" parentComponent="importer" text="SET RANGE" editable="0"
+                 fontName="Montserrat" textColour="4282132775" enabled="0" alignment="left"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL21" x="322.0" y="25.0" width="90.0"
+                 height="30.0" parentComponent="importer" text="LOOP POINTS" editable="0"
+                 fontName="Montserrat" textColour="4282132775" enabled="0" alignment="left"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL24" x="45.0" y="307.0" width="120.0"
+                 height="20.0" parentComponent="importer" text="DETECT PITCH"
+                 editable="0" fontName="Montserrat" textColour="4282132775" enabled="0"
+                 alignment="left"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL25" x="44.0" y="327.0" width="50.0"
+                 height="30.0" parentComponent="importer" text="LOOP" editable="0"
+                 fontName="Montserrat" textColour="4282132775" enabled="0" alignment="left"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL26" x="270.0" y="338.0" width="80.0"
+                 height="30.0" parentComponent="importer" text="SAMPLE NAME" editable="0"
+                 fontName="Montserrat" textColour="4282132775" enabled="0" alignment="left"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL27" x="357.0" y="338.0" width="50.0"
+                 height="30.0" parentComponent="importer" text="SAVE" editable="0"
+                 fontName="Montserrat" textColour="4282132775" enabled="0" alignment="left"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL28" x="200.0" y="339.0" width="60.0"
+                 height="30.0" parentComponent="importer" text="XFADE" editable="0"
+                 fontName="Montserrat" textColour="4282132775" enabled="0" alignment="left"/>
     </Component>
+    <Component type="ScriptLabel" id="importlabel" x="43.0" y="15.0" width="100.0"
+               height="20.0" parentComponent="HARMONICSYNTH" text="SAMPLE IMPORT"
+               editable="0" fontName="Montserrat" textColour="4282132775" visible="0"/>
     <Component type="ScriptPanel" id="filter" x="436.0" y="201.0" width="320.0"
                height="180.0" parentComponent="HARMONICSYNTH" itemColour="2700143531"
                itemColour2="2699288760" bgColour="1441080099" textColour="1091637521"
                locked="1">
-      <Component type="ScriptSliderPack" id="Cut-sp" x="70.0" y="15.0" width="190.0"
+      <Component type="ScriptComboBox" id="ScriptComboBox9" x="264.0" y="142.0"
+                 width="20.0" height="20.0" max="4" parentComponent="filter" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2"
+                 processorId="HARMONIC" itemColour2="4294905615" textColour="4283119672"
+                 bgColour="4282974208" itemColour="4279592703" fontName="Montserrat"
+                 saveInPreset="0" parameterId="shmodswitch"/>
+      <Component type="ScriptSlider" id="SHAPEMOD43" x="284.0" y="138.0" width="30.0"
+                 height="30.0" parentComponent="filter" processorId="HARMONIC"
+                 middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.119999997317791" min="-1.0"
+                 saveInPreset="0" parameterId="SHFmod"/>
+      <Component type="ScriptComboBox" id="ScriptComboBox8" x="218.0" y="134.0"
+                 width="20.0" height="20.0" max="4" parentComponent="filter" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2"
+                 processorId="HARMONIC" parameterId="fmixmodswitch" itemColour2="4294905615"
+                 textColour="4283119672" bgColour="4282974208" itemColour="4279592703"
+                 fontName="Montserrat"/>
+      <Component type="ScriptSlider" id="SHAPEMOD33" x="213.0" y="153.0" width="30.0"
+                 height="30.0" parentComponent="filter" processorId="HARMONIC"
+                 parameterId="fmixmod" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.119999997317791" min="-1.0"/>
+      <Component type="ScriptSliderPack" id="Cut-sp" x="70.0" y="10.0" width="190.0"
                  height="120.0" parentComponent="filter" processorId="HARMONIC"
                  SliderPackIndex="3" itemColour="3168582198" itemColour2="14465590"
-                 textColour="16553879"/>
+                 textColour="16553879" bgColour="14465590"/>
       <Component type="ScriptSlider" id="SHAPEMOD1" x="15.0" y="68.0" width="50.0"
                  height="50.0" parentComponent="filter" processorId="HARMONIC"
                  parameterId="CUTMOD" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                  numStrips="206.0" scaleFactor="0.1800000071525574"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL11" x="6.0" y="53.0" width="60.0"
+      <Component type="ScriptLabel" id="PITCH-MABEL11" x="6.0" y="43.0" width="60.0"
                  height="20.0" parentComponent="filter" text="OFFSET" editable="0"
                  fontSize="12.0" fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL12" x="262.0" y="53.0" width="50.0"
+      <Component type="ScriptLabel" id="PITCH-MABEL12" x="262.0" y="43.0" width="50.0"
                  height="20.0" parentComponent="filter" text="RES" editable="0"
                  fontSize="12.0" fontName="Montserrat" textColour="4282132775"/>
       <Component type="ScriptLabel" id="WAVE8" x="1.0" y="149.0" width="80.0"
                  height="20.0" parentComponent="filter" text="FILTER" fontSize="20.0"
                  editable="0" fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptSlider" id="SHAPEMOD3" x="15.0" y="13.0" width="50.0"
+      <Component type="ScriptSlider" id="SHAPEMOD3" x="15.0" y="7.0" width="50.0"
                  height="50.0" parentComponent="filter" processorId="HARMONIC"
                  parameterId="CUT" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                  numStrips="206.0" scaleFactor="0.1800000071525574" defaultValue="0.5"/>
-      <Component type="ScriptSlider" id="SHAPEMOD4" x="267.0" y="13.0" width="40.0"
+      <Component type="ScriptSlider" id="SHAPEMOD4" x="267.0" y="7.0" width="40.0"
                  height="40.0" parentComponent="filter" processorId="HARMONIC"
                  parameterId="RES" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                  numStrips="206.0" scaleFactor="0.1800000071525574" defaultValue="0.5"/>
@@ -596,29 +493,39 @@
                  processorId="HARMONIC" parameterId="FIILLTTTEERRSWIITCHHHHH"
                  itemColour2="4294905615" textColour="4283119672" bgColour="4282974208"
                  itemColour="4279592703" fontName="Montserrat"/>
-      <Component type="ScriptComboBox" id="ScriptComboBox3" x="84.0" y="150.0"
+      <Component type="ScriptComboBox" id="ScriptComboBox3" x="78.0" y="151.0"
                  width="90.0" height="20.0" max="3" parentComponent="filter" items="Lowpass&#10;Highpass&#10;Bandpass&#10;&#10;"
                  processorId="HARMONIC" parameterId="FTYPE" defaultValue="0.0"
                  textColour="4283119672" bgColour="4282974208" itemColour="4279592703"
                  itemColour2="4294905615" fontName="Montserrat"/>
-      <Component type="ScriptSlider" id="SHAPEMOD18" x="183.0" y="144.0" width="40.0"
+      <Component type="ScriptSlider" id="SHAPEMOD18" x="182.0" y="131.0" width="40.0"
                  height="30.0" parentComponent="filter" processorId="HARMONIC"
                  parameterId="harmfiltermix" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                  numStrips="206.0" scaleFactor="0.1400000005960464" defaultValue="0.5"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL46" x="218.0" y="148.0" width="40.0"
+      <Component type="ScriptLabel" id="PITCH-MABEL46" x="179.0" y="158.0" width="40.0"
                  height="20.0" parentComponent="filter" text="MIX" editable="0"
                  fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL49" x="68.0" y="115.0" width="60.0"
+      <Component type="ScriptLabel" id="PITCH-MABEL49" x="68.0" y="123.0" width="60.0"
                  height="30.0" parentComponent="filter" text="CUTOFF" editable="0"
                  fontSize="12.0" fontName="Montserrat" alignment="left" itemColour2="3723003269"
                  textColour="4288883499"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL52" x="261.0" y="111.0" width="50.0"
+      <Component type="ScriptLabel" id="PITCH-MABEL52" x="261.0" y="123.0" width="50.0"
                  height="20.0" parentComponent="filter" text="S&amp;H IN" editable="0"
                  fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptSlider" id="SHAPEMOD20" x="267.0" y="73.0" width="40.0"
+      <Component type="ScriptSlider" id="SHAPEMOD20" x="267.0" y="85.0" width="40.0"
                  height="40.0" parentComponent="filter" processorId="HARMONIC"
                  parameterId="SHFILTER" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                  numStrips="206.0" scaleFactor="0.1800000071525574" defaultValue="0.5"/>
+      <Component type="ScriptComboBox" id="ScriptComboBox10" x="261.0" y="64.0"
+                 width="20.0" height="20.0" max="4" parentComponent="filter" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2"
+                 processorId="HARMONIC" parameterId="resmodswitch" itemColour2="4294905615"
+                 textColour="4283119672" bgColour="4282974208" itemColour="4279592703"
+                 fontName="Montserrat"/>
+      <Component type="ScriptSlider" id="SHAPEMOD44" x="283.0" y="60.0" width="30.0"
+                 height="30.0" parentComponent="filter" processorId="HARMONIC"
+                 middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.119999997317791" min="-1.0"
+                 saveInPreset="0" parameterId="resmod"/>
     </Component>
     <Component type="ScriptPanel" id="pan" x="435.0" y="11.0" width="320.0"
                height="180.0" parentComponent="HARMONICSYNTH" itemColour="2700143531"
@@ -646,11 +553,10 @@
       <Component type="ScriptLabel" id="WAVE9" x="262.0" y="6.0" width="60.0"
                  height="30.0" parentComponent="pan" text="S&amp;H" editable="0"
                  fontName="Montserrat" textColour="4282132775" fontSize="20.0"/>
-      <Component type="ScriptSliderPack" id="Res-sp1" x="117.0" y="48.0" width="190.0"
+      <Component type="ScriptSliderPack" id="Res-sp1" x="117.0" y="41.0" width="190.0"
                  height="120.0" parentComponent="pan" processorId="HARMONIC" SliderPackIndex="2"
-                 itemColour="3168582198" itemColour2="14465590" textColour="16553879"
-                 defaultValue="9.0"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL51" x="115.0" y="149.0" width="60.0"
+                 itemColour="3168582198" itemColour2="14465590" textColour="16553879"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL51" x="115.0" y="157.0" width="60.0"
                  height="20.0" parentComponent="pan" text="RATE" editable="0"
                  fontName="Montserrat" processorId="HARMONIC" parameterId="Spread"
                  alignment="left" itemColour2="3723003269" textColour="4288883499"/>
@@ -680,9 +586,204 @@
                  height="20.0" parentComponent="pan" text="DIV" editable="0" fontName="Montserrat"
                  textColour="4282132775"/>
     </Component>
-    <Component type="ScriptImage" id="Image1" x="721.0" y="252.0" fileName="{PROJECT_FOLDER}XO9.png"
-               width="250.0" height="190.0" alpha="0.3700000047683716" parentComponent="HARMONICSYNTH"
-               enabled="0" locked="1"/>
+    <Component type="ScriptPanel" id="osc1" x="4.0" y="3.0" width="420.0" height="140.0"
+               parentComponent="HARMONICSYNTH" itemColour="2700143531" itemColour2="2700143531"
+               bgColour="1441080099" textColour="1091637521" locked="1">
+      <Component type="ScriptComboBox" id="ExpansionSelector" x="16.0" y="155.0"
+                 width="80.0" height="30.0" max="2" parentComponent="osc1" textColour="4283119672"
+                 bgColour="4282974208" itemColour="4279592703" itemColour2="4294905615"
+                 fontName="Montserrat" items="FACTORY&#10;Expansion" visible="0"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL14" x="19.0" y="191.0" width="70.0"
+                 height="15.0" parentComponent="osc1" text="EXPANSION" editable="0"
+                 fontName="Montserrat" textColour="4282132775" visible="0"/>
+      <Component type="ScriptSlider" id="SHAPEMOD25" x="111.0" y="13.0" width="45.0"
+                 height="45.0" parentComponent="osc1" processorId="HARMONIC" parameterId="PITCH1TUNE"
+                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.1800000071525574" defaultValue="0.5"
+                 enabled="0" visible="0"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL44" x="106.0" y="55.0" width="50.0"
+                 height="15.0" parentComponent="osc1" text="DETUNE" editable="0"
+                 fontSize="11.0" fontName="Montserrat" textColour="4282132775"
+                 enabled="0" visible="0"/>
+      <Component type="ScriptLabel" id="WAVE" x="16.0" y="13.0" width="80.0" height="20.0"
+                 parentComponent="osc1" editable="0" text="WAVE 1" fontSize="25.0"
+                 fontName="Montserrat" textColour="4282132775"/>
+      <Component type="ScriptComboBox" id="SOURC3" x="140.0" y="67.0" max="4"
+                 width="40.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
+                 parentComponent="osc1" processorId="HARMONIC" parameterId="OSCENVMOD1SWITCH"
+                 textColour="4283119672" bgColour="4283119672" itemColour="4279592703"
+                 itemColour2="4294905615" fontName="Montserrat"/>
+      <Component type="ScriptSlider" id="SHAPEMOD11" x="140.0" y="89.0" width="45.0"
+                 height="45.0" parentComponent="osc1" processorId="HARMONIC" parameterId="PITCHMOD"
+                 min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.1599999964237213"/>
+      <Component type="ScriptSlider" id="SHAPEMOD12" x="140.0" y="8.0" width="45.0"
+                 height="45.0" parentComponent="osc1" processorId="HARMONIC" parameterId="HARMPITCH"
+                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.1599999964237213" defaultValue="0.5"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL47" x="135.0" y="48.0" width="50.0"
+                 height="15.0" parentComponent="osc1" text="OFFSET" editable="0"
+                 fontSize="12.0" textColour="4282132775" fontName="Montserrat"/>
+      <Component type="ScriptSlider" id="SHAPEMOD32" x="81.0" y="109.0" width="30.0"
+                 height="30.0" parentComponent="osc1" processorId="HARMONIC" parameterId="osc1shmod"
+                 min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire2.png"
+                 numStrips="201.0" scaleFactor="0.119999997317791" stepSize="0.1000000014901161"
+                 visible="0" locked="1"/>
+      <Component type="ScriptSliderPack" id="pitch-sp1" x="217.0" y="5.0" width="190.0"
+                 height="120.0" parentComponent="osc1" processorId="HARMONIC"
+                 itemColour="3168582198" itemColour2="14465590" textColour="0"
+                 bgColour="16711680" flashActive="0" defaultValue="0.0"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL35" x="213.0" y="121.0" width="40.0"
+                 height="20.0" parentComponent="osc1" text="PITCH" editable="0"
+                 fontSize="12.0" fontName="Montserrat" alignment="left" itemColour2="3723003269"
+                 textColour="4288883499"/>
+      <Component type="ScriptPanel" id="A" x="9.0" y="41.0" width="100.0" height="80.0"
+                 parentComponent="osc1" text="*" itemColour="4293910409" itemColour2="4293910409"
+                 saveInPreset="1" bgColour="15785877" textColour="16777215">
+        <Component type="ScriptComboBox" id="Categories" x="55.0" y="39.0" width="40.0"
+                   height="30.0" max="14" parentComponent="A" fontSize="1.0" textColour="0"
+                   itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
+                   items="BasicWaveforms&#10;GM&#10;Hybrids&#10;Kits&#10;cs30&#10;em25&#10;sys101&#10;jx3p&#10;kraftzwerg&#10;XPFM&#10;XPMisc&#10;XPPWM&#10;XPSaws&#10;XPSquares"
+                   defaultValue="0.0"/>
+        <Component type="ScriptComboBox" id="BankA" x="6.0" y="3.0" width="90.0"
+                   height="30.0" max="7" parentComponent="A" fontSize="1.0" textColour="4293975957"
+                   itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
+                   defaultValue="0.0" items="BooBass&#10;CrazyLFO&#10;Gooey&#10;Log&#10;Magic Resin&#10;OChord&#10;organic.xml"/>
+      </Component>
+      <Component type="ScriptLabel" id="WAVELABEL1" x="16.0" y="47.0" width="90.0"
+                 height="30.0" parentComponent="osc1" textColour="4281936169"
+                 fontName="Montserrat" fontSize="17.0" editable="0" text="BooBass"
+                 saveInPreset="1"/>
+      <Component type="ScriptLabel" id="WAVE1" x="11.0" y="84.0" width="50.0"
+                 height="20.0" parentComponent="osc1" editable="0" text="BANK"
+                 fontSize="18.0" fontName="Montserrat" textColour="4282132775"/>
+    </Component>
+    <Component type="ScriptPanel" id="oscmaster" x="4.0" y="152.0" width="420.0"
+               height="70.0" parentComponent="HARMONICSYNTH" itemColour="2700143531"
+               itemColour2="2700143531" bgColour="1441080099" textColour="1091637521">
+      <Component type="ScriptSlider" id="SHAPE" x="30.0" y="6.0" width="45.0"
+                 height="40.0" parentComponent="oscmaster" processorId="HARMONIC"
+                 parameterId="harm-min" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.1800000071525574" stepSize="1.0"
+                 middlePosition="8.0" max="16.0"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL6" x="25.0" y="49.0" width="50.0"
+                 height="15.0" parentComponent="oscmaster" text="MIN" editable="0"
+                 fontName="Montserrat" textColour="4282132775"/>
+      <Component type="ScriptSlider" id="SHAPE6" x="97.0" y="6.0" width="45.0"
+                 height="40.0" parentComponent="oscmaster" processorId="HARMONIC"
+                 parameterId="harm-max" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.1800000071525574" max="16.0"
+                 middlePosition="8.0"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL7" x="93.0" y="49.0" width="50.0"
+                 height="15.0" parentComponent="oscmaster" text="MAX" editable="0"
+                 fontName="Montserrat" textColour="4282132775"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL41" x="310.0" y="49.0" width="50.0"
+                 height="15.0" parentComponent="oscmaster" text="MIX" editable="0"
+                 fontName="Montserrat" textColour="4282132775"/>
+      <Component type="ScriptSlider" id="SHAPE8" x="315.0" y="6.0" width="45.0"
+                 height="40.0" parentComponent="oscmaster" processorId="HARMONIC"
+                 parameterId="HrmOSCMIX" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.1800000071525574" middlePosition="0.5"
+                 defaultValue="0.5"/>
+      <Component type="ScriptSlider" id="SHAPE7" x="209.0" y="6.0" width="45.0"
+                 height="40.0" parentComponent="oscmaster" processorId="HARMONIC"
+                 parameterId="harm-step" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.1800000071525574" middlePosition="0.5"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL8" x="204.0" y="49.0" width="50.0"
+                 height="15.0" parentComponent="oscmaster" text="STEP" editable="0"
+                 fontName="Montserrat" textColour="4282132775"/>
+      <Component type="ScriptComboBox" id="SOURC17" x="141.0" y="10.0" max="4"
+                 width="40.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
+                 parentComponent="oscmaster" processorId="HARMONIC" parameterId="OSCMISCMODSWITCHB"
+                 textColour="4283119672" bgColour="4283119672" itemColour="4279592703"
+                 itemColour2="4294905615" fontName="Montserrat"/>
+      <Component type="ScriptSlider" id="SHAPEMOD47" x="147.0" y="31.0" width="30.0"
+                 height="30.0" parentComponent="oscmaster" processorId="HARMONIC"
+                 parameterId="MAXMOD" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.119999997317791"/>
+      <Component type="ScriptComboBox" id="SOURC16" x="250.0" y="10.0" max="4"
+                 width="40.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
+                 parentComponent="oscmaster" processorId="HARMONIC" parameterId="OSCMISCMODSWITCHC"
+                 textColour="4283119672" bgColour="4283119672" itemColour="4279592703"
+                 itemColour2="4294905615" fontName="Montserrat"/>
+      <Component type="ScriptSlider" id="SHAPEMOD46" x="258.0" y="31.0" width="30.0"
+                 height="30.0" parentComponent="oscmaster" processorId="HARMONIC"
+                 parameterId="STEPMOD" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.119999997317791"/>
+      <Component type="ScriptSlider" id="SHAPEMOD45" x="365.0" y="31.0" width="30.0"
+                 height="30.0" parentComponent="oscmaster" processorId="HARMONIC"
+                 parameterId="OSCMIXMOD" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.119999997317791" min="-1.0"/>
+      <Component type="ScriptComboBox" id="SOURC15" x="359.0" y="10.0" max="4"
+                 width="40.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
+                 parentComponent="oscmaster" processorId="HARMONIC" parameterId="OSCMISCMODSWITCHD"
+                 textColour="4283119672" bgColour="4283119672" itemColour="4279592703"
+                 itemColour2="4294905615" fontName="Montserrat"/>
+    </Component>
+    <Component type="ScriptPanel" id="osc2" x="4.0" y="232.0" width="420.0"
+               height="150.0" parentComponent="HARMONICSYNTH" itemColour="2700143531"
+               itemColour2="2700143531" bgColour="1441080099" textColour="1091637521">
+      <Component type="ScriptSlider" id="SHAPEMOD14" x="173.0" y="7.0" width="45.0"
+                 height="45.0" parentComponent="osc2" processorId="HARMONIC" parameterId="master-cut"
+                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.1599999964237213" defaultValue="0.5"/>
+      <Component type="ScriptSlider" id="SHAPEMOD15" x="173.0" y="94.0" width="40.0"
+                 height="40.0" parentComponent="osc2" processorId="HARMONIC" parameterId="filtermod"
+                 min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.1599999964237213"/>
+      <Component type="ScriptComboBox" id="SOURC2" x="172.0" y="66.0" max="4"
+                 width="40.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
+                 parentComponent="osc2" processorId="HARMONIC" parameterId="O2MODSWITCH1"
+                 itemColour2="4294905615" textColour="4283119672" bgColour="4282974208"
+                 itemColour="4279592703" fontName="Montserrat"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL43" x="114.0" y="111.0" width="50.0"
+                 height="10.0" parentComponent="osc2" text="DETUNE" editable="0"
+                 fontSize="12.0" fontName="Montserrat" textColour="4282132775"/>
+      <Component type="ScriptSlider" id="SHAPEMOD24" x="117.0" y="66.0" width="45.0"
+                 height="45.0" parentComponent="osc2" processorId="HARMONIC" parameterId="PITCH22TUNE"
+                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.1800000071525574"/>
+      <Component type="ScriptSlider" id="SHAPEMOD27" x="119.0" y="12.0" width="45.0"
+                 height="45.0" parentComponent="osc2" processorId="HARMONIC" parameterId="os2phase"
+                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.1599999964237213" itemColour2="3723003269"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL53" x="114.0" y="49.0" width="50.0"
+                 height="15.0" parentComponent="osc2" text="PHASE" editable="0"
+                 fontSize="12.0" fontName="Montserrat" textColour="4282132775"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL62" x="167.0" y="47.0" width="50.0"
+                 height="15.0" parentComponent="osc2" text="OFFSET" editable="0"
+                 fontSize="12.0" fontName="Montserrat" textColour="4282132775"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL38" x="218.0" y="130.0" width="40.0"
+                 height="20.0" parentComponent="osc2" text="PITCH" editable="0"
+                 fontSize="12.0" fontName="Montserrat" alignment="left" itemColour2="3723003269"
+                 textColour="4288883499"/>
+      <Component type="ScriptLabel" id="WAVE2" x="17.0" y="4.0" width="80.0" height="30.0"
+                 parentComponent="osc2" editable="0" text="WAVE 2" fontSize="25.0"
+                 fontName="Montserrat" textColour="4282132775"/>
+      <Component type="ScriptComboBox" id="Categories1" x="65.0" y="77.0" width="40.0"
+                 height="30.0" max="14" parentComponent="osc2" fontSize="1.0"
+                 textColour="0" itemColour2="1118481" itemColour="4294902015"
+                 bgColour="4279725701" items="BasicWaveforms&#10;GM&#10;Hybrids&#10;Kits&#10;cs30&#10;em25&#10;sys101&#10;jx3p&#10;kraftzwerg&#10;XPFM&#10;XPMisc&#10;XPPWM&#10;XPSaws&#10;XPSquares"
+                 defaultValue="0.0"/>
+      <Component type="ScriptComboBox" id="BankA1" x="15.0" y="43.0" width="90.0"
+                 height="30.0" max="7" parentComponent="osc2" fontSize="1.0" textColour="4293975957"
+                 itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
+                 defaultValue="0.0" items="BooBass&#10;CrazyLFO&#10;Gooey&#10;Log&#10;Magic Resin&#10;OChord&#10;organic.xml"/>
+      <Component type="ScriptLabel" id="WAVELABEL2" x="16.0" y="44.0" width="90.0"
+                 height="30.0" parentComponent="osc2" textColour="4281936169"
+                 fontName="Montserrat" fontSize="17.0" editable="0" text="CrazyLFO"
+                 saveInPreset="1"/>
+      <Component type="ScriptLabel" id="WAVE3" x="18.0" y="298.0" width="50.0"
+                 height="20.0" parentComponent="osc2" editable="0" text="BANK"
+                 fontSize="18.0" fontName="Montserrat" textColour="4282132775"/>
+      <Component type="ScriptLabel" id="WAVE4" x="5.0" y="84.0" width="60.0" height="20.0"
+                 parentComponent="osc2" editable="0" text="BANK" fontSize="18.0"
+                 fontName="Montserrat" textColour="4282132775"/>
+      <Component type="ScriptSliderPack" id="ScriptSliderPack1" x="221.0" y="11.0"
+                 width="190.0" height="120.0" parentComponent="osc2" processorId="HARMONIC"
+                 SliderPackIndex="1" itemColour="3168582198" itemColour2="14465590"
+                 textColour="16777215" flashActive="0"/>
+    </Component>
   </Component>
   <Component type="ScriptLabel" id="Label49" x="655.0" y="398.0" width="50.0"
              height="20.0" fontSize="15.0" alignment="left" text="MOD 2" editable="0"
@@ -699,390 +800,56 @@
   <Component type="ScriptLabel" id="Label60" x="604.0" y="518.0" width="40.0"
              height="15.0" fontSize="12.0" alignment="left" text="VEL" editable="0"
              fontName="Montserrat" textColour="4280885536"/>
-  <Component type="ScriptPanel" id="MODPAGE" x="24.0" y="23.0" width="400.0"
-             height="360.0" itemColour="4292991890" itemColour2="4292991890"
-             borderSize="0.0" borderRadius="8.0" locked="1" visible="0">
-    <Component type="ScriptPanel" id="main" x="-1.0" y="-5.0" width="410.0"
-               height="363.0" parentComponent="MODPAGE" itemColour="4293975957"
-               itemColour2="4293975957">
-      <Component type="ScriptLabel" id="PITCH-MABEL23" x="128.0" y="5.0" width="170.0"
-                 height="30.0" parentComponent="main" text="MODULATION ROUTINGS"
-                 editable="0" fontSize="16.0" fontName="Montserrat" textColour="4282132775"
-                 alignment="left"/>
-      <Component type="ScriptPanel" id="ScriptPanel3" x="10.0" y="40.0" width="190.0"
-                 height="140.0" parentComponent="main" itemColour="201283584"
-                 itemColour2="318724096">
-        <Component type="ScriptComboBox" id="SOURC7" x="90.0" y="65.0" max="4" width="50.0"
-                   height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;" parentComponent="ScriptPanel3"
-                   processorId="HARMONIC" parameterId="OSC1FINEMODSWITCH" textColour="4283119672"
-                   bgColour="4283119672" itemColour="4279592703" itemColour2="4294905615"
-                   fontName="Montserrat" enabled="0" visible="0"/>
-        <Component type="ScriptComboBox" id="SOURC22" x="90.0" y="103.0" max="4"
-                   width="50.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
-                   parentComponent="ScriptPanel3" processorId="HARMONIC" parameterId="ENMVMOD2SWITCH"
-                   textColour="4283119672" bgColour="4283119672" itemColour="4279592703"
-                   itemColour2="4294905615" fontName="Montserrat"/>
-        <Component type="ScriptComboBox" id="SOURC24" x="90.0" y="30.0" max="4"
-                   width="50.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
-                   parentComponent="ScriptPanel3" processorId="" textColour="4283119672"
-                   bgColour="4283119672" itemColour="4279592703" itemColour2="4294905615"
-                   fontName="Montserrat" saveInPreset="0" linkedTo="SOURC3"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL59" x="10.0" y="66.0" width="60.0"
-                   height="20.0" parentComponent="ScriptPanel3" text="DETUNE" editable="0"
-                   fontSize="11.0" fontName="Montserrat" textColour="4282132775"
-                   alignment="left"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL60" x="10.0" y="101.0" width="60.0"
-                   height="20.0" parentComponent="ScriptPanel3" text="S&amp;H IN"
-                   editable="0" fontSize="11.0" fontName="Montserrat" textColour="4282132775"
-                   alignment="left"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL13" x="9.0" y="28.0" width="60.0"
-                   height="20.0" parentComponent="ScriptPanel3" text="OFFSET" editable="0"
-                   fontSize="12.0" fontName="Montserrat" textColour="4282132775"
-                   alignment="left"/>
-        <Component type="ScriptSlider" id="SHAPEMOD55" x="145.0" y="101.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel3" processorId="HARMONIC"
-                   parameterId="osc1shmod" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" stepSize="0.1000000014901161"/>
-        <Component type="ScriptSlider" id="SHAPEMOD56" x="145.0" y="65.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel3" processorId="HARMONIC"
-                   parameterId="osc1finemod" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" stepSize="0.1000000014901161"
-                   enabled="0" visible="0"/>
-        <Component type="ScriptSlider" id="SHAPEMOD57" x="57.0" y="101.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel3" processorId="HARMONIC"
-                   parameterId="SHPITCH1" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" defaultValue="0.5"/>
-        <Component type="ScriptSlider" id="SHAPEMOD58" x="57.0" y="65.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel3" processorId="" middlePosition="0.5"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
-                   scaleFactor="0.119999997317791" defaultValue="0.5" saveInPreset="0"
-                   linkedTo="SHAPEMOD25" enabled="0" visible="0"/>
-        <Component type="ScriptSlider" id="SHAPEMOD61" x="145.0" y="29.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel3" processorId="" min="-1.0"
-                   middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" saveInPreset="0"
-                   linkedTo="SHAPEMOD11"/>
-        <Component type="ScriptSlider" id="SHAPEMOD62" x="57.0" y="29.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel3" processorId="" middlePosition="0.5"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
-                   scaleFactor="0.119999997317791" defaultValue="0.5" saveInPreset="0"
-                   linkedTo="SHAPEMOD12"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL22" x="10.0" y="-1.0" width="60.0"
-                   height="30.0" parentComponent="ScriptPanel3" text="WAVE 1" editable="0"
-                   fontSize="16.0" fontName="Montserrat" textColour="4282132775"
-                   alignment="left"/>
-      </Component>
-      <Component type="ScriptPanel" id="ScriptPanel4" x="10.0" y="188.0" width="190.0"
-                 height="160.0" parentComponent="main" itemColour="201283584"
-                 itemColour2="318724096">
-        <Component type="ScriptComboBox" id="SOURC19" x="90.0" y="127.0" max="4"
-                   width="50.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
-                   parentComponent="ScriptPanel4" processorId="HARMONIC" parameterId="O2MODSWITCH4"
-                   textColour="4283119672" bgColour="4283119672" itemColour="4279592703"
-                   itemColour2="4294905615" fontName="Montserrat"/>
-        <Component type="ScriptComboBox" id="SOURC20" x="90.0" y="96.0" max="4"
-                   width="50.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
-                   parentComponent="ScriptPanel4" processorId="HARMONIC" parameterId="O2MODSWITCH2"
-                   textColour="4283119672" bgColour="4283119672" itemColour="4279592703"
-                   itemColour2="4294905615" fontName="Montserrat"/>
-        <Component type="ScriptComboBox" id="SOURC21" x="90.0" y="64.0" max="4"
-                   width="50.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
-                   parentComponent="ScriptPanel4" processorId="HARMONIC" parameterId="O2MODSWITCH3"
-                   textColour="4283119672" bgColour="4283119672" itemColour="4279592703"
-                   itemColour2="4294905615" fontName="Montserrat"/>
-        <Component type="ScriptComboBox" id="SOURC23" x="90.0" y="31.0" max="4"
-                   width="50.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
-                   parentComponent="ScriptPanel4" processorId="" itemColour2="4294905615"
-                   textColour="4283119672" bgColour="4283119672" itemColour="4279592703"
-                   fontName="Montserrat" saveInPreset="0" linkedTo="SOURC2"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL56" x="10.0" y="130.0" width="50.0"
-                   height="20.0" parentComponent="ScriptPanel4" text="PHASE" editable="0"
-                   fontSize="12.0" fontName="Montserrat" textColour="4282132775"
-                   alignment="left"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL57" x="10.0" y="99.0" width="50.0"
-                   height="20.0" parentComponent="ScriptPanel4" text="S&amp;H IN"
-                   editable="0" fontSize="12.0" fontName="Montserrat" textColour="4282132775"
-                   alignment="left"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL58" x="10.0" y="64.0" width="50.0"
-                   height="20.0" parentComponent="ScriptPanel4" text="DETUNE" editable="0"
-                   fontSize="12.0" fontName="Montserrat" textColour="4282132775"
-                   alignment="left"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL39" x="10.0" y="31.0" width="50.0"
-                   height="20.0" parentComponent="ScriptPanel4" text="OFFSET" editable="0"
-                   fontSize="12.0" fontName="Montserrat" textColour="4282132775"
-                   alignment="left" itemColour="3168582198" itemColour2="3168582198"/>
-        <Component type="ScriptSlider" id="SHAPEMOD49" x="57.0" y="124.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel4" processorId="HARMONIC"
-                   parameterId="os2phase" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791"/>
-        <Component type="ScriptSlider" id="SHAPEMOD50" x="145.0" y="123.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel4" processorId="HARMONIC"
-                   parameterId="OSC2PHASEMOD" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791"/>
-        <Component type="ScriptSlider" id="SHAPEMOD51" x="145.0" y="92.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel4" processorId="HARMONIC"
-                   parameterId="ParameterMOD" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" defaultValue="0.5"/>
-        <Component type="ScriptSlider" id="SHAPEMOD52" x="57.0" y="93.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel4" processorId="HARMONIC"
-                   parameterId="SHPITCH2" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791"/>
-        <Component type="ScriptSlider" id="SHAPEMOD53" x="57.0" y="61.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel4" processorId="HARMONIC"
-                   parameterId="PITCH22TUNE" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" defaultValue="0.5"/>
-        <Component type="ScriptSlider" id="SHAPEMOD54" x="145.0" y="60.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel4" processorId="HARMONIC"
-                   parameterId="OSC2FINEMOD" min="-0.2000000029802322" middlePosition="0.0"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
-                   scaleFactor="0.119999997317791" max="0.2000000029802322"/>
-        <Component type="ScriptSlider" id="SHAPEMOD59" x="57.0" y="28.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel4" processorId="HARMONIC"
-                   parameterId="master-cut" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" defaultValue="0.5"/>
-        <Component type="ScriptSlider" id="SHAPEMOD60" x="145.0" y="27.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel4" processorId="" min="-1.0"
-                   middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" saveInPreset="0"
-                   linkedTo="SHAPEMOD15"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL64" x="6.0" y="3.0" width="70.0"
-                   height="20.0" parentComponent="ScriptPanel4" text="WAVE 2" editable="0"
-                   fontSize="16.0" fontName="Montserrat" textColour="4282132775"
-                   alignment="left"/>
-      </Component>
-      <Component type="ScriptPanel" id="ScriptPanel5" x="208.0" y="40.0" width="190.0"
-                 height="140.0" parentComponent="main" itemColour="201283584"
-                 itemColour2="318724096">
-        <Component type="ScriptLabel" id="PITCH-MABEL9" x="15.0" y="66.0" width="40.0"
-                   height="20.0" parentComponent="ScriptPanel5" text="STEP" editable="0"
-                   fontName="Montserrat" textColour="4282132775" alignment="left"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL55" x="15.0" y="101.0" width="40.0"
-                   height="20.0" parentComponent="ScriptPanel5" text="MIX" editable="0"
-                   fontName="Montserrat" textColour="4282132775" alignment="left"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL15" x="15.0" y="31.0" width="40.0"
-                   height="20.0" parentComponent="ScriptPanel5" text="MAX" editable="0"
-                   fontName="Montserrat" textColour="4282132775" alignment="left"/>
-        <Component type="ScriptSlider" id="SHAPEMOD45" x="147.0" y="101.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel5" processorId="HARMONIC"
-                   parameterId="OSCMIXMOD" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791"/>
-        <Component type="ScriptComboBox" id="SOURC15" x="91.0" y="103.0" max="4"
-                   width="50.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
-                   parentComponent="ScriptPanel5" processorId="HARMONIC" parameterId="OSCMISCMODSWITCHD"
-                   textColour="4283119672" bgColour="4283119672" itemColour="4279592703"
-                   itemColour2="4294905615" fontName="Montserrat"/>
-        <Component type="ScriptComboBox" id="SOURC16" x="91.0" y="65.0" max="4"
-                   width="50.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
-                   parentComponent="ScriptPanel5" processorId="HARMONIC" parameterId="OSCMISCMODSWITCHC"
-                   textColour="4283119672" bgColour="4283119672" itemColour="4279592703"
-                   itemColour2="4294905615" fontName="Montserrat"/>
-        <Component type="ScriptComboBox" id="SOURC17" x="91.0" y="30.0" max="4"
-                   width="50.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
-                   parentComponent="ScriptPanel5" processorId="HARMONIC" parameterId="OSCMISCMODSWITCHB"
-                   textColour="4283119672" bgColour="4283119672" itemColour="4279592703"
-                   itemColour2="4294905615" fontName="Montserrat"/>
-        <Component type="ScriptSlider" id="SHAPEMOD46" x="147.0" y="65.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel5" processorId="HARMONIC"
-                   parameterId="STEPMOD" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791"/>
-        <Component type="ScriptSlider" id="SHAPEMOD47" x="147.0" y="29.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel5" processorId="HARMONIC"
-                   parameterId="MAXMOD" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791"/>
-        <Component type="ScriptSlider" id="SHAPE9" x="54.0" y="65.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel5" processorId="" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" middlePosition="0.5"
-                   saveInPreset="0" linkedTo="SHAPE7"/>
-        <Component type="ScriptSlider" id="SHAPE10" x="54.0" y="101.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel5" processorId="" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" middlePosition="0.5"
-                   saveInPreset="0" linkedTo="SHAPE8" defaultValue="0.5"/>
-        <Component type="ScriptSlider" id="SHAPE11" x="54.0" y="29.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel5" processorId="" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" max="16.0"
-                   middlePosition="8.0" saveInPreset="0" linkedTo="SHAPE6"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL19" x="12.0" y="3.0" width="120.0"
-                   height="20.0" parentComponent="ScriptPanel5" text="OSC CONTROL"
-                   editable="0" fontName="Montserrat" textColour="4282132775" alignment="left"
-                   fontSize="16.0"/>
-      </Component>
-      <Component type="ScriptPanel" id="ScriptPanel2" x="210.0" y="188.0" width="190.0"
-                 height="160.0" parentComponent="main" itemColour="201283584"
-                 itemColour2="318724096">
-        <Component type="ScriptComboBox" id="ScriptComboBox4" x="87.0" y="31.0"
-                   width="50.0" height="20.0" max="4" parentComponent="ScriptPanel2"
-                   items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2" processorId="" itemColour2="4294905615"
-                   textColour="4283119672" bgColour="4282974208" itemColour="4279592703"
-                   fontName="Montserrat" saveInPreset="0" linkedTo="ScriptComboBox1"/>
-        <Component type="ScriptComboBox" id="ScriptComboBox8" x="87.0" y="126.0"
-                   width="50.0" height="20.0" max="4" parentComponent="ScriptPanel2"
-                   items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2" processorId="HARMONIC"
-                   parameterId="fmixmodswitch" itemColour2="4294905615" textColour="4283119672"
-                   bgColour="4282974208" itemColour="4279592703" fontName="Montserrat"/>
-        <Component type="ScriptComboBox" id="ScriptComboBox9" x="87.0" y="91.0"
-                   width="50.0" height="20.0" max="4" parentComponent="ScriptPanel2"
-                   items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2" processorId="HARMONIC"
-                   itemColour2="4294905615" textColour="4283119672" bgColour="4282974208"
-                   itemColour="4279592703" fontName="Montserrat" saveInPreset="0"
-                   parameterId="shmodswitch"/>
-        <Component type="ScriptComboBox" id="ScriptComboBox10" x="87.0" y="61.0"
-                   width="50.0" height="20.0" max="4" parentComponent="ScriptPanel2"
-                   items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2" processorId="HARMONIC"
-                   parameterId="resmodswitch" itemColour2="4294905615" textColour="4283119672"
-                   bgColour="4282974208" itemColour="4279592703" fontName="Montserrat"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL61" x="3.0" y="29.0" width="50.0"
-                   height="20.0" parentComponent="ScriptPanel2" text="OFFSET" editable="0"
-                   fontSize="12.0" textColour="4282132775" fontName="Montserrat"
-                   alignment="left"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL50" x="3.0" y="127.0" width="50.0"
-                   height="20.0" parentComponent="ScriptPanel2" text="MIX" editable="0"
-                   fontName="Montserrat" textColour="4282132775" alignment="left"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL54" x="3.0" y="91.0" width="50.0"
-                   height="20.0" parentComponent="ScriptPanel2" text="S&amp;H IN"
-                   editable="0" fontName="Montserrat" textColour="4282132775" alignment="left"/>
-        <Component type="ScriptSlider" id="SHAPEMOD7" x="50.0" y="27.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel2" processorId="" middlePosition="0.5"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
-                   scaleFactor="0.119999997317791" defaultValue="0.5" saveInPreset="0"
-                   linkedTo="SHAPEMOD3"/>
-        <Component type="ScriptSlider" id="SHAPEMOD2" x="143.0" y="27.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel2" processorId="" min="-1.0"
-                   middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" saveInPreset="0"
-                   linkedTo="SHAPEMOD1"/>
-        <Component type="ScriptSlider" id="SHAPEMOD33" x="143.0" y="124.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel2" processorId="HARMONIC"
-                   parameterId="fmixmod" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" min="-1.0"/>
-        <Component type="ScriptSlider" id="SHAPEMOD34" x="50.0" y="124.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel2" processorId="" middlePosition="0.5"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
-                   scaleFactor="0.119999997317791" defaultValue="0.5" saveInPreset="0"
-                   linkedTo="SHAPEMOD18"/>
-        <Component type="ScriptSlider" id="SHAPEMOD42" x="50.0" y="89.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel2" processorId="" middlePosition="0.5"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
-                   scaleFactor="0.119999997317791" defaultValue="0.5" saveInPreset="0"
-                   linkedTo="SHAPEMOD20"/>
-        <Component type="ScriptSlider" id="SHAPEMOD43" x="143.0" y="89.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel2" processorId="HARMONIC"
-                   middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" min="-1.0"
-                   saveInPreset="0" parameterId="SHFmod"/>
-        <Component type="ScriptSlider" id="SHAPEMOD8" x="50.0" y="58.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel2" processorId="" middlePosition="0.5"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
-                   scaleFactor="0.119999997317791" defaultValue="0.5" saveInPreset="0"
-                   linkedTo="SHAPEMOD4"/>
-        <Component type="ScriptSlider" id="SHAPEMOD44" x="143.0" y="58.0" width="30.0"
-                   height="30.0" parentComponent="ScriptPanel2" processorId="HARMONIC"
-                   middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                   numStrips="206.0" scaleFactor="0.119999997317791" min="-1.0"
-                   saveInPreset="0" parameterId="resmod"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL63" x="3.0" y="62.0" width="50.0"
-                   height="20.0" parentComponent="ScriptPanel2" text="RES" editable="0"
-                   fontSize="12.0" textColour="4282132775" fontName="Montserrat"
-                   alignment="left"/>
-        <Component type="ScriptLabel" id="PITCH-MABEL65" x="6.0" y="4.0" width="50.0"
-                   height="20.0" parentComponent="ScriptPanel2" text="FILTER" editable="0"
-                   fontSize="18.0" textColour="4282132775" fontName="Montserrat"
-                   alignment="left"/>
-      </Component>
-    </Component>
-  </Component>
   <Component type="ScriptButton" id="modtype1" x="616.0" y="398.0" width="30.0"
              height="30.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.2199999988079071"
              isVertical="0"/>
-  <Component type="ScriptPanel" id="PRESETS" x="11.0" y="10.0" width="750.0"
-             height="380.0" itemColour="4292991890" itemColour2="4292991890"
+  <Component type="ScriptPanel" id="PRESETS" x="8.0" y="8.0" width="755.0"
+             height="385.0" itemColour="4292991890" itemColour2="4292991890"
              bgColour="4292674821" visible="0">
-    <Component type="ScriptPanel" id="Panel2" x="480.0" y="4.0" parentComponent="PRESETS"
-               width="230.0" height="170.0" itemColour="4280885536" itemColour2="4280885536">
-      <Component type="ScriptFloatingTile" id="FloatingTile1" x="4.0" y="0.0"
-                 parentComponent="Panel2" width="230.0" height="180.0" ContentType="CustomSettings"
-                 bgColour="4294966267" itemColour="4280287154" itemColour2="4294910720"
-                 Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: true,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: false,&#10;  &quot;ClearMidiCC&quot;: true,&#10;  &quot;SampleLocation&quot;: true,&#10;  &quot;DebugMode&quot;: false,&#10;  &quot;UseOpenGL&quot;: false,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
-                 FontSize="1.0" itemColour3="4294967295" Font="Montserrat"/>
-    </Component>
     <Component type="ScriptFloatingTile" id="ScriptFloatingTile1" x="9.0" y="0.0"
                width="450.0" height="350.0" parentComponent="PRESETS" ContentType="PresetBrowser"
-               bgColour="2695456" itemColour="4280293656" itemColour2="4293909467"
+               bgColour="2695456" itemColour="4294319872" itemColour2="4293909467"
                Data="{&#10;  &quot;ShowSaveButton&quot;: true,&#10;  &quot;ShowExpansionsAsColumn&quot;: false,&#10;  &quot;ShowFolderButton&quot;: true,&#10;  &quot;ShowNotes&quot;: true,&#10;  &quot;ShowEditButtons&quot;: true,&#10;  &quot;ShowFavoriteIcon&quot;: true,&#10;  &quot;NumColumns&quot;: 2,&#10;  &quot;ColumnWidthRatio&quot;: [&#10;    0.3333333333333333,&#10;    0.3333333333333333,&#10;    0.3333333333333333&#10;  ]&#10;}"
                itemColour3="4282606521" textColour="4278190080"/>
     <Component type="ScriptImage" id="ScriptImage1" x="485.0" y="186.0" width="230.0"
-               height="170.0" parentComponent="PRESETS" fileName="{PROJECT_FOLDER}expansions.png"/>
+               height="170.0" parentComponent="PRESETS" fileName="{PROJECT_FOLDER}expansions.png"
+               visible="0"/>
     <Component type="ScriptPanel" id="expansionad" x="485.0" y="188.0" width="230.0"
-               height="170.0" parentComponent="PRESETS" allowCallbacks="Clicks Only"/>
+               height="170.0" parentComponent="PRESETS" allowCallbacks="Clicks Only"
+               visible="0"/>
+    <Component type="ScriptPanel" id="ScriptPanel2" x="512.0" y="8.0" width="210.0"
+               height="350.0" parentComponent="PRESETS" itemColour="4284555520"
+               itemColour2="4284621312">
+      <Component type="ScriptFloatingTile" id="ScriptFloatingTile2" x="6.0" y="31.0"
+                 width="210.0" height="290.0" parentComponent="ScriptPanel2" ContentType="CustomSettings"
+                 bgColour="4278190080" itemColour="0" itemColour2="0" Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: true,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: false,&#10;  &quot;ClearMidiCC&quot;: true,&#10;  &quot;SampleLocation&quot;: true,&#10;  &quot;DebugMode&quot;: true,&#10;  &quot;UseOpenGL&quot;: true,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
+                 itemColour3="4282606521"/>
+    </Component>
   </Component>
-  <Component type="ScriptLabel" id="Label1" x="780.0" y="13.0" text="Xolotl V.0.42"
+  <Component type="ScriptLabel" id="Label1" x="780.0" y="13.0" text="Xolotl V.0.4.3"
              fontSize="20.0" width="100.0" height="20.0" fontName="Montserrat"
              editable="0" textColour="4280885536" alignment="left"/>
   <Component type="ScriptButton" id="modtype2" x="854.0" y="400.0" width="30.0"
              height="30.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.2199999988079071"
              isVertical="0"/>
-  <Component type="ScriptPanel" id="SETTINGS" x="14.0" y="504.0" width="390"
-             height="60" itemColour="1891481930" itemColour2="1891477834"
-             bgColour="4292674821" locked="1">
-    <Component type="ScriptPanel" id="ScriptPanel1" x="184.0" y="39.0" width="180"
-               height="20" parentComponent="SETTINGS" itemColour="4281542182"
-               itemColour2="4281936426"/>
-    <Component type="ScriptFloatingTile" id="ScriptFloatingTile2" x="167.0"
-               y="19.0" width="220" height="50" parentComponent="SETTINGS" ContentType="CustomSettings"
-               bgColour="4278190080" itemColour="0" itemColour2="0" Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: false,&#10;  &quot;ScaleFactor&quot;: false,&#10;  &quot;VoiceAmountMultiplier&quot;: false,&#10;  &quot;ClearMidiCC&quot;: false,&#10;  &quot;SampleLocation&quot;: true,&#10;  &quot;DebugMode&quot;: false,&#10;  &quot;UseOpenGL&quot;: false,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
-               FontSize="0.4" textColour="4288949035"/>
-    <Component type="ScriptLabel" id="Label38" x="10.0" y="8.0" width="80.0"
-               height="20.0" fontSize="15.0" alignment="left" text="SETTINGS"
-               editable="0" parentComponent="SETTINGS" fontName="Montserrat"
-               textColour="4278190080"/>
-    <Component type="ScriptButton" id="PRESETBUTTON" x="85.0" y="-1.0" width="22.0"
-               height="22.0" parentComponent="SETTINGS" filmstripImage="{PROJECT_FOLDER}button6.png"
-               scaleFactor="0.1800000071525574" isVertical="0"/>
-    <Component type="ScriptLabel" id="PRESETSW" x="104.0" y="-2.0" parentComponent="SETTINGS"
-               text="PRESETS" fontName="Montserrat" width="60.0" height="20.0"
-               fontSize="12.0" editable="0" textColour="4278190080" alignment="left"/>
-    <Component type="ScriptLabel" id="PRESETSW1" x="294.0" y="2.0" parentComponent="SETTINGS"
-               text="MODE" fontName="Montserrat" width="80.0" height="20.0"
-               fontSize="15.0" editable="0" textColour="4294306761" alignment="left"
-               visible="0"/>
-    <Component type="ScriptButton" id="mode" x="364.0" y="-3.0" parentComponent="SETTINGS"
-               width="40.0" height="30.0" filmstripImage="{PROJECT_FOLDER}button1.png"
-               scaleFactor="0.25" isVertical="0" visible="0"/>
-    <Component type="ScriptLabel" id="LoadEx" x="104.0" y="19.0" parentComponent="SETTINGS"
-               text="EXPANSION" fontName="Montserrat" width="60.0" height="20.0"
-               fontSize="12.0" editable="0" textColour="4278190080" alignment="left"/>
-    <Component type="ScriptButton" id="LoadExp" x="85.0" y="20.0" width="22.0"
-               height="22.0" parentComponent="SETTINGS" filmstripImage="{PROJECT_FOLDER}button6.png"
-               scaleFactor="0.1800000071525574" isVertical="0" saveInPreset="0"
-               isMomentary="1"/>
-    <Component type="ScriptSlider" id="ScriptSlider19" x="239.0" y="8.0" width="30.0"
-               height="30.0" parentComponent="SETTINGS" min="-24.0" max="24.0"
-               stepSize="1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-               numStrips="206.0" scaleFactor="0.1099999994039536" processorId="Transposer1"
-               parameterId="TransposeAmount" showValuePopup="Right"/>
-    <Component type="ScriptButton" id="leATO" x="167.0" y="11.0" width="22.0"
-               height="22.0" parentComponent="SETTINGS" filmstripImage="{PROJECT_FOLDER}button6.png"
-               scaleFactor="0.1800000071525574" isVertical="0" processorId="Legato with Retrigger1"
-               parameterId="Bypass"/>
-    <Component type="ScriptLabel" id="LoadEx2" x="186.0" y="9.0" parentComponent="SETTINGS"
-               text="LEGATO" fontName="Montserrat" width="50.0" height="20.0"
-               fontSize="12.0" editable="0" textColour="4278190080" alignment="left"/>
-    <Component type="ScriptLabel" id="LoadEx3" x="266.0" y="6.0" parentComponent="SETTINGS"
-               text="TRANS POSE" fontName="Montserrat" width="40.0" height="29.0"
-               fontSize="12.0" editable="0" textColour="4278190080" alignment="left"/>
-    <Component type="ScriptButton" id="track" x="74.0" y="20.0" width="30.0"
-               height="30.0" parentComponent="SETTINGS" filmstripImage="{PROJECT_FOLDER}button1.png"
-               scaleFactor="0.25" isVertical="0" processorId="HARMONIC" parameterId="fm-osc2track"
-               visible="0"/>
-    <Component type="ScriptLabel" id="PRESETSW2" x="331.0" y="1.0" parentComponent="SETTINGS"
-               text="MOD ROUTINGS" fontName="Montserrat" width="50" height="40"
-               fontSize="12.0" editable="0" textColour="4278190080" alignment="left"/>
-    <Component type="ScriptButton" id="MODPAGEBUTTON" x="309.0" y="11.0" width="30.0"
-               height="20.0" parentComponent="SETTINGS" filmstripImage="{PROJECT_FOLDER}button6.png"
-               scaleFactor="0.1800000071525574" isVertical="0"/>
-  </Component>
-  <Component type="ScriptAudioWaveform" id="AudioWaveform1" x="20.0" y="130.0"
-             width="70.0" height="30.0" processorId="HARMONIC" visible="0"/>
-  <Component type="ScriptAudioWaveform" id="AudioWaveform2" x="30.0" y="350.0"
-             width="70.0" height="30.0" processorId="HARMONIC" sampleIndex="1"
-             visible="0"/>
+  <Component type="ScriptButton" id="PRESETBUTTON" x="791.0" y="298.0" width="22.0"
+             height="22.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+             isVertical="0"/>
+  <Component type="ScriptLabel" id="PRESETSW" x="810.0" y="297.0" text="PRESETS"
+             fontName="Montserrat" width="60.0" height="20.0" fontSize="12.0"
+             editable="0" textColour="4278190080" alignment="left"/>
+  <Component type="ScriptButton" id="leATO" x="791.0" y="325.0" width="22.0"
+             height="22.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+             isVertical="0" processorId="Legato with Retrigger1" parameterId="Bypass"/>
+  <Component type="ScriptLabel" id="LoadEx2" x="811.0" y="323.0" text="LEGATO"
+             fontName="Montserrat" width="50.0" height="20.0" fontSize="12.0"
+             editable="0" textColour="4278190080" alignment="left"/>
+  <Component type="ScriptSlider" id="ScriptSlider19" x="789.0" y="349.0" width="30.0"
+             height="30.0" min="-24.0" max="24.0" stepSize="1.0" middlePosition="0.0"
+             filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+             scaleFactor="0.1099999994039536" processorId="Transposer1" parameterId="TransposeAmount"
+             showValuePopup="Right"/>
+  <Component type="ScriptLabel" id="LoadEx3" x="811.0" y="351.0" text="TRANSPOSE"
+             fontName="Montserrat" width="80.0" height="20.0" fontSize="12.0"
+             editable="0" textColour="4278190080" alignment="left"/>
 </ContentProperties>
