@@ -2147,7 +2147,7 @@
         <Parameters/>
       </Node>
       <Node ID="clone  connections" FactoryPath="container.no_midi" Bypassed="0"
-            ShowParameters="1">
+            ShowParameters="1" Folded="1">
         <Nodes>
           <Node ID="osc1" FactoryPath="container.split" Bypassed="0">
             <Nodes>
@@ -2818,9 +2818,9 @@
         </Properties>
         <Nodes>
           <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" NodeColour="4287927444"
-                ShowParameters="0">
+                ShowParameters="1">
             <Nodes>
-              <Node ID="xfader1" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader1" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -2828,12 +2828,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain38" ParameterId="Gain"/>
+                      <Connection NodeId="gain39" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain39" ParameterId="Gain"/>
+                      <Connection NodeId="gain38" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -3281,9 +3281,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child15" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader30" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader30" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -3291,12 +3291,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain77" ParameterId="Gain"/>
+                      <Connection NodeId="gain78" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain78" ParameterId="Gain"/>
+                      <Connection NodeId="gain77" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -3446,7 +3446,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Value="0.0"/>
                         </Parameters>
                       </Node>
-                      <Node ID="minmax93" FactoryPath="control.minmax" Bypassed="0">
+                      <Node ID="minmax32" FactoryPath="control.minmax" Bypassed="0">
                         <ModulationTargets>
                           <Connection NodeId="pma_unscaled64" ParameterId="Value"/>
                         </ModulationTargets>
@@ -3744,9 +3744,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child14" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader28" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader28" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -3754,12 +3754,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain73" ParameterId="Gain"/>
+                      <Connection NodeId="gain74" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain74" ParameterId="Gain"/>
+                      <Connection NodeId="gain73" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -4207,9 +4207,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child13" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader26" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader26" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -4217,12 +4217,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain69" ParameterId="Gain"/>
+                      <Connection NodeId="gain70" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain70" ParameterId="Gain"/>
+                      <Connection NodeId="gain69" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -4670,9 +4670,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child12" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader24" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader24" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -4680,12 +4680,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain65" ParameterId="Gain"/>
+                      <Connection NodeId="gain66" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain66" ParameterId="Gain"/>
+                      <Connection NodeId="gain65" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -5133,9 +5133,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child11" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader22" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader22" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -5143,12 +5143,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain61" ParameterId="Gain"/>
+                      <Connection NodeId="gain62" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain62" ParameterId="Gain"/>
+                      <Connection NodeId="gain61" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -5596,9 +5596,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child10" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader20" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader20" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -5606,12 +5606,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain58" ParameterId="Gain"/>
+                      <Connection NodeId="gain59" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain59" ParameterId="Gain"/>
+                      <Connection NodeId="gain58" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -6059,9 +6059,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child9" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader18" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader18" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -6069,12 +6069,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain56" ParameterId="Gain"/>
+                      <Connection NodeId="gain57" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain57" ParameterId="Gain"/>
+                      <Connection NodeId="gain56" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -6522,9 +6522,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child8" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader16" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader16" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -6532,12 +6532,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain54" ParameterId="Gain"/>
+                      <Connection NodeId="gain55" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain55" ParameterId="Gain"/>
+                      <Connection NodeId="gain54" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -6985,9 +6985,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child7" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader14" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader14" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -6995,12 +6995,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain52" ParameterId="Gain"/>
+                      <Connection NodeId="gain53" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain53" ParameterId="Gain"/>
+                      <Connection NodeId="gain52" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -7448,9 +7448,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child6" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader12" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader12" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -7458,12 +7458,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain50" ParameterId="Gain"/>
+                      <Connection NodeId="gain51" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain51" ParameterId="Gain"/>
+                      <Connection NodeId="gain50" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -7911,9 +7911,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child5" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader10" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader10" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -7921,12 +7921,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain48" ParameterId="Gain"/>
+                      <Connection NodeId="gain49" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain49" ParameterId="Gain"/>
+                      <Connection NodeId="gain48" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -8374,9 +8374,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child4" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader8" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader8" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -8384,12 +8384,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain46" ParameterId="Gain"/>
+                      <Connection NodeId="gain47" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain47" ParameterId="Gain"/>
+                      <Connection NodeId="gain46" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -8837,9 +8837,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader6" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader6" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -8847,12 +8847,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain44" ParameterId="Gain"/>
+                      <Connection NodeId="gain45" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain45" ParameterId="Gain"/>
+                      <Connection NodeId="gain44" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -9300,9 +9300,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader4" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader4" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -9310,12 +9310,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain42" ParameterId="Gain"/>
+                      <Connection NodeId="gain43" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain43" ParameterId="Gain"/>
+                      <Connection NodeId="gain42" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -9763,9 +9763,9 @@
             <Parameters/>
           </Node>
           <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="xfader2" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+              <Node ID="xfader2" FactoryPath="control.xfader" Bypassed="0">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -9773,12 +9773,12 @@
                 <SwitchTargets>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain40" ParameterId="Gain"/>
+                      <Connection NodeId="gain41" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                   <SwitchTarget>
                     <Connections>
-                      <Connection NodeId="gain41" ParameterId="Gain"/>
+                      <Connection NodeId="gain40" ParameterId="Gain"/>
                     </Connections>
                   </SwitchTarget>
                 </SwitchTargets>
@@ -10442,7 +10442,7 @@
           <Connection NodeId="s7h" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="HrmOSCMIX" MinValue="1.0" MaxValue="0.0" Value="0.6015376892089843">
+      <Parameter ID="HrmOSCMIX" MinValue="0.0" MaxValue="1.0" Value="0.6015376892089843">
         <Connections>
           <Connection NodeId="pma16" ParameterId="Add"/>
         </Connections>

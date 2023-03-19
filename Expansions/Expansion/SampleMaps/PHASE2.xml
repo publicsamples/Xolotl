@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap RelativePath="0" FileName="/Users/rick/Music/Audio Music Apps/Xolotl/Xolotl/Samples/Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE.sfz"
+           SaveMode="2" RRGroupAmount="1.0" CrossfadeGamma="1.0" ID="PHASE2"
+           MicPositions=";">
+  <sample ID="1" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-38-16-3DHN.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="335400" LoopEnd="598571"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="724344"
+          MonolithOffset="0" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="2" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-38-32-Y770.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="157206" LoopEnd="429590"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="722560"
+          MonolithOffset="724992" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="3" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-38-48-UMZA.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="329529" LoopEnd="556282"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725984"
+          MonolithOffset="1449984" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="4" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-38-64-K7XQ.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="128651" LoopEnd="611402"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="723426"
+          MonolithOffset="2179072" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="5" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-38-79-DT3E.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="401431" LoopEnd="516122"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727323"
+          MonolithOffset="2904064" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="6" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-38-95-LZES.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="133384" LoopEnd="572232"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725914"
+          MonolithOffset="3633152" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="7" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-38-111-WB85.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="101647" LoopEnd="408847"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727687"
+          MonolithOffset="4362240" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="8" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-38-127-YH91.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="95101" LoopEnd="212866"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="728928"
+          MonolithOffset="5091328" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="9" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-44-16-3S5L.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="126809" LoopEnd="324440"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="728072"
+          MonolithOffset="5820416" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="10" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-44-32-EWRO.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="258279" LoopEnd="596204"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725663"
+          MonolithOffset="6549504" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="11" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-44-48-6V9V.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="256217" LoopEnd="467162"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726919"
+          MonolithOffset="7278592" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="12" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-44-64-KZPI.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="166915" LoopEnd="298001"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725961"
+          MonolithOffset="8007680" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="13" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-44-79-U3A9.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="150001" LoopEnd="294387"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="724048"
+          MonolithOffset="8736768" MonolithLength="724992" SampleRate="48000.0"/>
+  <sample ID="14" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-44-95-CCQB.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="395235" LoopEnd="528355"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725599"
+          MonolithOffset="9461760" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="15" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-44-111-WFD8.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="412534" LoopEnd="610162"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="735634"
+          MonolithOffset="10190848" MonolithLength="737280" SampleRate="48000.0"/>
+  <sample ID="16" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-44-127-PL97.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="304208" LoopEnd="438352"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726071"
+          MonolithOffset="10928128" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="17" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-50-16-2Z0R.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="102237" LoopEnd="323419"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725694"
+          MonolithOffset="11657216" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="18" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-50-32-700W.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="458611" LoopEnd="568926"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725571"
+          MonolithOffset="12386304" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="19" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-50-48-RZOW.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="148960" LoopEnd="256193"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725873"
+          MonolithOffset="13115392" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="20" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-50-64-G1UL.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="95121" LoopEnd="519350"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="723627"
+          MonolithOffset="13844480" MonolithLength="724992" SampleRate="48000.0"/>
+  <sample ID="21" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-50-79-XRV9.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="329684" LoopEnd="468660"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="738288"
+          MonolithOffset="14569472" MonolithLength="741376" SampleRate="48000.0"/>
+  <sample ID="22" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-50-95-LDON.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="135366" LoopEnd="250047"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726956"
+          MonolithOffset="15310848" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="23" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-50-111-5LHE.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="388798" LoopEnd="514458"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726835"
+          MonolithOffset="16039936" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="24" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-50-127-DRPT.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="111237" LoopEnd="540001"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727387"
+          MonolithOffset="16769024" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="25" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-56-16-A3ZI.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="332133" LoopEnd="439126"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725157"
+          MonolithOffset="17498112" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="26" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-56-32-FAFD.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="338286" LoopEnd="609629"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="723066"
+          MonolithOffset="18227200" MonolithLength="724992" SampleRate="48000.0"/>
+  <sample ID="27" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-56-48-H730.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="296183" LoopEnd="601320"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727412"
+          MonolithOffset="18952192" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="28" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-56-64-03AW.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="131509" LoopEnd="576419"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="737316"
+          MonolithOffset="19681280" MonolithLength="741376" SampleRate="48000.0"/>
+  <sample ID="29" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-56-79-WUJ5.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="284334" LoopEnd="389814"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="724630"
+          MonolithOffset="20422656" MonolithLength="724992" SampleRate="48000.0"/>
+  <sample ID="30" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-56-95-4YID.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="304199" LoopEnd="602152"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726008"
+          MonolithOffset="21147648" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="31" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-56-111-R63G.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="378448" LoopEnd="484916"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="723793"
+          MonolithOffset="21876736" MonolithLength="724992" SampleRate="48000.0"/>
+  <sample ID="32" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-56-127-NOJP.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="167455" LoopEnd="610842"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="723158"
+          MonolithOffset="22601728" MonolithLength="724992" SampleRate="48000.0"/>
+  <sample ID="33" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-62-16-Y4T7.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="413424" LoopEnd="522567"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727045"
+          MonolithOffset="23326720" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="34" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-62-32-W42U.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="206455" LoopEnd="567696"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726201"
+          MonolithOffset="24055808" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="35" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-62-48-GJEO.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="198988" LoopEnd="583604"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727262"
+          MonolithOffset="24784896" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="36" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-62-64-TZ3D.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="305676" LoopEnd="593906"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="736621"
+          MonolithOffset="25513984" MonolithLength="737280" SampleRate="48000.0"/>
+  <sample ID="37" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-62-79-WPR1.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="159678" LoopEnd="285280"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="724036"
+          MonolithOffset="26251264" MonolithLength="724992" SampleRate="48000.0"/>
+  <sample ID="38" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-62-95-H1TS.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="346165" LoopEnd="585763"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="732608"
+          MonolithOffset="26976256" MonolithLength="733184" SampleRate="48000.0"/>
+  <sample ID="39" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-62-111-Y879.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="188178" LoopEnd="589138"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727200"
+          MonolithOffset="27709440" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="40" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-62-127-8654.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="349390" LoopEnd="469196"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="724719"
+          MonolithOffset="28438528" MonolithLength="724992" SampleRate="48000.0"/>
+  <sample ID="41" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-68-16-F1EC.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="324971" LoopEnd="446764"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726370"
+          MonolithOffset="29163520" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="42" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-68-32-I2ZR.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="245301" LoopEnd="553410"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727257"
+          MonolithOffset="29892608" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="43" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-68-48-2DRY.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="247466" LoopEnd="610176"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="724830"
+          MonolithOffset="30621696" MonolithLength="724992" SampleRate="48000.0"/>
+  <sample ID="44" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-68-64-AHX0.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="296822" LoopEnd="405379"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="722833"
+          MonolithOffset="31346688" MonolithLength="724992" SampleRate="48000.0"/>
+  <sample ID="45" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-68-79-G5PW.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="170532" LoopEnd="289757"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="738218"
+          MonolithOffset="32071680" MonolithLength="741376" SampleRate="48000.0"/>
+  <sample ID="46" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-68-95-XIMR.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="355400" LoopEnd="580596"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725053"
+          MonolithOffset="32813056" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="47" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-68-111-PTS7.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="315684" LoopEnd="420334"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="736172"
+          MonolithOffset="33542144" MonolithLength="737280" SampleRate="48000.0"/>
+  <sample ID="48" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-68-127-D4RN.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="333165" LoopEnd="473458"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726889"
+          MonolithOffset="34279424" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="49" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-72-16-0G45.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="427210" LoopEnd="561972"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="723992"
+          MonolithOffset="35008512" MonolithLength="724992" SampleRate="48000.0"/>
+  <sample ID="50" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-72-32-U3RW.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="333173" LoopEnd="441689"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="721066"
+          MonolithOffset="35733504" MonolithLength="724992" SampleRate="48000.0"/>
+  <sample ID="51" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-72-48-LW5P.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="188856" LoopEnd="602991"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="737545"
+          MonolithOffset="36458496" MonolithLength="741376" SampleRate="48000.0"/>
+  <sample ID="52" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-72-64-QPLS.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="275446" LoopEnd="600546"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="736265"
+          MonolithOffset="37199872" MonolithLength="737280" SampleRate="48000.0"/>
+  <sample ID="53" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-72-79-4DQB.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="449688" LoopEnd="594950"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="737011"
+          MonolithOffset="37937152" MonolithLength="737280" SampleRate="48000.0"/>
+  <sample ID="54" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-72-95-0YSA.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="210690" LoopEnd="578834"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726331"
+          MonolithOffset="38674432" MonolithLength="729088" SampleRate="48000.0"/>
+  <sample ID="55" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-72-111-HPJG.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="99903" LoopEnd="599912"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="724063"
+          MonolithOffset="39403520" MonolithLength="724992" SampleRate="48000.0"/>
+  <sample ID="56" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SQR-PHASE-72-127-3MAZ.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="121143" LoopEnd="224706"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="721892"
+          MonolithOffset="40128512" MonolithLength="724992" SampleRate="48000.0"/>
+</samplemap>

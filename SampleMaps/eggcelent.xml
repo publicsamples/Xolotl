@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <samplemap RelativePath="0" FileName="/Users/rick/Music/Audio Music Apps/Xolotl/Xolotl/Samples/Korg-DW-8000-master/SFZ/eggcelent.sfz"
-           SaveMode="2" RRGroupAmount="2" CrossfadeGamma="1.0" ID="eggcelent">
+           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="eggcelent">
   <sample ID="1" LoVel="0" HiVel="127" FileName="{PROJECT_FOLDER}Korg-DW-8000-master/SFZ/02 - Eggcellent-107-127.wav"
           LoKey="43" HiKey="43" LoopEnabled="0" Volume="6" Root="43" RRGroup="1"
           Duplicate="0" SampleEnd="233472" SampleRate="44100.0" MonolithOffset="0"

@@ -18,6 +18,19 @@ const var modB1 = Content.getComponent("modB1");
 
 const var modtype1 = Content.getComponent("modtype1");
 
+const var SAMPLELOADING = Content.getComponent("SAMPLELOADING");
+
+const var importer = Content.getComponent("importer");
+
+
+inline function onSAMPLELOADINGControl(component, value)
+{
+		importer.showControl(value); 
+        importer.showControl(1-value);
+};
+
+Content.getComponent("SAMPLELOADING").setControlCallback(onSAMPLELOADINGControl);
+
 
 inline function onmodtype1Control(component, value)
 {
@@ -82,14 +95,3 @@ ulp.setMouseCallback(function(event)
 });
 
 
-
-const var MODPAGE = Content.getComponent("MODPAGE");
-
-
-inline function onMODPAGEBUTTONControl(component, value)
-{
-	MODPAGE.showControl(value); 
-        MODPAGE.showControl(1-value);
-};
-
-Content.getComponent("MODPAGEBUTTON").setControlCallback(onMODPAGEBUTTONControl);

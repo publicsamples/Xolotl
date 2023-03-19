@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap RelativePath="0" FileName="/Users/rick/Music/Audio Music Apps/Xolotl/Xolotl/Samples/Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO.sfz"
+           SaveMode="2" RRGroupAmount="1.0" CrossfadeGamma="1.0" ID="X23HI1LO"
+           MicPositions=";">
+  <sample ID="1" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-38-16-8VGR.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="121854" LoopEnd="504213"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="729561"
+          MonolithOffset="0" MonolithLength="733184" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="2" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-38-32-UXFB.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="113918" LoopEnd="221434"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727567"
+          MonolithOffset="733184" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="3" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-38-48-BF80.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="265856" LoopEnd="401112"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="723346"
+          MonolithOffset="1462272" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="4" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-38-64-ZFRZ.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="139336" LoopEnd="270367"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="722721"
+          MonolithOffset="2187264" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="5" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-38-79-L4RE.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="121777" LoopEnd="263110"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="728390"
+          MonolithOffset="2912256" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="6" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-38-95-YLBY.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="114074" LoopEnd="609960"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="724636"
+          MonolithOffset="3641344" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="7" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-38-111-JZ1I.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="370296" LoopEnd="498227"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="724920"
+          MonolithOffset="4366336" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="8" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-38-127-AXEJ.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="117484" LoopEnd="225002"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727332"
+          MonolithOffset="5091328" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="9" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-44-16-1GLP.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="97647" LoopEnd="385391"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="724305"
+          MonolithOffset="5820416" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="10" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-44-32-N1Y6.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="123072" LoopEnd="594235"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727166"
+          MonolithOffset="6545408" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="11" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-44-48-SNEK.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="412950" LoopEnd="612656"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="732503"
+          MonolithOffset="7274496" MonolithLength="733184" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="12" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-44-64-7P41.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="337150" LoopEnd="603328"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725043"
+          MonolithOffset="8007680" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="13" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-44-79-UZB9.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="291773" LoopEnd="565072"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="736423"
+          MonolithOffset="8736768" MonolithLength="737280" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="14" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-44-95-EAWF.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="93931" LoopEnd="488230"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727457"
+          MonolithOffset="9474048" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="15" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-44-111-OMFC.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="160664" LoopEnd="451499"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726095"
+          MonolithOffset="10203136" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="16" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-44-127-YUP8.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="179128" LoopEnd="369444"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="722806"
+          MonolithOffset="10932224" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="17" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-50-16-A4PA.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="191895" LoopEnd="330142"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727752"
+          MonolithOffset="11657216" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="18" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-50-32-JKBM.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="146246" LoopEnd="270491"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="739218"
+          MonolithOffset="12386304" MonolithLength="741376" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="19" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-50-48-O6SV.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="134763" LoopEnd="261880"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="729549"
+          MonolithOffset="13127680" MonolithLength="733184" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="20" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-50-64-0V4S.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="412851" LoopEnd="527565"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727577"
+          MonolithOffset="13860864" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="21" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-50-79-6FXZ.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="289105" LoopEnd="490338"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="724073"
+          MonolithOffset="14589952" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="22" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-50-95-N5XY.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="189862" LoopEnd="593444"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="722157"
+          MonolithOffset="15314944" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="23" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-50-111-JNYA.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="260723" LoopEnd="612163"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="738427"
+          MonolithOffset="16039936" MonolithLength="741376" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="24" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-50-127-5O2R.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="329553" LoopEnd="582420"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="736270"
+          MonolithOffset="16781312" MonolithLength="737280" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="25" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-56-16-B6BM.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="401730" LoopEnd="536831"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="738493"
+          MonolithOffset="17518592" MonolithLength="741376" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="26" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-56-32-B0M6.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="162741" LoopEnd="323417"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="728826"
+          MonolithOffset="18259968" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="27" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-56-48-AVC7.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="282781" LoopEnd="607387"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="735644"
+          MonolithOffset="18989056" MonolithLength="737280" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="28" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-56-64-HO5U.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="92619" LoopEnd="230891"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="723179"
+          MonolithOffset="19726336" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="29" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-56-79-CNOW.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="125961" LoopEnd="607825"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="728903"
+          MonolithOffset="20451328" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="30" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-56-95-QRGO.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="243230" LoopEnd="378355"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726066"
+          MonolithOffset="21180416" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="31" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-56-111-UTZI.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="131483" LoopEnd="541922"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727118"
+          MonolithOffset="21909504" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="32" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-56-127-V7R1.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="305704" LoopEnd="589591"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727258"
+          MonolithOffset="22638592" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="33" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-62-16-MGVP.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="107126" LoopEnd="591541"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="735834"
+          MonolithOffset="23367680" MonolithLength="737280" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="34" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-62-32-JBK9.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="191754" LoopEnd="521354"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="722691"
+          MonolithOffset="24104960" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="35" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-62-48-5GUE.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="273484" LoopEnd="546894"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727705"
+          MonolithOffset="24829952" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="36" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-62-64-D0TF.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="204148" LoopEnd="611713"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="736689"
+          MonolithOffset="25559040" MonolithLength="737280" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="37" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-62-79-PC7S.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="150635" LoopEnd="278486"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726407"
+          MonolithOffset="26296320" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="38" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-62-95-JQEJ.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="146434" LoopEnd="262214"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="737222"
+          MonolithOffset="27025408" MonolithLength="737280" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="39" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-62-111-T5DT.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="178293" LoopEnd="371841"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="736864"
+          MonolithOffset="27762688" MonolithLength="737280" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="40" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-62-127-VWMO.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="413254" LoopEnd="610942"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="721145"
+          MonolithOffset="28499968" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="41" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-68-16-JA9R.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="236763" LoopEnd="354680"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="728103"
+          MonolithOffset="29224960" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="42" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-68-32-M033.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="240801" LoopEnd="351454"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727305"
+          MonolithOffset="29954048" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="43" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-68-48-4AST.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="208807" LoopEnd="345126"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726457"
+          MonolithOffset="30683136" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="44" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-68-64-EXHF.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="130276" LoopEnd="234709"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725895"
+          MonolithOffset="31412224" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="45" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-68-79-8GYY.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="232239" LoopEnd="413457"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="740685"
+          MonolithOffset="32141312" MonolithLength="741376" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="46" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-68-95-COAE.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="489226" LoopEnd="606085"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="731127"
+          MonolithOffset="32882688" MonolithLength="733184" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="47" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-68-111-7J77.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="176449" LoopEnd="462132"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726985"
+          MonolithOffset="33615872" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="48" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-68-127-V79K.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="262189" LoopEnd="598005"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="736183"
+          MonolithOffset="34344960" MonolithLength="737280" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="49" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-72-16-X72J.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="301851" LoopEnd="554715"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726132"
+          MonolithOffset="35082240" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="50" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-72-32-QVFH.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="283583" LoopEnd="417856"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726402"
+          MonolithOffset="35811328" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="51" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-72-48-AP1U.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="108281" LoopEnd="233142"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="735462"
+          MonolithOffset="36540416" MonolithLength="737280" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="52" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-72-64-TE34.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="345406" LoopEnd="608521"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="722107"
+          MonolithOffset="37277696" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="53" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-72-79-ZUL7.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="186669" LoopEnd="612573"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727323"
+          MonolithOffset="38002688" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="54" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-72-95-XO7I.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="139594" LoopEnd="281933"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="736292"
+          MonolithOffset="38731776" MonolithLength="737280" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="55" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-72-111-LQWZ.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="324099" LoopEnd="529949"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726410"
+          MonolithOffset="39469056" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="56" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAWX2-3HI1LO-72-127-OBUE.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="453219" LoopEnd="602736"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726782"
+          MonolithOffset="40198144" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+</samplemap>

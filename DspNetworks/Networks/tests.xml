@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="tests" AllowPolyphonic="1" Version="0.0.0" AllowCompilation="1">
+<Network ID="tests" AllowPolyphonic="1" Version="0.0.0">
   <Node FactoryPath="container.chain" ID="tests" Bypassed="0" ShowParameters="1">
     <Nodes>
       <Node ID="node" FactoryPath="container.chain" Bypassed="0">

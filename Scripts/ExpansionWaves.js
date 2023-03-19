@@ -12,6 +12,12 @@ var kraftzwerg = ["BooBass", "CrazyLFO", "Gooey", "Log", "Magic Resin", "OChord"
 
 var XPFM = ["FMThick1", "FMThick2", "FMThick3", "FMThick4", "FmDrama1", "FmDrama2", "FmFilter1", "FmFilter2", "FmFilter3", "FmFilter4", "FmFilter5", "FmFilter6", "FmFilter7", "FmFilter8", "XPFM1", "XPFM2", "XPFM3", "XPFM4", "XPFM5"];
 
-var XPMisc = ["2 Fingers", "AV", "Another Time", "B Chord 1", "B Chord 2", "Bison 1", "Bison 2", "Boring Bass 1", "Boring Bass 2", "E Kee 1", "E Kee 2", "Low Standards", "M Chord", "Notch", "Phase Pad", "Stack", "Thick Snappy 1", "Thick Snappy 2", "Thin Shine 1", "lose", "melomod"];
+var XPMisc = ["2 Fingers", "AV", "Another Time", "B Chord 1", "B Chord 2", "Bison 1", "Bison 2", "Boring Bass 1", "Boring Bass 2", "Bug", "E Kee 1", "E Kee 2", "Low Standards", "M Chord", "Notch", "OChord", "Phase Pad", "Stack", "Thick Snappy 1", "Thick Snappy 2", "Thin Shine 1", "TubeS 1", "TubeS 2", "lose", "melomod", "osc mod"];
 
 var XPPWM = ["PW Filter 1", "PW Filter 2", "PW Filter 3", "PW Filter 4", "PW Filter 5", "PW Filter 6", "PW Filter 7", "PW Filter 8", "PW1", "PW10", "PW2", "PW3", "PW4", "PW5", "PW6", "PW7", "PW8", "PW9", "PWM1", "PWM2", "PWM3", "PWM4", "PWM5", "PWM6", "PWM7", "PWM8"];
+
+var XPSaws = ["2pLP2", "2php1LP", "3PHASELOW", "3pLP", "3pLP2", "4PBP", "BP4P 2", "HILO", "HILOWRES", "HP1P 2", "LP3P", "PHSLOW", "X23HI1LO", "X2NOTCH", "bp2p", "hp1p", "hplp", "notch2", "phase3", "x2LPHP"];
+
+var XPSquares = ["2pLP", "2pLP2", "2php1LP", "3PHASELOW", "3pLP", "3pLP2", "4PBP", "BP4P 2", "HILO", "HILOWRES", "HP1P 2", "LP1P", "LP3P", "PHASE", "PHSLOW", "X23HI1LO", "X2NOTCH", "bp2p", "bp4p", "detune", "detune2", "hp1p", "hp3p", "hplp", "notch", "notch2", "phase2", "phase3", "x2LPHP"];
+
+var XPtriangles = ["2hp 1lp", "3p lp", "BP-3P", "LP-2P", "LP-3P", "notch"];
