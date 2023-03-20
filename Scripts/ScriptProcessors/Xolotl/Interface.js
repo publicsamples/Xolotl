@@ -15,22 +15,22 @@ Maps.push(BasicWaveforms);
 Maps.push(GM);
 Maps.push(Hybrids);
 Maps.push(Kits);
-Maps.push(cs30);
-Maps.push(em25);
-Maps.push(sys101);
-Maps.push(jx3p);
-Maps.push(kraftzwerg);
-Maps.push(XPFM);
-Maps.push(XPMisc);
-Maps.push(XPPWM);
-Maps.push(XPSaws);
-Maps.push(XPSquares);
+//Maps.push(cs30);
+//Maps.push(em25);
+//Maps.push(sys101);
+//Maps.push(jx3p);
+//Maps.push(kraftzwerg);
+//Maps.push(XPFM);
+//Maps.push(XPMisc);
+//Maps.push(XPPWM);
+//Maps.push(XPSaws);
+//Maps.push(XPSquares);
 //Maps.push(XPtriangles);
 
 
+var SMAPS = ["BasicWaveforms", "GM", "Hybrids", "Kits"];
 
-
-var SMAPS = ["BasicWaveforms", "GM", "Hybrids", "Kits", "cs30", "em25", "sys101","jx3p", "kraftzwerg", "XPFM", "XPMisc","XPPWM", "XPSaws", "XPSquares"];
+//var SMAPS = ["BasicWaveforms", "GM", "Hybrids", "Kits", "cs30", "em25", "sys101","jx3p", "kraftzwerg", "XPFM", "XPMisc","XPPWM", "XPSaws", "XPSquares"];
 
 
 

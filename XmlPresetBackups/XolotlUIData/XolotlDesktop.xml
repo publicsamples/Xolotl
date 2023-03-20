@@ -642,18 +642,17 @@
                  parentComponent="osc1" text="*" itemColour="4293910409" itemColour2="4293910409"
                  saveInPreset="1" bgColour="15785877" textColour="16777215">
         <Component type="ScriptComboBox" id="Categories" x="55.0" y="39.0" width="40.0"
-                   height="30.0" max="14" parentComponent="A" fontSize="1.0" textColour="0"
+                   height="30.0" max="4" parentComponent="A" fontSize="1.0" textColour="0"
                    itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
-                   items="BasicWaveforms&#10;GM&#10;Hybrids&#10;Kits&#10;cs30&#10;em25&#10;sys101&#10;jx3p&#10;kraftzwerg&#10;XPFM&#10;XPMisc&#10;XPPWM&#10;XPSaws&#10;XPSquares"
-                   defaultValue="0.0"/>
+                   items="BasicWaveforms&#10;GM&#10;Hybrids&#10;Kits" defaultValue="0.0"/>
         <Component type="ScriptComboBox" id="BankA" x="6.0" y="3.0" width="90.0"
-                   height="30.0" max="7" parentComponent="A" fontSize="1.0" textColour="4293975957"
+                   height="30.0" max="28" parentComponent="A" fontSize="1.0" textColour="4293975957"
                    itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
-                   defaultValue="0.0" items="BooBass&#10;CrazyLFO&#10;Gooey&#10;Log&#10;Magic Resin&#10;OChord&#10;organic.xml"/>
+                   defaultValue="0.0" items="CS-Sine&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;4op Sin 1&#10;4op Sin 2&#10;Cy2OP1&#10;Cy2OP2&#10;Dark BP&#10;Fold DF 1&#10;Fold DF 2&#10;HR Sqr&#10;LP Square&#10;Shape1&#10;Shape2&#10;Shape3&#10;Shape4&#10;SinFFM 1&#10;SinFFM 2&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;ZstringA&#10;ZstringB"/>
       </Component>
       <Component type="ScriptLabel" id="WAVELABEL1" x="16.0" y="47.0" width="90.0"
                  height="30.0" parentComponent="osc1" textColour="4281936169"
-                 fontName="Montserrat" fontSize="17.0" editable="0" text="BooBass"
+                 fontName="Montserrat" fontSize="17.0" editable="0" text="CS-Pulse1"
                  saveInPreset="1"/>
       <Component type="ScriptLabel" id="WAVE1" x="11.0" y="84.0" width="50.0"
                  height="20.0" parentComponent="osc1" editable="0" text="BANK"
@@ -762,17 +761,16 @@
                  parentComponent="osc2" editable="0" text="WAVE 2" fontSize="25.0"
                  fontName="Montserrat" textColour="4282132775"/>
       <Component type="ScriptComboBox" id="Categories1" x="65.0" y="77.0" width="40.0"
-                 height="30.0" max="14" parentComponent="osc2" fontSize="1.0"
-                 textColour="0" itemColour2="1118481" itemColour="4294902015"
-                 bgColour="4279725701" items="BasicWaveforms&#10;GM&#10;Hybrids&#10;Kits&#10;cs30&#10;em25&#10;sys101&#10;jx3p&#10;kraftzwerg&#10;XPFM&#10;XPMisc&#10;XPPWM&#10;XPSaws&#10;XPSquares"
-                 defaultValue="0.0"/>
-      <Component type="ScriptComboBox" id="BankA1" x="15.0" y="43.0" width="90.0"
-                 height="30.0" max="7" parentComponent="osc2" fontSize="1.0" textColour="4293975957"
+                 height="30.0" max="4" parentComponent="osc2" fontSize="1.0" textColour="0"
                  itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
-                 defaultValue="0.0" items="BooBass&#10;CrazyLFO&#10;Gooey&#10;Log&#10;Magic Resin&#10;OChord&#10;organic.xml"/>
+                 items="BasicWaveforms&#10;GM&#10;Hybrids&#10;Kits" defaultValue="0.0"/>
+      <Component type="ScriptComboBox" id="BankA1" x="15.0" y="43.0" width="90.0"
+                 height="30.0" max="28" parentComponent="osc2" fontSize="1.0"
+                 textColour="4293975957" itemColour2="1118481" itemColour="4294902015"
+                 bgColour="4279725701" defaultValue="0.0" items="CS-Sine&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;4op Sin 1&#10;4op Sin 2&#10;Cy2OP1&#10;Cy2OP2&#10;Dark BP&#10;Fold DF 1&#10;Fold DF 2&#10;HR Sqr&#10;LP Square&#10;Shape1&#10;Shape2&#10;Shape3&#10;Shape4&#10;SinFFM 1&#10;SinFFM 2&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;ZstringA&#10;ZstringB"/>
       <Component type="ScriptLabel" id="WAVELABEL2" x="16.0" y="44.0" width="90.0"
                  height="30.0" parentComponent="osc2" textColour="4281936169"
-                 fontName="Montserrat" fontSize="17.0" editable="0" text="CrazyLFO"
+                 fontName="Montserrat" fontSize="17.0" editable="0" text="CS-Sine"
                  saveInPreset="1"/>
       <Component type="ScriptLabel" id="WAVE3" x="18.0" y="298.0" width="50.0"
                  height="20.0" parentComponent="osc2" editable="0" text="BANK"

@@ -53,7 +53,7 @@
             <Control type="ScriptSlider" id="SHAPEMOD19" value="0.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD6" value="0.4900000095367432"/>
             <Control type="ScriptSlider" id="SHAPEMOD7" value="-11.0"/>
-            <Control type="ScriptPanel" id="SampleDropper" value="JSON{&quot;isCustom&quot;: false, &quot;value&quot;: &quot;PWM5&quot;}"/>
+            <Control type="ScriptPanel" id="SampleDropper" value="JSON{&quot;isCustom&quot;: false, &quot;value&quot;: &quot;Shape2&quot;}"/>
             <Control type="ScriptComboBox" id="ScriptComboBox8" value="1.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD33" value="0.0"/>
             <Control type="ScriptSliderPack" id="Cut-sp" value="3.0" data="64....f+b8nv8iBWO1OgqGU+PgqG8CRgqyOWOJL+nv0i7ilYlwOov0C+fqGE7y0iBuO1iB29b8nv7yLyLyOb8n.+."/>
@@ -79,11 +79,11 @@
             <Control type="ScriptSlider" id="SHAPEMOD11" value="-0.07999999821186066"/>
             <Control type="ScriptSlider" id="SHAPEMOD12" value="1.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD32" value="0.0"/>
-            <Control type="ScriptSliderPack" id="pitch-sp1" value="4.0" data="64......nYlY5C..........DWOJ8C................WOJvO................................eT3Z9."/>
+            <Control type="ScriptSliderPack" id="pitch-sp1" value="1" data="64..........8C..........DWOJ8C................WOJvO................................eT3Z9."/>
             <Control type="ScriptPanel" id="A" value="0.0"/>
-            <Control type="ScriptComboBox" id="Categories" value="9.0"/>
-            <Control type="ScriptComboBox" id="BankA" value="1.0"/>
-            <Control type="ScriptLabel" id="WAVELABEL1" value="BooBass"/>
+            <Control type="ScriptComboBox" id="Categories" value="1.0"/>
+            <Control type="ScriptComboBox" id="BankA" value="2.0"/>
+            <Control type="ScriptLabel" id="WAVELABEL1" value="CS-Pulse1"/>
             <Control type="ScriptSlider" id="SHAPE" value="0.0"/>
             <Control type="ScriptSlider" id="SHAPE6" value="16.0"/>
             <Control type="ScriptSlider" id="SHAPE8" value="0.119999997317791"/>
@@ -99,9 +99,9 @@
             <Control type="ScriptComboBox" id="SOURC2" value="4.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD24" value="0.009999999776482582"/>
             <Control type="ScriptSlider" id="SHAPEMOD27" value="0.0"/>
-            <Control type="ScriptComboBox" id="Categories1" value="9.0"/>
-            <Control type="ScriptComboBox" id="BankA1" value="2.0"/>
-            <Control type="ScriptLabel" id="WAVELABEL2" value="CrazyLFO"/>
+            <Control type="ScriptComboBox" id="Categories1" value="1.0"/>
+            <Control type="ScriptComboBox" id="BankA1" value="1.0"/>
+            <Control type="ScriptLabel" id="WAVELABEL2" value="CS-Sine"/>
             <Control type="ScriptSliderPack" id="ScriptSliderPack1" value="14.0" data="64.ov0S+v0iB8yLyLyOlYlI+ziBW7Sb8nvOHEt99XOJb6CWOJrOJb8n9DWOJ5iqGElOJb8H935Qg2SyLyTO......"/>
             <Control type="ScriptButton" id="modtype1" value="0.0"/>
             <Control type="ScriptButton" id="modtype2" value="0.0"/>
@@ -253,7 +253,7 @@
                OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-               Group7Table="" SampleMapID="PWM5">
+               Group7Table="" SampleMapID="Shape2">
       <ChildProcessors>
         <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
           <ChildProcessors/>
