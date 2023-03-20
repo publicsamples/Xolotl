@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap RelativePath="0" FileName="/Users/rick/Music/Audio Music Apps/Xolotl/Xolotl/Samples/Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO.sfz"
+           SaveMode="2" RRGroupAmount="1.0" CrossfadeGamma="1.0" ID="HILO"
+           MicPositions=";">
+  <sample ID="1" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-38-16-1OV4.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="135819" LoopEnd="431755"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="730545"
+          MonolithOffset="0" MonolithLength="733184" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="2" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-38-32-VWI5.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="139834" LoopEnd="257590"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727053"
+          MonolithOffset="733184" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="3" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-38-48-BBL9.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="193877" LoopEnd="549782"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="733478"
+          MonolithOffset="1462272" MonolithLength="737280" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="4" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-38-64-UKMH.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="285037" LoopEnd="594285"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="729911"
+          MonolithOffset="2199552" MonolithLength="733184" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="5" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-38-79-VRW3.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="280382" LoopEnd="496447"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="728352"
+          MonolithOffset="2932736" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="6" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-38-95-MZJO.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="473961" LoopEnd="591726"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="720873"
+          MonolithOffset="3661824" MonolithLength="720896" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="7" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-38-111-SY37.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="130904" LoopEnd="247198"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727717"
+          MonolithOffset="4382720" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="8" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-38-127-1IO8.wav"
+          LoKey="0" HiKey="41" LoopEnabled="1" LoopStart="156499" LoopEnd="577364"
+          Root="36" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725315"
+          MonolithOffset="5111808" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="9" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-44-16-O5HS.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="400340" LoopEnd="610276"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726609"
+          MonolithOffset="5840896" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="10" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-44-32-KZGD.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="321166" LoopEnd="451213"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="739856"
+          MonolithOffset="6569984" MonolithLength="741376" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="11" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-44-48-PEBO.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="111433" LoopEnd="471880"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="730041"
+          MonolithOffset="7311360" MonolithLength="733184" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="12" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-44-64-D4R4.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="340822" LoopEnd="602950"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="733275"
+          MonolithOffset="8044544" MonolithLength="737280" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="13" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-44-79-KYT2.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="301678" LoopEnd="498303"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="728512"
+          MonolithOffset="8781824" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="14" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-44-95-NQXA.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="478082" LoopEnd="612227"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725810"
+          MonolithOffset="9510912" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="15" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-44-111-LQRH.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="258703" LoopEnd="610958"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726716"
+          MonolithOffset="10240000" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="16" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-44-127-Q3IA.wav"
+          LoKey="42" HiKey="47" LoopEnabled="1" LoopStart="304892" LoopEnd="434939"
+          Root="42" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727186"
+          MonolithOffset="10969088" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="17" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-50-16-DBPV.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="133993" LoopEnd="449829"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="738297"
+          MonolithOffset="11698176" MonolithLength="741376" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="18" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-50-32-2AQH.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="169849" LoopEnd="341147"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="723065"
+          MonolithOffset="12439552" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="19" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-50-48-SLOA.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="229979" LoopEnd="582971"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="738649"
+          MonolithOffset="13164544" MonolithLength="741376" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="20" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-50-64-NLOR.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="113025" LoopEnd="611423"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725609"
+          MonolithOffset="13905920" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="21" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-50-79-9TTW.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="96761" LoopEnd="381143"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="738661"
+          MonolithOffset="14635008" MonolithLength="741376" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="22" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-50-95-ZLWM.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="147402" LoopEnd="604842"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726787"
+          MonolithOffset="15376384" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="23" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-50-111-9HTK.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="409232" LoopEnd="516457"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="724044"
+          MonolithOffset="16105472" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="24" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-50-127-GASC.wav"
+          LoKey="48" HiKey="53" LoopEnabled="1" LoopStart="410386" LoopEnd="530944"
+          Root="48" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="721145"
+          MonolithOffset="16830464" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="25" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-56-16-HUKF.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="224622" LoopEnd="361849"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="738056"
+          MonolithOffset="17555456" MonolithLength="741376" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="26" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-56-32-IF7M.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="288401" LoopEnd="424586"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726929"
+          MonolithOffset="18296832" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="27" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-56-48-O9CA.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="471615" LoopEnd="575539"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726819"
+          MonolithOffset="19025920" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="28" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-56-64-SHDK.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="315296" LoopEnd="580509"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="723928"
+          MonolithOffset="19755008" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="29" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-56-79-3S7E.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="240914" LoopEnd="348434"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="731291"
+          MonolithOffset="20480000" MonolithLength="733184" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="30" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-56-95-CXKF.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="280534" LoopEnd="587722"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="730429"
+          MonolithOffset="21213184" MonolithLength="733184" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="31" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-56-111-TWNN.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="190104" LoopEnd="324722"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727848"
+          MonolithOffset="21946368" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="32" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-56-127-R8L4.wav"
+          LoKey="54" HiKey="59" LoopEnabled="1" LoopStart="233802" LoopEnd="374128"
+          Root="54" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725474"
+          MonolithOffset="22675456" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="33" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-62-16-6ES6.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="340238" LoopEnd="468445"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725484"
+          MonolithOffset="23404544" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="34" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-62-32-U0H6.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="257552" LoopEnd="610832"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725909"
+          MonolithOffset="24133632" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="35" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-62-48-YQQ8.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="108552" LoopEnd="561817"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725942"
+          MonolithOffset="24862720" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="36" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-62-64-30TT.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="433197" LoopEnd="600770"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="723353"
+          MonolithOffset="25591808" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="37" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-62-79-MZIV.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="334439" LoopEnd="439174"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725223"
+          MonolithOffset="26316800" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="38" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-62-95-KII8.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="375780" LoopEnd="528292"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726175"
+          MonolithOffset="27045888" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="39" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-62-111-ODZ8.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="382953" LoopEnd="604067"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726726"
+          MonolithOffset="27774976" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="40" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-62-127-R8IW.wav"
+          LoKey="60" HiKey="65" LoopEnabled="1" LoopStart="98460" LoopEnd="223435"
+          Root="60" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726387"
+          MonolithOffset="28504064" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="41" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-68-16-UIQL.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="389146" LoopEnd="496901"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="724821"
+          MonolithOffset="29233152" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="42" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-68-32-QEO9.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="392738" LoopEnd="589602"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="721966"
+          MonolithOffset="29958144" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="43" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-68-48-01Z6.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="481082" LoopEnd="590690"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="737270"
+          MonolithOffset="30683136" MonolithLength="737280" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="44" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-68-64-PSMO.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="109841" LoopEnd="587783"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725453"
+          MonolithOffset="31420416" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="45" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-68-79-5VAM.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="429547" LoopEnd="556534"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727236"
+          MonolithOffset="32149504" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="46" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-68-95-6VQB.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="120831" LoopEnd="522227"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727161"
+          MonolithOffset="32878592" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="47" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-68-111-J1LG.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="137139" LoopEnd="287183"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="724321"
+          MonolithOffset="33607680" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="48" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-68-127-7PC2.wav"
+          LoKey="66" HiKey="71" LoopEnabled="1" LoopStart="227883" LoopEnd="607249"
+          Root="66" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="721097"
+          MonolithOffset="34332672" MonolithLength="724992" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="49" LoVel="1" HiVel="16" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-72-16-Q67A.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="457789" LoopEnd="609306"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="727519"
+          MonolithOffset="35057664" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="50" LoVel="17" HiVel="32" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-72-32-MSZ0.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="428008" LoopEnd="535819"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725918"
+          MonolithOffset="35786752" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="51" LoVel="33" HiVel="48" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-72-48-Y9ZT.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="404246" LoopEnd="593950"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="736893"
+          MonolithOffset="36515840" MonolithLength="737280" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="52" LoVel="49" HiVel="64" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-72-64-YLMT.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="170915" LoopEnd="530609"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726625"
+          MonolithOffset="37253120" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="53" LoVel="65" HiVel="79" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-72-79-ATF2.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="318229" LoopEnd="423984"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="725286"
+          MonolithOffset="37982208" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="54" LoVel="80" HiVel="95" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-72-95-GL4M.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="193438" LoopEnd="300293"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="731598"
+          MonolithOffset="38711296" MonolithLength="733184" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="55" LoVel="96" HiVel="111" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-72-111-LIRS.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="362971" LoopEnd="472231"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="737633"
+          MonolithOffset="39444480" MonolithLength="741376" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+  <sample ID="56" LoVel="112" HiVel="127" FileName="{PROJECT_FOLDER}Oberheim-Xpander-CK-Session-2-master/SFZ/SAW HILO-72-127-JP7E.wav"
+          LoKey="72" HiKey="125" LoopEnabled="1" LoopStart="422387" LoopEnd="541579"
+          Root="72" Volume="-6" RRGroup="1" Duplicate="0" SampleEnd="726009"
+          MonolithOffset="40185856" MonolithLength="729088" SampleRate="48000.0"
+          Normalized="1" NormalizedPeak="1.412553429603577"/>
+</samplemap>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <samplemap RelativePath="0" FileName="/Users/rick/Music/Audio Music Apps/Xolotl/Xolotl/Samples/FreePatsGM-SFZ-20221026/067_TenorSaxophone.sfz"
-           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="067_TenorSaxophone">
+           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="TenorSaxophone">
   <sample ID="1" LoVel="0" HiVel="127" FileName="{PROJECT_FOLDER}FreePatsGM-SFZ-20221026/samples/TenorSaxophone/E2_v3.wav"
           LoKey="38" HiKey="42" LoopEnabled="1" LoopStart="43062" LoopEnd="220732"
           Root="40" Volume="0" RRGroup="1" Duplicate="0" SampleEnd="220748"

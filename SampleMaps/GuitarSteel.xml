@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <samplemap RelativePath="0" FileName="/Users/rick/Music/Audio Music Apps/Xolotl/Xolotl/Samples/FreePatsGM-SFZ-20221026/026_GuitarSteel.sfz"
-           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="026_GuitarSteel">
+           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="GuitarSteel">
   <sample ID="1" LoVel="0" HiVel="127" FileName="{PROJECT_FOLDER}FreePatsGM-SFZ-20221026/samples/GuitarSteel/E2.wav"
           LoKey="33" HiKey="42" Root="40" Volume="0" RRGroup="1" Duplicate="0"
           SampleEnd="417578" SampleRate="44100.0" MonolithOffset="0" MonolithLength="417792"/>

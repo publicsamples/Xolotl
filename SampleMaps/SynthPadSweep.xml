@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <samplemap RelativePath="0" FileName="/Users/rick/Music/Audio Music Apps/Xolotl/Xolotl/Samples/FreePatsGM-SFZ-20221026/096_SynthPadSweep.sfz"
-           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="096_SynthPadSweep">
+           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="SynthPadSweep">
   <sample ID="1" LoVel="0" HiVel="127" FileName="{PROJECT_FOLDER}FreePatsGM-SFZ-20221026/samples/SynthPadSweep/C2.wav"
           LoKey="33" HiKey="37" LoopEnabled="1" LoopStart="32767" LoopEnd="352255"
           Root="36" Volume="0" RRGroup="1" Duplicate="0" SampleEnd="352271"

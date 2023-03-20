@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <samplemap RelativePath="0" FileName="/Users/rick/Music/Audio Music Apps/Xolotl/Xolotl/Samples/FreePatsGM-SFZ-20221026/098_SynthSoundtrack.sfz"
-           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="098_SynthSoundtrack">
+           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="SynthSoundtrack">
   <sample ID="1" LoVel="0" HiVel="127" FileName="{PROJECT_FOLDER}FreePatsGM-SFZ-20221026/samples/SynthSoundtrack/C2.wav"
           LoKey="33" HiKey="38" LoopEnabled="1" LoopStart="172928" LoopEnd="362290"
           Root="36" Volume="0" RRGroup="1" Duplicate="0" SampleEnd="362306"

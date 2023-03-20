@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <samplemap RelativePath="0" FileName="/Users/rick/Music/Audio Music Apps/Xolotl/Xolotl/Samples/FreePatsGM-SFZ-20221026/051_SynthStrings1.sfz"
-           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="051_SynthStrings1">
+           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="SynthStrings">
   <sample ID="1" LoVel="0" HiVel="127" FileName="{PROJECT_FOLDER}FreePatsGM-SFZ-20221026/samples/SynthStrings1/F#1.wav"
           LoKey="24" HiKey="32" LoopEnabled="1" LoopStart="304" LoopEnd="620744"
           Root="30" Volume="0" RRGroup="1" Duplicate="0" SampleEnd="620760"

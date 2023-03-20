@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <samplemap RelativePath="0" FileName="/Users/rick/Music/Audio Music Apps/Xolotl/Xolotl/Samples/FreePatsGM-SFZ-20221026/019_RockOrgan.sfz"
-           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="019_RockOrgan">
+           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="RockOrgan">
   <sample ID="1" LoVel="0" HiVel="127" FileName="{PROJECT_FOLDER}FreePatsGM-SFZ-20221026/samples/RockOrgan/C2.wav"
           LoKey="43" HiKey="59" LoopEnabled="1" LoopStart="54485" LoopEnd="306061"
           Root="48" Volume="0" RRGroup="1" Duplicate="0" SampleEnd="306070"

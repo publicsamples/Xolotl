@@ -95,7 +95,7 @@
               </Node>
               <Node ID="sig2mod1" FactoryPath="math.sig2mod" Bypassed="0">
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.011765625"/>
                 </Parameters>
               </Node>
               <Node ID="peak" FactoryPath="core.peak" Bypassed="0">

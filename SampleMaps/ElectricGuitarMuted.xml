@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <samplemap RelativePath="0" FileName="/Users/rick/Music/Audio Music Apps/Xolotl/Xolotl/Samples/FreePatsGM-SFZ-20221026/029_ElectricGuitarMuted.sfz"
-           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="029_ElectricGuitarMuted">
+           SaveMode="2" RRGroupAmount="1" CrossfadeGamma="1.0" ID="ElectricGuitarMuted">
   <sample ID="1" LoVel="0" HiVel="127" FileName="{PROJECT_FOLDER}FreePatsGM-SFZ-20221026/samples/ElectricGuitarMuted/E2.wav"
           LoKey="36" HiKey="41" Root="40" Volume="0" RRGroup="1" Duplicate="0"
           SampleEnd="47564" SampleRate="44100.0" MonolithOffset="0" MonolithLength="49152"/>

@@ -20,4 +20,4 @@ var XPSaws = ["2pLP2", "2php1LP", "3PHASELOW", "3pLP", "3pLP2", "4PBP", "BP4P 2"
 
 var XPSquares = ["2pLP", "2pLP2", "2php1LP", "3PHASELOW", "3pLP", "3pLP2", "4PBP", "BP4P 2", "HILO", "HILOWRES", "HP1P 2", "LP1P", "LP3P", "PHASE", "PHSLOW", "X23HI1LO", "X2NOTCH", "bp2p", "bp4p", "detune", "detune2", "hp1p", "hp3p", "hplp", "notch", "notch2", "phase2", "phase3", "x2LPHP"];
 
-var XPtriangles = ["2hp 1lp", "3p lp", "BP-3P", "LP-2P", "LP-3P", "notch"];
+var XPtriangles = ["2hp1lp", "3plp", "BP-3P", "LP-2P", "LP-3P", "notch"];
