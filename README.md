@@ -1,7 +1,7 @@
 # Xolotl
 
   
-Xolotl is an open source "harmonic" synthesiser built with legendary HISE.   Plugins are available for MacOS , Windows and Linux.
+Xolotl is an open source "harmonic" synthesiser built with HISE.   Plugins are available for MacOS , Windows and Linux.
   
 
 ![Xolot](https://raw.githubusercontent.com/publicsamples/Xolotl/main/Xolotl.png)
