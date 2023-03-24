@@ -21,8 +21,8 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		TempoSyncer::initTempoData();
 		// Node registrations -------------------------------------------------------------
 		
-		registerPolyNode<project::OSC<1>, project::OSC<NUM_POLYPHONIC_VOICES>>();
-		registerPolyNode<project::shfilter<1>, project::shfilter<NUM_POLYPHONIC_VOICES>>();
+		//registerPolyNode<project::OSC<1>, project::OSC<NUM_POLYPHONIC_VOICES>>();
+	//	registerPolyNode<project::shfilter<1>, // project::shfilter<NUM_POLYPHONIC_VOICES>>();
 		registerDataNode<project::chain3_networkdata>();
 		registerDataNode<project::contain_networkdata>();
 		registerDataNode<project::_networkdata>();
@@ -30,7 +30,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::harmo_networkdata>();
 		registerDataNode<project::harmoG_networkdata>();
 		registerDataNode<project::main_networkdata>();
-		registerDataNode<project::minmax_networkdata>();
+	// 	registerDataNode<project::minmax_networkdata>();
 		registerDataNode<project::mod_networkdata>();
 		registerDataNode<project::mod2_networkdata>();
 		registerDataNode<project::mod2_networkdata>();
@@ -47,8 +47,8 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::synth_networkdata>();
 		registerDataNode<project::synth2_networkdata>();
 		registerDataNode<project::synth3_networkdata>();
-		registerDataNode<project::test_networkdata>();
-		registerDataNode<project::tests_networkdata>();
+	//	registerDataNode<project::test_networkdata>();
+		// registerDataNode<project::tests_networkdata>();
 		registerDataNode<project::the_networkdata>();
 		registerDataNode<project::TRACK_LFO_networkdata>();
 		registerDataNode<project::wdeleay_networkdata>();

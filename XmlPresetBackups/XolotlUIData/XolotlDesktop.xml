@@ -646,13 +646,13 @@
                    items="BasicWaveforms&#10;GM&#10;Hybrids&#10;Kits&#10;cs30&#10;em25&#10;sys101&#10;jx3p&#10;kraftzwerg&#10;XPFM&#10;XPMisc&#10;XPPWM&#10;XPSaws&#10;XPSquares"
                    defaultValue="0.0"/>
         <Component type="ScriptComboBox" id="BankA" x="6.0" y="3.0" width="90.0"
-                   height="30.0" max="7" parentComponent="A" fontSize="1.0" textColour="4293975957"
+                   height="30.0" max="28" parentComponent="A" fontSize="1.0" textColour="4293975957"
                    itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
-                   defaultValue="0.0" items="BooBass&#10;CrazyLFO&#10;Gooey&#10;Log&#10;Magic Resin&#10;OChord&#10;organic.xml"/>
+                   defaultValue="0.0" items="CS-Sine&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;4op Sin 1&#10;4op Sin 2&#10;Cy2OP1&#10;Cy2OP2&#10;Dark BP&#10;Fold DF 1&#10;Fold DF 2&#10;HR Sqr&#10;LP Square&#10;Shape1&#10;Shape2&#10;Shape3&#10;Shape4&#10;SinFFM 1&#10;SinFFM 2&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;ZstringA&#10;ZstringB"/>
       </Component>
       <Component type="ScriptLabel" id="WAVELABEL1" x="16.0" y="47.0" width="90.0"
                  height="30.0" parentComponent="osc1" textColour="4281936169"
-                 fontName="Montserrat" fontSize="17.0" editable="0" text="BooBass"
+                 fontName="Montserrat" fontSize="17.0" editable="0" text="CS-Sine"
                  saveInPreset="1"/>
       <Component type="ScriptLabel" id="WAVE1" x="11.0" y="84.0" width="50.0"
                  height="20.0" parentComponent="osc1" editable="0" text="BANK"
@@ -736,20 +736,13 @@
                  parentComponent="osc2" processorId="HARMONIC" parameterId="O2MODSWITCH1"
                  itemColour2="4294905615" textColour="4283119672" bgColour="4282974208"
                  itemColour="4279592703" fontName="Montserrat"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL43" x="114.0" y="111.0" width="50.0"
+      <Component type="ScriptLabel" id="PITCH-MABEL43" x="114.0" y="91.0" width="50.0"
                  height="10.0" parentComponent="osc2" text="DETUNE" editable="0"
                  fontSize="12.0" fontName="Montserrat" textColour="4282132775"/>
-      <Component type="ScriptSlider" id="SHAPEMOD24" x="117.0" y="66.0" width="45.0"
+      <Component type="ScriptSlider" id="SHAPEMOD24" x="117.0" y="46.0" width="45.0"
                  height="45.0" parentComponent="osc2" processorId="HARMONIC" parameterId="PITCH22TUNE"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206.0" scaleFactor="0.1800000071525574"/>
-      <Component type="ScriptSlider" id="SHAPEMOD27" x="119.0" y="12.0" width="45.0"
-                 height="45.0" parentComponent="osc2" processorId="HARMONIC" parameterId="os2phase"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-                 numStrips="206.0" scaleFactor="0.1599999964237213" itemColour2="3723003269"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL53" x="114.0" y="49.0" width="50.0"
-                 height="15.0" parentComponent="osc2" text="PHASE" editable="0"
-                 fontSize="12.0" fontName="Montserrat" textColour="4282132775"/>
+                 middlePosition="0.4900000095367432" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.1800000071525574" defaultValue="0.4900000095367432"/>
       <Component type="ScriptLabel" id="PITCH-MABEL62" x="167.0" y="47.0" width="50.0"
                  height="15.0" parentComponent="osc2" text="OFFSET" editable="0"
                  fontSize="12.0" fontName="Montserrat" textColour="4282132775"/>
@@ -766,12 +759,12 @@
                  bgColour="4279725701" items="BasicWaveforms&#10;GM&#10;Hybrids&#10;Kits&#10;cs30&#10;em25&#10;sys101&#10;jx3p&#10;kraftzwerg&#10;XPFM&#10;XPMisc&#10;XPPWM&#10;XPSaws&#10;XPSquares"
                  defaultValue="0.0"/>
       <Component type="ScriptComboBox" id="BankA1" x="15.0" y="43.0" width="90.0"
-                 height="30.0" max="7" parentComponent="osc2" fontSize="1.0" textColour="4293975957"
-                 itemColour2="1118481" itemColour="4294902015" bgColour="4279725701"
-                 defaultValue="0.0" items="BooBass&#10;CrazyLFO&#10;Gooey&#10;Log&#10;Magic Resin&#10;OChord&#10;organic.xml"/>
+                 height="30.0" max="28" parentComponent="osc2" fontSize="1.0"
+                 textColour="4293975957" itemColour2="1118481" itemColour="4294902015"
+                 bgColour="4279725701" defaultValue="0.0" items="CS-Sine&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;4op Sin 1&#10;4op Sin 2&#10;Cy2OP1&#10;Cy2OP2&#10;Dark BP&#10;Fold DF 1&#10;Fold DF 2&#10;HR Sqr&#10;LP Square&#10;Shape1&#10;Shape2&#10;Shape3&#10;Shape4&#10;SinFFM 1&#10;SinFFM 2&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;ZstringA&#10;ZstringB"/>
       <Component type="ScriptLabel" id="WAVELABEL2" x="16.0" y="44.0" width="90.0"
                  height="30.0" parentComponent="osc2" textColour="4281936169"
-                 fontName="Montserrat" fontSize="17.0" editable="0" text="CrazyLFO"
+                 fontName="Montserrat" fontSize="17.0" editable="0" text="CS-Sine"
                  saveInPreset="1"/>
       <Component type="ScriptLabel" id="WAVE3" x="18.0" y="298.0" width="50.0"
                  height="20.0" parentComponent="osc2" editable="0" text="BANK"
