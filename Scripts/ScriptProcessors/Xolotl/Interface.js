@@ -25,14 +25,14 @@ Maps.push(XPMisc);
 Maps.push(XPPWM);
 Maps.push(XPSaws);
 Maps.push(XPSquares);
-//Maps.push(XPtriangles);
+Maps.push(XPtriangles);
 
 
 
 
 var SMAPS = ["BasicWaveforms", "GM", "Hybrids", "Kits", "cs30", "em25", "sys101","jx3p", "kraftzwerg", "XPFM", "XPMisc","XPPWM", "XPSaws", "XPSquares"];
 
-
+//var SMAPS = ["BasicWaveforms", "GM", "Hybrids", "Kits"];
 
 var Cats = [];
 
