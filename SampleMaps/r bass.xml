@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap CrossfadeGamma="1.0" ID="r bass" RRGroupAmount="1.0" MicPositions=";"
+           SaveMode="2">
+  <sample Root="36" LoKey="0" HiKey="39" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Audio/AlleyCat/44 -Res Bass-36-127.wav"
+          Duplicate="0" LoopEnabled="1" LoopStart="86431" LoopEnd="131709"
+          SampleEnd="131718" MonolithOffset="0" MonolithLength="135168"
+          SampleRate="44100.0"/>
+  <sample Root="40" LoKey="40" HiKey="43" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Audio/AlleyCat/44 -Res Bass-40-127.wav"
+          Duplicate="0" LoopEnabled="1" LoopStart="106752" LoopEnd="161314"
+          SampleEnd="161323" MonolithOffset="135168" MonolithLength="163840"
+          SampleRate="44100.0"/>
+  <sample Root="44" LoKey="44" HiKey="47" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Audio/AlleyCat/44 -Res Bass-44-127.wav"
+          Duplicate="0" LoopEnabled="1" LoopStart="65209" LoopEnd="135406"
+          SampleEnd="135415" MonolithOffset="299008" MonolithLength="139264"
+          SampleRate="44100.0"/>
+  <sample Root="48" LoKey="48" HiKey="51" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Audio/AlleyCat/44 -Res Bass-48-127.wav"
+          Duplicate="0" LoopEnabled="1" LoopStart="92049" LoopEnd="152998"
+          SampleEnd="153007" MonolithOffset="438272" MonolithLength="155648"
+          SampleRate="44100.0"/>
+  <sample Root="52" LoKey="52" HiKey="55" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Audio/AlleyCat/44 -Res Bass-52-127.wav"
+          Duplicate="0" LoopEnabled="1" LoopStart="83979" LoopEnd="155279"
+          SampleEnd="155288" MonolithOffset="593920" MonolithLength="155648"
+          SampleRate="44100.0"/>
+  <sample Root="56" LoKey="56" HiKey="59" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Audio/AlleyCat/44 -Res Bass-56-127.wav"
+          Duplicate="0" LoopEnabled="1" LoopStart="83720" LoopEnd="172199"
+          SampleEnd="172208" MonolithOffset="749568" MonolithLength="176128"
+          SampleRate="44100.0"/>
+  <sample Root="60" LoKey="60" HiKey="63" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Audio/AlleyCat/44 -Res Bass-60-127.wav"
+          Duplicate="0" LoopEnabled="1" LoopStart="99518" LoopEnd="165189"
+          SampleEnd="165198" MonolithOffset="925696" MonolithLength="167936"
+          SampleRate="44100.0"/>
+  <sample Root="64" LoKey="64" HiKey="67" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Audio/AlleyCat/44 -Res Bass-64-127.wav"
+          Duplicate="0" LoopEnabled="1" LoopStart="88195" LoopEnd="161301"
+          SampleEnd="161310" MonolithOffset="1093632" MonolithLength="163840"
+          SampleRate="44100.0"/>
+  <sample Root="68" LoKey="68" HiKey="71" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Audio/AlleyCat/44 -Res Bass-68-127.wav"
+          Duplicate="0" LoopEnabled="1" LoopStart="91619" LoopEnd="149054"
+          SampleEnd="149063" MonolithOffset="1257472" MonolithLength="151552"
+          SampleRate="44100.0"/>
+  <sample Root="72" LoKey="72" HiKey="75" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Audio/AlleyCat/44 -Res Bass-72-127.wav"
+          Duplicate="0" LoopEnabled="1" LoopStart="95279" LoopEnd="148584"
+          SampleEnd="148593" MonolithOffset="1409024" MonolithLength="151552"
+          SampleRate="44100.0"/>
+  <sample Root="76" LoKey="76" HiKey="79" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Audio/AlleyCat/44 -Res Bass-76-127.wav"
+          Duplicate="0" LoopEnabled="1" LoopStart="101174" LoopEnd="164062"
+          SampleEnd="164071" MonolithOffset="1560576" MonolithLength="167936"
+          SampleRate="44100.0"/>
+  <sample Root="80" LoKey="80" HiKey="83" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Audio/AlleyCat/44 -Res Bass-80-127.wav"
+          Duplicate="0" LoopEnabled="1" LoopStart="87785" LoopEnd="158147"
+          SampleEnd="158156" MonolithOffset="1728512" MonolithLength="159744"
+          SampleRate="44100.0"/>
+  <sample Root="84" LoKey="84" HiKey="125" LoVel="0" HiVel="127" RRGroup="1"
+          FileName="{PROJECT_FOLDER}Audio/AlleyCat/44 -Res Bass-84-127.wav"
+          Duplicate="0" LoopEnabled="1" LoopStart="54700" LoopEnd="155722"
+          SampleEnd="155731" MonolithOffset="1888256" MonolithLength="159744"
+          SampleRate="44100.0"/>
+</samplemap>

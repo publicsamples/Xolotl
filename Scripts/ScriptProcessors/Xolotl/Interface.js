@@ -4,33 +4,29 @@ Content.makeFrontInterface(905, 565);
 include("factory_waves.js");
 include("UISTUFF.js");
 include("ExpansionWaves.js");
-include("Migration.js");
-include("SampleLoadSave.js");
-include("PitchDetector.js");
-include("LoopPointDragger.js");
 
 
 var Maps = [];
-Maps.push(BasicWaveforms);
-Maps.push(GM);
-Maps.push(Hybrids);
-Maps.push(Kits);
-Maps.push(cs30);
-Maps.push(em25);
-Maps.push(sys101);
-Maps.push(jx3p);
-Maps.push(kraftzwerg);
-Maps.push(XPFM);
-Maps.push(XPMisc);
-Maps.push(XPPWM);
-Maps.push(XPSaws);
-Maps.push(XPSquares);
-Maps.push(XPtriangles);
+//Maps.push(BasicWaveforms);
+//Maps.push(GM);
+//Maps.push(Hybrids);
+//Maps.push(Kits);
+//Maps.push(cs30);
+//Maps.push(em25);
+//Maps.push(sys101);
+//Maps.push(jx3p);
+//Maps.push(kraftzwerg);
+//Maps.push(XPFM);
+//Maps.push(XPMisc);
+//Maps.push(XPPWM);
+//Maps.push(XPSaws);
+//Maps.push(XPSquares);
+//Maps.push(XPtriangles);
+Maps.push(Monopoly);
 
+var SMAPS = ["Monopoly"];
 
-
-
-var SMAPS = ["BasicWaveforms", "GM", "Hybrids", "Kits", "cs30", "em25", "sys101","jx3p", "kraftzwerg", "XPFM", "XPMisc","XPPWM", "XPSaws", "XPSquares"];
+//var SMAPS = ["BasicWaveforms", "GM", "Hybrids", "Kits", "cs30", "em25", "sys101","jx3p", "kraftzwerg", "XPFM", "XPMisc","XPPWM", "XPSaws", "XPSquares", "Monopoly"];
 
 //var SMAPS = ["BasicWaveforms", "GM", "Hybrids", "Kits"];
 
@@ -116,6 +112,47 @@ inline function onCategories1Control(component, value)
 };
 
 Content.getComponent("Categories1").setControlCallback(onCategories1Control);
+
+Content.getComponent("LoadSFZ1").setControlCallback(onLoadSFZ1Control);
+
+
+inline function onLoadSFZ1Control(component, value)
+{
+	if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slot.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		WAVELABEL1.set("text", "USER");
+	});	
+			
+}
+
+}; 
+
+Content.getComponent("LoadSFZ1").setControlCallback(onLoadSFZ1Control);
+
+
+inline function onLoadSFZ2Control(component, value)
+{
+	if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slot1.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		WAVELABEL2.set("text", "USER");
+	});	
+			
+}
+
+}; 
+
+Content.getComponent("LoadSFZ2").setControlCallback(onLoadSFZ2Control);
+
 function onNoteOn()
 {
 	
