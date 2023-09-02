@@ -9989,7 +9989,7 @@
       <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
         <Parameters>
           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                     SkewFactor="5.422270774841309" ID="Gain" Value="-22.49999884516002"/>
+                     SkewFactor="5.422270774841309" ID="Gain" Value="-15.79999874532224"/>
           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                      SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
