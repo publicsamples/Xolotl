@@ -44,12 +44,5 @@ Xolotl has 2 looping envelopes, 2 polyphonic modulators, a single free running m
 
   
 
-## Sound Library
-
-  
-The basic version comes with 150 sounds recorded from vintage and modern synthesisers. 
-
-An expanded version is available that an additional 250 sounds from classics like the Oberheim Xpander, Korg Mono/Poly, Roland System 100, Roland JX-3p and more.
-
 https://modularsamples.gumroad.com/l/rhnqwh
 
