@@ -78,7 +78,7 @@ inline function onLoadSFZ1Control(component, value)
 	{
 		
 
-		slot2.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		slot1.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
 		WAVELABEL1.set("text", "USER");
 	
 	});	
@@ -98,7 +98,7 @@ inline function onLoadSFZ2Control(component, value)
 	{
 		
 
-		slot3.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		slot1.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
 		WAVELABEL2.set("text", "USER");
 	});	
 			

@@ -182,7 +182,7 @@
           <Connection NodeId="smoothed_parameter" ParameterId="SmoothingTime"/>
         </Connections>
       </Parameter>
-      <Parameter ID="lfo-mix" MinValue="-1.0" MaxValue="1.0" Value="-1.0">
+      <Parameter ID="lfo-mix" MinValue="-1.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="pma1" ParameterId="Multiply"/>
         </Connections>
