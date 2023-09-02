@@ -3687,6 +3687,40 @@
                          SkewFactor="5.422270774841309" ID="ResetValue" Value="-28.99999894201757"/>
             </Parameters>
           </Node>
+          <Node ID="smoothed_parameter" FactoryPath="control.smoothed_parameter"
+                Bypassed="0">
+            <Properties>
+              <Property ID="Mode" Value="Low Pass"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                         ID="SmoothingTime" Value="100.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="pma3" FactoryPath="control.pma" Bypassed="0">
+            <ModulationTargets>
+              <Connection NodeId="clone_pack" ParameterId="Value"/>
+            </ModulationTargets>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Value="0.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="clone_pack" FactoryPath="control.clone_pack" Bypassed="0">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="-1"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                         Value="1.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+            </Parameters>
+          </Node>
         </Nodes>
         <Parameters/>
       </Node>

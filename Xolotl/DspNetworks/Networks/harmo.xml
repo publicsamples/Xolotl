@@ -3120,7 +3120,7 @@
                                   <Connection NodeId="tempo_sync4" ParameterId="UnsyncedTime"/>
                                 </ModulationTargets>
                                 <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add"/>
                                 </Parameters>
