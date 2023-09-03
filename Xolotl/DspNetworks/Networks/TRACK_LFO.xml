@@ -127,7 +127,7 @@
               <Node ID="smoothed_parameter" FactoryPath="control.smoothed_parameter"
                     Bypassed="0">
                 <Properties>
-                  <Property ID="Mode" Value="Linear Ramp"/>
+                  <Property ID="Mode" Value="Low Pass"/>
                 </Properties>
                 <ModulationTargets>
                   <Connection NodeId="add" ParameterId="Value"/>

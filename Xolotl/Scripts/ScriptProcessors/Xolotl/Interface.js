@@ -14,24 +14,19 @@ var Maps = [];
 Maps.push(BasicWaveforms);
 Maps.push(GM);
 Maps.push(Hybrids);
-Maps.push(Kits);
 Maps.push(cs30);
 Maps.push(em25);
 Maps.push(sys101);
 Maps.push(jx3p);
 Maps.push(kraftzwerg);
-Maps.push(XPFM);
-Maps.push(XPMisc);
-Maps.push(XPPWM);
-Maps.push(XPSaws);
-Maps.push(XPSquares);
+Maps.push(Xpander);
 Maps.push(Monopoly);
 
 var USERMaps = [];
 
 var USMAPS = ["USER"];
 
-var SMAPS = ["BasicWaveforms", "GM", "Hybrids", "Kits", "cs30", "em25", "sys101","jx3p", "kraftzwerg", "XPFM", "XPMisc","XPPWM", "XPSaws", "XPSquares", "Monopoly"];
+var SMAPS = ["BasicWaveforms", "GM", "Hybrids",  "cs30", "em25", "sys101","jx3p", "kraftzwerg",  "Xpander", "Monopoly"];
 
 //var SMAPS = ["BasicWaveforms", "GM", "Hybrids", "Kits"];
 

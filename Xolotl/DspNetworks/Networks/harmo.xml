@@ -121,7 +121,7 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Sustain" Automated="1"/>
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                                  SkewFactor="0.1976716816425323" ID="Release" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackCurve" Value="0.5"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackCurve" Value="0.50341748046875"/>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Retrigger" Value="0.0"/>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Automated="1"/>
                     </Parameters>
@@ -881,13 +881,13 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="osc2" FactoryPath="container.split" Bypassed="0" ShowParameters="0">
+              <Node ID="osc2" FactoryPath="container.split" Bypassed="0" ShowParameters="0"
+                    Folded="1">
                 <Nodes>
                   <Node ID="4-way-switch3" FactoryPath="container.chain" Bypassed="0"
                         ShowParameters="1">
                     <Nodes>
-                      <Node ID="cable_table114" FactoryPath="control.cable_table" Bypassed="0"
-                            Folded="1">
+                      <Node ID="cable_table114" FactoryPath="control.cable_table" Bypassed="0">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle115" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1692,7 +1692,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="SVF" FactoryPath="container.split" Bypassed="0" Folded="1">
+              <Node ID="SVF" FactoryPath="container.split" Bypassed="0">
                 <Nodes>
                   <Node ID="4-way-switch4" FactoryPath="container.chain" Bypassed="0"
                         ShowParameters="1">
@@ -1782,8 +1782,7 @@
                       </Parameter>
                     </Parameters>
                   </Node>
-                  <Node ID="chain28" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
-                        Folded="1">
+                  <Node ID="chain28" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
                     <Nodes>
                       <Node ID="cable_table56" FactoryPath="control.cable_table" Bypassed="0">
                         <ModulationTargets>
@@ -2146,7 +2145,7 @@
       <Node ID="clone  connections" FactoryPath="container.no_midi" Bypassed="0"
             ShowParameters="1">
         <Nodes>
-          <Node ID="osc1" FactoryPath="container.split" Bypassed="0">
+          <Node ID="osc1" FactoryPath="container.split" Bypassed="0" Folded="1">
             <Nodes>
               <Node ID="chain7" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
@@ -2248,7 +2247,7 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="OSC2" FactoryPath="container.split" Bypassed="0">
+          <Node ID="OSC2" FactoryPath="container.split" Bypassed="0" Folded="1">
             <Nodes>
               <Node ID="chain22" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
                 <Nodes>
@@ -2623,8 +2622,7 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="filter mod outs" FactoryPath="container.split" Bypassed="0"
-                Folded="1">
+          <Node ID="filter mod outs" FactoryPath="container.split" Bypassed="0">
             <Nodes>
               <Node ID="chain110" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
@@ -3243,7 +3241,7 @@
                                      ID="Q" Automated="1"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"
                                      SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
@@ -3691,7 +3689,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -4138,7 +4136,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -4585,7 +4583,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -5032,7 +5030,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -5479,7 +5477,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -5926,7 +5924,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -6373,7 +6371,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -6820,7 +6818,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -7267,7 +7265,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -7714,7 +7712,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -8161,7 +8159,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -8608,7 +8606,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -9055,7 +9053,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -9502,7 +9500,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -9949,7 +9947,7 @@
                                      ID="Q"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                     ID="Smoothing" Value="0.003770650632338402"/>
                           <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" SkewFactor="0.6"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
@@ -10206,7 +10204,7 @@
           <Connection NodeId="fmix" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="MOD1VEL" MinValue="-1.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="MOD1VEL" MinValue="-1.0" MaxValue="1.0" Value="0.1479616699218749">
         <Connections>
           <Connection NodeId="pma1" ParameterId="Multiply"/>
         </Connections>
@@ -10264,7 +10262,7 @@
           <Connection NodeId="input_toggle12" ParameterId="Input"/>
         </Connections>
       </Parameter>
-      <Parameter ID="shsync" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="shsync" MinValue="1.0" MaxValue="0.0" Value="1.0">
         <Connections>
           <Connection NodeId="clone_cable13" ParameterId="Value"/>
         </Connections>
