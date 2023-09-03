@@ -27,8 +27,8 @@ Xolotl has 2 looping envelopes, 2 polyphonic modulators, a single free running m
 ## Installation
 
 1. Clone this repository
-2. Open with HISE
-3. Download the sample content
+2. Open with [HISE](https://github.com/christophhart/HISE)
+3. Download the [sample content](https://github.com/publicsamples/Xolotl/releases)
 4. Copy the sample folder to Xolotl/Xolotl/Samples
 5. Open the project in HISE
 6. From the export menu, select "Export Sample as Archive", the click OK and wait for the process to complete
