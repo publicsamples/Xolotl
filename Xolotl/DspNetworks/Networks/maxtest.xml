@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="maxtest" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="maxtest" Bypassed="0">
+    <Nodes>
+      <Node ID="minmax" FactoryPath="control.minmax" Bypassed="0">
+        <ModulationTargets>
+          <Connection NodeId="pma" ParameterId="Add"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Minimum" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Maximum" Value="1.0"/>
+          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                     ID="Skew" Value="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0815625"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+        </Parameters>
+      </Node>
+      <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
+        <ModulationTargets>
+          <Connection NodeId="add1" ParameterId="Value"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="0"/>
+          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Add" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="add1" FactoryPath="math.add" Bypassed="0">
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="sig2mod" FactoryPath="math.sig2mod" Bypassed="1">
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.15734375"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>

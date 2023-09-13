@@ -11,20 +11,20 @@
   <Component type="ScriptPanel" id="HARMONICSYNTH" x="36.0" y="25.0" width="880.0"
              height="550.0" itemColour="262658" itemColour2="262656" bgColour="4278190080"
              locked="1" borderRadius="3.0" textColour="16711808">
-    <Component type="ScriptButton" id="PRESETBUTTON" x="768.0" y="332.0" width="22.0"
+    <Component type="ScriptButton" id="PRESETBUTTON" x="770.0" y="333.0" width="22.0"
                height="22.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.2000000029802322"
-               isVertical="0" parentComponent="HARMONICSYNTH"/>
+               isVertical="0" saveInPreset="0" parentComponent="HARMONICSYNTH"/>
     <Component type="ScriptLabel" id="PRESETSW" x="752.0" y="359.0" text="PRESETS"
                fontName="Montserrat" width="60.0" height="20.0" fontSize="12.0"
                editable="0" textColour="4294038066" alignment="left" parentComponent="HARMONICSYNTH"/>
     <Component type="ScriptButton" id="leATO" x="828.0" y="332.0" width="22.0"
                height="22.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.2000000029802322"
-               isVertical="0" processorId="Legato with Retrigger1" parameterId="Enabled"
+               isVertical="0" processorId="Legato with Retrigger1" parameterId="Bypass"
                parentComponent="HARMONICSYNTH"/>
     <Component type="ScriptLabel" id="LoadEx2" x="814.0" y="359.0" text="LEGATO"
                fontName="Montserrat" width="50.0" height="20.0" fontSize="12.0"
                editable="0" textColour="4294038066" alignment="left" parentComponent="HARMONICSYNTH"/>
-    <Component type="ScriptLabel" id="Label1" x="752.0" y="4.0" text="Xolotl v0.6.0"
+    <Component type="ScriptLabel" id="Label1" x="752.0" y="4.0" text="Xolotl v0.6.1"
                fontSize="20.0" width="110.0" height="20.0" fontName="Montserrat"
                editable="0" textColour="4294038066" alignment="left" parentComponent="HARMONICSYNTH"/>
     <Component type="ScriptPanel" id="mod1" x="407.0" y="392.0" width="230.0"
@@ -633,13 +633,12 @@
                  min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire2.png"
                  numStrips="201.0" scaleFactor="0.119999997317791" stepSize="0.1000000014901161"
                  visible="0" locked="1"/>
-      <Component type="ScriptPanel" id="A" x="9.0" y="10.0" width="120.0" height="130.0"
+      <Component type="ScriptPanel" id="A" x="9.0" y="10.0" width="120.0" height="120.0"
                  parentComponent="osc1" text="*" itemColour="15720329" itemColour2="15720329"
                  saveInPreset="1" bgColour="15785877" textColour="16777215">
-        <Component type="ScriptButton" id="LoadSFZ1" x="75.0" y="104.0" width="20.0"
-                   height="20.0" parentComponent="A" filmstripImage="{PROJECT_FOLDER}button6.png"
-                   scaleFactor="0.2000000029802322" isVertical="0" saveInPreset="0"
-                   isMomentary="1"/>
+        <Component type="ScriptLabel" id="PITCH-MABEL56" x="9" y="103" width="60.0"
+                   height="20.0" parentComponent="A" text="USER" editable="0" fontSize="14.0"
+                   textColour="4294038066" fontName="Montserrat"/>
         <Component type="ScriptLabel" id="WAVE1" x="-1.0" y="72.0" width="40.0"
                    height="20.0" parentComponent="A" editable="0" text="BANK" fontSize="14.0"
                    fontName="Montserrat" textColour="4294038066"/>
@@ -649,21 +648,45 @@
                    items="BasicWaveforms&#10;GM&#10;Hybrids&#10;cs30&#10;em25&#10;sys101&#10;jx3p&#10;kraftzwerg&#10;Xpander&#10;Monopoly"
                    defaultValue="0.0" max="10"/>
         <Component type="ScriptComboBox" id="BankA" x="6.0" y="30.0" width="90.0"
-                   height="30.0" max="44" parentComponent="A" fontSize="1.0" textColour="4282006074"
+                   height="30.0" max="28" parentComponent="A" fontSize="1.0" textColour="4282006074"
                    itemColour2="4282006074" itemColour="3157700316" bgColour="3157700316"
                    defaultValue="0.0" isPluginParameter="1" pluginParameterName="OSC1 -WAVE"
-                   items="Piano&#10;BrightPiano&#10;HonkyTonkPiano&#10;ElectricPiano&#10;ElectricPiano&#10;Xylophone&#10;TubularBells&#10;DrawbarOrgan&#10;PercussiveOrgan&#10;RockOrgan&#10;ChurchOrgan&#10;GuitarNylon&#10;GuitarSteel&#10;ElectricGuitarJazz&#10;ElectricGuitarClean&#10;ElectricGuitarMuted&#10;DistortionGuitar&#10;ElectricBassFinger&#10;SynthBass&#10;SynthBass&#10;OrchestralHarp&#10;Timpani&#10;SynthStrings&#10;SynthStrings&#10;SynthBrass&#10;SynthBrass&#10;TenorSaxophone&#10;Clarinet&#10;Recorder&#10;Ocarina&#10;SynthSquare&#10;SynthCalliope&#10;SynthFifths&#10;SynthBassLead&#10;SynthNewAge&#10;SynthPadChoir&#10;SynthPadBowed&#10;SynthPadSweep&#10;SynthSoundtrack&#10;SynthCrystal&#10;SynthGoblins&#10;SynthSciFi&#10;Kalimba&#10;Percussion"/>
+                   items="CS-Sine&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Noise&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;4op Sin 1&#10;4op Sin 2&#10;Cy2OP1&#10;Cy2OP2&#10;Dark BP&#10;Fold DF 1&#10;Fold DF 2&#10;HR Sqr&#10;LP Square&#10;Shape1&#10;Shape2&#10;Shape3&#10;Shape4&#10;SinFFM 1&#10;SinFFM 2&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;ZstringA&#10;ZstringB"/>
+        <Component type="ScriptLabel" id="WAVELABEL1" x="18.0" y="33.0" width="70.0"
+                   height="22.0" parentComponent="A" textColour="3157700316" fontName="Montserrat"
+                   fontSize="19.0" editable="0" text="CS-Sine" itemColour2="3157700316"
+                   itemColour="3583708" saveInPreset="1"/>
         <Component type="ScriptLabel" id="WAVE3" x="10.0" y="0.0" width="80.0" height="20.0"
                    parentComponent="A" editable="0" text="WAVE 1" fontSize="25.0"
                    fontName="Montserrat" textColour="4294038066"/>
       </Component>
-      <Component type="ScriptLabel" id="WAVELABEL1" x="26.0" y="43.0" width="70.0"
-                 height="22.0" parentComponent="osc1" textColour="3157700316"
-                 fontName="Montserrat" fontSize="19.0" editable="0" text="Xylophone"
-                 saveInPreset="1" itemColour2="3157700316" itemColour="3583708"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL53" x="20.0" y="113.0" width="60.0"
-                 height="20.0" parentComponent="osc1" text="LOAD SFZ" editable="0"
-                 fontSize="14.0" textColour="4294038066" fontName="Montserrat"/>
+      <Component type="ScriptPanel" id="B" x="9.0" y="10.0" width="120.0" height="130.0"
+                 parentComponent="osc1" text="*" itemColour="4282006074" itemColour2="4282006074"
+                 saveInPreset="1" bgColour="15785877" textColour="16777215">
+        <Component type="ScriptLabel" id="PITCH-MABEL53" x="9" y="103" width="60"
+                   height="20" parentComponent="B" text="FACTORY" editable="0" fontSize="14.0"
+                   textColour="4294038066" fontName="Montserrat"/>
+        <Component type="ScriptLabel" id="PITCH-MABEL55" x="11.0" y="30.0" width="60.0"
+                   height="20.0" parentComponent="B" text="LOAD SFZ" editable="0"
+                   fontSize="14.0" textColour="4294038066" fontName="Montserrat"/>
+        <Component type="ScriptButton" id="LoadSFZ1" x="75.0" y="30.0" width="20.0"
+                   height="20.0" parentComponent="B" filmstripImage="{PROJECT_FOLDER}button6.png"
+                   scaleFactor="0.2000000029802322" isVertical="0" saveInPreset="0"
+                   isMomentary="1"/>
+        <Component type="ScriptLabel" id="WAVE6" x="10.0" y="0.0" width="80.0" height="20.0"
+                   parentComponent="B" editable="0" text="WAVE 1" fontSize="25.0"
+                   fontName="Montserrat" textColour="4294038066"/>
+        <Component type="ScriptAudioWaveform" id="ScriptAudioWaveform1" x="16.0"
+                   y="63.0" width="70.0" height="30.0" parentComponent="B" processorId="HARMONIC"
+                   showFileName="0"/>
+        <Component type="ScriptLabel" id="WAVELABEL1b" x="20.0" y="68.0" width="60.0"
+                   height="20.0" parentComponent="B" textColour="3157700316" fontName="Montserrat"
+                   fontSize="19.0" editable="0" text="SFZ" itemColour2="3157700316"
+                   itemColour="3583708" saveInPreset="1"/>
+      </Component>
+      <Component type="ScriptButton" id="User1" x="84.0" y="113.0" width="20.0"
+                 height="20.0" parentComponent="osc1" filmstripImage="{PROJECT_FOLDER}button6.png"
+                 scaleFactor="0.2000000029802322" isVertical="0"/>
     </Component>
     <Component type="ScriptPanel" id="oscmaster" x="10.0" y="158.0" width="400.0"
                height="70.0" parentComponent="HARMONICSYNTH" itemColour="4282006074"
@@ -824,7 +847,7 @@
                  height="15.0" fontSize="12.0" alignment="left" text="VEL" editable="0"
                  parentComponent="env2" fontName="Montserrat" textColour="4294038066"/>
     </Component>
-    <Component type="ScriptPanel" id="osc2" x="10.0" y="237.0" width="400.0"
+    <Component type="ScriptPanel" id="osc2" x="9.0" y="237.0" width="400.0"
                height="140.0" parentComponent="HARMONICSYNTH" itemColour="4282006074"
                itemColour2="4282006074" bgColour="1441080099" textColour="4278938544"
                locked="1">
@@ -837,7 +860,7 @@
                    textColour="4294038066"/>
         <Component type="ScriptSliderPack" id="pitch-sp2" x="14.0" y="14.0" width="170.0"
                    height="90.0" parentComponent="ScriptPanel3" processorId="HARMONIC"
-                   itemColour="4294944512" itemColour2="14465590" textColour="0"
+                   itemColour="4278938544" itemColour2="14465590" textColour="0"
                    bgColour="16711680" flashActive="0" defaultValue="0.0" SliderPackIndex="1"/>
       </Component>
       <Component type="ScriptComboBox" id="ExpansionSelector1" x="16.0" y="155.0"
@@ -882,10 +905,9 @@
       <Component type="ScriptPanel" id="A1" x="9.0" y="10.0" width="120.0" height="130.0"
                  parentComponent="osc2" text="*" itemColour="15720329" itemColour2="15720329"
                  saveInPreset="1" bgColour="15785877" textColour="16777215">
-        <Component type="ScriptButton" id="LoadSFZ2" x="75.0" y="104.0" width="20.0"
-                   height="20.0" parentComponent="A1" filmstripImage="{PROJECT_FOLDER}button6.png"
-                   scaleFactor="0.2000000029802322" isVertical="0" saveInPreset="0"
-                   isMomentary="1"/>
+        <Component type="ScriptLabel" id="PITCH-MABEL57" x="9.0" y="103.0" width="60.0"
+                   height="20.0" parentComponent="A1" text="USER" editable="0" fontSize="14.0"
+                   textColour="4294038066" fontName="Montserrat"/>
         <Component type="ScriptLabel" id="WAVE2" x="-1.0" y="72.0" width="40.0"
                    height="20.0" parentComponent="A1" editable="0" text="BANK" fontSize="14.0"
                    fontName="Montserrat" textColour="4294038066"/>
@@ -895,21 +917,45 @@
                    items="BasicWaveforms&#10;GM&#10;Hybrids&#10;cs30&#10;em25&#10;sys101&#10;jx3p&#10;kraftzwerg&#10;Xpander&#10;Monopoly"
                    defaultValue="0.0" max="10"/>
         <Component type="ScriptComboBox" id="BankA1" x="6.0" y="30.0" width="90.0"
-                   height="30.0" max="44" parentComponent="A1" fontSize="1.0" textColour="4282006074"
-                   itemColour2="4282006074" itemColour="3157700316" bgColour="3157700316"
-                   defaultValue="0.0" isPluginParameter="1" pluginParameterName="OSC1 -WAVE"
-                   items="Piano&#10;BrightPiano&#10;HonkyTonkPiano&#10;ElectricPiano&#10;ElectricPiano&#10;Xylophone&#10;TubularBells&#10;DrawbarOrgan&#10;PercussiveOrgan&#10;RockOrgan&#10;ChurchOrgan&#10;GuitarNylon&#10;GuitarSteel&#10;ElectricGuitarJazz&#10;ElectricGuitarClean&#10;ElectricGuitarMuted&#10;DistortionGuitar&#10;ElectricBassFinger&#10;SynthBass&#10;SynthBass&#10;OrchestralHarp&#10;Timpani&#10;SynthStrings&#10;SynthStrings&#10;SynthBrass&#10;SynthBrass&#10;TenorSaxophone&#10;Clarinet&#10;Recorder&#10;Ocarina&#10;SynthSquare&#10;SynthCalliope&#10;SynthFifths&#10;SynthBassLead&#10;SynthNewAge&#10;SynthPadChoir&#10;SynthPadBowed&#10;SynthPadSweep&#10;SynthSoundtrack&#10;SynthCrystal&#10;SynthGoblins&#10;SynthSciFi&#10;Kalimba&#10;Percussion"/>
+                   height="30.0" max="28" parentComponent="A1" fontSize="1.0" itemColour2="4282006074"
+                   itemColour="3157700316" bgColour="3157700316" defaultValue="0.0"
+                   isPluginParameter="1" pluginParameterName="OSC1 -WAVE" textColour="4282006074"
+                   items="CS-Sine&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Noise&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;4op Sin 1&#10;4op Sin 2&#10;Cy2OP1&#10;Cy2OP2&#10;Dark BP&#10;Fold DF 1&#10;Fold DF 2&#10;HR Sqr&#10;LP Square&#10;Shape1&#10;Shape2&#10;Shape3&#10;Shape4&#10;SinFFM 1&#10;SinFFM 2&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;ZstringA&#10;ZstringB"/>
+        <Component type="ScriptLabel" id="WAVELABEL2" x="18.0" y="33.0" width="70.0"
+                   height="22.0" parentComponent="A1" textColour="3157700316" fontName="Montserrat"
+                   fontSize="19.0" editable="0" text="CS-Saw" itemColour2="3157700316"
+                   itemColour="3583708" saveInPreset="1"/>
         <Component type="ScriptLabel" id="WAVE4" x="10.0" y="0.0" width="80.0" height="20.0"
-                   parentComponent="A1" editable="0" text="WAVE 1" fontSize="25.0"
+                   parentComponent="A1" editable="0" text="WAVE 2" fontSize="25.0"
                    fontName="Montserrat" textColour="4294038066"/>
       </Component>
-      <Component type="ScriptLabel" id="WAVELABEL2" x="26.0" y="43.0" width="70.0"
-                 height="22.0" parentComponent="osc2" textColour="3157700316"
-                 fontName="Montserrat" fontSize="19.0" editable="0" text="SynthSoundtrack"
-                 saveInPreset="1" itemColour2="3157700316" itemColour="3583708"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL54" x="20.0" y="113.0" width="60.0"
-                 height="20.0" parentComponent="osc2" text="LOAD SFZ" editable="0"
-                 fontSize="14.0" textColour="4294038066" fontName="Montserrat"/>
+      <Component type="ScriptPanel" id="B1" x="9.0" y="10.0" width="120.0" height="130.0"
+                 parentComponent="osc2" text="*" itemColour="4282006074" itemColour2="4282006074"
+                 saveInPreset="1" bgColour="15785877" textColour="16777215">
+        <Component type="ScriptLabel" id="PITCH-MABEL54" x="11.0" y="103.0" width="60.0"
+                   height="20.0" parentComponent="B1" text="FACTORY" editable="0"
+                   fontSize="14.0" textColour="4294038066" fontName="Montserrat"/>
+        <Component type="ScriptLabel" id="PITCH-MABEL58" x="11.0" y="30.0" width="60.0"
+                   height="20.0" parentComponent="B1" text="LOAD SFZ" editable="0"
+                   fontSize="14.0" textColour="4294038066" fontName="Montserrat"/>
+        <Component type="ScriptButton" id="LoadSFZ2" x="75.0" y="30.0" width="20.0"
+                   height="20.0" parentComponent="B1" filmstripImage="{PROJECT_FOLDER}button6.png"
+                   scaleFactor="0.2000000029802322" isVertical="0" saveInPreset="0"
+                   isMomentary="1"/>
+        <Component type="ScriptLabel" id="WAVE7" x="10.0" y="0.0" width="80.0" height="20.0"
+                   parentComponent="B1" editable="0" text="WAVE 2" fontSize="25.0"
+                   fontName="Montserrat" textColour="4294038066"/>
+        <Component type="ScriptAudioWaveform" id="ScriptAudioWaveform2" x="16.0"
+                   y="63.0" width="70.0" height="30.0" parentComponent="B1" processorId="HARMONIC"
+                   showFileName="0" sampleIndex="1"/>
+        <Component type="ScriptLabel" id="WAVELABEL2b" x="20.0" y="68.0" width="60.0"
+                   height="20.0" parentComponent="B1" textColour="3157700316" fontName="Montserrat"
+                   fontSize="19.0" editable="0" text="SFZ" itemColour2="3157700316"
+                   itemColour="3583708" saveInPreset="1"/>
+      </Component>
+      <Component type="ScriptButton" id="User2" x="87.0" y="113.0" width="20.0"
+                 height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.2000000029802322"
+                 isVertical="0" setValueOnClick="1" parentComponent="osc2"/>
     </Component>
   </Component>
   <Component type="ScriptButton" id="modtype1" x="645.0" y="421.0" width="20.0"
@@ -979,13 +1025,15 @@
     <Component type="ScriptPanel" id="expansionad" x="485.0" y="188.0" width="230.0"
                height="170.0" parentComponent="PRESETS" allowCallbacks="Clicks Only"
                visible="0"/>
-    <Component type="ScriptPanel" id="ScriptPanel2" x="512.0" y="8.0" width="210.0"
-               height="350.0" parentComponent="PRESETS" itemColour="4284555520"
+    <Component type="ScriptPanel" id="ScriptPanel2" x="482.0" y="10.0" width="250"
+               height="300" parentComponent="PRESETS" itemColour="4284555520"
                itemColour2="4284621312">
-      <Component type="ScriptFloatingTile" id="ScriptFloatingTile2" x="6.0" y="31.0"
-                 width="210.0" height="290.0" parentComponent="ScriptPanel2" ContentType="CustomSettings"
-                 bgColour="4278190080" itemColour="0" itemColour2="0" Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: true,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: false,&#10;  &quot;ClearMidiCC&quot;: true,&#10;  &quot;SampleLocation&quot;: true,&#10;  &quot;DebugMode&quot;: true,&#10;  &quot;UseOpenGL&quot;: true,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
-                 itemColour3="4282606521"/>
+      <Component type="ScriptFloatingTile" id="ScriptFloatingTile2" x="16.0" y="55.0"
+                 width="240" height="220" parentComponent="ScriptPanel2" ContentType="CustomSettings"
+                 bgColour="4278190080" itemColour="0" itemColour2="0" Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: true,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: false,&#10;  &quot;ClearMidiCC&quot;: true,&#10;  &quot;SampleLocation&quot;: true,&#10;  &quot;DebugMode&quot;: false,&#10;  &quot;UseOpenGL&quot;: false,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
+                 itemColour3="4282606521" FontSize="12.0" Font="Montserrat"/>
+      <Component type="ScriptLabel" id="ScriptLabel1" x="1.0" y="1.0" width="250"
+                 height="50" parentComponent="ScriptPanel2" text="SETTINGS" fontSize="20.0"/>
     </Component>
   </Component>
 </ContentProperties>

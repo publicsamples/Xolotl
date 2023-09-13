@@ -5,4 +5,4 @@ var GM = ["Piano" ,"BrightPiano" ,"HonkyTonkPiano" ,"ElectricPiano" ,"ElectricPi
 var Hybrids = ["EP1", "EP2", "EP3", "mth", "nsty1", "nsty2", "pswp", "Scrd", "simr", "1st", "Belles", "Big", "BigElectric", "Double Bass", "Euro Organ", "GateAR", "Hard Bass", "Leap", "Lingo", "More Bell", "Rousing", "Sad Ring", "Simple Guitar", "Special K", "Tinkly"];
 
 
-var USER = ["Piano" ,"BrightPiano" ,"HonkyTonkPiano" ,"ElectricPiano" ,"ElectricPiano" ,"Xylophone" ,"TubularBells" ,"DrawbarOrgan" ,"PercussiveOrgan" ,"RockOrgan" ,"ChurchOrgan" ,"GuitarNylon" ,"GuitarSteel" ,"ElectricGuitarJazz" ,"ElectricGuitarClean" ,"ElectricGuitarMuted" ,"DistortionGuitar" ,"ElectricBassFinger" ,"SynthBass" ,"SynthBass" ,"OrchestralHarp" ,"Timpani" ,"SynthStrings" ,"SynthStrings" ,"SynthBrass" ,"SynthBrass" ,"TenorSaxophone" ,"Clarinet" ,"Recorder" ,"Ocarina" ,"SynthSquare" ,"SynthCalliope" ,"SynthFifths" ,"SynthBassLead" ,"SynthNewAge" ,"SynthPadChoir" ,"SynthPadBowed" ,"SynthPadSweep" ,"SynthSoundtrack" ,"SynthCrystal" ,"SynthGoblins" ,"SynthSciFi" ,"Kalimba" ,"Applause" ,"Percussion"];
+var USER = ["USER1" ,"USER2" ,"USER3" ,"USER4" ,"USER5"];;

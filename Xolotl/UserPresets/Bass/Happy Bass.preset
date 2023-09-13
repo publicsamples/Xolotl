@@ -6,8 +6,7 @@
              rangeStart="0" rangeEnd="0"/>
     <Control type="ScriptAudioWaveform" id="AudioWaveform3" value="0.0" data=""
              rangeStart="0" rangeEnd="0"/>
-    <Control type="ScriptButton" id="PRESETBUTTON" value="0.0"/>
-    <Control type="ScriptButton" id="leATO" value="1.0"/>
+    <Control type="ScriptButton" id="leATO" value="0.0"/>
     <Control type="ScriptButton" id="modtype3" value="0.0"/>
     <Control type="ScriptTable" id="Table1" value="0.0" data="48...............vODpCp932vZ8C...vO0A0Q+v12v3C...vO...f+....9C...vO"/>
     <Control type="ScriptSlider" id="ScriptSlider1" value="0.0"/>
@@ -39,7 +38,7 @@
     <Control type="ScriptSlider" id="ScriptSlider6" value="8.0"/>
     <Control type="ScriptSlider" id="ScriptSlider12" value="0.3899999856948853"/>
     <Control type="ScriptButton" id="modtype10" value="1.0"/>
-    <Control type="ScriptSlider" id="SHAPEMOD5" value="11.39999961853027"/>
+    <Control type="ScriptSlider" id="SHAPEMOD5" value="2.400001525878906"/>
     <Control type="ScriptSlider" id="Knob1" value="0.0"/>
     <Control type="ScriptSlider" id="Knob3" value="3380.39990234375"/>
     <Control type="ScriptSlider" id="Knob4" value="-37.09999847412109"/>
@@ -62,15 +61,15 @@
     <Control type="ScriptSlider" id="SHAPEMOD18" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD20" value="0.0"/>
     <Control type="ScriptComboBox" id="ScriptComboBox10" value="1.0"/>
-    <Control type="ScriptSliderPack" id="pitch-sp3" value="14" data="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
+    <Control type="ScriptSliderPack" id="pitch-sp3" value="14.0" data="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
     <Control type="ScriptSlider" id="SHAPEMOD17" value="0.07000000029802322"/>
     <Control type="ScriptComboBox" id="SOURC4" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD13" value="0.449999988079071"/>
     <Control type="ScriptSlider" id="SHAPEMOD16" value="0.0"/>
-    <Control type="ScriptSlider" id="SHAPEMOD22" value="0.4900000095367432"/>
+    <Control type="ScriptSlider" id="SHAPEMOD22" value="0.0"/>
     <Control type="ScriptButton" id="ScriptButton1" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD23" value="0.0"/>
-    <Control type="ScriptSliderPack" id="pitch-sp1" value="14" data="64.T35A+....7yGEttO1iB29nv0i5C...nO6QgK9jBWO1yiBWWOJb8H87nv0yiBWOBO......................"/>
+    <Control type="ScriptSliderPack" id="pitch-sp1" value="14.0" data="64.T35A+....7yGEttO1iB29nv0i5C...nO6QgK9jBWO1yiBWWOJb8H87nv0yiBWOBO......................"/>
     <Control type="ScriptComboBox" id="ExpansionSelector" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD25" value="0.5"/>
     <Control type="ScriptComboBox" id="SOURC3" value="1.0"/>
@@ -81,6 +80,11 @@
     <Control type="ScriptComboBox" id="Categories" value="7.0"/>
     <Control type="ScriptComboBox" id="BankA" value="4.0"/>
     <Control type="ScriptLabel" id="WAVELABEL1" value="Round"/>
+    <Control type="ScriptPanel" id="B" value="0.0"/>
+    <Control type="ScriptAudioWaveform" id="ScriptAudioWaveform1" value="0.0"
+             data="{XYZ::SampleMap}Round" rangeStart="0" rangeEnd="0"/>
+    <Control type="ScriptLabel" id="WAVELABEL1b" value=""/>
+    <Control type="ScriptButton" id="User1" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD24" value="0.4799999892711639"/>
     <Control type="ScriptSlider" id="SHAPE" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPE6" value="8.649999618530273"/>
@@ -111,6 +115,11 @@
     <Control type="ScriptComboBox" id="Categories1" value="1.0"/>
     <Control type="ScriptComboBox" id="BankA1" value="5.0"/>
     <Control type="ScriptLabel" id="WAVELABEL2" value="CS-Saw"/>
+    <Control type="ScriptPanel" id="B1" value="0.0"/>
+    <Control type="ScriptAudioWaveform" id="ScriptAudioWaveform2" value="0.0"
+             data="{XYZ::SampleMap}CS-Saw" rangeStart="0" rangeEnd="0"/>
+    <Control type="ScriptLabel" id="WAVELABEL2b" value=""/>
+    <Control type="ScriptButton" id="User2" value="0.0"/>
     <Control type="ScriptButton" id="modtype1" value="0.0"/>
     <Control type="ScriptButton" id="modtype2" value="0.0"/>
   </Content>

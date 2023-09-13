@@ -6,7 +6,6 @@
              rangeStart="0" rangeEnd="0"/>
     <Control type="ScriptAudioWaveform" id="AudioWaveform3" value="0.0" data=""
              rangeStart="0" rangeEnd="0"/>
-    <Control type="ScriptButton" id="PRESETBUTTON" value="0.0"/>
     <Control type="ScriptButton" id="leATO" value="0.0"/>
     <Control type="ScriptButton" id="modtype3" value="0.0"/>
     <Control type="ScriptTable" id="Table1" value="0.0" data="48...............vODpCp932vZ8C...vO0A0Q+v12v3C...vO...f+....9C...vO"/>
@@ -81,6 +80,11 @@
     <Control type="ScriptComboBox" id="Categories" value="1.0"/>
     <Control type="ScriptComboBox" id="BankA" value="12.0"/>
     <Control type="ScriptLabel" id="WAVELABEL1" value="Cy2OP1"/>
+    <Control type="ScriptPanel" id="B" value="0.0"/>
+    <Control type="ScriptAudioWaveform" id="ScriptAudioWaveform1" value="0.0"
+             data="{XYZ::SampleMap}Cy2OP1" rangeStart="0" rangeEnd="0"/>
+    <Control type="ScriptLabel" id="WAVELABEL1b" value=""/>
+    <Control type="ScriptButton" id="User1" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD24" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPE" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPE6" value="16.0"/>
@@ -109,8 +113,13 @@
     <Control type="ScriptSlider" id="SHAPEMOD34" value="0.0"/>
     <Control type="ScriptPanel" id="A1" value="0.0"/>
     <Control type="ScriptComboBox" id="Categories1" value="1.0"/>
-    <Control type="ScriptComboBox" id="BankA1" value="13.0"/>
-    <Control type="ScriptLabel" id="WAVELABEL2" value="Cy2OP2"/>
+    <Control type="ScriptComboBox" id="BankA1" value="14.0"/>
+    <Control type="ScriptLabel" id="WAVELABEL2" value="Dark BP"/>
+    <Control type="ScriptPanel" id="B1" value="0.0"/>
+    <Control type="ScriptAudioWaveform" id="ScriptAudioWaveform2" value="0.0"
+             data="{XYZ::SampleMap}Dark BP" rangeStart="0" rangeEnd="0"/>
+    <Control type="ScriptLabel" id="WAVELABEL2b" value=""/>
+    <Control type="ScriptButton" id="User2" value="0.0"/>
     <Control type="ScriptButton" id="modtype1" value="0.0"/>
     <Control type="ScriptButton" id="modtype2" value="0.0"/>
   </Content>
