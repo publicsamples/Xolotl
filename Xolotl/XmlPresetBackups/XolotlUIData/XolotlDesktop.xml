@@ -136,7 +136,8 @@
     </Component>
     <Component type="ScriptPanel" id="modB2" x="645.0" y="392.0" width="230.0"
                height="155.0" itemColour="4282006074" itemColour2="4282006074"
-               opaque="1" bgColour="4280030999" textColour="4278938544" parentComponent="HARMONICSYNTH">
+               opaque="1" bgColour="4280030999" textColour="4278938544" parentComponent="HARMONICSYNTH"
+               visible="0">
       <Component type="ScriptSlider" id="ScriptSlider11" x="61.0" y="20.0" width="40.0"
                  height="35.0" parentComponent="modB2" processorId="Script Time Variant Modulator2"
                  parameterId="tempo" mode="TempoSync" max="18.0" stepSize="1.0"
@@ -471,9 +472,9 @@
                  min="0.300000011920929" isVertical="0" scaleFactor="0.2199999988079071"/>
       <Component type="ScriptComboBox" id="ScriptComboBox1" x="14.0" y="106.0"
                  width="40.0" height="20.0" max="4" parentComponent="filter" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2"
-                 processorId="HARMONIC" parameterId="FIILLTTTEERRSWIITCHHHHH"
-                 itemColour2="4292638006" textColour="4292638006" bgColour="4292638006"
-                 itemColour="4292638006" fontName="Montserrat"/>
+                 processorId="HARMONIC" parameterId="Cut-MOD-SWITCH" itemColour2="4292638006"
+                 textColour="4292638006" bgColour="4292638006" itemColour="4292638006"
+                 fontName="Montserrat"/>
       <Component type="ScriptComboBox" id="ScriptComboBox3" x="88.0" y="137.0"
                  width="55.0" height="25.0" max="3" parentComponent="filter" items="Lowpass&#10;Highpass&#10;Bandpass&#10;&#10;"
                  processorId="HARMONIC" parameterId="FTYPE" defaultValue="0.0"
@@ -498,7 +499,7 @@
                  isVertical="0" scaleFactor="0.2000000029802322" defaultValue="0.5"/>
       <Component type="ScriptComboBox" id="ScriptComboBox10" x="267.0" y="71.0"
                  width="20.0" height="20.0" max="4" parentComponent="filter" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2"
-                 processorId="HARMONIC" parameterId="resmodswitch" itemColour2="4292638006"
+                 processorId="HARMONIC" parameterId="RESMODSWITCH" itemColour2="4292638006"
                  textColour="4292638006" bgColour="4292638006" itemColour="4292638006"
                  fontName="Montserrat"/>
       <Component type="ScriptSlider" id="SHAPEMOD44" x="292.0" y="71.0" width="20.0"
@@ -528,7 +529,7 @@
       </Component>
       <Component type="ScriptComboBox" id="SOURC4" x="18.0" y="136.0" max="4"
                  width="40.0" height="20.0" items="ENV1&#10;ENV2&#10;MOD1&#10;MOD2&#10;"
-                 parentComponent="pan" processorId="HARMONIC" parameterId="CUT1modswitch"
+                 parentComponent="pan" processorId="HARMONIC" parameterId="shmodswitch"
                  textColour="4292638006" bgColour="4292638006" itemColour="4292638006"
                  itemColour2="4292638006" fontName="Montserrat"/>
       <Component type="ScriptLabel" id="PITCH-MABEL32" x="7.0" y="74.0" width="60.0"
@@ -626,7 +627,7 @@
                  fontSize="25.0" fontName="Montserrat" textColour="4294038066"/>
       <Component type="ScriptPanel" id="A" x="11.0" y="5" width="380.0" height="40.0"
                  parentComponent="osc1" text="*" itemColour="15720329" itemColour2="15720329"
-                 saveInPreset="1" bgColour="15785877" textColour="16777215" visible="0">
+                 saveInPreset="1" bgColour="15785877" textColour="16777215">
         <Component type="ScriptLabel" id="WAVE1" x="221.0" y="7.0" width="40.0"
                    height="20.0" parentComponent="A" editable="0" text="BANK" fontSize="14.0"
                    fontName="Montserrat" textColour="4294038066"/>
@@ -641,12 +642,12 @@
                    items="CS-Sine&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Noise&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;101-bell1&#10;101-bell2&#10;101-bell3&#10;101-bell4&#10;101-pwm1&#10;101-pwm2&#10;101-pwm3&#10;101-pwm4&#10;101-string2&#10;101-string3&#10;101-string4"/>
         <Component type="ScriptLabel" id="WAVELABEL1" x="133.0" y="4.0" width="70.0"
                    height="22.0" parentComponent="A" textColour="3157700316" fontName="Montserrat"
-                   fontSize="19.0" editable="0" text="101-string4" itemColour2="3157700316"
+                   fontSize="19.0" editable="0" text="CS-Sine" itemColour2="3157700316"
                    itemColour="3583708" saveInPreset="1"/>
       </Component>
       <Component type="ScriptPanel" id="B" x="9.0" y="5" width="380.0" height="40.0"
                  parentComponent="osc1" text="*" itemColour="4282006074" itemColour2="4282006074"
-                 saveInPreset="1" bgColour="15785877" textColour="16777215">
+                 saveInPreset="1" bgColour="15785877" textColour="16777215" visible="0">
         <Component type="ScriptLabel" id="PITCH-MABEL55" x="126.0" y="5.0" width="60.0"
                    height="20.0" parentComponent="B" text="LOAD SFZ" editable="0"
                    fontSize="14.0" textColour="4294038066" fontName="Montserrat"/>
@@ -659,7 +660,7 @@
                    showFileName="0"/>
         <Component type="ScriptLabel" id="WAVELABEL1b" x="229.0" y="5.0" width="110"
                    height="20" parentComponent="B" textColour="3157700316" fontName="Montserrat"
-                   fontSize="19.0" editable="0" text="bees" itemColour2="3157700316"
+                   fontSize="19.0" editable="0" text="" itemColour2="3157700316"
                    itemColour="3583708" saveInPreset="1"/>
       </Component>
       <Component type="ScriptPanel" id="C" x="9.0" y="5" width="380.0" height="40.0"
