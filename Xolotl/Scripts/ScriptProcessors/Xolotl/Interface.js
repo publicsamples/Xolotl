@@ -7,30 +7,33 @@ include("ExpansionWaves.js");
 // BANK A
 
 
+
 var Maps = [];
-Maps.push(BasicWaveforms);
-Maps.push(GM);
-Maps.push(Hybrids);
-Maps.push(cs30);
-Maps.push(em25);
-Maps.push(sys101);
-Maps.push(jx3p);
-Maps.push(kraftzwerg);
-Maps.push(Xpander);
-Maps.push(Monopoly);
+Maps.push(MiscWaves);
+//Maps.push(Stereo);
+//Maps.push(HT700_1);
+///.push(HT700_2);
+//Maps.push(HT700_3);
+//Maps.push(hybrids);
+//Maps.push(cs30);
+//Maps.push(em25);
+//Maps.push(MiscRoland);
+//Maps.push(kraftzwerg);
+//Maps.push(Xpander);
+//Maps.push(Monopoly);
 
 
 
-var SMAPS = ["BasicWaveforms", "GM", "Hybrids",  "cs30", "em25", "sys101","jx3p", "kraftzwerg",  "Xpander", "Monopoly"];
 
+//var SMAPS = ["MiscWaves",  "hybrids",  "cs30", "em25", "MiscRoland", "kraftzwerg",  "Xpander", "Monopoly"];
+
+//var SMAPS = ["MiscWaves", "Stereo", "HT700_1", "HT700_2", "HT700_3"];
+
+var SMAPS = ["MiscWaves"];
 
 const var BankA = Content.getComponent("BankA");
-const var BankA1 = Content.getComponent("BankA1");
 const var WAVELABEL1 = Content.getComponent("WAVELABEL1");
-const var WAVELABEL2 = Content.getComponent("WAVELABEL2");
 const var Categories = Content.getComponent("Categories");
-const var Categories1 = Content.getComponent("Categories1");
-
 
 
  inline function onBankAControl(component, value)
@@ -59,34 +62,6 @@ const var Categories1 = Content.getComponent("Categories1");
  
  
  
- // BANK A1
- 
- 
- inline function onBankA1Control(component, value)
- {
- 	WAVELABEL2.set("text",BankA1.get("items").split("\n")[value-1]);
- 	slot1.loadFile("{XYZ::SampleMap}" + component.getItemText());
- 	
- 
- };
- 
- Content.getComponent("BankA1").setControlCallback(onBankA1Control);
- 
- 
- 
- Categories1.set("items", SMAPS.join("\n"));
- 
- inline function onCategories1Control(component, value)
- {
- 
- 	BankA1.set("items", [].join("\n")); 
- 	BankA1.set("items", Maps[value-1].join("\n"));
- 	BankA1.setValue(1);
- 
- };
- 
- Content.getComponent("Categories1").setControlCallback(onCategories1Control);
-
 
 
 Settings.setVoiceMultiplier(8);
@@ -111,80 +86,99 @@ const var HARMONIC = Synth.getChildSynth("HARMONIC")
 
 const var WAVELABEL1b = Content.getComponent("WAVELABEL1b");
 
-const var WAVELABEL2b = Content.getComponent("WAVELABEL2b");
+
 
 const var AudioWaveform2 = Content.getComponent("AudioWaveform2");
-
-const var AudioWaveform3 = Content.getComponent("AudioWaveform3");
-
 
 
 
 const var A = Content.getComponent("A");
 const var B = Content.getComponent("B");
-const var A1 = Content.getComponent("A1");
-const var B1 = Content.getComponent("B1");
+const var C = Content.getComponent("C");
+
 const var User1 = Content.getComponent("User1");
-const var User2 = Content.getComponent("User2");
+
 const var ScriptAudioWaveform1 = Content.getComponent("ScriptAudioWaveform1");
-const var ScriptAudioWaveform2 = Content.getComponent("ScriptAudioWaveform2");
+
 
 
 inline function onUser1Control(component, value)
 {
 	
-	HARMONIC.setAttribute(HARMONIC.userwav2, value);
 
-	if(value == 0)
+
+	if(value == 1)
 	{	 
-	    
+	    HARMONIC.setAttribute(HARMONIC.userwav1, 0);
+		 A.showControl(1);
 		 B.showControl(0);
-    //     BankA.set("saveInPreset", true);
-    //     Categories.set("saveInPreset", true);
-//     ScriptAudioWaveform1.set("saveInPreset", false);
-   //      WAVELABEL1b.set("saveInPreset", false);
-  //       WAVELABEL1.set("saveInPreset", true);
+         C.showControl(0);
 	}
 	
-		if(value == 1)
+		if(value == 2)
 	{
+		HARMONIC.setAttribute(HARMONIC.userwav1, 0.5);
+		 A.showControl(0);
+		 B.showControl(1);
+         C.showControl(0);
 
-	
-		  B.showControl(1); 
-	  //    BankA.set("saveInPreset", false);
-	  //    Categories.set("saveInPreset", false);
-	  //    ScriptAudioWaveform1.set("saveInPreset", true);
-	 //     WAVELABEL1b.set("saveInPreset", true);
-	 //     WAVELABEL1.set("saveInPreset", false);
 	}
+	
+			if(value == 3)
+		{
+			HARMONIC.setAttribute(HARMONIC.userwav1, 1);
+			 A.showControl(0);
+			 B.showControl(0);
+	         C.showControl(1);
+	
+		}
 };
 
 Content.getComponent("User1").setControlCallback(onUser1Control);
 
 
+const var OscWave = Content.getComponent("OscWave");
 
-inline function onUser2Control(component, value)
+
+inline function onOscWaveControl(component, value)
 {
-	HARMONIC.setAttribute(HARMONIC.userwav1, value);
 
-	if(value == 0)
-	{
-	
-		 B1.showControl(0);
-        
-         
-         
+	if(value == 1)
+	{	 
+	    HARMONIC.setAttribute(HARMONIC.OscWave, 0);
+
 	}
 	
-		if(value == 1)
+		if(value == 2)
 	{
+		HARMONIC.setAttribute(HARMONIC.OscWave, 0.3);
 
-		  B1.showControl(1);
-	  
 	}
+	
+			if(value == 3)
+		{
+			HARMONIC.setAttribute(HARMONIC.OscWave, 0.5);
+
+	
+		}
+		
+		if(value == 4)
+			{
+				HARMONIC.setAttribute(HARMONIC.OscWave, 0.8);
+		
+		
+			}
+			
+			if(value == 5)
+				{
+					HARMONIC.setAttribute(HARMONIC.OscWave, 1);
+			
+			
+				}
 };
 
-Content.getComponent("User2").setControlCallback(onUser2Control);
+Content.getComponent("OscWave").setControlCallback(onOscWaveControl);
+
 
 
 
@@ -200,7 +194,7 @@ inline function onLoadSFZ1Control(component, value)
 		
 
 		slot2.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
-		WAVELABEL1b.set("text", "SFZ");
+		WAVELABEL1b.set("text", f.toString(f.NoExtension));
 	
 	});	
 
@@ -209,28 +203,6 @@ inline function onLoadSFZ1Control(component, value)
 }; 
 
 Content.getComponent("LoadSFZ1").setControlCallback(onLoadSFZ1Control);
-
-
-inline function onLoadSFZ2Control(component, value)
-{
-	if (value)
-		{
-		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
-	{
-		
-
-		slot3.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
-		WAVELABEL2b.set("text", "SFZ");
-	});	
-			
-}
-
-}; 
-
-Content.getComponent("LoadSFZ2").setControlCallback(onLoadSFZ2Control);
-
-
-
 
 function onNoteOn()
 {

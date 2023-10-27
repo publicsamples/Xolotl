@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="harmnode" AllowPolyphonic="1" Version="0.0.0" AllowCompilation="1">
+  <Node FactoryPath="container.chain" ID="harmnode" Bypassed="0" ShowParameters="1">
+    <Nodes>
+      <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
+        <Nodes>
+          <Node ID="split" FactoryPath="container.split" Bypassed="0">
+            <Nodes>
+              <Node ID="pma_unscaled" FactoryPath="control.pma_unscaled" Bypassed="0">
+                <ModulationTargets>
+                  <Connection NodeId="file_player" ParameterId="FreqRatio"/>
+                  <Connection NodeId="file_player1" ParameterId="FreqRatio"/>
+                  <Connection NodeId="oscillator" ParameterId="Freq Ratio"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                  <Parameter MinValue="5.551115123125783e-17" MaxValue="2.0" StepSize="0"
+                             ID="Add" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="pma_unscaled1" FactoryPath="control.pma_unscaled" Bypassed="0">
+                <ModulationTargets>
+                  <Connection NodeId="pma_unscaled" ParameterId="Add"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="0" ID="Add" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="minmax" FactoryPath="control.minmax" Bypassed="0">
+            <ModulationTargets>
+              <Connection NodeId="pma_unscaled1" ParameterId="Add"/>
+            </ModulationTargets>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+              <Parameter MinValue="1.0" MaxValue="16.0" ID="Minimum" StepSize="1.0" Automated="1"/>
+              <Parameter MinValue="1.0" MaxValue="16.0" ID="Maximum" StepSize="1.0" Automated="1"/>
+              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                         ID="Skew" Value="1.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="softbypass_switch4" FactoryPath="container.chain" ShowParameters="1"
+                Bypassed="0">
+            <Nodes>
+              <Node ID="switcher" FactoryPath="control.xfader" Bypassed="0" NodeColour="4287391641"
+                    Folded="1">
+                <Properties>
+                  <Property ID="NumParameters" Value="3"/>
+                  <Property ID="Mode" Value="Switch"/>
+                </Properties>
+                <SwitchTargets>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="sb1" ParameterId="Bypassed"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="sb2" ParameterId="Bypassed"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="sb3" ParameterId="Bypassed"/>
+                    </Connections>
+                  </SwitchTarget>
+                </SwitchTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="sb_container" FactoryPath="container.chain" NodeColour="4287391641"
+                    Bypassed="0">
+                <Properties>
+                  <Property ID="IsVertical" Value="0"/>
+                </Properties>
+                <Nodes>
+                  <Node ID="sb1" FactoryPath="container.soft_bypass" NodeColour="4287391641"
+                        Bypassed="0">
+                    <Nodes>
+                      <Node ID="file_player" FactoryPath="core.file_player" Bypassed="0">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="0" EmbeddedData="{XYZ::SampleMap}CS-Saw" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="2.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Properties>
+                      <Property ID="SmoothingTime" Value="20"/>
+                    </Properties>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="sb2" FactoryPath="container.soft_bypass" NodeColour="4287391641"
+                        Bypassed="0">
+                    <Nodes>
+                      <Node ID="file_player1" FactoryPath="core.file_player" Bypassed="0">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="1" MinValue="0" MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="2.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Properties>
+                      <Property ID="SmoothingTime" Value="20"/>
+                    </Properties>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="sb3" FactoryPath="container.soft_bypass" NodeColour="4287391641"
+                        Bypassed="0">
+                    <Nodes>
+                      <Node ID="oscillator" FactoryPath="core.oscillator" Bypassed="0">
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                          <Parameter MinValue="20.00000029802322" MaxValue="20000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.2299045622348785" ID="Frequency" Value="220.0"/>
+                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Freq Ratio"
+                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Gain" Value="0.4955634765624999"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Properties>
+                      <Property ID="SmoothingTime" Value="20"/>
+                    </Properties>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="2.0" ID="Switch" Automated="1">
+                <Connections>
+                  <Connection NodeId="switcher" ParameterId="Value"/>
+                </Connections>
+              </Parameter>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="pitch" MinValue="0.0" MaxValue="2.0" Value="2.0">
+        <Connections>
+          <Connection NodeId="pma_unscaled" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="mode" MinValue="0.0" MaxValue="2.0" Value="2.0">
+        <Connections>
+          <Connection NodeId="softbypass_switch4" ParameterId="Switch"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="OscWave" MinValue="0.0" MaxValue="4.0" Value="0.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="oscillator" ParameterId="Mode"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="harm" MinValue="0.0" MaxValue="1.0" Value="0.0">
+        <Connections>
+          <Connection NodeId="minmax" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="min" MinValue="1.0" MaxValue="16.0" StepSize="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="minmax" ParameterId="Minimum"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="max" MinValue="1.0" MaxValue="16.0" StepSize="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="minmax" ParameterId="Maximum"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="step" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="minmax" ParameterId="Step"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="wheel" MinValue="0.0" MaxValue="2.0" Value="0.9955853576660156">
+        <Connections>
+          <Connection NodeId="pma_unscaled1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>
