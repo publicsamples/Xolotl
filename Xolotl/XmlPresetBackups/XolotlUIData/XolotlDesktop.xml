@@ -19,7 +19,7 @@
                editable="0" textColour="4294038066" alignment="left" parentComponent="HARMONICSYNTH"/>
     <Component type="ScriptButton" id="leATO" x="828.0" y="332.0" width="22.0"
                height="22.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.2000000029802322"
-               isVertical="0" processorId="Legato with Retrigger1" parameterId="Bypass"
+               isVertical="0" processorId="Legato with Retrigger1" parameterId="Enabled"
                parentComponent="HARMONICSYNTH"/>
     <Component type="ScriptLabel" id="LoadEx2" x="814.0" y="359.0" text="LEGATO"
                fontName="Montserrat" width="50.0" height="20.0" fontSize="12.0"
@@ -312,9 +312,9 @@
       <Component type="ScriptSlider" id="SHAPEMOD5" x="12.0" y="124.0" width="35.0"
                  height="30.0" parentComponent="AMP" processorId="Simple Gain1"
                  parameterId="Gain" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-                 numStrips="125.0" middlePosition="-50.0" isPluginParameter="1"
+                 numStrips="125.0" middlePosition="0.0" isPluginParameter="1"
                  pluginParameterName="VCA - VOLUME" isVertical="0" scaleFactor="0.1800000071525574"
-                 mode="Decibel" min="-100.0" max="0.0" stepSize="0.1000000014901161"
+                 mode="Decibel" min="-100.0" max="12.0" stepSize="0.1000000014901161"
                  suffix=" dB"/>
       <Component type="ScriptSlider" id="Knob1" x="9.0" y="29.0" width="25.0"
                  height="80.0" parentComponent="AMP" processorId="AHDSR Envelope1"
@@ -625,7 +625,7 @@
       <Component type="ScriptLabel" id="WAVE3" x="8.0" y="226.0" width="60.0"
                  height="60.0" parentComponent="osc1" editable="0" text="WAVE "
                  fontSize="25.0" fontName="Montserrat" textColour="4294038066"/>
-      <Component type="ScriptPanel" id="A" x="11.0" y="5" width="380.0" height="40.0"
+      <Component type="ScriptPanel" id="A" x="11.0" y="5.0" width="380.0" height="40.0"
                  parentComponent="osc1" text="*" itemColour="15720329" itemColour2="15720329"
                  saveInPreset="1" bgColour="15785877" textColour="16777215">
         <Component type="ScriptLabel" id="WAVE1" x="221.0" y="7.0" width="40.0"
@@ -636,16 +636,16 @@
                    itemColour2="3157700316" itemColour="3157700316" bgColour="3157700316"
                    items="MiscWaves" defaultValue="0.0"/>
         <Component type="ScriptComboBox" id="BankA" x="123.0" y="1.0" width="90.0"
-                   height="30.0" max="20" parentComponent="A" fontSize="1.0" textColour="4282006074"
+                   height="30.0" max="34" parentComponent="A" fontSize="1.0" textColour="4282006074"
                    itemColour2="4282006074" itemColour="3157700316" bgColour="3157700316"
                    defaultValue="0.0" isPluginParameter="1" pluginParameterName="OSC1 -WAVE"
-                   items="CS-Sine&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Noise&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;101-bell1&#10;101-bell2&#10;101-bell3&#10;101-bell4&#10;101-pwm1&#10;101-pwm2&#10;101-pwm3&#10;101-pwm4&#10;101-string2&#10;101-string3&#10;101-string4"/>
+                   items="CS-Sine&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Noise&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;101-bell1&#10;101-bell2&#10;101-bell3&#10;101-bell4&#10;101-pwm1&#10;101-pwm2&#10;101-pwm3&#10;101-pwm4&#10;101-string2&#10;101-string3&#10;101-string4&#10;BlowyST&#10;CrunchyST&#10;CsShockST&#10;CupCakeST&#10;DF1ST&#10;DF2ST&#10;GravelST&#10;OgRadioST&#10;OgSlyST&#10;OgdfST&#10;RavST&#10;Special K ST&#10;ZstringB-ST&#10;BPlinkSH"/>
         <Component type="ScriptLabel" id="WAVELABEL1" x="133.0" y="4.0" width="70.0"
                    height="22.0" parentComponent="A" textColour="3157700316" fontName="Montserrat"
-                   fontSize="19.0" editable="0" text="CS-Sine" itemColour2="3157700316"
+                   fontSize="19.0" editable="0" text="CS-Saw" itemColour2="3157700316"
                    itemColour="3583708" saveInPreset="1"/>
       </Component>
-      <Component type="ScriptPanel" id="B" x="9.0" y="5" width="380.0" height="40.0"
+      <Component type="ScriptPanel" id="B" x="9.0" y="5.0" width="380.0" height="40.0"
                  parentComponent="osc1" text="*" itemColour="4282006074" itemColour2="4282006074"
                  saveInPreset="1" bgColour="15785877" textColour="16777215" visible="0">
         <Component type="ScriptLabel" id="PITCH-MABEL55" x="126.0" y="5.0" width="60.0"
@@ -656,18 +656,18 @@
                    scaleFactor="0.2000000029802322" isVertical="0" saveInPreset="0"
                    isMomentary="1"/>
         <Component type="ScriptAudioWaveform" id="ScriptAudioWaveform1" x="223.0"
-                   y="1.0" width="120" height="30" parentComponent="B" processorId="HARMONIC"
+                   y="1.0" width="120.0" height="30.0" parentComponent="B" processorId="HARMONIC"
                    showFileName="0"/>
-        <Component type="ScriptLabel" id="WAVELABEL1b" x="229.0" y="5.0" width="110"
-                   height="20" parentComponent="B" textColour="3157700316" fontName="Montserrat"
+        <Component type="ScriptLabel" id="WAVELABEL1b" x="229.0" y="5.0" width="110.0"
+                   height="20.0" parentComponent="B" textColour="3157700316" fontName="Montserrat"
                    fontSize="19.0" editable="0" text="" itemColour2="3157700316"
                    itemColour="3583708" saveInPreset="1"/>
       </Component>
-      <Component type="ScriptPanel" id="C" x="9.0" y="5" width="380.0" height="40.0"
+      <Component type="ScriptPanel" id="C" x="9.0" y="5.0" width="380.0" height="40.0"
                  parentComponent="osc1" text="*" itemColour="4282006074" itemColour2="4282006074"
                  saveInPreset="1" bgColour="15785877" textColour="16777215" visible="0">
-        <Component type="ScriptComboBox" id="OscWave" x="125.0" y="2.0" width="80"
-                   height="30" max="5" parentComponent="C" items="SINE&#10;SAW&#10;TRiANGLE&#10;SQUARE&#10;NOISE"
+        <Component type="ScriptComboBox" id="OscWave" x="125.0" y="2.0" width="80.0"
+                   height="30.0" max="5" parentComponent="C" items="SINE&#10;SAW&#10;TRiANGLE&#10;SQUARE&#10;NOISE"
                    bgColour="3157700316" itemColour2="3157700316" textColour="3157700316"
                    itemColour="3157700316"/>
       </Component>
@@ -679,9 +679,10 @@
     <Component type="ScriptPanel" id="oscmaster" x="13.0" y="302.0" width="390.0"
                height="70.0" parentComponent="HARMONICSYNTH" itemColour="4282006074"
                itemColour2="4282006074" bgColour="1441080099" textColour="748464">
-      <Component type="ScriptButton" id="Button1" x="351" y="10" width="30" height="20"
-                 processorId="HARMONIC" parameterId="PitchType" filmstripImage="{PROJECT_FOLDER}button6.png"
-                 scaleFactor="0.2" isVertical="0" parentComponent="oscmaster"/>
+      <Component type="ScriptButton" id="Button1" x="351.0" y="10.0" width="30.0"
+                 height="20.0" processorId="HARMONIC" parameterId="PitchType"
+                 filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.2000000029802322"
+                 isVertical="0" parentComponent="oscmaster"/>
       <Component type="ScriptSlider" id="SHAPE" x="8.0" y="3.0" width="40.0" height="35.0"
                  parentComponent="oscmaster" processorId="HARMONIC" parameterId="harm-min"
                  filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
@@ -746,9 +747,9 @@
                  numStrips="125.0" middlePosition="0.5" isPluginParameter="1"
                  pluginParameterName="OSC MASTER - STEP" defaultValue="0.5" isVertical="0"
                  scaleFactor="0.2000000029802322"/>
-      <Component type="ScriptLabel" id="PITCH-MABEL10" x="338.0" y="37.0" width="50"
-                 height="30" parentComponent="oscmaster" text="DETUNE MODE" editable="0"
-                 fontName="Montserrat" textColour="4294038066"/>
+      <Component type="ScriptLabel" id="PITCH-MABEL10" x="338.0" y="37.0" width="50.0"
+                 height="30.0" parentComponent="oscmaster" text="DETUNE MODE"
+                 editable="0" fontName="Montserrat" textColour="4294038066"/>
     </Component>
     <Component type="ScriptPanel" id="env2" x="208.0" y="392.0" width="190.0"
                height="155.0" parentComponent="HARMONICSYNTH" itemColour="4282006074"

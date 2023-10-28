@@ -1,5 +1,5 @@
 var MiscWaves = ["CS-Sine","CS-Pulse1","CS-Pulse2","CS-Pulse3","CS-Saw", "CS-Noise","CS-Noise2","CS-Noise3",
- "CS-Noise4","101-bell1", "101-bell2", "101-bell3", "101-bell4", "101-pwm1", "101-pwm2", "101-pwm3", "101-pwm4", "101-string2", "101-string3", "101-string4"];
+ "CS-Noise4","101-bell1", "101-bell2", "101-bell3", "101-bell4", "101-pwm1", "101-pwm2", "101-pwm3", "101-pwm4", "101-string2", "101-string3", "101-string4", "BlowyST", "CrunchyST", "CsShockST", "CupCakeST", "DF1ST", "DF2ST",  "GravelST",  "OgRadioST", "OgSlyST", "OgdfST", "RavST", "Special K ST",  "ZstringB-ST", "BPlinkSH"];
  
  var Stereo = ["BigST", "Bison1ST", "Bison2ST", "BlowyST", "BugST", "CrunchyST", "CsShockST", "CupCakeST", "DCOPianoST", "DF1ST", "DF2ST", "FmDrama1ST", "FmDrama2ST", "GravelST", "GreatST", "LeapST", "LfadeST", "Lil bass ST", "OgRadioST", "OgSlyST", "OgdfST", "RavST", "RoundST", "S&H-ST", "SimpleST", "Slow One ST", "Special K ST", "StackST", "T Sync ST", "ZstringB-ST", "harshST", "pulserST", "slowishST"];
  
