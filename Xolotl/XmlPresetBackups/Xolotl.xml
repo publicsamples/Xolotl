@@ -15,14 +15,14 @@
                      rangeStart="0" rangeEnd="0"/>
             <Control type="ScriptButton" id="leATO" value="0.0"/>
             <Control type="ScriptButton" id="modtype3" value="0.0"/>
-            <Control type="ScriptTable" id="Table1" value="0.0" data="48...............vODpCp932vZ8C...vO0A0Q+v12v3C...vO...f+....9C...vO"/>
+            <Control type="ScriptTable" id="Table1" value="0.0" data="36...............vOaaa69....9C...vO...f+.........vO"/>
             <Control type="ScriptSlider" id="ScriptSlider1" value="0.0"/>
-            <Control type="ScriptSlider" id="ScriptSlider2" value="12.0"/>
+            <Control type="ScriptSlider" id="ScriptSlider2" value="4.0"/>
             <Control type="ScriptSlider" id="ScriptSlider23" value="0.0"/>
-            <Control type="ScriptTable" id="Table3" value="0.0" data="48...............vO6f5f9vnK57C...vOkjjD+....9C...vO...f+.........vO"/>
-            <Control type="ScriptSlider" id="ScriptSlider9" value="10.0"/>
-            <Control type="ScriptSlider" id="ScriptSlider10" value="13.0"/>
-            <Control type="ScriptSlider" id="ScriptSlider25" value="2.081668171172169e-17"/>
+            <Control type="ScriptTable" id="Table3" value="0.0" data="36...............vO....+....9C...vO...f+.........vO"/>
+            <Control type="ScriptSlider" id="ScriptSlider9" value="0.0"/>
+            <Control type="ScriptSlider" id="ScriptSlider10" value="2.0"/>
+            <Control type="ScriptSlider" id="ScriptSlider25" value="0.0"/>
             <Control type="ScriptButton" id="modtype4" value="0.0"/>
             <Control type="ScriptTable" id="Table2" value="0.0" data=""/>
             <Control type="ScriptSlider" id="ScriptSlider3" value="0.0"/>
@@ -36,82 +36,78 @@
             <Control type="ScriptSlider" id="ScriptSlider28" value="0.0"/>
             <Control type="ScriptComboBox" id="ScriptComboBox2" value="1.0"/>
             <Control type="ScriptSlider" id="ScriptSlider29" value="0.0"/>
-            <Control type="ScriptSlider" id="RELEASE1" value="6306.0"/>
-            <Control type="ScriptSlider" id="SUSTAIN1" value="0.0"/>
-            <Control type="ScriptSlider" id="DECAY1" value="1079.239990234375"/>
-            <Control type="ScriptSlider" id="ATTACK1" value="2040.0"/>
-            <Control type="ScriptButton" id="modtype8" value="0.0"/>
-            <Control type="ScriptSlider" id="ScriptSlider5" value="0.0"/>
+            <Control type="ScriptSlider" id="RELEASE1" value="436.0"/>
+            <Control type="ScriptSlider" id="SUSTAIN1" value="0.3100000023841858"/>
+            <Control type="ScriptSlider" id="DECAY1" value="733.52001953125"/>
+            <Control type="ScriptSlider" id="ATTACK1" value="3047.0"/>
+            <Control type="ScriptButton" id="modtype8" value="1.0"/>
+            <Control type="ScriptSlider" id="ScriptSlider5" value="4.0"/>
             <Control type="ScriptSlider" id="ScriptSlider6" value="0.0"/>
-            <Control type="ScriptSlider" id="ScriptSlider12" value="1.0"/>
-            <Control type="ScriptButton" id="modtype10" value="1.0"/>
-            <Control type="ScriptSlider" id="SHAPEMOD5" value="1.490116119384766e-6"/>
+            <Control type="ScriptSlider" id="ScriptSlider12" value="0.0"/>
+            <Control type="ScriptButton" id="modtype10" value="0.0"/>
+            <Control type="ScriptSlider" id="SHAPEMOD5" value="1.800001502037048"/>
             <Control type="ScriptSlider" id="Knob1" value="0.0"/>
-            <Control type="ScriptSlider" id="Knob3" value="10000.0"/>
+            <Control type="ScriptSlider" id="Knob3" value="0.0"/>
             <Control type="ScriptSlider" id="Knob4" value="0.0"/>
-            <Control type="ScriptSlider" id="Knob5" value="12394.0"/>
+            <Control type="ScriptSlider" id="Knob5" value="0.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD19" value="0.0"/>
-            <Control type="ScriptSlider" id="SHAPEMOD6" value="0.7400000095367432"/>
-            <Control type="ScriptSlider" id="SHAPEMOD7" value="-21.0"/>
-            <Control type="ScriptSlider" id="SHAPEMOD8" value="0.6000000238418579"/>
-            <Control type="ScriptSlider" id="SHAPEMOD21" value="0.9399999976158142"/>
-            <Control type="ScriptSlider" id="SHAPEMOD27" value="0.9100000262260437"/>
-            <Control type="ScriptSlider" id="SHAPEMOD28" value="0.05000000074505806"/>
-            <Control type="ScriptSliderPack" id="pitch-sp4" value="13.0" data="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
+            <Control type="ScriptSlider" id="SHAPEMOD6" value="0.5"/>
+            <Control type="ScriptSlider" id="SHAPEMOD7" value="0.0"/>
+            <Control type="ScriptSlider" id="SHAPEMOD8" value="0.0"/>
+            <Control type="ScriptSlider" id="SHAPEMOD21" value="0.7900000214576721"/>
+            <Control type="ScriptSlider" id="SHAPEMOD27" value="1.0"/>
+            <Control type="ScriptSlider" id="SHAPEMOD28" value="0.449999988079071"/>
+            <Control type="ScriptSliderPack" id="pitch-sp4" value="0.0" data="60.Jb8n97nv06iBWOxOT35Q+XOJb8ydT31OjBWe+....9C...3O...f+vdT38SgqG0OWOJL+....7C6QgqO"/>
             <Control type="ScriptComboBox" id="ScriptComboBox8" value="3.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD33" value="2.081668171172169e-17"/>
-            <Control type="ScriptSlider" id="SHAPEMOD1" value="2.081668171172169e-17"/>
-            <Control type="ScriptSlider" id="SHAPEMOD3" value="1.0"/>
-            <Control type="ScriptSlider" id="SHAPEMOD4" value="0.300000011920929"/>
-            <Control type="ScriptComboBox" id="ScriptComboBox1" value="3.0"/>
+            <Control type="ScriptSlider" id="SHAPEMOD1" value="0.6899999976158142"/>
+            <Control type="ScriptSlider" id="SHAPEMOD3" value="0.5799999833106995"/>
+            <Control type="ScriptSlider" id="SHAPEMOD4" value="1.0"/>
+            <Control type="ScriptComboBox" id="ScriptComboBox1" value="1.0"/>
             <Control type="ScriptComboBox" id="ScriptComboBox3" value="1.0"/>
-            <Control type="ScriptSlider" id="SHAPEMOD18" value="1.0"/>
-            <Control type="ScriptSlider" id="SHAPEMOD20" value="0.449999988079071"/>
+            <Control type="ScriptSlider" id="SHAPEMOD18" value="0.8600000143051147"/>
+            <Control type="ScriptSlider" id="SHAPEMOD20" value="0.5"/>
             <Control type="ScriptComboBox" id="ScriptComboBox10" value="1.0"/>
-            <Control type="ScriptSliderPack" id="pitch-sp3" value="1.0" data="64......nv0iziBWOZOOJb88rGEt3iqGElOw0ih9nv0i5CWOJrO1iB297nv06CEtdvOgqGE+XOJb7yGEtxOHEtN+."/>
-            <Control type="ScriptComboBox" id="SOURC4" value="3.0"/>
+            <Control type="ScriptSliderPack" id="pitch-sp3" value="2.0" data="60....f+XlYl8SyLyzOyLyL+ziBW7yiBWuOEtdz9rGEt5Sb8nnO8nvU9jBWO3SJb8XO................"/>
+            <Control type="ScriptComboBox" id="SOURC4" value="1.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD13" value="0.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD16" value="2.081668171172169e-17"/>
             <Control type="ScriptSlider" id="SHAPEMOD22" value="0.0"/>
             <Control type="ScriptButton" id="ScriptButton1" value="1.0"/>
-            <Control type="ScriptSlider" id="SHAPEMOD23" value="0.800000011920929"/>
-            <Control type="ScriptSliderPack" id="pitch-sp1" value="15" data="64......7nv00yiBWeOrGEN97nv04ilYloOrGEt9ziBW6yiBWuOw0iB+nYlY7yv0ixOrGEN+PgqG8SOJb0O...f+."/>
-            <Control type="ScriptSlider" id="SHAPEMOD25" value="0.5"/>
-            <Control type="ScriptComboBox" id="SOURC3" value="4.0"/>
-            <Control type="ScriptSlider" id="SHAPEMOD11" value="2.081668171172169e-17"/>
-            <Control type="ScriptSlider" id="SHAPEMOD12" value="0.8199999928474426"/>
-            <Control type="ScriptSlider" id="SHAPEMOD32" value="0.0"/>
-            <Control type="ScriptPanel" id="A" value="0.0"/>
-            <Control type="ScriptComboBox" id="Categories" value="1.0"/>
-            <Control type="ScriptComboBox" id="BankA" value="5.0"/>
-            <Control type="ScriptLabel" id="WAVELABEL1" value="CS-Saw"/>
-            <Control type="ScriptPanel" id="B" value="0.0"/>
-            <Control type="ScriptAudioWaveform" id="ScriptAudioWaveform1" value="0.0"
-                     data="{XYZ::SampleMap}CS-Saw" rangeStart="0" rangeEnd="0"/>
-            <Control type="ScriptLabel" id="WAVELABEL1b" value=""/>
-            <Control type="ScriptPanel" id="C" value="0.0"/>
-            <Control type="ScriptComboBox" id="OscWave" value="2.0"/>
+            <Control type="ScriptSlider" id="SHAPEMOD23" value="0.5"/>
+            <Control type="ScriptButton" id="ScriptButton2" value="0.0"/>
+            <Control type="ScriptComboBox" id="ExpansionSelector" value="1.0"/>
+            <Control type="ScriptComboBox" id="BankA" value="43.0"/>
+            <Control type="ScriptLabel" id="WAVELABEL1" value="XpSea"/>
+            <Control type="ScriptComboBox" id="OscWave" value="1.0"/>
             <Control type="ScriptComboBox" id="User1" value="1.0"/>
+            <Control type="ScriptSliderPack" id="pitch-sp1" value="14.0" data="60.35QA9nv0i3SyLyjOtdTX9....5S35QoOrGEt9PgqG6SOJbsOeT359PgqG7SJb8vOZlYF+XlYl7CtdTzO"/>
+            <Control type="ScriptSlider" id="SHAPEMOD25" value="0.5"/>
+            <Control type="ScriptComboBox" id="SOURC3" value="3.0"/>
+            <Control type="ScriptSlider" id="SHAPEMOD11" value="2.081668171172169e-17"/>
+            <Control type="ScriptSlider" id="SHAPEMOD12" value="1.0"/>
+            <Control type="ScriptSlider" id="SHAPEMOD32" value="0.0"/>
+            <Control type="ScriptSlider" id="SHAPEMOD14" value="15.0"/>
             <Control type="ScriptButton" id="Button1" value="1.0"/>
             <Control type="ScriptSlider" id="SHAPE" value="0.0"/>
-            <Control type="ScriptSlider" id="SHAPE6" value="16.0"/>
+            <Control type="ScriptSlider" id="SHAPE6" value="4.0"/>
             <Control type="ScriptSlider" id="SHAPE7" value="1.0"/>
-            <Control type="ScriptComboBox" id="SOURC17" value="4.0"/>
-            <Control type="ScriptSlider" id="SHAPEMOD47" value="0.0"/>
-            <Control type="ScriptComboBox" id="SOURC16" value="1.0"/>
-            <Control type="ScriptSlider" id="SHAPEMOD46" value="0.0"/>
+            <Control type="ScriptComboBox" id="SOURC17" value="1.0"/>
+            <Control type="ScriptSlider" id="SHAPEMOD47" value="1.0"/>
+            <Control type="ScriptComboBox" id="SOURC16" value="3.0"/>
+            <Control type="ScriptSlider" id="SHAPEMOD46" value="2.081668171172169e-17"/>
             <Control type="ScriptSlider" id="SHAPEMOD48" value="2.081668171172169e-17"/>
             <Control type="ScriptComboBox" id="SOURC18" value="4.0"/>
             <Control type="ScriptSlider" id="SHAPE8" value="0.5"/>
-            <Control type="ScriptSlider" id="RELEASE2" value="215.0"/>
-            <Control type="ScriptSlider" id="SUSTAIN2" value="-100.0"/>
-            <Control type="ScriptSlider" id="DECAY2" value="10000.0"/>
-            <Control type="ScriptSlider" id="ATTACK2" value="25344.0"/>
-            <Control type="ScriptButton" id="modtype9" value="1.0"/>
+            <Control type="ScriptSlider" id="RELEASE2" value="0.0"/>
+            <Control type="ScriptSlider" id="SUSTAIN2" value="1.0"/>
+            <Control type="ScriptSlider" id="DECAY2" value="0.0"/>
+            <Control type="ScriptSlider" id="ATTACK2" value="0.0"/>
+            <Control type="ScriptButton" id="modtype9" value="0.0"/>
             <Control type="ScriptSlider" id="ScriptSlider7" value="0.0"/>
             <Control type="ScriptSlider" id="ScriptSlider8" value="0.0"/>
-            <Control type="ScriptSlider" id="ScriptSlider13" value="0.5"/>
-            <Control type="ScriptButton" id="modtype1" value="0.0"/>
+            <Control type="ScriptSlider" id="ScriptSlider13" value="0.0"/>
+            <Control type="ScriptButton" id="modtype1" value="1.0"/>
             <Control type="ScriptButton" id="modtype2" value="1.0"/>
           </Content>
           <UIData Source="XolotlUIData"/>
@@ -126,8 +122,8 @@
     </Processor>
     <Processor Type="EffectChain" ID="FX" Bypassed="0">
       <ChildProcessors>
-        <Processor Type="SimpleGain" ID="Simple Gain1" Bypassed="0" Gain="1.0354386859035e-6"
-                   Delay="0.0" Width="100.0" Balance="0.0" InvertPolarity="0.0">
+        <Processor Type="SimpleGain" ID="Simple Gain1" Bypassed="0" Gain="1.800001263618469"
+                   Delay="0.0" Width="100.0" Balance="11.0" InvertPolarity="0.0">
           <ChildProcessors>
             <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1.0">
               <ChildProcessors/>
@@ -144,8 +140,8 @@
           </ChildProcessors>
           <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
         </Processor>
-        <Processor Type="Chorus" ID="Chorus1" Bypassed="0" Rate="0.9100000262260437"
-                   Width="0.05000000074505806" Feedback="0.9399999976158142" Delay="0.6000000238418579">
+        <Processor Type="Chorus" ID="Chorus1" Bypassed="1" Rate="1.0" Width="0.449999988079071"
+                   Feedback="0.7900000214576721" Delay="0.0">
           <ChildProcessors/>
           <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
         </Processor>
@@ -216,8 +212,8 @@
           <ChildProcessors>
             <Processor Type="AHDSR" ID="AHDSR Envelope1" Bypassed="0" Monophonic="0.0"
                        Retrigger="1.0" Intensity="1.0" AttackCurve="0.0" DecayCurve="0.0"
-                       Attack="0.0" AttackLevel="0.0" Hold="0.0" Decay="10000.0" Sustain="0.0"
-                       Release="12394.0" EcoMode="1.0">
+                       Attack="0.0" AttackLevel="0.0" Hold="0.0" Decay="1.0" Sustain="0.0"
+                       Release="1.0" EcoMode="1.0">
               <ChildProcessors>
                 <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1.0">
                   <ChildProcessors/>
@@ -282,7 +278,7 @@
                OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-               Group7Table="">
+               Group7Table="" SampleMapID="XpSea">
       <ChildProcessors>
         <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
           <ChildProcessors/>
@@ -317,135 +313,6 @@
       <channels>
         <channelData enabled="1" level="0.0" suffix=""/>
       </channels>
-      <samplemap CrossfadeGamma="1.0" ID="RavST" RRGroupAmount="1.0" MicPositions=";"
-                 SaveMode="2">
-        <sample Root="45" LoKey="43" HiKey="45" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-A1-V127-TXS7.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.86300802230835" Volume="-12"
-                SampleEnd="574225" MonolithOffset="0" MonolithLength="577536"
-                SampleRate="44100.0"/>
-        <sample Root="57" LoKey="55" HiKey="57" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-A2-V127-EX1Q.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.492141485214233" Volume="-12"
-                SampleEnd="573937" MonolithOffset="577536" MonolithLength="577536"
-                SampleRate="44100.0"/>
-        <sample Root="69" LoKey="67" HiKey="69" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-A3-V127-CPWK.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.38143515586853" Volume="-12"
-                SampleEnd="574033" MonolithOffset="1155072" MonolithLength="577536"
-                SampleRate="44100.0"/>
-        <sample Root="81" LoKey="79" HiKey="81" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-A4-V127-1EAJ.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.676195859909058" Volume="-12"
-                SampleEnd="574065" MonolithOffset="1732608" MonolithLength="577536"
-                SampleRate="44100.0"/>
-        <sample Root="93" LoKey="91" HiKey="93" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-A5-V127-JBZJ.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.491493701934814" Volume="-12"
-                SampleEnd="573953" MonolithOffset="2310144" MonolithLength="577536"
-                SampleRate="44100.0"/>
-        <sample Root="95" LoKey="94" HiKey="127" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-B5-V127-TZAB.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.028518676757812" Volume="-12"
-                SampleEnd="583841" MonolithOffset="2887680" MonolithLength="585728"
-                SampleRate="44100.0"/>
-        <sample Root="36" LoKey="0" HiKey="36" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-C1-V127-14RH.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.339635372161865" Volume="-12"
-                SampleEnd="574737" MonolithOffset="3473408" MonolithLength="577536"
-                SampleRate="44100.0"/>
-        <sample Root="48" LoKey="46" HiKey="48" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-C2-V127-L2C5.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.384904384613037" Volume="-12"
-                SampleEnd="573905" MonolithOffset="4050944" MonolithLength="577536"
-                SampleRate="44100.0"/>
-        <sample Root="60" LoKey="58" HiKey="60" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-C3-V127-EPXM.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.30547022819519" Volume="-12"
-                SampleEnd="583921" MonolithOffset="4628480" MonolithLength="585728"
-                SampleRate="44100.0"/>
-        <sample Root="72" LoKey="70" HiKey="72" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-C4-V127-NLNG.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.986984252929688" Volume="-12"
-                SampleEnd="574545" MonolithOffset="5214208" MonolithLength="577536"
-                SampleRate="44100.0"/>
-        <sample Root="84" LoKey="82" HiKey="84" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-C5-V127-TGKN.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.26013970375061" Volume="-12"
-                SampleEnd="583761" MonolithOffset="5791744" MonolithLength="585728"
-                SampleRate="44100.0"/>
-        <sample Root="39" LoKey="37" HiKey="39" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-D#1-V127-T0JX.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.343369960784912" Volume="-12"
-                SampleEnd="584017" MonolithOffset="6377472" MonolithLength="585728"
-                SampleRate="44100.0"/>
-        <sample Root="51" LoKey="49" HiKey="51" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-D#2-V127-8IKJ.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.55433201789856" Volume="-12"
-                SampleEnd="583681" MonolithOffset="6963200" MonolithLength="585728"
-                SampleRate="44100.0"/>
-        <sample Root="63" LoKey="61" HiKey="63" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-D#3-V127-W074.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="3.21890115737915" Volume="-12"
-                SampleEnd="574321" MonolithOffset="7548928" MonolithLength="577536"
-                SampleRate="44100.0"/>
-        <sample Root="75" LoKey="73" HiKey="75" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-D#4-V127-JLLX.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.984942674636841" Volume="-12"
-                SampleEnd="574289" MonolithOffset="8126464" MonolithLength="577536"
-                SampleRate="44100.0"/>
-        <sample Root="87" LoKey="85" HiKey="87" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-D#5-V127-5ULH.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="1.79795253276825" Volume="-12"
-                SampleEnd="583153" MonolithOffset="8704000" MonolithLength="585728"
-                SampleRate="44100.0"/>
-        <sample Root="42" LoKey="40" HiKey="42" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-F#1-V127-KT8G.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.349130392074585" Volume="-6"
-                SampleEnd="574961" MonolithOffset="9289728" MonolithLength="577536"
-                SampleRate="44100.0"/>
-        <sample Root="54" LoKey="52" HiKey="54" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-F#2-V127-C1O5.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.446315288543701" Volume="-12"
-                SampleEnd="583297" MonolithOffset="9867264" MonolithLength="585728"
-                SampleRate="44100.0"/>
-        <sample Root="66" LoKey="64" HiKey="66" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-F#3-V127-3U46.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.875090360641479" Volume="-12"
-                SampleEnd="574641" MonolithOffset="10452992" MonolithLength="577536"
-                SampleRate="44100.0"/>
-        <sample Root="78" LoKey="76" HiKey="78" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-F#4-V127-BMLY.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.912189245223999" Volume="-12"
-                SampleEnd="583921" MonolithOffset="11030528" MonolithLength="585728"
-                SampleRate="44100.0"/>
-        <sample Root="90" LoKey="88" HiKey="90" LoVel="0" HiVel="127" RRGroup="1"
-                FileName="/Users/rick/Music/Audio Music Apps/Samples/Auto Sampled/STRav/STRav-F#5-V127-BPD8.aif"
-                Duplicate="0" LoopEnabled="1" LoopStart="57330" LoopEnd="515970"
-                Normalized="1" NormalizedPeak="2.396220684051514" Volume="-12"
-                SampleEnd="583921" MonolithOffset="11616256" MonolithLength="585728"
-                SampleRate="44100.0"/>
-      </samplemap>
     </Processor>
   </ChildProcessors>
   <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>

@@ -7,7 +7,7 @@ const var PRESETBUTTON = Content.getComponent("PRESETBUTTON");
 inline function onPRESETBUTTONControl(component, value)
 {
 		PRESETS.showControl(value); 
-        PRESETS.showControl(1-value);
+     //   PRESETS.showControl(1-value);
 };
 
 Content.getComponent("PRESETBUTTON").setControlCallback(onPRESETBUTTONControl);
@@ -65,20 +65,45 @@ laf.registerFunction("drawComboBox", function(g, obj)
 
 });
 
-const var ulp = Content.getComponent("expansionad");
 
 
-ulp.setMouseCallback(function(event)
+const var EveryLink = Content.getComponent("EveryLink");
+
+EveryLink.setMouseCallback(function(event)
 {
   if (event.clicked)
   {
-    Engine.openWebsite("https://modularsamples.gumroad.com/l/rhnqwh");
+    Engine.openWebsite("https://modularsamples.gumroad.com/l/hnwjrr");
   } 
-  else 
-  {
-    link_hover = event.hover;
-    this.repaint();
-  }
+ 
 });
 
+const var QExpandedLink = Content.getComponent("QExpandedLink");
+
+QExpandedLink.setMouseCallback(function(event)
+{
+  if (event.clicked)
+  {
+    Engine.openWebsite("https://www.modularsamples.com/l/hnwjrr");
+  } 
+
+});
+
+QExpandedLink.setMouseCallback(function(event)
+{
+  if (event.clicked)
+  {
+    Engine.openWebsite("https://www.modularsamples.com/l/lybce");
+  } 
+
+});
+const var ExpandedLink = Content.getComponent("ExpandedLink");
+
+ExpandedLink.setMouseCallback(function(event)
+{
+  if (event.clicked)
+  {
+    Engine.openWebsite("https://www.modularsamples.com/l/rhnqwh");
+}
+});
 

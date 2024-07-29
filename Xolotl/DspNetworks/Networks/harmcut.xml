@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="harmcut" AllowPolyphonic="1" Version="0.0.0" AllowCompilation="1">
+<Network ID="harmcut" AllowPolyphonic="1" Version="0.0.0">
   <Node FactoryPath="container.chain" ID="harmcut" Bypassed="0" ShowParameters="1">
     <Nodes>
       <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
@@ -220,18 +220,19 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="s&amp;hmix" MinValue="0.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="s&amp;hmix" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="xfader" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="s&amp;hrate" MinValue="0.0" MaxValue="18.0" Value="4.0" StepSize="1.0">
+      <Parameter ID="s&amp;hrate" MinValue="0.0" MaxValue="18.0" Value="13.0"
+                 StepSize="1.0">
         <Connections>
           <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
           <Connection NodeId="tempo_sync" ParameterId="UnsyncedTime"/>
         </Connections>
       </Parameter>
-      <Parameter ID="s&amp;hdiv" MinValue="1.0" MaxValue="16.0" Value="4.0" StepSize="1.0">
+      <Parameter ID="s&amp;hdiv" MinValue="1.0" MaxValue="16.0" Value="5.0" StepSize="1.0">
         <Connections>
           <Connection NodeId="tempo_sync" ParameterId="Multiplier"/>
         </Connections>
@@ -246,18 +247,18 @@
           <Connection NodeId="pma" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="cutshmod" MinValue="-1.0" MaxValue="1.0" Value="-0.8428281249999998">
+      <Parameter ID="cutshmod" MinValue="-1.0" MaxValue="1.0" Value="0.07439062500000015">
         <Connections>
           <Connection NodeId="pma" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
       <Parameter ID="res" MinValue="0.300000011920929" MaxValue="9.899999618530273"
-                 Value="0.4210980731762954" SkewFactor="0.2647178173065186">
+                 Value="9.899999618530273" SkewFactor="0.2647178173065186">
         <Connections>
           <Connection NodeId="svf" ParameterId="Q"/>
         </Connections>
       </Parameter>
-      <Parameter ID="cutmix" MinValue="0.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="cutmix" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="xfader1" ParameterId="Value"/>
         </Connections>

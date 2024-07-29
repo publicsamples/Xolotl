@@ -2,12 +2,18 @@
 
 // =============================| Include only the DSP files  |=============================
 
+#include <AppConfig.h>
 #include <hi_dsp_library/hi_dsp_library.h>
 #include <hi_faust/hi_faust.h>
 #include "includes.h"
 // =======================| Now we can add the rest of the codebase |=======================
 
 #include <JuceHeader.h>
+
+#if !JUCE_WINDOWS
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wreturn-type-c-linkage"
+#endif
 
 // ===================================| Project Factory |===================================
 
@@ -21,13 +27,16 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		TempoSyncer::initTempoData();
 		// Node registrations -------------------------------------------------------------
 		
-		registerNode<project::FM>();
-		registerPolyNode<project::harmcut<1>, project::harmcut<NUM_POLYPHONIC_VOICES>>();
+		registerPolyNode<project::file<1>, project::file<NUM_POLYPHONIC_VOICES>>();
+		registerPolyNode<project::FM<1>, project::FM<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::harmnode<1>, project::harmnode<NUM_POLYPHONIC_VOICES>>();
 		registerDataNode<project::chain3_networkdata>();
 		registerDataNode<project::contain_networkdata>();
 		registerDataNode<project::DspNetwork_networkdata>();
 		registerDataNode<project::files_networkdata>();
+		registerDataNode<project::_networkdata>();
+		registerDataNode<project::gtest_networkdata>();
+		registerDataNode<project::harmcut_networkdata>();
 		registerDataNode<project::harmo_networkdata>();
 		registerDataNode<project::harmo2_networkdata>();
 		registerDataNode<project::harmoG_networkdata>();
@@ -42,6 +51,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::mod2_networkdata>();
 		registerDataNode<project::mod3_networkdata>();
 		registerDataNode<project::moddy_networkdata>();
+		registerDataNode<project::NewMod_networkdata>();
 		registerDataNode<project::_networkdata>();
 		registerDataNode<project::OSC_networkdata>();
 		registerDataNode<project::PseudoStereo_networkdata>();
@@ -71,4 +81,9 @@ scriptnode::dll::FactoryBase* scriptnode::DspNetwork::createStaticFactory()
 {
 	return new project::Factory();
 }
+
+#if !JUCE_WINDOWS
+#pragma clang diagnostic pop
+#endif
+
 
