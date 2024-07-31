@@ -111,9 +111,13 @@ using converter_t = control::converter<parameter::plain<core::fm, 0>,
                                        conversion_logic::ms2freq>;
 
 template <int NV>
+using converter1_t = control::converter<parameter::plain<fx::sampleandhold<NV>, 0>, 
+                                        conversion_logic::ms2samples>;
+
+template <int NV>
 using tempo_sync_mod = parameter::chain<ranges::Identity, 
                                         parameter::plain<converter_t, 0>, 
-                                        parameter::plain<fx::sampleandhold<NV>, 0>>;
+                                        parameter::plain<converter1_t<NV>, 0>>;
 
 template <int NV>
 using tempo_sync_t = wrap::mod<tempo_sync_mod<NV>, 
@@ -166,6 +170,7 @@ using split2_t = container::split<parameter::empty,
 template <int NV>
 using chain3_t = container::chain<parameter::empty, 
                                   wrap::fix<2, tempo_sync_t<NV>>, 
+                                  converter1_t<NV>, 
                                   converter_t, 
                                   routing::receive<stereo_cable>, 
                                   branch_t<NV>, 
@@ -416,7 +421,7 @@ template <int NV> struct instance: public harmnode_impl::harmnode_t_<NV>
             0x0000, 0x4600, 0x4D6D, 0x6C75, 0x6974, 0x0000, 0x8000, 0x003F, 
             0x4000, 0x0041, 0x8000, 0x0040, 0x8000, 0x003F, 0x8000, 0x5B3F, 
             0x000B, 0x0000, 0x6853, 0x6152, 0x6574, 0x0000, 0x0000, 0x0000, 
-            0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x5B3F, 
+            0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0xCD3F, 0xCCCC, 0x5B3D, 
             0x000C, 0x0000, 0x4853, 0x784D, 0x0000, 0x0000, 0x0000, 0x8000, 
             0x003F, 0x8000, 0x003F, 0x8000, 0x003F, 0x0000, 0x5B00, 0x000D, 
             0x0000, 0x6873, 0x6944, 0x0076, 0x0000, 0x0000, 0x0000, 0x3F80, 
@@ -463,24 +468,25 @@ template <int NV> struct instance: public harmnode_impl::harmnode_t_<NV>
 		auto& gain = this->getT(0).getT(3).getT(0).getT(1).getT(0).getT(0);                  // core::gain<NV>
 		auto& chain3 = this->getT(0).getT(3).getT(0).getT(1).getT(1);                        // harmnode_impl::chain3_t<NV>
 		auto& tempo_sync = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(0);            // harmnode_impl::tempo_sync_t<NV>
-		auto& converter = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(1);             // harmnode_impl::converter_t
-		auto& receive = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(2);               // routing::receive<stereo_cable>
-		auto& branch = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(3);                // harmnode_impl::branch_t<NV>
-		auto& sampleandhold = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(3).getT(0); // fx::sampleandhold<NV>
-		auto& chain11 = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(3).getT(1);       // harmnode_impl::chain11_t
+		auto& converter1 = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(1);            // harmnode_impl::converter1_t<NV>
+		auto& converter = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(2);             // harmnode_impl::converter_t
+		auto& receive = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(3);               // routing::receive<stereo_cable>
+		auto& branch = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(4);                // harmnode_impl::branch_t<NV>
+		auto& sampleandhold = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(4).getT(0); // fx::sampleandhold<NV>
+		auto& chain11 = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(4).getT(1);       // harmnode_impl::chain11_t
 		auto& fm = this->getT(0).getT(3).getT(0).getT(1).                                    // core::fm
-                   getT(1).getT(3).getT(1).getT(0);
+                   getT(1).getT(4).getT(1).getT(0);
 		auto& mono2stereo2 = this->getT(0).getT(3).getT(0).getT(1).                   // core::mono2stereo
-                             getT(1).getT(3).getT(1).getT(1);
-		auto& split2 = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(4);         // harmnode_impl::split2_t<NV>
-		auto& chain7 = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(4).getT(0); // harmnode_impl::chain7_t
-		auto& chain8 = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(4).getT(1); // harmnode_impl::chain8_t<NV>
+                             getT(1).getT(4).getT(1).getT(1);
+		auto& split2 = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(5);         // harmnode_impl::split2_t<NV>
+		auto& chain7 = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(5).getT(0); // harmnode_impl::chain7_t
+		auto& chain8 = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(5).getT(1); // harmnode_impl::chain8_t<NV>
 		auto& peak = this->getT(0).getT(3).getT(0).getT(1).                           // harmnode_impl::peak_t<NV>
-                     getT(1).getT(4).getT(1).getT(0);
+                     getT(1).getT(5).getT(1).getT(0);
 		auto& clear = this->getT(0).getT(3).getT(0).getT(1).                 // math::clear<NV>
-                      getT(1).getT(4).getT(1).getT(1);
-		auto& send = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(5);  // routing::send<stereo_cable>
-		auto& gain1 = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(6); // core::gain<NV>
+                      getT(1).getT(5).getT(1).getT(1);
+		auto& send = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(6);  // routing::send<stereo_cable>
+		auto& gain1 = this->getT(0).getT(3).getT(0).getT(1).getT(1).getT(7); // core::gain<NV>
 		auto& chain4 = this->getT(0).getT(3).getT(1);                        // harmnode_impl::chain4_t<NV>
 		auto& xfader1 = this->getT(0).getT(3).getT(1).getT(0);               // harmnode_impl::xfader1_t<NV>
 		auto& split3 = this->getT(0).getT(3).getT(1).getT(1);                // harmnode_impl::split3_t<NV>
@@ -549,14 +555,15 @@ template <int NV> struct instance: public harmnode_impl::harmnode_t_<NV>
 		switcher_p.getParameterT(0).connectT(0, sb1); // switcher -> sb1::Bypassed
 		switcher_p.getParameterT(1).connectT(0, sb3); // switcher -> sb3::Bypassed
 		auto& xfader_p = xfader.getWrappedObject().getParameter();
-		xfader_p.getParameterT(0).connectT(0, gain);                 // xfader -> gain::Gain
-		xfader_p.getParameterT(1).connectT(0, gain1);                // xfader -> gain1::Gain
-		converter.getWrappedObject().getParameter().connectT(0, fm); // converter -> fm::Frequency
-		tempo_sync.getParameter().connectT(0, converter);            // tempo_sync -> converter::Value
-		tempo_sync.getParameter().connectT(1, sampleandhold);        // tempo_sync -> sampleandhold::Counter
-		pma.getWrappedObject().getParameter().connectT(0, svf);      // pma -> svf::Frequency
-		peak.getParameter().connectT(0, pma);                        // peak -> pma::Value
-		peak.getParameter().connectT(1, pma_unscaled2);              // peak -> pma_unscaled2::Value
+		xfader_p.getParameterT(0).connectT(0, gain);                             // xfader -> gain::Gain
+		xfader_p.getParameterT(1).connectT(0, gain1);                            // xfader -> gain1::Gain
+		converter.getWrappedObject().getParameter().connectT(0, fm);             // converter -> fm::Frequency
+		converter1.getWrappedObject().getParameter().connectT(0, sampleandhold); // converter1 -> sampleandhold::Counter
+		tempo_sync.getParameter().connectT(0, converter);                        // tempo_sync -> converter::Value
+		tempo_sync.getParameter().connectT(1, converter1);                       // tempo_sync -> converter1::Value
+		pma.getWrappedObject().getParameter().connectT(0, svf);                  // pma -> svf::Frequency
+		peak.getParameter().connectT(0, pma);                                    // peak -> pma::Value
+		peak.getParameter().connectT(1, pma_unscaled2);                          // peak -> pma_unscaled2::Value
 		auto& xfader1_p = xfader1.getWrappedObject().getParameter();
 		xfader1_p.getParameterT(0).connectT(0, gain2); // xfader1 -> gain2::Gain
 		xfader1_p.getParameterT(1).connectT(0, gain3); // xfader1 -> gain3::Gain
@@ -612,6 +619,8 @@ template <int NV> struct instance: public harmnode_impl::harmnode_t_<NV>
 		; // tempo_sync::Multiplier is automated
 		; // tempo_sync::Enabled is automated
 		; // tempo_sync::UnsyncedTime is automated
+		
+		; // converter1::Value is automated
 		
 		; // converter::Value is automated
 		
@@ -698,7 +707,7 @@ template <int NV> struct instance: public harmnode_impl::harmnode_t_<NV>
 		this->getT(0).getT(2).getT(1).getT(0).getT(0).setExternalData(b, index); // harmnode_impl::file_player_t<NV>
 		this->getT(0).getT(2).getT(1).getT(1).getT(0).setExternalData(b, index); // harmnode_impl::oscillator_t<NV>
 		this->getT(0).getT(3).getT(0).getT(1).                                   // harmnode_impl::peak_t<NV>
-        getT(1).getT(4).getT(1).getT(0).setExternalData(b, index);
+        getT(1).getT(5).getT(1).getT(0).setExternalData(b, index);
 	}
 };
 }

@@ -6,8 +6,8 @@ const var PRESETBUTTON = Content.getComponent("PRESETBUTTON");
 
 inline function onPRESETBUTTONControl(component, value)
 {
-		PRESETS.showControl(value); 
-     //   PRESETS.showControl(1-value);
+//	PRESETS.showControl(value); 
+      PRESETS.showControl(1-value);
 };
 
 Content.getComponent("PRESETBUTTON").setControlCallback(onPRESETBUTTONControl);

@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Network ID="harmo" AllowPolyphonic="1" Version="0.0.0" SuspendOnSilence="1">
-  <Node FactoryPath="container.chain" ID="harmo" Bypassed="0" ShowParameters="1">
+  <Node FactoryPath="container.chain" ID="harmo" Bypassed="0" ShowParameters="1"
+        Name="harmo">
     <Nodes>
-      <Node ID="mods" FactoryPath="container.modchain" Bypassed="0" ShowParameters="0">
+      <Node ID="mods" FactoryPath="container.modchain" Bypassed="0" ShowParameters="0"
+            Name="mods">
         <Nodes>
-          <Node ID="splits" FactoryPath="container.split" Bypassed="0" ShowParameters="0">
+          <Node ID="splits" FactoryPath="container.split" Bypassed="0" ShowParameters="0"
+                Name="splits">
             <Nodes>
-              <Node ID="chain2" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain2">
                 <Nodes>
-                  <Node ID="chain14" FactoryPath="container.chain" Bypassed="0">
+                  <Node ID="chain14" FactoryPath="container.chain" Bypassed="0" Name="chain14">
                     <Nodes>
-                      <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0">
+                      <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0"
+                            Name="tempo_sync">
                         <ModulationTargets>
                           <Connection NodeId="ramp" ParameterId="PeriodTime"/>
                         </ModulationTargets>
@@ -24,9 +28,10 @@
                                      ID="UnsyncedTime" Value="200.0"/>
                         </Parameters>
                       </Node>
-                      <Node ID="no_midi" FactoryPath="container.no_midi" Bypassed="0" ShowParameters="1">
+                      <Node ID="no_midi" FactoryPath="container.no_midi" Bypassed="0" ShowParameters="1"
+                            Name="no_midi">
                         <Nodes>
-                          <Node ID="ramp" FactoryPath="core.ramp" Bypassed="0">
+                          <Node ID="ramp" FactoryPath="core.ramp" Bypassed="0" Name="ramp">
                             <ModulationTargets>
                               <Connection NodeId="simple_ar" ParameterId="Gate"/>
                             </ModulationTargets>
@@ -45,7 +50,8 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="simple_ar" FactoryPath="envelope.simple_ar" Bypassed="0">
+                      <Node ID="simple_ar" FactoryPath="envelope.simple_ar" Bypassed="0"
+                            Name="simple_ar">
                         <Properties>
                           <Property ID="NumParameters" Value="2"/>
                         </Properties>
@@ -73,12 +79,13 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackCurve" Value="0.0"/>
                         </Parameters>
                       </Node>
-                      <Node ID="clear" FactoryPath="math.clear" Bypassed="0">
+                      <Node ID="clear" FactoryPath="math.clear" Bypassed="0" Name="clear">
                         <Parameters>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                         </Parameters>
                       </Node>
-                      <Node ID="input_toggle2" FactoryPath="control.input_toggle" Bypassed="0">
+                      <Node ID="input_toggle2" FactoryPath="control.input_toggle" Bypassed="0"
+                            Name="input_toggle2">
                         <ModulationTargets>
                           <Connection NodeId="ahdsr" ParameterId="Gate"/>
                         </ModulationTargets>
@@ -91,7 +98,7 @@
                     </Nodes>
                     <Parameters/>
                   </Node>
-                  <Node ID="ahdsr" FactoryPath="envelope.ahdsr" Bypassed="0">
+                  <Node ID="ahdsr" FactoryPath="envelope.ahdsr" Bypassed="0" Name="ahdsr">
                     <Properties>
                       <Property ID="NumParameters" Value="2"/>
                     </Properties>
@@ -126,7 +133,7 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Automated="1"/>
                     </Parameters>
                   </Node>
-                  <Node ID="extra_mod" FactoryPath="core.extra_mod" Bypassed="0">
+                  <Node ID="extra_mod" FactoryPath="core.extra_mod" Bypassed="0" Name="extra_mod">
                     <ModulationTargets>
                       <Connection NodeId="pma1" ParameterId="Value"/>
                     </ModulationTargets>
@@ -139,7 +146,7 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Index" Value="0.0"/>
                     </Parameters>
                   </Node>
-                  <Node ID="pma1" FactoryPath="control.pma" Bypassed="0">
+                  <Node ID="pma1" FactoryPath="control.pma" Bypassed="0" Name="pma1">
                     <ModulationTargets>
                       <Connection NodeId="input_toggle109" ParameterId="Value1"/>
                       <Connection NodeId="input_toggle124" ParameterId="Value1"/>
@@ -165,11 +172,12 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="chain11" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain11" FactoryPath="container.chain" Bypassed="0" Name="chain11">
                 <Nodes>
-                  <Node ID="chain15" FactoryPath="container.chain" Bypassed="0">
+                  <Node ID="chain15" FactoryPath="container.chain" Bypassed="0" Name="chain15">
                     <Nodes>
-                      <Node ID="tempo_sync1" FactoryPath="control.tempo_sync" Bypassed="0">
+                      <Node ID="tempo_sync1" FactoryPath="control.tempo_sync" Bypassed="0"
+                            Name="tempo_sync1">
                         <ModulationTargets>
                           <Connection NodeId="ramp1" ParameterId="PeriodTime"/>
                         </ModulationTargets>
@@ -182,9 +190,10 @@
                                      ID="UnsyncedTime" Value="200.0"/>
                         </Parameters>
                       </Node>
-                      <Node ID="no_midi2" FactoryPath="container.no_midi" Bypassed="0" ShowParameters="1">
+                      <Node ID="no_midi2" FactoryPath="container.no_midi" Bypassed="0" ShowParameters="1"
+                            Name="no_midi2">
                         <Nodes>
-                          <Node ID="ramp1" FactoryPath="core.ramp" Bypassed="0">
+                          <Node ID="ramp1" FactoryPath="core.ramp" Bypassed="0" Name="ramp1">
                             <ModulationTargets>
                               <Connection NodeId="simple_ar1" ParameterId="Gate"/>
                             </ModulationTargets>
@@ -203,7 +212,8 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="simple_ar1" FactoryPath="envelope.simple_ar" Bypassed="0">
+                      <Node ID="simple_ar1" FactoryPath="envelope.simple_ar" Bypassed="0"
+                            Name="simple_ar1">
                         <Properties>
                           <Property ID="NumParameters" Value="2"/>
                         </Properties>
@@ -231,12 +241,13 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackCurve" Value="0.0"/>
                         </Parameters>
                       </Node>
-                      <Node ID="clear1" FactoryPath="math.clear" Bypassed="0">
+                      <Node ID="clear1" FactoryPath="math.clear" Bypassed="0" Name="clear1">
                         <Parameters>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                         </Parameters>
                       </Node>
-                      <Node ID="input_toggle3" FactoryPath="control.input_toggle" Bypassed="0">
+                      <Node ID="input_toggle3" FactoryPath="control.input_toggle" Bypassed="0"
+                            Name="input_toggle3">
                         <Parameters>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -249,7 +260,7 @@
                     </Nodes>
                     <Parameters/>
                   </Node>
-                  <Node ID="ahdsr1" FactoryPath="envelope.ahdsr" Bypassed="0">
+                  <Node ID="ahdsr1" FactoryPath="envelope.ahdsr" Bypassed="0" Name="ahdsr1">
                     <Properties>
                       <Property ID="NumParameters" Value="2"/>
                     </Properties>
@@ -284,7 +295,7 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Automated="1"/>
                     </Parameters>
                   </Node>
-                  <Node ID="extra_mod2" FactoryPath="core.extra_mod" Bypassed="0">
+                  <Node ID="extra_mod2" FactoryPath="core.extra_mod" Bypassed="0" Name="extra_mod2">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Index" Value="0.0"/>
                     </Parameters>
@@ -297,7 +308,7 @@
                       <Connection NodeId="pma2" ParameterId="Value"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="pma2" FactoryPath="control.pma" Bypassed="0">
+                  <Node ID="pma2" FactoryPath="control.pma" Bypassed="0" Name="pma2">
                     <ModulationTargets>
                       <Connection NodeId="input_toggle109" ParameterId="Value2"/>
                       <Connection NodeId="input_toggle124" ParameterId="Value2"/>
@@ -323,13 +334,14 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="chain91" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain91" FactoryPath="container.chain" Bypassed="0" Name="chain91">
                 <Nodes>
-                  <Node ID="chain92" FactoryPath="container.chain" Bypassed="0">
+                  <Node ID="chain92" FactoryPath="container.chain" Bypassed="0" Name="chain92">
                     <Nodes>
-                      <Node ID="chain3" FactoryPath="container.chain" Bypassed="0">
+                      <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain3">
                         <Nodes>
-                          <Node ID="tempo_sync2" FactoryPath="control.tempo_sync" Bypassed="0">
+                          <Node ID="tempo_sync2" FactoryPath="control.tempo_sync" Bypassed="0"
+                                Name="tempo_sync2">
                             <ModulationTargets>
                               <Connection NodeId="ramp2" ParameterId="PeriodTime"/>
                             </ModulationTargets>
@@ -342,7 +354,7 @@
                                          ID="UnsyncedTime" Value="200.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="ramp2" FactoryPath="core.ramp" Bypassed="0">
+                          <Node ID="ramp2" FactoryPath="core.ramp" Bypassed="0" Name="ramp2">
                             <ModulationTargets>
                               <Connection NodeId="cable_table3" ParameterId="Value"/>
                             </ModulationTargets>
@@ -358,18 +370,19 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Gate" Value="1.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="clear2" FactoryPath="math.clear" Bypassed="0">
+                          <Node ID="clear2" FactoryPath="math.clear" Bypassed="0" Name="clear2">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="chain94" FactoryPath="container.chain" Bypassed="0">
+                          <Node ID="chain94" FactoryPath="container.chain" Bypassed="0" Name="chain94">
                             <Nodes>
-                              <Node ID="split38" FactoryPath="container.split" Bypassed="0">
+                              <Node ID="split38" FactoryPath="container.split" Bypassed="0" Name="split38">
                                 <Nodes>
-                                  <Node ID="chain98" FactoryPath="container.chain" Bypassed="0">
+                                  <Node ID="chain98" FactoryPath="container.chain" Bypassed="0" Name="chain98">
                                     <Nodes>
-                                      <Node ID="cable_table3" FactoryPath="control.cable_table" Bypassed="0">
+                                      <Node ID="cable_table3" FactoryPath="control.cable_table" Bypassed="0"
+                                            Name="cable_table3">
                                         <ModulationTargets>
                                           <Connection NodeId="input_toggle11" ParameterId="Value2"/>
                                         </ModulationTargets>
@@ -385,9 +398,9 @@
                                     </Nodes>
                                     <Parameters/>
                                   </Node>
-                                  <Node ID="chain97" FactoryPath="container.chain" Bypassed="0">
+                                  <Node ID="chain97" FactoryPath="container.chain" Bypassed="0" Name="chain97">
                                     <Nodes>
-                                      <Node ID="global_mod" FactoryPath="core.global_mod" Bypassed="0">
+                                      <Node ID="global_mod" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
                                         <ComplexData>
                                           <DisplayBuffers>
                                             <DisplayBuffer Index="-1"/>
@@ -406,7 +419,8 @@
                                 </Nodes>
                                 <Parameters/>
                               </Node>
-                              <Node ID="input_toggle11" FactoryPath="control.input_toggle" Bypassed="0">
+                              <Node ID="input_toggle11" FactoryPath="control.input_toggle" Bypassed="0"
+                                    Name="input_toggle11">
                                 <ModulationTargets>
                                   <Connection NodeId="pma3" ParameterId="Add"/>
                                 </ModulationTargets>
@@ -419,7 +433,7 @@
                             </Nodes>
                             <Parameters/>
                           </Node>
-                          <Node ID="extra_mod3" FactoryPath="core.extra_mod" Bypassed="0">
+                          <Node ID="extra_mod3" FactoryPath="core.extra_mod" Bypassed="0" Name="extra_mod3">
                             <ModulationTargets>
                               <Connection NodeId="pma3" ParameterId="Value"/>
                             </ModulationTargets>
@@ -432,7 +446,7 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Index" Value="0.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="pma3" FactoryPath="control.pma" Bypassed="0">
+                          <Node ID="pma3" FactoryPath="control.pma" Bypassed="0" Name="pma3">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle111" ParameterId="Value1"/>
                               <Connection NodeId="input_toggle126" ParameterId="Value1"/>
@@ -464,9 +478,10 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="chain9" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain9" FactoryPath="container.chain" Bypassed="0" Name="chain9">
                 <Nodes>
-                  <Node ID="tempo_sync3" FactoryPath="control.tempo_sync" Bypassed="0">
+                  <Node ID="tempo_sync3" FactoryPath="control.tempo_sync" Bypassed="0"
+                        Name="tempo_sync3">
                     <ModulationTargets>
                       <Connection NodeId="ramp3" ParameterId="PeriodTime"/>
                     </ModulationTargets>
@@ -479,7 +494,7 @@
                                  ID="UnsyncedTime" Value="200.0"/>
                     </Parameters>
                   </Node>
-                  <Node ID="ramp3" FactoryPath="core.ramp" Bypassed="0">
+                  <Node ID="ramp3" FactoryPath="core.ramp" Bypassed="0" Name="ramp3">
                     <ModulationTargets>
                       <Connection NodeId="cable_table2" ParameterId="Value"/>
                     </ModulationTargets>
@@ -495,14 +510,15 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Gate" Value="1.0"/>
                     </Parameters>
                   </Node>
-                  <Node ID="clear3" FactoryPath="math.clear" Bypassed="0">
+                  <Node ID="clear3" FactoryPath="math.clear" Bypassed="0" Name="clear3">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                     </Parameters>
                   </Node>
-                  <Node ID="split39" FactoryPath="container.split" Bypassed="0">
+                  <Node ID="split39" FactoryPath="container.split" Bypassed="0" Name="split39">
                     <Nodes>
-                      <Node ID="cable_table2" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table2" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table2">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle12" ParameterId="Value2"/>
                         </ModulationTargets>
@@ -515,7 +531,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="global_mod1" FactoryPath="core.global_mod" Bypassed="0">
+                      <Node ID="global_mod1" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod1">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle12" ParameterId="Value1"/>
                         </ModulationTargets>
@@ -531,7 +547,8 @@
                     </Nodes>
                     <Parameters/>
                   </Node>
-                  <Node ID="input_toggle12" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle12" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle12">
                     <ModulationTargets>
                       <Connection NodeId="pma4" ParameterId="Add"/>
                     </ModulationTargets>
@@ -541,7 +558,7 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                     </Parameters>
                   </Node>
-                  <Node ID="extra_mod4" FactoryPath="core.extra_mod" Bypassed="0">
+                  <Node ID="extra_mod4" FactoryPath="core.extra_mod" Bypassed="0" Name="extra_mod4">
                     <ModulationTargets>
                       <Connection NodeId="pma4" ParameterId="Value"/>
                     </ModulationTargets>
@@ -554,7 +571,7 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Index" Value="0.0"/>
                     </Parameters>
                   </Node>
-                  <Node ID="pma4" FactoryPath="control.pma" Bypassed="0">
+                  <Node ID="pma4" FactoryPath="control.pma" Bypassed="0" Name="pma4">
                     <ModulationTargets>
                       <Connection NodeId="input_toggle111" ParameterId="Value2"/>
                       <Connection NodeId="input_toggle90" ParameterId="Value2"/>
@@ -583,14 +600,16 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="chain1" FactoryPath="container.chain" Bypassed="0">
+          <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain1">
             <Nodes>
-              <Node ID="OSC1" FactoryPath="container.split" Bypassed="0" Folded="1">
+              <Node ID="OSC1" FactoryPath="container.split" Bypassed="0" Folded="1"
+                    Name="OSC1">
                 <Nodes>
                   <Node ID="4-way-switch6" FactoryPath="container.chain" Bypassed="0"
-                        ShowParameters="1">
+                        ShowParameters="1" Name="4-way-switch6">
                     <Nodes>
-                      <Node ID="cable_table123" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table123" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table123">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle124" ParameterId="Input"/>
                         </ModulationTargets>
@@ -603,7 +622,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table124" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table124" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table124">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle125" ParameterId="Input"/>
                         </ModulationTargets>
@@ -616,7 +636,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table125" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table125" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table125">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle126" ParameterId="Input"/>
                         </ModulationTargets>
@@ -629,9 +650,10 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split79" FactoryPath="container.split" Bypassed="0">
+                      <Node ID="split79" FactoryPath="container.split" Bypassed="0" Name="split79">
                         <Nodes>
-                          <Node ID="input_toggle124" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle124" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle124">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -641,7 +663,8 @@
                               <Connection NodeId="input_toggle125" ParameterId="Value1"/>
                             </ModulationTargets>
                           </Node>
-                          <Node ID="input_toggle125" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle125" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle125">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -651,7 +674,8 @@
                               <Connection NodeId="harmpitch" ParameterId="Value"/>
                             </ModulationTargets>
                           </Node>
-                          <Node ID="input_toggle126" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle126" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle126">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -675,9 +699,11 @@
                       </Parameter>
                     </Parameters>
                   </Node>
-                  <Node ID="chain45" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
+                  <Node ID="chain45" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
+                        Name="chain45">
                     <Nodes>
-                      <Node ID="cable_table83" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table83" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table83">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle85" ParameterId="Input"/>
                         </ModulationTargets>
@@ -690,7 +716,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table84" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table84" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table84">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle86" ParameterId="Input"/>
                         </ModulationTargets>
@@ -703,7 +730,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table85" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table85" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table85">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle87" ParameterId="Input"/>
                         </ModulationTargets>
@@ -716,9 +744,10 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split32" FactoryPath="container.split" Bypassed="0">
+                      <Node ID="split32" FactoryPath="container.split" Bypassed="0" Name="split32">
                         <Nodes>
-                          <Node ID="input_toggle85" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle85" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle85">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle86" ParameterId="Value1"/>
                             </ModulationTargets>
@@ -728,7 +757,8 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle86" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle86" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle86">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -738,7 +768,8 @@
                               <Connection NodeId="pma6" ParameterId="Value"/>
                             </ModulationTargets>
                           </Node>
-                          <Node ID="input_toggle87" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle87" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle87">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle86" ParameterId="Value2"/>
                             </ModulationTargets>
@@ -762,9 +793,11 @@
                       </Parameter>
                     </Parameters>
                   </Node>
-                  <Node ID="chain46" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
+                  <Node ID="chain46" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
+                        Name="chain46">
                     <Nodes>
-                      <Node ID="cable_table86" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table86" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table86">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle88" ParameterId="Input"/>
                         </ModulationTargets>
@@ -777,7 +810,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table87" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table87" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table87">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle89" ParameterId="Input"/>
                         </ModulationTargets>
@@ -790,7 +824,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table88" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table88" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table88">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle90" ParameterId="Input"/>
                         </ModulationTargets>
@@ -803,9 +838,10 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split33" FactoryPath="container.split" Bypassed="0">
+                      <Node ID="split33" FactoryPath="container.split" Bypassed="0" Name="split33">
                         <Nodes>
-                          <Node ID="input_toggle88" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle88" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle88">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle89" ParameterId="Value1"/>
                             </ModulationTargets>
@@ -815,14 +851,16 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle89" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle89" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle89">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle90" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle90" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle90">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle89" ParameterId="Value2"/>
                             </ModulationTargets>
@@ -850,12 +888,13 @@
                 <Parameters/>
               </Node>
               <Node ID="osc master" FactoryPath="container.split" Bypassed="0" ShowParameters="0"
-                    Folded="1">
+                    Folded="1" Name="osc master">
                 <Nodes>
                   <Node ID="4-way-switch5" FactoryPath="container.chain" Bypassed="0"
-                        ShowParameters="1">
+                        ShowParameters="1" Name="4-way-switch5">
                     <Nodes>
-                      <Node ID="cable_table120" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table120" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table120">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle121" ParameterId="Input"/>
                         </ModulationTargets>
@@ -868,7 +907,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table121" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table121" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table121">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle122" ParameterId="Input"/>
                         </ModulationTargets>
@@ -881,7 +921,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table122" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table122" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table122">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle123" ParameterId="Input"/>
                         </ModulationTargets>
@@ -894,9 +935,10 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split78" FactoryPath="container.split" Bypassed="0">
+                      <Node ID="split78" FactoryPath="container.split" Bypassed="0" Name="split78">
                         <Nodes>
-                          <Node ID="input_toggle121" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle121" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle121">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -906,14 +948,16 @@
                               <Connection NodeId="input_toggle122" ParameterId="Value1"/>
                             </ModulationTargets>
                           </Node>
-                          <Node ID="input_toggle122" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle122" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle122">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle123" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle123" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle123">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -937,9 +981,11 @@
                       </Parameter>
                     </Parameters>
                   </Node>
-                  <Node ID="chain34" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
+                  <Node ID="chain34" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
+                        Name="chain34">
                     <Nodes>
-                      <Node ID="cable_table68" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table68" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table68">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle70" ParameterId="Input"/>
                         </ModulationTargets>
@@ -952,7 +998,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table69" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table69" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table69">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle71" ParameterId="Input"/>
                         </ModulationTargets>
@@ -965,7 +1012,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table70" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table70" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table70">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle72" ParameterId="Input"/>
                         </ModulationTargets>
@@ -978,9 +1026,10 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split14" FactoryPath="container.split" Bypassed="0">
+                      <Node ID="split14" FactoryPath="container.split" Bypassed="0" Name="split14">
                         <Nodes>
-                          <Node ID="input_toggle70" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle70" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle70">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle71" ParameterId="Value1"/>
                             </ModulationTargets>
@@ -990,7 +1039,8 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle71" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle71" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle71">
                             <ModulationTargets>
                               <Connection NodeId="pma15" ParameterId="Value"/>
                             </ModulationTargets>
@@ -1000,7 +1050,8 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle72" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle72" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle72">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle71" ParameterId="Value2"/>
                             </ModulationTargets>
@@ -1024,9 +1075,11 @@
                       </Parameter>
                     </Parameters>
                   </Node>
-                  <Node ID="chain40" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
+                  <Node ID="chain40" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
+                        Name="chain40">
                     <Nodes>
-                      <Node ID="cable_table71" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table71" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table71">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle73" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1039,7 +1092,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table72" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table72" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table72">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle74" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1052,7 +1106,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table73" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table73" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table73">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle75" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1065,9 +1120,10 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split15" FactoryPath="container.split" Bypassed="0">
+                      <Node ID="split15" FactoryPath="container.split" Bypassed="0" Name="split15">
                         <Nodes>
-                          <Node ID="input_toggle73" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle73" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle73">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle74" ParameterId="Value1"/>
                             </ModulationTargets>
@@ -1077,7 +1133,8 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle74" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle74" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle74">
                             <ModulationTargets>
                               <Connection NodeId="pma17" ParameterId="Value"/>
                             </ModulationTargets>
@@ -1087,7 +1144,8 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle75" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle75" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle75">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle74" ParameterId="Value2"/>
                             </ModulationTargets>
@@ -1111,9 +1169,11 @@
                       </Parameter>
                     </Parameters>
                   </Node>
-                  <Node ID="chain44" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
+                  <Node ID="chain44" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
+                        Name="chain44">
                     <Nodes>
-                      <Node ID="cable_table74" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table74" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table74">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle76" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1126,7 +1186,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table75" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table75" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table75">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle77" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1139,7 +1200,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table76" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table76" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table76">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle78" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1152,9 +1214,10 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split29" FactoryPath="container.split" Bypassed="0">
+                      <Node ID="split29" FactoryPath="container.split" Bypassed="0" Name="split29">
                         <Nodes>
-                          <Node ID="input_toggle76" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle76" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle76">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle77" ParameterId="Value1"/>
                             </ModulationTargets>
@@ -1164,7 +1227,8 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle77" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle77" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle77">
                             <ModulationTargets>
                               <Connection NodeId="pma16" ParameterId="Value"/>
                             </ModulationTargets>
@@ -1174,7 +1238,8 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle78" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle78" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle78">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle77" ParameterId="Value2"/>
                             </ModulationTargets>
@@ -1199,9 +1264,10 @@
                     </Parameters>
                   </Node>
                   <Node ID="4-way-switch" FactoryPath="container.chain" Bypassed="0"
-                        Folded="" ShowParameters="1">
+                        Folded="" ShowParameters="1" Name="4-way-switch">
                     <Nodes>
-                      <Node ID="cable_table105" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table105" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table105">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle113" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1214,7 +1280,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table107" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table107" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table107">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle114" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1227,7 +1294,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table106" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table106" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table106">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle115" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1240,9 +1308,10 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split72" FactoryPath="container.split" Bypassed="0">
+                      <Node ID="split72" FactoryPath="container.split" Bypassed="0" Name="split72">
                         <Nodes>
-                          <Node ID="input_toggle113" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle113" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle113">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -1252,7 +1321,8 @@
                               <Connection NodeId="input_toggle114" ParameterId="Value1"/>
                             </ModulationTargets>
                           </Node>
-                          <Node ID="input_toggle114" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle114" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle114">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -1262,7 +1332,8 @@
                               <Connection NodeId="pma35" ParameterId="Value"/>
                             </ModulationTargets>
                           </Node>
-                          <Node ID="input_toggle115" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle115" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle115">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -1289,12 +1360,13 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="SNH" FactoryPath="container.split" Bypassed="0">
+              <Node ID="SNH" FactoryPath="container.split" Bypassed="0" Name="SNH">
                 <Nodes>
                   <Node ID="CUT1modswitch" FactoryPath="container.chain" Bypassed="0"
-                        ShowParameters="1" Folded="1">
+                        ShowParameters="1" Folded="1" Name="CUT1modswitch">
                     <Nodes>
-                      <Node ID="cable_table108" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table108" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table108">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle109" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1307,7 +1379,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table109" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table109" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table109">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle110" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1320,7 +1393,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table110" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table110" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table110">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle111" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1333,9 +1407,10 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split73" FactoryPath="container.split" Bypassed="0">
+                      <Node ID="split73" FactoryPath="container.split" Bypassed="0" Name="split73">
                         <Nodes>
-                          <Node ID="input_toggle109" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle109" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle109">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -1345,7 +1420,8 @@
                               <Connection NodeId="input_toggle110" ParameterId="Value1"/>
                             </ModulationTargets>
                           </Node>
-                          <Node ID="input_toggle110" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle110" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle110">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -1355,7 +1431,8 @@
                               <Connection NodeId="s7h" ParameterId="Value"/>
                             </ModulationTargets>
                           </Node>
-                          <Node ID="input_toggle111" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle111" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle111">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -1382,12 +1459,13 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="SVF" FactoryPath="container.split" Bypassed="0">
+              <Node ID="SVF" FactoryPath="container.split" Bypassed="0" Name="SVF">
                 <Nodes>
                   <Node ID="4-way-switch4" FactoryPath="container.chain" Bypassed="0"
-                        ShowParameters="1">
+                        ShowParameters="1" Name="4-way-switch4">
                     <Nodes>
-                      <Node ID="cable_table117" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table117" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table117">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle118" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1400,7 +1478,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table118" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table118" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table118">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle119" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1413,7 +1492,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table119" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table119" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table119">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle120" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1426,9 +1506,10 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split77" FactoryPath="container.split" Bypassed="0">
+                      <Node ID="split77" FactoryPath="container.split" Bypassed="0" Name="split77">
                         <Nodes>
-                          <Node ID="input_toggle118" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle118" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle118">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -1438,7 +1519,8 @@
                               <Connection NodeId="input_toggle119" ParameterId="Value1"/>
                             </ModulationTargets>
                           </Node>
-                          <Node ID="input_toggle119" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle119" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle119">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -1448,7 +1530,8 @@
                               <Connection NodeId="harm-cut" ParameterId="Value"/>
                             </ModulationTargets>
                           </Node>
-                          <Node ID="input_toggle120" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle120" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle120">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -1472,9 +1555,11 @@
                       </Parameter>
                     </Parameters>
                   </Node>
-                  <Node ID="chain28" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
+                  <Node ID="chain28" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
+                        Name="chain28">
                     <Nodes>
-                      <Node ID="cable_table56" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table56" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table56">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle58" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1487,7 +1572,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table57" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table57" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table57">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle59" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1500,7 +1586,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table58" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table58" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table58">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle60" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1513,9 +1600,10 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split12" FactoryPath="container.split" Bypassed="0">
+                      <Node ID="split12" FactoryPath="container.split" Bypassed="0" Name="split12">
                         <Nodes>
-                          <Node ID="input_toggle58" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle58" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle58">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle59" ParameterId="Value1"/>
                             </ModulationTargets>
@@ -1525,7 +1613,8 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle59" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle59" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle59">
                             <ModulationTargets>
                               <Connection NodeId="res" ParameterId="Value"/>
                             </ModulationTargets>
@@ -1535,7 +1624,8 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle60" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle60" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle60">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle59" ParameterId="Value2"/>
                             </ModulationTargets>
@@ -1559,9 +1649,11 @@
                       </Parameter>
                     </Parameters>
                   </Node>
-                  <Node ID="chain29" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
+                  <Node ID="chain29" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
+                        Name="chain29">
                     <Nodes>
-                      <Node ID="cable_table59" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table59" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table59">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle61" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1574,7 +1666,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table60" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table60" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table60">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle62" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1587,7 +1680,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table61" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table61" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table61">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle63" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1600,9 +1694,10 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split13" FactoryPath="container.split" Bypassed="0">
+                      <Node ID="split13" FactoryPath="container.split" Bypassed="0" Name="split13">
                         <Nodes>
-                          <Node ID="input_toggle61" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle61" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle61">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle62" ParameterId="Value1"/>
                             </ModulationTargets>
@@ -1612,7 +1707,8 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle62" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle62" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle62">
                             <ModulationTargets>
                               <Connection NodeId="fmix" ParameterId="Value"/>
                             </ModulationTargets>
@@ -1622,7 +1718,8 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle63" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle63" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle63">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle62" ParameterId="Value2"/>
                             </ModulationTargets>
@@ -1646,9 +1743,11 @@
                       </Parameter>
                     </Parameters>
                   </Node>
-                  <Node ID="chain81" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
+                  <Node ID="chain81" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
+                        Name="chain81">
                     <Nodes>
-                      <Node ID="cable_table62" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table62" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table62">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle64" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1661,7 +1760,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table63" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table63" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table63">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle65" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1674,7 +1774,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table64" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table64" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table64">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle66" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1687,9 +1788,10 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split27" FactoryPath="container.split" Bypassed="0">
+                      <Node ID="split27" FactoryPath="container.split" Bypassed="0" Name="split27">
                         <Nodes>
-                          <Node ID="input_toggle64" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle64" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle64">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle65" ParameterId="Value1"/>
                             </ModulationTargets>
@@ -1699,7 +1801,8 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle65" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle65" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle65">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -1709,7 +1812,8 @@
                               <Connection NodeId="snh" ParameterId="Value"/>
                             </ModulationTargets>
                           </Node>
-                          <Node ID="input_toggle66" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle66" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle66">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle65" ParameterId="Value2"/>
                             </ModulationTargets>
@@ -1733,9 +1837,11 @@
                       </Parameter>
                     </Parameters>
                   </Node>
-                  <Node ID="chain82" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
+                  <Node ID="chain82" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
+                        Name="chain82">
                     <Nodes>
-                      <Node ID="cable_table65" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table65" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table65">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle67" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1748,7 +1854,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table66" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table66" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table66">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle68" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1761,7 +1868,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="cable_table67" FactoryPath="control.cable_table" Bypassed="0">
+                      <Node ID="cable_table67" FactoryPath="control.cable_table" Bypassed="0"
+                            Name="cable_table67">
                         <ModulationTargets>
                           <Connection NodeId="input_toggle69" ParameterId="Input"/>
                         </ModulationTargets>
@@ -1774,9 +1882,10 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split28" FactoryPath="container.split" Bypassed="0">
+                      <Node ID="split28" FactoryPath="container.split" Bypassed="0" Name="split28">
                         <Nodes>
-                          <Node ID="input_toggle67" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle67" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle67">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle68" ParameterId="Value1"/>
                             </ModulationTargets>
@@ -1786,7 +1895,8 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="input_toggle68" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle68" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle68">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -1796,7 +1906,8 @@
                               <Connection NodeId="pma85" ParameterId="Value"/>
                             </ModulationTargets>
                           </Node>
-                          <Node ID="input_toggle69" FactoryPath="control.input_toggle" Bypassed="0">
+                          <Node ID="input_toggle69" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle69">
                             <ModulationTargets>
                               <Connection NodeId="input_toggle68" ParameterId="Value2"/>
                             </ModulationTargets>
@@ -1829,9 +1940,10 @@
         </Nodes>
         <Parameters/>
       </Node>
-      <Node ID="split" FactoryPath="container.split" Bypassed="0">
+      <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
         <Nodes>
-          <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0">
+          <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
+                Name="pack_resizer">
             <ComplexData>
               <SliderPacks>
                 <SliderPack Index="0" EmbeddedData="4....f+."/>
@@ -1842,7 +1954,8 @@
                          Automated="1"/>
             </Parameters>
           </Node>
-          <Node ID="pack_resizer1" FactoryPath="control.pack_resizer" Bypassed="0">
+          <Node ID="pack_resizer1" FactoryPath="control.pack_resizer" Bypassed="0"
+                Name="pack_resizer1">
             <ComplexData>
               <SliderPacks>
                 <SliderPack Index="2" EmbeddedData="4....f+."/>
@@ -1853,7 +1966,8 @@
                          Automated="1"/>
             </Parameters>
           </Node>
-          <Node ID="pack_resizer2" FactoryPath="control.pack_resizer" Bypassed="0">
+          <Node ID="pack_resizer2" FactoryPath="control.pack_resizer" Bypassed="0"
+                Name="pack_resizer2">
             <ComplexData>
               <SliderPacks>
                 <SliderPack Index="3" EmbeddedData="4....f+."/>
@@ -1868,15 +1982,16 @@
         <Parameters/>
       </Node>
       <Node ID="clone  connections" FactoryPath="container.no_midi" Bypassed="0"
-            ShowParameters="1">
+            ShowParameters="1" Name="clone  connections">
         <Nodes>
-          <Node ID="osc1" FactoryPath="container.split" Bypassed="0">
+          <Node ID="osc1" FactoryPath="container.split" Bypassed="0" Name="osc1">
             <Nodes>
-              <Node ID="chain7" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain7" FactoryPath="container.chain" Bypassed="0" Name="chain7">
                 <Nodes>
-                  <Node ID="pitch1modout" FactoryPath="container.chain" Bypassed="0">
+                  <Node ID="pitch1modout" FactoryPath="container.chain" Bypassed="0"
+                        Name="pitch1modout">
                     <Nodes>
-                      <Node ID="harmpitch" FactoryPath="control.pma" Bypassed="0">
+                      <Node ID="harmpitch" FactoryPath="control.pma" Bypassed="0" Name="harmpitch">
                         <ModulationTargets>
                           <Connection NodeId="pitch" ParameterId="Value"/>
                         </ModulationTargets>
@@ -1886,7 +2001,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="extra_mod1" FactoryPath="core.extra_mod" Bypassed="0">
+                      <Node ID="extra_mod1" FactoryPath="core.extra_mod" Bypassed="0" Name="extra_mod1">
                         <ComplexData>
                           <DisplayBuffers>
                             <DisplayBuffer Index="-1"/>
@@ -1899,7 +2014,7 @@
                     </Nodes>
                     <Parameters/>
                   </Node>
-                  <Node ID="pitch" FactoryPath="control.clone_pack" Bypassed="0">
+                  <Node ID="pitch" FactoryPath="control.clone_pack" Bypassed="0" Name="pitch">
                     <ComplexData>
                       <SliderPacks>
                         <SliderPack Index="0" EmbeddedData="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
@@ -1917,9 +2032,9 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="fine" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="fine" FactoryPath="container.chain" Bypassed="0" Name="fine">
                 <Nodes>
-                  <Node ID="pma6" FactoryPath="control.pma" Bypassed="0">
+                  <Node ID="pma6" FactoryPath="control.pma" Bypassed="0" Name="pma6">
                     <ModulationTargets>
                       <Connection NodeId="clone_cable5" ParameterId="Value"/>
                       <Connection NodeId="clone_cable19" ParameterId="Value"/>
@@ -1930,7 +2045,7 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                     </Parameters>
                   </Node>
-                  <Node ID="pitch_mod" FactoryPath="core.pitch_mod" Bypassed="0">
+                  <Node ID="pitch_mod" FactoryPath="core.pitch_mod" Bypassed="0" Name="pitch_mod">
                     <ModulationTargets>
                       <Connection NodeId="pma_unscaled" ParameterId="Add"/>
                     </ModulationTargets>
@@ -1941,7 +2056,8 @@
                     </ComplexData>
                     <Parameters/>
                   </Node>
-                  <Node ID="clone_cable5" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable5" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable5">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -1955,7 +2071,8 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0135"/>
                     </Parameters>
                   </Node>
-                  <Node ID="clone_cable19" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable19" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable19">
                     <Properties>
                       <Property ID="Mode" Value="Spread"/>
                     </Properties>
@@ -1969,7 +2086,8 @@
                       <Connection NodeId="input_toggle" ParameterId="Value2"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="pma_unscaled" FactoryPath="control.pma_unscaled" Bypassed="0">
+                  <Node ID="pma_unscaled" FactoryPath="control.pma_unscaled" Bypassed="0"
+                        Name="pma_unscaled">
                     <ModulationTargets>
                       <Connection NodeId="clone_cable6" ParameterId="Value"/>
                     </ModulationTargets>
@@ -1979,7 +2097,8 @@
                       <Parameter MinValue="-0.5" MaxValue="0.5" ID="Add" Automated="1"/>
                     </Parameters>
                   </Node>
-                  <Node ID="clone_cable6" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable6" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable6">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -1996,9 +2115,10 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="shin" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="shin" FactoryPath="container.chain" Bypassed="0" Name="shin">
                 <Nodes>
-                  <Node ID="S&amp;H2pitch1" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="S&amp;H2pitch1" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="S&amp;H2pitch1">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2015,9 +2135,10 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="wave" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="wave" FactoryPath="container.chain" Bypassed="0" Name="wave">
                 <Nodes>
-                  <Node ID="clone_cable21" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable21" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable21">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2031,9 +2152,11 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="phasespread" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+              <Node ID="phasespread" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
+                    Name="phasespread">
                 <Nodes>
-                  <Node ID="clone_cable27" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable27" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable27">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2050,7 +2173,8 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="clone_cable20" FactoryPath="control.clone_cable" Bypassed="0">
+              <Node ID="clone_cable20" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable20">
                 <Properties>
                   <Property ID="Mode" Value="Fixed"/>
                 </Properties>
@@ -2067,11 +2191,13 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="OSC msic" FactoryPath="container.split" Bypassed="0">
+          <Node ID="OSC msic" FactoryPath="container.split" Bypassed="0" Name="OSC msic">
             <Nodes>
-              <Node ID="chain30" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+              <Node ID="chain30" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
+                    Name="chain30">
                 <Nodes>
-                  <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable1">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2088,9 +2214,10 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="chain31" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+              <Node ID="chain31" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
+                    Name="chain31">
                 <Nodes>
-                  <Node ID="pma15" FactoryPath="control.pma" Bypassed="0">
+                  <Node ID="pma15" FactoryPath="control.pma" Bypassed="0" Name="pma15">
                     <ModulationTargets>
                       <Connection NodeId="clone_cable3" ParameterId="Value"/>
                     </ModulationTargets>
@@ -2100,7 +2227,8 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                     </Parameters>
                   </Node>
-                  <Node ID="clone_cable3" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable3" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable3">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2117,9 +2245,10 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="chain32" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+              <Node ID="chain32" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
+                    Name="chain32">
                 <Nodes>
-                  <Node ID="pma17" FactoryPath="control.pma" Bypassed="0">
+                  <Node ID="pma17" FactoryPath="control.pma" Bypassed="0" Name="pma17">
                     <ModulationTargets>
                       <Connection NodeId="clone_cable2" ParameterId="Value"/>
                     </ModulationTargets>
@@ -2129,7 +2258,8 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                     </Parameters>
                   </Node>
-                  <Node ID="clone_cable2" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable2" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable2">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2146,9 +2276,10 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="chain33" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+              <Node ID="chain33" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
+                    Name="chain33">
                 <Nodes>
-                  <Node ID="pma16" FactoryPath="control.pma" Bypassed="0">
+                  <Node ID="pma16" FactoryPath="control.pma" Bypassed="0" Name="pma16">
                     <ModulationTargets>
                       <Connection NodeId="clone_cable4" ParameterId="Value"/>
                     </ModulationTargets>
@@ -2158,7 +2289,8 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                     </Parameters>
                   </Node>
-                  <Node ID="clone_cable4" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable4" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable4">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2172,7 +2304,8 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="clone_cable16" FactoryPath="control.clone_cable" Bypassed="0">
+              <Node ID="clone_cable16" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable16">
                 <Properties>
                   <Property ID="Mode" Value="Fixed"/>
                 </Properties>
@@ -2186,7 +2319,8 @@
                   <Connection NodeId="harmnode32" ParameterId="mode"/>
                 </ModulationTargets>
               </Node>
-              <Node ID="clone_cable9" FactoryPath="control.clone_cable" Bypassed="0">
+              <Node ID="clone_cable9" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable9">
                 <Properties>
                   <Property ID="Mode" Value="Fixed"/>
                 </Properties>
@@ -2197,9 +2331,9 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="chain4" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" Name="chain4">
                 <Nodes>
-                  <Node ID="pma35" FactoryPath="control.pma" Bypassed="0">
+                  <Node ID="pma35" FactoryPath="control.pma" Bypassed="0" Name="pma35">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                       <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
@@ -2209,7 +2343,8 @@
                       <Connection NodeId="clone_cable17" ParameterId="Value"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="clone_cable17" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable17" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable17">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2223,7 +2358,8 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="clone_cable15" FactoryPath="control.clone_cable" Bypassed="0">
+              <Node ID="clone_cable15" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable15">
                 <Properties>
                   <Property ID="Mode" Value="Fixed"/>
                 </Properties>
@@ -2237,11 +2373,13 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="S&amp;H1" FactoryPath="container.split" Bypassed="0" Folded="1">
+          <Node ID="S&amp;H1" FactoryPath="container.split" Bypassed="0" Folded="1"
+                Name="S&amp;H1">
             <Nodes>
-              <Node ID="chain35" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+              <Node ID="chain35" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
+                    Name="chain35">
                 <Nodes>
-                  <Node ID="s7h" FactoryPath="control.pma" Bypassed="0">
+                  <Node ID="s7h" FactoryPath="control.pma" Bypassed="0" Name="s7h">
                     <ModulationTargets>
                       <Connection NodeId="s&amp;h" ParameterId="Value"/>
                     </ModulationTargets>
@@ -2251,7 +2389,7 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                     </Parameters>
                   </Node>
-                  <Node ID="s&amp;h" FactoryPath="control.clone_pack" Bypassed="0">
+                  <Node ID="s&amp;h" FactoryPath="control.clone_pack" Bypassed="0" Name="s&amp;h">
                     <ComplexData>
                       <SliderPacks>
                         <SliderPack Index="2" EmbeddedData="64....f+35Qg8CtdTzOlYlI+DWOJ7SOJbsOyLyr9DtdT5yGEtlO6QgK97nv02yiBWWO.........9C...3O...f+."/>
@@ -2270,9 +2408,11 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="chain37" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+              <Node ID="chain37" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
+                    Name="chain37">
                 <Nodes>
-                  <Node ID="clone_cable11" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable11" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable11">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2289,9 +2429,11 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="chain38" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+              <Node ID="chain38" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
+                    Name="chain38">
                 <Nodes>
-                  <Node ID="clone_cable12" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable12" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable12">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2308,9 +2450,11 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="chain41" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+              <Node ID="chain41" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
+                    Name="chain41">
                 <Nodes>
-                  <Node ID="clone_cable13" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable13" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable13">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2327,7 +2471,8 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="clone_cable18" FactoryPath="control.clone_cable" Bypassed="0">
+              <Node ID="clone_cable18" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable18">
                 <Properties>
                   <Property ID="Mode" Value="Fixed"/>
                 </Properties>
@@ -2342,11 +2487,11 @@
             <Parameters/>
           </Node>
           <Node ID="filter mod outs" FactoryPath="container.split" Bypassed="0"
-                Folded="1">
+                Folded="1" Name="filter mod outs">
             <Nodes>
-              <Node ID="chain110" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain110" FactoryPath="container.chain" Bypassed="0" Name="chain110">
                 <Nodes>
-                  <Node ID="harm-cut" FactoryPath="control.pma" Bypassed="0">
+                  <Node ID="harm-cut" FactoryPath="control.pma" Bypassed="0" Name="harm-cut">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                       <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
@@ -2356,7 +2501,8 @@
                       <Connection NodeId="clone_pack1" ParameterId="Value"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="clone_pack1" FactoryPath="control.clone_pack" Bypassed="0">
+                  <Node ID="clone_pack1" FactoryPath="control.clone_pack" Bypassed="0"
+                        Name="clone_pack1">
                     <ComplexData>
                       <SliderPacks>
                         <SliderPack Index="3" EmbeddedData="64.w0ih9rGEt5SyLyrOWOJ79DWOJ7ilYlwOeT3J+fT357SyLyzORgqW+rGEt8C...3O...f+....9C...3O...f+."/>
@@ -2374,9 +2520,9 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="chain111" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain111" FactoryPath="container.chain" Bypassed="0" Name="chain111">
                 <Nodes>
-                  <Node ID="res" FactoryPath="control.pma_unscaled" Bypassed="0">
+                  <Node ID="res" FactoryPath="control.pma_unscaled" Bypassed="0" Name="res">
                     <ModulationTargets>
                       <Connection NodeId="clone_cable10" ParameterId="Value"/>
                     </ModulationTargets>
@@ -2386,7 +2532,8 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                     </Parameters>
                   </Node>
-                  <Node ID="clone_cable10" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable10" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable10">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2403,9 +2550,10 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="chain112" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain112" FactoryPath="container.chain" Bypassed="0" Name="chain112">
                 <Nodes>
-                  <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2422,9 +2570,9 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="chain125" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain125" FactoryPath="container.chain" Bypassed="0" Name="chain125">
                 <Nodes>
-                  <Node ID="fmix" FactoryPath="control.pma" Bypassed="0">
+                  <Node ID="fmix" FactoryPath="control.pma" Bypassed="0" Name="fmix">
                     <ModulationTargets>
                       <Connection NodeId="clone_cable8" ParameterId="Value"/>
                     </ModulationTargets>
@@ -2434,7 +2582,8 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                     </Parameters>
                   </Node>
-                  <Node ID="clone_cable8" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable8" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable8">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2451,9 +2600,9 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="chain113" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain113" FactoryPath="container.chain" Bypassed="0" Name="chain113">
                 <Nodes>
-                  <Node ID="snh" FactoryPath="control.pma" Bypassed="0">
+                  <Node ID="snh" FactoryPath="control.pma" Bypassed="0" Name="snh">
                     <ModulationTargets>
                       <Connection NodeId="clone_cable14" ParameterId="Value"/>
                     </ModulationTargets>
@@ -2463,7 +2612,8 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                     </Parameters>
                   </Node>
-                  <Node ID="clone_cable14" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable14" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable14">
                     <Properties>
                       <Property ID="Mode" Value="Fixed"/>
                     </Properties>
@@ -2480,9 +2630,9 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="chain114" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain114" FactoryPath="container.chain" Bypassed="0" Name="chain114">
                 <Nodes>
-                  <Node ID="pma85" FactoryPath="control.pma" Bypassed="0">
+                  <Node ID="pma85" FactoryPath="control.pma" Bypassed="0" Name="pma85">
                     <ModulationTargets>
                       <Connection NodeId="clone_cable7" ParameterId="Value"/>
                     </ModulationTargets>
@@ -2492,7 +2642,8 @@
                       <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Automated="1"/>
                     </Parameters>
                   </Node>
-                  <Node ID="clone_cable7" FactoryPath="control.clone_cable" Bypassed="0">
+                  <Node ID="clone_cable7" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable7">
                     <Properties>
                       <Property ID="Mode" Value="Spread"/>
                     </Properties>
@@ -2516,17 +2667,18 @@
         <Parameters/>
       </Node>
       <Node ID="clone1" FactoryPath="container.clone" Bypassed="0" ShowClones="0"
-            ShowParameters="1">
+            ShowParameters="1" Name="clone1">
         <Properties>
           <Property ID="IsVertical" Value="0"/>
         </Properties>
         <Nodes>
           <Node ID="clone1_child" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child">
             <Nodes>
-              <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
                 <Nodes>
-                  <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1" Automated="1"/>
@@ -2536,7 +2688,7 @@
                       <Connection NodeId="harmnode32" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode32" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode32" FactoryPath="project.harmnode" Bypassed="0" Name="harmnode32">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -2569,7 +2721,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -2579,11 +2731,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child31" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child31">
             <Nodes>
-              <Node ID="chain257" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain257" FactoryPath="container.chain" Bypassed="0" Name="chain257">
                 <Nodes>
-                  <Node ID="input_toggle266" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle266" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle266">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -2593,7 +2746,8 @@
                       <Connection NodeId="harmnode222" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode222" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode222" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode222">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -2626,7 +2780,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner221" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner221" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner221">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -2636,11 +2790,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child30" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child30">
             <Nodes>
-              <Node ID="chain256" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain256" FactoryPath="container.chain" Bypassed="0" Name="chain256">
                 <Nodes>
-                  <Node ID="input_toggle265" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle265" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle265">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -2650,7 +2805,8 @@
                       <Connection NodeId="harmnode221" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode221" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode221" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode221">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -2683,7 +2839,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner220" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner220" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner220">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -2693,11 +2849,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child29" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child29">
             <Nodes>
-              <Node ID="chain255" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain255" FactoryPath="container.chain" Bypassed="0" Name="chain255">
                 <Nodes>
-                  <Node ID="input_toggle264" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle264" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle264">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -2707,7 +2864,8 @@
                       <Connection NodeId="harmnode220" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode220" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode220" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode220">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -2740,7 +2898,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner219" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner219" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner219">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -2750,11 +2908,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child28" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child28">
             <Nodes>
-              <Node ID="chain254" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain254" FactoryPath="container.chain" Bypassed="0" Name="chain254">
                 <Nodes>
-                  <Node ID="input_toggle263" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle263" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle263">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -2764,7 +2923,8 @@
                       <Connection NodeId="harmnode219" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode219" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode219" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode219">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -2797,7 +2957,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner218" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner218" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner218">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -2807,11 +2967,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child27" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child27">
             <Nodes>
-              <Node ID="chain253" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain253" FactoryPath="container.chain" Bypassed="0" Name="chain253">
                 <Nodes>
-                  <Node ID="input_toggle262" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle262" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle262">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -2821,7 +2982,8 @@
                       <Connection NodeId="harmnode218" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode218" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode218" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode218">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -2854,7 +3016,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner217" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner217" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner217">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -2864,11 +3026,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child26" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child26">
             <Nodes>
-              <Node ID="chain252" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain252" FactoryPath="container.chain" Bypassed="0" Name="chain252">
                 <Nodes>
-                  <Node ID="input_toggle261" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle261" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle261">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -2878,7 +3041,8 @@
                       <Connection NodeId="harmnode217" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode217" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode217" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode217">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -2911,7 +3075,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner216" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner216" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner216">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -2921,11 +3085,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child25" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child25">
             <Nodes>
-              <Node ID="chain251" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain251" FactoryPath="container.chain" Bypassed="0" Name="chain251">
                 <Nodes>
-                  <Node ID="input_toggle260" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle260" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle260">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -2935,7 +3100,8 @@
                       <Connection NodeId="harmnode216" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode216" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode216" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode216">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -2968,7 +3134,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner215" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner215" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner215">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -2978,11 +3144,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child24" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child24">
             <Nodes>
-              <Node ID="chain250" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain250" FactoryPath="container.chain" Bypassed="0" Name="chain250">
                 <Nodes>
-                  <Node ID="input_toggle259" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle259" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle259">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -2992,7 +3159,8 @@
                       <Connection NodeId="harmnode215" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode215" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode215" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode215">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3025,7 +3193,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner214" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner214" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner214">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3035,11 +3203,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child23" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child23">
             <Nodes>
-              <Node ID="chain249" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain249" FactoryPath="container.chain" Bypassed="0" Name="chain249">
                 <Nodes>
-                  <Node ID="input_toggle258" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle258" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle258">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3049,7 +3218,8 @@
                       <Connection NodeId="harmnode214" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode214" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode214" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode214">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3082,7 +3252,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner213" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner213" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner213">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3092,11 +3262,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child22" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child22">
             <Nodes>
-              <Node ID="chain248" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain248" FactoryPath="container.chain" Bypassed="0" Name="chain248">
                 <Nodes>
-                  <Node ID="input_toggle257" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle257" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle257">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3106,7 +3277,8 @@
                       <Connection NodeId="harmnode213" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode213" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode213" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode213">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3139,7 +3311,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner212" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner212" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner212">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3149,11 +3321,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child21" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child21">
             <Nodes>
-              <Node ID="chain247" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain247" FactoryPath="container.chain" Bypassed="0" Name="chain247">
                 <Nodes>
-                  <Node ID="input_toggle256" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle256" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle256">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3163,7 +3336,8 @@
                       <Connection NodeId="harmnode212" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode212" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode212" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode212">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3196,7 +3370,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner211" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner211" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner211">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3206,11 +3380,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child20" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child20">
             <Nodes>
-              <Node ID="chain246" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain246" FactoryPath="container.chain" Bypassed="0" Name="chain246">
                 <Nodes>
-                  <Node ID="input_toggle255" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle255" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle255">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3220,7 +3395,8 @@
                       <Connection NodeId="harmnode211" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode211" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode211" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode211">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3253,7 +3429,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner210" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner210" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner210">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3263,11 +3439,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child19" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child19">
             <Nodes>
-              <Node ID="chain245" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain245" FactoryPath="container.chain" Bypassed="0" Name="chain245">
                 <Nodes>
-                  <Node ID="input_toggle254" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle254" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle254">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3277,7 +3454,8 @@
                       <Connection NodeId="harmnode210" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode210" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode210" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode210">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3310,7 +3488,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner209" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner209" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner209">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3320,11 +3498,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child18" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child18">
             <Nodes>
-              <Node ID="chain244" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain244" FactoryPath="container.chain" Bypassed="0" Name="chain244">
                 <Nodes>
-                  <Node ID="input_toggle253" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle253" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle253">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3334,7 +3513,8 @@
                       <Connection NodeId="harmnode209" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode209" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode209" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode209">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3367,7 +3547,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner208" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner208" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner208">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3377,11 +3557,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child17" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child17">
             <Nodes>
-              <Node ID="chain243" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain243" FactoryPath="container.chain" Bypassed="0" Name="chain243">
                 <Nodes>
-                  <Node ID="input_toggle252" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle252" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle252">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3391,7 +3572,8 @@
                       <Connection NodeId="harmnode208" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode208" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode208" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode208">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3424,7 +3606,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner207" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner207" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner207">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3434,11 +3616,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child16" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child16">
             <Nodes>
-              <Node ID="chain242" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain242" FactoryPath="container.chain" Bypassed="0" Name="chain242">
                 <Nodes>
-                  <Node ID="input_toggle251" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle251" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle251">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3448,7 +3631,8 @@
                       <Connection NodeId="harmnode207" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode207" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode207" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode207">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3481,7 +3665,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner206" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner206" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner206">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3491,11 +3675,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child15" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child15">
             <Nodes>
-              <Node ID="chain241" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain241" FactoryPath="container.chain" Bypassed="0" Name="chain241">
                 <Nodes>
-                  <Node ID="input_toggle250" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle250" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle250">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3505,7 +3690,8 @@
                       <Connection NodeId="harmnode206" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode206" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode206" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode206">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3538,7 +3724,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner205" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner205" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner205">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3548,11 +3734,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child14" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child14">
             <Nodes>
-              <Node ID="chain240" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain240" FactoryPath="container.chain" Bypassed="0" Name="chain240">
                 <Nodes>
-                  <Node ID="input_toggle249" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle249" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle249">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3562,7 +3749,8 @@
                       <Connection NodeId="harmnode205" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode205" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode205" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode205">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3595,7 +3783,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner204" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner204" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner204">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3605,11 +3793,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child13" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child13">
             <Nodes>
-              <Node ID="chain239" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain239" FactoryPath="container.chain" Bypassed="0" Name="chain239">
                 <Nodes>
-                  <Node ID="input_toggle248" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle248" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle248">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3619,7 +3808,8 @@
                       <Connection NodeId="harmnode204" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode204" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode204" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode204">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3652,7 +3842,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner203" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner203" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner203">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3662,11 +3852,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child12" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child12">
             <Nodes>
-              <Node ID="chain238" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain238" FactoryPath="container.chain" Bypassed="0" Name="chain238">
                 <Nodes>
-                  <Node ID="input_toggle247" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle247" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle247">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3676,7 +3867,8 @@
                       <Connection NodeId="harmnode203" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode203" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode203" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode203">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3709,7 +3901,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner202" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner202" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner202">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3719,11 +3911,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child11" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child11">
             <Nodes>
-              <Node ID="chain237" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain237" FactoryPath="container.chain" Bypassed="0" Name="chain237">
                 <Nodes>
-                  <Node ID="input_toggle246" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle246" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle246">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3733,7 +3926,8 @@
                       <Connection NodeId="harmnode202" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode202" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode202" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode202">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3766,7 +3960,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner201" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner201" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner201">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3776,11 +3970,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child10" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child10">
             <Nodes>
-              <Node ID="chain236" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain236" FactoryPath="container.chain" Bypassed="0" Name="chain236">
                 <Nodes>
-                  <Node ID="input_toggle245" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle245" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle245">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3790,7 +3985,8 @@
                       <Connection NodeId="harmnode201" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode201" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode201" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode201">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3823,7 +4019,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner200" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner200" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner200">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3833,11 +4029,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child9" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child9">
             <Nodes>
-              <Node ID="chain235" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain235" FactoryPath="container.chain" Bypassed="0" Name="chain235">
                 <Nodes>
-                  <Node ID="input_toggle244" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle244" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle244">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3847,7 +4044,8 @@
                       <Connection NodeId="harmnode200" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode200" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode200" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode200">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3880,7 +4078,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner199" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner199" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner199">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3890,11 +4088,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child8" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child8">
             <Nodes>
-              <Node ID="chain234" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain234" FactoryPath="container.chain" Bypassed="0" Name="chain234">
                 <Nodes>
-                  <Node ID="input_toggle243" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle243" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle243">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3904,7 +4103,8 @@
                       <Connection NodeId="harmnode199" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode199" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode199" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode199">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3937,7 +4137,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner198" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner198" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner198">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3947,11 +4147,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child7" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child7">
             <Nodes>
-              <Node ID="chain233" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain233" FactoryPath="container.chain" Bypassed="0" Name="chain233">
                 <Nodes>
-                  <Node ID="input_toggle242" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle242" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle242">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -3961,7 +4162,8 @@
                       <Connection NodeId="harmnode198" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode198" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode198" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode198">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3994,7 +4196,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner197" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner197" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner197">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4004,11 +4206,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child6" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child6">
             <Nodes>
-              <Node ID="chain232" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain232" FactoryPath="container.chain" Bypassed="0" Name="chain232">
                 <Nodes>
-                  <Node ID="input_toggle241" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle241" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle241">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -4018,7 +4221,8 @@
                       <Connection NodeId="harmnode197" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode197" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode197" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode197">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -4051,7 +4255,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner196" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner196" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner196">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4061,11 +4265,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child5" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child5">
             <Nodes>
-              <Node ID="chain231" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain231" FactoryPath="container.chain" Bypassed="0" Name="chain231">
                 <Nodes>
-                  <Node ID="input_toggle240" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle240" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle240">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -4075,7 +4280,8 @@
                       <Connection NodeId="harmnode196" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode196" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode196" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode196">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -4108,7 +4314,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner195" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner195" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner195">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4118,11 +4324,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child4" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child4">
             <Nodes>
-              <Node ID="chain230" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain230" FactoryPath="container.chain" Bypassed="0" Name="chain230">
                 <Nodes>
-                  <Node ID="input_toggle239" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle239" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle239">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -4132,7 +4339,8 @@
                       <Connection NodeId="harmnode195" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode195" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode195" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode195">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -4165,7 +4373,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner194" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner194" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner194">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4175,11 +4383,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child3" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child3">
             <Nodes>
-              <Node ID="chain229" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain229" FactoryPath="container.chain" Bypassed="0" Name="chain229">
                 <Nodes>
-                  <Node ID="input_toggle238" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle238" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle238">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -4189,7 +4398,8 @@
                       <Connection NodeId="harmnode194" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode194" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode194" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode194">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -4222,7 +4432,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner193" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner193" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner193">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4232,11 +4442,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child2" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child2">
             <Nodes>
-              <Node ID="chain228" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain228" FactoryPath="container.chain" Bypassed="0" Name="chain228">
                 <Nodes>
-                  <Node ID="input_toggle237" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle237" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle237">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -4246,7 +4457,8 @@
                       <Connection NodeId="harmnode193" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode193" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode193" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode193">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -4279,7 +4491,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner192" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner192" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner192">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4289,11 +4501,12 @@
             <Parameters/>
           </Node>
           <Node ID="clone1_child1" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="0">
+                NodeColour="4287927444" ShowParameters="0" Name="clone1_child1">
             <Nodes>
-              <Node ID="chain227" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="chain227" FactoryPath="container.chain" Bypassed="0" Name="chain227">
                 <Nodes>
-                  <Node ID="input_toggle236" FactoryPath="control.input_toggle" Bypassed="0">
+                  <Node ID="input_toggle236" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle236">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input"/>
                       <Parameter MinValue="0.0" MaxValue="2.0" ID="Value1"/>
@@ -4303,7 +4516,8 @@
                       <Connection NodeId="harmnode192" ParameterId="pitch"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="harmnode192" FactoryPath="project.harmnode" Bypassed="0">
+                  <Node ID="harmnode192" FactoryPath="project.harmnode" Bypassed="0"
+                        Name="harmnode192">
                     <ComplexData>
                       <AudioFiles>
                         <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -4336,7 +4550,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="jpanner191" FactoryPath="jdsp.jpanner" Bypassed="0">
+              <Node ID="jpanner191" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner191">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4352,7 +4566,7 @@
                      Value="1.0"/>
         </Parameters>
       </Node>
-      <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
+      <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
         <Parameters>
           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                      SkewFactor="5.422270774841309" ID="Gain" Value="-32.39999899268151"/>
