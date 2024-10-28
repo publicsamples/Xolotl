@@ -40,5 +40,4 @@ If everything worked, you should have a plugin file in the binaries folder. Copy
 
 Pre-built versions of the plugins are available for Mac, Windows & Linux for a small fee. To find out more visit: 
 
-https://modularsamples.gumroad.com/l/rhnqwh
-
+https://payhip.com/b/5Lhwe
