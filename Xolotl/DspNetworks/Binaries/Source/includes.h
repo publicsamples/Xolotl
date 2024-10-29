@@ -9,9 +9,9 @@
 
 // Include compiled network files ------------------
 
-#include "file.h"
-#include "FM.h"
-#include "harmnode.h"
+#include "modtest1.h"
+#include "Xarrange.h"
+#include "xnode.h"
 
 #if (defined (_WIN32) || defined (_WIN64))
 #pragma warning( pop )

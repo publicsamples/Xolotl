@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="Arrange" AllowPolyphonic="1" Version="0.0.0" AllowCompilation="1">
+  <Node FactoryPath="container.chain" ID="Arrange" Bypassed="0" Name="Arrange"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
+            Name="clone_cable">
+        <Properties>
+          <Property ID="Mode" Value="Spread"/>
+        </Properties>
+        <Parameters>
+          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                     Value="32.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+        </Parameters>
+      </Node>
+      <Node ID="clone" FactoryPath="container.clone" Bypassed="0" Name="clone"
+            ShowClones="0" ShowParameters="1">
+        <Properties>
+          <Property ID="IsVertical" Value="0"/>
+        </Properties>
+        <Nodes>
+          <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" Name="clone_child"
+                NodeColour="4287927444">
+            <Nodes>
+              <Node ID="xnode" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+                <ComplexData>
+                  <AudioFiles>
+                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                  </AudioFiles>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
+                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
+                  <Parameter MinValue="0.0" MaxValue="5.0" StepSize="1.0" ID="SampleMode"
+                             Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
+                             Value="3.0"/>
+                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                             ID="FilterRes" Value="9.476622581481934"/>
+                  <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
+                             Value="0.3374263942241669"/>
+                  <Parameter MinValue="0.05999999865889549" MaxValue="1.0" ID="fmod" Value="0.6476350426673889"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters>
+          <Parameter MinValue="1.0" MaxValue="1" StepSize="1.0" ID="NumClones" Value="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
+                     Value="1.0"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="p2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="clone_cable" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

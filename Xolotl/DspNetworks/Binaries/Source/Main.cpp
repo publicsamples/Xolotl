@@ -27,9 +27,9 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		TempoSyncer::initTempoData();
 		// Node registrations -------------------------------------------------------------
 		
-		registerPolyNode<project::file<1>, project::file<NUM_POLYPHONIC_VOICES>>();
-		registerPolyNode<project::FM<1>, project::FM<NUM_POLYPHONIC_VOICES>>();
-		registerPolyNode<project::harmnode<1>, project::harmnode<NUM_POLYPHONIC_VOICES>>();
+		registerPolyNode<project::modtest1<1>, wrap::illegal_poly<project::modtest1<1>>>();
+		registerPolyNode<project::Xarrange<1>, project::Xarrange<NUM_POLYPHONIC_VOICES>>();
+		registerPolyNode<project::xnode<1>, project::xnode<NUM_POLYPHONIC_VOICES>>();
 	}
 };
 }
@@ -72,9 +72,9 @@ DLL_EXPORT int getHash(int index)
 	static const int thirdPartyOffset = 0;
 	static const int hashIndexes[3] =
 	{
-		-1024156651,
-		-1436151012,
-		-1724844738
+		-701628740,
+		689565406,
+		-360961270
 	};
 	return (index >= thirdPartyOffset) ? hashIndexes[index - thirdPartyOffset] : 0;
 }

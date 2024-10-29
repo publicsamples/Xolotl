@@ -33,7 +33,7 @@
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Value="0.08925000000000005"/>
                 </Parameters>
               </Node>
               <Node ID="add1" FactoryPath="math.add" Bypassed="0" Name="add1">
@@ -115,7 +115,7 @@
               </Node>
               <Node ID="clear" FactoryPath="math.clear" Bypassed="0" Name="clear">
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.06950000000000001"/>
                 </Parameters>
               </Node>
               <Node ID="pma1" FactoryPath="control.pma" Bypassed="0" Name="pma1">
@@ -125,7 +125,7 @@
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="smoothed_parameter" FactoryPath="control.smoothed_parameter"

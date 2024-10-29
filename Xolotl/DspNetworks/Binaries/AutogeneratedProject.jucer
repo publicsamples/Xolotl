@@ -23,18 +23,18 @@
                        binaryPath="dll" alwaysGenerateDebugSymbols="1" useRuntimeLibDLL="0"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_audio_basics" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_core" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_data_structures" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_events" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="hi_tools" path="/Users/rick/Downloads/HISE-develop"/>
-        <MODULEPATH id="hi_dsp_library" path="/Users/rick/Downloads/HISE-develop"/>
-        <MODULEPATH id="hi_faust" path="/Users/rick/Downloads/HISE-develop"/>
-        <MODULEPATH id="hi_faust_types" path="/Users/rick/Downloads/HISE-develop"/>
-        <MODULEPATH id="juce_dsp" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_graphics" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="hi_tools" path="/Users/rick/Downloads/HISE-develop-2"/>
+        <MODULEPATH id="hi_dsp_library" path="/Users/rick/Downloads/HISE-develop-2"/>
+        <MODULEPATH id="hi_faust" path="/Users/rick/Downloads/HISE-develop-2"/>
+        <MODULEPATH id="hi_faust_types" path="/Users/rick/Downloads/HISE-develop-2"/>
+        <MODULEPATH id="juce_dsp" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
       </MODULEPATHS>
     </VS2017>
     <XCODE_MAC targetFolder="Builds/MacOSX" extraDefs="&#10;" extraLinkerFlags=""
@@ -51,18 +51,18 @@
                        targetName="Xolotl"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_gui_basics" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_graphics" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_events" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_dsp" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_data_structures" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_core" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_basics" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="hi_tools" path="/Users/rick/Downloads/HISE-develop"/>
-        <MODULEPATH id="hi_faust_types" path="/Users/rick/Downloads/HISE-develop"/>
-        <MODULEPATH id="hi_dsp_library" path="/Users/rick/Downloads/HISE-develop"/>
-        <MODULEPATH id="hi_faust" path="/Users/rick/Downloads/HISE-develop"/>
+        <MODULEPATH id="juce_gui_basics" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="hi_tools" path="/Users/rick/Downloads/HISE-develop-2"/>
+        <MODULEPATH id="hi_faust_types" path="/Users/rick/Downloads/HISE-develop-2"/>
+        <MODULEPATH id="hi_dsp_library" path="/Users/rick/Downloads/HISE-develop-2"/>
+        <MODULEPATH id="hi_faust" path="/Users/rick/Downloads/HISE-develop-2"/>
       </MODULEPATHS>
     </XCODE_MAC>
     <LINUX_MAKE targetFolder="Builds/LinuxMakefile" extraDefs="%USE_IPP_LINUX%&#10;"
@@ -75,18 +75,18 @@
                        headerPath=""/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_gui_basics" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_graphics" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_events" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_dsp" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_data_structures" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_core" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_basics" path="/Users/rick/Downloads/HISE-develop/JUCE/modules"/>
-        <MODULEPATH id="hi_tools" path="/Users/rick/Downloads/HISE-develop"/>
-        <MODULEPATH id="hi_dsp_library" path="/Users/rick/Downloads/HISE-develop"/>
-        <MODULEPATH id="hi_faust" path="/Users/rick/Downloads/HISE-develop"/>
-        <MODULEPATH id="hi_faust_types" path="/Users/rick/Downloads/HISE-develop"/>
+        <MODULEPATH id="juce_gui_basics" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="/Users/rick/Downloads/HISE-develop-2/JUCE/modules"/>
+        <MODULEPATH id="hi_tools" path="/Users/rick/Downloads/HISE-develop-2"/>
+        <MODULEPATH id="hi_dsp_library" path="/Users/rick/Downloads/HISE-develop-2"/>
+        <MODULEPATH id="hi_faust" path="/Users/rick/Downloads/HISE-develop-2"/>
+        <MODULEPATH id="hi_faust_types" path="/Users/rick/Downloads/HISE-develop-2"/>
       </MODULEPATHS>
     </LINUX_MAKE>
   </EXPORTFORMATS>
