@@ -27,6 +27,11 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		TempoSyncer::initTempoData();
 		// Node registrations -------------------------------------------------------------
 		
+		registerPolyNode<project::OBLP<1>, wrap::illegal_poly<project::OBLP<1>>>();
+		registerPolyNode<project::LPF<1>, wrap::illegal_poly<project::LPF<1>>>();
+		registerPolyNode<project::HPF<1>, wrap::illegal_poly<project::HPF<1>>>();
+		registerPolyNode<project::Comb<1>, project::Comb<NUM_POLYPHONIC_VOICES>>();
+		registerPolyNode<project::BPF<1>, wrap::illegal_poly<project::BPF<1>>>();
 		registerPolyNode<project::modtest1<1>, wrap::illegal_poly<project::modtest1<1>>>();
 		registerPolyNode<project::Xarrange<1>, project::Xarrange<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::xnode<1>, project::xnode<NUM_POLYPHONIC_VOICES>>();
@@ -34,11 +39,18 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::Env2_networkdata>();
 		registerDataNode<project::Env3_networkdata>();
 		registerDataNode<project::Env4_networkdata>();
+		registerDataNode<project::f_networkdata>();
+		registerDataNode<project::Fausted_networkdata>();
+		registerDataNode<project::ga_networkdata>();
+		registerDataNode<project::GainMod_networkdata>();
 		registerDataNode<project::harmnode_networkdata>();
 		registerDataNode<project::harmo_networkdata>();
 		registerDataNode<project::Htwentyfour_networkdata>();
+		registerDataNode<project::_networkdata>();
 		registerDataNode<project::mod_networkdata>();
+		registerDataNode<project::QuadCho_networkdata>();
 		registerDataNode<project::TRACK_LFO_networkdata>();
+		registerDataNode<project::xnodeCycle_networkdata>();
 		registerDataNode<project::xnodeUser_networkdata>();
 	}
 };

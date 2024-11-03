@@ -50,9 +50,9 @@
                               <Node ID="chain18" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282883250">
+                                        Name="global_cable" NodeColour="4282864306">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO1"/>
+                                      <Property ID="Connection" Value="mod1"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add10" ParameterId="Value"/>
@@ -72,9 +72,9 @@
                               <Node ID="chain22" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable11" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282948786">
+                                        Name="global_cable" NodeColour="4282929586">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO2"/>
+                                      <Property ID="Connection" Value="mod2"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add11" ParameterId="Value"/>
@@ -94,9 +94,9 @@
                               <Node ID="chain23" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable12" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282882994">
+                                        Name="global_cable" NodeColour="4282864306">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO3"/>
+                                      <Property ID="Connection" Value="mod3"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add12" ParameterId="Value"/>
@@ -116,9 +116,9 @@
                               <Node ID="chain24" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable13" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282882738">
+                                        Name="global_cable" NodeColour="4282929586">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO4"/>
+                                      <Property ID="Connection" Value="mod4"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add13" ParameterId="Value"/>
@@ -188,7 +188,7 @@
                       <Node ID="pma2" FactoryPath="control.pma" Bypassed="0" Name="mod57"
                             NodeColour="4284265049">
                         <ModulationTargets>
-                          <Connection NodeId="pma6" ParameterId="Add"/>
+                          <Connection NodeId="pma6" ParameterId="Value"/>
                         </ModulationTargets>
                         <Parameters>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -204,20 +204,21 @@
                     <Nodes>
                       <Node ID="midi_cc" FactoryPath="control.midi_cc" Bypassed="0" Name="midi_cc">
                         <ModulationTargets>
-                          <Connection NodeId="pma6" ParameterId="Value"/>
+                          <Connection NodeId="pma6" ParameterId="Add"/>
                         </ModulationTargets>
                         <Parameters>
                           <Parameter MinValue="0.0" MaxValue="131.0" StepSize="1.0" ID="CCNumber"
                                      Value="128.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="EnableMPE" Value="0.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="DefaultValue" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="DefaultValue" Value="0.5" DefaultValue="0.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="pma6" FactoryPath="control.pma" Bypassed="0" Name="modxx"
                             NodeColour="4284265049">
                         <Parameters>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" DefaultValue=""
+                                     Value="1.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                         </Parameters>
                         <ModulationTargets>
@@ -231,7 +232,7 @@
                 <Parameters/>
               </Node>
               <Node ID="split9" FactoryPath="container.split" Bypassed="0" Name="DETUNE"
-                    NodeColour="4284265049" Folded="1">
+                    NodeColour="4284265049">
                 <Nodes>
                   <Node ID="chain67" FactoryPath="container.chain" Bypassed="0" Name="chain3"
                         NodeColour="4284265049">
@@ -272,9 +273,9 @@
                               <Node ID="chain70" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable7" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282883250">
+                                        Name="global_cable" NodeColour="4282864306">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO1"/>
+                                      <Property ID="Connection" Value="mod1"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add38" ParameterId="Value"/>
@@ -294,9 +295,9 @@
                               <Node ID="chain71" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable32" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282948786">
+                                        Name="global_cable" NodeColour="4282929586">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO2"/>
+                                      <Property ID="Connection" Value="mod2"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add39" ParameterId="Value"/>
@@ -316,9 +317,9 @@
                               <Node ID="chain72" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable33" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282882994">
+                                        Name="global_cable" NodeColour="4282864306">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO3"/>
+                                      <Property ID="Connection" Value="mod3"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add40" ParameterId="Value"/>
@@ -338,9 +339,9 @@
                               <Node ID="chain73" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable34" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282882738">
+                                        Name="global_cable" NodeColour="4282929586">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO4"/>
+                                      <Property ID="Connection" Value="mod4"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add41" ParameterId="Value"/>
@@ -399,7 +400,7 @@
                 <Parameters/>
               </Node>
               <Node ID="split8" FactoryPath="container.split" Bypassed="0" Name="FxValue"
-                    NodeColour="4284265049" Folded="1">
+                    NodeColour="4284265049">
                 <Nodes>
                   <Node ID="chain58" FactoryPath="container.chain" Bypassed="0" Name="chain3"
                         NodeColour="4284265049">
@@ -440,9 +441,9 @@
                               <Node ID="chain61" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable6" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282883250">
+                                        Name="global_cable" NodeColour="4282864306">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO1"/>
+                                      <Property ID="Connection" Value="mod1"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add34" ParameterId="Value"/>
@@ -462,9 +463,9 @@
                               <Node ID="chain62" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable29" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282948786">
+                                        Name="global_cable" NodeColour="4282929586">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO2"/>
+                                      <Property ID="Connection" Value="mod2"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add35" ParameterId="Value"/>
@@ -484,9 +485,9 @@
                               <Node ID="chain63" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable30" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282882994">
+                                        Name="global_cable" NodeColour="4282864306">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO3"/>
+                                      <Property ID="Connection" Value="mod3"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add36" ParameterId="Value"/>
@@ -506,9 +507,9 @@
                               <Node ID="chain64" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable31" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282882738">
+                                        Name="global_cable" NodeColour="4282929586">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO4"/>
+                                      <Property ID="Connection" Value="mod4"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add37" ParameterId="Value"/>
@@ -621,7 +622,7 @@
                 <Parameters/>
               </Node>
               <Node ID="split7" FactoryPath="container.split" Bypassed="0" Name="FILTER CUT"
-                    NodeColour="4284265049" Folded="1">
+                    NodeColour="4284265049">
                 <Nodes>
                   <Node ID="chain49" FactoryPath="container.chain" Bypassed="0" Name="chain3"
                         NodeColour="4284265049">
@@ -662,9 +663,9 @@
                               <Node ID="chain52" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable5" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282883250">
+                                        Name="global_cable" NodeColour="4282864306">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO1"/>
+                                      <Property ID="Connection" Value="mod1"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add30" ParameterId="Value"/>
@@ -684,9 +685,9 @@
                               <Node ID="chain53" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable26" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282948786">
+                                        Name="global_cable" NodeColour="4282929586">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO2"/>
+                                      <Property ID="Connection" Value="mod2"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add31" ParameterId="Value"/>
@@ -706,9 +707,9 @@
                               <Node ID="chain54" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable27" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282882994">
+                                        Name="global_cable" NodeColour="4282864306">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO3"/>
+                                      <Property ID="Connection" Value="mod3"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add32" ParameterId="Value"/>
@@ -728,9 +729,9 @@
                               <Node ID="chain55" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable28" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282882738">
+                                        Name="global_cable" NodeColour="4282929586">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO4"/>
+                                      <Property ID="Connection" Value="mod4"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add33" ParameterId="Value"/>
@@ -843,7 +844,7 @@
                 <Parameters/>
               </Node>
               <Node ID="split6" FactoryPath="container.split" Bypassed="0" Name="FilterQ"
-                    NodeColour="4284265049" Folded="1">
+                    NodeColour="4284265049">
                 <Nodes>
                   <Node ID="chain40" FactoryPath="container.chain" Bypassed="0" Name="chain3"
                         NodeColour="4284265049">
@@ -867,7 +868,7 @@
                         <Parameters>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                           <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
-                          <Parameter MinValue="9.0" MaxValue="1.0" ID="Add" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                         </Parameters>
                       </Node>
                     </Nodes>
@@ -884,9 +885,9 @@
                               <Node ID="chain43" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable4" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282883250">
+                                        Name="global_cable" NodeColour="4282864306">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO1"/>
+                                      <Property ID="Connection" Value="mod1"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add26" ParameterId="Value"/>
@@ -906,9 +907,9 @@
                               <Node ID="chain44" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable23" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282948786">
+                                        Name="global_cable" NodeColour="4282929586">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO2"/>
+                                      <Property ID="Connection" Value="mod2"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add27" ParameterId="Value"/>
@@ -928,9 +929,9 @@
                               <Node ID="chain45" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable24" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282882994">
+                                        Name="global_cable" NodeColour="4282864306">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO3"/>
+                                      <Property ID="Connection" Value="mod3"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add28" ParameterId="Value"/>
@@ -950,9 +951,9 @@
                               <Node ID="chain46" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable25" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282882738">
+                                        Name="global_cable" NodeColour="4282929586">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO4"/>
+                                      <Property ID="Connection" Value="mod4"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add29" ParameterId="Value"/>
@@ -1011,7 +1012,7 @@
                 <Parameters/>
               </Node>
               <Node ID="split5" FactoryPath="container.split" Bypassed="0" Name="FilterMix"
-                    NodeColour="4284265049" ShowParameters="0" Folded="1">
+                    NodeColour="4284265049" ShowParameters="0">
                 <Nodes>
                   <Node ID="chain16" FactoryPath="container.chain" Bypassed="0" Name="chain3"
                         NodeColour="4284265049">
@@ -1052,9 +1053,9 @@
                               <Node ID="chain21" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable3" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282883250">
+                                        Name="global_cable" NodeColour="4282864306">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO1"/>
+                                      <Property ID="Connection" Value="mod1"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add22" ParameterId="Value"/>
@@ -1074,9 +1075,9 @@
                               <Node ID="chain35" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable20" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282948786">
+                                        Name="global_cable" NodeColour="4282929586">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO2"/>
+                                      <Property ID="Connection" Value="mod2"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add23" ParameterId="Value"/>
@@ -1096,9 +1097,9 @@
                               <Node ID="chain36" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable21" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282882994">
+                                        Name="global_cable" NodeColour="4282864306">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO3"/>
+                                      <Property ID="Connection" Value="mod3"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add24" ParameterId="Value"/>
@@ -1118,9 +1119,9 @@
                               <Node ID="chain37" FactoryPath="container.chain" Bypassed="0" Name="chain18">
                                 <Nodes>
                                   <Node ID="global_cable22" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282882738">
+                                        Name="global_cable" NodeColour="4282929586">
                                     <Properties>
-                                      <Property ID="Connection" Value="LFO4"/>
+                                      <Property ID="Connection" Value="mod4"/>
                                     </Properties>
                                     <ModulationTargets>
                                       <Connection NodeId="add25" ParameterId="Value"/>
@@ -1241,7 +1242,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="Harm"/>
+                          <Connection NodeId="xnode1" ParameterId="Harm"/>
                         </ModulationTargets>
                       </Node>
                       <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
@@ -1256,7 +1257,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                         </Parameters>
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="min"/>
+                          <Connection NodeId="xnode1" ParameterId="min"/>
                         </ModulationTargets>
                       </Node>
                       <Node ID="clone_cable4" FactoryPath="control.clone_cable" Bypassed="0"
@@ -1271,7 +1272,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                         </Parameters>
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="max"/>
+                          <Connection NodeId="xnode1" ParameterId="max"/>
                         </ModulationTargets>
                       </Node>
                       <Node ID="clone_cable3" FactoryPath="control.clone_cable" Bypassed="0"
@@ -1286,18 +1287,18 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                         </Parameters>
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="step"/>
+                          <Connection NodeId="xnode1" ParameterId="step"/>
                         </ModulationTargets>
                       </Node>
                       <Node ID="clone_forward" FactoryPath="control.clone_forward" Bypassed="0"
                             Name="clone_forward">
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="Mode"/>
+                          <Connection NodeId="xnode1" ParameterId="Mode"/>
                         </ModulationTargets>
                         <Parameters>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="5.0" StepSize="1" ID="Value" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
                       <Node ID="clone_cable11" FactoryPath="control.clone_cable" Bypassed="0"
@@ -1312,7 +1313,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                         </Parameters>
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="DET"/>
+                          <Connection NodeId="xnode1" ParameterId="DET"/>
                         </ModulationTargets>
                       </Node>
                       <Node ID="clone_cable12" FactoryPath="control.clone_cable" Bypassed="0"
@@ -1321,7 +1322,7 @@
                           <Property ID="Mode" Value="Fixed"/>
                         </Properties>
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="shPitch"/>
+                          <Connection NodeId="xnode1" ParameterId="shPitch"/>
                         </ModulationTargets>
                         <Parameters>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
@@ -1348,7 +1349,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="FxValue"/>
+                          <Connection NodeId="xnode1" ParameterId="FxValue"/>
                         </ModulationTargets>
                       </Node>
                       <Node ID="clone_cable2" FactoryPath="control.clone_cable" Bypassed="0"
@@ -1363,7 +1364,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                         </Parameters>
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="FxMix"/>
+                          <Connection NodeId="xnode1" ParameterId="FxMix"/>
                         </ModulationTargets>
                       </Node>
                       <Node ID="clone_cable9" FactoryPath="control.clone_cable" Bypassed="0"
@@ -1378,7 +1379,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                         </Parameters>
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="FxShDiv"/>
+                          <Connection NodeId="xnode1" ParameterId="FxShDiv"/>
                         </ModulationTargets>
                       </Node>
                       <Node ID="clone_cable8" FactoryPath="control.clone_cable" Bypassed="0"
@@ -1393,7 +1394,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                         </Parameters>
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="FxShSync"/>
+                          <Connection NodeId="xnode1" ParameterId="FxShSync"/>
                         </ModulationTargets>
                       </Node>
                     </Nodes>
@@ -1414,7 +1415,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="FilterCut"/>
+                          <Connection NodeId="xnode1" ParameterId="FilterCut"/>
                         </ModulationTargets>
                       </Node>
                       <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
@@ -1429,13 +1430,13 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                         </Parameters>
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="FilterMix"/>
+                          <Connection NodeId="xnode1" ParameterId="FilterMix"/>
                         </ModulationTargets>
                       </Node>
                       <Node ID="clone_forward1" FactoryPath="control.clone_forward" Bypassed="0"
                             Name="clone_forward1">
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="FilterType"/>
+                          <Connection NodeId="xnode1" ParameterId="FilterType"/>
                         </ModulationTargets>
                         <Parameters>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
@@ -1455,7 +1456,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                         </Parameters>
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="FilterRes"/>
+                          <Connection NodeId="xnode1" ParameterId="FilterRes"/>
                         </ModulationTargets>
                       </Node>
                       <Node ID="clone_cable13" FactoryPath="control.clone_cable" Bypassed="0"
@@ -1470,7 +1471,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                         </Parameters>
                         <ModulationTargets>
-                          <Connection NodeId="xnode" ParameterId="FilterFxMod"/>
+                          <Connection NodeId="xnode1" ParameterId="FilterFxMod"/>
                         </ModulationTargets>
                       </Node>
                       <Node ID="clone_cable10" FactoryPath="control.clone_cable" Bypassed="0"
@@ -1509,32 +1510,61 @@
           <Node ID="clone1_child" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode1" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Automated="1"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Automated="1"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" DefaultValue="1.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="15.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="0.01645996049046516"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"
+                             Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Automated="1"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Automated="1"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" DefaultValue="0.5586939454078674"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" DefaultValue="1.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" DefaultValue="-0.003645263612270355"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" DefaultValue="1.0"
+                             Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Automated="1"/>
+                             DefaultValue="2.0" Automated="1"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Automated="1"/>
+                             ID="FilterRes" DefaultValue="0.3077099621295929" Automated="1"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Automated="1"/>
+                             DefaultValue="0.1470787972211838" Automated="1"/>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="0.03925781324505806"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1549,32 +1579,51 @@
           <Node ID="clone1_child1" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode1" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode2" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner32" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1589,32 +1638,51 @@
           <Node ID="clone1_child2" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode2" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode3" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner33" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1629,32 +1697,51 @@
           <Node ID="clone1_child3" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode3" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode4" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner34" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1669,32 +1756,51 @@
           <Node ID="clone1_child4" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode4" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode5" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner35" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1709,32 +1815,51 @@
           <Node ID="clone1_child5" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode5" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode6" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner36" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1749,32 +1874,51 @@
           <Node ID="clone1_child6" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode6" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode7" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner37" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1789,32 +1933,51 @@
           <Node ID="clone1_child7" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode7" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode8" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner38" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1829,32 +1992,51 @@
           <Node ID="clone1_child8" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode8" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode9" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner39" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1869,32 +2051,51 @@
           <Node ID="clone1_child9" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode9" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode10" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner40" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1909,32 +2110,51 @@
           <Node ID="clone1_child10" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode10" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode11" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner41" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1949,32 +2169,51 @@
           <Node ID="clone1_child11" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode11" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode12" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner42" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1989,32 +2228,51 @@
           <Node ID="clone1_child12" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode12" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode13" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner43" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2029,32 +2287,51 @@
           <Node ID="clone1_child13" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode13" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode14" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner44" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2069,32 +2346,51 @@
           <Node ID="clone1_child14" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode14" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode15" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner45" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2109,32 +2405,51 @@
           <Node ID="clone1_child15" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode15" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode16" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner46" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2149,32 +2464,51 @@
           <Node ID="clone1_child16" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode16" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode17" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner47" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2189,32 +2523,51 @@
           <Node ID="clone1_child17" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode17" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode18" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner48" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2229,32 +2582,51 @@
           <Node ID="clone1_child18" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode18" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode19" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner49" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2269,32 +2641,51 @@
           <Node ID="clone1_child19" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode19" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode20" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner50" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2309,32 +2700,51 @@
           <Node ID="clone1_child20" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode20" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode21" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner51" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2349,32 +2759,51 @@
           <Node ID="clone1_child21" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode21" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode22" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner52" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2389,32 +2818,51 @@
           <Node ID="clone1_child22" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode22" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode23" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner53" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2429,32 +2877,51 @@
           <Node ID="clone1_child23" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode23" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode24" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner54" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2469,32 +2936,51 @@
           <Node ID="clone1_child24" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode24" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode25" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner55" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2509,32 +2995,51 @@
           <Node ID="clone1_child25" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode25" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode26" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner56" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2549,32 +3054,51 @@
           <Node ID="clone1_child26" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode26" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode27" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner57" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2589,32 +3113,51 @@
           <Node ID="clone1_child27" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode27" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode28" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner58" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2629,32 +3172,51 @@
           <Node ID="clone1_child28" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode28" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode29" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner59" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2669,32 +3231,51 @@
           <Node ID="clone1_child29" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode29" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode30" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner60" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2709,32 +3290,51 @@
           <Node ID="clone1_child30" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode30" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode31" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner61" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2749,32 +3349,51 @@
           <Node ID="clone1_child31" FactoryPath="container.chain" Bypassed="0"
                 Name="clone1_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode31" FactoryPath="project.xnode" Bypassed="0" Name="xnode">
+              <Node ID="xnode63" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="6"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="9"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.702867329120636"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Value="1.0"/>
-                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Value="15.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.01645996049046516"/>
-                  <Parameter MinValue="0.0" MaxValue="11.0" StepSize="1.0" ID="Mode" Value="6.0"/>
+                  <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Mode" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.5586939454078674"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="FxShDiv" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" Value="1.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.02781201153993607"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="shPitch" Value="-0.003645263612270355"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="FilterType"
-                             Value="3.0"/>
+                             Value="2.0"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                             ID="FilterRes" Value="9.476622581481934"/>
+                             ID="FilterRes" Value="0.300000011920929" DefaultValue="0.3077099621295929"/>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="FilterCut"
-                             Value="0.3374263942241669"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="1.181364059448242"/>
+                             Value="0.6180953987836839" DefaultValue="0.1470787972211838"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" Value="0.03925781324505806"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner62" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2805,7 +3424,8 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="Stages" MinValue="1.0" MaxValue="32.0" StepSize="1.0" Value="24.0">
+      <Parameter ID="Stages" MinValue="1.0" MaxValue="32.0" StepSize="1.0" Value="9.0"
+                 DefaultValue="24.0">
         <Connections>
           <Connection NodeId="clone1" ParameterId="NumClones"/>
           <Connection NodeId="clone_pack" ParameterId="NumClones"/>
@@ -2830,7 +3450,8 @@
           <Connection NodeId="clone_cable12" ParameterId="NumClones"/>
         </Connections>
       </Parameter>
-      <Parameter ID="SampleOSc" MinValue="0.0" MaxValue="5.0" Value="0.0" StepSize="1.0">
+      <Parameter ID="SampleOSc" MinValue="0.0" MaxValue="11.0" Value="4.0" StepSize="1.0"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_forward" ParameterId="Value"/>
         </Connections>
@@ -2855,12 +3476,14 @@
           <Connection NodeId="clone_cable9" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FilterType" MinValue="0.0" MaxValue="5.0" Value="0.0">
+      <Parameter ID="FilterType" MinValue="0.0" MaxValue="5.0" Value="0.01611328125"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_forward1" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FilterFXMod" MinValue="0.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="FilterFXMod" MinValue="0.0" MaxValue="1.0" Value="0.0392578125"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable13" ParameterId="Value"/>
         </Connections>
@@ -2870,7 +3493,8 @@
           <Connection NodeId="pma" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="HarmEnvSrc" MinValue="0.0" MaxValue="16.0" Value="0.0" StepSize="1.0">
+      <Parameter ID="HarmEnvSrc" MinValue="0.0" MaxValue="16.0" Value="16.0" StepSize="1.0"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="event_data_reader" ParameterId="SlotIndex"/>
         </Connections>
@@ -2885,7 +3509,7 @@
           <Connection NodeId="branch" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="HarmLFoMod" MinValue="-1.0" MaxValue="1.0" Value="0.00066668701171875">
+      <Parameter ID="HarmLFoMod" MinValue="-1.0" MaxValue="1.0" Value="1.0" DefaultValue="0.00066668701171875">
         <Connections>
           <Connection NodeId="pma3" ParameterId="Multiply"/>
         </Connections>
@@ -2896,9 +3520,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="HarmPb" MinValue="-1.0" MaxValue="1.0" Value="-0.01100000000000001">
-        <Connections>
-          <Connection NodeId="pma6" ParameterId="Multiply"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="MAX" MinValue="1.0" MaxValue="16.0" StepSize="1" Value="14.0">
         <Connections>
@@ -2921,7 +3543,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="Detuneenvsrc" MinValue="0.0" MaxValue="16.0" StepSize="1.0"
-                 Value="4.0">
+                 Value="0.0" DefaultValue="4.0">
         <Connections>
           <Connection NodeId="event_data_reader7" ParameterId="SlotIndex"/>
         </Connections>
@@ -2932,7 +3554,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="DetuneLFOsrc" MinValue="0.0" MaxValue="3.0" StepSize="1.0"
-                 Value="1.0">
+                 Value="0.0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch7" ParameterId="Index"/>
         </Connections>
@@ -2942,7 +3564,8 @@
           <Connection NodeId="pma24" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FxEnvMod" MinValue="-1.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="FxEnvMod" MinValue="-1.0" MaxValue="1.0" Value="-0.07851562500000009"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma24" ParameterId="Multiply"/>
         </Connections>
@@ -2957,7 +3580,8 @@
           <Connection NodeId="pma25" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FXLfoSrc" MinValue="0.0" MaxValue="3.0" StepSize="1.0" Value="1.0">
+      <Parameter ID="FXLfoSrc" MinValue="0.0" MaxValue="3.0" StepSize="1.0" Value="0.0"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch6" ParameterId="Index"/>
         </Connections>
@@ -2967,17 +3591,19 @@
           <Connection NodeId="pma27" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FxTrk" MinValue="-1.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="FxTrk" MinValue="-1.0" MaxValue="1.0" Value="-0.1078125"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma26" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="CutOffset" MinValue="0.0" MaxValue="1.0" Value="6.15298095703125">
+      <Parameter ID="CutOffset" MinValue="0.0" MaxValue="1.0" Value="0.7266474184782609"
+                 DefaultValue="6.15298095703125">
         <Connections>
           <Connection NodeId="pma20" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="CutEnvMod" MinValue="-1.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="CutEnvMod" MinValue="-1.0" MaxValue="1.0" Value="-1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma20" ParameterId="Multiply"/>
         </Connections>
@@ -2992,22 +3618,25 @@
           <Connection NodeId="pma21" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="CutLfoSrc" MinValue="0.0" MaxValue="3.0" StepSize="1.0" Value="1.0">
+      <Parameter ID="CutLfoSrc" MinValue="0.0" MaxValue="3.0" StepSize="1.0" Value="2.0"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch5" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="CutVel" MinValue="-1.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="CutVel" MinValue="-1.0" MaxValue="1.0" Value="-0.2562839673913043"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma23" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="CutTrk" MinValue="-1.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="CutTrk" MinValue="-1.0" MaxValue="1.0" Value="0.5841796875"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma22" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Q" MinValue="9.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="Q" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="pma16" ParameterId="Add"/>
         </Connections>
@@ -3017,7 +3646,8 @@
           <Connection NodeId="pma16" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="qEnvSrc" MinValue="0.0" MaxValue="16.0" StepSize="1.0" Value="1.0">
+      <Parameter ID="qEnvSrc" MinValue="0.0" MaxValue="16.0" StepSize="1.0" Value="0.0"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="event_data_reader4" ParameterId="SlotIndex"/>
         </Connections>
@@ -3027,12 +3657,13 @@
           <Connection NodeId="pma17" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="qLfoSrc" MinValue="0.0" MaxValue="3.0" StepSize="1.0" Value="1.0">
+      <Parameter ID="qLfoSrc" MinValue="0.0" MaxValue="3.0" StepSize="1.0" Value="0.0"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch4" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Mix" MinValue="0.0" MaxValue="1.0" Value="9.0">
+      <Parameter ID="Mix" MinValue="0.0" MaxValue="1.0" Value="1.0" DefaultValue="9.0">
         <Connections>
           <Connection NodeId="pma12" ParameterId="Add"/>
         </Connections>
@@ -3052,7 +3683,8 @@
           <Connection NodeId="pma13" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="MixLfoSrc" MinValue="0.0" MaxValue="3.0" StepSize="1.0" Value="1.0">
+      <Parameter ID="MixLfoSrc" MinValue="0.0" MaxValue="3.0" StepSize="1.0" Value="0.0"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch3" ParameterId="Index"/>
         </Connections>

@@ -15,17 +15,6 @@ namespace modtest1_impl
 {
 // ==============================| Node & Parameter type declarations |==============================
 
-template <int NV>
-using ramp1_t = wrap::no_data<core::ramp<NV, false>>;
-
-template <int NV>
-using tempo_sync_mod = parameter::chain<ranges::Identity, 
-                                        parameter::plain<fx::sampleandhold<NV>, 0>, 
-                                        parameter::plain<ramp1_t<NV>, 0>>;
-
-template <int NV>
-using tempo_sync_t = wrap::mod<tempo_sync_mod<NV>, 
-                               control::tempo_sync<NV>>;
 using pack_resizer_t = wrap::data<control::pack_resizer, 
                                   data::external::sliderpack<0>>;
 
@@ -43,18 +32,39 @@ template <int NV> using sliderbank_c1 = sliderbank_c0<NV>;
 
 template <int NV> using sliderbank_c2 = sliderbank_c0<NV>;
 
-template <int NV> using sliderbank_c4 = sliderbank_c0<NV>;
+template <int NV> using sliderbank_c3 = sliderbank_c0<NV>;
 
 template <int NV>
 using sliderbank_multimod = parameter::list<sliderbank_c0<NV>, 
                                             sliderbank_c1<NV>, 
                                             sliderbank_c2<NV>, 
-                                            parameter::empty, 
-                                            sliderbank_c4<NV>>;
+                                            sliderbank_c3<NV>>;
 
 template <int NV>
 using sliderbank_t = wrap::data<control::sliderbank<sliderbank_multimod<NV>>, 
                                 data::external::sliderpack<0>>;
+
+template <int NV>
+using ramp1_t = wrap::mod<parameter::plain<math::add<NV>, 0>, 
+                          wrap::no_data<core::ramp<NV, false>>>;
+
+template <int NV>
+using tempo_sync_mod = parameter::chain<ranges::Identity, 
+                                        parameter::plain<fx::sampleandhold<NV>, 0>, 
+                                        parameter::plain<ramp1_t<NV>, 0>>;
+
+template <int NV>
+using tempo_sync_t = wrap::mod<tempo_sync_mod<NV>, 
+                               control::tempo_sync<NV>>;
+
+template <int NV>
+using modchain_t_ = container::chain<parameter::empty, 
+                                     wrap::fix<1, pack_resizer_t>, 
+                                     sliderbank_t<NV>, 
+                                     tempo_sync_t<NV>>;
+
+template <int NV>
+using modchain_t = wrap::control_rate<modchain_t_<NV>>;
 
 template <int NV>
 using chain23_t = container::chain<parameter::empty, 
@@ -69,7 +79,9 @@ using chain8_t = container::chain<parameter::empty,
 
 template <int NV>
 using chain5_t = container::chain<parameter::empty, 
-                                  wrap::fix<1, core::gain<NV>>>;
+                                  wrap::fix<1, math::clear<NV>>, 
+                                  math::add<NV>, 
+                                  core::gain<NV>>;
 template <int NV>
 using oscillator_t = wrap::no_data<core::oscillator<NV>>;
 
@@ -193,7 +205,7 @@ using branch1_t = container::branch<parameter::empty,
 using peak2_t = wrap::data<core::peak, 
                            data::external::displaybuffer<0>>;
 
-using global_cable_t_index = runtime_target::indexers::fix_hash<2333884>;
+using global_cable_t_index = runtime_target::indexers::fix_hash<3357039>;
 using peak3_mod = parameter::plain<routing::global_cable<global_cable_t_index, parameter::empty>, 
                                    0>;
 using peak3_t = wrap::mod<peak3_mod, 
@@ -201,7 +213,7 @@ using peak3_t = wrap::mod<peak3_mod,
 
 using chain13_t = container::chain<parameter::empty, wrap::fix<1, peak3_t>>;
 
-using global_cable39_t_index = runtime_target::indexers::fix_hash<2333885>;
+using global_cable39_t_index = runtime_target::indexers::fix_hash<3357040>;
 using peak9_mod = parameter::plain<routing::global_cable<global_cable39_t_index, parameter::empty>, 
                                    0>;
 using peak9_t = wrap::mod<peak9_mod, 
@@ -209,7 +221,7 @@ using peak9_t = wrap::mod<peak9_mod,
 
 using chain16_t = container::chain<parameter::empty, wrap::fix<1, peak9_t>>;
 
-using global_cable38_t_index = runtime_target::indexers::fix_hash<2333886>;
+using global_cable38_t_index = runtime_target::indexers::fix_hash<3357041>;
 using peak8_mod = parameter::plain<routing::global_cable<global_cable38_t_index, parameter::empty>, 
                                    0>;
 using peak8_t = wrap::mod<peak8_mod, 
@@ -217,7 +229,7 @@ using peak8_t = wrap::mod<peak8_mod,
 
 using chain24_t = container::chain<parameter::empty, wrap::fix<1, peak8_t>>;
 
-using global_cable37_t_index = runtime_target::indexers::fix_hash<2333887>;
+using global_cable37_t_index = runtime_target::indexers::fix_hash<3357042>;
 using peak7_mod = parameter::plain<routing::global_cable<global_cable37_t_index, parameter::empty>, 
                                    0>;
 using peak7_t = wrap::mod<peak7_mod, 
@@ -279,10 +291,8 @@ using modtest1_t_plist = parameter::list<Tempo<NV>,
 template <int NV>
 using modtest1_t_ = container::chain<modtest1_t_parameters::modtest1_t_plist<NV>, 
                                      wrap::fix<1, math::clear<NV>>, 
-                                     tempo_sync_t<NV>, 
+                                     modchain_t<NV>, 
                                      ramp1_t<NV>, 
-                                     pack_resizer_t, 
-                                     sliderbank_t<NV>, 
                                      split1_t<NV>, 
                                      peak_t, 
                                      pma_t<NV>, 
@@ -310,7 +320,7 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		SNEX_METADATA_ENCODED_PARAMETERS(114)
 		{
 			0x005B, 0x0000, 0x5400, 0x6D65, 0x6F70, 0x0000, 0x0000, 0x0000, 
-            0x9000, 0x3741, 0xA7A9, 0x003C, 0x8000, 0x003F, 0x8000, 0x5B3F, 
+            0x9000, 0x0041, 0x0000, 0x0000, 0x8000, 0x003F, 0x8000, 0x5B3F, 
             0x0001, 0x0000, 0x6944, 0x0076, 0x0000, 0x3F80, 0x0000, 0x4200, 
             0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x025B, 0x0000, 
             0x4D00, 0x646F, 0x6669, 0x6569, 0x7372, 0x0000, 0x0000, 0x0000, 
@@ -332,54 +342,57 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		// Node References -------------------------------------------------------------------------
 		
 		auto& clear2 = this->getT(0);                         // math::clear<NV>
-		auto& tempo_sync = this->getT(1);                     // modtest1_impl::tempo_sync_t<NV>
+		auto& modchain = this->getT(1);                       // modtest1_impl::modchain_t<NV>
+		auto& pack_resizer = this->getT(1).getT(0);           // modtest1_impl::pack_resizer_t
+		auto& sliderbank = this->getT(1).getT(1);             // modtest1_impl::sliderbank_t<NV>
+		auto& tempo_sync = this->getT(1).getT(2);             // modtest1_impl::tempo_sync_t<NV>
 		auto& ramp1 = this->getT(2);                          // modtest1_impl::ramp1_t<NV>
-		auto& pack_resizer = this->getT(3);                   // modtest1_impl::pack_resizer_t
-		auto& sliderbank = this->getT(4);                     // modtest1_impl::sliderbank_t<NV>
-		auto& split1 = this->getT(5);                         // modtest1_impl::split1_t<NV>
-		auto& chain23 = this->getT(5).getT(0);                // modtest1_impl::chain23_t<NV>
-		auto& pi5 = this->getT(5).getT(0).getT(0);            // math::pi<NV>
-		auto& sin5 = this->getT(5).getT(0).getT(1);           // math::sin<NV>
-		auto& gain1 = this->getT(5).getT(0).getT(2);          // core::gain<NV>
-		auto& chain8 = this->getT(5).getT(1);                 // modtest1_impl::chain8_t<NV>
-		auto& rect1 = this->getT(5).getT(1).getT(0);          // math::rect<NV>
-		auto& gain = this->getT(5).getT(1).getT(1);           // core::gain<NV>
-		auto& chain5 = this->getT(5).getT(2);                 // modtest1_impl::chain5_t<NV>
-		auto& gain2 = this->getT(5).getT(2).getT(0);          // core::gain<NV>
-		auto& chain32 = this->getT(5).getT(3);                // modtest1_impl::chain32_t<NV>
-		auto& oscillator = this->getT(5).getT(3).getT(0);     // modtest1_impl::oscillator_t<NV>
-		auto& pi = this->getT(5).getT(3).getT(1);             // wrap::no_process<math::pi<NV>>
-		auto& sampleandhold1 = this->getT(5).getT(3).getT(2); // fx::sampleandhold<NV>
-		auto& sig2mod7 = this->getT(5).getT(3).getT(3);       // math::sig2mod<NV>
-		auto& gain4 = this->getT(5).getT(3).getT(4);          // core::gain<NV>
-		auto& peak = this->getT(6);                           // modtest1_impl::peak_t
-		auto& pma = this->getT(7);                            // modtest1_impl::pma_t<NV>
-		auto& branch1 = this->getT(8);                        // modtest1_impl::branch1_t<NV>
-		auto& chain1 = this->getT(8).getT(0);                 // modtest1_impl::chain1_t
-		auto& chain29 = this->getT(8).getT(1);                // modtest1_impl::chain29_t<NV>
-		auto& expr3 = this->getT(8).getT(1).getT(0);          // math::expr<NV, custom::expr3>
-		auto& chain35 = this->getT(8).getT(2);                // modtest1_impl::chain35_t<NV>
-		auto& expr5 = this->getT(8).getT(2).getT(0);          // math::expr<NV, custom::expr5>
-		auto& chain44 = this->getT(8).getT(3);                // modtest1_impl::chain44_t<NV>
-		auto& expr8 = this->getT(8).getT(3).getT(0);          // math::expr<NV, custom::expr8>
-		auto& chain45 = this->getT(8).getT(4);                // modtest1_impl::chain45_t<NV>
-		auto& expr9 = this->getT(8).getT(4).getT(0);          // math::expr<NV, custom::expr9>
-		auto& peak2 = this->getT(9);                          // modtest1_impl::peak2_t
-		auto& clear3 = this->getT(10);                        // wrap::no_process<math::clear<NV>>
-		auto& branch2 = this->getT(11);                       // modtest1_impl::branch2_t
-		auto& chain13 = this->getT(11).getT(0);               // modtest1_impl::chain13_t
-		auto& peak3 = this->getT(11).getT(0).getT(0);         // modtest1_impl::peak3_t
-		auto& chain16 = this->getT(11).getT(1);               // modtest1_impl::chain16_t
-		auto& peak9 = this->getT(11).getT(1).getT(0);         // modtest1_impl::peak9_t
-		auto& chain24 = this->getT(11).getT(2);               // modtest1_impl::chain24_t
-		auto& peak8 = this->getT(11).getT(2).getT(0);         // modtest1_impl::peak8_t
-		auto& chain50 = this->getT(11).getT(3);               // modtest1_impl::chain50_t
-		auto& peak7 = this->getT(11).getT(3).getT(0);         // modtest1_impl::peak7_t
-		auto& split = this->getT(12);                         // modtest1_impl::split_t
-		auto& global_cable = this->getT(12).getT(0);          // routing::global_cable<global_cable_t_index, parameter::empty>
-		auto& global_cable39 = this->getT(12).getT(1);        // routing::global_cable<global_cable39_t_index, parameter::empty>
-		auto& global_cable38 = this->getT(12).getT(2);        // routing::global_cable<global_cable38_t_index, parameter::empty>
-		auto& global_cable37 = this->getT(12).getT(3);        // routing::global_cable<global_cable37_t_index, parameter::empty>
+		auto& split1 = this->getT(3);                         // modtest1_impl::split1_t<NV>
+		auto& chain23 = this->getT(3).getT(0);                // modtest1_impl::chain23_t<NV>
+		auto& pi5 = this->getT(3).getT(0).getT(0);            // math::pi<NV>
+		auto& sin5 = this->getT(3).getT(0).getT(1);           // math::sin<NV>
+		auto& gain1 = this->getT(3).getT(0).getT(2);          // core::gain<NV>
+		auto& chain8 = this->getT(3).getT(1);                 // modtest1_impl::chain8_t<NV>
+		auto& rect1 = this->getT(3).getT(1).getT(0);          // math::rect<NV>
+		auto& gain = this->getT(3).getT(1).getT(1);           // core::gain<NV>
+		auto& chain5 = this->getT(3).getT(2);                 // modtest1_impl::chain5_t<NV>
+		auto& clear = this->getT(3).getT(2).getT(0);          // math::clear<NV>
+		auto& add = this->getT(3).getT(2).getT(1);            // math::add<NV>
+		auto& gain2 = this->getT(3).getT(2).getT(2);          // core::gain<NV>
+		auto& chain32 = this->getT(3).getT(3);                // modtest1_impl::chain32_t<NV>
+		auto& oscillator = this->getT(3).getT(3).getT(0);     // modtest1_impl::oscillator_t<NV>
+		auto& pi = this->getT(3).getT(3).getT(1);             // wrap::no_process<math::pi<NV>>
+		auto& sampleandhold1 = this->getT(3).getT(3).getT(2); // fx::sampleandhold<NV>
+		auto& sig2mod7 = this->getT(3).getT(3).getT(3);       // math::sig2mod<NV>
+		auto& gain4 = this->getT(3).getT(3).getT(4);          // core::gain<NV>
+		auto& peak = this->getT(4);                           // modtest1_impl::peak_t
+		auto& pma = this->getT(5);                            // modtest1_impl::pma_t<NV>
+		auto& branch1 = this->getT(6);                        // modtest1_impl::branch1_t<NV>
+		auto& chain1 = this->getT(6).getT(0);                 // modtest1_impl::chain1_t
+		auto& chain29 = this->getT(6).getT(1);                // modtest1_impl::chain29_t<NV>
+		auto& expr3 = this->getT(6).getT(1).getT(0);          // math::expr<NV, custom::expr3>
+		auto& chain35 = this->getT(6).getT(2);                // modtest1_impl::chain35_t<NV>
+		auto& expr5 = this->getT(6).getT(2).getT(0);          // math::expr<NV, custom::expr5>
+		auto& chain44 = this->getT(6).getT(3);                // modtest1_impl::chain44_t<NV>
+		auto& expr8 = this->getT(6).getT(3).getT(0);          // math::expr<NV, custom::expr8>
+		auto& chain45 = this->getT(6).getT(4);                // modtest1_impl::chain45_t<NV>
+		auto& expr9 = this->getT(6).getT(4).getT(0);          // math::expr<NV, custom::expr9>
+		auto& peak2 = this->getT(7);                          // modtest1_impl::peak2_t
+		auto& clear3 = this->getT(8);                         // wrap::no_process<math::clear<NV>>
+		auto& branch2 = this->getT(9);                        // modtest1_impl::branch2_t
+		auto& chain13 = this->getT(9).getT(0);                // modtest1_impl::chain13_t
+		auto& peak3 = this->getT(9).getT(0).getT(0);          // modtest1_impl::peak3_t
+		auto& chain16 = this->getT(9).getT(1);                // modtest1_impl::chain16_t
+		auto& peak9 = this->getT(9).getT(1).getT(0);          // modtest1_impl::peak9_t
+		auto& chain24 = this->getT(9).getT(2);                // modtest1_impl::chain24_t
+		auto& peak8 = this->getT(9).getT(2).getT(0);          // modtest1_impl::peak8_t
+		auto& chain50 = this->getT(9).getT(3);                // modtest1_impl::chain50_t
+		auto& peak7 = this->getT(9).getT(3).getT(0);          // modtest1_impl::peak7_t
+		auto& split = this->getT(10);                         // modtest1_impl::split_t
+		auto& global_cable = this->getT(10).getT(0);          // routing::global_cable<global_cable_t_index, parameter::empty>
+		auto& global_cable39 = this->getT(10).getT(1);        // routing::global_cable<global_cable39_t_index, parameter::empty>
+		auto& global_cable38 = this->getT(10).getT(2);        // routing::global_cable<global_cable38_t_index, parameter::empty>
+		auto& global_cable37 = this->getT(10).getT(3);        // routing::global_cable<global_cable37_t_index, parameter::empty>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -399,13 +412,14 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		
 		// Modulation Connections ------------------------------------------------------------------
 		
-		tempo_sync.getParameter().connectT(0, sampleandhold1); // tempo_sync -> sampleandhold1::Counter
-		tempo_sync.getParameter().connectT(1, ramp1);          // tempo_sync -> ramp1::PeriodTime
 		auto& sliderbank_p = sliderbank.getWrappedObject().getParameter();
 		sliderbank_p.getParameterT(0).connectT(0, gain1);         // sliderbank -> gain1::Gain
 		sliderbank_p.getParameterT(1).connectT(0, gain);          // sliderbank -> gain::Gain
 		sliderbank_p.getParameterT(2).connectT(0, gain2);         // sliderbank -> gain2::Gain
-		sliderbank_p.getParameterT(4).connectT(0, gain4);         // sliderbank -> gain4::Gain
+		sliderbank_p.getParameterT(3).connectT(0, gain4);         // sliderbank -> gain4::Gain
+		ramp1.getParameter().connectT(0, add);                    // ramp1 -> add::Value
+		tempo_sync.getParameter().connectT(0, sampleandhold1);    // tempo_sync -> sampleandhold1::Counter
+		tempo_sync.getParameter().connectT(1, ramp1);             // tempo_sync -> ramp1::PeriodTime
 		pma.getWrappedObject().getParameter().connectT(0, expr3); // pma -> expr3::Value
 		pma.getWrappedObject().getParameter().connectT(1, expr5); // pma -> expr5::Value
 		pma.getWrappedObject().getParameter().connectT(2, expr8); // pma -> expr8::Value
@@ -419,6 +433,10 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		
 		clear2.setParameterT(0, 0.); // math::clear::Value
 		
+		pack_resizer.setParameterT(0, 4.); // control::pack_resizer::NumSliders
+		
+		sliderbank.setParameterT(0, 1.); // control::sliderbank::Value
+		
 		; // tempo_sync::Tempo is automated
 		; // tempo_sync::Multiplier is automated
 		; // tempo_sync::Enabled is automated
@@ -427,10 +445,6 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		;                           // ramp1::PeriodTime is automated
 		ramp1.setParameterT(1, 0.); // core::ramp::LoopStart
 		ramp1.setParameterT(2, 1.); // core::ramp::Gate
-		
-		pack_resizer.setParameterT(0, 4.); // control::pack_resizer::NumSliders
-		
-		sliderbank.setParameterT(0, 1.); // control::sliderbank::Value
 		
 		pi5.setParameterT(0, 1.); // math::pi::Value
 		
@@ -445,6 +459,10 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		;                           // gain::Gain is automated
 		gain.setParameterT(1, 20.); // core::gain::Smoothing
 		gain.setParameterT(2, 0.);  // core::gain::ResetValue
+		
+		clear.setParameterT(0, 0.); // math::clear::Value
+		
+		; // add::Value is automated
 		
 		;                            // gain2::Gain is automated
 		gain2.setParameterT(1, 20.); // core::gain::Smoothing
@@ -493,12 +511,12 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		
 		; // global_cable37::Value is automated
 		
-		this->setParameterT(0, 0.0204664);
+		this->setParameterT(0, 0.);
 		this->setParameterT(1, 1.);
 		this->setParameterT(2, 1.);
 		this->setParameterT(3, 0.);
 		this->setParameterT(4, 1.);
-		this->setParameterT(5, 1.);
+		this->setParameterT(5, 1);
 		this->setParameterT(6, 0.265386);
 		this->setExternalData({}, -1);
 	}
@@ -521,26 +539,26 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 	{
 		// Runtime target Connections --------------------------------------------------------------
 		
-		this->getT(12).getT(0).connectToRuntimeTarget(addConnection, c); // routing::global_cable<global_cable_t_index, parameter::empty>
-		this->getT(12).getT(1).connectToRuntimeTarget(addConnection, c); // routing::global_cable<global_cable39_t_index, parameter::empty>
-		this->getT(12).getT(2).connectToRuntimeTarget(addConnection, c); // routing::global_cable<global_cable38_t_index, parameter::empty>
-		this->getT(12).getT(3).connectToRuntimeTarget(addConnection, c); // routing::global_cable<global_cable37_t_index, parameter::empty>
+		this->getT(10).getT(0).connectToRuntimeTarget(addConnection, c); // routing::global_cable<global_cable_t_index, parameter::empty>
+		this->getT(10).getT(1).connectToRuntimeTarget(addConnection, c); // routing::global_cable<global_cable39_t_index, parameter::empty>
+		this->getT(10).getT(2).connectToRuntimeTarget(addConnection, c); // routing::global_cable<global_cable38_t_index, parameter::empty>
+		this->getT(10).getT(3).connectToRuntimeTarget(addConnection, c); // routing::global_cable<global_cable37_t_index, parameter::empty>
 	}
 	
 	void setExternalData(const ExternalData& b, int index)
 	{
 		// External Data Connections ---------------------------------------------------------------
 		
-		this->getT(2).setExternalData(b, index);                  // modtest1_impl::ramp1_t<NV>
-		this->getT(3).setExternalData(b, index);                  // modtest1_impl::pack_resizer_t
-		this->getT(4).setExternalData(b, index);                  // modtest1_impl::sliderbank_t<NV>
-		this->getT(5).getT(3).getT(0).setExternalData(b, index);  // modtest1_impl::oscillator_t<NV>
-		this->getT(6).setExternalData(b, index);                  // modtest1_impl::peak_t
-		this->getT(9).setExternalData(b, index);                  // modtest1_impl::peak2_t
-		this->getT(11).getT(0).getT(0).setExternalData(b, index); // modtest1_impl::peak3_t
-		this->getT(11).getT(1).getT(0).setExternalData(b, index); // modtest1_impl::peak9_t
-		this->getT(11).getT(2).getT(0).setExternalData(b, index); // modtest1_impl::peak8_t
-		this->getT(11).getT(3).getT(0).setExternalData(b, index); // modtest1_impl::peak7_t
+		this->getT(1).getT(0).setExternalData(b, index);         // modtest1_impl::pack_resizer_t
+		this->getT(1).getT(1).setExternalData(b, index);         // modtest1_impl::sliderbank_t<NV>
+		this->getT(2).setExternalData(b, index);                 // modtest1_impl::ramp1_t<NV>
+		this->getT(3).getT(3).getT(0).setExternalData(b, index); // modtest1_impl::oscillator_t<NV>
+		this->getT(4).setExternalData(b, index);                 // modtest1_impl::peak_t
+		this->getT(7).setExternalData(b, index);                 // modtest1_impl::peak2_t
+		this->getT(9).getT(0).getT(0).setExternalData(b, index); // modtest1_impl::peak3_t
+		this->getT(9).getT(1).getT(0).setExternalData(b, index); // modtest1_impl::peak9_t
+		this->getT(9).getT(2).getT(0).setExternalData(b, index); // modtest1_impl::peak8_t
+		this->getT(9).getT(3).getT(0).setExternalData(b, index); // modtest1_impl::peak7_t
 	}
 };
 }

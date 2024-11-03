@@ -9,20 +9,73 @@
           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
         </Parameters>
       </Node>
-      <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0"
-            Name="tempo_sync">
-        <Parameters>
-          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
-          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Multiplier"
-                     Automated="1"/>
-          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Automated="1"/>
-          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                     ID="UnsyncedTime" Automated="1"/>
-        </Parameters>
-        <ModulationTargets>
-          <Connection NodeId="sampleandhold1" ParameterId="Counter"/>
-          <Connection NodeId="ramp1" ParameterId="PeriodTime"/>
-        </ModulationTargets>
+      <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Name="modchain">
+        <Nodes>
+          <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
+                Name="pack_resizer">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0" EmbeddedData="4....f+."/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="128.0" StepSize="1.0" ID="NumSliders"
+                         Value="4.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="sliderbank" FactoryPath="control.sliderbank" Bypassed="0"
+                Name="sliderbank">
+            <Properties>
+              <Property ID="NumParameters" Value="4"/>
+            </Properties>
+            <SwitchTargets>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="gain1" ParameterId="Gain"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="gain" ParameterId="Gain"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="gain2" ParameterId="Gain"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="gain4" ParameterId="Gain"/>
+                </Connections>
+              </SwitchTarget>
+            </SwitchTargets>
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0" EmbeddedData="20....f+....9C...3O...f+....9C"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0"
+                Name="tempo_sync">
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Multiplier"
+                         Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                         ID="UnsyncedTime" Automated="1"/>
+            </Parameters>
+            <ModulationTargets>
+              <Connection NodeId="sampleandhold1" ParameterId="Counter"/>
+              <Connection NodeId="ramp1" ParameterId="PeriodTime"/>
+            </ModulationTargets>
+          </Node>
+        </Nodes>
+        <Parameters/>
       </Node>
       <Node ID="ramp1" FactoryPath="core.ramp" Bypassed="0" Name="ramp1">
         <ComplexData>
@@ -36,57 +89,9 @@
           <Parameter MinValue="0.0" MaxValue="1.0" ID="LoopStart" Value="0.0"/>
           <Parameter MinValue="0.0" MaxValue="1.0" ID="Gate" Value="1.0"/>
         </Parameters>
-      </Node>
-      <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
-            Name="pack_resizer">
-        <ComplexData>
-          <SliderPacks>
-            <SliderPack Index="0" EmbeddedData="4....f+."/>
-          </SliderPacks>
-        </ComplexData>
-        <Parameters>
-          <Parameter MinValue="0.0" MaxValue="128.0" StepSize="1.0" ID="NumSliders"
-                     Value="4.0"/>
-        </Parameters>
-      </Node>
-      <Node ID="sliderbank" FactoryPath="control.sliderbank" Bypassed="0"
-            Name="sliderbank">
-        <Properties>
-          <Property ID="NumParameters" Value="5"/>
-        </Properties>
-        <SwitchTargets>
-          <SwitchTarget>
-            <Connections>
-              <Connection NodeId="gain1" ParameterId="Gain"/>
-            </Connections>
-          </SwitchTarget>
-          <SwitchTarget>
-            <Connections>
-              <Connection NodeId="gain" ParameterId="Gain"/>
-            </Connections>
-          </SwitchTarget>
-          <SwitchTarget>
-            <Connections>
-              <Connection NodeId="gain2" ParameterId="Gain"/>
-            </Connections>
-          </SwitchTarget>
-          <SwitchTarget>
-            <Connections/>
-          </SwitchTarget>
-          <SwitchTarget>
-            <Connections>
-              <Connection NodeId="gain4" ParameterId="Gain"/>
-            </Connections>
-          </SwitchTarget>
-        </SwitchTargets>
-        <ComplexData>
-          <SliderPacks>
-            <SliderPack Index="0" EmbeddedData="20....f+....9C...3O...f+....9C"/>
-          </SliderPacks>
-        </ComplexData>
-        <Parameters>
-          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
-        </Parameters>
+        <ModulationTargets>
+          <Connection NodeId="add" ParameterId="Value"/>
+        </ModulationTargets>
       </Node>
       <Node ID="split1" FactoryPath="container.split" Bypassed="0" Name="split1">
         <Nodes>
@@ -137,6 +142,16 @@
           </Node>
           <Node ID="chain5" FactoryPath="container.chain" Bypassed="0" Name="chain">
             <Nodes>
+              <Node ID="clear" FactoryPath="math.clear" Bypassed="0" Name="clear">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="add" FactoryPath="math.add" Bypassed="0" Name="add">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
               <Node ID="gain2" FactoryPath="core.gain" Bypassed="0" Name="gain2">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -217,7 +232,7 @@
           <Connection NodeId="expr9" ParameterId="Value"/>
         </ModulationTargets>
         <Parameters>
-          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="" Value="0.0"/>
           <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply"/>
           <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
         </Parameters>
@@ -378,36 +393,36 @@
       <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
         <Nodes>
           <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
-                Name="global_cable" NodeColour="4282883250">
+                Name="global_cable" NodeColour="4282864306">
             <Properties>
-              <Property ID="Connection" Value="LFO1"/>
+              <Property ID="Connection" Value="mod1"/>
             </Properties>
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
             </Parameters>
           </Node>
           <Node ID="global_cable39" FactoryPath="routing.global_cable" Bypassed="0"
-                Name="global_cable" NodeColour="4282948786">
+                Name="global_cable" NodeColour="4282929586">
             <Properties>
-              <Property ID="Connection" Value="LFO2"/>
+              <Property ID="Connection" Value="mod2"/>
             </Properties>
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
             </Parameters>
           </Node>
           <Node ID="global_cable38" FactoryPath="routing.global_cable" Bypassed="0"
-                Name="global_cable" NodeColour="4282882994">
+                Name="global_cable" NodeColour="4282864306">
             <Properties>
-              <Property ID="Connection" Value="LFO3"/>
+              <Property ID="Connection" Value="mod3"/>
             </Properties>
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
             </Parameters>
           </Node>
           <Node ID="global_cable37" FactoryPath="routing.global_cable" Bypassed="0"
-                Name="global_cable" NodeColour="4282882738">
+                Name="global_cable" NodeColour="4282929586">
             <Properties>
-              <Property ID="Connection" Value="LFO4"/>
+              <Property ID="Connection" Value="mod4"/>
             </Properties>
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -418,8 +433,8 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="Tempo" MinValue="0.0" MaxValue="18.0" Value="0.0204664306640625"
-                 StepSize="1.0">
+      <Parameter ID="Tempo" MinValue="0.0" MaxValue="18.0" Value="0.0" StepSize="1.0"
+                 DefaultValue="0.0204664306640625">
         <Connections>
           <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
         </Connections>
@@ -445,7 +460,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="Unsync" MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                 Value="1.0">
+                 Value="1.000000014901161" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="tempo_sync" ParameterId="UnsyncedTime"/>
         </Connections>

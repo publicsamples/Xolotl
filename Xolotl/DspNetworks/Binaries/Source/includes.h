@@ -7,6 +7,14 @@
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+// Include third party header files ----------------
+
+#include "BPF.h"
+#include "Comb.h"
+#include "HPF.h"
+#include "LPF.h"
+#include "OBLP.h"
+
 // Include compiled network files ------------------
 
 #include "modtest1.h"

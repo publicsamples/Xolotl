@@ -6,25 +6,17 @@ const var PRESETBUTTON = Content.getComponent("PRESETBUTTON");
 
 inline function onPRESETBUTTONControl(component, value)
 {
-//	PRESETS.showControl(value); 
-      PRESETS.showControl(1-value);
+
+      PRESETS.showControl(value);
 };
 
 Content.getComponent("PRESETBUTTON").setControlCallback(onPRESETBUTTONControl);
 
-const var mod1 = Content.getComponent("mod1");
+
 
 const var modB1 = Content.getComponent("modB1");
 
-const var modtype1 = Content.getComponent("modtype1");
-
-
-const var mod2 = Content.getComponent("mod2");
-
 const var modB2 = Content.getComponent("modB2");
-
-const var modtype2 = Content.getComponent("modtype2");
-
 
 
 //Draw Combobox
@@ -46,47 +38,6 @@ laf.registerFunction("drawComboBox", function(g, obj)
 
 });
 
-
-
-const var EveryLink = Content.getComponent("EveryLink");
-
-EveryLink.setMouseCallback(function(event)
-{
-  if (event.clicked)
-  {
-    Engine.openWebsite("https://modularsamples.gumroad.com/l/hnwjrr");
-  } 
- 
-});
-
-const var QExpandedLink = Content.getComponent("QExpandedLink");
-
-QExpandedLink.setMouseCallback(function(event)
-{
-  if (event.clicked)
-  {
-    Engine.openWebsite("https://www.modularsamples.com/l/hnwjrr");
-  } 
-
-});
-
-QExpandedLink.setMouseCallback(function(event)
-{
-  if (event.clicked)
-  {
-    Engine.openWebsite("https://www.modularsamples.com/l/lybce");
-  } 
-
-});
-const var ExpandedLink = Content.getComponent("ExpandedLink");
-
-ExpandedLink.setMouseCallback(function(event)
-{
-  if (event.clicked)
-  {
-    Engine.openWebsite("https://www.modularsamples.com/l/rhnqwh");
-}
-});
 
 
 const var dp1 = Synth.getDisplayBufferSource("LFO1");
@@ -111,9 +62,9 @@ const var Waveform1 = Content.getComponent("Waveform1");
 Waveform1.setTimerCallback(function()
 {
 
-	this.data.buffer = rb1.createPath(this.getLocalBounds(0), // area
-									 [0, BUFFER_LENGTH, 0, 1.0], // [x_start, x_end, y_min, y_max]
-									 0.0 // start value (the initial value at position 0)
+	this.data.buffer = rb1.createPath(this.getLocalBounds(0), 
+									 [0, BUFFER_LENGTH, 0, 1.0], 
+									 0.0 
 									 );
 	this.repaint();
 });
@@ -128,8 +79,91 @@ Waveform1.setPaintRoutine(function(g)
 });
 
 
+const var dp2 = Synth.getDisplayBufferSource("LFO2");
+
+const var rb2 = dp2.getDisplayBuffer(0);
+
+const var BUFFER_LENGTH2 = 16384;
+
+const var properties2 = {
+  "BufferLength": BUFFER_LENGTH2,
+  "NumChannels": 2
+};
 
 
+rb2.setRingBufferProperties(properties);
 
+
+const var Waveform2 = Content.getComponent("Waveform2");
+
+
+Waveform2.setTimerCallback(function()
+{
+
+	this.data.buffer = rb2.createPath(this.getLocalBounds(0),
+									 [0, BUFFER_LENGTH, 0, 1.0],
+									 0.0
+									 );
+	this.repaint();
+});
+
+Waveform2.startTimer(30);
+
+Waveform2.setPaintRoutine(function(g)
+{
+	g.fillAll(0x00FFFFFF);
+	g.setColour(0xCC843E38);
+	g.fillPath(this.data.buffer, this.getLocalBounds(0));
+});
+
+
+const var dp3 = Synth.getDisplayBufferSource("LFO3");
+
+const var rb3 = dp3.getDisplayBuffer(0);
+
+const var BUFFER_LENGTH3 = 16384;
+
+const var properties3 = {
+  "BufferLength": BUFFER_LENGTH3,
+  "NumChannels": 2
+};
+
+
+rb3.setRingBufferProperties(properties);
+
+
+const var Waveform3 = Content.getComponent("Waveform3");
+
+
+Waveform3.setTimerCallback(function()
+{
+
+	this.data.buffer = rb3.createPath(this.getLocalBounds(0),
+									 [0, BUFFER_LENGTH, 0, 1.0],
+									 0.0
+									 );
+	this.repaint();
+});
+
+Waveform3.startTimer(30);
+
+Waveform3.setPaintRoutine(function(g)
+{
+	g.fillAll(0x00FFFFFF);
+	g.setColour(0xCC843E38);
+	g.fillPath(this.data.buffer, this.getLocalBounds(0));
+});
+
+
+const var AdditionalSounds = Content.getComponent("AdditionalSounds");
+
+AdditionalSounds.setMouseCallback(function(event)
+{
+  if (event.clicked)
+  {
+    Engine.openWebsite("https://payhip.com/b/5Lhwe");
+  } 
+
+});
 
 
