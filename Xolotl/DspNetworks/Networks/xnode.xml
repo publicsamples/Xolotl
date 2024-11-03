@@ -155,6 +155,7 @@
                               <Connection NodeId="input_toggle8" ParameterId="Input"/>
                               <Connection NodeId="input_toggle4" ParameterId="Input"/>
                               <Connection NodeId="oscillator5" ParameterId="Gain"/>
+                              <Connection NodeId="input_toggle" ParameterId="Input"/>
                             </Connections>
                           </SwitchTarget>
                           <SwitchTarget>
@@ -196,7 +197,9 @@
                             </Properties>
                             <SwitchTargets>
                               <SwitchTarget>
-                                <Connections/>
+                                <Connections>
+                                  <Connection NodeId="input_toggle" ParameterId="Value2"/>
+                                </Connections>
                               </SwitchTarget>
                               <SwitchTarget>
                                 <Connections>
@@ -600,7 +603,6 @@
                                 Name="input_toggle1">
                             <ModulationTargets>
                               <Connection NodeId="file_player" ParameterId="Gate"/>
-                              <Connection NodeId="gain4" ParameterId="Gain"/>
                             </ModulationTargets>
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
@@ -906,7 +908,8 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
+                      <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split"
+                            Folded="1">
                         <Nodes>
                           <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain2">
                             <Nodes>
@@ -1063,7 +1066,8 @@
                     </Nodes>
                     <Parameters/>
                   </Node>
-                  <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" Name="chain1">
+                  <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" Name="chain1"
+                        Folded="1">
                     <Nodes>
                       <Node ID="xfader1" FactoryPath="control.xfader" Bypassed="0" Name="xfader">
                         <Properties>
@@ -1220,6 +1224,17 @@
                       </Node>
                     </Nodes>
                     <Parameters/>
+                  </Node>
+                  <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0"
+                        Name="input_toggle">
+                    <ModulationTargets>
+                      <Connection NodeId="gain4" ParameterId="Gain"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Value="1.0" DefaultValue="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+                    </Parameters>
                   </Node>
                   <Node ID="gain4" FactoryPath="core.gain" Bypassed="0" Name="gain4">
                     <Parameters>

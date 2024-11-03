@@ -475,12 +475,7 @@ template <int NV>
 using input_toggle1_t = control::input_toggle<parameter::plain<oscillator3_t<NV>, 4>>;
 
 template <int NV>
-using input_toggle6_mod = parameter::chain<ranges::Identity, 
-                                           parameter::plain<file_player_t<NV>, 1>, 
-                                           parameter::plain<core::gain<NV>, 0>>;
-
-template <int NV>
-using input_toggle6_t = control::input_toggle<input_toggle6_mod<NV>>;
+using input_toggle6_t = control::input_toggle<parameter::plain<file_player_t<NV>, 1>>;
 
 template <int NV>
 using input_toggle7_t = control::input_toggle<parameter::plain<oscillator6_t<NV>, 3>>;
@@ -491,6 +486,9 @@ using input_toggle8_t = control::input_toggle<parameter::plain<oscillator7_t<NV>
 template <int NV>
 using input_toggle4_t = control::input_toggle<parameter::plain<oscillator8_t<NV>, 3>>;
 template <int NV> using oscillator5_t = oscillator6_t<NV>;
+
+template <int NV>
+using input_toggle_t = control::input_toggle<parameter::plain<core::gain<NV>, 0>>;
 
 template <int NV>
 using sliderbank1_c0 = parameter::chain<ranges::Identity, 
@@ -504,7 +502,8 @@ using sliderbank1_c0 = parameter::chain<ranges::Identity,
                                         parameter::plain<input_toggle8_t<NV>, 1>, 
                                         parameter::plain<input_toggle8_t<NV>, 0>, 
                                         parameter::plain<input_toggle4_t<NV>, 0>, 
-                                        parameter::plain<oscillator5_t<NV>, 5>>;
+                                        parameter::plain<oscillator5_t<NV>, 5>, 
+                                        parameter::plain<input_toggle_t<NV>, 0>>;
 
 template <int NV>
 using ahdsr_c1 = parameter::chain<ranges::Identity, 
@@ -518,7 +517,8 @@ using ahdsr_c1 = parameter::chain<ranges::Identity,
                                   parameter::plain<input_toggle4_t<NV>, 2>>;
 
 template <int NV>
-using ahdsr_multimod = parameter::list<parameter::empty, ahdsr_c1<NV>>;
+using ahdsr_multimod = parameter::list<parameter::plain<input_toggle_t<NV>, 2>, 
+                                       ahdsr_c1<NV>>;
 
 template <int NV>
 using ahdsr_t = wrap::no_data<envelope::ahdsr<NV, ahdsr_multimod<NV>>>;
@@ -866,6 +866,7 @@ using chain_t = container::chain<parameter::empty,
                                  branch_t<NV>, 
                                  chain1_t<NV>, 
                                  chain4_t<NV>, 
+                                 input_toggle_t<NV>, 
                                  core::gain<NV>, 
                                  core::gain<NV>>;
 
@@ -1215,8 +1216,9 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& faust3 = this->getT(0).getT(0).getT(0).getT(5).                        // project::Comb<NV>
                        getT(1).getT(1).getT(1).getT(3);
 		auto& gain3 = this->getT(0).getT(0).getT(0).getT(5).getT(1).getT(1).getT(2); // core::gain<NV>
-		auto& gain4 = this->getT(0).getT(0).getT(0).getT(6);                         // core::gain<NV>
-		auto& gain5 = this->getT(0).getT(0).getT(0).getT(7);                         // core::gain<NV>
+		auto& input_toggle = this->getT(0).getT(0).getT(0).getT(6);                  // xnode_impl::input_toggle_t<NV>
+		auto& gain4 = this->getT(0).getT(0).getT(0).getT(7);                         // core::gain<NV>
+		auto& gain5 = this->getT(0).getT(0).getT(0).getT(8);                         // core::gain<NV>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -1313,11 +1315,12 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		input_toggle9.getWrappedObject().getParameter().connectT(0, oscillator1);  // input_toggle9 -> oscillator1::Gate
 		input_toggle1.getWrappedObject().getParameter().connectT(0, oscillator3);  // input_toggle1 -> oscillator3::Phase
 		input_toggle6.getWrappedObject().getParameter().connectT(0, file_player);  // input_toggle6 -> file_player::Gate
-		input_toggle6.getWrappedObject().getParameter().connectT(1, gain4);        // input_toggle6 -> gain4::Gain
 		input_toggle7.getWrappedObject().getParameter().connectT(0, oscillator6);  // input_toggle7 -> oscillator6::Gate
 		input_toggle8.getWrappedObject().getParameter().connectT(0, oscillator7);  // input_toggle8 -> oscillator7::Gate
 		input_toggle4.getWrappedObject().getParameter().connectT(0, oscillator8);  // input_toggle4 -> oscillator8::Gate
+		input_toggle.getWrappedObject().getParameter().connectT(0, gain4);         // input_toggle -> gain4::Gain
 		auto& ahdsr_p = ahdsr.getWrappedObject().getParameter();
+		ahdsr_p.getParameterT(0).connectT(0, input_toggle);  // ahdsr -> input_toggle::Value2
 		ahdsr_p.getParameterT(1).connectT(0, input_toggle2); // ahdsr -> input_toggle2::Value2
 		ahdsr_p.getParameterT(1).connectT(1, input_toggle3); // ahdsr -> input_toggle3::Value2
 		ahdsr_p.getParameterT(1).connectT(2, input_toggle9); // ahdsr -> input_toggle9::Value2
@@ -1338,6 +1341,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		sliderbank1_p.getParameterT(0).connectT(8, input_toggle8); // sliderbank1 -> input_toggle8::Input
 		sliderbank1_p.getParameterT(0).connectT(9, input_toggle4); // sliderbank1 -> input_toggle4::Input
 		sliderbank1_p.getParameterT(0).connectT(10, oscillator5);  // sliderbank1 -> oscillator5::Gain
+		sliderbank1_p.getParameterT(0).connectT(11, input_toggle); // sliderbank1 -> input_toggle::Input
 		sliderbank1_p.getParameterT(1).connectT(0, ahdsr);         // sliderbank1 -> ahdsr::Attack
 		sliderbank1_p.getParameterT(2).connectT(0, ahdsr);         // sliderbank1 -> ahdsr::Decay
 		sliderbank1_p.getParameterT(3).connectT(0, ahdsr);         // sliderbank1 -> ahdsr::Release
@@ -1640,6 +1644,10 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		;                             // gain3::Gain is automated
 		gain3.setParameterT(1, 20.);  // core::gain::Smoothing
 		gain3.setParameterT(2, -1.3); // core::gain::ResetValue
+		
+		;                                  // input_toggle::Input is automated
+		input_toggle.setParameterT(1, 1.); // control::input_toggle::Value1
+		;                                  // input_toggle::Value2 is automated
 		
 		;                              // gain4::Gain is automated
 		gain4.setParameterT(1, 142.9); // core::gain::Smoothing

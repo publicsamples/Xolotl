@@ -27,11 +27,15 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		TempoSyncer::initTempoData();
 		// Node registrations -------------------------------------------------------------
 		
+		registerPolyNode<project::RevDel<1>, wrap::illegal_poly<project::RevDel<1>>>();
 		registerPolyNode<project::OBLP<1>, wrap::illegal_poly<project::OBLP<1>>>();
 		registerPolyNode<project::LPF<1>, wrap::illegal_poly<project::LPF<1>>>();
+		registerPolyNode<project::klp2<1>, wrap::illegal_poly<project::klp2<1>>>();
 		registerPolyNode<project::HPF<1>, wrap::illegal_poly<project::HPF<1>>>();
+		registerPolyNode<project::granular<1>, wrap::illegal_poly<project::granular<1>>>();
 		registerPolyNode<project::Comb<1>, project::Comb<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::BPF<1>, wrap::illegal_poly<project::BPF<1>>>();
+		registerPolyNode<project::dlay<1>, wrap::illegal_poly<project::dlay<1>>>();
 		registerPolyNode<project::modtest1<1>, wrap::illegal_poly<project::modtest1<1>>>();
 		registerPolyNode<project::Xarrange<1>, project::Xarrange<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::xnode<1>, project::xnode<NUM_POLYPHONIC_VOICES>>();
@@ -55,7 +59,7 @@ DLL_EXPORT size_t getNodeId(int index, char* t)
 
 DLL_EXPORT bool isThirdPartyNode(int index)
 {
-	return index < 5;
+	return index < 8;
 }
 
 DLL_EXPORT int getNumDataObjects(int nodeIndex, int dataTypeAsInt)
@@ -74,12 +78,13 @@ DLL_EXPORT void initOpaqueNode(scriptnode::OpaqueNode* n, int index, bool polyIf
 }
 DLL_EXPORT int getHash(int index)
 {
-	static const int thirdPartyOffset = 5;
-	static const int hashIndexes[3] =
+	static const int thirdPartyOffset = 8;
+	static const int hashIndexes[4] =
 	{
+		-462613393,
 		2099108141,
-		467300835,
-		-568813726
+		-1879182761,
+		1834642714
 	};
 	return (index >= thirdPartyOffset) ? hashIndexes[index - thirdPartyOffset] : 0;
 }

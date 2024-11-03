@@ -11,12 +11,17 @@
 
 #include "BPF.h"
 #include "Comb.h"
+#include "granular.h"
 #include "HPF.h"
+#include "klp2.h"
 #include "LPF.h"
 #include "OBLP.h"
+#include "RevDel.h"
 
 // Include compiled network files ------------------
 
+#include "bbdish_networkdata.h"
+#include "dlay.h"
 #include "Env2_networkdata.h"
 #include "Env3_networkdata.h"
 #include "Env4_networkdata.h"

@@ -27,14 +27,19 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		TempoSyncer::initTempoData();
 		// Node registrations -------------------------------------------------------------
 		
+		registerPolyNode<project::RevDel<1>, wrap::illegal_poly<project::RevDel<1>>>();
 		registerPolyNode<project::OBLP<1>, wrap::illegal_poly<project::OBLP<1>>>();
 		registerPolyNode<project::LPF<1>, wrap::illegal_poly<project::LPF<1>>>();
+		registerPolyNode<project::klp2<1>, wrap::illegal_poly<project::klp2<1>>>();
 		registerPolyNode<project::HPF<1>, wrap::illegal_poly<project::HPF<1>>>();
+		registerPolyNode<project::granular<1>, wrap::illegal_poly<project::granular<1>>>();
 		registerPolyNode<project::Comb<1>, project::Comb<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::BPF<1>, wrap::illegal_poly<project::BPF<1>>>();
+		registerPolyNode<project::dlay<1>, wrap::illegal_poly<project::dlay<1>>>();
 		registerPolyNode<project::modtest1<1>, wrap::illegal_poly<project::modtest1<1>>>();
 		registerPolyNode<project::Xarrange<1>, project::Xarrange<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::xnode<1>, project::xnode<NUM_POLYPHONIC_VOICES>>();
+		registerDataNode<project::bbdish_networkdata>();
 		registerDataNode<project::Env_networkdata>();
 		registerDataNode<project::Env2_networkdata>();
 		registerDataNode<project::Env3_networkdata>();

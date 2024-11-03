@@ -938,6 +938,15 @@ using clone1_child_t = container::chain<parameter::empty,
 template <int NV>
 using clone1_t = wrap::clonesplit<clone1_child_t<NV>, 32>;
 
+template <int NV>
+using fix8_block_t_ = container::chain<parameter::empty, 
+                                       wrap::fix<2, modchain_t<NV>>, 
+                                       clone1_t<NV>, 
+                                       core::gain<NV>>;
+
+template <int NV>
+using fix8_block_t = wrap::fix_block<8, fix8_block_t_<NV>>;
+
 namespace Xarrange_t_parameters
 {
 // Parameter list for Xarrange_impl::Xarrange_t ----------------------------------------------------
@@ -1169,9 +1178,7 @@ using Xarrange_t_plist = parameter::list<Stages<NV>,
 
 template <int NV>
 using Xarrange_t_ = container::chain<Xarrange_t_parameters::Xarrange_t_plist<NV>, 
-                                     wrap::fix<2, modchain_t<NV>>, 
-                                     clone1_t<NV>, 
-                                     core::gain<NV>>;
+                                     wrap::fix<2, fix8_block_t<NV>>>;
 
 // =================================| Root node initialiser class |=================================
 
@@ -1298,236 +1305,309 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 	{
 		// Node References -------------------------------------------------------------------------
 		
-		auto& modchain = this->getT(0);                                                // Xarrange_impl::modchain_t<NV>
-		auto& chain4 = this->getT(0).getT(0);                                          // Xarrange_impl::chain4_t<NV>
-		auto& split2 = this->getT(0).getT(0).getT(0);                                  // Xarrange_impl::split2_t<NV>
-		auto& chain3 = this->getT(0).getT(0).getT(0).getT(0);                          // Xarrange_impl::chain3_t<NV>
-		auto& event_data_reader = this->getT(0).getT(0).getT(0).getT(0).getT(0);       // Xarrange_impl::event_data_reader_t<NV>
-		auto& pma = this->getT(0).getT(0).getT(0).getT(0).getT(1);                     // Xarrange_impl::pma_t<NV>
-		auto& chain10 = this->getT(0).getT(0).getT(0).getT(1);                         // Xarrange_impl::chain10_t<NV>
-		auto& chain25 = this->getT(0).getT(0).getT(0).getT(1).getT(0);                 // Xarrange_impl::chain25_t<NV>
-		auto& branch = this->getT(0).getT(0).getT(0).getT(1).getT(0).getT(0);          // Xarrange_impl::branch_t<NV>
-		auto& chain18 = this->getT(0).getT(0).getT(0).getT(1).getT(0).getT(0).getT(0); // Xarrange_impl::chain18_t<NV>
-		auto& global_cable = this->getT(0).getT(0).getT(0).getT(1).                    // Xarrange_impl::global_cable_t<NV>
-                             getT(0).getT(0).getT(0).getT(0);
-		auto& add10 = this->getT(0).getT(0).getT(0).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(0).getT(1);
-		auto& chain22 = this->getT(0).getT(0).getT(0).getT(1).getT(0).getT(0).getT(1); // Xarrange_impl::chain22_t<NV>
-		auto& global_cable11 = this->getT(0).getT(0).getT(0).getT(1).                  // Xarrange_impl::global_cable11_t<NV>
-                               getT(0).getT(0).getT(1).getT(0);
-		auto& add11 = this->getT(0).getT(0).getT(0).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(1).getT(1);
-		auto& chain23 = this->getT(0).getT(0).getT(0).getT(1).getT(0).getT(0).getT(2); // Xarrange_impl::chain23_t<NV>
-		auto& global_cable12 = this->getT(0).getT(0).getT(0).getT(1).                  // Xarrange_impl::global_cable12_t<NV>
-                               getT(0).getT(0).getT(2).getT(0);
-		auto& add12 = this->getT(0).getT(0).getT(0).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(2).getT(1);
-		auto& chain24 = this->getT(0).getT(0).getT(0).getT(1).getT(0).getT(0).getT(3); // Xarrange_impl::chain24_t<NV>
-		auto& global_cable13 = this->getT(0).getT(0).getT(0).getT(1).                  // Xarrange_impl::global_cable13_t<NV>
-                               getT(0).getT(0).getT(3).getT(0);
-		auto& add13 = this->getT(0).getT(0).getT(0).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(3).getT(1);
-		auto& peak1 = this->getT(0).getT(0).getT(0).getT(1).getT(0).getT(1);           // Xarrange_impl::peak1_t<NV>
-		auto& clear = this->getT(0).getT(0).getT(0).getT(1).getT(0).getT(2);           // math::clear<NV>
-		auto& pma3 = this->getT(0).getT(0).getT(0).getT(1).getT(0).getT(3);            // Xarrange_impl::pma3_t<NV>
-		auto& chain6 = this->getT(0).getT(0).getT(0).getT(2);                          // Xarrange_impl::chain6_t<NV>
-		auto& midi2 = this->getT(0).getT(0).getT(0).getT(2).getT(0);                   // Xarrange_impl::midi2_t<NV>
-		auto& pma2 = this->getT(0).getT(0).getT(0).getT(2).getT(1);                    // Xarrange_impl::pma2_t<NV>
-		auto& chain5 = this->getT(0).getT(0).getT(0).getT(3);                          // Xarrange_impl::chain5_t<NV>
-		auto& midi_cc = this->getT(0).getT(0).getT(0).getT(3).getT(0);                 // Xarrange_impl::midi_cc_t<NV>
-		auto& pma6 = this->getT(0).getT(0).getT(0).getT(3).getT(1);                    // Xarrange_impl::pma6_t<NV>
-		auto& split9 = this->getT(0).getT(0).getT(1);                                  // Xarrange_impl::split9_t<NV>
-		auto& chain67 = this->getT(0).getT(0).getT(1).getT(0);                         // Xarrange_impl::chain67_t<NV>
-		auto& event_data_reader7 = this->getT(0).getT(0).getT(1).getT(0).getT(0);      // Xarrange_impl::event_data_reader7_t<NV>
-		auto& pma28 = this->getT(0).getT(0).getT(1).getT(0).getT(1);                   // Xarrange_impl::pma28_t<NV>
-		auto& chain68 = this->getT(0).getT(0).getT(1).getT(1);                         // Xarrange_impl::chain68_t<NV>
-		auto& chain69 = this->getT(0).getT(0).getT(1).getT(1).getT(0);                 // Xarrange_impl::chain69_t<NV>
-		auto& branch7 = this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(0);         // Xarrange_impl::branch7_t<NV>
-		auto& chain70 = this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(0).getT(0); // Xarrange_impl::chain70_t<NV>
-		auto& global_cable7 = this->getT(0).getT(0).getT(1).getT(1).                   // Xarrange_impl::global_cable7_t<NV>
-                              getT(0).getT(0).getT(0).getT(0);
-		auto& add38 = this->getT(0).getT(0).getT(1).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(0).getT(1);
-		auto& chain71 = this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(0).getT(1); // Xarrange_impl::chain71_t<NV>
-		auto& global_cable32 = this->getT(0).getT(0).getT(1).getT(1).                  // Xarrange_impl::global_cable32_t<NV>
-                               getT(0).getT(0).getT(1).getT(0);
-		auto& add39 = this->getT(0).getT(0).getT(1).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(1).getT(1);
-		auto& chain72 = this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(0).getT(2); // Xarrange_impl::chain72_t<NV>
-		auto& global_cable33 = this->getT(0).getT(0).getT(1).getT(1).                  // Xarrange_impl::global_cable33_t<NV>
-                               getT(0).getT(0).getT(2).getT(0);
-		auto& add40 = this->getT(0).getT(0).getT(1).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(2).getT(1);
-		auto& chain73 = this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(0).getT(3); // Xarrange_impl::chain73_t<NV>
-		auto& global_cable34 = this->getT(0).getT(0).getT(1).getT(1).                  // Xarrange_impl::global_cable34_t<NV>
-                               getT(0).getT(0).getT(3).getT(0);
-		auto& add41 = this->getT(0).getT(0).getT(1).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(3).getT(1);
-		auto& peak7 = this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(1);           // Xarrange_impl::peak7_t<NV>
-		auto& clear7 = this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(2);          // math::clear<NV>
-		auto& pma29 = this->getT(0).getT(0).getT(1).getT(1).getT(1);                   // Xarrange_impl::pma29_t<NV>
-		auto& split8 = this->getT(0).getT(0).getT(2);                                  // Xarrange_impl::split8_t<NV>
-		auto& chain58 = this->getT(0).getT(0).getT(2).getT(0);                         // Xarrange_impl::chain58_t<NV>
-		auto& event_data_reader6 = this->getT(0).getT(0).getT(2).getT(0).getT(0);      // Xarrange_impl::event_data_reader6_t<NV>
-		auto& pma24 = this->getT(0).getT(0).getT(2).getT(0).getT(1);                   // Xarrange_impl::pma24_t<NV>
-		auto& chain59 = this->getT(0).getT(0).getT(2).getT(1);                         // Xarrange_impl::chain59_t<NV>
-		auto& chain60 = this->getT(0).getT(0).getT(2).getT(1).getT(0);                 // Xarrange_impl::chain60_t<NV>
-		auto& branch6 = this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(0);         // Xarrange_impl::branch6_t<NV>
-		auto& chain61 = this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(0).getT(0); // Xarrange_impl::chain61_t<NV>
-		auto& global_cable6 = this->getT(0).getT(0).getT(2).getT(1).                   // Xarrange_impl::global_cable6_t<NV>
-                              getT(0).getT(0).getT(0).getT(0);
-		auto& add34 = this->getT(0).getT(0).getT(2).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(0).getT(1);
-		auto& chain62 = this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(0).getT(1); // Xarrange_impl::chain62_t<NV>
-		auto& global_cable29 = this->getT(0).getT(0).getT(2).getT(1).                  // Xarrange_impl::global_cable29_t<NV>
-                               getT(0).getT(0).getT(1).getT(0);
-		auto& add35 = this->getT(0).getT(0).getT(2).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(1).getT(1);
-		auto& chain63 = this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(0).getT(2); // Xarrange_impl::chain63_t<NV>
-		auto& global_cable30 = this->getT(0).getT(0).getT(2).getT(1).                  // Xarrange_impl::global_cable30_t<NV>
-                               getT(0).getT(0).getT(2).getT(0);
-		auto& add36 = this->getT(0).getT(0).getT(2).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(2).getT(1);
-		auto& chain64 = this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(0).getT(3); // Xarrange_impl::chain64_t<NV>
-		auto& global_cable31 = this->getT(0).getT(0).getT(2).getT(1).                  // Xarrange_impl::global_cable31_t<NV>
-                               getT(0).getT(0).getT(3).getT(0);
-		auto& add37 = this->getT(0).getT(0).getT(2).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(3).getT(1);
-		auto& peak6 = this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(1);           // Xarrange_impl::peak6_t<NV>
-		auto& clear6 = this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(2);          // math::clear<NV>
-		auto& pma25 = this->getT(0).getT(0).getT(2).getT(1).getT(1);                   // Xarrange_impl::pma25_t<NV>
-		auto& chain65 = this->getT(0).getT(0).getT(2).getT(2);                         // Xarrange_impl::chain65_t<NV>
-		auto& midi13 = this->getT(0).getT(0).getT(2).getT(2).getT(0);                  // Xarrange_impl::midi13_t<NV>
-		auto& pma26 = this->getT(0).getT(0).getT(2).getT(2).getT(1);                   // Xarrange_impl::pma26_t<NV>
-		auto& chain66 = this->getT(0).getT(0).getT(2).getT(3);                         // Xarrange_impl::chain66_t<NV>
-		auto& midi14 = this->getT(0).getT(0).getT(2).getT(3).getT(0);                  // Xarrange_impl::midi14_t<NV>
-		auto& pma27 = this->getT(0).getT(0).getT(2).getT(3).getT(1);                   // Xarrange_impl::pma27_t<NV>
-		auto& split7 = this->getT(0).getT(0).getT(3);                                  // Xarrange_impl::split7_t<NV>
-		auto& chain49 = this->getT(0).getT(0).getT(3).getT(0);                         // Xarrange_impl::chain49_t<NV>
-		auto& event_data_reader5 = this->getT(0).getT(0).getT(3).getT(0).getT(0);      // Xarrange_impl::event_data_reader5_t<NV>
-		auto& pma20 = this->getT(0).getT(0).getT(3).getT(0).getT(1);                   // Xarrange_impl::pma20_t<NV>
-		auto& chain50 = this->getT(0).getT(0).getT(3).getT(1);                         // Xarrange_impl::chain50_t<NV>
-		auto& chain51 = this->getT(0).getT(0).getT(3).getT(1).getT(0);                 // Xarrange_impl::chain51_t<NV>
-		auto& branch5 = this->getT(0).getT(0).getT(3).getT(1).getT(0).getT(0);         // Xarrange_impl::branch5_t<NV>
-		auto& chain52 = this->getT(0).getT(0).getT(3).getT(1).getT(0).getT(0).getT(0); // Xarrange_impl::chain52_t<NV>
-		auto& global_cable5 = this->getT(0).getT(0).getT(3).getT(1).                   // Xarrange_impl::global_cable5_t<NV>
-                              getT(0).getT(0).getT(0).getT(0);
-		auto& add30 = this->getT(0).getT(0).getT(3).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(0).getT(1);
-		auto& chain53 = this->getT(0).getT(0).getT(3).getT(1).getT(0).getT(0).getT(1); // Xarrange_impl::chain53_t<NV>
-		auto& global_cable26 = this->getT(0).getT(0).getT(3).getT(1).                  // Xarrange_impl::global_cable26_t<NV>
-                               getT(0).getT(0).getT(1).getT(0);
-		auto& add31 = this->getT(0).getT(0).getT(3).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(1).getT(1);
-		auto& chain54 = this->getT(0).getT(0).getT(3).getT(1).getT(0).getT(0).getT(2); // Xarrange_impl::chain54_t<NV>
-		auto& global_cable27 = this->getT(0).getT(0).getT(3).getT(1).                  // Xarrange_impl::global_cable27_t<NV>
-                               getT(0).getT(0).getT(2).getT(0);
-		auto& add32 = this->getT(0).getT(0).getT(3).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(2).getT(1);
-		auto& chain55 = this->getT(0).getT(0).getT(3).getT(1).getT(0).getT(0).getT(3); // Xarrange_impl::chain55_t<NV>
-		auto& global_cable28 = this->getT(0).getT(0).getT(3).getT(1).                  // Xarrange_impl::global_cable28_t<NV>
-                               getT(0).getT(0).getT(3).getT(0);
-		auto& add33 = this->getT(0).getT(0).getT(3).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(3).getT(1);
-		auto& peak5 = this->getT(0).getT(0).getT(3).getT(1).getT(0).getT(1);           // Xarrange_impl::peak5_t<NV>
-		auto& clear5 = this->getT(0).getT(0).getT(3).getT(1).getT(0).getT(2);          // math::clear<NV>
-		auto& pma21 = this->getT(0).getT(0).getT(3).getT(1).getT(1);                   // Xarrange_impl::pma21_t<NV>
-		auto& chain56 = this->getT(0).getT(0).getT(3).getT(2);                         // Xarrange_impl::chain56_t<NV>
-		auto& midi11 = this->getT(0).getT(0).getT(3).getT(2).getT(0);                  // Xarrange_impl::midi11_t<NV>
-		auto& pma22 = this->getT(0).getT(0).getT(3).getT(2).getT(1);                   // Xarrange_impl::pma22_t<NV>
-		auto& chain57 = this->getT(0).getT(0).getT(3).getT(3);                         // Xarrange_impl::chain57_t<NV>
-		auto& midi12 = this->getT(0).getT(0).getT(3).getT(3).getT(0);                  // Xarrange_impl::midi12_t<NV>
-		auto& pma23 = this->getT(0).getT(0).getT(3).getT(3).getT(1);                   // Xarrange_impl::pma23_t<NV>
-		auto& split6 = this->getT(0).getT(0).getT(4);                                  // Xarrange_impl::split6_t<NV>
-		auto& chain40 = this->getT(0).getT(0).getT(4).getT(0);                         // Xarrange_impl::chain40_t<NV>
-		auto& event_data_reader4 = this->getT(0).getT(0).getT(4).getT(0).getT(0);      // Xarrange_impl::event_data_reader4_t<NV>
-		auto& pma16 = this->getT(0).getT(0).getT(4).getT(0).getT(1);                   // Xarrange_impl::pma16_t<NV>
-		auto& chain41 = this->getT(0).getT(0).getT(4).getT(1);                         // Xarrange_impl::chain41_t<NV>
-		auto& chain42 = this->getT(0).getT(0).getT(4).getT(1).getT(0);                 // Xarrange_impl::chain42_t<NV>
-		auto& branch4 = this->getT(0).getT(0).getT(4).getT(1).getT(0).getT(0);         // Xarrange_impl::branch4_t<NV>
-		auto& chain43 = this->getT(0).getT(0).getT(4).getT(1).getT(0).getT(0).getT(0); // Xarrange_impl::chain43_t<NV>
-		auto& global_cable4 = this->getT(0).getT(0).getT(4).getT(1).                   // Xarrange_impl::global_cable4_t<NV>
-                              getT(0).getT(0).getT(0).getT(0);
-		auto& add26 = this->getT(0).getT(0).getT(4).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(0).getT(1);
-		auto& chain44 = this->getT(0).getT(0).getT(4).getT(1).getT(0).getT(0).getT(1); // Xarrange_impl::chain44_t<NV>
-		auto& global_cable23 = this->getT(0).getT(0).getT(4).getT(1).                  // Xarrange_impl::global_cable23_t<NV>
-                               getT(0).getT(0).getT(1).getT(0);
-		auto& add27 = this->getT(0).getT(0).getT(4).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(1).getT(1);
-		auto& chain45 = this->getT(0).getT(0).getT(4).getT(1).getT(0).getT(0).getT(2); // Xarrange_impl::chain45_t<NV>
-		auto& global_cable24 = this->getT(0).getT(0).getT(4).getT(1).                  // Xarrange_impl::global_cable24_t<NV>
-                               getT(0).getT(0).getT(2).getT(0);
-		auto& add28 = this->getT(0).getT(0).getT(4).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(2).getT(1);
-		auto& chain46 = this->getT(0).getT(0).getT(4).getT(1).getT(0).getT(0).getT(3); // Xarrange_impl::chain46_t<NV>
-		auto& global_cable25 = this->getT(0).getT(0).getT(4).getT(1).                  // Xarrange_impl::global_cable25_t<NV>
-                               getT(0).getT(0).getT(3).getT(0);
-		auto& add29 = this->getT(0).getT(0).getT(4).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(3).getT(1);
-		auto& peak4 = this->getT(0).getT(0).getT(4).getT(1).getT(0).getT(1);           // Xarrange_impl::peak4_t<NV>
-		auto& clear4 = this->getT(0).getT(0).getT(4).getT(1).getT(0).getT(2);          // math::clear<NV>
-		auto& pma17 = this->getT(0).getT(0).getT(4).getT(1).getT(1);                   // Xarrange_impl::pma17_t<NV>
-		auto& split5 = this->getT(0).getT(0).getT(5);                                  // Xarrange_impl::split5_t<NV>
-		auto& chain16 = this->getT(0).getT(0).getT(5).getT(0);                         // Xarrange_impl::chain16_t<NV>
-		auto& event_data_reader3 = this->getT(0).getT(0).getT(5).getT(0).getT(0);      // Xarrange_impl::event_data_reader3_t<NV>
-		auto& pma12 = this->getT(0).getT(0).getT(5).getT(0).getT(1);                   // Xarrange_impl::pma12_t<NV>
-		auto& chain17 = this->getT(0).getT(0).getT(5).getT(1);                         // Xarrange_impl::chain17_t<NV>
-		auto& chain34 = this->getT(0).getT(0).getT(5).getT(1).getT(0);                 // Xarrange_impl::chain34_t<NV>
-		auto& branch3 = this->getT(0).getT(0).getT(5).getT(1).getT(0).getT(0);         // Xarrange_impl::branch3_t<NV>
-		auto& chain21 = this->getT(0).getT(0).getT(5).getT(1).getT(0).getT(0).getT(0); // Xarrange_impl::chain21_t<NV>
-		auto& global_cable3 = this->getT(0).getT(0).getT(5).getT(1).                   // Xarrange_impl::global_cable3_t<NV>
-                              getT(0).getT(0).getT(0).getT(0);
-		auto& add22 = this->getT(0).getT(0).getT(5).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(0).getT(1);
-		auto& chain35 = this->getT(0).getT(0).getT(5).getT(1).getT(0).getT(0).getT(1); // Xarrange_impl::chain35_t<NV>
-		auto& global_cable20 = this->getT(0).getT(0).getT(5).getT(1).                  // Xarrange_impl::global_cable20_t<NV>
-                               getT(0).getT(0).getT(1).getT(0);
-		auto& add23 = this->getT(0).getT(0).getT(5).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(1).getT(1);
-		auto& chain36 = this->getT(0).getT(0).getT(5).getT(1).getT(0).getT(0).getT(2); // Xarrange_impl::chain36_t<NV>
-		auto& global_cable21 = this->getT(0).getT(0).getT(5).getT(1).                  // Xarrange_impl::global_cable21_t<NV>
-                               getT(0).getT(0).getT(2).getT(0);
-		auto& add24 = this->getT(0).getT(0).getT(5).getT(1).                           // math::add<NV>
-                      getT(0).getT(0).getT(2).getT(1);
-		auto& chain37 = this->getT(0).getT(0).getT(5).getT(1).getT(0).getT(0).getT(3); // Xarrange_impl::chain37_t<NV>
-		auto& global_cable22 = this->getT(0).getT(0).getT(5).getT(1).                  // Xarrange_impl::global_cable22_t<NV>
-                               getT(0).getT(0).getT(3).getT(0);
-		auto& add25 = this->getT(0).getT(0).getT(5).getT(1).                  // math::add<NV>
-                      getT(0).getT(0).getT(3).getT(1);
-		auto& peak3 = this->getT(0).getT(0).getT(5).getT(1).getT(0).getT(1);  // Xarrange_impl::peak3_t<NV>
-		auto& clear3 = this->getT(0).getT(0).getT(5).getT(1).getT(0).getT(2); // math::clear<NV>
-		auto& pma13 = this->getT(0).getT(0).getT(5).getT(1).getT(1);          // Xarrange_impl::pma13_t<NV>
-		auto& no_midi = this->getT(0).getT(1);                                // Xarrange_impl::no_midi_t<NV>
-		auto& split1 = this->getT(0).getT(1).getT(0);                         // Xarrange_impl::split1_t
-		auto& pack_resizer = this->getT(0).getT(1).getT(0).getT(0);           // Xarrange_impl::pack_resizer_t
-		auto& pack_resizer1 = this->getT(0).getT(1).getT(0).getT(1);          // Xarrange_impl::pack_resizer1_t
-		auto& pack_resizer2 = this->getT(0).getT(1).getT(0).getT(2);          // Xarrange_impl::pack_resizer2_t
-		auto& split = this->getT(0).getT(1).getT(1);                          // Xarrange_impl::split_t<NV>
-		auto& chain = this->getT(0).getT(1).getT(1).getT(0);                  // Xarrange_impl::chain_t<NV>
-		auto& clone_pack = this->getT(0).getT(1).getT(1).getT(0).getT(0);     // Xarrange_impl::clone_pack_t<NV>
-		auto& clone_cable = this->getT(0).getT(1).getT(1).getT(0).getT(1);    // Xarrange_impl::clone_cable_t<NV>
-		auto& clone_cable4 = this->getT(0).getT(1).getT(1).getT(0).getT(2);   // Xarrange_impl::clone_cable4_t<NV>
-		auto& clone_cable3 = this->getT(0).getT(1).getT(1).getT(0).getT(3);   // Xarrange_impl::clone_cable3_t<NV>
-		auto& clone_forward = this->getT(0).getT(1).getT(1).getT(0).getT(4);  // Xarrange_impl::clone_forward_t<NV>
-		auto& clone_cable11 = this->getT(0).getT(1).getT(1).getT(0).getT(5);  // Xarrange_impl::clone_cable11_t<NV>
-		auto& clone_cable12 = this->getT(0).getT(1).getT(1).getT(0).getT(6);  // Xarrange_impl::clone_cable12_t<NV>
-		auto& chain2 = this->getT(0).getT(1).getT(1).getT(1);                 // Xarrange_impl::chain2_t<NV>
-		auto& clone_pack2 = this->getT(0).getT(1).getT(1).getT(1).getT(0);    // Xarrange_impl::clone_pack2_t<NV>
-		auto& clone_cable2 = this->getT(0).getT(1).getT(1).getT(1).getT(1);   // Xarrange_impl::clone_cable2_t<NV>
-		auto& clone_cable9 = this->getT(0).getT(1).getT(1).getT(1).getT(2);   // Xarrange_impl::clone_cable9_t<NV>
-		auto& clone_cable8 = this->getT(0).getT(1).getT(1).getT(1).getT(3);   // Xarrange_impl::clone_cable8_t<NV>
-		auto& chain1 = this->getT(0).getT(1).getT(1).getT(2);                 // Xarrange_impl::chain1_t<NV>
-		auto& clone_pack1 = this->getT(0).getT(1).getT(1).getT(2).getT(0);    // Xarrange_impl::clone_pack1_t<NV>
-		auto& clone_cable1 = this->getT(0).getT(1).getT(1).getT(2).getT(1);   // Xarrange_impl::clone_cable1_t<NV>
-		auto& clone_forward1 = this->getT(0).getT(1).getT(1).getT(2).getT(2); // Xarrange_impl::clone_forward1_t<NV>
-		auto& clone_cable14 = this->getT(0).getT(1).getT(1).getT(2).getT(3);  // Xarrange_impl::clone_cable14_t<NV>
-		auto& clone_cable13 = this->getT(0).getT(1).getT(1).getT(2).getT(4);  // Xarrange_impl::clone_cable13_t<NV>
-		auto& clone_cable10 = this->getT(0).getT(1).getT(1).getT(2).getT(5);  // Xarrange_impl::clone_cable10_t<NV>
-		auto& clone1 = this->getT(1);                                         // Xarrange_impl::clone1_t<NV>                                         // Xarrange_impl::clone1_child_t<NV>
-		auto xnode1 = this->getT(1).getT(0);                                  // Xarrange_impl::xnode1_t<NV>
-		auto jpanner = this->getT(1).getT(1);                                 // jdsp::jpanner<NV>
-		auto& gain = this->getT(2);                                           // core::gain<NV>
+		auto& fix8_block = this->getT(0);                                                 // Xarrange_impl::fix8_block_t<NV>
+		auto& modchain = this->getT(0).getT(0);                                           // Xarrange_impl::modchain_t<NV>
+		auto& chain4 = this->getT(0).getT(0).getT(0);                                     // Xarrange_impl::chain4_t<NV>
+		auto& split2 = this->getT(0).getT(0).getT(0).getT(0);                             // Xarrange_impl::split2_t<NV>
+		auto& chain3 = this->getT(0).getT(0).getT(0).getT(0).getT(0);                     // Xarrange_impl::chain3_t<NV>
+		auto& event_data_reader = this->getT(0).getT(0).getT(0).getT(0).getT(0).getT(0);  // Xarrange_impl::event_data_reader_t<NV>
+		auto& pma = this->getT(0).getT(0).getT(0).getT(0).getT(0).getT(1);                // Xarrange_impl::pma_t<NV>
+		auto& chain10 = this->getT(0).getT(0).getT(0).getT(0).getT(1);                    // Xarrange_impl::chain10_t<NV>
+		auto& chain25 = this->getT(0).getT(0).getT(0).getT(0).getT(1).getT(0);            // Xarrange_impl::chain25_t<NV>
+		auto& branch = this->getT(0).getT(0).getT(0).getT(0).getT(1).getT(0).getT(0);     // Xarrange_impl::branch_t<NV>
+		auto& chain18 = this->getT(0).getT(0).getT(0).getT(0).                            // Xarrange_impl::chain18_t<NV>
+                        getT(1).getT(0).getT(0).getT(0);
+		auto& global_cable = this->getT(0).getT(0).getT(0).getT(0).                       // Xarrange_impl::global_cable_t<NV>
+                             getT(1).getT(0).getT(0).getT(0).
+                             getT(0);
+		auto& add10 = this->getT(0).getT(0).getT(0).getT(0).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(0).
+                      getT(1);
+		auto& chain22 = this->getT(0).getT(0).getT(0).getT(0).                            // Xarrange_impl::chain22_t<NV>
+                        getT(1).getT(0).getT(0).getT(1);
+		auto& global_cable11 = this->getT(0).getT(0).getT(0).getT(0).                     // Xarrange_impl::global_cable11_t<NV>
+                               getT(1).getT(0).getT(0).getT(1).
+                               getT(0);
+		auto& add11 = this->getT(0).getT(0).getT(0).getT(0).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(1).
+                      getT(1);
+		auto& chain23 = this->getT(0).getT(0).getT(0).getT(0).                            // Xarrange_impl::chain23_t<NV>
+                        getT(1).getT(0).getT(0).getT(2);
+		auto& global_cable12 = this->getT(0).getT(0).getT(0).getT(0).                     // Xarrange_impl::global_cable12_t<NV>
+                               getT(1).getT(0).getT(0).getT(2).
+                               getT(0);
+		auto& add12 = this->getT(0).getT(0).getT(0).getT(0).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(2).
+                      getT(1);
+		auto& chain24 = this->getT(0).getT(0).getT(0).getT(0).                            // Xarrange_impl::chain24_t<NV>
+                        getT(1).getT(0).getT(0).getT(3);
+		auto& global_cable13 = this->getT(0).getT(0).getT(0).getT(0).                     // Xarrange_impl::global_cable13_t<NV>
+                               getT(1).getT(0).getT(0).getT(3).
+                               getT(0);
+		auto& add13 = this->getT(0).getT(0).getT(0).getT(0).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(3).
+                      getT(1);
+		auto& peak1 = this->getT(0).getT(0).getT(0).getT(0).getT(1).getT(0).getT(1);      // Xarrange_impl::peak1_t<NV>
+		auto& clear = this->getT(0).getT(0).getT(0).getT(0).getT(1).getT(0).getT(2);      // math::clear<NV>
+		auto& pma3 = this->getT(0).getT(0).getT(0).getT(0).getT(1).getT(0).getT(3);       // Xarrange_impl::pma3_t<NV>
+		auto& chain6 = this->getT(0).getT(0).getT(0).getT(0).getT(2);                     // Xarrange_impl::chain6_t<NV>
+		auto& midi2 = this->getT(0).getT(0).getT(0).getT(0).getT(2).getT(0);              // Xarrange_impl::midi2_t<NV>
+		auto& pma2 = this->getT(0).getT(0).getT(0).getT(0).getT(2).getT(1);               // Xarrange_impl::pma2_t<NV>
+		auto& chain5 = this->getT(0).getT(0).getT(0).getT(0).getT(3);                     // Xarrange_impl::chain5_t<NV>
+		auto& midi_cc = this->getT(0).getT(0).getT(0).getT(0).getT(3).getT(0);            // Xarrange_impl::midi_cc_t<NV>
+		auto& pma6 = this->getT(0).getT(0).getT(0).getT(0).getT(3).getT(1);               // Xarrange_impl::pma6_t<NV>
+		auto& split9 = this->getT(0).getT(0).getT(0).getT(1);                             // Xarrange_impl::split9_t<NV>
+		auto& chain67 = this->getT(0).getT(0).getT(0).getT(1).getT(0);                    // Xarrange_impl::chain67_t<NV>
+		auto& event_data_reader7 = this->getT(0).getT(0).getT(0).getT(1).getT(0).getT(0); // Xarrange_impl::event_data_reader7_t<NV>
+		auto& pma28 = this->getT(0).getT(0).getT(0).getT(1).getT(0).getT(1);              // Xarrange_impl::pma28_t<NV>
+		auto& chain68 = this->getT(0).getT(0).getT(0).getT(1).getT(1);                    // Xarrange_impl::chain68_t<NV>
+		auto& chain69 = this->getT(0).getT(0).getT(0).getT(1).getT(1).getT(0);            // Xarrange_impl::chain69_t<NV>
+		auto& branch7 = this->getT(0).getT(0).getT(0).getT(1).getT(1).getT(0).getT(0);    // Xarrange_impl::branch7_t<NV>
+		auto& chain70 = this->getT(0).getT(0).getT(0).getT(1).                            // Xarrange_impl::chain70_t<NV>
+                        getT(1).getT(0).getT(0).getT(0);
+		auto& global_cable7 = this->getT(0).getT(0).getT(0).getT(1).                      // Xarrange_impl::global_cable7_t<NV>
+                              getT(1).getT(0).getT(0).getT(0).
+                              getT(0);
+		auto& add38 = this->getT(0).getT(0).getT(0).getT(1).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(0).
+                      getT(1);
+		auto& chain71 = this->getT(0).getT(0).getT(0).getT(1).                            // Xarrange_impl::chain71_t<NV>
+                        getT(1).getT(0).getT(0).getT(1);
+		auto& global_cable32 = this->getT(0).getT(0).getT(0).getT(1).                     // Xarrange_impl::global_cable32_t<NV>
+                               getT(1).getT(0).getT(0).getT(1).
+                               getT(0);
+		auto& add39 = this->getT(0).getT(0).getT(0).getT(1).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(1).
+                      getT(1);
+		auto& chain72 = this->getT(0).getT(0).getT(0).getT(1).                            // Xarrange_impl::chain72_t<NV>
+                        getT(1).getT(0).getT(0).getT(2);
+		auto& global_cable33 = this->getT(0).getT(0).getT(0).getT(1).                     // Xarrange_impl::global_cable33_t<NV>
+                               getT(1).getT(0).getT(0).getT(2).
+                               getT(0);
+		auto& add40 = this->getT(0).getT(0).getT(0).getT(1).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(2).
+                      getT(1);
+		auto& chain73 = this->getT(0).getT(0).getT(0).getT(1).                            // Xarrange_impl::chain73_t<NV>
+                        getT(1).getT(0).getT(0).getT(3);
+		auto& global_cable34 = this->getT(0).getT(0).getT(0).getT(1).                     // Xarrange_impl::global_cable34_t<NV>
+                               getT(1).getT(0).getT(0).getT(3).
+                               getT(0);
+		auto& add41 = this->getT(0).getT(0).getT(0).getT(1).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(3).
+                      getT(1);
+		auto& peak7 = this->getT(0).getT(0).getT(0).getT(1).getT(1).getT(0).getT(1);      // Xarrange_impl::peak7_t<NV>
+		auto& clear7 = this->getT(0).getT(0).getT(0).getT(1).getT(1).getT(0).getT(2);     // math::clear<NV>
+		auto& pma29 = this->getT(0).getT(0).getT(0).getT(1).getT(1).getT(1);              // Xarrange_impl::pma29_t<NV>
+		auto& split8 = this->getT(0).getT(0).getT(0).getT(2);                             // Xarrange_impl::split8_t<NV>
+		auto& chain58 = this->getT(0).getT(0).getT(0).getT(2).getT(0);                    // Xarrange_impl::chain58_t<NV>
+		auto& event_data_reader6 = this->getT(0).getT(0).getT(0).getT(2).getT(0).getT(0); // Xarrange_impl::event_data_reader6_t<NV>
+		auto& pma24 = this->getT(0).getT(0).getT(0).getT(2).getT(0).getT(1);              // Xarrange_impl::pma24_t<NV>
+		auto& chain59 = this->getT(0).getT(0).getT(0).getT(2).getT(1);                    // Xarrange_impl::chain59_t<NV>
+		auto& chain60 = this->getT(0).getT(0).getT(0).getT(2).getT(1).getT(0);            // Xarrange_impl::chain60_t<NV>
+		auto& branch6 = this->getT(0).getT(0).getT(0).getT(2).getT(1).getT(0).getT(0);    // Xarrange_impl::branch6_t<NV>
+		auto& chain61 = this->getT(0).getT(0).getT(0).getT(2).                            // Xarrange_impl::chain61_t<NV>
+                        getT(1).getT(0).getT(0).getT(0);
+		auto& global_cable6 = this->getT(0).getT(0).getT(0).getT(2).                      // Xarrange_impl::global_cable6_t<NV>
+                              getT(1).getT(0).getT(0).getT(0).
+                              getT(0);
+		auto& add34 = this->getT(0).getT(0).getT(0).getT(2).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(0).
+                      getT(1);
+		auto& chain62 = this->getT(0).getT(0).getT(0).getT(2).                            // Xarrange_impl::chain62_t<NV>
+                        getT(1).getT(0).getT(0).getT(1);
+		auto& global_cable29 = this->getT(0).getT(0).getT(0).getT(2).                     // Xarrange_impl::global_cable29_t<NV>
+                               getT(1).getT(0).getT(0).getT(1).
+                               getT(0);
+		auto& add35 = this->getT(0).getT(0).getT(0).getT(2).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(1).
+                      getT(1);
+		auto& chain63 = this->getT(0).getT(0).getT(0).getT(2).                            // Xarrange_impl::chain63_t<NV>
+                        getT(1).getT(0).getT(0).getT(2);
+		auto& global_cable30 = this->getT(0).getT(0).getT(0).getT(2).                     // Xarrange_impl::global_cable30_t<NV>
+                               getT(1).getT(0).getT(0).getT(2).
+                               getT(0);
+		auto& add36 = this->getT(0).getT(0).getT(0).getT(2).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(2).
+                      getT(1);
+		auto& chain64 = this->getT(0).getT(0).getT(0).getT(2).                            // Xarrange_impl::chain64_t<NV>
+                        getT(1).getT(0).getT(0).getT(3);
+		auto& global_cable31 = this->getT(0).getT(0).getT(0).getT(2).                     // Xarrange_impl::global_cable31_t<NV>
+                               getT(1).getT(0).getT(0).getT(3).
+                               getT(0);
+		auto& add37 = this->getT(0).getT(0).getT(0).getT(2).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(3).
+                      getT(1);
+		auto& peak6 = this->getT(0).getT(0).getT(0).getT(2).getT(1).getT(0).getT(1);      // Xarrange_impl::peak6_t<NV>
+		auto& clear6 = this->getT(0).getT(0).getT(0).getT(2).getT(1).getT(0).getT(2);     // math::clear<NV>
+		auto& pma25 = this->getT(0).getT(0).getT(0).getT(2).getT(1).getT(1);              // Xarrange_impl::pma25_t<NV>
+		auto& chain65 = this->getT(0).getT(0).getT(0).getT(2).getT(2);                    // Xarrange_impl::chain65_t<NV>
+		auto& midi13 = this->getT(0).getT(0).getT(0).getT(2).getT(2).getT(0);             // Xarrange_impl::midi13_t<NV>
+		auto& pma26 = this->getT(0).getT(0).getT(0).getT(2).getT(2).getT(1);              // Xarrange_impl::pma26_t<NV>
+		auto& chain66 = this->getT(0).getT(0).getT(0).getT(2).getT(3);                    // Xarrange_impl::chain66_t<NV>
+		auto& midi14 = this->getT(0).getT(0).getT(0).getT(2).getT(3).getT(0);             // Xarrange_impl::midi14_t<NV>
+		auto& pma27 = this->getT(0).getT(0).getT(0).getT(2).getT(3).getT(1);              // Xarrange_impl::pma27_t<NV>
+		auto& split7 = this->getT(0).getT(0).getT(0).getT(3);                             // Xarrange_impl::split7_t<NV>
+		auto& chain49 = this->getT(0).getT(0).getT(0).getT(3).getT(0);                    // Xarrange_impl::chain49_t<NV>
+		auto& event_data_reader5 = this->getT(0).getT(0).getT(0).getT(3).getT(0).getT(0); // Xarrange_impl::event_data_reader5_t<NV>
+		auto& pma20 = this->getT(0).getT(0).getT(0).getT(3).getT(0).getT(1);              // Xarrange_impl::pma20_t<NV>
+		auto& chain50 = this->getT(0).getT(0).getT(0).getT(3).getT(1);                    // Xarrange_impl::chain50_t<NV>
+		auto& chain51 = this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(0);            // Xarrange_impl::chain51_t<NV>
+		auto& branch5 = this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(0).getT(0);    // Xarrange_impl::branch5_t<NV>
+		auto& chain52 = this->getT(0).getT(0).getT(0).getT(3).                            // Xarrange_impl::chain52_t<NV>
+                        getT(1).getT(0).getT(0).getT(0);
+		auto& global_cable5 = this->getT(0).getT(0).getT(0).getT(3).                      // Xarrange_impl::global_cable5_t<NV>
+                              getT(1).getT(0).getT(0).getT(0).
+                              getT(0);
+		auto& add30 = this->getT(0).getT(0).getT(0).getT(3).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(0).
+                      getT(1);
+		auto& chain53 = this->getT(0).getT(0).getT(0).getT(3).                            // Xarrange_impl::chain53_t<NV>
+                        getT(1).getT(0).getT(0).getT(1);
+		auto& global_cable26 = this->getT(0).getT(0).getT(0).getT(3).                     // Xarrange_impl::global_cable26_t<NV>
+                               getT(1).getT(0).getT(0).getT(1).
+                               getT(0);
+		auto& add31 = this->getT(0).getT(0).getT(0).getT(3).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(1).
+                      getT(1);
+		auto& chain54 = this->getT(0).getT(0).getT(0).getT(3).                            // Xarrange_impl::chain54_t<NV>
+                        getT(1).getT(0).getT(0).getT(2);
+		auto& global_cable27 = this->getT(0).getT(0).getT(0).getT(3).                     // Xarrange_impl::global_cable27_t<NV>
+                               getT(1).getT(0).getT(0).getT(2).
+                               getT(0);
+		auto& add32 = this->getT(0).getT(0).getT(0).getT(3).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(2).
+                      getT(1);
+		auto& chain55 = this->getT(0).getT(0).getT(0).getT(3).                            // Xarrange_impl::chain55_t<NV>
+                        getT(1).getT(0).getT(0).getT(3);
+		auto& global_cable28 = this->getT(0).getT(0).getT(0).getT(3).                     // Xarrange_impl::global_cable28_t<NV>
+                               getT(1).getT(0).getT(0).getT(3).
+                               getT(0);
+		auto& add33 = this->getT(0).getT(0).getT(0).getT(3).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(3).
+                      getT(1);
+		auto& peak5 = this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(0).getT(1);      // Xarrange_impl::peak5_t<NV>
+		auto& clear5 = this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(0).getT(2);     // math::clear<NV>
+		auto& pma21 = this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(1);              // Xarrange_impl::pma21_t<NV>
+		auto& chain56 = this->getT(0).getT(0).getT(0).getT(3).getT(2);                    // Xarrange_impl::chain56_t<NV>
+		auto& midi11 = this->getT(0).getT(0).getT(0).getT(3).getT(2).getT(0);             // Xarrange_impl::midi11_t<NV>
+		auto& pma22 = this->getT(0).getT(0).getT(0).getT(3).getT(2).getT(1);              // Xarrange_impl::pma22_t<NV>
+		auto& chain57 = this->getT(0).getT(0).getT(0).getT(3).getT(3);                    // Xarrange_impl::chain57_t<NV>
+		auto& midi12 = this->getT(0).getT(0).getT(0).getT(3).getT(3).getT(0);             // Xarrange_impl::midi12_t<NV>
+		auto& pma23 = this->getT(0).getT(0).getT(0).getT(3).getT(3).getT(1);              // Xarrange_impl::pma23_t<NV>
+		auto& split6 = this->getT(0).getT(0).getT(0).getT(4);                             // Xarrange_impl::split6_t<NV>
+		auto& chain40 = this->getT(0).getT(0).getT(0).getT(4).getT(0);                    // Xarrange_impl::chain40_t<NV>
+		auto& event_data_reader4 = this->getT(0).getT(0).getT(0).getT(4).getT(0).getT(0); // Xarrange_impl::event_data_reader4_t<NV>
+		auto& pma16 = this->getT(0).getT(0).getT(0).getT(4).getT(0).getT(1);              // Xarrange_impl::pma16_t<NV>
+		auto& chain41 = this->getT(0).getT(0).getT(0).getT(4).getT(1);                    // Xarrange_impl::chain41_t<NV>
+		auto& chain42 = this->getT(0).getT(0).getT(0).getT(4).getT(1).getT(0);            // Xarrange_impl::chain42_t<NV>
+		auto& branch4 = this->getT(0).getT(0).getT(0).getT(4).getT(1).getT(0).getT(0);    // Xarrange_impl::branch4_t<NV>
+		auto& chain43 = this->getT(0).getT(0).getT(0).getT(4).                            // Xarrange_impl::chain43_t<NV>
+                        getT(1).getT(0).getT(0).getT(0);
+		auto& global_cable4 = this->getT(0).getT(0).getT(0).getT(4).                      // Xarrange_impl::global_cable4_t<NV>
+                              getT(1).getT(0).getT(0).getT(0).
+                              getT(0);
+		auto& add26 = this->getT(0).getT(0).getT(0).getT(4).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(0).
+                      getT(1);
+		auto& chain44 = this->getT(0).getT(0).getT(0).getT(4).                            // Xarrange_impl::chain44_t<NV>
+                        getT(1).getT(0).getT(0).getT(1);
+		auto& global_cable23 = this->getT(0).getT(0).getT(0).getT(4).                     // Xarrange_impl::global_cable23_t<NV>
+                               getT(1).getT(0).getT(0).getT(1).
+                               getT(0);
+		auto& add27 = this->getT(0).getT(0).getT(0).getT(4).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(1).
+                      getT(1);
+		auto& chain45 = this->getT(0).getT(0).getT(0).getT(4).                            // Xarrange_impl::chain45_t<NV>
+                        getT(1).getT(0).getT(0).getT(2);
+		auto& global_cable24 = this->getT(0).getT(0).getT(0).getT(4).                     // Xarrange_impl::global_cable24_t<NV>
+                               getT(1).getT(0).getT(0).getT(2).
+                               getT(0);
+		auto& add28 = this->getT(0).getT(0).getT(0).getT(4).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(2).
+                      getT(1);
+		auto& chain46 = this->getT(0).getT(0).getT(0).getT(4).                            // Xarrange_impl::chain46_t<NV>
+                        getT(1).getT(0).getT(0).getT(3);
+		auto& global_cable25 = this->getT(0).getT(0).getT(0).getT(4).                     // Xarrange_impl::global_cable25_t<NV>
+                               getT(1).getT(0).getT(0).getT(3).
+                               getT(0);
+		auto& add29 = this->getT(0).getT(0).getT(0).getT(4).                              // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(3).
+                      getT(1);
+		auto& peak4 = this->getT(0).getT(0).getT(0).getT(4).getT(1).getT(0).getT(1);      // Xarrange_impl::peak4_t<NV>
+		auto& clear4 = this->getT(0).getT(0).getT(0).getT(4).getT(1).getT(0).getT(2);     // math::clear<NV>
+		auto& pma17 = this->getT(0).getT(0).getT(0).getT(4).getT(1).getT(1);              // Xarrange_impl::pma17_t<NV>
+		auto& split5 = this->getT(0).getT(0).getT(0).getT(5);                             // Xarrange_impl::split5_t<NV>
+		auto& chain16 = this->getT(0).getT(0).getT(0).getT(5).getT(0);                    // Xarrange_impl::chain16_t<NV>
+		auto& event_data_reader3 = this->getT(0).getT(0).getT(0).getT(5).getT(0).getT(0); // Xarrange_impl::event_data_reader3_t<NV>
+		auto& pma12 = this->getT(0).getT(0).getT(0).getT(5).getT(0).getT(1);              // Xarrange_impl::pma12_t<NV>
+		auto& chain17 = this->getT(0).getT(0).getT(0).getT(5).getT(1);                    // Xarrange_impl::chain17_t<NV>
+		auto& chain34 = this->getT(0).getT(0).getT(0).getT(5).getT(1).getT(0);            // Xarrange_impl::chain34_t<NV>
+		auto& branch3 = this->getT(0).getT(0).getT(0).getT(5).getT(1).getT(0).getT(0);    // Xarrange_impl::branch3_t<NV>
+		auto& chain21 = this->getT(0).getT(0).getT(0).getT(5).                            // Xarrange_impl::chain21_t<NV>
+                        getT(1).getT(0).getT(0).getT(0);
+		auto& global_cable3 = this->getT(0).getT(0).getT(0).getT(5).                  // Xarrange_impl::global_cable3_t<NV>
+                              getT(1).getT(0).getT(0).getT(0).
+                              getT(0);
+		auto& add22 = this->getT(0).getT(0).getT(0).getT(5).                          // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(0).
+                      getT(1);
+		auto& chain35 = this->getT(0).getT(0).getT(0).getT(5).                        // Xarrange_impl::chain35_t<NV>
+                        getT(1).getT(0).getT(0).getT(1);
+		auto& global_cable20 = this->getT(0).getT(0).getT(0).getT(5).                 // Xarrange_impl::global_cable20_t<NV>
+                               getT(1).getT(0).getT(0).getT(1).
+                               getT(0);
+		auto& add23 = this->getT(0).getT(0).getT(0).getT(5).                          // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(1).
+                      getT(1);
+		auto& chain36 = this->getT(0).getT(0).getT(0).getT(5).                        // Xarrange_impl::chain36_t<NV>
+                        getT(1).getT(0).getT(0).getT(2);
+		auto& global_cable21 = this->getT(0).getT(0).getT(0).getT(5).                 // Xarrange_impl::global_cable21_t<NV>
+                               getT(1).getT(0).getT(0).getT(2).
+                               getT(0);
+		auto& add24 = this->getT(0).getT(0).getT(0).getT(5).                          // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(2).
+                      getT(1);
+		auto& chain37 = this->getT(0).getT(0).getT(0).getT(5).                        // Xarrange_impl::chain37_t<NV>
+                        getT(1).getT(0).getT(0).getT(3);
+		auto& global_cable22 = this->getT(0).getT(0).getT(0).getT(5).                 // Xarrange_impl::global_cable22_t<NV>
+                               getT(1).getT(0).getT(0).getT(3).
+                               getT(0);
+		auto& add25 = this->getT(0).getT(0).getT(0).getT(5).                          // math::add<NV>
+                      getT(1).getT(0).getT(0).getT(3).
+                      getT(1);
+		auto& peak3 = this->getT(0).getT(0).getT(0).getT(5).getT(1).getT(0).getT(1);  // Xarrange_impl::peak3_t<NV>
+		auto& clear3 = this->getT(0).getT(0).getT(0).getT(5).getT(1).getT(0).getT(2); // math::clear<NV>
+		auto& pma13 = this->getT(0).getT(0).getT(0).getT(5).getT(1).getT(1);          // Xarrange_impl::pma13_t<NV>
+		auto& no_midi = this->getT(0).getT(0).getT(1);                                // Xarrange_impl::no_midi_t<NV>
+		auto& split1 = this->getT(0).getT(0).getT(1).getT(0);                         // Xarrange_impl::split1_t
+		auto& pack_resizer = this->getT(0).getT(0).getT(1).getT(0).getT(0);           // Xarrange_impl::pack_resizer_t
+		auto& pack_resizer1 = this->getT(0).getT(0).getT(1).getT(0).getT(1);          // Xarrange_impl::pack_resizer1_t
+		auto& pack_resizer2 = this->getT(0).getT(0).getT(1).getT(0).getT(2);          // Xarrange_impl::pack_resizer2_t
+		auto& split = this->getT(0).getT(0).getT(1).getT(1);                          // Xarrange_impl::split_t<NV>
+		auto& chain = this->getT(0).getT(0).getT(1).getT(1).getT(0);                  // Xarrange_impl::chain_t<NV>
+		auto& clone_pack = this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(0);     // Xarrange_impl::clone_pack_t<NV>
+		auto& clone_cable = this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(1);    // Xarrange_impl::clone_cable_t<NV>
+		auto& clone_cable4 = this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(2);   // Xarrange_impl::clone_cable4_t<NV>
+		auto& clone_cable3 = this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(3);   // Xarrange_impl::clone_cable3_t<NV>
+		auto& clone_forward = this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(4);  // Xarrange_impl::clone_forward_t<NV>
+		auto& clone_cable11 = this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(5);  // Xarrange_impl::clone_cable11_t<NV>
+		auto& clone_cable12 = this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(6);  // Xarrange_impl::clone_cable12_t<NV>
+		auto& chain2 = this->getT(0).getT(0).getT(1).getT(1).getT(1);                 // Xarrange_impl::chain2_t<NV>
+		auto& clone_pack2 = this->getT(0).getT(0).getT(1).getT(1).getT(1).getT(0);    // Xarrange_impl::clone_pack2_t<NV>
+		auto& clone_cable2 = this->getT(0).getT(0).getT(1).getT(1).getT(1).getT(1);   // Xarrange_impl::clone_cable2_t<NV>
+		auto& clone_cable9 = this->getT(0).getT(0).getT(1).getT(1).getT(1).getT(2);   // Xarrange_impl::clone_cable9_t<NV>
+		auto& clone_cable8 = this->getT(0).getT(0).getT(1).getT(1).getT(1).getT(3);   // Xarrange_impl::clone_cable8_t<NV>
+		auto& chain1 = this->getT(0).getT(0).getT(1).getT(1).getT(2);                 // Xarrange_impl::chain1_t<NV>
+		auto& clone_pack1 = this->getT(0).getT(0).getT(1).getT(1).getT(2).getT(0);    // Xarrange_impl::clone_pack1_t<NV>
+		auto& clone_cable1 = this->getT(0).getT(0).getT(1).getT(1).getT(2).getT(1);   // Xarrange_impl::clone_cable1_t<NV>
+		auto& clone_forward1 = this->getT(0).getT(0).getT(1).getT(1).getT(2).getT(2); // Xarrange_impl::clone_forward1_t<NV>
+		auto& clone_cable14 = this->getT(0).getT(0).getT(1).getT(1).getT(2).getT(3);  // Xarrange_impl::clone_cable14_t<NV>
+		auto& clone_cable13 = this->getT(0).getT(0).getT(1).getT(1).getT(2).getT(4);  // Xarrange_impl::clone_cable13_t<NV>
+		auto& clone_cable10 = this->getT(0).getT(0).getT(1).getT(1).getT(2).getT(5);  // Xarrange_impl::clone_cable10_t<NV>
+		auto& clone1 = this->getT(0).getT(1);                                         // Xarrange_impl::clone1_t<NV>                                         // Xarrange_impl::clone1_child_t<NV>
+		auto xnode1 = this->getT(0).getT(1).getT(0);                                  // Xarrange_impl::xnode1_t<NV>
+		auto jpanner = this->getT(0).getT(1).getT(1);                                 // jdsp::jpanner<NV>
+		auto& gain = this->getT(0).getT(2);                                           // core::gain<NV>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -2107,73 +2187,97 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 	{
 		// Runtime target Connections --------------------------------------------------------------
 		
-		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable_t<NV>
-        getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable11_t<NV>
-        getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable12_t<NV>
-        getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable13_t<NV>
-        getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(1).getT(1).  // Xarrange_impl::global_cable7_t<NV>
-        getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(1).getT(1).  // Xarrange_impl::global_cable32_t<NV>
-        getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(1).getT(1).  // Xarrange_impl::global_cable33_t<NV>
-        getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(1).getT(1).  // Xarrange_impl::global_cable34_t<NV>
-        getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(2).getT(1).  // Xarrange_impl::global_cable6_t<NV>
-        getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(2).getT(1).  // Xarrange_impl::global_cable29_t<NV>
-        getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(2).getT(1).  // Xarrange_impl::global_cable30_t<NV>
-        getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(2).getT(1).  // Xarrange_impl::global_cable31_t<NV>
-        getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(3).getT(1).  // Xarrange_impl::global_cable5_t<NV>
-        getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(3).getT(1).  // Xarrange_impl::global_cable26_t<NV>
-        getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(3).getT(1).  // Xarrange_impl::global_cable27_t<NV>
-        getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(3).getT(1).  // Xarrange_impl::global_cable28_t<NV>
-        getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(4).getT(1).  // Xarrange_impl::global_cable4_t<NV>
-        getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(4).getT(1).  // Xarrange_impl::global_cable23_t<NV>
-        getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(4).getT(1).  // Xarrange_impl::global_cable24_t<NV>
-        getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(4).getT(1).  // Xarrange_impl::global_cable25_t<NV>
-        getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(5).getT(1).  // Xarrange_impl::global_cable3_t<NV>
-        getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(5).getT(1).  // Xarrange_impl::global_cable20_t<NV>
-        getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(5).getT(1).  // Xarrange_impl::global_cable21_t<NV>
-        getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(5).getT(1).  // Xarrange_impl::global_cable22_t<NV>
-        getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(0).  // Xarrange_impl::global_cable_t<NV>
+        getT(1).getT(0).getT(0).getT(0).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(0).  // Xarrange_impl::global_cable11_t<NV>
+        getT(1).getT(0).getT(0).getT(1).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(0).  // Xarrange_impl::global_cable12_t<NV>
+        getT(1).getT(0).getT(0).getT(2).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(0).  // Xarrange_impl::global_cable13_t<NV>
+        getT(1).getT(0).getT(0).getT(3).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable7_t<NV>
+        getT(1).getT(0).getT(0).getT(0).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable32_t<NV>
+        getT(1).getT(0).getT(0).getT(1).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable33_t<NV>
+        getT(1).getT(0).getT(0).getT(2).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable34_t<NV>
+        getT(1).getT(0).getT(0).getT(3).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(2).  // Xarrange_impl::global_cable6_t<NV>
+        getT(1).getT(0).getT(0).getT(0).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(2).  // Xarrange_impl::global_cable29_t<NV>
+        getT(1).getT(0).getT(0).getT(1).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(2).  // Xarrange_impl::global_cable30_t<NV>
+        getT(1).getT(0).getT(0).getT(2).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(2).  // Xarrange_impl::global_cable31_t<NV>
+        getT(1).getT(0).getT(0).getT(3).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(3).  // Xarrange_impl::global_cable5_t<NV>
+        getT(1).getT(0).getT(0).getT(0).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(3).  // Xarrange_impl::global_cable26_t<NV>
+        getT(1).getT(0).getT(0).getT(1).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(3).  // Xarrange_impl::global_cable27_t<NV>
+        getT(1).getT(0).getT(0).getT(2).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(3).  // Xarrange_impl::global_cable28_t<NV>
+        getT(1).getT(0).getT(0).getT(3).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(4).  // Xarrange_impl::global_cable4_t<NV>
+        getT(1).getT(0).getT(0).getT(0).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(4).  // Xarrange_impl::global_cable23_t<NV>
+        getT(1).getT(0).getT(0).getT(1).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(4).  // Xarrange_impl::global_cable24_t<NV>
+        getT(1).getT(0).getT(0).getT(2).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(4).  // Xarrange_impl::global_cable25_t<NV>
+        getT(1).getT(0).getT(0).getT(3).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(5).  // Xarrange_impl::global_cable3_t<NV>
+        getT(1).getT(0).getT(0).getT(0).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(5).  // Xarrange_impl::global_cable20_t<NV>
+        getT(1).getT(0).getT(0).getT(1).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(5).  // Xarrange_impl::global_cable21_t<NV>
+        getT(1).getT(0).getT(0).getT(2).
+        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(5).  // Xarrange_impl::global_cable22_t<NV>
+        getT(1).getT(0).getT(0).getT(3).
+        getT(0).connectToRuntimeTarget(addConnection, c);
 	}
 	
 	void setExternalData(const ExternalData& b, int index)
 	{
 		// External Data Connections ---------------------------------------------------------------
 		
-		this->getT(0).getT(0).getT(0).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak1_t<NV>
-		this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak7_t<NV>
-		this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak6_t<NV>
-		this->getT(0).getT(0).getT(3).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak5_t<NV>
-		this->getT(0).getT(0).getT(4).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak4_t<NV>
-		this->getT(0).getT(0).getT(5).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak3_t<NV>
-		this->getT(0).getT(1).getT(0).getT(0).setExternalData(b, index);                 // Xarrange_impl::pack_resizer_t
-		this->getT(0).getT(1).getT(0).getT(1).setExternalData(b, index);                 // Xarrange_impl::pack_resizer1_t
-		this->getT(0).getT(1).getT(0).getT(2).setExternalData(b, index);                 // Xarrange_impl::pack_resizer2_t
-		this->getT(0).getT(1).getT(1).getT(0).getT(0).setExternalData(b, index);         // Xarrange_impl::clone_pack_t<NV>
-		this->getT(0).getT(1).getT(1).getT(1).getT(0).setExternalData(b, index);         // Xarrange_impl::clone_pack2_t<NV>
-		this->getT(0).getT(1).getT(1).getT(2).getT(0).setExternalData(b, index);         // Xarrange_impl::clone_pack1_t<NV>
-		this->getT(1).getT(0).setExternalData(b, index);                                 // Xarrange_impl::xnode1_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak1_t<NV>
+		this->getT(0).getT(0).getT(0).getT(1).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak7_t<NV>
+		this->getT(0).getT(0).getT(0).getT(2).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak6_t<NV>
+		this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak5_t<NV>
+		this->getT(0).getT(0).getT(0).getT(4).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak4_t<NV>
+		this->getT(0).getT(0).getT(0).getT(5).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak3_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(0).setExternalData(b, index);                 // Xarrange_impl::pack_resizer_t
+		this->getT(0).getT(0).getT(1).getT(0).getT(1).setExternalData(b, index);                 // Xarrange_impl::pack_resizer1_t
+		this->getT(0).getT(0).getT(1).getT(0).getT(2).setExternalData(b, index);                 // Xarrange_impl::pack_resizer2_t
+		this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(0).setExternalData(b, index);         // Xarrange_impl::clone_pack_t<NV>
+		this->getT(0).getT(0).getT(1).getT(1).getT(1).getT(0).setExternalData(b, index);         // Xarrange_impl::clone_pack2_t<NV>
+		this->getT(0).getT(0).getT(1).getT(1).getT(2).getT(0).setExternalData(b, index);         // Xarrange_impl::clone_pack1_t<NV>
+		this->getT(0).getT(1).getT(0).setExternalData(b, index);                                 // Xarrange_impl::xnode1_t<NV>
 	}
 };
 }
