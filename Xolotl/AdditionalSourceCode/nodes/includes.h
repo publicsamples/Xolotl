@@ -7,6 +7,7 @@
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // Include third party header files ----------------
 
 #include "BPF.h"
@@ -18,6 +19,8 @@
 #include "OBLP.h"
 #include "RevDel.h"
 
+=======
+>>>>>>> parent of 416899d (s&h gate)
 // Include compiled network files ------------------
 
 #include "bbdish_networkdata.h"
@@ -26,22 +29,15 @@
 #include "Env3_networkdata.h"
 #include "Env4_networkdata.h"
 #include "Env_networkdata.h"
-#include "Fausted_networkdata.h"
-#include "f_networkdata.h"
-#include "GainMod_networkdata.h"
-#include "ga_networkdata.h"
 #include "harmnode_networkdata.h"
 #include "harmo_networkdata.h"
 #include "Htwentyfour_networkdata.h"
 #include "modtest1.h"
 #include "mod_networkdata.h"
-#include "QuadCho_networkdata.h"
 #include "TRACK_LFO_networkdata.h"
 #include "Xarrange.h"
 #include "xnode.h"
-#include "xnodeCycle_networkdata.h"
 #include "xnodeUser_networkdata.h"
-#include "_networkdata.h"
 
 #if (defined (_WIN32) || defined (_WIN64))
 #pragma warning( pop )

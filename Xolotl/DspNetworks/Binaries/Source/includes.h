@@ -7,6 +7,7 @@
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // Include third party header files ----------------
 
 #include "BPF.h"
@@ -18,6 +19,8 @@
 #include "OBLP.h"
 #include "RevDel.h"
 
+=======
+>>>>>>> parent of 416899d (s&h gate)
 // Include compiled network files ------------------
 
 #include "dlay.h"
