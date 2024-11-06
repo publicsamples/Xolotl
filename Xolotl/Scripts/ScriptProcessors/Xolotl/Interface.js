@@ -12,7 +12,7 @@ const cable3 = rm.getCable("mod3");
 
 const var User1 = Content.getComponent("User1");
 
-User1.setRange(0, 1, 0.2);
+User1.setRange(0.2, 1, 0.2);
 
 const var expHandler = Engine.createExpansionHandler();
 const var expansions = expHandler.getExpansionList();
@@ -395,7 +395,6 @@ for (i = 0; i < 8; i++)
      }
      
 }       
-
 
 function onNoteOn()
 {

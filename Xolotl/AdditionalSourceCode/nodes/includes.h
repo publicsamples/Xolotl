@@ -35,6 +35,7 @@
 #include "Htwentyfour_networkdata.h"
 #include "modtest1.h"
 #include "mod_networkdata.h"
+#include "pb_networkdata.h"
 #include "QuadCho_networkdata.h"
 #include "TRACK_LFO_networkdata.h"
 #include "Xarrange.h"

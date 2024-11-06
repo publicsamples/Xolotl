@@ -181,11 +181,10 @@
                               <Connection NodeId="faust1" ParameterId="Log2(Delay)"/>
                             </ModulationTargets>
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="0.0" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="0.0"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" DefaultValue="1.0"
                                          Automated="1"/>
-                              <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" DefaultValue="0.0"
-                                         Automated="1"/>
+                              <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" DefaultValue="0.0"/>
                             </Parameters>
                           </Node>
                           <Node ID="minmax" FactoryPath="control.minmax" Bypassed="0" Name="minmax">
@@ -4229,8 +4228,7 @@
           <Connection NodeId="branch19" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="DtimeR" MinValue="0.0" MaxValue="18.0" Value="10.042716796875"
-                 DefaultValue="1.0">
+      <Parameter ID="DtimeR" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="pma1" ParameterId="Add"/>
         </Connections>
