@@ -47,6 +47,124 @@ namespace Xarrange_impl
 {
 // ==============================| Node & Parameter type declarations |==============================
 
+<<<<<<< HEAD
+=======
+struct xnode1_t_matrix
+{
+	static const int NumTables = 0;
+	static const int NumSliderPacks = 15;
+	static const int NumAudioFiles = 3;
+	static const int NumFilters = 0;
+	static const int NumDisplayBuffers = 0;
+	
+	// Index mapping matrix ------------------------------------------------------------------------
+	
+	const int matrix[3][15] =
+	{
+		{ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },                          // 
+		{ 1000, 1001, 1002, 1003, 1004, 6, 1005, 1006, 1007, 1008, 10, 1009, 1010, 1011, 1012 }, //  | 0->e[0] | 1->e[1] | 2->e[2] | 3->e[3] | 4->e[4] | 5->6 | 6->e[5] | 7->e[6] | 8->e[7] | 9->e[8] | 10->10 | 11->e[9] | 12->e[10] | 13->e[11] | 14->e[12]
+		{ 0, 1, 1013, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 }                           //  | 0->0 | 1->1 | 2->e[13]
+	};
+	
+private:
+	
+	span<float, 16> d0 =
+	{
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f
+	};
+	
+	span<float, 16> d1 =
+	{
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f
+	};
+	
+	span<float, 16> d2 =
+	{
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f
+	};
+	
+	span<float, 16> d3 =
+	{
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f
+	};
+	
+	span<float, 16> d4 =
+	{
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f
+	};
+	
+	span<float, 16> d5 =
+	{
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f
+	};
+	
+	span<float, 16> d6 =
+	{
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f
+	};
+	
+	span<float, 16> d7 =
+	{
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f
+	};
+	
+	span<float, 16> d8 =
+	{
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f
+	};
+	
+	span<float, 16> d9 =
+	{
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f
+	};
+	
+	span<float, 16> d10 =
+	{
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f
+	};
+	
+	span<float, 16> d11 =
+	{
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f
+	};
+	
+	span<float, 16> d12 =
+	{
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f
+	};
+	
+public:
+	
+	const span<dyn<float>, 13> embeddedData = { d0, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12 };
+};
+
+>>>>>>> d2
 template <int NV>
 using xnode_t = wrap::data<project::xnode<NV>, 
                            data::external::audiofile<0>>;
@@ -56,6 +174,7 @@ using clone_pack_t = wrap::data<control::clone_pack<parameter::cloned<parameter:
 template <int NV>
 using pma6_t = control::pma<NV, 
                             parameter::plain<clone_pack_t<NV>, 1>>;
+<<<<<<< HEAD
 template <int NV>
 using pma2_t = control::pma<NV, 
                             parameter::plain<pma6_t<NV>, 2>>;
@@ -63,13 +182,26 @@ template <int NV>
 using pma3_t = control::pma<NV, 
                             parameter::plain<pma2_t<NV>, 2>>;
 DECLARE_PARAMETER_RANGE(pma_modRange, 
+=======
+DECLARE_PARAMETER_RANGE(pma2_modRange, 
+>>>>>>> d2
                         5.55112e-17, 
                         1.);
 
 template <int NV>
+using pma2_mod = parameter::from0To1<pma6_t<NV>, 
+                                     2, 
+                                     pma2_modRange>;
+
+template <int NV>
+using pma2_t = control::pma<NV, pma2_mod<NV>>;
+template <int NV>
+using pma3_t = control::pma<NV, 
+                            parameter::plain<pma2_t<NV>, 2>>;
+template <int NV>
 using pma_mod = parameter::from0To1<pma3_t<NV>, 
                                     2, 
-                                    pma_modRange>;
+                                    pma2_modRange>;
 
 template <int NV>
 using pma_t = control::pma<NV, pma_mod<NV>>;
@@ -153,12 +285,14 @@ using chain6_t = container::chain<parameter::empty,
                                   pma2_t<NV>>;
 
 template <int NV>
+<<<<<<< HEAD
 using midi_cc_t = control::midi_cc<parameter::plain<pma6_t<NV>, 0>>;
 
 template <int NV>
+=======
+>>>>>>> d2
 using chain5_t = container::chain<parameter::empty, 
-                                  wrap::fix<1, midi_cc_t<NV>>, 
-                                  pma6_t<NV>>;
+                                  wrap::fix<1, pma6_t<NV>>>;
 
 template <int NV>
 using split2_t = container::split<parameter::empty, 
@@ -167,29 +301,27 @@ using split2_t = container::split<parameter::empty,
                                   chain6_t<NV>, 
                                   chain5_t<NV>>;
 
-DECLARE_PARAMETER_RANGE(clone_cable11_modRange, 
+DECLARE_PARAMETER_RANGE(clone_cable5_modRange, 
                         0., 
                         2.);
 
 template <int NV>
+<<<<<<< HEAD
 using clone_cable11_mod = parameter::from0To1<xnode_t<NV>, 
                                               15, 
                                               clone_cable11_modRange>;
+=======
+using clone_cable5_mod = parameter::from0To1<xnode1_t<NV>, 
+                                             15, 
+                                             clone_cable5_modRange>;
+>>>>>>> d2
 
 template <int NV>
-using clone_cable11_t = control::clone_cable<parameter::cloned<clone_cable11_mod<NV>>, 
-                                             duplilogic::spread>;
-DECLARE_PARAMETER_RANGE(pma29_modRange, 
-                        -1., 
-                        1.);
-
+using clone_cable5_t = control::clone_cable<parameter::cloned<clone_cable5_mod<NV>>, 
+                                            duplilogic::spread>;
 template <int NV>
-using pma29_mod = parameter::from0To1<clone_cable11_t<NV>, 
-                                      1, 
-                                      pma29_modRange>;
-
-template <int NV>
-using pma29_t = control::pma<NV, pma29_mod<NV>>;
+using pma29_t = control::pma<NV, 
+                             parameter::plain<clone_cable5_t<NV>, 1>>;
 template <int NV>
 using pma28_t = control::pma<NV, 
                              parameter::plain<pma29_t<NV>, 2>>;
@@ -381,7 +513,7 @@ using split8_t = container::split<parameter::empty,
 template <int NV>
 using clone_pack1_mod = parameter::from0To1<xnode_t<NV>, 
                                             13, 
-                                            pma_modRange>;
+                                            pma2_modRange>;
 
 template <int NV>
 using clone_pack1_t = wrap::data<control::clone_pack<parameter::cloned<clone_pack1_mod<NV>>>, 
@@ -721,10 +853,14 @@ using clone_cable3_t = control::clone_cable<parameter::cloned<parameter::plain<x
 template <int NV>
 using clone_forward_t = control::clone_forward<parameter::cloned<parameter::plain<xnode_t<NV>, 4>>>;
 
+DECLARE_PARAMETER_RANGE(clone_cable12_modRange, 
+                        -1., 
+                        1.);
+
 template <int NV>
 using clone_cable12_mod = parameter::from0To1<xnode_t<NV>, 
                                               9, 
-                                              pma29_modRange>;
+                                              clone_cable12_modRange>;
 
 template <int NV>
 using clone_cable12_t = control::clone_cable<parameter::cloned<clone_cable12_mod<NV>>, 
@@ -737,7 +873,7 @@ using chain_t = container::chain<parameter::empty,
                                  clone_cable4_t<NV>, 
                                  clone_cable3_t<NV>, 
                                  clone_forward_t<NV>, 
-                                 clone_cable11_t<NV>, 
+                                 clone_cable5_t<NV>, 
                                  clone_cable12_t<NV>>;
 
 template <int NV>
@@ -770,7 +906,7 @@ using clone_forward1_t = control::clone_forward<parameter::cloned<parameter::pla
 template <int NV>
 using clone_cable13_mod = parameter::from0To1<xnode_t<NV>, 
                                               14, 
-                                              pma29_modRange>;
+                                              clone_cable12_modRange>;
 
 template <int NV>
 using clone_cable13_t = control::clone_cable<parameter::cloned<clone_cable13_mod<NV>>, 
@@ -779,7 +915,7 @@ using clone_cable13_t = control::clone_cable<parameter::cloned<clone_cable13_mod
 template <int NV>
 using clone_cable10_mod = parameter::from0To1<jdsp::jpanner<NV>, 
                                               0, 
-                                              pma29_modRange>;
+                                              clone_cable12_modRange>;
 
 template <int NV>
 using clone_cable10_t = control::clone_cable<parameter::cloned<clone_cable10_mod<NV>>, 
@@ -823,15 +959,6 @@ using clone1_child_t = container::chain<parameter::empty,
 template <int NV>
 using clone1_t = wrap::clonesplit<clone1_child_t<NV>, 32>;
 
-template <int NV>
-using fix8_block_t_ = container::chain<parameter::empty, 
-                                       wrap::fix<2, modchain_t<NV>>, 
-                                       clone1_t<NV>, 
-                                       core::gain<NV>>;
-
-template <int NV>
-using fix8_block_t = wrap::fix_block<8, fix8_block_t_<NV>>;
-
 namespace Xarrange_t_parameters
 {
 // Parameter list for Xarrange_impl::Xarrange_t ----------------------------------------------------
@@ -849,7 +976,6 @@ using Stages = parameter::chain<ranges::Identity,
                                 parameter::plain<Xarrange_impl::clone_cable9_t<NV>, 0>, 
                                 parameter::plain<Xarrange_impl::clone_cable3_t<NV>, 0>, 
                                 parameter::plain<Xarrange_impl::clone_forward_t<NV>, 0>, 
-                                parameter::plain<Xarrange_impl::clone_cable11_t<NV>, 0>, 
                                 parameter::plain<Xarrange_impl::clone_cable8_t<NV>, 0>, 
                                 parameter::plain<Xarrange_impl::clone_cable13_t<NV>, 0>, 
                                 parameter::plain<Xarrange_impl::clone_cable14_t<NV>, 0>, 
@@ -858,7 +984,8 @@ using Stages = parameter::chain<ranges::Identity,
                                 parameter::plain<Xarrange_impl::pack_resizer2_t, 0>, 
                                 parameter::plain<Xarrange_impl::clone_forward1_t<NV>, 0>, 
                                 parameter::plain<Xarrange_impl::clone_cable10_t<NV>, 0>, 
-                                parameter::plain<Xarrange_impl::clone_cable12_t<NV>, 0>>;
+                                parameter::plain<Xarrange_impl::clone_cable12_t<NV>, 0>, 
+                                parameter::plain<Xarrange_impl::clone_cable5_t<NV>, 0>>;
 
 DECLARE_PARAMETER_RANGE(Min_InputRange, 
                         1., 
@@ -1018,6 +1145,7 @@ using PanSpread = parameter::plain<Xarrange_impl::clone_cable10_t<NV>,
 template <int NV>
 using PitchSh = parameter::plain<Xarrange_impl::clone_cable12_t<NV>, 
                                  1>;
+using DetuneMode = HarmPb;
 template <int NV>
 using Xarrange_t_plist = parameter::list<Stages<NV>, 
                                          SampleOSc<NV>, 
@@ -1066,12 +1194,15 @@ using Xarrange_t_plist = parameter::list<Stages<NV>,
                                          MixLfo<NV>, 
                                          MixLfoSrc<NV>, 
                                          PanSpread<NV>, 
-                                         PitchSh<NV>>;
+                                         PitchSh<NV>, 
+                                         DetuneMode>;
 }
 
 template <int NV>
 using Xarrange_t_ = container::chain<Xarrange_t_parameters::Xarrange_t_plist<NV>, 
-                                     wrap::fix<2, fix8_block_t<NV>>>;
+                                     wrap::fix<2, modchain_t<NV>>, 
+                                     clone1_t<NV>, 
+                                     core::gain<NV>>;
 
 // =================================| Root node initialiser class |=================================
 
@@ -1081,93 +1212,134 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 	struct metadata
 	{
 		static const int NumTables = 0;
+<<<<<<< HEAD
 		static const int NumSliderPacks = 4;
 		static const int NumAudioFiles = 1;
+=======
+		static const int NumSliderPacks = 11;
+		static const int NumAudioFiles = 2;
+>>>>>>> d2
 		static const int NumFilters = 0;
 		static const int NumDisplayBuffers = 0;
 		
 		SNEX_METADATA_ID(Xarrange);
 		SNEX_METADATA_NUM_CHANNELS(2);
-		SNEX_METADATA_ENCODED_PARAMETERS(804)
+		SNEX_METADATA_ENCODED_PARAMETERS(822)
 		{
 			0x005B, 0x0000, 0x5300, 0x6174, 0x6567, 0x0073, 0x0000, 0x3F80, 
+<<<<<<< HEAD
             0x0000, 0x4200, 0x0000, 0x41C0, 0x0000, 0x3F80, 0x0000, 0x3F80, 
             0x015B, 0x0000, 0x5300, 0x6D61, 0x6C70, 0x4F65, 0x6353, 0x0000, 
             0x0000, 0x0000, 0xA000, 0x0040, 0x0000, 0x0000, 0x8000, 0x003F, 
+=======
+            0x0000, 0x4200, 0x0000, 0x4200, 0x0000, 0x3F80, 0x0000, 0x3F80, 
+            0x015B, 0x0000, 0x5300, 0x6D61, 0x6C70, 0x4F65, 0x6353, 0x0000, 
+            0x0000, 0x0000, 0x3000, 0x0041, 0x0000, 0x0040, 0x8000, 0x003F, 
+>>>>>>> d2
             0x8000, 0x5B3F, 0x0002, 0x0000, 0x694D, 0x006E, 0x0000, 0x3F80, 
             0x0000, 0x4180, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 
             0x035B, 0x0000, 0x4600, 0x6D58, 0x7869, 0x0000, 0x0000, 0x0000, 
             0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x5B00, 
             0x0004, 0x0000, 0x4853, 0x6574, 0x706D, 0x536F, 0x6E79, 0x0063, 
-            0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 
+            0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 
             0x0000, 0x0000, 0x055B, 0x0000, 0x5300, 0x4448, 0x7669, 0x0000, 
-            0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 
+            0x0000, 0x0000, 0x8000, 0xA43F, 0x7D70, 0x003F, 0x8000, 0x003F, 
             0x0000, 0x5B00, 0x0006, 0x0000, 0x6946, 0x746C, 0x7265, 0x7954, 
             0x6570, 0x0000, 0x0000, 0x0000, 0xA000, 0x0040, 0x0000, 0x0000, 
             0x8000, 0x003F, 0x0000, 0x5B00, 0x0007, 0x0000, 0x6946, 0x746C, 
             0x7265, 0x5846, 0x6F4D, 0x0064, 0x0000, 0x0000, 0x0000, 0x3F80, 
+<<<<<<< HEAD
             0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x085B, 0x0000, 
+=======
+            0x0000, 0x3F00, 0x0000, 0x3F80, 0x0000, 0x0000, 0x085B, 0x0000, 
+>>>>>>> d2
             0x4800, 0x7261, 0x006D, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 
-            0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x095B, 0x0000, 0x4800, 
+            0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x095B, 0x0000, 0x4800, 
             0x7261, 0x456D, 0x766E, 0x7253, 0x0063, 0x0000, 0x0000, 0x0000, 
+<<<<<<< HEAD
             0x4180, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0A5B, 
+=======
+            0x4180, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0A5B, 
+>>>>>>> d2
             0x0000, 0x4500, 0x766E, 0x6F4D, 0x0064, 0x0000, 0xBF80, 0x0000, 
-            0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0B5B, 
+            0x3F80, 0x0000, 0x23C0, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0B5B, 
             0x0000, 0x4800, 0x7261, 0x4C6D, 0x6F66, 0x7253, 0x0063, 0x0000, 
-            0x0000, 0x0000, 0x4040, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 
+            0x0000, 0x0000, 0x4040, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 
             0x3F80, 0x0C5B, 0x0000, 0x4800, 0x7261, 0x4C6D, 0x6F46, 0x6F4D, 
+<<<<<<< HEAD
             0x0064, 0x0000, 0xBF80, 0x0000, 0x3F80, 0xC49C, 0x3A2E, 0x0000, 
+=======
+            0x0064, 0x0000, 0xBF80, 0x0000, 0x3F80, 0x0000, 0x23C0, 0x0000, 
+>>>>>>> d2
             0x3F80, 0x0000, 0x0000, 0x0D5B, 0x0000, 0x4800, 0x7261, 0x546D, 
-            0x6B72, 0x0000, 0x8000, 0x00BF, 0x8000, 0x003F, 0x0000, 0x0000, 
+            0x6B72, 0x0000, 0x8000, 0x00BF, 0x8000, 0x003F, 0xC000, 0x0023, 
             0x8000, 0x003F, 0x0000, 0x5B00, 0x000E, 0x0000, 0x6148, 0x6D72, 
-            0x6250, 0x0000, 0x8000, 0x00BF, 0x8000, 0x583F, 0x3439, 0x00BC, 
+            0x6250, 0x0000, 0x8000, 0x00BF, 0x8000, 0x003F, 0x0000, 0x0000, 
             0x8000, 0x003F, 0x0000, 0x5B00, 0x000F, 0x0000, 0x414D, 0x0058, 
-            0x0000, 0x3F80, 0x0000, 0x4180, 0x0000, 0x4160, 0x0000, 0x3F80, 
+            0x0000, 0x3F80, 0x0000, 0x4180, 0x0000, 0x4180, 0x0000, 0x3F80, 
             0x0000, 0x3F80, 0x105B, 0x0000, 0x5300, 0x6574, 0x0070, 0x0000, 
             0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 
             0x0000, 0x115B, 0x0000, 0x4400, 0x7465, 0x6E75, 0x0065, 0x0000, 
-            0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 
+            0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 
             0x0000, 0x125B, 0x0000, 0x4400, 0x7465, 0x6E75, 0x4565, 0x766E, 
-            0x6F4D, 0x0064, 0x0000, 0xBF80, 0x0000, 0x3F80, 0x4B33, 0x3F75, 
+            0x6F4D, 0x0064, 0x0000, 0xBF80, 0x0000, 0x3F80, 0x0000, 0x23C0, 
             0x0000, 0x3F80, 0x0000, 0x0000, 0x135B, 0x0000, 0x4400, 0x7465, 
             0x6E75, 0x6565, 0x766E, 0x7273, 0x0063, 0x0000, 0x0000, 0x0000, 
             0x4180, 0x0000, 0x4080, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x145B, 
             0x0000, 0x4400, 0x7465, 0x6E75, 0x4C65, 0x4F46, 0x6F6D, 0x0064, 
-            0x0000, 0xBF80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 
+            0x0000, 0xBF80, 0x0000, 0x3F80, 0x0000, 0x23C0, 0x0000, 0x3F80, 
             0x0000, 0x0000, 0x155B, 0x0000, 0x4400, 0x7465, 0x6E75, 0x4C65, 
             0x4F46, 0x7273, 0x0063, 0x0000, 0x0000, 0x0000, 0x4040, 0x0000, 
             0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x165B, 0x0000, 0x4600, 
             0x4F78, 0x6666, 0x6573, 0x0074, 0x0000, 0x0000, 0x0000, 0x3F80, 
-            0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x175B, 0x0000, 
+            0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x175B, 0x0000, 
             0x4600, 0x4578, 0x766E, 0x6F4D, 0x0064, 0x0000, 0xBF80, 0x0000, 
+<<<<<<< HEAD
             0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x185B, 
+=======
+            0x3F80, 0x0000, 0x23C0, 0x0000, 0x3F80, 0x0000, 0x0000, 0x185B, 
+>>>>>>> d2
             0x0000, 0x4600, 0x4578, 0x766E, 0x7253, 0x0063, 0x0000, 0x0000, 
             0x0000, 0x4180, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 
             0x195B, 0x0000, 0x4600, 0x4C78, 0x6F66, 0x6F4D, 0x0064, 0x0000, 
-            0xBF80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 
+            0xBF80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 
             0x0000, 0x1A5B, 0x0000, 0x4600, 0x4C58, 0x6F66, 0x7253, 0x0063, 
             0x0000, 0x0000, 0x0000, 0x4040, 0x0000, 0x3F80, 0x0000, 0x3F80, 
             0x0000, 0x3F80, 0x1B5B, 0x0000, 0x4600, 0x5678, 0x6C65, 0x0000, 
             0x8000, 0x00BF, 0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 
             0x0000, 0x5B00, 0x001C, 0x0000, 0x7846, 0x7254, 0x006B, 0x0000, 
+<<<<<<< HEAD
             0xBF80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 
             0x0000, 0x1D5B, 0x0000, 0x4300, 0x7475, 0x664F, 0x7366, 0x7465, 
             0x0000, 0x0000, 0x0000, 0x8000, 0x383F, 0xC4E5, 0x0040, 0x8000, 
             0x003F, 0x0000, 0x5B00, 0x001E, 0x0000, 0x7543, 0x4574, 0x766E, 
             0x6F4D, 0x0064, 0x0000, 0xBF80, 0x0000, 0x3F80, 0x0000, 0x0000, 
+=======
+            0xBF80, 0x0000, 0x3F80, 0x0000, 0x23C0, 0x0000, 0x3F80, 0x0000, 
+            0x0000, 0x1D5B, 0x0000, 0x4300, 0x7475, 0x664F, 0x7366, 0x7465, 
+            0x0000, 0x0000, 0x0000, 0x8000, 0x663F, 0xE666, 0x003E, 0x8000, 
+            0x003F, 0x0000, 0x5B00, 0x001E, 0x0000, 0x7543, 0x4574, 0x766E, 
+            0x6F4D, 0x0064, 0x0000, 0xBF80, 0x0000, 0x3F80, 0x0000, 0x23C0, 
+>>>>>>> d2
             0x0000, 0x3F80, 0x0000, 0x0000, 0x1F5B, 0x0000, 0x7500, 0x4574, 
             0x766E, 0x7253, 0x0063, 0x0000, 0x0000, 0x0000, 0x4180, 0x0000, 
-            0x4150, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x205B, 0x0000, 0x4300, 
+            0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x205B, 0x0000, 0x4300, 
             0x7475, 0x666C, 0x4D6F, 0x646F, 0x0000, 0x8000, 0x00BF, 0x8000, 
-            0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x5B00, 0x0021, 
+            0x003F, 0xC000, 0x0023, 0x8000, 0x003F, 0x0000, 0x5B00, 0x0021, 
             0x0000, 0x7543, 0x4C74, 0x6F66, 0x7253, 0x0063, 0x0000, 0x0000, 
             0x0000, 0x4040, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 
             0x225B, 0x0000, 0x4300, 0x7475, 0x6556, 0x006C, 0x0000, 0xBF80, 
             0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 
             0x235B, 0x0000, 0x4300, 0x7475, 0x7254, 0x006B, 0x0000, 0xBF80, 
+<<<<<<< HEAD
             0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 
             0x245B, 0x0000, 0x5100, 0x0000, 0x8000, 0x003F, 0x1000, 0x0041, 
             0x8000, 0x003F, 0x8000, 0x003F, 0x0000, 0x5B00, 0x0025, 0x0000, 
+=======
+            0x0000, 0x3F80, 0x0000, 0x23C0, 0x0000, 0x3F80, 0x0000, 0x0000, 
+            0x245B, 0x0000, 0x5100, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 
+            0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x5B00, 0x0025, 0x0000, 
+>>>>>>> d2
             0x4551, 0x766E, 0x6F4D, 0x0064, 0x0000, 0xBF80, 0x0000, 0x3F80, 
             0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x265B, 0x0000, 
             0x7100, 0x6E45, 0x5376, 0x6372, 0x0000, 0x0000, 0x0000, 0x8000, 
@@ -1177,9 +1349,13 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
             0x0000, 0x7100, 0x664C, 0x536F, 0x6372, 0x0000, 0x0000, 0x0000, 
             0x4000, 0x0040, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x5B3F, 
             0x0029, 0x0000, 0x694D, 0x0078, 0x0000, 0x0000, 0x0000, 0x3F80, 
+<<<<<<< HEAD
             0x0000, 0x4110, 0x0000, 0x3F80, 0x0000, 0x0000, 0x2A5B, 0x0000, 
+=======
+            0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x2A5B, 0x0000, 
+>>>>>>> d2
             0x4D00, 0x7869, 0x6E45, 0x4D76, 0x646F, 0x0000, 0x8000, 0x00BF, 
-            0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x5B00, 
+            0x8000, 0x003F, 0xC000, 0x0023, 0x8000, 0x003F, 0x0000, 0x5B00, 
             0x002B, 0x0000, 0x694D, 0x5378, 0x6372, 0x0000, 0x0000, 0x0000, 
             0x8000, 0x0041, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x5B3F, 
             0x002C, 0x0000, 0x694D, 0x4C78, 0x6F66, 0x0000, 0x8000, 0x00BF, 
@@ -1189,8 +1365,10 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
             0x3F80, 0x2E5B, 0x0000, 0x5000, 0x6E61, 0x7053, 0x6572, 0x6461, 
             0x0000, 0x8000, 0x00BF, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 
             0x003F, 0x0000, 0x5B00, 0x002F, 0x0000, 0x6950, 0x6374, 0x5368, 
-            0x0068, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 
-            0x3F80, 0x0000, 0x0000, 0x0000
+            0x0068, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x3F00, 0x0000, 
+            0x3F80, 0x0000, 0x0000, 0x305B, 0x0000, 0x4400, 0x7465, 0x6E75, 
+            0x4D65, 0x646F, 0x0065, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 
+            0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000
 		};
 	};
 	
@@ -1198,6 +1376,7 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 	{
 		// Node References -------------------------------------------------------------------------
 		
+<<<<<<< HEAD
 <<<<<<< HEAD
 		auto& fix8_block = this->getT(0);                                                 // Xarrange_impl::fix8_block_t<NV>
 		auto& modchain = this->getT(0).getT(0);                                           // Xarrange_impl::modchain_t<NV>
@@ -1503,6 +1682,8 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 		auto jpanner = this->getT(0).getT(1).getT(1);                                 // jdsp::jpanner<NV>
 		auto& gain = this->getT(0).getT(2);                                           // core::gain<NV>
 =======
+=======
+>>>>>>> d2
 		auto& modchain = this->getT(0);                                                // Xarrange_impl::modchain_t<NV>
 		auto& chain4 = this->getT(0).getT(0);                                          // Xarrange_impl::chain4_t<NV>
 		auto& split2 = this->getT(0).getT(0).getT(0);                                  // Xarrange_impl::split2_t<NV>
@@ -1539,8 +1720,12 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 		auto& midi2 = this->getT(0).getT(0).getT(0).getT(2).getT(0);                   // Xarrange_impl::midi2_t<NV>
 		auto& pma2 = this->getT(0).getT(0).getT(0).getT(2).getT(1);                    // Xarrange_impl::pma2_t<NV>
 		auto& chain5 = this->getT(0).getT(0).getT(0).getT(3);                          // Xarrange_impl::chain5_t<NV>
+<<<<<<< HEAD
 		auto& midi_cc = this->getT(0).getT(0).getT(0).getT(3).getT(0);                 // Xarrange_impl::midi_cc_t<NV>
 		auto& pma6 = this->getT(0).getT(0).getT(0).getT(3).getT(1);                    // Xarrange_impl::pma6_t<NV>
+=======
+		auto& pma6 = this->getT(0).getT(0).getT(0).getT(3).getT(0);                    // Xarrange_impl::pma6_t<NV>
+>>>>>>> d2
 		auto& split9 = this->getT(0).getT(0).getT(1);                                  // Xarrange_impl::split9_t<NV>
 		auto& chain67 = this->getT(0).getT(0).getT(1).getT(0);                         // Xarrange_impl::chain67_t<NV>
 		auto& event_data_reader7 = this->getT(0).getT(0).getT(1).getT(0).getT(0);      // Xarrange_impl::event_data_reader7_t<NV>
@@ -1715,7 +1900,11 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 		auto& clone_cable4 = this->getT(0).getT(1).getT(1).getT(0).getT(2);   // Xarrange_impl::clone_cable4_t<NV>
 		auto& clone_cable3 = this->getT(0).getT(1).getT(1).getT(0).getT(3);   // Xarrange_impl::clone_cable3_t<NV>
 		auto& clone_forward = this->getT(0).getT(1).getT(1).getT(0).getT(4);  // Xarrange_impl::clone_forward_t<NV>
+<<<<<<< HEAD
 		auto& clone_cable11 = this->getT(0).getT(1).getT(1).getT(0).getT(5);  // Xarrange_impl::clone_cable11_t<NV>
+=======
+		auto& clone_cable5 = this->getT(0).getT(1).getT(1).getT(0).getT(5);   // Xarrange_impl::clone_cable5_t<NV>
+>>>>>>> d2
 		auto& clone_cable12 = this->getT(0).getT(1).getT(1).getT(0).getT(6);  // Xarrange_impl::clone_cable12_t<NV>
 		auto& chain2 = this->getT(0).getT(1).getT(1).getT(1);                 // Xarrange_impl::chain2_t<NV>
 		auto& clone_pack2 = this->getT(0).getT(1).getT(1).getT(1).getT(0);    // Xarrange_impl::clone_pack2_t<NV>
@@ -1730,10 +1919,16 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 		auto& clone_cable13 = this->getT(0).getT(1).getT(1).getT(2).getT(4);  // Xarrange_impl::clone_cable13_t<NV>
 		auto& clone_cable10 = this->getT(0).getT(1).getT(1).getT(2).getT(5);  // Xarrange_impl::clone_cable10_t<NV>
 		auto& clone1 = this->getT(1);                                         // Xarrange_impl::clone1_t<NV>                                         // Xarrange_impl::clone1_child_t<NV>
+<<<<<<< HEAD
 		auto xnode = this->getT(1).getT(0);                                   // Xarrange_impl::xnode_t<NV>
 		auto jpanner = this->getT(1).getT(1);                                 // jdsp::jpanner<NV>
 		auto& gain = this->getT(2);                                           // core::gain<NV>
 >>>>>>> parent of 416899d (s&h gate)
+=======
+		auto xnode1 = this->getT(1).getT(0);                                  // Xarrange_impl::xnode1_t<NV>
+		auto jpanner = this->getT(1).getT(1);                                 // jdsp::jpanner<NV>
+		auto& gain = this->getT(2);                                           // core::gain<NV>
+>>>>>>> d2
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -1749,16 +1944,16 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 		Stages_p.connectT(8, clone_cable9);    // Stages -> clone_cable9::NumClones
 		Stages_p.connectT(9, clone_cable3);    // Stages -> clone_cable3::NumClones
 		Stages_p.connectT(10, clone_forward);  // Stages -> clone_forward::NumClones
-		Stages_p.connectT(11, clone_cable11);  // Stages -> clone_cable11::NumClones
-		Stages_p.connectT(12, clone_cable8);   // Stages -> clone_cable8::NumClones
-		Stages_p.connectT(13, clone_cable13);  // Stages -> clone_cable13::NumClones
-		Stages_p.connectT(14, clone_cable14);  // Stages -> clone_cable14::NumClones
-		Stages_p.connectT(15, pack_resizer);   // Stages -> pack_resizer::NumSliders
-		Stages_p.connectT(16, pack_resizer1);  // Stages -> pack_resizer1::NumSliders
-		Stages_p.connectT(17, pack_resizer2);  // Stages -> pack_resizer2::NumSliders
-		Stages_p.connectT(18, clone_forward1); // Stages -> clone_forward1::NumClones
-		Stages_p.connectT(19, clone_cable10);  // Stages -> clone_cable10::NumClones
-		Stages_p.connectT(20, clone_cable12);  // Stages -> clone_cable12::NumClones
+		Stages_p.connectT(11, clone_cable8);   // Stages -> clone_cable8::NumClones
+		Stages_p.connectT(12, clone_cable13);  // Stages -> clone_cable13::NumClones
+		Stages_p.connectT(13, clone_cable14);  // Stages -> clone_cable14::NumClones
+		Stages_p.connectT(14, pack_resizer);   // Stages -> pack_resizer::NumSliders
+		Stages_p.connectT(15, pack_resizer1);  // Stages -> pack_resizer1::NumSliders
+		Stages_p.connectT(16, pack_resizer2);  // Stages -> pack_resizer2::NumSliders
+		Stages_p.connectT(17, clone_forward1); // Stages -> clone_forward1::NumClones
+		Stages_p.connectT(18, clone_cable10);  // Stages -> clone_cable10::NumClones
+		Stages_p.connectT(19, clone_cable12);  // Stages -> clone_cable12::NumClones
+		Stages_p.connectT(20, clone_cable5);   // Stages -> clone_cable5::NumClones
 		
 		this->getParameterT(1).connectT(0, clone_forward); // SampleOSc -> clone_forward::Value
 		
@@ -1868,9 +2063,14 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 		global_cable13.getWrappedObject().getParameter().connectT(0, add13);  // global_cable13 -> add13::Value
 		peak1.getParameter().connectT(0, pma3);                               // peak1 -> pma3::Value
 		midi2.getParameter().connectT(0, pma2);                               // midi2 -> pma2::Value
+<<<<<<< HEAD
 		midi_cc.getWrappedObject().getParameter().connectT(0, pma6);          // midi_cc -> pma6::Value
 		clone_cable11.getWrappedObject().getParameter().connectT(0, xnode);   // clone_cable11 -> xnode::DET
 		pma29.getWrappedObject().getParameter().connectT(0, clone_cable11);   // pma29 -> clone_cable11::Value
+=======
+		clone_cable5.getWrappedObject().getParameter().connectT(0, xnode1);   // clone_cable5 -> xnode1::DET
+		pma29.getWrappedObject().getParameter().connectT(0, clone_cable5);    // pma29 -> clone_cable5::Value
+>>>>>>> d2
 		pma28.getWrappedObject().getParameter().connectT(0, pma29);           // pma28 -> pma29::Add
 		event_data_reader7.getParameter().connectT(0, pma28);                 // event_data_reader7 -> pma28::Value
 		global_cable7.getWrappedObject().getParameter().connectT(0, add38);   // global_cable7 -> add38::Value
@@ -1971,6 +2171,7 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 		; // pma2::Multiply is automated
 		; // pma2::Add is automated
 		
+<<<<<<< HEAD
 		midi_cc.setParameterT(0, 128.); // control::midi_cc::CCNumber
 		midi_cc.setParameterT(1, 0.);   // control::midi_cc::EnableMPE
 		midi_cc.setParameterT(2, 0.);   // control::midi_cc::DefaultValue
@@ -1978,6 +2179,11 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 		; // pma6::Value is automated
 		; // pma6::Multiply is automated
 		; // pma6::Add is automated
+=======
+		pma6.setParameterT(0, 0.5); // control::pma::Value
+		pma6.setParameterT(1, 0.);  // control::pma::Multiply
+		;                           // pma6::Add is automated
+>>>>>>> d2
 		
 		;                                        // event_data_reader7::SlotIndex is automated
 		event_data_reader7.setParameterT(1, 0.); // routing::event_data_reader::Static
@@ -2174,9 +2380,9 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 		; // clone_forward::NumClones is automated
 		; // clone_forward::Value is automated
 		
-		;                                   // clone_cable11::NumClones is automated
-		;                                   // clone_cable11::Value is automated
-		clone_cable11.setParameterT(2, 0.); // control::clone_cable::Gamma
+		;                                  // clone_cable5::NumClones is automated
+		;                                  // clone_cable5::Value is automated
+		clone_cable5.setParameterT(2, 0.); // control::clone_cable::Gamma
 		
 		;                                   // clone_cable12::NumClones is automated
 		;                                   // clone_cable12::Value is automated
@@ -2246,6 +2452,7 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 		gain.setParameterT(1, 0.);   // core::gain::Smoothing
 		gain.setParameterT(2, -22.); // core::gain::ResetValue
 		
+<<<<<<< HEAD
 		this->setParameterT(0, 24.);
 		this->setParameterT(1, 0.);
 		this->setParameterT(2, 1.);
@@ -2283,17 +2490,62 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 		this->setParameterT(34, 0.);
 		this->setParameterT(35, 0.);
 		this->setParameterT(36, 1.);
+=======
+		this->setParameterT(0, 32.);
+		this->setParameterT(1, 2.);
+		this->setParameterT(2, 1.);
+		this->setParameterT(3, 0.);
+		this->setParameterT(4, 0.);
+		this->setParameterT(5, 0.99);
+		this->setParameterT(6, 0.);
+		this->setParameterT(7, 0.5);
+		this->setParameterT(8, 0.);
+		this->setParameterT(9, 1.);
+		this->setParameterT(10, 2.08167e-17);
+		this->setParameterT(11, 0.);
+		this->setParameterT(12, 2.08167e-17);
+		this->setParameterT(13, 2.08167e-17);
+		this->setParameterT(14, 0.);
+		this->setParameterT(15, 16.);
+		this->setParameterT(16, 1.);
+		this->setParameterT(17, 0.);
+		this->setParameterT(18, 2.08167e-17);
+		this->setParameterT(19, 0.);
+		this->setParameterT(20, 2.08167e-17);
+		this->setParameterT(21, 0.);
+		this->setParameterT(22, 0.);
+		this->setParameterT(23, 2.08167e-17);
+		this->setParameterT(24, 0.);
+		this->setParameterT(25, 1.);
+		this->setParameterT(26, 0.);
+		this->setParameterT(27, 0.);
+		this->setParameterT(28, 2.08167e-17);
+		this->setParameterT(29, 0.45);
+		this->setParameterT(30, 2.08167e-17);
+		this->setParameterT(31, 0.);
+		this->setParameterT(32, 2.08167e-17);
+		this->setParameterT(33, 1.);
+		this->setParameterT(34, 0.);
+		this->setParameterT(35, 2.08167e-17);
+		this->setParameterT(36, 0.);
+>>>>>>> d2
 		this->setParameterT(37, 0.);
 		this->setParameterT(38, 1.);
 		this->setParameterT(39, 0.);
 		this->setParameterT(40, 1.);
+<<<<<<< HEAD
 		this->setParameterT(41, 9.);
 		this->setParameterT(42, 0.);
+=======
+		this->setParameterT(41, 0.);
+		this->setParameterT(42, 2.08167e-17);
+>>>>>>> d2
 		this->setParameterT(43, 1.);
 		this->setParameterT(44, 0.);
 		this->setParameterT(45, 1.);
 		this->setParameterT(46, 1.);
-		this->setParameterT(47, 1.);
+		this->setParameterT(47, 0.5);
+		this->setParameterT(48, 0.);
 		this->setExternalData({}, -1);
 	}
 	~instance() override
@@ -2315,84 +2567,61 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 	{
 		// Runtime target Connections --------------------------------------------------------------
 		
-		this->getT(0).getT(0).getT(0).getT(0).  // Xarrange_impl::global_cable_t<NV>
-        getT(1).getT(0).getT(0).getT(0).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(0).  // Xarrange_impl::global_cable11_t<NV>
-        getT(1).getT(0).getT(0).getT(1).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(0).  // Xarrange_impl::global_cable12_t<NV>
-        getT(1).getT(0).getT(0).getT(2).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(0).  // Xarrange_impl::global_cable13_t<NV>
-        getT(1).getT(0).getT(0).getT(3).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable7_t<NV>
-        getT(1).getT(0).getT(0).getT(0).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable32_t<NV>
-        getT(1).getT(0).getT(0).getT(1).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable33_t<NV>
-        getT(1).getT(0).getT(0).getT(2).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable34_t<NV>
-        getT(1).getT(0).getT(0).getT(3).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(2).  // Xarrange_impl::global_cable6_t<NV>
-        getT(1).getT(0).getT(0).getT(0).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(2).  // Xarrange_impl::global_cable29_t<NV>
-        getT(1).getT(0).getT(0).getT(1).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(2).  // Xarrange_impl::global_cable30_t<NV>
-        getT(1).getT(0).getT(0).getT(2).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(2).  // Xarrange_impl::global_cable31_t<NV>
-        getT(1).getT(0).getT(0).getT(3).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).  // Xarrange_impl::global_cable5_t<NV>
-        getT(1).getT(0).getT(0).getT(0).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).  // Xarrange_impl::global_cable26_t<NV>
-        getT(1).getT(0).getT(0).getT(1).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).  // Xarrange_impl::global_cable27_t<NV>
-        getT(1).getT(0).getT(0).getT(2).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).  // Xarrange_impl::global_cable28_t<NV>
-        getT(1).getT(0).getT(0).getT(3).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(4).  // Xarrange_impl::global_cable4_t<NV>
-        getT(1).getT(0).getT(0).getT(0).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(4).  // Xarrange_impl::global_cable23_t<NV>
-        getT(1).getT(0).getT(0).getT(1).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(4).  // Xarrange_impl::global_cable24_t<NV>
-        getT(1).getT(0).getT(0).getT(2).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(4).  // Xarrange_impl::global_cable25_t<NV>
-        getT(1).getT(0).getT(0).getT(3).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(5).  // Xarrange_impl::global_cable3_t<NV>
-        getT(1).getT(0).getT(0).getT(0).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(5).  // Xarrange_impl::global_cable20_t<NV>
-        getT(1).getT(0).getT(0).getT(1).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(5).  // Xarrange_impl::global_cable21_t<NV>
-        getT(1).getT(0).getT(0).getT(2).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(5).  // Xarrange_impl::global_cable22_t<NV>
-        getT(1).getT(0).getT(0).getT(3).
-        getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable_t<NV>
+        getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable11_t<NV>
+        getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable12_t<NV>
+        getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(0).getT(1).  // Xarrange_impl::global_cable13_t<NV>
+        getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(1).getT(1).  // Xarrange_impl::global_cable7_t<NV>
+        getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(1).getT(1).  // Xarrange_impl::global_cable32_t<NV>
+        getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(1).getT(1).  // Xarrange_impl::global_cable33_t<NV>
+        getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(1).getT(1).  // Xarrange_impl::global_cable34_t<NV>
+        getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(2).getT(1).  // Xarrange_impl::global_cable6_t<NV>
+        getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(2).getT(1).  // Xarrange_impl::global_cable29_t<NV>
+        getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(2).getT(1).  // Xarrange_impl::global_cable30_t<NV>
+        getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(2).getT(1).  // Xarrange_impl::global_cable31_t<NV>
+        getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(3).getT(1).  // Xarrange_impl::global_cable5_t<NV>
+        getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(3).getT(1).  // Xarrange_impl::global_cable26_t<NV>
+        getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(3).getT(1).  // Xarrange_impl::global_cable27_t<NV>
+        getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(3).getT(1).  // Xarrange_impl::global_cable28_t<NV>
+        getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(4).getT(1).  // Xarrange_impl::global_cable4_t<NV>
+        getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(4).getT(1).  // Xarrange_impl::global_cable23_t<NV>
+        getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(4).getT(1).  // Xarrange_impl::global_cable24_t<NV>
+        getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(4).getT(1).  // Xarrange_impl::global_cable25_t<NV>
+        getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(5).getT(1).  // Xarrange_impl::global_cable3_t<NV>
+        getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(5).getT(1).  // Xarrange_impl::global_cable20_t<NV>
+        getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(5).getT(1).  // Xarrange_impl::global_cable21_t<NV>
+        getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
+		this->getT(0).getT(0).getT(5).getT(1).  // Xarrange_impl::global_cable22_t<NV>
+        getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
 	}
 	
 	void setExternalData(const ExternalData& b, int index)
 	{
 		// External Data Connections ---------------------------------------------------------------
 		
+<<<<<<< HEAD
 <<<<<<< HEAD
 		this->getT(0).getT(0).getT(0).getT(0).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak1_t<NV>
 		this->getT(0).getT(0).getT(0).getT(1).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak7_t<NV>
@@ -2408,6 +2637,8 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 		this->getT(0).getT(0).getT(1).getT(1).getT(2).getT(0).setExternalData(b, index);         // Xarrange_impl::clone_pack1_t<NV>
 		this->getT(0).getT(1).getT(0).setExternalData(b, index);                                 // Xarrange_impl::xnode1_t<NV>
 =======
+=======
+>>>>>>> d2
 		this->getT(0).getT(0).getT(0).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak1_t<NV>
 		this->getT(0).getT(0).getT(1).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak7_t<NV>
 		this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(1).setExternalData(b, index); // Xarrange_impl::peak6_t<NV>
@@ -2420,8 +2651,12 @@ template <int NV> struct instance: public Xarrange_impl::Xarrange_t_<NV>
 		this->getT(0).getT(1).getT(1).getT(0).getT(0).setExternalData(b, index);         // Xarrange_impl::clone_pack_t<NV>
 		this->getT(0).getT(1).getT(1).getT(1).getT(0).setExternalData(b, index);         // Xarrange_impl::clone_pack2_t<NV>
 		this->getT(0).getT(1).getT(1).getT(2).getT(0).setExternalData(b, index);         // Xarrange_impl::clone_pack1_t<NV>
+<<<<<<< HEAD
 		this->getT(1).getT(0).setExternalData(b, index);                                 // Xarrange_impl::xnode_t<NV>
 >>>>>>> parent of 416899d (s&h gate)
+=======
+		this->getT(1).getT(0).setExternalData(b, index);                                 // Xarrange_impl::xnode1_t<NV>
+>>>>>>> d2
 	}
 };
 }

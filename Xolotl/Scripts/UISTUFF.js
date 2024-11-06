@@ -48,46 +48,6 @@ laf.registerFunction("drawComboBox", function(g, obj)
 
 
 
-const var EveryLink = Content.getComponent("EveryLink");
-
-EveryLink.setMouseCallback(function(event)
-{
-  if (event.clicked)
-  {
-    Engine.openWebsite("https://modularsamples.gumroad.com/l/hnwjrr");
-  } 
- 
-});
-
-const var QExpandedLink = Content.getComponent("QExpandedLink");
-
-QExpandedLink.setMouseCallback(function(event)
-{
-  if (event.clicked)
-  {
-    Engine.openWebsite("https://www.modularsamples.com/l/hnwjrr");
-  } 
-
-});
-
-QExpandedLink.setMouseCallback(function(event)
-{
-  if (event.clicked)
-  {
-    Engine.openWebsite("https://www.modularsamples.com/l/lybce");
-  } 
-
-});
-const var ExpandedLink = Content.getComponent("ExpandedLink");
-
-ExpandedLink.setMouseCallback(function(event)
-{
-  if (event.clicked)
-  {
-    Engine.openWebsite("https://www.modularsamples.com/l/rhnqwh");
-}
-});
-
 
 const var dp1 = Synth.getDisplayBufferSource("LFO1");
 

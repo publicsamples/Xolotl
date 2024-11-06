@@ -3484,16 +3484,10 @@ using Reverse = parameter::chain<ranges::Identity,
                                  parameter::plain<dlay_impl::branch5_t<NV>, 0>, 
                                  parameter::plain<dlay_impl::branch19_t<NV>, 0>>;
 
-DECLARE_PARAMETER_RANGE(DtimeR_InputRange, 
-                        0., 
-                        18.);
 template <int NV>
-using DtimeR_0 = parameter::from0To1<dlay_impl::pma1_t<NV>, 
-                                     2, 
-                                     dlay_impl::pma18_modRange>;
-
-template <int NV>
-using DtimeR = parameter::chain<DtimeR_InputRange, DtimeR_0<NV>>;
+using DtimeR = parameter::from0To1<dlay_impl::pma1_t<NV>, 
+                                   2, 
+                                   dlay_impl::pma18_modRange>;
 
 DECLARE_PARAMETER_RANGE_SKEW(Tone_InputRange, 
                              0., 
@@ -3799,8 +3793,8 @@ template <int NV> struct instance: public dlay_impl::dlay_t_<NV>
             0x3EA5, 0x0000, 0x3F80, 0x0000, 0x0000, 0x055B, 0x0000, 0x5200, 
             0x7665, 0x7265, 0x6573, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 
             0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x5B00, 0x0006, 0x0000, 
-            0x7444, 0x6D69, 0x5265, 0x0000, 0x0000, 0x0000, 0x9000, 0xF841, 
-            0x20AE, 0x0041, 0x8000, 0x003F, 0x0000, 0x5B00, 0x0007, 0x0000, 
+            0x7444, 0x6D69, 0x5265, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 
+            0x8000, 0x003F, 0x8000, 0x003F, 0x0000, 0x5B00, 0x0007, 0x0000, 
             0x6950, 0x676E, 0x6F50, 0x676E, 0x0000, 0x0000, 0x0000, 0x8000, 
             0x003F, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x5B3F, 0x0008, 
             0x0000, 0x6F54, 0x656E, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 
@@ -6138,7 +6132,7 @@ template <int NV> struct instance: public dlay_impl::dlay_t_<NV>
 		this->setParameterT(3, 1.);
 		this->setParameterT(4, 0.323311);
 		this->setParameterT(5, 0.);
-		this->setParameterT(6, 10.0427);
+		this->setParameterT(6, 1.);
 		this->setParameterT(7, 1.);
 		this->setParameterT(8, 1.);
 		this->setParameterT(9, 0.42);
