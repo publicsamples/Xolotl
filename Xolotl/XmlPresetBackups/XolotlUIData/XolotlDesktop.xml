@@ -803,8 +803,7 @@
                height="25.0" max="21" parentComponent="osc1" fontSize="1.0"
                textColour="4281344270" itemColour2="4283380496" itemColour="4281474062"
                bgColour="4281476360" defaultValue="0.0" isPluginParameter="1"
-               pluginParameterName="OSC1 -WAVE" items="FX_CrazyLFO&#10;FX_Devistate&#10;FX_Drama&#10;FX_FMRings&#10;FX_FeedFwd&#10;FX_Gooey&#10;FX_HiYearner&#10;FX_LickElectric&#10;FX_LoopG&#10;FX_MagicResin&#10;FX_S&amp;H&#10;FX_Zap&#10;FX__Bypass&#10;FX_heartache&#10;Fx_BeastMode&#10;Fx_BrainSeq&#10;Fx_BseqSmooth&#10;Fx_Burd&#10;Fx_SmearedToy&#10;Fx_Swish&#10;Fx_WowOhWow"
-               visible="0">
+               pluginParameterName="OSC1 -WAVE" visible="0" items="FX_CrazyLFO&#10;FX_Devistate&#10;FX_Drama&#10;FX_FMRings&#10;FX_FeedFwd&#10;FX_Gooey&#10;FX_HiYearner&#10;FX_LickElectric&#10;FX_LoopG&#10;FX_MagicResin&#10;FX_S&amp;H&#10;FX_Zap&#10;FX__Bypass&#10;FX_heartache&#10;Fx_BeastMode&#10;Fx_BrainSeq&#10;Fx_BseqSmooth&#10;Fx_Burd&#10;Fx_SmearedToy&#10;Fx_Swish&#10;Fx_WowOhWow">
       <Component type="ScriptLabel" id="WAVELABEL1" x="-5.0" y="2.0" width="70.0"
                  height="22.0" parentComponent="BankA" textColour="3169235113"
                  fontName="Montserrat" fontSize="16.0" editable="0" text="Bass_BooBass"
@@ -877,10 +876,11 @@
     <Component type="ScriptPanel" id="ScriptPanel3" x="87.0" y="5.0" width="260.0"
                height="300.0" parentComponent="osc1" itemColour="4281346602"
                itemColour2="4281346602" bgColour="16777215" borderRadius="3.0"
-               textColour="4281346602" borderSize="1.0">
+               textColour="4281346602" borderSize="1.0" visible="0">
       <Component type="ScriptPanel" id="UserParam" x="0.0" y="0.0" width="270.0"
                  height="160.0" parentComponent="ScriptPanel3" bgColour="16777215"
-                 borderRadius="2.0" itemColour="0" itemColour2="0" textColour="16777215">
+                 borderRadius="2.0" itemColour="0" itemColour2="0" textColour="16777215"
+                 visible="0">
         <Component type="ScriptSlider" id="User6" x="4.0" y="0.0" width="30.0" height="30.0"
                    parentComponent="UserParam" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                    numStrips="125.0" isPluginParameter="1" pluginParameterName="OSC1 - OFFSET"
@@ -945,7 +945,7 @@
                    height="30.0" parentComponent="UserParam" middlePosition="0.5"
                    filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                    isPluginParameter="1" pluginParameterName="OSC1 - OFFSET" scaleFactor="0.1599999964237213"
-                   showTextBox="0" isVertical="0" stepSize="0.2" min="0.2" max="0.8"/>
+                   showTextBox="0" isVertical="0" stepSize="0.2" min="0.2"/>
         <Component type="ScriptLabel" id="WAVE18" x="225.0" y="67.0" width="30.0"
                    height="30.0" parentComponent="UserParam" editable="0" text="MOD SHP"
                    fontSize="12.0" fontName="Montserrat" textColour="4292655501"
@@ -995,18 +995,18 @@
                  processorId="HARMONIC" sampleIndex="1" bgColour="2426631" itemColour2="4285672448"
                  itemColour="4282069554" textColour="1387078178" itemColour3="3156522"
                  enableRange="0" opaque="0" enabled="0">
-        <Component type="ScriptPanel" id="ScriptPanel2" x="11.0" y="4.0" width="40.0"
-                   height="40.0" parentComponent="ScriptAudioWaveform1" itemColour="4289976568"
+        <Component type="ScriptPanel" id="ScriptPanel2" x="2.0" y="4.0" width="30.0"
+                   height="30.0" parentComponent="ScriptAudioWaveform1" itemColour="4289976568"
                    itemColour2="4290432220" bgColour="16777215" textColour="16777215"/>
-        <Component type="ScriptButton" id="WaveLoad" x="0.0" y="-6.0" width="60.0"
-                   height="70.0" parentComponent="ScriptAudioWaveform1" isMomentary="1"
+        <Component type="ScriptButton" id="WaveLoad" x="-3.0" y="-2.0" width="40.0"
+                   height="40.0" parentComponent="ScriptAudioWaveform1" isMomentary="1"
                    filmstripImage="{PROJECT_FOLDER}SaveButton.png" isVertical="0"
-                   scaleFactor="0.6000000238418579"/>
+                   scaleFactor="0.4000000059604645"/>
       </Component>
     </Component>
     <Component type="ScriptPanel" id="ScriptPanel6" x="87.0" y="4.0" width="260.0"
                height="300.0" parentComponent="osc1" itemColour="4281346602"
-               itemColour2="4282069554" locked="1" visible="0">
+               itemColour2="4282069554" locked="1">
       <Component type="ScriptSliderPack" id="pitch-sp5" x="10.0" y="15.0" width="240.0"
                  height="240.0" parentComponent="ScriptPanel6" processorId="HARMONIC"
                  itemColour="4288508242" itemColour2="14465590" textColour="10318162"

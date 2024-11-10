@@ -103,7 +103,7 @@
                   <Parameter MinValue="0.0" MaxValue="131.0" StepSize="1.0" ID="CCNumber"
                              Value="128.0" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="EnableMPE" Value="0.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="DefaultValue" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="DefaultValue" Value="0.0"/>
                 </Parameters>
               </Node>
               <Node ID="pma_unscaled2" FactoryPath="control.pma_unscaled" Bypassed="0"
@@ -114,8 +114,7 @@
                 <Parameters>
                   <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Value" DefaultValue="0.0"
                              Automated="1"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" DefaultValue="1.0"
-                             Value="0.5002529296875"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="16.0" ID="Add" Automated="1"/>
                 </Parameters>
               </Node>
@@ -1314,7 +1313,7 @@
           <Connection NodeId="minmax" ParameterId="Step"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Mode" MinValue="0.0" MaxValue="8.0" StepSize="1.0" Value="0.0"
+      <Parameter ID="Mode" MinValue="0.0" MaxValue="8.0" StepSize="1.0" Value="5.0"
                  DefaultValue="6.0">
         <Connections>
           <Connection NodeId="branch" ParameterId="Index"/>
