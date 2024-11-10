@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ProjectSettings>
+  <Name value="Xolotl"/>
+  <Version value="0.7.0"/>
+  <Description value=""/>
+  <BundleIdentifier value="com.modularsamples.product"/>
+  <PluginCode value="Msxp"/>
+  <EmbedAudioFiles value="1"/>
+  <EmbedImageFiles value="Yes"/>
+  <SupportFullDynamicsHLAC value="No"/>
+  <AdditionalDspLibraries value=""/>
+  <OSXStaticLibs value=""/>
+  <WindowsStaticLibFolder value=""/>
+  <ExtraDefinitionsWindows value="HISE_COMPLAIN_ABOUT_ILLEGAL_BUFFER_SIZE=0&#10;HISE_SAMPLE_DIALOG_SHOW_INSTALL_BUTTON=0&#10;HISE_SAMPLE_DIALOG_SHOW_LOCATE_BUTTON=0"/>
+  <ExtraDefinitionsOSX value="HISE_COMPLAIN_ABOUT_ILLEGAL_BUFFER_SIZE=0&#10;HISE_SAMPLE_DIALOG_SHOW_INSTALL_BUTTON=0&#10;HISE_SAMPLE_DIALOG_SHOW_LOCATE_BUTTON=0&#10;"/>
+  <ExtraDefinitionsIOS value="HISE_COMPLAIN_ABOUT_ILLEGAL_BUFFER_SIZE=0&#10;HISE_SAMPLE_DIALOG_SHOW_INSTALL_BUTTON=0&#10;HISE_SAMPLE_DIALOG_SHOW_LOCATE_BUTTON=0&#10;"/>
+  <ExtraDefinitionsLinux value="HISE_COMPLAIN_ABOUT_ILLEGAL_BUFFER_SIZE=0&#10;JUCE_DISABLE_NATIVE_FILECHOOSERS=1&#10;HISE_SAMPLE_DIALOG_SHOW_INSTALL_BUTTON=0&#10;HISE_SAMPLE_DIALOG_SHOW_LOCATE_BUTTON=0&#10;"/>
+  <AppGroupID value=""/>
+  <RedirectSampleFolder value=""/>
+  <AAXCategoryFX value="AAX_ePlugInCategory_Modulation"/>
+  <SupportMonoFX value="No"/>
+  <EnableMidiInputFX value="No"/>
+  <EnableMidiOut value="No"/>
+  <EnableSoundGeneratorsFX value="No"/>
+  <VST3Support value="1"/>
+  <UseRawFrontend value="No"/>
+  <ExpansionType value="Encrypted"/>
+  <EncryptionKey value="msxo"/>
+  <LinkExpansionsToProject value="No"/>
+  <ReadOnlyFactoryPresets value="No"/>
+  <ForceStereoOutput value="No"/>
+  <AdminPermissions value="No"/>
+  <EmbedUserPresets value="Yes"/>
+  <EnableGlobalPreprocessor value="No"/>
+  <VST3Category value=""/>
+  <OverwriteOldUserPresets value="No"/>
+  <UseGlobalAppDataFolderWindows value="No"/>
+  <UseGlobalAppDataFolderMacOS value="No"/>
+  <DefaultUserPreset value=""/>
+  <ExtraDefinitionsNetworkDll value=""/>
+  <CompileWithPerfetto value="No"/>
+  <CompileWithDebugSymbols value="No"/>
+  <IncludeLorisInFrontend value="No"/>
+</ProjectSettings>
