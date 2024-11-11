@@ -803,17 +803,17 @@
                height="25.0" max="21" parentComponent="osc1" fontSize="1.0"
                textColour="4281344270" itemColour2="4283380496" itemColour="4281474062"
                bgColour="4281476360" defaultValue="0.0" isPluginParameter="1"
-               pluginParameterName="OSC1 -WAVE" visible="0" items="FX_CrazyLFO&#10;FX_Devistate&#10;FX_Drama&#10;FX_FMRings&#10;FX_FeedFwd&#10;FX_Gooey&#10;FX_HiYearner&#10;FX_LickElectric&#10;FX_LoopG&#10;FX_MagicResin&#10;FX_S&amp;H&#10;FX_Zap&#10;FX__Bypass&#10;FX_heartache&#10;Fx_BeastMode&#10;Fx_BrainSeq&#10;Fx_BseqSmooth&#10;Fx_Burd&#10;Fx_SmearedToy&#10;Fx_Swish&#10;Fx_WowOhWow">
+               pluginParameterName="OSC1 -WAVE" items="FX_CrazyLFO&#10;FX_Devistate&#10;FX_Drama&#10;FX_FMRings&#10;FX_FeedFwd&#10;FX_Gooey&#10;FX_HiYearner&#10;FX_LickElectric&#10;FX_LoopG&#10;FX_MagicResin&#10;FX_S&amp;H&#10;FX_Zap&#10;FX__Bypass&#10;FX_heartache&#10;Fx_BeastMode&#10;Fx_BrainSeq&#10;Fx_BseqSmooth&#10;Fx_Burd&#10;Fx_SmearedToy&#10;Fx_Swish&#10;Fx_WowOhWow">
       <Component type="ScriptLabel" id="WAVELABEL1" x="-5.0" y="2.0" width="70.0"
                  height="22.0" parentComponent="BankA" textColour="3169235113"
-                 fontName="Montserrat" fontSize="16.0" editable="0" text="Bass_BooBass"
+                 fontName="Montserrat" fontSize="16.0" editable="0" text="Fx_BseqSmooth"
                  itemColour2="3169235113" itemColour="3583708" visible="0"/>
     </Component>
     <Component type="ScriptComboBox" id="Categories" x="165.0" y="6.0" width="70.0"
                height="25.0" parentComponent="osc1" fontSize="1.0" textColour="4281344270"
                itemColour2="4283380496" itemColour="4281474062" bgColour="4281476360"
                items="Bass&#10;Bells &amp; Keys&#10;FX&#10;Kits &amp; Seq&#10;Leads&#10;Misc&#10;Pads&#10;Basic Waves"
-               defaultValue="0.0" max="8" visible="0">
+               defaultValue="0.0" max="8">
       <Component type="ScriptLabel" id="WAVE1" x="0.0" y="34.0" width="60.0" height="10.0"
                  parentComponent="Categories" editable="0" text="BANK" fontSize="14.0"
                  fontName="Montserrat" textColour="4294038066"/>
@@ -860,14 +860,13 @@
                visible="0" locked="1"/>
     <Component type="ScriptLabel" id="SAMPLE" x="88.0" y="34.0" width="70.0"
                height="20.0" parentComponent="osc1" editable="0" fontSize="14.0"
-               fontName="Montserrat" textColour="4281344270" visible="0"/>
+               fontName="Montserrat" textColour="4281344270"/>
     <Component type="ScriptLabel" id="WAVE6" x="177.0" y="34.0" width="70.0"
                height="20.0" parentComponent="osc1" editable="0" text="BANK"
-               fontSize="14.0" fontName="Montserrat" textColour="4281344270"
-               visible="0"/>
+               fontSize="14.0" fontName="Montserrat" textColour="4281344270"/>
     <Component type="ScriptPanel" id="ScriptPanel1" x="87.0" y="35.0" width="260.0"
                height="270.0" parentComponent="osc1" itemColour="4281346602"
-               itemColour2="4282069554" locked="1" visible="0">
+               itemColour2="4282069554" locked="1">
       <Component type="ScriptSliderPack" id="pitch-sp1" x="10.0" y="19.0" width="240.0"
                  height="210.0" parentComponent="ScriptPanel1" processorId="HARMONIC"
                  itemColour="4288508242" itemColour2="14465590" textColour="10318162"
@@ -1006,7 +1005,7 @@
     </Component>
     <Component type="ScriptPanel" id="ScriptPanel6" x="87.0" y="4.0" width="260.0"
                height="300.0" parentComponent="osc1" itemColour="4281346602"
-               itemColour2="4282069554" locked="1">
+               itemColour2="4282069554" locked="1" visible="0">
       <Component type="ScriptSliderPack" id="pitch-sp5" x="10.0" y="15.0" width="240.0"
                  height="240.0" parentComponent="ScriptPanel6" processorId="HARMONIC"
                  itemColour="4288508242" itemColour2="14465590" textColour="10318162"

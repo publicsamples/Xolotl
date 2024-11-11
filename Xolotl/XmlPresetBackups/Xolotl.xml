@@ -65,7 +65,7 @@
             <Control type="ScriptButton" id="modtype11" value="0.0"/>
             <Control type="ScriptButton" id="modtype12" value="1.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD35" value="0.0"/>
-            <Control type="ScriptSliderPack" id="pitch-sp4" value="29.0" data="120.rGEN+b8nv7yv0ixOJb8H+XOJb7S35QwOT35A+....7SOJbsORgqm9nv0ivSyLyTOtdT38rGEt3iT35oOb8nv9PgqG6SgqGsO8nv09XlYl6y0iBuOb8n.+PgqG7CtdTvOlYl4935Qg6SgqGsOb8nv9DWOJ5iqGEtO"/>
+            <Control type="ScriptSliderPack" id="pitch-sp4" value="31.0" data="128.rGEN+b8nv7yv0ixOJb8H+XOJb7S35QwOT35A+....7SOJbsORgqm9nv0ivSyLyTOtdT38rGEt3iT35oOb8nv9PgqG6SgqGsO8nv09XlYl6y0iBuOb8n.+PgqG7CtdTvOlYl4935Qg6yv0i1ORgqW+fqGE8CRgqyOeT3J+....5C"/>
             <Control type="ScriptComboBox" id="ScriptComboBox8" value="2.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD33" value="2.081668171172169e-17"/>
             <Control type="ScriptSlider" id="SHAPEMOD1" value="2.081668171172169e-17"/>
@@ -84,7 +84,7 @@
             <Control type="ScriptSlider" id="SHAPEMOD10" value="2.081668171172169e-17"/>
             <Control type="ScriptSlider" id="SHAPEMOD20" value="0.5"/>
             <Control type="ScriptSlider" id="SHAPE9" value="0.4799999892711639"/>
-            <Control type="ScriptSliderPack" id="pitch-sp3" value="9.0" data="120...........................................................fBWOBOJb8H7nv0ixiBWOJOOJb87nv0i1CtdTfOrGEN97Qgq4SJb8nOCWOp9PgqG6iqGEtOHEt99DWOJ7SOJbwOJb8H+DWOJ8y0iB2O"/>
+            <Control type="ScriptSliderPack" id="pitch-sp3" value="31.0" data="128...........................................................fBWOBOJb8H7nv0ixiBWOJOOJb87nv0i1CtdTfOrGEN97Qgq4i8nv0O1iBW+T35Q8CEtdzOjBWO+LyLy7yv0ixO1iBG+jBWO7iqGEtORgqm9......"/>
             <Control type="ScriptComboBox" id="SOURC4" value="1.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD13" value="0.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD16" value="2.081668171172169e-17"/>
@@ -96,15 +96,15 @@
             <Control type="ScriptSlider" id="SHAPEMOD24" value="-0.03999999910593033"/>
             <Control type="ScriptSlider" id="SHAPEMOD26" value="2.081668171172169e-17"/>
             <Control type="ScriptSlider" id="SHAPEMOD30" value="2.081668171172169e-17"/>
-            <Control type="ScriptComboBox" id="BankA" value="1"/>
+            <Control type="ScriptComboBox" id="BankA" value="17.0"/>
             <Control type="ScriptComboBox" id="Categories" value="3.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD25" value="0.5"/>
-            <Control type="ScriptComboBox" id="OscWave" value="1.0"/>
+            <Control type="ScriptComboBox" id="OscWave" value="6.0"/>
             <Control type="ScriptComboBox" id="SOURC3" value="1.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD11" value="2.081668171172169e-17"/>
             <Control type="ScriptSlider" id="SHAPEMOD12" value="1.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD32" value="0.0"/>
-            <Control type="ScriptSliderPack" id="pitch-sp1" value="29" data="120....f9jBWO5iT35oO6Qgq9vdT35Cov0qOT35w9zLyL6SOJbsO1iB29XlYl6yGEttOOJb89fT356CWOJvO35QA+DWOJ7SyLyvOEtdD+DtdT7ilYlwO1iBG+HEtd7iBWOxOlYlI+7Qgq7y0iByOyLyL+....8C...3O"/>
+            <Control type="ScriptSliderPack" id="pitch-sp1" value="31.0" data="128.................Jb8H7nv0iviBWOBOJb8n77nv0ySyLyTOOJbc8nv0i1C6QgaOtdT387nv02SJb8fOov0C9nv0i3ydT3hOMyLS9zLyL4iqGElOeT3Z9....5C...nO...f9....5C...nOeT3Z9ziBW4SJb8fOOJbc8nv0ixC"/>
             <Control type="ScriptSlider" id="User6" value="1.0"/>
             <Control type="ScriptSlider" id="User2" value="0.0"/>
             <Control type="ScriptSlider" id="User7" value="0.0"/>
@@ -116,12 +116,12 @@
             <Control type="ScriptSlider" id="UserB1" value="0.0"/>
             <Control type="ScriptSlider" id="UserB2" value="0.4900000095367432"/>
             <Control type="ScriptSlider" id="UserB3" value="0.0"/>
-            <Control type="ScriptSliderPack" id="pitch-sp2" value="29" data="120....f9jBWO5iT35oO6Qgq9vdT35Cov0qOT35w9zLyL6SOJbsO1iB29XlYl6yGEttOOJb89fT356CWOJvO35QA+DWOJ7SyLyvOEtdD+DtdT7ilYlwO1iBG+HEtd7iBWOxOlYlI+7Qgq7y0iByOyLyL+....8C...3O"/>
+            <Control type="ScriptSliderPack" id="pitch-sp2" value="31.0" data="128.................Jb8H7nv0iviBWOBOJb8n77nv0ySyLyTOOJbc8nv0i1C6QgaOtdT387nv02SJb8fOov0C9nv0i3ydT3hOMyLS9zLyL4iqGElOeT3Z9....5C...nO...f9....5C...nOeT3Z9ziBW4SJb8fOOJbc8nv0ixC"/>
             <Control type="ScriptAudioWaveform" id="ScriptAudioWaveform1" value="0.0"
                      data="{PROJECT_FOLDER}Loops/grace.wav" rangeStart="0" rangeEnd="489792"/>
             <Control type="ScriptButton" id="WaveLoad" value="0.0"/>
-            <Control type="ScriptSliderPack" id="pitch-sp5" value="29" data="120....f9jBWO5iT35oO6Qgq9vdT35Cov0qOT35w9zLyL6SOJbsO1iB29XlYl6yGEttOOJb89fT356CWOJvO35QA+DWOJ7SyLyvOEtdD+DtdT7ilYlwO1iBG+HEtd7iBWOxOlYlI+7Qgq7y0iByOyLyL+....8C...3O"/>
-            <Control type="ScriptSlider" id="SHAPEMOD14" value="30.0"/>
+            <Control type="ScriptSliderPack" id="pitch-sp5" value="31.0" data="128.................Jb8H7nv0iviBWOBOJb8n77nv0ySyLyTOOJbc8nv0i1C6QgaOtdT387nv02SJb8fOov0C9nv0i3ydT3hOMyLS9zLyL4iqGElOeT3Z9....5C...nO...f9....5C...nOeT3Z9ziBW4SJb8fOOJbc8nv0ixC"/>
+            <Control type="ScriptSlider" id="SHAPEMOD14" value="32.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD15" value="-0.009999999776482582"/>
             <Control type="ScriptComboBox" id="SOURC5" value="2.0"/>
             <Control type="ScriptSlider" id="SHAPEMOD17" value="2.081668171172169e-17"/>
@@ -332,7 +332,7 @@
             <Processor Type="EffectChain" ID="FX" Bypassed="0">
               <ChildProcessors>
                 <Processor Type="HardcodedPolyphonicFX" ID="HARMONIC" Bypassed="0" Network="Xarrange"
-                           Stages="30.0" SampleOSc="0.0" Min="1.0" FXmix="0.0" SHtempoSync="0.0"
+                           Stages="32.0" SampleOSc="5.0" Min="1.0" FXmix="0.0" SHtempoSync="0.0"
                            SHDiv="0.0" FilterType="0.0" FilterFXMod="0.5" Harm="1.0" HarmEnvSrc="1.0"
                            EnvMod="-0.009999999776482582" HarmLfoSrc="0.0" HarmLFoMod="2.081668171172169e-17"
                            HarmTrk="2.081668171172169e-17" HarmPb="1.0" MAX="11.0" Step="1.0"
@@ -349,10 +349,10 @@
                   <ChildProcessors/>
                   <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
                   <SliderPacks>
-                    <SliderPack EmbeddedData="120....f9jBWO5iT35oO6Qgq9vdT35Cov0qOT35w9zLyL6SOJbsO1iB29XlYl6yGEttOOJb89fT356CWOJvO35QA+DWOJ7SyLyvOEtdD+DtdT7ilYlwO1iBG+HEtd7iBWOxOlYlI+7Qgq7y0iByOyLyL+....8C...3O"/>
+                    <SliderPack EmbeddedData="128.................Jb8H7nv0iviBWOBOJb8n77nv0ySyLyTOOJbc8nv0i1C6QgaOtdT387nv02SJb8fOov0C9nv0i3ydT3hOMyLS9zLyL4iqGElOeT3Z9....5C...nO...f9....5C...nOeT3Z9ziBW4SJb8fOOJbc8nv0ixC"/>
                     <SliderPack EmbeddedData="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
-                    <SliderPack EmbeddedData="120...........................................................fBWOBOJb8H7nv0ixiBWOJOOJb87nv0i1CtdTfOrGEN97Qgq4SJb8nOCWOp9PgqG6iqGEtOHEt99DWOJ7SOJbwOJb8H+DWOJ8y0iB2O"/>
-                    <SliderPack EmbeddedData="120.rGEN+b8nv7yv0ixOJb8H+XOJb7S35QwOT35A+....7SOJbsORgqm9nv0ivSyLyTOtdT38rGEt3iT35oOb8nv9PgqG6SgqGsO8nv09XlYl6y0iBuOb8n.+PgqG7CtdTvOlYl4935Qg6SgqGsOb8nv9DWOJ5iqGEtO"/>
+                    <SliderPack EmbeddedData="128...........................................................fBWOBOJb8H7nv0ixiBWOJOOJb87nv0i1CtdTfOrGEN97Qgq4i8nv0O1iBW+T35Q8CEtdzOjBWO+LyLy7yv0ixO1iBG+jBWO7iqGEtORgqm9......"/>
+                    <SliderPack EmbeddedData="128.rGEN+b8nv7yv0ixOJb8H+XOJb7S35QwOT35A+....7SOJbsORgqm9nv0ivSyLyTOtdT38rGEt3iT35oOb8nv9PgqG6SgqGsO8nv09XlYl6y0iBuOb8n.+PgqG7CtdTvOlYl4935Qg6yv0i1ORgqW+fqGE8CRgqyOeT3J+....5C"/>
                     <SliderPack EmbeddedData="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
                     <SliderPack EmbeddedData="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
                     <SliderPack EmbeddedData="32.MyLS+.....fBWOBO.....35Qg4C...3O..........."/>
@@ -362,7 +362,7 @@
                     <SliderPack EmbeddedData="12......fT356C...3O"/>
                   </SliderPacks>
                   <AudioFiles>
-                    <AudioFile EmbeddedData="{XYZ::SampleMap}Bass_BooBass" MinValue="0" MaxValue="0"/>
+                    <AudioFile EmbeddedData="{XYZ::SampleMap}Fx_BseqSmooth" MinValue="0" MaxValue="0"/>
                     <AudioFile EmbeddedData="{PROJECT_FOLDER}Loops/grace.wav" MinValue="0" MaxValue="489792"/>
                   </AudioFiles>
                 </Processor>
