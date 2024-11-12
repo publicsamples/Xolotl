@@ -34,10 +34,10 @@ Compilation options: -lang cpp -rui -nvi -ct 1 -cn _klp2 -scn ::faust::dsp -es 1
 struct _klp2 final : public ::faust::dsp {
 	
 	FAUSTFLOAT fEntry0;
-	int IOTA0;
-	float fVec0[65536];
-	int iVec1[2];
+	int iVec0[2];
 	int iRec0[2];
+	int IOTA0;
+	float fVec1[65536];
 	int iRec1[2];
 	int fSampleRate;
 	
@@ -91,15 +91,15 @@ struct _klp2 final : public ::faust::dsp {
 	}
 	
 	void instanceClear() {
-		IOTA0 = 0;
-		for (int l0 = 0; l0 < 65536; l0 = l0 + 1) {
-			fVec0[l0] = 0.0f;
+		for (int l0 = 0; l0 < 2; l0 = l0 + 1) {
+			iVec0[l0] = 0;
 		}
 		for (int l1 = 0; l1 < 2; l1 = l1 + 1) {
-			iVec1[l1] = 0;
+			iRec0[l1] = 0;
 		}
-		for (int l2 = 0; l2 < 2; l2 = l2 + 1) {
-			iRec0[l2] = 0;
+		IOTA0 = 0;
+		for (int l2 = 0; l2 < 65536; l2 = l2 + 1) {
+			fVec1[l2] = 0.0f;
 		}
 		for (int l3 = 0; l3 < 2; l3 = l3 + 1) {
 			iRec1[l3] = 0;
@@ -142,20 +142,20 @@ struct _klp2 final : public ::faust::dsp {
 		int iSlow4 = iSlow0 + -1;
 		float fSlow5 = 1.0f / fSlow1;
 		for (int i0 = 0; i0 < count; i0 = i0 + 1) {
-			float fTemp0 = float(input0[i0]);
-			fVec0[IOTA0 & 65535] = fTemp0;
-			iVec1[0] = 1;
-			iRec0[0] = iRec0[1] + iSlow3 * (1 - iVec1[1]) + 2;
-			int iTemp1 = iRec0[0] & iSlow4;
-			float fTemp2 = float(iTemp1);
-			output0[i0] = FAUSTFLOAT(fSlow2 * fVec0[(IOTA0 - std::min<int>(iSlow0, std::max<int>(0, iTemp1))) & 65535] * fTemp2 * (1.0f - fSlow5 * fTemp2));
+			iVec0[0] = 1;
+			iRec0[0] = iRec0[1] + iSlow3 * (1 - iVec0[1]) + 2;
+			int iTemp0 = iRec0[0] & iSlow4;
+			float fTemp1 = float(iTemp0);
+			float fTemp2 = float(input0[i0]);
+			fVec1[IOTA0 & 65535] = fTemp2;
+			output0[i0] = FAUSTFLOAT(fSlow2 * fTemp1 * (1.0f - fSlow5 * fTemp1) * fVec1[(IOTA0 - std::min<int>(iSlow0, std::max<int>(0, iTemp0))) & 65535]);
 			iRec1[0] = iRec1[1] + 2;
 			int iTemp3 = iRec1[0] & iSlow4;
 			float fTemp4 = float(iTemp3);
-			output1[i0] = FAUSTFLOAT(fSlow2 * fTemp4 * (1.0f - fSlow5 * fTemp4) * fVec0[(IOTA0 - std::min<int>(iSlow0, std::max<int>(0, iTemp3))) & 65535]);
-			IOTA0 = IOTA0 + 1;
-			iVec1[1] = iVec1[0];
+			output1[i0] = FAUSTFLOAT(fSlow2 * fTemp4 * (1.0f - fSlow5 * fTemp4) * fVec1[(IOTA0 - std::min<int>(iSlow0, std::max<int>(0, iTemp3))) & 65535]);
+			iVec0[1] = iVec0[0];
 			iRec0[1] = iRec0[0];
+			IOTA0 = IOTA0 + 1;
 			iRec1[1] = iRec1[0];
 		}
 	}

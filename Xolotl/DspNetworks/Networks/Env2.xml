@@ -113,7 +113,7 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="Tempo" MinValue="0.0" MaxValue="18.0" StepSize="1.0" Value="6.0"
+      <Parameter ID="Tempo" MinValue="0.0" MaxValue="18.0" StepSize="1.0" Value="1.0"
                  DefaultValue="10.0">
         <Connections>
           <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
@@ -136,36 +136,36 @@
         </Connections>
       </Parameter>
       <Parameter ID="a" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" Value="10.00000014901161" DefaultValue="0.0">
+                 SkewFactor="0.1976716816425323" Value="10000.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Attack"/>
         </Connections>
       </Parameter>
       <Parameter ID="d" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" Value="65.60000097751616" DefaultValue="1.0">
+                 SkewFactor="0.1976716816425323" Value="2143.100031934678" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Decay"/>
         </Connections>
       </Parameter>
       <Parameter ID="h" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" Value="10.00000014901161" DefaultValue="0.0">
+                 SkewFactor="0.1976716816425323" Value="286.1000042632222" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Hold"/>
         </Connections>
       </Parameter>
-      <Parameter ID="s" MinValue="0.0" MaxValue="1.0" Value="0.009999999776482582"
-                 DefaultValue="0.4957332763671875">
+      <Parameter ID="s" MinValue="0.0" MaxValue="1.0" Value="1.0" DefaultValue="0.4957332763671875">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Sustain"/>
         </Connections>
       </Parameter>
       <Parameter ID="r" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" Value="10.00000014901161" DefaultValue="1868.60002784431">
+                 SkewFactor="0.1976716816425323" Value="10000.0" DefaultValue="1868.60002784431">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Release"/>
         </Connections>
       </Parameter>
-      <Parameter ID="trig" MinValue="0.0" MaxValue="1.0" StepSize="1.0" Value="1.0">
+      <Parameter ID="trig" MinValue="0.0" MaxValue="1.0" StepSize="1.0" Value="0.0"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="input_toggle" ParameterId="Input"/>
         </Connections>

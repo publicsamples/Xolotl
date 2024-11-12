@@ -22,18 +22,19 @@ User1.setRange(0.2, 1, 0.2);
 
 const var BankA = Content.getComponent("BankA");
 
-var Bass = ["Bass_BooBass", "Bass_Bz", "Bass_Double", "Bass_Gooey", "Bass_HardBass", "Bass_HellCat", "Bass_Lilbass", "Bass_RM", "Bass_Round", "Bass_ShakeyBass", "Bass_Shrp", "Bass_Slap", "Bass_eBass", "Bass_hard", "Bass_nsty1", "Bass_nsty2"];
-var BellKey = ["Bell_Belles", "Bell_More", "Bell_Src", "Keys_DCOPiano", "Keys_Darkly", "Keys_EM25_1", "Keys_EM25_2", "Keys_EM25_3", "Keys_EM25_4", "Keys_EP1", "Keys_EP2", "Keys_EP3", "Keys_Euro", "Keys_Odd", "Keys_Swoosh1", "Keys_Swoosh2", "Keys_Swoosh3", "Keys_pswp"];
-var FX = ["FX_CrazyLFO", "FX_Devistate", "FX_Drama", "FX_FMRings", "FX_FeedFwd", "FX_Gooey", "FX_HiYearner", "FX_LickElectric", "FX_LoopG", "FX_MagicResin", "FX_S&H", "FX_Zap", "FX__Bypass", "FX_heartache", "FX_BeastMode", "FX_BrainSeq", "FX_BseqSmooth", "FX_Burd", "FX_SmearedToy", "FX_Swish", "FX_WowOhWow"];
-var KitSeq = ["Kit_612_perc", "Kit_CS", "Kit_MP", "Kit_Sh2", "SEQ_Bumpkin130", "SEQ_SpaceRaider", "SEQ_TwistingMellow1", "SEQ_TwistingMellow2", "SEQ_revolve130", "SEQ_sale", "Seq_Lemon90", "Seq_consider"];
-var Lead = ["Lead_2ndFinger", "Lead_Astonish", "Lead_Astonished", "Lead_Bargain", "Lead_Basic", "Lead_Brew", "Lead_Cream", "Lead_CrumbFlute", "Lead_Crunch", "Lead_Crunchy", "Lead_CupCake", "Lead_Curious", "Lead_DF1", "Lead_Day3", "Lead_Drink", "Lead_Egg", "Lead_FakeSync", "Lead_Fingers", "Lead_Grizzle", "Lead_K30L", "Lead_K_Legs", "Lead_Log", "Lead_Lozange", "Lead_Messin", "Lead_PseudoSync", "Lead_RavST", "Lead_Rodge", "Lead_SadRing", "Lead_Sayer", "Lead_SaysThings", "Lead_Scream", "Lead_Screamer", "Lead_ShRes", "Lead_Simple", "Lead_SimpleJx", "Lead_SlwRing1", "Lead_SlwRing2", "Lead_SlwRing3", "Lead_TSync", "Lead_Tinkle", "Lead_funny", "Lead_harsh", "Lead_k30l2", "Lead_mth", "Lead_rude", "Lead_sawd", "Lead_stix"];
-var Misc = ["Misc_EM25_1", "Misc_EM25_2", "Misc_EM25_3", "Misc_Gdad_1", "Misc_Gdad_2", "Misc_Gdad_3", "Misc_Gdad_4", "Misc_Gdad_5", "Misc_Meta_1", "Misc_Meta_2", "Misc_Meta_3", "Misc_Meta_4", "Misc_Meta_5", "Misc_SplGit", "Misc_Spook", "Misc_Toes", "Misc_Vibe", "Misc_WBrass", "Misc_Wet", "Pluck_Gater", "Pluck_PluckSH"];
-var Pad = ["Pad_BigElectric", "Pad_Bumpy", "Pad_Busy", "Pad_CsShock", "Pad_DF2", "Pad_DS", "Pad_Gravel", "Pad_GreatST", "Pad_Lfade", "Pad_Lingo", "Pad_OChord", "Pad_PulseString", "Pad_RLD", "Pad_Rouse", "Pad_Rust", "Pad_Scratchy", "Pad_Scrd", "Pad_SlowOne", "Pad_Special", "Pad_Swish", "Pad_Tortoise", "Pad_Trouble", "Pad_XpSea", "Pad_simr", " Strings_Classy", "Strings_EM25_1", "Strings_EM25_2", "Strings_EM25_3", "Strings_Z1_1", "Strings_Z1_2"];
-var Waves = ["Wave_MP4xSaw1", "Wave_MP4xSaw2", "Wave_MPSawA1", "Wave_MPSawA2", "Wave_MPSawA3", "Wave_MPSawA4", "Wave_MPSawB1", "Wave_MPSawB2", "Wave_MPSawB3", "Wave_MPSqr_1", "Wave_MPSqr_2", "Wave_MPSqr_3", "Wave_MPSqr_4", "Wave_MPSqr_5", "Wave_MPTri", "Wave_Noise", "Wave_Noise1", "Wave_Noise2", "Wave_Noise3", "Wave_Noise4", "Wave_Pulse1", "Wave_Pulse2", "Wave_Pulse3", "Wave_Saw", "Wave_Sine"];
+const Maps = [];
 
-var Maps = [];
 
-Maps.push(Bass);
+const BellKey = ["Bell_Belles", "Bell_More", "Bell_Src", "Keys_DCOPiano", "Keys_Darkly", "Keys_EM25_1", "Keys_EM25_2", "Keys_EM25_3", "Keys_EM25_4", "Keys_EP1", "Keys_EP2", "Keys_EP3", "Keys_Euro", "Keys_Odd", "Keys_Swoosh1", "Keys_Swoosh2", "Keys_Swoosh3", "Keys_pswp"];
+const FX = ["FX_CrazyLFO", "FX_Devistate", "FX_Drama", "FX_FMRings", "FX_FeedFwd", "FX_Gooey", "FX_HiYearner", "FX_LickElectric", "FX_LoopG", "FX_MagicResin", "FX_S&H", "FX_Zap", "FX__Bypass", "FX_heartache", "FX_BeastMode", "FX_BrainSeq", "FX_BseqSmooth", "FX_Burd", "FX_SmearedToy", "FX_Swish", "FX_WowOhWow"];
+const KitSeq = ["Kit_612_perc", "Kit_CS", "Kit_MP", "Kit_Sh2", "SEQ_Bumpkin130", "SEQ_SpaceRaider", "SEQ_TwistingMellow1", "SEQ_TwistingMellow2", "SEQ_revolve130", "SEQ_sale", "Seq_Lemon90", "Seq_consider"];
+const Lead = ["Lead_2ndFinger", "Lead_Astonish", "Lead_Astonished", "Lead_Bargain", "Lead_Basic", "Lead_Brew", "Lead_Cream", "Lead_CrumbFlute", "Lead_Crunch", "Lead_Crunchy", "Lead_CupCake", "Lead_Curious", "Lead_DF1", "Lead_Day3", "Lead_Drink", "Lead_Egg", "Lead_FakeSync", "Lead_Fingers", "Lead_Grizzle", "Lead_K30L", "Lead_K_Legs", "Lead_Log", "Lead_Lozange", "Lead_Messin", "Lead_PseudoSync", "Lead_RavST", "Lead_Rodge", "Lead_SadRing", "Lead_Sayer", "Lead_SaysThings", "Lead_Scream", "Lead_Screamer", "Lead_ShRes", "Lead_Simple", "Lead_SimpleJx", "Lead_SlwRing1", "Lead_SlwRing2", "Lead_SlwRing3", "Lead_TSync", "Lead_Tinkle", "Lead_funny", "Lead_harsh", "Lead_k30l2", "Lead_mth", "Lead_rude", "Lead_sawd", "Lead_stix"];
+const Misc = ["Misc_EM25_1", "Misc_EM25_2", "Misc_EM25_3", "Misc_Gdad_1", "Misc_Gdad_2", "Misc_Gdad_3", "Misc_Gdad_4", "Misc_Gdad_5", "Misc_Meta_1", "Misc_Meta_2", "Misc_Meta_3", "Misc_Meta_4", "Misc_Meta_5", "Misc_SplGit", "Misc_Spook", "Misc_Toes", "Misc_Vibe", "Misc_WBrass", "Misc_Wet", "Pluck_Gater", "Pluck_PluckSH", "Bass_BooBass", "Bass_Bz", "Bass_Double", "Bass_Gooey", "Bass_HardBass", "Bass_HellCat", "Bass_Lilbass", "Bass_RM", "Bass_Round", "Bass_ShakeyBass", "Bass_Shrp", "Bass_Slap", "Bass_eBass", "Bass_hard", "Bass_nsty1", "Bass_nsty2"];
+const Pad = ["Pad_BigElectric", "Pad_Bumpy", "Pad_Busy", "Pad_CsShock", "Pad_DF2", "Pad_DS", "Pad_Gravel", "Pad_GreatST", "Pad_Lfade", "Pad_Lingo", "Pad_OChord", "Pad_PulseString", "Pad_RLD", "Pad_Rouse", "Pad_Rust", "Pad_Scratchy", "Pad_Scrd", "Pad_SlowOne", "Pad_Special", "Pad_Swish", "Pad_Tortoise", "Pad_Trouble", "Pad_XpSea", "Pad_simr", " Strings_Classy", "Strings_EM25_1", "Strings_EM25_2", "Strings_EM25_3", "Strings_Z1_1", "Strings_Z1_2"];
+const Waves = ["Wave_MP4xSaw1", "Wave_MP4xSaw2", "Wave_MPSawA1", "Wave_MPSawA2", "Wave_MPSawA3", "Wave_MPSawA4", "Wave_MPSawB1", "Wave_MPSawB2", "Wave_MPSawB3", "Wave_MPSqr_1", "Wave_MPSqr_2", "Wave_MPSqr_3", "Wave_MPSqr_4", "Wave_MPSqr_5", "Wave_MPTri", "Wave_Noise", "Wave_Noise1", "Wave_Noise2", "Wave_Noise3", "Wave_Noise4", "Wave_Pulse1", "Wave_Pulse2", "Wave_Pulse3", "Wave_Saw", "Wave_Sine"];
+
+
+
 Maps.push(BellKey);
 Maps.push(FX);
 Maps.push(KitSeq);
@@ -42,27 +43,16 @@ Maps.push(Misc);
 Maps.push(Pad);
 Maps.push(Waves);
 
-var SMAPS = ["Bass", "Bells & Keys", "FX","Kits & Seq", "Leads", "Misc", "Pads", "Basic Waves"];
+const SMAPS = ["Bells & Keys", "FX","Kits & Seq", "Leads", "Misc", "Pads", "Basic Waves"];
 
 
 // BANK A
-BankA.set("items", "");
-BankA.set("items", maps.join("\n"));
+//BankA.set("items", "");
+//BankA.set("items", maps.join("\n"));
 const var WAVELABEL1 = Content.getComponent("WAVELABEL1");
 
 
-
-inline function onBankAControl(component, value)
-{
-	WAVELABEL1.set("text",BankA.get("items").split("\n")[value-1]);
-	
-	slot.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("BankA").setControlCallback(onBankAControl);
-
 const var Categories = Content.getComponent("Categories");
-
 
 Categories.set("items", SMAPS.join("\n"));
 
@@ -71,7 +61,7 @@ inline function onCategoriesControl(component, value)
 
 	BankA.set("items", [].join("\n")); 
 	BankA.set("items", Maps[value-1].join("\n"));
-	BankA.setValue(1);
+//	BankA.setValue(1);
 	
 
 };
@@ -79,6 +69,26 @@ inline function onCategoriesControl(component, value)
 Content.getComponent("Categories").setControlCallback(onCategoriesControl);
 
 
+inline function onWAVELABEL1Control(component, value)
+{
+slot.loadFile("{XYZ::SampleMap}" + WAVELABEL1.get("text"));
+};
+
+Content.getComponent("WAVELABEL1").setControlCallback(onWAVELABEL1Control);
+
+
+
+///slot.loadFile("{XYZ::SampleMap}" + (WAVELABEL1.get("text")[value-1]));
+
+inline function onBankAControl(component, value)
+{
+	WAVELABEL1.set("text",BankA.get("items").split("\n")[value-1]);
+	
+	slot.loadFile("{XYZ::SampleMap}" + component.getItemText());
+//	slot.loadFile("{XYZ::SampleMap}" + (maps[value-1]));
+};
+
+Content.getComponent("BankA").setControlCallback(onBankAControl);
 
 
 Settings.setVoiceMultiplier(8);
@@ -437,6 +447,99 @@ const var UserB3 = Content.getComponent("UserB3");
 
 const var SynthesiserGroup1 = Synth.getChildSynth("Synthesiser Group1");
 const var Knob5 = Content.getComponent("Knob5");
+
+// PRESETS ///////////////////////
+const var pmenu = Content.getComponent("pmenu");
+var menuItems = [];
+
+const var x = Engine.getUserPresetList(); 
+for (i in x)
+	menuItems.insert(-1, i);
+
+menuItems = menuItems.join("\n");
+pmenu.set("items", menuItems);
+
+inline function onpmenuControl(component, value)
+{
+	Engine.loadUserPreset(pmenu.getItemText() + ".preset");
+};
+
+Content.getComponent("pmenu").setControlCallback(onpmenuControl);
+
+const var UserDiv = Content.getComponent("UserDiv");
+
+inline function onUserDivControl(component, value)
+{
+UserB3.setValueNormalized(UserDiv.getValueNormalized());
+UserB3.changed();
+};
+
+Content.getComponent("UserDiv").setControlCallback(onUserDivControl);
+
+const var UserTempo = Content.getComponent("UserTempo");
+const var User4 = Content.getComponent("User4");
+
+
+inline function onUserTempoControl(component, value)
+{
+User4.setValueNormalized(UserTempo.getValueNormalized());
+User4.changed();
+};
+
+Content.getComponent("UserTempo").setControlCallback(onUserTempoControl);
+
+const var UserRateMod = Content.getComponent("UserRateMod");
+const var UserB2 = Content.getComponent("UserB2");
+
+
+inline function onUserRateModControl(component, value)
+{
+	UserB2.setValueNormalized(UserRateMod.getValueNormalized());
+UserB2.changed();
+};
+
+Content.getComponent("UserRateMod").setControlCallback(onUserRateModControl);
+
+const var UserRateDiv = Content.getComponent("UserRateDiv");
+const var User5 = Content.getComponent("User5");
+
+
+
+inline function onUserRateDivControl(component, value)
+{
+	User5.setValueNormalized(UserRateDiv.getValueNormalized());
+User5.changed();
+};
+
+Content.getComponent("UserRateDiv").setControlCallback(onUserRateDivControl);
+
+const var User7 = Content.getComponent("User7");
+const var UserPosMod = Content.getComponent("UserPosMod");
+
+inline function onUserPosModControl(component, value)
+{
+	User7.setValueNormalized(UserPosMod.getValueNormalized());
+User7.changed();
+};
+
+Content.getComponent("UserPosMod").setControlCallback(onUserPosModControl);
+
+
+const var SHAPEMOD29 = Content.getComponent("SHAPEMOD29");
+const var SHAPEMOD23 = Content.getComponent("SHAPEMOD23");
+
+
+
+inline function onSHAPEMOD29Control(component, value)
+{
+	SHAPEMOD23.setValueNormalized(SHAPEMOD29.getValueNormalized());
+SHAPEMOD23.changed();
+};
+
+Content.getComponent("SHAPEMOD29").setControlCallback(onSHAPEMOD29Control);
+
+
+
 
 function onNoteOn()
 {
