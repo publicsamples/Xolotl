@@ -608,18 +608,6 @@
                             </Nodes>
                             <Parameters/>
                           </Node>
-                          <Node ID="gain6" FactoryPath="core.gain" Bypassed="0" Name="gain6">
-                            <Parameters>
-                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain"/>
-                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="1000.0"
-                                         DefaultValue="20.0"/>
-                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"
-                                         DefaultValue="0.0"/>
-                            </Parameters>
-                          </Node>
                         </Nodes>
                         <Parameters/>
                       </Node>
@@ -734,18 +722,6 @@
                             </Nodes>
                             <Parameters/>
                           </Node>
-                          <Node ID="gain8" FactoryPath="core.gain" Bypassed="0" Name="gain8">
-                            <Parameters>
-                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain"/>
-                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="1000.0"
-                                         DefaultValue="20.0"/>
-                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"
-                                         DefaultValue="0.0"/>
-                            </Parameters>
-                          </Node>
                         </Nodes>
                         <Parameters/>
                       </Node>
@@ -827,18 +803,6 @@
                             </Nodes>
                             <Parameters/>
                           </Node>
-                          <Node ID="gain9" FactoryPath="core.gain" Bypassed="0" Name="gain9">
-                            <Parameters>
-                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain"/>
-                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="1000.0"
-                                         DefaultValue="20.0"/>
-                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="-7.099998615682138"
-                                         DefaultValue="0.0"/>
-                            </Parameters>
-                          </Node>
                         </Nodes>
                         <Parameters/>
                       </Node>
@@ -848,16 +812,6 @@
                 </Nodes>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="8" StepSize="1.0" ID="Index" Automated="1"/>
-                </Parameters>
-              </Node>
-              <Node ID="gain4" FactoryPath="core.gain" Bypassed="0" Name="gain4">
-                <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain"/>
-                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
                 </Parameters>
               </Node>
             </Nodes>

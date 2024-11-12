@@ -135,7 +135,7 @@ struct _granular final : public ::faust::dsp {
 		m->declare("filters.lib/dcblockerat:author", "Julius O. Smith III");
 		m->declare("filters.lib/dcblockerat:copyright", "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>");
 		m->declare("filters.lib/dcblockerat:license", "MIT-style STK-4.3 license");
-		m->declare("filters.lib/lowpass0_highpass1", "MIT-style STK-4.3 license");
+		m->declare("filters.lib/lowpass0_highpass1", "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>");
 		m->declare("filters.lib/name", "Faust Filters Library");
 		m->declare("filters.lib/pole:author", "Julius O. Smith III");
 		m->declare("filters.lib/pole:copyright", "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>");
@@ -144,7 +144,7 @@ struct _granular final : public ::faust::dsp {
 		m->declare("filters.lib/zero:author", "Julius O. Smith III");
 		m->declare("filters.lib/zero:copyright", "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>");
 		m->declare("filters.lib/zero:license", "MIT-style STK-4.3 license");
-		m->declare("hoa.lib/author", "Paul Goutmann");
+		m->declare("hoa.lib/author", "Pierre Guillot");
 		m->declare("hoa.lib/copyright", "2012-2013 Guillot, Paris, Colafrancesco, CICM labex art H2H, U. Paris 8, 2019 Wargreen, 2022 Bonardi, Goutmann");
 		m->declare("hoa.lib/name", "High Order Ambisonics library");
 		m->declare("hoa.lib/version", "1.4.0");
@@ -155,7 +155,7 @@ struct _granular final : public ::faust::dsp {
 		m->declare("maths.lib/license", "LGPL with exception");
 		m->declare("maths.lib/name", "Faust Math Library");
 		m->declare("maths.lib/version", "2.8.0");
-		m->declare("mi.lib/author", "James Leonard");
+		m->declare("mi.lib/author", "Romain Michon");
 		m->declare("mi.lib/copyright", "2018-2020 GRAME / GIPSA-Lab");
 		m->declare("mi.lib/name", "Faust mass-interaction physical modelling library");
 		m->declare("mi.lib/version", "1.1.0");
