@@ -12,16 +12,16 @@ using UI = ::faust::UI;
 #define FAUST_ADDVERTICALBARGRAPH(...)
 #define FAUST_ADDHORIZONTALBARGRAPH(...)
 #define FAUST_ADDSOUNDFILE(...)
-#include "src/LPF.cpp"
+#include "src/khp2.cpp"
 #if (FAUST_INPUTS - FAUST_OUTPUTS) > 0
 #error Number of inputs and outputs in faust code must match!
 #endif
 namespace project {
-struct LPFMetaData {
-		SN_NODE_ID("LPF");
+struct khp2MetaData {
+		SN_NODE_ID("khp2");
 };
 template <int NV, class ModParameterClass=scriptnode::parameter::empty_list>
-using LPF = scriptnode::faust::faust_static_wrapper<NV, ModParameterClass, _LPF, LPFMetaData, FAUST_OUTPUTS>;
+using khp2 = scriptnode::faust::faust_static_wrapper<NV, ModParameterClass, _khp2, khp2MetaData, FAUST_OUTPUTS>;
 } // namespace project
  // undef dummy macros
 #undef FAUST_UIMACROS

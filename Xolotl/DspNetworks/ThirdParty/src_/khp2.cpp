@@ -1,11 +1,12 @@
 /* ------------------------------------------------------------
-name: "OBLP"
-Code generated with Faust 2.75.7 (https://faust.grame.fr)
-Compilation options: -lang cpp -rui -nvi -ct 1 -cn _OBLP -scn ::faust::dsp -es 1 -mcd 16 -mdd 1024 -mdy 33 -uim -single -ftz 0
+author: "Eric Tarr"
+name: "korg35HPF"
+Code generated with Faust 2.81.2 (https://faust.grame.fr)
+Compilation options: -lang cpp -rui -nvi -ct 1 -cn _khp2 -scn ::faust::dsp -es 1 -mcd 16 -mdd 1024 -mdy 33 -uim -single -ftz 0
 ------------------------------------------------------------ */
 
-#ifndef  ___OBLP_H__
-#define  ___OBLP_H__
+#ifndef  ___khp2_H__
+#define  ___khp2_H__
 
 #ifndef FAUSTFLOAT
 #define FAUSTFLOAT float
@@ -17,7 +18,7 @@ Compilation options: -lang cpp -rui -nvi -ct 1 -cn _OBLP -scn ::faust::dsp -es 1
 #include <math.h>
 
 #ifndef FAUSTCLASS 
-#define FAUSTCLASS _OBLP
+#define FAUSTCLASS _khp2
 #endif
 
 #ifdef __APPLE__ 
@@ -32,7 +33,7 @@ Compilation options: -lang cpp -rui -nvi -ct 1 -cn _OBLP -scn ::faust::dsp -es 1
 #endif
 
 
-struct _OBLP final : public ::faust::dsp {
+struct _khp2 final : public ::faust::dsp {
 	
 	int fSampleRate;
 	float fConst0;
@@ -49,26 +50,28 @@ struct _OBLP final : public ::faust::dsp {
 	float fRec7[2];
 	float fRec8[2];
 	
-	_OBLP() {
+	_khp2() {
 	}
 	
 	void metadata(Meta* m) { 
-		m->declare("compile_options", "-lang cpp -rui -nvi -ct 1 -cn _OBLP -scn ::faust::dsp -es 1 -mcd 16 -mdd 1024 -mdy 33 -uim -single -ftz 0");
-		m->declare("filename", "OBLP.dsp");
+		m->declare("author", "Eric Tarr");
+		m->declare("compile_options", "-lang cpp -rui -nvi -ct 1 -cn _khp2 -scn ::faust::dsp -es 1 -mcd 16 -mdd 1024 -mdy 33 -uim -single -ftz 0");
+		m->declare("description", "Demonstration of the Korg 35 LPF");
+		m->declare("filename", "khp2.dsp");
 		m->declare("maths.lib/author", "GRAME");
 		m->declare("maths.lib/copyright", "GRAME");
 		m->declare("maths.lib/license", "LGPL with exception");
 		m->declare("maths.lib/name", "Faust Math Library");
-		m->declare("maths.lib/version", "2.8.0");
-		m->declare("name", "OBLP");
+		m->declare("maths.lib/version", "2.8.1");
+		m->declare("name", "korg35HPF");
 		m->declare("platform.lib/name", "Generic Platform Library");
 		m->declare("platform.lib/version", "1.3.0");
 		m->declare("signals.lib/name", "Faust Signal Routing Library");
 		m->declare("signals.lib/version", "1.6.0");
-		m->declare("vaeffects.lib/korg35LPF:author", "Eric Tarr");
-		m->declare("vaeffects.lib/korg35LPF:license", "MIT-style STK-4.3 license");
+		m->declare("vaeffects.lib/korg35HPF:author", "Eric Tarr");
+		m->declare("vaeffects.lib/korg35HPF:license", "MIT-style STK-4.3 license");
 		m->declare("vaeffects.lib/name", "Faust Virtual Analog Filter Effect Library");
-		m->declare("vaeffects.lib/version", "1.2.1");
+		m->declare("vaeffects.lib/version", "1.4.0");
 	}
 
 	static constexpr int getStaticNumInputs() {
@@ -135,8 +138,8 @@ struct _OBLP final : public ::faust::dsp {
 		instanceClear();
 	}
 	
-	_OBLP* clone() {
-		return new _OBLP();
+	_khp2* clone() {
+		return new _khp2();
 	}
 	
 	int getSampleRate() {
@@ -144,8 +147,8 @@ struct _OBLP final : public ::faust::dsp {
 	}
 	
 	void buildUserInterface(UI* ui_interface) {
-		ui_interface->openVerticalBox("OBLP");
-		ui_interface->addHorizontalSlider("Q", &fHslider1, FAUSTFLOAT(1.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(0.01f));
+		ui_interface->openVerticalBox("korg35HPF");
+		ui_interface->addHorizontalSlider("Q", &fHslider1, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.5f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(0.01f));
 		ui_interface->addHorizontalSlider("freq", &fHslider0, FAUSTFLOAT(0.5f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
 		ui_interface->closeBox();
 	}
@@ -156,28 +159,31 @@ struct _OBLP final : public ::faust::dsp {
 		FAUSTFLOAT* output0 = outputs[0];
 		FAUSTFLOAT* output1 = outputs[1];
 		float fSlow0 = fConst2 * std::max<float>(0.0f, std::min<float>(1.0f, float(fHslider0)));
-		float fSlow1 = 0.21521823f * (std::max<float>(1.0f, std::min<float>(1e+01f, float(fHslider1))) + -0.70710677f);
+		float fSlow1 = 0.21521823f * (std::max<float>(0.5f, std::min<float>(1e+01f, float(fHslider1))) + -0.70710677f);
 		for (int i0 = 0; i0 < count; i0 = i0 + 1) {
+			float fTemp0 = float(input0[i0]);
 			fRec4[0] = fSlow0 + fConst3 * fRec4[1];
-			float fTemp0 = std::tan(fConst1 * std::pow(1e+01f, 3.0f * fRec4[0] + 1.0f));
-			float fTemp1 = fTemp0 * (float(input0[i0]) - fRec3[1]);
-			float fTemp2 = fTemp0 + 1.0f;
-			float fTemp3 = 1.0f - fTemp0 / fTemp2;
-			float fTemp4 = 1.0f - fSlow1 * (fTemp0 * fTemp3 / fTemp2);
-			float fTemp5 = fTemp0 * (((fTemp1 + fSlow1 * fRec1[1] * fTemp3 - fRec2[1]) / fTemp2 + fRec3[1]) / fTemp4 - fRec1[1]) / fTemp2;
-			float fTemp6 = fRec1[1] + fTemp5;
-			float fRec0 = fTemp6;
-			fRec1[0] = fRec1[1] + 2.0f * fTemp5;
-			fRec2[0] = fRec2[1] + 2.0f * (fTemp0 * (fSlow1 * fTemp6 - fRec2[1]) / fTemp2);
-			fRec3[0] = 2.0f * (fTemp1 / fTemp2) + fRec3[1];
+			float fTemp1 = std::tan(fConst1 * std::pow(1e+01f, 3.0f * fRec4[0] + 1.0f));
+			float fTemp2 = (fTemp0 - fRec3[1]) * fTemp1;
+			float fTemp3 = fTemp1 + 1.0f;
+			float fTemp4 = 1.0f - fSlow1 * (fTemp1 * (1.0f - fTemp1 / fTemp3) / fTemp3);
+			float fTemp5 = (fTemp0 - (fRec3[1] + (fTemp2 - fRec1[1] + fTemp1 * fRec2[1] / fTemp3) / fTemp3)) / fTemp4;
+			float fRec0 = fTemp5;
+			float fTemp6 = fSlow1 * fTemp5;
+			float fTemp7 = fTemp1 * (fTemp6 - fRec2[1]) / fTemp3;
+			fRec1[0] = fRec1[1] + 2.0f * (fTemp1 * (fTemp6 - (fTemp7 + fRec1[1] + fRec2[1])) / fTemp3);
+			fRec2[0] = fRec2[1] + 2.0f * fTemp7;
+			fRec3[0] = fRec3[1] + 2.0f * (fTemp2 / fTemp3);
 			output0[i0] = FAUSTFLOAT(fRec0);
-			float fTemp7 = fTemp0 * (float(input1[i0]) - fRec8[1]);
-			float fTemp8 = fTemp0 * ((fRec8[1] + (fTemp7 + fSlow1 * fTemp3 * fRec6[1] - fRec7[1]) / fTemp2) / fTemp4 - fRec6[1]) / fTemp2;
-			float fTemp9 = fRec6[1] + fTemp8;
-			float fRec5 = fTemp9;
-			fRec6[0] = fRec6[1] + 2.0f * fTemp8;
-			fRec7[0] = fRec7[1] + 2.0f * (fTemp0 * (fSlow1 * fTemp9 - fRec7[1]) / fTemp2);
-			fRec8[0] = fRec8[1] + 2.0f * (fTemp7 / fTemp2);
+			float fTemp8 = float(input1[i0]);
+			float fTemp9 = fTemp1 * (fTemp8 - fRec8[1]);
+			float fTemp10 = (fTemp8 - (fRec8[1] + (fTemp9 - fRec6[1] + fTemp1 * fRec7[1] / fTemp3) / fTemp3)) / fTemp4;
+			float fRec5 = fTemp10;
+			float fTemp11 = fSlow1 * fTemp10;
+			float fTemp12 = fTemp1 * (fTemp11 - fRec7[1]) / fTemp3;
+			fRec6[0] = fRec6[1] + 2.0f * (fTemp1 * (fTemp11 - (fTemp12 + fRec6[1] + fRec7[1])) / fTemp3);
+			fRec7[0] = fRec7[1] + 2.0f * fTemp12;
+			fRec8[0] = fRec8[1] + 2.0f * (fTemp9 / fTemp3);
 			output1[i0] = FAUSTFLOAT(fRec5);
 			fRec4[1] = fRec4[0];
 			fRec1[1] = fRec1[0];
@@ -193,19 +199,19 @@ struct _OBLP final : public ::faust::dsp {
 
 #ifdef FAUST_UIMACROS
 	
-	#define FAUST_FILE_NAME "OBLP.dsp"
-	#define FAUST_CLASS_NAME "_OBLP"
-	#define FAUST_COMPILATION_OPIONS "-lang cpp -rui -nvi -ct 1 -cn _OBLP -scn ::faust::dsp -es 1 -mcd 16 -mdd 1024 -mdy 33 -uim -single -ftz 0"
+	#define FAUST_FILE_NAME "khp2.dsp"
+	#define FAUST_CLASS_NAME "_khp2"
+	#define FAUST_COMPILATION_OPIONS "-lang cpp -rui -nvi -ct 1 -cn _khp2 -scn ::faust::dsp -es 1 -mcd 16 -mdd 1024 -mdy 33 -uim -single -ftz 0"
 	#define FAUST_INPUTS 2
 	#define FAUST_OUTPUTS 2
 	#define FAUST_ACTIVES 2
 	#define FAUST_PASSIVES 0
 
-	FAUST_ADDHORIZONTALSLIDER("Q", fHslider1, 1.0f, 1.0f, 1e+01f, 0.01f);
+	FAUST_ADDHORIZONTALSLIDER("Q", fHslider1, 1.0f, 0.5f, 1e+01f, 0.01f);
 	FAUST_ADDHORIZONTALSLIDER("freq", fHslider0, 0.5f, 0.0f, 1.0f, 0.001f);
 
 	#define FAUST_LIST_ACTIVES(p) \
-		p(HORIZONTALSLIDER, Q, "Q", fHslider1, 1.0f, 1.0f, 1e+01f, 0.01f) \
+		p(HORIZONTALSLIDER, Q, "Q", fHslider1, 1.0f, 0.5f, 1e+01f, 0.01f) \
 		p(HORIZONTALSLIDER, freq, "freq", fHslider0, 0.5f, 0.0f, 1.0f, 0.001f) \
 
 	#define FAUST_LIST_PASSIVES(p) \

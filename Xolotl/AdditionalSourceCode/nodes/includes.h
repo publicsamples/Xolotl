@@ -9,19 +9,15 @@
 
 // Include third party header files ----------------
 
-#include "BPF.h"
-#include "Comb.h"
 #include "granular.h"
-#include "HPF.h"
+#include "khp2.h"
 #include "klp2.h"
-#include "LPF.h"
-#include "OBLP.h"
 #include "RevDel.h"
 
 // Include compiled network files ------------------
 
 #include "bbdish_networkdata.h"
-#include "dlay.h"
+#include "dlay_networkdata.h"
 #include "Env2_networkdata.h"
 #include "Env3_networkdata.h"
 #include "Env4_networkdata.h"
@@ -39,7 +35,7 @@
 #include "pb_networkdata.h"
 #include "QuadCho_networkdata.h"
 #include "TRACK_LFO_networkdata.h"
-#include "Xarrange.h"
+#include "Xarrange_networkdata.h"
 #include "xnode.h"
 #include "xnodeCycle_networkdata.h"
 #include "xnodeUser_networkdata.h"

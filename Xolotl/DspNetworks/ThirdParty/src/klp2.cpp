@@ -1,6 +1,6 @@
 /* ------------------------------------------------------------
 name: "klp2"
-Code generated with Faust 2.75.7 (https://faust.grame.fr)
+Code generated with Faust 2.81.2 (https://faust.grame.fr)
 Compilation options: -lang cpp -rui -nvi -ct 1 -cn _klp2 -scn ::faust::dsp -es 1 -mcd 16 -mdd 1024 -mdy 33 -uim -single -ftz 0
 ------------------------------------------------------------ */
 
@@ -47,7 +47,7 @@ struct _klp2 final : public ::faust::dsp {
 	void metadata(Meta* m) { 
 		m->declare("compile_options", "-lang cpp -rui -nvi -ct 1 -cn _klp2 -scn ::faust::dsp -es 1 -mcd 16 -mdd 1024 -mdy 33 -uim -single -ftz 0");
 		m->declare("delays.lib/name", "Faust Delay Library");
-		m->declare("delays.lib/version", "1.1.0");
+		m->declare("delays.lib/version", "1.2.0");
 		m->declare("demos.lib/name", "Faust Demos Library");
 		m->declare("demos.lib/reverse_echo_demo:author", "Julius O. Smith III");
 		m->declare("demos.lib/reverse_echo_demo:licence", "MIT");
@@ -60,7 +60,7 @@ struct _klp2 final : public ::faust::dsp {
 		m->declare("misceffects.lib/reverseEchoN:license", "STK-4.3");
 		m->declare("misceffects.lib/uniformPanToStereo:author", "Julius O. Smith III");
 		m->declare("misceffects.lib/uniformPanToStereo:license", "STK-4.3");
-		m->declare("misceffects.lib/version", "2.5.0");
+		m->declare("misceffects.lib/version", "2.5.1");
 		m->declare("name", "klp2");
 		m->declare("signals.lib/name", "Faust Signal Routing Library");
 		m->declare("signals.lib/version", "1.6.0");
