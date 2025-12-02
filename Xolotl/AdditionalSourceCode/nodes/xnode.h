@@ -96,11 +96,34 @@ template <int NV>
 using midi_cc_t = control::midi_cc<parameter::plain<pma_unscaled2_t<NV>, 0>>;
 
 template <int NV>
+using chain26_t = container::chain<parameter::empty, 
+                                   wrap::fix<1, math::add<NV>>>;
+
+template <int NV> using chain29_t = chain26_t<NV>;
+
+template <int NV> using chain28_t = chain26_t<NV>;
+template <int NV>
+using branch4_t = container::branch<parameter::empty, 
+                                    wrap::fix<1, chain26_t<NV>>, 
+                                    chain29_t<NV>, 
+                                    chain28_t<NV>>;
+
+template <int NV>
+using peak3_t = wrap::mod<parameter::plain<pma_unscaled1_t<NV>, 0>, 
+                          wrap::no_data<core::peak>>;
+
+template <int NV>
+using chain27_t = container::chain<parameter::empty, 
+                                   wrap::fix<1, branch4_t<NV>>, 
+                                   peak3_t<NV>>;
+
+template <int NV>
 using modchain1_t_ = container::chain<parameter::empty, 
                                       wrap::fix<1, minmax_t<NV>>, 
                                       pma_unscaled_t<NV>, 
                                       midi_cc_t<NV>, 
                                       pma_unscaled2_t<NV>, 
+                                      chain27_t<NV>, 
                                       pma_unscaled1_t<NV>>;
 
 template <int NV>
@@ -264,10 +287,35 @@ using modchain_t_ = container::chain<parameter::empty,
 template <int NV>
 using modchain_t = wrap::control_rate<modchain_t_<NV>>;
 
+using chain18_t = container::chain<parameter::empty, 
+                                   wrap::fix<2, core::empty>>;
+
+template <int NV>
+using peak_mod = parameter::chain<ranges::Identity, 
+                                  parameter::plain<math::add<NV>, 0>, 
+                                  parameter::plain<math::add<NV>, 0>, 
+                                  parameter::plain<math::add<NV>, 0>>;
+
+template <int NV>
+using peak_t = wrap::mod<peak_mod<NV>, 
+                         wrap::no_data<core::peak>>;
+
+template <int NV>
+using chain21_t = container::chain<parameter::empty, 
+                                   wrap::fix<2, wrap::no_process<math::sig2mod<NV>>>, 
+                                   peak_t<NV>, 
+                                   math::clear<NV>>;
+
+template <int NV>
+using split4_t = container::split<parameter::empty, 
+                                  wrap::fix<2, chain18_t>, 
+                                  chain21_t<NV>>;
+
 template <int NV>
 using chain17_t = container::chain<parameter::empty, 
                                    wrap::fix<2, modchain_t<NV>>, 
-                                   fx::sampleandhold<NV>>;
+                                   fx::sampleandhold<NV>, 
+                                   split4_t<NV>>;
 
 template <int NV>
 using ramp_t = wrap::no_data<core::ramp<NV, false>>;
@@ -283,15 +331,7 @@ using modchain5_t_ = container::chain<parameter::empty,
 template <int NV>
 using modchain5_t = wrap::control_rate<modchain5_t_<NV>>;
 
-DECLARE_PARAMETER_RANGE_STEP(peak1_modRange, 
-                             0., 
-                             24., 
-                             0.1);
-
-template <int NV>
-using peak1_mod = parameter::from0To1<core::gain<NV>, 
-                                      0, 
-                                      peak1_modRange>;
+template <int NV> using peak1_mod = peak_mod<NV>;
 
 template <int NV>
 using peak1_t = wrap::mod<peak1_mod<NV>, 
@@ -300,7 +340,7 @@ using peak1_t = wrap::mod<peak1_mod<NV>,
 template <int NV>
 using modchain3_t_ = container::chain<parameter::empty, 
                                       wrap::fix<1, ramp_t<NV>>, 
-                                      math::pi<NV>, 
+                                      wrap::no_process<math::pi<NV>>, 
                                       math::sin<NV>, 
                                       peak1_t<NV>>;
 
@@ -311,64 +351,64 @@ template <int NV>
 using chain10_t = container::chain<parameter::empty, 
                                    wrap::fix<2, modchain5_t<NV>>, 
                                    modchain3_t<NV>, 
-                                   core::gain<NV>, 
                                    math::pi<NV>, 
-                                   wrap::no_process<math::sin<NV>>, 
+                                   math::sin<NV>, 
                                    math::sig2mod<NV>>;
 
 template <int NV>
-using chain18_t = container::chain<parameter::empty, 
+using chain23_t = container::chain<parameter::empty, 
                                    wrap::fix<2, chain10_t<NV>>>;
+
+template <int NV> using ramp1_t = ramp_t<NV>;
 template <int NV>
-using branch5_t = container::branch<parameter::empty, 
+using tempo_sync3_t = wrap::mod<parameter::plain<ramp1_t<NV>, 0>, 
+                                control::tempo_sync<NV>>;
+
+template <int NV>
+using modchain6_t_ = container::chain<parameter::empty, 
+                                      wrap::fix<1, tempo_sync3_t<NV>>, 
+                                      wrap::no_process<math::sig2mod<NV>>>;
+
+template <int NV>
+using modchain6_t = wrap::control_rate<modchain6_t_<NV>>;
+
+template <int NV> using peak2_mod = peak_mod<NV>;
+
+template <int NV>
+using peak2_t = wrap::mod<peak2_mod<NV>, 
+                          wrap::no_data<core::peak>>;
+
+template <int NV>
+using modchain4_t_ = container::chain<parameter::empty, 
+                                      wrap::fix<1, ramp1_t<NV>>, 
+                                      math::mod_inv<NV>, 
+                                      peak2_t<NV>>;
+
+template <int NV>
+using modchain4_t = wrap::control_rate<modchain4_t_<NV>>;
+
+template <int NV>
+using chain25_t = container::chain<parameter::empty, 
+                                   wrap::fix<2, modchain6_t<NV>>, 
+                                   modchain4_t<NV>, 
+                                   core::gain<NV>>;
+
+template <int NV>
+using chain24_t = container::chain<parameter::empty, 
+                                   wrap::fix<2, chain25_t<NV>>>;
+template <int NV>
+using branch1_t = container::branch<parameter::empty, 
                                     wrap::fix<2, chain17_t<NV>>, 
-                                    chain18_t<NV>>;
+                                    chain23_t<NV>, 
+                                    chain24_t<NV>>;
 
 template <int NV>
 using chain7_t = container::chain<parameter::empty, 
-                                  wrap::fix<2, branch5_t<NV>>>;
+                                  wrap::fix<2, branch1_t<NV>>>;
 
 template <int NV>
 using chain33_t = container::chain<parameter::empty, 
                                    wrap::fix<2, chain7_t<NV>>>;
-
-DECLARE_PARAMETER_RANGE_SKEW(pma_mod_0Range, 
-                             20., 
-                             20000., 
-                             0.229905);
-
-template <int NV>
-using pma_mod_0 = parameter::from0To1<filters::svf<NV>, 
-                                      0, 
-                                      pma_mod_0Range>;
-
-template <int NV> using pma_mod_1 = pma_mod_0<NV>;
-
-template <int NV> using pma_mod_2 = pma_mod_0<NV>;
-
-template <int NV>
-using pma_mod_3 = parameter::from0To1<filters::allpass<NV>, 
-                                      0, 
-                                      pma_mod_0Range>;
-
-template <int NV>
-using pma_mod = parameter::chain<ranges::Identity, 
-                                 pma_mod_0<NV>, 
-                                 pma_mod_1<NV>, 
-                                 pma_mod_2<NV>, 
-                                 pma_mod_3<NV>>;
-
-template <int NV>
-using pma_t = control::pma<NV, pma_mod<NV>>;
-
-template <int NV>
-using peak_mod = parameter::chain<ranges::Identity, 
-                                  parameter::plain<pma_t<NV>, 0>, 
-                                  parameter::plain<pma_unscaled1_t<NV>, 0>>;
-
-template <int NV>
-using peak_t = wrap::mod<peak_mod<NV>, 
-                         wrap::no_data<core::peak>>;
 
 template <int NV>
 using multi_t = container::multi<parameter::empty, 
@@ -378,7 +418,6 @@ using multi_t = container::multi<parameter::empty,
 template <int NV>
 using chain3_t = container::chain<parameter::empty, 
                                   wrap::fix<2, chain33_t<NV>>, 
-                                  peak_t<NV>, 
                                   multi_t<NV>, 
                                   core::gain<NV>>;
 
@@ -411,9 +450,58 @@ using xfader1_t = control::xfader<xfader1_multimod<NV>, faders::linear>;
 
 template <int NV> using chain5_t = chain2_t<NV>;
 
+template <int NV> using chain36_t = chain26_t<NV>;
+
+template <int NV> using chain38_t = chain26_t<NV>;
+
+template <int NV> using chain39_t = chain26_t<NV>;
+template <int NV>
+using branch5_t = container::branch<parameter::empty, 
+                                    wrap::fix<1, chain36_t<NV>>, 
+                                    chain38_t<NV>, 
+                                    chain39_t<NV>>;
+
+DECLARE_PARAMETER_RANGE_SKEW(pma_mod_0Range, 
+                             20., 
+                             20000., 
+                             0.229905);
+
+template <int NV>
+using pma_mod_0 = parameter::from0To1<filters::svf<NV>, 
+                                      0, 
+                                      pma_mod_0Range>;
+
+template <int NV> using pma_mod_1 = pma_mod_0<NV>;
+
+template <int NV> using pma_mod_2 = pma_mod_0<NV>;
+
+template <int NV>
+using pma_mod_3 = parameter::from0To1<filters::allpass<NV>, 
+                                      0, 
+                                      pma_mod_0Range>;
+
+template <int NV>
+using pma_mod = parameter::chain<ranges::Identity, 
+                                 pma_mod_0<NV>, 
+                                 pma_mod_1<NV>, 
+                                 pma_mod_2<NV>, 
+                                 pma_mod_3<NV>>;
+
+template <int NV>
+using pma_t = control::pma<NV, pma_mod<NV>>;
+template <int NV>
+using peak5_t = wrap::mod<parameter::plain<pma_t<NV>, 0>, 
+                          wrap::no_data<core::peak>>;
+
+template <int NV>
+using chain35_t = container::chain<parameter::empty, 
+                                   wrap::fix<1, branch5_t<NV>>, 
+                                   peak5_t<NV>>;
+
 template <int NV>
 using modchain2_t_ = container::chain<parameter::empty, 
-                                      wrap::fix<1, pma_t<NV>>>;
+                                      wrap::fix<1, chain35_t<NV>>, 
+                                      pma_t<NV>>;
 
 template <int NV>
 using modchain2_t = wrap::control_rate<modchain2_t_<NV>>;
@@ -445,12 +533,145 @@ using chain4_t = container::chain<parameter::empty,
                                   xfader1_t<NV>, 
                                   split1_t<NV>>;
 
+template <int NV> using pma1_mod = xfader2_c0<NV>;
+
+template <int NV>
+using pma1_t = control::pma<NV, pma1_mod<NV>>;
+
+struct cable_table_t_data
+{
+	span<float, 512> data =
+	{
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
+		0.998332f, 0.994386f, 0.99044f, 0.986494f, 0.982548f, 0.978602f,
+		0.974656f, 0.97071f, 0.966764f, 0.962818f, 0.958872f, 0.954926f,
+		0.95098f, 0.947034f, 0.943088f, 0.939142f, 0.935196f, 0.93125f,
+		0.927304f, 0.923358f, 0.919412f, 0.915466f, 0.91152f, 0.907574f,
+		0.903628f, 0.899682f, 0.895736f, 0.89179f, 0.887844f, 0.883898f,
+		0.879953f, 0.876007f, 0.872061f, 0.868115f, 0.864169f, 0.860223f,
+		0.856277f, 0.852331f, 0.848385f, 0.844439f, 0.840493f, 0.836547f,
+		0.832601f, 0.828655f, 0.824709f, 0.820763f, 0.816817f, 0.812871f,
+		0.808925f, 0.804979f, 0.801033f, 0.797087f, 0.793141f, 0.789195f,
+		0.785249f, 0.781303f, 0.777357f, 0.773411f, 0.769465f, 0.765519f,
+		0.761573f, 0.757627f, 0.753681f, 0.749735f, 0.745789f, 0.741843f,
+		0.737897f, 0.733951f, 0.730005f, 0.726059f, 0.722113f, 0.718168f,
+		0.714222f, 0.710276f, 0.70633f, 0.702384f, 0.698438f, 0.694492f,
+		0.690546f, 0.6866f, 0.682654f, 0.678708f, 0.674762f, 0.670816f,
+		0.66687f, 0.662924f, 0.658978f, 0.655032f, 0.651086f, 0.64714f,
+		0.643194f, 0.639248f, 0.635302f, 0.631356f, 0.62741f, 0.623464f,
+		0.619518f, 0.615572f, 0.611626f, 0.60768f, 0.603734f, 0.599788f,
+		0.595842f, 0.591896f, 0.58795f, 0.584004f, 0.580058f, 0.576112f,
+		0.572166f, 0.56822f, 0.564274f, 0.560328f, 0.556383f, 0.552437f,
+		0.548491f, 0.544545f, 0.540599f, 0.536653f, 0.532707f, 0.528761f,
+		0.524815f, 0.520869f, 0.516923f, 0.512977f, 0.509031f, 0.505085f,
+		0.501139f, 0.497193f, 0.493247f, 0.489301f, 0.485355f, 0.481409f,
+		0.477463f, 0.473517f, 0.469571f, 0.465625f, 0.461679f, 0.457733f,
+		0.453787f, 0.449841f, 0.445895f, 0.441949f, 0.438003f, 0.434057f,
+		0.430111f, 0.426165f, 0.422219f, 0.418273f, 0.414327f, 0.410381f,
+		0.406435f, 0.402489f, 0.398544f, 0.394598f, 0.390652f, 0.386706f,
+		0.38276f, 0.378814f, 0.374868f, 0.370922f, 0.366976f, 0.36303f,
+		0.359084f, 0.355138f, 0.351192f, 0.347246f, 0.3433f, 0.339354f,
+		0.335408f, 0.331462f, 0.327516f, 0.32357f, 0.319624f, 0.315678f,
+		0.311732f, 0.307786f, 0.30384f, 0.299894f, 0.295948f, 0.292002f,
+		0.288056f, 0.28411f, 0.280164f, 0.276218f, 0.272272f, 0.268326f,
+		0.26438f, 0.260434f, 0.256488f, 0.252542f, 0.248596f, 0.24465f,
+		0.240705f, 0.236759f, 0.232812f, 0.228867f, 0.224921f, 0.220975f,
+		0.217029f, 0.213083f, 0.209137f, 0.205191f, 0.201245f, 0.197299f,
+		0.193353f, 0.189407f, 0.185461f, 0.181515f, 0.177569f, 0.173623f,
+		0.169677f, 0.165731f, 0.161785f, 0.157839f, 0.153893f, 0.149947f,
+		0.146001f, 0.142055f, 0.138109f, 0.134163f, 0.130217f, 0.126271f,
+		0.122325f, 0.118379f, 0.114433f, 0.110487f, 0.106541f, 0.102595f,
+		0.0986494f, 0.0947034f, 0.0907575f, 0.0868114f, 0.0828655f, 0.0789196f,
+		0.0749735f, 0.0710276f, 0.0670816f, 0.0631356f, 0.0591896f, 0.0552437f,
+		0.0512978f, 0.0473517f, 0.0434057f, 0.0394597f, 0.0355138f, 0.0315678f,
+		0.0276219f, 0.0236759f, 0.0197299f, 0.015784f, 0.0118378f, 0.00789195f,
+		0.00394595f, 0.f
+	};
+};
+
+template <int NV>
+using cable_table_t = wrap::data<control::cable_table<parameter::plain<pma1_t<NV>, 2>>, 
+                                 data::embedded::table<cable_table_t_data>>;
+
+template <int NV> using chain41_t = chain26_t<NV>;
+
+template <int NV> using chain44_t = chain26_t<NV>;
+
+template <int NV> using chain46_t = chain26_t<NV>;
+template <int NV>
+using branch6_t = container::branch<parameter::empty, 
+                                    wrap::fix<1, chain41_t<NV>>, 
+                                    chain44_t<NV>, 
+                                    chain46_t<NV>>;
+
+template <int NV>
+using peak6_t = wrap::mod<parameter::plain<pma1_t<NV>, 0>, 
+                          wrap::no_data<core::peak>>;
+
+template <int NV>
+using chain40_t = container::chain<parameter::empty, 
+                                   wrap::fix<1, branch6_t<NV>>, 
+                                   peak6_t<NV>, 
+                                   pma1_t<NV>>;
+
+template <int NV>
+using modchain7_t_ = container::chain<parameter::empty, 
+                                      wrap::fix<1, chain40_t<NV>>>;
+
+template <int NV>
+using modchain7_t = wrap::control_rate<modchain7_t_<NV>>;
+
 template <int NV>
 using chain_t = container::chain<parameter::empty, 
                                  wrap::fix<2, modchain1_t<NV>>, 
                                  chain9_t<NV>, 
                                  chain1_t<NV>, 
                                  chain4_t<NV>, 
+                                 cable_table_t<NV>, 
+                                 modchain7_t<NV>, 
+                                 core::gain<NV>, 
                                  core::gain<NV>>;
 
 namespace xnode_t_parameters
@@ -505,21 +726,35 @@ using FxValue_3 = parameter::from0To1<xnode_impl::tempo_sync2_t<NV>,
                                       FxValue_1Range>;
 
 template <int NV>
+using FxValue_4 = parameter::from0To1<xnode_impl::tempo_sync3_t<NV>, 
+                                      0, 
+                                      FxValue_0Range>;
+
+template <int NV>
+using FxValue_5 = parameter::from0To1<xnode_impl::tempo_sync3_t<NV>, 
+                                      3, 
+                                      FxValue_1Range>;
+
+template <int NV>
 using FxValue = parameter::chain<ranges::Identity, 
                                  FxValue_0<NV>, 
                                  FxValue_1<NV>, 
                                  FxValue_2<NV>, 
-                                 FxValue_3<NV>>;
+                                 FxValue_3<NV>, 
+                                 FxValue_4<NV>, 
+                                 FxValue_5<NV>>;
 
 template <int NV>
 using FxShDiv = parameter::chain<ranges::Identity, 
                                  parameter::plain<xnode_impl::tempo_sync_t<NV>, 1>, 
-                                 parameter::plain<xnode_impl::tempo_sync2_t<NV>, 1>>;
+                                 parameter::plain<xnode_impl::tempo_sync2_t<NV>, 1>, 
+                                 parameter::plain<xnode_impl::tempo_sync3_t<NV>, 1>>;
 
 template <int NV>
 using FxShSync = parameter::chain<ranges::Identity, 
                                   parameter::plain<xnode_impl::tempo_sync_t<NV>, 2>, 
-                                  parameter::plain<xnode_impl::tempo_sync2_t<NV>, 2>>;
+                                  parameter::plain<xnode_impl::tempo_sync2_t<NV>, 2>, 
+                                  parameter::plain<xnode_impl::tempo_sync3_t<NV>, 2>>;
 
 DECLARE_PARAMETER_RANGE_SKEW(FilterRes_InputRange, 
                              0.3, 
@@ -602,6 +837,33 @@ template <int NV>
 using TYPE = parameter::chain<TYPE_InputRange, TYPE_0<NV>>;
 
 template <int NV>
+using ShSinMix_0 = parameter::from0To1<xnode_impl::branch1_t<NV>, 
+                                       0, 
+                                       TYPE_0Range>;
+
+template <int NV>
+using ShSinMix_1 = parameter::from0To1<xnode_impl::branch4_t<NV>, 
+                                       0, 
+                                       TYPE_0Range>;
+
+template <int NV>
+using ShSinMix_2 = parameter::from0To1<xnode_impl::branch5_t<NV>, 
+                                       0, 
+                                       TYPE_0Range>;
+
+template <int NV>
+using ShSinMix_3 = parameter::from0To1<xnode_impl::branch6_t<NV>, 
+                                       0, 
+                                       TYPE_0Range>;
+
+template <int NV>
+using ShSinMix = parameter::chain<ranges::Identity, 
+                                  ShSinMix_0<NV>, 
+                                  ShSinMix_1<NV>, 
+                                  ShSinMix_2<NV>, 
+                                  ShSinMix_3<NV>>;
+
+template <int NV>
 using UserInput = parameter::from0To1<core::gain<NV>, 
                                       0, 
                                       xnode_impl::xfader2_c0Range>;
@@ -625,10 +887,6 @@ template <int NV> using snap_6 = snap_0<NV>;
 
 template <int NV> using snap_7 = snap_0<NV>;
 
-template <int NV> using snap_8 = snap_0<NV>;
-
-template <int NV> using snap_9 = snap_0<NV>;
-
 template <int NV>
 using snap = parameter::chain<ranges::Identity, 
                               snap_0<NV>, 
@@ -638,9 +896,21 @@ using snap = parameter::chain<ranges::Identity,
                               snap_4<NV>, 
                               snap_5<NV>, 
                               snap_6<NV>, 
-                              snap_7<NV>, 
-                              snap_8<NV>, 
-                              snap_9<NV>>;
+                              snap_7<NV>>;
+
+DECLARE_PARAMETER_RANGE(ShToGain_0Range, 
+                        -1., 
+                        1.);
+
+template <int NV>
+using ShToGain_0 = parameter::from0To1<xnode_impl::pma1_t<NV>, 
+                                       1, 
+                                       ShToGain_0Range>;
+
+template <int NV>
+using ShToGain = parameter::chain<ranges::Identity, 
+                                  ShToGain_0<NV>, 
+                                  parameter::plain<xnode_impl::cable_table_t<NV>, 0>>;
 
 template <int NV>
 using Harm = parameter::plain<xnode_impl::minmax_t<NV>, 
@@ -674,9 +944,6 @@ template <int NV>
 using DET = parameter::plain<xnode_impl::pma_unscaled_t<NV>, 
                              0>;
 template <int NV>
-using ShSinMix = parameter::plain<xnode_impl::branch5_t<NV>, 
-                                  0>;
-template <int NV>
 using UserPs = parameter::plain<xnode_impl::smoothed_parameter_t<NV>, 
                                 0>;
 template <int NV>
@@ -702,7 +969,8 @@ using xnode_t_plist = parameter::list<Harm<NV>,
                                       ShSinMix<NV>, 
                                       UserPs<NV>, 
                                       UserInput<NV>, 
-                                      snap<NV>>;
+                                      snap<NV>, 
+                                      ShToGain<NV>>;
 }
 
 template <int NV>
@@ -724,7 +992,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		SNEX_METADATA_ID(xnode);
 		SNEX_METADATA_NUM_CHANNELS(2);
-		SNEX_METADATA_ENCODED_PARAMETERS(398)
+		SNEX_METADATA_ENCODED_PARAMETERS(416)
 		{
 			0x005C, 0x0000, 0x0000, 0x6148, 0x6D72, 0x0000, 0x0000, 0x0000, 
             0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 
@@ -735,18 +1003,18 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
             0x0003, 0x0000, 0x7473, 0x7065, 0x0000, 0x0000, 0x0000, 0x0000, 
             0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x005C, 
             0x0004, 0x0000, 0x6F4D, 0x6564, 0x0000, 0x0000, 0x3F80, 0x0000, 
-            0x40C0, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x005C, 
+            0x40C0, 0x0000, 0x4000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x005C, 
             0x0005, 0x0000, 0x7846, 0x694D, 0x0078, 0x0000, 0x0000, 0x0000, 
             0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x5C00, 
             0x0600, 0x0000, 0x4600, 0x5678, 0x6C61, 0x6575, 0x0000, 0x0000, 
             0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 
             0x0000, 0x005C, 0x0007, 0x0000, 0x7846, 0x6853, 0x6944, 0x0076, 
-            0x0000, 0x8000, 0x003F, 0x0000, 0x0042, 0x0000, 0x0042, 0x8000, 
+            0x0000, 0x8000, 0x003F, 0x0000, 0x0042, 0x8000, 0x003F, 0x8000, 
             0x003F, 0x8000, 0x5C3F, 0x0800, 0x0000, 0x4600, 0x5378, 0x5368, 
             0x6E79, 0x0063, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 0x8000, 
             0x003F, 0x8000, 0x003F, 0x8000, 0x5C3F, 0x0900, 0x0000, 0x7300, 
             0x5068, 0x7469, 0x6863, 0x0000, 0x0000, 0xBF80, 0x0000, 0x3F80, 
-            0xD604, 0xBCE3, 0x0000, 0x3F80, 0x0000, 0x0000, 0x005C, 0x000A, 
+            0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x005C, 0x000A, 
             0x0000, 0x6946, 0x746C, 0x7265, 0x694D, 0x0078, 0x0000, 0x0000, 
             0x0000, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x003F, 0x0000, 
             0x5C00, 0x0B00, 0x0000, 0x4600, 0x6C69, 0x6574, 0x5472, 0x7079, 
@@ -757,25 +1025,27 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
             0x0000, 0x6946, 0x746C, 0x7265, 0x7543, 0x0074, 0x0000, 0x8000, 
             0x0024, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x003F, 0x0000, 
             0x5C00, 0x0E00, 0x0000, 0x4600, 0x6C69, 0x6574, 0x4672, 0x4D78, 
-            0x646F, 0x0000, 0x0000, 0xBF80, 0x0000, 0x3F80, 0x0000, 0x0000, 
+            0x646F, 0x0000, 0x0000, 0xBF80, 0x0000, 0x3F80, 0xBD38, 0x3BE9, 
             0x0000, 0x3F80, 0x0000, 0x0000, 0x005C, 0x000F, 0x0000, 0x4544, 
             0x0054, 0x0000, 0x0000, 0x0000, 0x0000, 0x4640, 0x805E, 0x003F, 
             0x8000, 0x003F, 0x0000, 0x5C00, 0x1000, 0x0000, 0x5300, 0x5368, 
             0x6F6D, 0x746F, 0x0068, 0x0000, 0x0000, 0x0000, 0xFA00, 0x0044, 
             0x0000, 0x6900, 0x6CEE, 0xCD3E, 0xCCCC, 0x5C3D, 0x1100, 0x0000, 
             0x4F00, 0x6373, 0x6853, 0x7061, 0x7365, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 
+            0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 
             0x005C, 0x0012, 0x0000, 0x5954, 0x4550, 0x0000, 0x0000, 0x3F80, 
             0x0000, 0x4040, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 
             0x005C, 0x0013, 0x0000, 0x6853, 0x6953, 0x4D6E, 0x7869, 0x0000, 
-            0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 
-            0x0000, 0x3F80, 0x005C, 0x0014, 0x0000, 0x7355, 0x7265, 0x7350, 
-            0x0000, 0x0000, 0x0000, 0x0000, 0x3F80, 0xAA06, 0x3E8D, 0x0000, 
+            0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 
+            0x0000, 0x0000, 0x005C, 0x0014, 0x0000, 0x7355, 0x7265, 0x7350, 
+            0x0000, 0x0000, 0x0000, 0x0000, 0x3F80, 0x4DEA, 0x3EAA, 0x0000, 
             0x3F80, 0x0000, 0x0000, 0x005C, 0x0015, 0x0000, 0x7355, 0x7265, 
-            0x6E49, 0x7570, 0x0074, 0x0000, 0x0000, 0x0000, 0x8000, 0x873F, 
-            0x0E52, 0x003F, 0x8000, 0x003F, 0x0000, 0x5C00, 0x1600, 0x0000, 
-            0x7300, 0x616E, 0x0070, 0x0000, 0x0000, 0x0000, 0x8000, 0x4E3F, 
-            0x8A6F, 0x003D, 0x8000, 0x003F, 0x0000, 0x0000
+            0x6E49, 0x7570, 0x0074, 0x0000, 0x0000, 0x0000, 0x8000, 0x9C3F, 
+            0x90DE, 0x003D, 0x8000, 0x003F, 0x0000, 0x5C00, 0x1600, 0x0000, 
+            0x7300, 0x616E, 0x0070, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 
+            0x0400, 0x003F, 0x8000, 0x003F, 0x0000, 0x5C00, 0x1700, 0x0000, 
+            0x5300, 0x5468, 0x476F, 0x6961, 0x006E, 0x0000, 0x0000, 0x0000, 
+            0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x0000
 		};
 		SNEX_METADATA_ENCODED_MOD_INFO(25)
 		{
@@ -796,7 +1066,16 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& pma_unscaled = this->getT(0).getT(0).getT(1);                                       // xnode_impl::pma_unscaled_t<NV>
 		auto& midi_cc = this->getT(0).getT(0).getT(2);                                            // xnode_impl::midi_cc_t<NV>
 		auto& pma_unscaled2 = this->getT(0).getT(0).getT(3);                                      // xnode_impl::pma_unscaled2_t<NV>
-		auto& pma_unscaled1 = this->getT(0).getT(0).getT(4);                                      // xnode_impl::pma_unscaled1_t<NV>
+		auto& chain27 = this->getT(0).getT(0).getT(4);                                            // xnode_impl::chain27_t<NV>
+		auto& branch4 = this->getT(0).getT(0).getT(4).getT(0);                                    // xnode_impl::branch4_t<NV>
+		auto& chain26 = this->getT(0).getT(0).getT(4).getT(0).getT(0);                            // xnode_impl::chain26_t<NV>
+		auto& add = this->getT(0).getT(0).getT(4).getT(0).getT(0).getT(0);                        // math::add<NV>
+		auto& chain29 = this->getT(0).getT(0).getT(4).getT(0).getT(1);                            // xnode_impl::chain29_t<NV>
+		auto& add2 = this->getT(0).getT(0).getT(4).getT(0).getT(1).getT(0);                       // math::add<NV>
+		auto& chain28 = this->getT(0).getT(0).getT(4).getT(0).getT(2);                            // xnode_impl::chain28_t<NV>
+		auto& add1 = this->getT(0).getT(0).getT(4).getT(0).getT(2).getT(0);                       // math::add<NV>
+		auto& peak3 = this->getT(0).getT(0).getT(4).getT(1);                                      // xnode_impl::peak3_t<NV>
+		auto& pma_unscaled1 = this->getT(0).getT(0).getT(5);                                      // xnode_impl::pma_unscaled1_t<NV>
 		auto& chain9 = this->getT(0).getT(1);                                                     // xnode_impl::chain9_t<NV>
 		auto& chain32 = this->getT(0).getT(1).getT(0);                                            // xnode_impl::chain32_t<NV>
 		auto& branch = this->getT(0).getT(1).getT(0).getT(0);                                     // xnode_impl::branch_t<NV>
@@ -888,7 +1167,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& chain3 = this->getT(0).getT(2).getT(1).getT(1);                                     // xnode_impl::chain3_t<NV>
 		auto& chain33 = this->getT(0).getT(2).getT(1).getT(1).getT(0);                            // xnode_impl::chain33_t<NV>
 		auto& chain7 = this->getT(0).getT(2).getT(1).getT(1).getT(0).getT(0);                     // xnode_impl::chain7_t<NV>
-		auto& branch5 = this->getT(0).getT(2).getT(1).getT(1).getT(0).getT(0).getT(0);            // xnode_impl::branch5_t<NV>
+		auto& branch1 = this->getT(0).getT(2).getT(1).getT(1).getT(0).getT(0).getT(0);            // xnode_impl::branch1_t<NV>
 		auto& chain17 = this->getT(0).getT(2).getT(1).getT(1).                                    // xnode_impl::chain17_t<NV>
                         getT(0).getT(0).getT(0).getT(0);
 		auto& modchain = this->getT(0).getT(2).getT(1).getT(1).                        // xnode_impl::modchain_t<NV>
@@ -901,7 +1180,23 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& sampleandhold = this->getT(0).getT(2).getT(1).getT(1).                   // fx::sampleandhold<NV>
                               getT(0).getT(0).getT(0).getT(0).
                               getT(1);
-		auto& chain18 = this->getT(0).getT(2).getT(1).getT(1).                         // xnode_impl::chain18_t<NV>
+		auto& split4 = this->getT(0).getT(2).getT(1).getT(1).                          // xnode_impl::split4_t<NV>
+                       getT(0).getT(0).getT(0).getT(0).
+                       getT(2);
+		auto& chain18 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                 // xnode_impl::chain18_t
+                        getT(0).getT(0).getT(0).getT(2).getT(0);
+		auto& chain21 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                 // xnode_impl::chain21_t<NV>
+                        getT(0).getT(0).getT(0).getT(2).getT(1);
+		auto& sig2mod2 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                // wrap::no_process<math::sig2mod<NV>>
+                         getT(0).getT(0).getT(0).getT(2).getT(1).
+                         getT(0);
+		auto& peak = this->getT(0).getT(2).getT(1).getT(1).getT(0).                    // xnode_impl::peak_t<NV>
+                     getT(0).getT(0).getT(0).getT(2).getT(1).
+                     getT(1);
+		auto& clear1 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                  // math::clear<NV>
+                       getT(0).getT(0).getT(0).getT(2).getT(1).
+                       getT(2);
+		auto& chain23 = this->getT(0).getT(2).getT(1).getT(1).                         // xnode_impl::chain23_t<NV>
                         getT(0).getT(0).getT(0).getT(1);
 		auto& chain10 = this->getT(0).getT(2).getT(1).getT(1).                         // xnode_impl::chain10_t<NV>
                         getT(0).getT(0).getT(0).getT(1).
@@ -919,7 +1214,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& ramp = this->getT(0).getT(2).getT(1).getT(1).getT(0).                    // xnode_impl::ramp_t<NV>
                      getT(0).getT(0).getT(1).getT(0).getT(1).
                      getT(0);
-		auto& pi3 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                     // math::pi<NV>
+		auto& pi3 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                     // wrap::no_process<math::pi<NV>>
                     getT(0).getT(0).getT(1).getT(0).getT(1).
                     getT(1);
 		auto& sin2 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                    // math::sin<NV>
@@ -928,19 +1223,42 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& peak1 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                   // xnode_impl::peak1_t<NV>
                       getT(0).getT(0).getT(1).getT(0).getT(1).
                       getT(3);
-		auto& gain8 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                   // core::gain<NV>
-                      getT(0).getT(0).getT(1).getT(0).getT(2);
 		auto& pi = this->getT(0).getT(2).getT(1).getT(1).getT(0).                      // math::pi<NV>
-                   getT(0).getT(0).getT(1).getT(0).getT(3);
-		auto& sin = this->getT(0).getT(2).getT(1).getT(1).getT(0).                     // wrap::no_process<math::sin<NV>>
-                    getT(0).getT(0).getT(1).getT(0).getT(4);
+                   getT(0).getT(0).getT(1).getT(0).getT(2);
+		auto& sin = this->getT(0).getT(2).getT(1).getT(1).getT(0).                     // math::sin<NV>
+                    getT(0).getT(0).getT(1).getT(0).getT(3);
 		auto& sig2mod1 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                // math::sig2mod<NV>
-                         getT(0).getT(0).getT(1).getT(0).getT(5);
-		auto& peak = this->getT(0).getT(2).getT(1).getT(1).getT(1);                    // xnode_impl::peak_t<NV>
-		auto& multi = this->getT(0).getT(2).getT(1).getT(1).getT(2);                   // xnode_impl::multi_t<NV>
-		auto& smoother = this->getT(0).getT(2).getT(1).getT(1).getT(2).getT(0);        // core::smoother<NV>
-		auto& smoother1 = this->getT(0).getT(2).getT(1).getT(1).getT(2).getT(1);       // core::smoother<NV>
-		auto& gain1 = this->getT(0).getT(2).getT(1).getT(1).getT(3);                   // core::gain<NV>
+                         getT(0).getT(0).getT(1).getT(0).getT(4);
+		auto& chain24 = this->getT(0).getT(2).getT(1).getT(1).                         // xnode_impl::chain24_t<NV>
+                        getT(0).getT(0).getT(0).getT(2);
+		auto& chain25 = this->getT(0).getT(2).getT(1).getT(1).                         // xnode_impl::chain25_t<NV>
+                        getT(0).getT(0).getT(0).getT(2).
+                        getT(0);
+		auto& modchain6 = this->getT(0).getT(2).getT(1).getT(1).getT(0).               // xnode_impl::modchain6_t<NV>
+                          getT(0).getT(0).getT(2).getT(0).getT(0);
+		auto& tempo_sync3 = this->getT(0).getT(2).getT(1).getT(1).getT(0).             // xnode_impl::tempo_sync3_t<NV>
+                            getT(0).getT(0).getT(2).getT(0).getT(0).
+                            getT(0);
+		auto& sig2mod4 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                // wrap::no_process<math::sig2mod<NV>>
+                         getT(0).getT(0).getT(2).getT(0).getT(0).
+                         getT(1);
+		auto& modchain4 = this->getT(0).getT(2).getT(1).getT(1).getT(0).               // xnode_impl::modchain4_t<NV>
+                          getT(0).getT(0).getT(2).getT(0).getT(1);
+		auto& ramp1 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                   // xnode_impl::ramp1_t<NV>
+                      getT(0).getT(0).getT(2).getT(0).getT(1).
+                      getT(0);
+		auto& mod_inv1 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                // math::mod_inv<NV>
+                         getT(0).getT(0).getT(2).getT(0).getT(1).
+                         getT(1);
+		auto& peak2 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                   // xnode_impl::peak2_t<NV>
+                      getT(0).getT(0).getT(2).getT(0).getT(1).
+                      getT(2);
+		auto& gain14 = this->getT(0).getT(2).getT(1).getT(1).getT(0).                  // core::gain<NV>
+                       getT(0).getT(0).getT(2).getT(0).getT(2);
+		auto& multi = this->getT(0).getT(2).getT(1).getT(1).getT(1);                   // xnode_impl::multi_t<NV>
+		auto& smoother = this->getT(0).getT(2).getT(1).getT(1).getT(1).getT(0);        // core::smoother<NV>
+		auto& smoother1 = this->getT(0).getT(2).getT(1).getT(1).getT(1).getT(1);       // core::smoother<NV>
+		auto& gain1 = this->getT(0).getT(2).getT(1).getT(1).getT(2);                   // core::gain<NV>
 		auto& chain4 = this->getT(0).getT(3);                                          // xnode_impl::chain4_t<NV>
 		auto& midichain1 = this->getT(0).getT(3).getT(0);                              // xnode_impl::midichain1_t
 		auto& oscilloscope1 = this->getT(0).getT(3).getT(0).getT(0);                   // xnode_impl::oscilloscope1_t
@@ -950,7 +1268,25 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& gain2 = this->getT(0).getT(3).getT(2).getT(0).getT(0);                   // core::gain<NV>
 		auto& chain6 = this->getT(0).getT(3).getT(2).getT(1);                          // xnode_impl::chain6_t<NV>
 		auto& modchain2 = this->getT(0).getT(3).getT(2).getT(1).getT(0);               // xnode_impl::modchain2_t<NV>
-		auto& pma = this->getT(0).getT(3).getT(2).getT(1).getT(0).getT(0);             // xnode_impl::pma_t<NV>
+		auto& chain35 = this->getT(0).getT(3).getT(2).getT(1).getT(0).getT(0);         // xnode_impl::chain35_t<NV>
+		auto& branch5 = this->getT(0).getT(3).getT(2).getT(1).getT(0).getT(0).getT(0); // xnode_impl::branch5_t<NV>
+		auto& chain36 = this->getT(0).getT(3).getT(2).getT(1).                         // xnode_impl::chain36_t<NV>
+                        getT(0).getT(0).getT(0).getT(0);
+		auto& add4 = this->getT(0).getT(3).getT(2).getT(1).                            // math::add<NV>
+                     getT(0).getT(0).getT(0).getT(0).
+                     getT(0);
+		auto& chain38 = this->getT(0).getT(3).getT(2).getT(1).                         // xnode_impl::chain38_t<NV>
+                        getT(0).getT(0).getT(0).getT(1);
+		auto& add5 = this->getT(0).getT(3).getT(2).getT(1).                            // math::add<NV>
+                     getT(0).getT(0).getT(0).getT(1).
+                     getT(0);
+		auto& chain39 = this->getT(0).getT(3).getT(2).getT(1).                         // xnode_impl::chain39_t<NV>
+                        getT(0).getT(0).getT(0).getT(2);
+		auto& add6 = this->getT(0).getT(3).getT(2).getT(1).                            // math::add<NV>
+                     getT(0).getT(0).getT(0).getT(2).
+                     getT(0);
+		auto& peak5 = this->getT(0).getT(3).getT(2).getT(1).getT(0).getT(0).getT(1);   // xnode_impl::peak5_t<NV>
+		auto& pma = this->getT(0).getT(3).getT(2).getT(1).getT(0).getT(1);             // xnode_impl::pma_t<NV>
 		auto& branch2 = this->getT(0).getT(3).getT(2).getT(1).getT(1);                 // xnode_impl::branch2_t<NV>
 		auto& svf = this->getT(0).getT(3).getT(2).getT(1).getT(1).getT(0);             // filters::svf<NV>
 		auto& svf2 = this->getT(0).getT(3).getT(2).getT(1).getT(1).getT(1);            // filters::svf<NV>
@@ -958,7 +1294,20 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& chain42 = this->getT(0).getT(3).getT(2).getT(1).getT(1).getT(3);         // xnode_impl::chain42_t<NV>
 		auto& allpass = this->getT(0).getT(3).getT(2).getT(1).getT(1).getT(3).getT(0); // filters::allpass<NV>
 		auto& gain3 = this->getT(0).getT(3).getT(2).getT(1).getT(2);                   // core::gain<NV>
-		auto& gain5 = this->getT(0).getT(4);                                           // core::gain<NV>
+		auto& cable_table = this->getT(0).getT(4);                                     // xnode_impl::cable_table_t<NV>
+		auto& modchain7 = this->getT(0).getT(5);                                       // xnode_impl::modchain7_t<NV>
+		auto& chain40 = this->getT(0).getT(5).getT(0);                                 // xnode_impl::chain40_t<NV>
+		auto& branch6 = this->getT(0).getT(5).getT(0).getT(0);                         // xnode_impl::branch6_t<NV>
+		auto& chain41 = this->getT(0).getT(5).getT(0).getT(0).getT(0);                 // xnode_impl::chain41_t<NV>
+		auto& add7 = this->getT(0).getT(5).getT(0).getT(0).getT(0).getT(0);            // math::add<NV>
+		auto& chain44 = this->getT(0).getT(5).getT(0).getT(0).getT(1);                 // xnode_impl::chain44_t<NV>
+		auto& add8 = this->getT(0).getT(5).getT(0).getT(0).getT(1).getT(0);            // math::add<NV>
+		auto& chain46 = this->getT(0).getT(5).getT(0).getT(0).getT(2);                 // xnode_impl::chain46_t<NV>
+		auto& add9 = this->getT(0).getT(5).getT(0).getT(0).getT(2).getT(0);            // math::add<NV>
+		auto& peak6 = this->getT(0).getT(5).getT(0).getT(1);                           // xnode_impl::peak6_t<NV>
+		auto& pma1 = this->getT(0).getT(5).getT(0).getT(2);                            // xnode_impl::pma1_t<NV>
+		auto& gain9 = this->getT(0).getT(6);                                           // core::gain<NV>
+		auto& gain5 = this->getT(0).getT(7);                                           // core::gain<NV>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -981,14 +1330,18 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		FxValue_p.connectT(1, tempo_sync);  // FxValue -> tempo_sync::UnsyncedTime
 		FxValue_p.connectT(2, tempo_sync2); // FxValue -> tempo_sync2::Tempo
 		FxValue_p.connectT(3, tempo_sync2); // FxValue -> tempo_sync2::UnsyncedTime
+		FxValue_p.connectT(4, tempo_sync3); // FxValue -> tempo_sync3::Tempo
+		FxValue_p.connectT(5, tempo_sync3); // FxValue -> tempo_sync3::UnsyncedTime
 		
 		auto& FxShDiv_p = this->getParameterT(7);
 		FxShDiv_p.connectT(0, tempo_sync);  // FxShDiv -> tempo_sync::Multiplier
 		FxShDiv_p.connectT(1, tempo_sync2); // FxShDiv -> tempo_sync2::Multiplier
+		FxShDiv_p.connectT(2, tempo_sync3); // FxShDiv -> tempo_sync3::Multiplier
 		
 		auto& FxShSync_p = this->getParameterT(8);
 		FxShSync_p.connectT(0, tempo_sync);  // FxShSync -> tempo_sync::Enabled
 		FxShSync_p.connectT(1, tempo_sync2); // FxShSync -> tempo_sync2::Enabled
+		FxShSync_p.connectT(2, tempo_sync3); // FxShSync -> tempo_sync3::Enabled
 		
 		this->getParameterT(9).connectT(0, pma_unscaled1); // shPitch -> pma_unscaled1::Multiply
 		
@@ -1022,7 +1375,11 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		this->getParameterT(18).connectT(0, branch); // TYPE -> branch::Index
 		
-		this->getParameterT(19).connectT(0, branch5); // ShSinMix -> branch5::Index
+		auto& ShSinMix_p = this->getParameterT(19);
+		ShSinMix_p.connectT(0, branch1); // ShSinMix -> branch1::Index
+		ShSinMix_p.connectT(1, branch4); // ShSinMix -> branch4::Index
+		ShSinMix_p.connectT(2, branch5); // ShSinMix -> branch5::Index
+		ShSinMix_p.connectT(3, branch6); // ShSinMix -> branch6::Index
 		
 		this->getParameterT(20).connectT(0, smoothed_parameter); // UserPs -> smoothed_parameter::Value
 		
@@ -1033,12 +1390,14 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		snap_p.connectT(1, gain7);  // snap -> gain7::ResetValue
 		snap_p.connectT(2, gain6);  // snap -> gain6::ResetValue
 		snap_p.connectT(3, gain11); // snap -> gain11::ResetValue
-		snap_p.connectT(4, gain1);  // snap -> gain1::ResetValue
-		snap_p.connectT(5, gain);   // snap -> gain::ResetValue
-		snap_p.connectT(6, gain8);  // snap -> gain8::ResetValue
-		snap_p.connectT(7, gain5);  // snap -> gain5::ResetValue
-		snap_p.connectT(8, gain3);  // snap -> gain3::ResetValue
-		snap_p.connectT(9, gain2);  // snap -> gain2::ResetValue
+		snap_p.connectT(4, gain);   // snap -> gain::ResetValue
+		snap_p.connectT(5, gain5);  // snap -> gain5::ResetValue
+		snap_p.connectT(6, gain3);  // snap -> gain3::ResetValue
+		snap_p.connectT(7, gain2);  // snap -> gain2::ResetValue
+		
+		auto& ShToGain_p = this->getParameterT(23);
+		ShToGain_p.connectT(0, pma1);        // ShToGain -> pma1::Multiply
+		ShToGain_p.connectT(1, cable_table); // ShToGain -> cable_table::Value
 		
 		// Modulation Connections ------------------------------------------------------------------
 		
@@ -1059,26 +1418,38 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		pma_unscaled.getWrappedObject().getParameter().connectT(0, pma_unscaled2);  // pma_unscaled -> pma_unscaled2::Add
 		minmax.getWrappedObject().getParameter().connectT(0, pma_unscaled);         // minmax -> pma_unscaled::Add
 		midi_cc.getWrappedObject().getParameter().connectT(0, pma_unscaled2);       // midi_cc -> pma_unscaled2::Value
+		peak3.getParameter().connectT(0, pma_unscaled1);                            // peak3 -> pma_unscaled1::Value
 		auto& xfader2_p = xfader2.getWrappedObject().getParameter();
 		xfader2_p.getParameterT(0).connectT(0, gain26);      // xfader2 -> gain26::Gain
 		xfader2_p.getParameterT(1).connectT(0, gain27);      // xfader2 -> gain27::Gain
 		smoothed_parameter3.getParameter().connectT(0, pi7); // smoothed_parameter3 -> pi7::Value
 		smoothed_parameter.getParameter().connectT(0, add3); // smoothed_parameter -> add3::Value
 		auto& xfader_p = xfader.getWrappedObject().getParameter();
-		xfader_p.getParameterT(0).connectT(0, gain);                // xfader -> gain::Gain
-		xfader_p.getParameterT(1).connectT(0, gain1);               // xfader -> gain1::Gain
-		tempo_sync.getParameter().connectT(0, sampleandhold);       // tempo_sync -> sampleandhold::Counter
-		tempo_sync2.getParameter().connectT(0, ramp);               // tempo_sync2 -> ramp::PeriodTime
-		peak1.getParameter().connectT(0, gain8);                    // peak1 -> gain8::Gain
-		pma.getWrappedObject().getParameter().connectT(0, svf);     // pma -> svf::Frequency
-		pma.getWrappedObject().getParameter().connectT(1, svf2);    // pma -> svf2::Frequency
-		pma.getWrappedObject().getParameter().connectT(2, svf1);    // pma -> svf1::Frequency
-		pma.getWrappedObject().getParameter().connectT(3, allpass); // pma -> allpass::Frequency
-		peak.getParameter().connectT(0, pma);                       // peak -> pma::Value
-		peak.getParameter().connectT(1, pma_unscaled1);             // peak -> pma_unscaled1::Value
+		xfader_p.getParameterT(0).connectT(0, gain);          // xfader -> gain::Gain
+		xfader_p.getParameterT(1).connectT(0, gain1);         // xfader -> gain1::Gain
+		tempo_sync.getParameter().connectT(0, sampleandhold); // tempo_sync -> sampleandhold::Counter
+		peak.getParameter().connectT(0, add);                 // peak -> add::Value
+		peak.getParameter().connectT(1, add4);                // peak -> add4::Value
+		peak.getParameter().connectT(2, add7);                // peak -> add7::Value
+		tempo_sync2.getParameter().connectT(0, ramp);         // tempo_sync2 -> ramp::PeriodTime
+		peak1.getParameter().connectT(0, add2);               // peak1 -> add2::Value
+		peak1.getParameter().connectT(1, add5);               // peak1 -> add5::Value
+		peak1.getParameter().connectT(2, add8);               // peak1 -> add8::Value
+		tempo_sync3.getParameter().connectT(0, ramp1);        // tempo_sync3 -> ramp1::PeriodTime
+		peak2.getParameter().connectT(0, add9);               // peak2 -> add9::Value
+		peak2.getParameter().connectT(1, add6);               // peak2 -> add6::Value
+		peak2.getParameter().connectT(2, add1);               // peak2 -> add1::Value
 		auto& xfader1_p = xfader1.getWrappedObject().getParameter();
-		xfader1_p.getParameterT(0).connectT(0, gain2); // xfader1 -> gain2::Gain
-		xfader1_p.getParameterT(1).connectT(0, gain3); // xfader1 -> gain3::Gain
+		xfader1_p.getParameterT(0).connectT(0, gain2);                   // xfader1 -> gain2::Gain
+		xfader1_p.getParameterT(1).connectT(0, gain3);                   // xfader1 -> gain3::Gain
+		pma.getWrappedObject().getParameter().connectT(0, svf);          // pma -> svf::Frequency
+		pma.getWrappedObject().getParameter().connectT(1, svf2);         // pma -> svf2::Frequency
+		pma.getWrappedObject().getParameter().connectT(2, svf1);         // pma -> svf1::Frequency
+		pma.getWrappedObject().getParameter().connectT(3, allpass);      // pma -> allpass::Frequency
+		peak5.getParameter().connectT(0, pma);                           // peak5 -> pma::Value
+		pma1.getWrappedObject().getParameter().connectT(0, gain9);       // pma1 -> gain9::Gain
+		cable_table.getWrappedObject().getParameter().connectT(0, pma1); // cable_table -> pma1::Add
+		peak6.getParameter().connectT(0, pma1);                          // peak6 -> pma1::Value
 		
 		// Default Values --------------------------------------------------------------------------
 		
@@ -1100,6 +1471,14 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		;                                   // pma_unscaled2::Value is automated
 		pma_unscaled2.setParameterT(1, 1.); // control::pma_unscaled::Multiply
 		;                                   // pma_unscaled2::Add is automated
+		
+		; // branch4::Index is automated
+		
+		; // add::Value is automated
+		
+		; // add2::Value is automated
+		
+		; // add1::Value is automated
 		
 		; // pma_unscaled1::Value is automated
 		; // pma_unscaled1::Multiply is automated
@@ -1246,7 +1625,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		gain.setParameterT(1, 20.); // core::gain::Smoothing
 		;                           // gain::ResetValue is automated
 		
-		; // branch5::Index is automated
+		; // branch1::Index is automated
 		
 		; // tempo_sync::Tempo is automated
 		; // tempo_sync::Multiplier is automated
@@ -1256,6 +1635,10 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		sig2mod.setParameterT(0, 0.); // math::sig2mod::Value
 		
 		; // sampleandhold::Counter is automated
+		
+		sig2mod2.setParameterT(0, 0.); // math::sig2mod::Value
+		
+		clear1.setParameterT(0, 0.); // math::clear::Value
 		
 		; // tempo_sync2::Tempo is automated
 		; // tempo_sync2::Multiplier is automated
@@ -1272,15 +1655,28 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		sin2.setParameterT(0, 2.); // math::sin::Value
 		
-		;                            // gain8::Gain is automated
-		gain8.setParameterT(1, 0.9); // core::gain::Smoothing
-		;                            // gain8::ResetValue is automated
-		
 		pi.setParameterT(0, 0.503571); // math::pi::Value
 		
 		sin.setParameterT(0, 0.43099); // math::sin::Value
 		
 		sig2mod1.setParameterT(0, 0.); // math::sig2mod::Value
+		
+		; // tempo_sync3::Tempo is automated
+		; // tempo_sync3::Multiplier is automated
+		; // tempo_sync3::Enabled is automated
+		; // tempo_sync3::UnsyncedTime is automated
+		
+		sig2mod4.setParameterT(0, 0.); // math::sig2mod::Value
+		
+		;                           // ramp1::PeriodTime is automated
+		ramp1.setParameterT(1, 0.); // core::ramp::LoopStart
+		ramp1.setParameterT(2, 1.); // core::ramp::Gate
+		
+		mod_inv1.setParameterT(0, 0.); // math::mod_inv::Value
+		
+		gain14.setParameterT(0, 0.); // core::gain::Gain
+		gain14.setParameterT(1, 0.); // core::gain::Smoothing
+		gain14.setParameterT(2, 0.); // core::gain::ResetValue
 		
 		;                              // smoother::SmoothingTime is automated
 		smoother.setParameterT(1, 0.); // core::smoother::DefaultValue
@@ -1290,13 +1686,21 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		;                            // gain1::Gain is automated
 		gain1.setParameterT(1, 20.); // core::gain::Smoothing
-		;                            // gain1::ResetValue is automated
+		gain1.setParameterT(2, 0.);  // core::gain::ResetValue
 		
 		; // xfader1::Value is automated
 		
 		;                            // gain2::Gain is automated
 		gain2.setParameterT(1, 20.); // core::gain::Smoothing
 		;                            // gain2::ResetValue is automated
+		
+		; // branch5::Index is automated
+		
+		; // add4::Value is automated
+		
+		; // add5::Value is automated
+		
+		; // add6::Value is automated
 		
 		; // pma::Value is automated
 		; // pma::Multiply is automated
@@ -1336,7 +1740,25 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		gain3.setParameterT(1, 20.); // core::gain::Smoothing
 		;                            // gain3::ResetValue is automated
 		
-		gain5.setParameterT(0, -21.);  // core::gain::Gain
+		; // cable_table::Value is automated
+		
+		; // branch6::Index is automated
+		
+		; // add7::Value is automated
+		
+		; // add8::Value is automated
+		
+		; // add9::Value is automated
+		
+		; // pma1::Value is automated
+		; // pma1::Multiply is automated
+		; // pma1::Add is automated
+		
+		;                            // gain9::Gain is automated
+		gain9.setParameterT(1, 0.3); // core::gain::Smoothing
+		gain9.setParameterT(2, 0.);  // core::gain::ResetValue
+		
+		gain5.setParameterT(0, -25.);  // core::gain::Gain
 		gain5.setParameterT(1, 167.6); // core::gain::Smoothing
 		;                              // gain5::ResetValue is automated
 		
@@ -1344,25 +1766,26 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		this->setParameterT(1, 1.);
 		this->setParameterT(2, 16.);
 		this->setParameterT(3, 1.);
-		this->setParameterT(4, 1.);
+		this->setParameterT(4, 2.);
 		this->setParameterT(5, 0.);
 		this->setParameterT(6, 0.);
-		this->setParameterT(7, 32.);
+		this->setParameterT(7, 1.);
 		this->setParameterT(8, 1.);
-		this->setParameterT(9, -0.027812);
+		this->setParameterT(9, 1.);
 		this->setParameterT(10, 1.);
 		this->setParameterT(11, 3.);
 		this->setParameterT(12, 0.3);
 		this->setParameterT(13, 1.);
-		this->setParameterT(14, 0.);
+		this->setParameterT(14, 0.00713315);
 		this->setParameterT(15, 1.00288);
 		this->setParameterT(16, 0.);
-		this->setParameterT(17, 0.);
+		this->setParameterT(17, 1.);
 		this->setParameterT(18, 1.);
-		this->setParameterT(19, 0.);
-		this->setParameterT(20, 0.276688);
-		this->setParameterT(21, 0.555947);
-		this->setParameterT(22, 0.0675951);
+		this->setParameterT(19, 1.);
+		this->setParameterT(20, 0.332626);
+		this->setParameterT(21, 0.0707371);
+		this->setParameterT(22, 0.515625);
+		this->setParameterT(23, 0.);
 		this->setExternalData({}, -1);
 	}
 	~instance() override
@@ -1384,6 +1807,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 	{
 		// External Data Connections ---------------------------------------------------------------
 		
+		this->getT(0).getT(0).getT(4).getT(1).setExternalData(b, index);                         // xnode_impl::peak3_t<NV>
 		this->getT(0).getT(1).getT(0).getT(0).getT(0).                                           // xnode_impl::oscillator11_t<NV>
         getT(0).getT(0).getT(1).getT(0).getT(0).setExternalData(b, index);
 		this->getT(0).getT(1).getT(0).getT(0).getT(0).                                           // xnode_impl::oscillator12_t<NV>
@@ -1398,14 +1822,25 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
         getT(0).getT(0).getT(5).getT(0).setExternalData(b, index);
 		this->getT(0).getT(1).getT(0).getT(0).getT(1).getT(0).getT(0).setExternalData(b, index); // xnode_impl::file_player5_t<NV>
 		this->getT(0).getT(1).getT(0).getT(0).getT(2).getT(0).getT(4).setExternalData(b, index); // xnode_impl::file_player6_t<NV>
+		this->getT(0).getT(2).getT(1).getT(1).getT(0).                                           // xnode_impl::peak_t<NV>
+        getT(0).getT(0).getT(0).getT(2).getT(1).
+        getT(1).setExternalData(b, index);
 		this->getT(0).getT(2).getT(1).getT(1).getT(0).                                           // xnode_impl::ramp_t<NV>
         getT(0).getT(0).getT(1).getT(0).getT(1).
         getT(0).setExternalData(b, index);
-		this->getT(0).getT(2).getT(1).getT(1).getT(0).                           // xnode_impl::peak1_t<NV>
+		this->getT(0).getT(2).getT(1).getT(1).getT(0).                                           // xnode_impl::peak1_t<NV>
         getT(0).getT(0).getT(1).getT(0).getT(1).
         getT(3).setExternalData(b, index);
-		this->getT(0).getT(2).getT(1).getT(1).getT(1).setExternalData(b, index); // xnode_impl::peak_t<NV>
-		this->getT(0).getT(3).getT(0).getT(0).setExternalData(b, index);         // xnode_impl::oscilloscope1_t
+		this->getT(0).getT(2).getT(1).getT(1).getT(0).                                           // xnode_impl::ramp1_t<NV>
+        getT(0).getT(0).getT(2).getT(0).getT(1).
+        getT(0).setExternalData(b, index);
+		this->getT(0).getT(2).getT(1).getT(1).getT(0).                                           // xnode_impl::peak2_t<NV>
+        getT(0).getT(0).getT(2).getT(0).getT(1).
+        getT(2).setExternalData(b, index);
+		this->getT(0).getT(3).getT(0).getT(0).setExternalData(b, index);                         // xnode_impl::oscilloscope1_t
+		this->getT(0).getT(3).getT(2).getT(1).getT(0).getT(0).getT(1).setExternalData(b, index); // xnode_impl::peak5_t<NV>
+		this->getT(0).getT(4).setExternalData(b, index);                                         // xnode_impl::cable_table_t<NV>
+		this->getT(0).getT(5).getT(0).getT(1).setExternalData(b, index);                         // xnode_impl::peak6_t<NV>
 	}
 };
 }

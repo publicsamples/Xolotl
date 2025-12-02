@@ -9,7 +9,7 @@
 
 // Include compiled network files ------------------
 
-#include "ArrangeNew.h"
+#include "ArrangeNew_networkdata.h"
 #include "bbdish_networkdata.h"
 #include "dlay_networkdata.h"
 #include "Env2.h"
@@ -17,7 +17,7 @@
 #include "Env4_networkdata.h"
 #include "Env_networkdata.h"
 #include "Fausted_networkdata.h"
-#include "fx.h"
+#include "fx_networkdata.h"
 #include "f_networkdata.h"
 #include "GainMod_networkdata.h"
 #include "ga_networkdata.h"

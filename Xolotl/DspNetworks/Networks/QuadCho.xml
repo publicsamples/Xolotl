@@ -11,7 +11,7 @@
         </ModulationTargets>
         <ComplexData>
           <SliderPacks>
-            <SliderPack Index="-1" EmbeddedData="64.OJb89XOJb7yiBWyOOJbc+....9C..........................................fqGE3iBWOhO...f+."/>
+            <SliderPack Index="0" EmbeddedData="64.OJb89XOJb7yiBWyOOJbc+....9C..........................................fqGE3iBWOhO...f+."/>
           </SliderPacks>
         </ComplexData>
         <Parameters>
@@ -141,7 +141,8 @@
                               <Connection NodeId="smoothed_parameter" ParameterId="Value"/>
                             </ModulationTargets>
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1" SkewFactor="1"
+                                         StepSize=""/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" DefaultValue="0.9853269042968751"
                                          Automated="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Automated="1"/>
@@ -234,6 +235,7 @@
                             </Properties>
                             <ModulationTargets>
                               <Connection NodeId="pma1" ParameterId="Value"/>
+                              <Connection NodeId="pma1" ParameterId="Value"/>
                             </ModulationTargets>
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
@@ -244,7 +246,7 @@
                               <Connection NodeId="smoothed_parameter1" ParameterId="Value"/>
                             </ModulationTargets>
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1" SkewFactor="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add"/>
                             </Parameters>
@@ -332,6 +334,7 @@
                             </Properties>
                             <ModulationTargets>
                               <Connection NodeId="pma2" ParameterId="Value"/>
+                              <Connection NodeId="pma2" ParameterId="Value"/>
                             </ModulationTargets>
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
@@ -342,7 +345,7 @@
                               <Connection NodeId="smoothed_parameter2" ParameterId="Value"/>
                             </ModulationTargets>
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1" SkewFactor="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add"/>
                             </Parameters>
@@ -430,6 +433,7 @@
                             </Properties>
                             <ModulationTargets>
                               <Connection NodeId="pma3" ParameterId="Value"/>
+                              <Connection NodeId="pma3" ParameterId="Value"/>
                             </ModulationTargets>
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
@@ -440,7 +444,7 @@
                               <Connection NodeId="smoothed_parameter3" ParameterId="Value"/>
                             </ModulationTargets>
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1" SkewFactor="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add"/>
                             </Parameters>
@@ -541,20 +545,19 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Offset" Value="0.2656509399414062"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Offset" Value="0.5600000023841858"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_pack" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="LP" Value="0.7027710266113283"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="LP" Value="0.949999988079071"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FB" Value="0.9172395629882812"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FB" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable1" ParameterId="Value"/>
         </Connections>
@@ -565,8 +568,8 @@
           <Connection NodeId="clone_cable2" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="0.8763586956521739"
-                 DefaultValue="0.0" ExternalModulation="Disabled" ModColour="0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="1.0" DefaultValue="0.0"
+                 ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="xfader" ParameterId="Value"/>
         </Connections>

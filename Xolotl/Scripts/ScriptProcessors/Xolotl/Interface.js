@@ -16,9 +16,6 @@ const cable3 = rm.getCable("mod3");
 
 const maps = Sampler.getSampleMapList();
 
-const var User1 = Content.getComponent("User1");
-
-User1.setRange(0.2, 1, 0.2);
 
 const var BankA = Content.getComponent("BankA");
 
@@ -107,9 +104,9 @@ const var SampleLoad = [Content.getComponent("SAMPLE"),
 
 const var HARMONIC = Synth.getEffect("HARMONIC");
 const var OscWave = Content.getComponent("OscWave");
-const var ScriptPanel1 = Content.getComponent("ScriptPanel1");
-const var ScriptPanel3 = Content.getComponent("ScriptPanel3");
-const var ScriptPanel6 = Content.getComponent("ScriptPanel6");
+const var OSC = Content.getComponent("OSC");
+const var MULTI = Content.getComponent("MULTI");
+const var USER = Content.getComponent("USER");
 
 
 const var UserParam = Content.getComponent("UserParam");
@@ -121,108 +118,32 @@ inline function onOscWaveControl(component, value)
 
 	if(value == 1)
 	{	 
-	    HARMONIC.setAttribute(HARMONIC.SampleOSc, 0);
-	    
-	    
-	    for(s in SampleLoad)
-	           s.showControl(0);
-	           ScriptPanel6.showControl(1);
-	           ScriptPanel1.showControl(0);
-	           ScriptPanel3.showControl(0);
-	    UserParam.showControl(0);
-
+	    HARMONIC.setAttribute(HARMONIC.VoiceMode, 1);
+	    OSC.showControl(1);
+	    MULTI.showControl(0);
+	     USER.showControl(0);
+	   
 	}
 	
 		if(value == 2)
 	{
-		HARMONIC.setAttribute(HARMONIC.SampleOSc, 1);
-		for(s in SampleLoad)
-			         ScriptPanel6.showControl(1);
-			         	           ScriptPanel1.showControl(0);
-	UserParam.showControl(0);		           	          
-	 ScriptPanel3.showControl(0);
+		HARMONIC.setAttribute(HARMONIC.VoiceMode, 3);
+		    OSC.showControl(0);
+	           MULTI.showControl(0);
+	           USER.showControl(1);
 
 	}
 	
 			if(value == 3)
 		{
-			HARMONIC.setAttribute(HARMONIC.SampleOSc, 2);
-			UserParam.showControl(0);
-			for(s in SampleLoad)
-				           s.showControl(0);
-				          ScriptPanel6.showControl(1);
-	           ScriptPanel1.showControl(0);
-				           	           ScriptPanel3.showControl(0);
-
+			HARMONIC.setAttribute(HARMONIC.VoiceMode, 2);
+			OSC.showControl(0);
+			MULTI.showControl(1);
+			USER.showControl(0);	     
 	
 		}
 		
-		if(value == 4)
-			{
-				HARMONIC.setAttribute(HARMONIC.SampleOSc, 3);
-				UserParam.showControl(0);
-				for(s in SampleLoad)
-					           s.showControl(0);
-		ScriptPanel6.showControl(1);
-	           ScriptPanel1.showControl(0);
-			           ScriptPanel3.showControl(0);
-		
-			}
-			
-			if(value == 5)
-				{
-					HARMONIC.setAttribute(HARMONIC.SampleOSc, 4);
-					UserParam.showControl(0);
-					for(s in SampleLoad)
-						           s.showControl(0);
-						           ScriptPanel6.showControl(1);
-	           ScriptPanel1.showControl(0);
-						           	           ScriptPanel3.showControl(0);
-			
-			
-				}
-				
-				if(value == 6)
-						{
-							HARMONIC.setAttribute(HARMONIC.SampleOSc, 5);
-				   for(s in SampleLoad)
-	           s.showControl(1);
-	         UserParam.showControl(0);
-	           ScriptPanel1.showControl(1);
-	           ScriptPanel6.showControl(0);
-	           ScriptPanel3.showControl(0);
-					
-						}
-			if(value == 7)
-								{
-									HARMONIC.setAttribute(HARMONIC.SampleOSc, 6);
-						   for(s in SampleLoad)
-			           s.showControl(0);
-			          ScriptPanel1.showControl(0);
-			          	           ScriptPanel6.showControl(0);
-			          	           ScriptPanel3.showControl(1);
-							UserParam.showControl(1);
-								}	
-	if(value == 8)
-							{
-								HARMONIC.setAttribute(HARMONIC.SampleOSc, 7);
-					   for(s in SampleLoad)
-		           s.showControl(0);
-		       ScriptPanel1.showControl(0);
-			          	           ScriptPanel6.showControl(0);
-			          	           ScriptPanel3.showControl(1);
-						UserParam.showControl(1);
-							}		
-		if(value == 9)
-								{
-									HARMONIC.setAttribute(HARMONIC.SampleOSc, 8);
-						   for(s in SampleLoad)
-			           s.showControl(0);
-			      ScriptPanel1.showControl(0);
-			          	           ScriptPanel6.showControl(0);
-			          	           ScriptPanel3.showControl(1);
-							UserParam.showControl(1);
-								}																
+																
 };
 
 Content.getComponent("OscWave").setControlCallback(onOscWaveControl);
@@ -362,55 +283,7 @@ HARMONIC.setAttribute(HARMONIC.FilterType, value-1);
 
 Content.getComponent("ScriptComboBox3").setControlCallback(onScriptComboBox3Control);
 
-//SP Controls
-
-const Tm = Engine.createAndRegisterSliderPackData(6);     
-const var Raindrops = Synth.getSliderPackProcessor("HARMONIC").getSliderPack(6);
-Tm.linkTo(Raindrops);
-        
-const var UserControls =[];
-
-for (i = 0; i < 8; i++)
-{
-    UserControls[i] = Content.getComponent("User"+(i+1));
-    UserControls[i].setControlCallback(TrigMode);
-}
-     
-     inline function TrigMode(component, value)
-     {    
-         local idx = UserControls.indexOf(component); 
-        
-         {  
-         
-         	Tm.setValue(idx, value);
-       
-     }
-     
-}       
-
-const Tm2 = Engine.createAndRegisterSliderPackData(10);     
-const var Raindrops2 = Synth.getSliderPackProcessor("HARMONIC").getSliderPack(10);
-Tm2.linkTo(Raindrops2);
-        
-const var UserControls2 =[];
-
-for (i = 0; i < 3; i++)
-{
-    UserControls2[i] = Content.getComponent("UserB"+(i+1));
-    UserControls2[i].setControlCallback(TrigMode2);
-}
-     
-     inline function TrigMode2(component, value)
-     {    
-         local idx = UserControls2.indexOf(component); 
-        
-         {  
-         
-         	Tm2.setValue(idx, value);
-       
-     }
-     
-}       
+  
 
 //USer Wave
 
@@ -465,78 +338,6 @@ inline function onpmenuControl(component, value)
 };
 
 Content.getComponent("pmenu").setControlCallback(onpmenuControl);
-
-const var UserDiv = Content.getComponent("UserDiv");
-
-inline function onUserDivControl(component, value)
-{
-UserB3.setValueNormalized(UserDiv.getValueNormalized());
-UserB3.changed();
-};
-
-Content.getComponent("UserDiv").setControlCallback(onUserDivControl);
-
-const var UserTempo = Content.getComponent("UserTempo");
-const var User4 = Content.getComponent("User4");
-
-
-inline function onUserTempoControl(component, value)
-{
-User4.setValueNormalized(UserTempo.getValueNormalized());
-User4.changed();
-};
-
-Content.getComponent("UserTempo").setControlCallback(onUserTempoControl);
-
-const var UserRateMod = Content.getComponent("UserRateMod");
-const var UserB2 = Content.getComponent("UserB2");
-
-
-inline function onUserRateModControl(component, value)
-{
-	UserB2.setValueNormalized(UserRateMod.getValueNormalized());
-UserB2.changed();
-};
-
-Content.getComponent("UserRateMod").setControlCallback(onUserRateModControl);
-
-const var UserRateDiv = Content.getComponent("UserRateDiv");
-const var User5 = Content.getComponent("User5");
-
-
-
-inline function onUserRateDivControl(component, value)
-{
-	User5.setValueNormalized(UserRateDiv.getValueNormalized());
-User5.changed();
-};
-
-Content.getComponent("UserRateDiv").setControlCallback(onUserRateDivControl);
-
-const var User7 = Content.getComponent("User7");
-const var UserPosMod = Content.getComponent("UserPosMod");
-
-inline function onUserPosModControl(component, value)
-{
-	User7.setValueNormalized(UserPosMod.getValueNormalized());
-User7.changed();
-};
-
-Content.getComponent("UserPosMod").setControlCallback(onUserPosModControl);
-
-
-const var SHAPEMOD29 = Content.getComponent("SHAPEMOD29");
-const var SHAPEMOD23 = Content.getComponent("SHAPEMOD23");
-
-
-
-inline function onSHAPEMOD29Control(component, value)
-{
-	SHAPEMOD23.setValueNormalized(SHAPEMOD29.getValueNormalized());
-SHAPEMOD23.changed();
-};
-
-Content.getComponent("SHAPEMOD29").setControlCallback(onSHAPEMOD29Control);
 
 
 
