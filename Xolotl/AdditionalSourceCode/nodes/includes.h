@@ -7,22 +7,17 @@
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// Include third party header files ----------------
-
-#include "granular.h"
-#include "khp2.h"
-#include "klp2.h"
-#include "RevDel.h"
-
 // Include compiled network files ------------------
 
+#include "ArrangeNew.h"
 #include "bbdish_networkdata.h"
 #include "dlay_networkdata.h"
-#include "Env2_networkdata.h"
+#include "Env2.h"
 #include "Env3_networkdata.h"
 #include "Env4_networkdata.h"
 #include "Env_networkdata.h"
 #include "Fausted_networkdata.h"
+#include "fx.h"
 #include "f_networkdata.h"
 #include "GainMod_networkdata.h"
 #include "ga_networkdata.h"

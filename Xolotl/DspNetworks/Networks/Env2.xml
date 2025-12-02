@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="Env2" Version="0.0.0" AllowPolyphonic="1">
+<Network ID="Env2" Version="0.0.0" AllowPolyphonic="1" AllowCompilation="1"
+         CompileChannelAmount="1">
   <Node FactoryPath="container.chain" ID="Env2" Bypassed="0" Name="Env"
         ShowParameters="1">
     <Nodes>
@@ -75,7 +76,7 @@
         <SwitchTargets>
           <SwitchTarget>
             <Connections>
-              <Connection NodeId="event_data_writer" ParameterId="Value"/>
+              <Connection NodeId="add" ParameterId="Value"/>
             </Connections>
           </SwitchTarget>
           <SwitchTarget>
@@ -103,11 +104,8 @@
           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Automated="1"/>
         </Parameters>
       </Node>
-      <Node ID="event_data_writer" FactoryPath="routing.event_data_writer"
-            Bypassed="0" Name="event_data_writer">
+      <Node ID="add" FactoryPath="math.add" Bypassed="0" Name="add">
         <Parameters>
-          <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
-                     Value="1.0"/>
           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
         </Parameters>
       </Node>
@@ -136,36 +134,36 @@
         </Connections>
       </Parameter>
       <Parameter ID="a" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" Value="10000.0" DefaultValue="0.0">
+                 SkewFactor="0.1976716816425323" Value="9117.000135853885" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Attack"/>
         </Connections>
       </Parameter>
       <Parameter ID="d" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" Value="2143.100031934678" DefaultValue="1.0">
+                 SkewFactor="0.1976716816425323" Value="0.0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Decay"/>
         </Connections>
       </Parameter>
       <Parameter ID="h" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" Value="286.1000042632222" DefaultValue="0.0">
+                 SkewFactor="0.1976716816425323" Value="0.0">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Hold"/>
         </Connections>
       </Parameter>
-      <Parameter ID="s" MinValue="0.0" MaxValue="1.0" Value="1.0" DefaultValue="0.4957332763671875">
+      <Parameter ID="s" MinValue="0.0" MaxValue="1.0" Value="0.2199999988079071"
+                 DefaultValue="0.4957332763671875">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Sustain"/>
         </Connections>
       </Parameter>
       <Parameter ID="r" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" Value="10000.0" DefaultValue="1868.60002784431">
+                 SkewFactor="0.1976716816425323" Value="198.0000029504299" DefaultValue="1868.60002784431">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Release"/>
         </Connections>
       </Parameter>
-      <Parameter ID="trig" MinValue="0.0" MaxValue="1.0" StepSize="1.0" Value="0.0"
-                 DefaultValue="1.0">
+      <Parameter ID="trig" MinValue="0.0" MaxValue="1.0" StepSize="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="input_toggle" ParameterId="Input"/>
         </Connections>
