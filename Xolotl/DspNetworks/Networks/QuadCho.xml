@@ -141,8 +141,8 @@
                               <Connection NodeId="smoothed_parameter" ParameterId="Value"/>
                             </ModulationTargets>
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1" SkewFactor="1"
-                                         StepSize=""/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" SkewFactor="1" StepSize=""
+                                         Automated="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" DefaultValue="0.9853269042968751"
                                          Automated="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Automated="1"/>
@@ -246,7 +246,7 @@
                               <Connection NodeId="smoothed_parameter1" ParameterId="Value"/>
                             </ModulationTargets>
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1" SkewFactor="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" SkewFactor="1" Automated="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add"/>
                             </Parameters>
@@ -345,7 +345,7 @@
                               <Connection NodeId="smoothed_parameter2" ParameterId="Value"/>
                             </ModulationTargets>
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1" SkewFactor="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" SkewFactor="1" Automated="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add"/>
                             </Parameters>
@@ -444,7 +444,7 @@
                               <Connection NodeId="smoothed_parameter3" ParameterId="Value"/>
                             </ModulationTargets>
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1" SkewFactor="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" SkewFactor="1" Automated="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add"/>
                             </Parameters>
@@ -545,7 +545,7 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Offset" Value="0.5600000023841858"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Offset" Value="0.1000000014901161"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_pack" ParameterId="Value"/>
@@ -562,14 +562,14 @@
           <Connection NodeId="clone_cable1" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Mod" Value="1.0" DefaultValue="0.0"
-                 ExternalModulation="Disabled" ModColour="0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Mod" Value="0.8600000143051147"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable2" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="1.0" DefaultValue="0.0"
-                 ExternalModulation="Disabled" ModColour="0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="0.9200000166893005"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="xfader" ParameterId="Value"/>
         </Connections>

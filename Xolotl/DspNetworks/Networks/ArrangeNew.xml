@@ -249,92 +249,97 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
-                            Name="pack_resizer">
-                        <ComplexData>
-                          <SliderPacks>
-                            <SliderPack Index="0" EmbeddedData="4....f+."/>
-                          </SliderPacks>
-                        </ComplexData>
-                        <Parameters>
-                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumSliders"
-                                     DefaultValue="1.0" Automated="1"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="split2" FactoryPath="container.split" Bypassed="0" Name="split2">
+                      <Node ID="no_midi4" FactoryPath="container.no_midi" Bypassed="0" Name="no_midi4">
                         <Nodes>
-                          <Node ID="clone_pack" FactoryPath="control.clone_pack" Bypassed="0"
-                                Name="clone_pack">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="Harm"/>
-                            </ModulationTargets>
+                          <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
+                                Name="pack_resizer">
                             <ComplexData>
                               <SliderPacks>
-                                <SliderPack Index="0"/>
+                                <SliderPack Index="0" EmbeddedData="4....f+."/>
                               </SliderPacks>
                             </ComplexData>
                             <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumSliders"
                                          DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="clone_forward" FactoryPath="control.clone_forward" Bypassed="0"
-                                Name="clone_forward">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="min"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1" ID="Value" DefaultValue="1.0"
-                                         Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="clone_forward2" FactoryPath="control.clone_forward" Bypassed="0"
-                                Name="clone_forward">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="max"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1" ID="Value" DefaultValue="1.0"
-                                         Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="clone_forward1" FactoryPath="control.clone_forward" Bypassed="0"
-                                Name="clone_forward">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="step"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="clone_forward6" FactoryPath="control.clone_forward" Bypassed="0"
-                                Name="clone_forward">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="Mode"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="6.0" ID="Value" DefaultValue="1.0" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="clone_forward7" FactoryPath="control.clone_forward" Bypassed="0"
-                                Name="clone_forward">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="TYPE"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="3.0" ID="Value" DefaultValue="1.0" Automated="1"/>
-                            </Parameters>
+                          <Node ID="split2" FactoryPath="container.split" Bypassed="0" Name="split2">
+                            <Nodes>
+                              <Node ID="clone_pack" FactoryPath="control.clone_pack" Bypassed="0"
+                                    Name="clone_pack">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="Harm"/>
+                                </ModulationTargets>
+                                <ComplexData>
+                                  <SliderPacks>
+                                    <SliderPack Index="0"/>
+                                  </SliderPacks>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_forward" FactoryPath="control.clone_forward" Bypassed="0"
+                                    Name="clone_forward">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="min"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1" ID="Value" DefaultValue="1.0"
+                                             Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_forward2" FactoryPath="control.clone_forward" Bypassed="0"
+                                    Name="clone_forward">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="max"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1" ID="Value" DefaultValue="1.0"
+                                             Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_forward1" FactoryPath="control.clone_forward" Bypassed="0"
+                                    Name="clone_forward">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="step"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_forward6" FactoryPath="control.clone_forward" Bypassed="0"
+                                    Name="clone_forward">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="Mode"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="1.0" MaxValue="6.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_forward7" FactoryPath="control.clone_forward" Bypassed="0"
+                                    Name="clone_forward">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="TYPE"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="1.0" MaxValue="3.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
                           </Node>
                         </Nodes>
                         <Parameters/>
@@ -586,20 +591,25 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
-                            Name="clone_cable">
-                        <Properties>
-                          <Property ID="Mode" Value="Spread"/>
-                        </Properties>
-                        <ModulationTargets>
-                          <Connection NodeId="xnode1" ParameterId="DET"/>
-                        </ModulationTargets>
-                        <Parameters>
-                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                     DefaultValue="1.0" Automated="1"/>
-                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                        </Parameters>
+                      <Node ID="no_midi5" FactoryPath="container.no_midi" Bypassed="0" Name="no_midi5">
+                        <Nodes>
+                          <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
+                                Name="clone_cable">
+                            <Properties>
+                              <Property ID="Mode" Value="Spread"/>
+                            </Properties>
+                            <ModulationTargets>
+                              <Connection NodeId="xnode1" ParameterId="DET"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         DefaultValue="1.0" Automated="1"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
                       </Node>
                     </Nodes>
                     <Parameters/>
@@ -848,20 +858,25 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="clone_cable2" FactoryPath="control.clone_cable" Bypassed="0"
-                            Name="clone_cable">
-                        <Properties>
-                          <Property ID="Mode" Value="Fixed"/>
-                        </Properties>
-                        <ModulationTargets>
-                          <Connection NodeId="xnode1" ParameterId="OscShapes"/>
-                        </ModulationTargets>
-                        <Parameters>
-                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                     DefaultValue="1.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                        </Parameters>
+                      <Node ID="no_midi6" FactoryPath="container.no_midi" Bypassed="0" Name="no_midi6">
+                        <Nodes>
+                          <Node ID="clone_cable2" FactoryPath="control.clone_cable" Bypassed="0"
+                                Name="clone_cable">
+                            <Properties>
+                              <Property ID="Mode" Value="Fixed"/>
+                            </Properties>
+                            <ModulationTargets>
+                              <Connection NodeId="xnode1" ParameterId="OscShapes"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         DefaultValue="1.0" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
                       </Node>
                     </Nodes>
                     <Parameters/>
@@ -1110,20 +1125,25 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="clone_cable3" FactoryPath="control.clone_cable" Bypassed="0"
-                            Name="clone_cable">
-                        <Properties>
-                          <Property ID="Mode" Value="Fixed"/>
-                        </Properties>
-                        <ModulationTargets>
-                          <Connection NodeId="xnode1" ParameterId="UserPs"/>
-                        </ModulationTargets>
-                        <Parameters>
-                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                     DefaultValue="1.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                        </Parameters>
+                      <Node ID="no_midi7" FactoryPath="container.no_midi" Bypassed="0" Name="no_midi7">
+                        <Nodes>
+                          <Node ID="clone_cable3" FactoryPath="control.clone_cable" Bypassed="0"
+                                Name="clone_cable">
+                            <Properties>
+                              <Property ID="Mode" Value="Fixed"/>
+                            </Properties>
+                            <ModulationTargets>
+                              <Connection NodeId="xnode1" ParameterId="UserPs"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         DefaultValue="1.0" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
                       </Node>
                     </Nodes>
                     <Parameters/>
@@ -1372,20 +1392,25 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="clone_cable4" FactoryPath="control.clone_cable" Bypassed="0"
-                            Name="clone_cable">
-                        <Properties>
-                          <Property ID="Mode" Value="Fixed"/>
-                        </Properties>
-                        <ModulationTargets>
-                          <Connection NodeId="xnode1" ParameterId="UserInput"/>
-                        </ModulationTargets>
-                        <Parameters>
-                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                     DefaultValue="1.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                        </Parameters>
+                      <Node ID="no_midi8" FactoryPath="container.no_midi" Bypassed="0" Name="no_midi8">
+                        <Nodes>
+                          <Node ID="clone_cable4" FactoryPath="control.clone_cable" Bypassed="0"
+                                Name="clone_cable">
+                            <Properties>
+                              <Property ID="Mode" Value="Fixed"/>
+                            </Properties>
+                            <ModulationTargets>
+                              <Connection NodeId="xnode1" ParameterId="UserInput"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         DefaultValue="1.0" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
                       </Node>
                     </Nodes>
                     <Parameters/>
@@ -1639,135 +1664,140 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="pack_resizer2" FactoryPath="control.pack_resizer" Bypassed="0"
-                            Name="pack_resizer">
-                        <ComplexData>
-                          <SliderPacks>
-                            <SliderPack Index="1" EmbeddedData="4....f+."/>
-                          </SliderPacks>
-                        </ComplexData>
-                        <Parameters>
-                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumSliders"
-                                     DefaultValue="1.0" Automated="1"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="split11" FactoryPath="container.split" Bypassed="0" Name="split2">
+                      <Node ID="no_midi3" FactoryPath="container.no_midi" Bypassed="0" Name="no_midi3">
                         <Nodes>
-                          <Node ID="clone_pack2" FactoryPath="control.clone_pack" Bypassed="0"
-                                Name="clone_pack">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="FxValue"/>
-                            </ModulationTargets>
+                          <Node ID="pack_resizer2" FactoryPath="control.pack_resizer" Bypassed="0"
+                                Name="pack_resizer">
                             <ComplexData>
                               <SliderPacks>
-                                <SliderPack Index="1"/>
+                                <SliderPack Index="1" EmbeddedData="4....f+."/>
                               </SliderPacks>
                             </ComplexData>
                             <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumSliders"
                                          DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="clone_forward10" FactoryPath="control.clone_forward" Bypassed="0"
-                                Name="clone_forward">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="FxMix"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="clone_forward9" FactoryPath="control.clone_forward" Bypassed="0"
-                                Name="clone_forward">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="FxShDiv"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1" ID="Value" DefaultValue="1.0"
-                                         Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="clone_forward11" FactoryPath="control.clone_forward" Bypassed="0"
-                                Name="clone_forward">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="FxShSync"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="clone_forward12" FactoryPath="control.clone_forward" Bypassed="0"
-                                Name="clone_forward">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="shPitch"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" DefaultValue="1.0"
-                                         Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="clone_forward13" FactoryPath="control.clone_forward" Bypassed="0"
-                                Name="clone_forward">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="FilterFxMod"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" DefaultValue="1.0"
-                                         Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="clone_forward16" FactoryPath="control.clone_forward" Bypassed="0"
-                                Name="clone_forward">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="ShSmooth"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="2000.0" ID="Value" DefaultValue="1.0"
-                                         Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
-                                Name="clone_cable1">
-                            <Properties>
-                              <Property ID="Mode" Value="Fixed"/>
-                            </Properties>
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="ShToGain"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="clone_cable5" FactoryPath="control.clone_cable" Bypassed="0"
-                                Name="clone_cable1">
-                            <Properties>
-                              <Property ID="Mode" Value="Fixed"/>
-                            </Properties>
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="ShSinMix"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                            </Parameters>
+                          <Node ID="split11" FactoryPath="container.split" Bypassed="0" Name="split2">
+                            <Nodes>
+                              <Node ID="clone_pack2" FactoryPath="control.clone_pack" Bypassed="0"
+                                    Name="clone_pack">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="FxValue"/>
+                                </ModulationTargets>
+                                <ComplexData>
+                                  <SliderPacks>
+                                    <SliderPack Index="1"/>
+                                  </SliderPacks>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_forward10" FactoryPath="control.clone_forward" Bypassed="0"
+                                    Name="clone_forward">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="FxMix"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_forward9" FactoryPath="control.clone_forward" Bypassed="0"
+                                    Name="clone_forward">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="FxShDiv"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1" ID="Value" DefaultValue="1.0"
+                                             Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_forward11" FactoryPath="control.clone_forward" Bypassed="0"
+                                    Name="clone_forward">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="FxShSync"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_forward12" FactoryPath="control.clone_forward" Bypassed="0"
+                                    Name="clone_forward">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="shPitch"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" DefaultValue="1.0"
+                                             Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_forward13" FactoryPath="control.clone_forward" Bypassed="0"
+                                    Name="clone_forward">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="FilterFxMod"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" DefaultValue="1.0"
+                                             Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_forward16" FactoryPath="control.clone_forward" Bypassed="0"
+                                    Name="clone_forward">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="ShSmooth"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" ID="Value" DefaultValue="1.0"
+                                             Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
+                                    Name="clone_cable1">
+                                <Properties>
+                                  <Property ID="Mode" Value="Fixed"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="ShToGain"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_cable5" FactoryPath="control.clone_cable" Bypassed="0"
+                                    Name="clone_cable1">
+                                <Properties>
+                                  <Property ID="Mode" Value="Fixed"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="ShSinMix"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
                           </Node>
                         </Nodes>
                         <Parameters/>
@@ -2037,65 +2067,70 @@
                                      DefaultValue="1.0" Automated="1"/>
                         </Parameters>
                       </Node>
-                      <Node ID="split18" FactoryPath="container.split" Bypassed="0" Name="split2">
+                      <Node ID="no_midi" FactoryPath="container.no_midi" Bypassed="0" Name="no_midi">
                         <Nodes>
-                          <Node ID="clone_pack3" FactoryPath="control.clone_pack" Bypassed="0"
-                                Name="clone_pack">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="FilterCut"/>
-                            </ModulationTargets>
-                            <ComplexData>
-                              <SliderPacks>
-                                <SliderPack Index="2"/>
-                              </SliderPacks>
-                            </ComplexData>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="clone_cable14" FactoryPath="control.clone_cable" Bypassed="0"
-                                Name="clone_cable14">
-                            <Properties>
-                              <Property ID="Mode" Value="Fixed"/>
-                            </Properties>
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="FilterType"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="clone_forward21" FactoryPath="control.clone_forward" Bypassed="0"
-                                Name="clone_forward">
-                            <ModulationTargets>
-                              <Connection NodeId="xnode1" ParameterId="snap"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="Value" DefaultValue="1.0"
-                                         Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="clone_cable13" FactoryPath="control.clone_cable" Bypassed="0"
-                                Name="clone_cable13">
-                            <Properties>
-                              <Property ID="Mode" Value="Spread"/>
-                            </Properties>
-                            <ModulationTargets>
-                              <Connection NodeId="jpanner" ParameterId="Pan"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                            </Parameters>
+                          <Node ID="split18" FactoryPath="container.split" Bypassed="0" Name="split2">
+                            <Nodes>
+                              <Node ID="clone_pack3" FactoryPath="control.clone_pack" Bypassed="0"
+                                    Name="clone_pack">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="FilterCut"/>
+                                </ModulationTargets>
+                                <ComplexData>
+                                  <SliderPacks>
+                                    <SliderPack Index="2"/>
+                                  </SliderPacks>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_cable14" FactoryPath="control.clone_cable" Bypassed="0"
+                                    Name="clone_cable14">
+                                <Properties>
+                                  <Property ID="Mode" Value="Fixed"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="FilterType"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_forward21" FactoryPath="control.clone_forward" Bypassed="0"
+                                    Name="clone_forward">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="snap"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="Value" DefaultValue="1.0"
+                                             Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_cable13" FactoryPath="control.clone_cable" Bypassed="0"
+                                    Name="clone_cable13">
+                                <Properties>
+                                  <Property ID="Mode" Value="Spread"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="jpanner" ParameterId="Pan"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
                           </Node>
                         </Nodes>
                         <Parameters/>
@@ -2348,20 +2383,25 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="clone_cable10" FactoryPath="control.clone_cable" Bypassed="0"
-                            Name="clone_cable">
-                        <Properties>
-                          <Property ID="Mode" Value="Fixed"/>
-                        </Properties>
-                        <ModulationTargets>
-                          <Connection NodeId="xnode1" ParameterId="FilterRes"/>
-                        </ModulationTargets>
-                        <Parameters>
-                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                     DefaultValue="1.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                        </Parameters>
+                      <Node ID="no_midi1" FactoryPath="container.no_midi" Bypassed="0" Name="no_midi1">
+                        <Nodes>
+                          <Node ID="clone_cable10" FactoryPath="control.clone_cable" Bypassed="0"
+                                Name="clone_cable">
+                            <Properties>
+                              <Property ID="Mode" Value="Fixed"/>
+                            </Properties>
+                            <ModulationTargets>
+                              <Connection NodeId="xnode1" ParameterId="FilterRes"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         DefaultValue="1.0" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
                       </Node>
                     </Nodes>
                     <Parameters/>
@@ -2611,20 +2651,25 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="clone_cable11" FactoryPath="control.clone_cable" Bypassed="0"
-                            Name="clone_cable">
-                        <Properties>
-                          <Property ID="Mode" Value="Fixed"/>
-                        </Properties>
-                        <ModulationTargets>
-                          <Connection NodeId="xnode1" ParameterId="FilterMix"/>
-                        </ModulationTargets>
-                        <Parameters>
-                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                     DefaultValue="1.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                        </Parameters>
+                      <Node ID="no_midi2" FactoryPath="container.no_midi" Bypassed="0" Name="no_midi2">
+                        <Nodes>
+                          <Node ID="clone_cable11" FactoryPath="control.clone_cable" Bypassed="0"
+                                Name="clone_cable">
+                            <Properties>
+                              <Property ID="Mode" Value="Fixed"/>
+                            </Properties>
+                            <ModulationTargets>
+                              <Connection NodeId="xnode1" ParameterId="FilterMix"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         DefaultValue="1.0" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
                       </Node>
                     </Nodes>
                     <Parameters/>
@@ -2702,6 +2747,7 @@
                              Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"
                              Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2716,7 +2762,7 @@
           <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode2" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode33" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -2753,14 +2799,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner32" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner1" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -2772,7 +2819,7 @@
           <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode3" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode34" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -2809,14 +2856,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner33" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner2" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -2828,7 +2876,7 @@
           <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode4" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode35" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -2865,14 +2913,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner34" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner3" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -2884,7 +2933,7 @@
           <Node ID="clone_child4" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode5" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode36" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -2921,14 +2970,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner35" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner4" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -2940,7 +2990,7 @@
           <Node ID="clone_child5" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode6" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode37" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -2977,14 +3027,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner36" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner5" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -2996,7 +3047,7 @@
           <Node ID="clone_child6" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode7" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode38" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3033,14 +3084,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner37" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner6" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3052,7 +3104,7 @@
           <Node ID="clone_child7" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode8" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode39" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3089,14 +3141,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner38" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner7" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3108,7 +3161,7 @@
           <Node ID="clone_child8" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode9" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode40" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3145,14 +3198,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner39" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner8" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3164,7 +3218,7 @@
           <Node ID="clone_child9" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode10" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode41" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3201,14 +3255,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner40" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner9" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3220,7 +3275,7 @@
           <Node ID="clone_child10" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode11" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode42" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3257,14 +3312,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner41" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner10" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3276,7 +3332,7 @@
           <Node ID="clone_child11" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode12" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode43" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3313,14 +3369,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner42" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner11" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3332,7 +3389,7 @@
           <Node ID="clone_child12" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode13" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode44" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3369,14 +3426,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner43" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner12" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3388,7 +3446,7 @@
           <Node ID="clone_child13" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode14" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode45" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3425,14 +3483,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner44" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner13" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3444,7 +3503,7 @@
           <Node ID="clone_child14" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode15" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode46" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3481,14 +3540,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner45" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner14" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3500,7 +3560,7 @@
           <Node ID="clone_child15" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode16" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode47" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3537,14 +3597,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner46" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner15" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3556,7 +3617,7 @@
           <Node ID="clone_child16" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode17" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode48" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3593,14 +3654,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner47" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner16" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3612,7 +3674,7 @@
           <Node ID="clone_child17" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode18" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode49" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3649,14 +3711,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner48" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner17" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3668,7 +3731,7 @@
           <Node ID="clone_child18" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode19" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode50" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3705,14 +3768,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner49" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner18" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3724,7 +3788,7 @@
           <Node ID="clone_child19" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode20" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode51" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3761,14 +3825,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner50" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner19" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3780,7 +3845,7 @@
           <Node ID="clone_child20" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode21" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode52" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3817,14 +3882,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner51" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner20" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3836,7 +3902,7 @@
           <Node ID="clone_child21" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode22" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode53" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3873,14 +3939,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner52" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner21" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3892,7 +3959,7 @@
           <Node ID="clone_child22" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode23" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode54" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3929,14 +3996,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner53" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner22" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -3948,7 +4016,7 @@
           <Node ID="clone_child23" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode24" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode55" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -3985,14 +4053,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner54" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner23" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4004,7 +4073,7 @@
           <Node ID="clone_child24" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode25" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode56" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -4041,14 +4110,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner55" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner24" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4060,7 +4130,7 @@
           <Node ID="clone_child25" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode26" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode57" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -4097,14 +4167,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner56" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner25" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4116,7 +4187,7 @@
           <Node ID="clone_child26" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode27" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode58" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -4153,14 +4224,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner57" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner26" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4172,7 +4244,7 @@
           <Node ID="clone_child27" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode28" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode59" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -4209,14 +4281,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner58" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner27" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4228,7 +4301,7 @@
           <Node ID="clone_child28" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode29" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode60" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -4265,14 +4338,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner59" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner28" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4284,7 +4358,7 @@
           <Node ID="clone_child29" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode30" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode61" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -4321,14 +4395,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner60" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner29" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4340,7 +4415,7 @@
           <Node ID="clone_child30" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode31" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode62" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -4377,14 +4452,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner61" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner30" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4396,7 +4472,7 @@
           <Node ID="clone_child31" FactoryPath="container.chain" Bypassed="0"
                 Name="clone_child" NodeColour="4287927444">
             <Nodes>
-              <Node ID="xnode32" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
+              <Node ID="xnode63" FactoryPath="project.xnode" Bypassed="0" Name="xnode1">
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
@@ -4433,14 +4509,15 @@
                              SkewFactor="0.2313782125711441" ID="ShSmooth"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" DefaultValue="0.2766878008842468"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
                 </Parameters>
               </Node>
-              <Node ID="jpanner62" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+              <Node ID="jpanner31" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
                 <Parameters>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
                   <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
@@ -4459,7 +4536,7 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Stages" Value="16.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Stages" Value="17.0"
                  DefaultValue="1.0" ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="clone" ParameterId="NumClones"/>
@@ -4492,7 +4569,7 @@
           <Connection NodeId="clone_cable1" ParameterId="NumClones"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0">
         <Connections>
           <Connection NodeId="global_mod" ParameterId="Value"/>
         </Connections>
@@ -4530,20 +4607,20 @@
           <Connection NodeId="clone_forward" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Max" Value="9.0"
+      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Max" Value="16.0"
                  DefaultValue="1.0" ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="clone_forward2" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.5" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_forward1" ParameterId="Value"/>
           <Connection NodeId="clone_cable5" ParameterId="NumClones"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Detune" Value="0.0" ExternalModulation="Disabled"
-                 ModColour="0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Detune" Value="0.01999999955296516"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod1" ParameterId="Value"/>
         </Connections>
@@ -4576,23 +4653,25 @@
           <Connection NodeId="branch2" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1" ID="OscType" Value="6.0"
+      <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1" ID="OscType" Value="4.0"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="clone_forward6" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Shape" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Shape" Value="0.5099999904632568"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod3" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="ShapeMod" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="ShapeMod" Value="0.949999988079071"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod3" ParameterId="Intensity"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="ShapeSrc" Value="2.0"
+      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="ShapeSrc" Value="5.0"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="global_mod3" ParameterId="Index"/>
@@ -4697,7 +4776,7 @@
           <Connection NodeId="global_mod6" ParameterId="Intensity"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1" ID="FxValueSrc" Value="3.0"
+      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1" ID="FxValueSrc" Value="2.0"
                  DefaultValue="1.0" ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="global_mod6" ParameterId="Index"/>
@@ -4719,13 +4798,12 @@
           <Connection NodeId="branch7" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.2300000041723251"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0">
         <Connections>
           <Connection NodeId="clone_forward10" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxDiv" Value="18.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxDiv" Value="10.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_forward9" ParameterId="Value"/>
@@ -4748,20 +4826,18 @@
           <Connection NodeId="clone_forward16" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoPitch" Value="-1.0" ExternalModulation="Disabled"
-                 ModColour="0" DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoPitch" Value="0.02999999932944775"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_forward12" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoCut" Value="0.2000000029802322"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoCut" Value="0.0">
         <Connections>
           <Connection NodeId="clone_forward13" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Cut" Value="0.9900000095367432"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Cut" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod11" ParameterId="Value"/>
         </Connections>
@@ -4800,7 +4876,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="Res" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="1.0">
+                 DefaultValue="" Value="0.0">
         <Connections>
           <Connection NodeId="global_mod13" ParameterId="Value"/>
         </Connections>
@@ -4817,7 +4893,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="ResAux" MinValue="-1.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="-0.03457031250000009">
+                 DefaultValue="" Value="0.0">
         <Connections>
           <Connection NodeId="pma79" ParameterId="Multiply"/>
           <Connection NodeId="pma80" ParameterId="Multiply"/>
@@ -4833,7 +4909,7 @@
           <Connection NodeId="branch14" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0">
         <Connections>
           <Connection NodeId="global_mod14" ParameterId="Value"/>
         </Connections>
@@ -4868,13 +4944,13 @@
         </Connections>
       </Parameter>
       <Parameter ID="Spread" MinValue="-1.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.3472860753536224">
+                 DefaultValue="" Value="1.0">
         <Connections>
           <Connection NodeId="clone_cable13" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter ID="Snap" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.0">
+                 DefaultValue="" Value="0.3700000047683716">
         <Connections>
           <Connection NodeId="clone_forward21" ParameterId="Value"/>
         </Connections>

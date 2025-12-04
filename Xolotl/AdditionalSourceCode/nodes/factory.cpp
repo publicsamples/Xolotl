@@ -33,6 +33,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::ArrangeNew_networkdata>();
 		registerDataNode<project::bbdish_networkdata>();
 		registerDataNode<project::dlay_networkdata>();
+		registerDataNode<project::_networkdata>();
 		registerDataNode<project::Env_networkdata>();
 		registerDataNode<project::Env3_networkdata>();
 		registerDataNode<project::Env4_networkdata>();
