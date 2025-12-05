@@ -4570,12 +4570,14 @@
           <Connection NodeId="clone_cable11" ParameterId="NumClones"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.5" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.3199999928474426"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="HarmMod" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="HarmMod" Value="0.2700000107288361"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod" ParameterId="Intensity"/>
         </Connections>
@@ -4837,8 +4839,7 @@
           <Connection NodeId="clone_forward13" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Cut" Value="0.5099999904632568"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Cut" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod11" ParameterId="Value"/>
         </Connections>
