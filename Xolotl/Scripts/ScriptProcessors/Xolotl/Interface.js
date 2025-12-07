@@ -1,18 +1,18 @@
 Content.makeFrontInterface(850, 580);
 
-const var rm = Engine.getGlobalRoutingManager();
+//const var rm = Engine.getGlobalRoutingManager();
 
 include("UISTUFF.js");
 
-const eventdata = rm.getEventData(0, 0);
+//const eventdata = rm.getEventData(0, 0);
 const var harm = Synth.getAudioSampleProcessor("HARMONIC");
                 
 const slot = harm.getAudioFile(0);
 const slot1 = harm.getAudioFile(1);
 
-const cable1 = rm.getCable("mod1");
-const cable2 = rm.getCable("mod2");
-const cable3 = rm.getCable("mod3");
+//const cable1 = rm.getCable("mod1");
+//const cable2 = rm.getCable("mod2");
+//onst cable3 = rm.getCable("mod3");
 
 const maps = Sampler.getSampleMapList();
 
@@ -150,101 +150,6 @@ Content.getComponent("OscWave").setControlCallback(onOscWaveControl);
 
 
 
-inline function onSOURC3Control(component, value)
-{
-	HARMONIC.setAttribute(HARMONIC.HarmLfoSrc, value-1);
-};
-
-Content.getComponent("SOURC3").setControlCallback(onSOURC3Control);
-
-
-inline function onSOURC5Control(component, value)
-{
-		HARMONIC.setAttribute(HARMONIC.HarmEnvSrc, value-1);
-};
-
-Content.getComponent("SOURC5").setControlCallback(onSOURC5Control);
-
-
-inline function onSOURC18Control(component, value)
-{
-		HARMONIC.setAttribute(HARMONIC.Detuneenvsrc, value-1);
-};
-
-Content.getComponent("SOURC18").setControlCallback(onSOURC18Control);
-
-
-inline function onSOURC19Control(component, value)
-{	
-HARMONIC.setAttribute(HARMONIC.DetuneLFOsrc, value-1);
-
-};
-
-Content.getComponent("SOURC19").setControlCallback(onSOURC19Control);
-
-
-inline function onSOURC4Control(component, value)
-{
-HARMONIC.setAttribute(HARMONIC.FXLfoSrc, value-1);
-};
-
-Content.getComponent("SOURC4").setControlCallback(onSOURC4Control);
-
-
-inline function onSOURC6Control(component, value)
-{
-HARMONIC.setAttribute(HARMONIC.FxEnvSrc, value-1);
-};
-
-Content.getComponent("SOURC6").setControlCallback(onSOURC6Control);
-
-
-inline function onScriptComboBox1Control(component, value)
-{
-HARMONIC.setAttribute(HARMONIC.utEnvSrc, value-1);
-};
-
-Content.getComponent("ScriptComboBox1").setControlCallback(onScriptComboBox1Control);
-
-
-inline function onScriptComboBox4Control(component, value)
-{
-HARMONIC.setAttribute(HARMONIC.CutLfoSrc, value-1);
-};
-
-Content.getComponent("ScriptComboBox4").setControlCallback(onScriptComboBox4Control);
-
-
-inline function onScriptComboBox8Control(component, value)
-{
-HARMONIC.setAttribute(HARMONIC.MixSrc, value-1);
-};
-
-Content.getComponent("ScriptComboBox8").setControlCallback(onScriptComboBox8Control);
-
-
-inline function onScriptComboBox9Control(component, value)
-{
-HARMONIC.setAttribute(HARMONIC.MixLfoSrc, value-1);
-};
-
-Content.getComponent("ScriptComboBox9").setControlCallback(onScriptComboBox9Control);
-
-
-inline function onScriptComboBox10Control(component, value)
-{
-HARMONIC.setAttribute(HARMONIC.qEnvSrc, value-1);
-};
-
-Content.getComponent("ScriptComboBox10").setControlCallback(onScriptComboBox10Control);
-
-
-inline function onScriptComboBox11Control(component, value)
-{
-HARMONIC.setAttribute(HARMONIC.qLfoSrc, value-1);
-};
-
-Content.getComponent("ScriptComboBox11").setControlCallback(onScriptComboBox11Control);
 
 const var LFO1 = Synth.getModulator("LFO1");
 const var LFO2 = Synth.getModulator("LFO2");
@@ -275,15 +180,97 @@ LFO3.setAttribute(LFO3.Modifiers, value-1);
 Content.getComponent("ComboBox3").setControlCallback(onComboBox3Control);
 
 
-
-inline function onScriptComboBox3Control(component, value)
+inline function onOscWave1Control(component, value)
 {
-HARMONIC.setAttribute(HARMONIC.FilterType, value-1);
+
+Engine.allNotesOff();
+
+ HARMONIC.setAttribute(HARMONIC.OscType, value);
 };
 
-Content.getComponent("ScriptComboBox3").setControlCallback(onScriptComboBox3Control);
+Content.getComponent("OscWave1").setControlCallback(onOscWave1Control);
 
-  
+const var Stages = Content.getComponent("Stages");
+
+
+inline function onStagesControl(component, value)
+{
+
+	
+	
+		if(value == 1)
+		{	 
+		Engine.allNotesOff();
+			HARMONIC.setAttribute(HARMONIC.Stages, 4);
+			}
+		if(value == 2)
+				{	 
+				Engine.allNotesOff();
+			HARMONIC.setAttribute(HARMONIC.Stages, 8);
+					}	
+		if(value == 3)
+						{	
+						Engine.allNotesOff(); 
+					HARMONIC.setAttribute(HARMONIC.Stages, 16);
+							}				
+			if(value == 4)
+							{	 
+							Engine.allNotesOff();
+						HARMONIC.setAttribute(HARMONIC.Stages, 24);
+								}	
+	if(value == 5)
+							{	
+							Engine.allNotesOff(); 
+						HARMONIC.setAttribute(HARMONIC.Stages, 32);
+								}								
+};
+
+Content.getComponent("Stages").setControlCallback(onStagesControl);
+
+const var ModSp1 = Content.getComponent("ModSp1");
+const var ModSp2 = Content.getComponent("ModSp2");
+const var ModSp3 = Content.getComponent("ModSp3");
+const var ModSp4 = Content.getComponent("ModSp4");
+
+inline function onModShapeControl(component, value)
+{
+	if(value == 1)
+		{
+	HARMONIC.setAttribute(HARMONIC.FxSinSh, 1);
+	ModSp1.showControl(1);
+	ModSp2.showControl(0);
+	ModSp3.showControl(0);
+	ModSp4.showControl(0);
+    	}
+	if(value == 2)
+		{
+	HARMONIC.setAttribute(HARMONIC.FxSinSh, 2);
+	ModSp1.showControl(1);
+	ModSp2.showControl(0);
+	ModSp3.showControl(0);
+	ModSp4.showControl(0);
+    	}
+	if(value == 3)
+		{
+	HARMONIC.setAttribute(HARMONIC.FxSinSh, 3);
+	ModSp1.showControl(1);
+	ModSp2.showControl(0);
+	ModSp3.showControl(0);
+	ModSp4.showControl(0);
+    	}
+	if(value == 4)
+		{
+	HARMONIC.setAttribute(HARMONIC.FxSinSh, 4);
+	ModSp1.showControl(0);
+	ModSp2.showControl(1);
+	ModSp3.showControl(1);
+	ModSp4.showControl(1);
+    	}
+
+};
+
+Content.getComponent("ModShape").setControlCallback(onModShapeControl);
+
 
 //USer Wave
 

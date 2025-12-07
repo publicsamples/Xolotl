@@ -127,8 +127,7 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="Osc"
-                Folded="1">
+          <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="Osc">
             <Nodes>
               <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
                 <Nodes>
@@ -2333,6 +2332,30 @@
                                          DefaultValue="1.0" Automated="1"/>
                             </Parameters>
                           </Node>
+                          <Node ID="pack_resizer5" FactoryPath="control.pack_resizer" Bypassed="0"
+                                Name="pack_resizer">
+                            <ComplexData>
+                              <SliderPacks>
+                                <SliderPack Index="3" EmbeddedData="4....f+."/>
+                              </SliderPacks>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumSliders"
+                                         DefaultValue="1.0" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="pack_resizer4" FactoryPath="control.pack_resizer" Bypassed="0"
+                                Name="pack_resizer">
+                            <ComplexData>
+                              <SliderPacks>
+                                <SliderPack Index="4" EmbeddedData="4....f+."/>
+                              </SliderPacks>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumSliders"
+                                         DefaultValue="1.0" Automated="1"/>
+                            </Parameters>
+                          </Node>
                           <Node ID="split11" FactoryPath="container.split" Bypassed="0" Name="split2">
                             <Nodes>
                               <Node ID="clone_pack2" FactoryPath="control.clone_pack" Bypassed="0"
@@ -2351,15 +2374,36 @@
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="clone_forward10" FactoryPath="control.clone_forward" Bypassed="0"
-                                    Name="clone_forward">
+                              <Node ID="clone_pack5" FactoryPath="control.clone_pack" Bypassed="0"
+                                    Name="clone_pack">
                                 <ModulationTargets>
                                   <Connection NodeId="xnode1" ParameterId="FxMix"/>
                                 </ModulationTargets>
+                                <ComplexData>
+                                  <SliderPacks>
+                                    <SliderPack Index="3"/>
+                                  </SliderPacks>
+                                </ComplexData>
                                 <Parameters>
                                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
                                              DefaultValue="1.0" Automated="1"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_pack4" FactoryPath="control.clone_pack" Bypassed="0"
+                                    Name="clone_pack">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="SHInput"/>
+                                </ModulationTargets>
+                                <ComplexData>
+                                  <SliderPacks>
+                                    <SliderPack Index="4"/>
+                                  </SliderPacks>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
                                 </Parameters>
                               </Node>
                               <Node ID="clone_forward9" FactoryPath="control.clone_forward" Bypassed="0"
@@ -2409,18 +2453,6 @@
                                              Automated="1"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="clone_forward16" FactoryPath="control.clone_forward" Bypassed="0"
-                                    Name="clone_forward">
-                                <ModulationTargets>
-                                  <Connection NodeId="xnode1" ParameterId="ShSmooth"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                             DefaultValue="1.0" Automated="1"/>
-                                  <Parameter MinValue="0.0" MaxValue="2000.0" ID="Value" DefaultValue="1.0"
-                                             Automated="1"/>
-                                </Parameters>
-                              </Node>
                               <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
                                     Name="clone_cable1">
                                 <Properties>
@@ -2428,6 +2460,21 @@
                                 </Properties>
                                 <ModulationTargets>
                                   <Connection NodeId="xnode1" ParameterId="ShToGain"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_cable6" FactoryPath="control.clone_cable" Bypassed="0"
+                                    Name="clone_cable1">
+                                <Properties>
+                                  <Property ID="Mode" Value="Fixed"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="ShSmooth"/>
                                 </ModulationTargets>
                                 <Parameters>
                                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
@@ -2466,7 +2513,8 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="split16" FactoryPath="container.split" Bypassed="0" Name="Filter">
+          <Node ID="split16" FactoryPath="container.split" Bypassed="0" Name="Filter"
+                Folded="1">
             <Nodes>
               <Node ID="chain99" FactoryPath="container.chain" Bypassed="0" Name="chain">
                 <Nodes>
@@ -3671,7 +3719,8 @@
                              Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"
                              Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3705,7 +3754,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -3720,7 +3769,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -3728,7 +3777,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner1" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3762,7 +3812,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -3777,7 +3827,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -3785,7 +3835,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner2" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3819,7 +3870,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -3834,7 +3885,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -3842,7 +3893,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner3" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3876,7 +3928,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -3891,7 +3943,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -3899,7 +3951,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner4" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3933,7 +3986,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -3948,7 +4001,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -3956,7 +4009,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner5" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3990,7 +4044,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4005,7 +4059,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4013,7 +4067,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner6" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4047,7 +4102,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4062,7 +4117,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4070,7 +4125,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner7" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4104,7 +4160,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4119,7 +4175,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4127,7 +4183,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner8" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4161,7 +4218,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4176,7 +4233,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4184,7 +4241,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner9" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4218,7 +4276,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4233,7 +4291,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4241,7 +4299,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner10" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4275,7 +4334,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4290,7 +4349,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4298,7 +4357,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner11" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4332,7 +4392,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4347,7 +4407,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4355,7 +4415,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner12" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4389,7 +4450,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4404,7 +4465,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4412,7 +4473,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner13" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4446,7 +4508,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4461,7 +4523,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4469,7 +4531,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner14" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4503,7 +4566,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4518,7 +4581,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4526,7 +4589,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner15" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4560,7 +4624,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4575,7 +4639,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4583,7 +4647,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner16" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4617,7 +4682,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4632,7 +4697,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4640,7 +4705,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner17" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4674,7 +4740,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4689,7 +4755,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4697,7 +4763,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner18" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4731,7 +4798,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4746,7 +4813,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4754,7 +4821,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner19" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4788,7 +4856,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4803,7 +4871,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4811,7 +4879,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner20" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4845,7 +4914,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4860,7 +4929,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4868,7 +4937,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner21" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4902,7 +4972,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4917,7 +4987,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4925,7 +4995,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner22" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4959,7 +5030,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -4974,7 +5045,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -4982,7 +5053,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner23" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5016,7 +5088,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -5031,7 +5103,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -5039,7 +5111,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner24" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5073,7 +5146,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -5088,7 +5161,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -5096,7 +5169,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner25" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5130,7 +5204,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -5145,7 +5219,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -5153,7 +5227,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner26" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5187,7 +5262,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -5202,7 +5277,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -5210,7 +5285,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner27" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5244,7 +5320,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -5259,7 +5335,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -5267,7 +5343,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner28" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5301,7 +5378,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -5316,7 +5393,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -5324,7 +5401,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner29" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5358,7 +5436,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -5373,7 +5451,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -5381,7 +5459,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner30" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5415,7 +5494,7 @@
                   <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" DefaultValue="16.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="step" DefaultValue="1.0"/>
                   <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue"/>
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxShDiv" DefaultValue="32.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FxShSync" DefaultValue="1.0"/>
@@ -5430,7 +5509,7 @@
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterFxMod"/>
                   <Parameter MinValue="0.0" MaxValue="2.0" ID="DET" DefaultValue="1.002876996994019"/>
                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.2313782125711441" ID="ShSmooth"/>
+                             SkewFactor="0.2313782125711441" ID="ShSmooth" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes"/>
                   <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="TYPE" DefaultValue="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0" ID="ShSinMix"/>
@@ -5438,7 +5517,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" DefaultValue="0.5559467673301697"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner31" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5460,7 +5540,7 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Stages" Value="4.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Stages" Value="8.0"
                  DefaultValue="1.0" ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="clone" ParameterId="NumClones"/>
@@ -5477,12 +5557,10 @@
           <Connection NodeId="clone_cable4" ParameterId="NumClones"/>
           <Connection NodeId="pack_resizer2" ParameterId="NumSliders"/>
           <Connection NodeId="clone_pack2" ParameterId="NumClones"/>
-          <Connection NodeId="clone_forward10" ParameterId="NumClones"/>
           <Connection NodeId="clone_forward9" ParameterId="NumClones"/>
           <Connection NodeId="clone_forward11" ParameterId="NumClones"/>
           <Connection NodeId="clone_forward12" ParameterId="NumClones"/>
           <Connection NodeId="clone_forward13" ParameterId="NumClones"/>
-          <Connection NodeId="clone_forward16" ParameterId="NumClones"/>
           <Connection NodeId="clone_cable1" ParameterId="NumClones"/>
           <Connection NodeId="clone_cable5" ParameterId="NumClones"/>
           <Connection NodeId="pack_resizer3" ParameterId="NumSliders"/>
@@ -5492,9 +5570,14 @@
           <Connection NodeId="clone_cable13" ParameterId="NumClones"/>
           <Connection NodeId="clone_cable10" ParameterId="NumClones"/>
           <Connection NodeId="clone_cable11" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable6" ParameterId="NumClones"/>
+          <Connection NodeId="clone_pack5" ParameterId="NumClones"/>
+          <Connection NodeId="clone_pack4" ParameterId="NumClones"/>
+          <Connection NodeId="pack_resizer5" ParameterId="NumSliders"/>
+          <Connection NodeId="pack_resizer4" ParameterId="NumSliders"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod" ParameterId="Value"/>
           <Connection NodeId="global_mod7" ParameterId="Value"/>
@@ -5503,7 +5586,7 @@
           <Connection NodeId="pma13" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="HarmMod" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="HarmMod" Value="0.0">
         <Connections>
           <Connection NodeId="global_mod" ParameterId="Intensity"/>
           <Connection NodeId="pma" ParameterId="Multiply"/>
@@ -5570,8 +5653,8 @@
           <Connection NodeId="pma15" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="DetuneSrc"
-                 Value="4.0" ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
+      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1.0" ID="DetuneSrc" Value="4.0"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch3" ParameterId="Index"/>
         </Connections>
@@ -5593,14 +5676,13 @@
           <Connection NodeId="branch2" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1" ID="OscType" Value="2.0"
+      <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1" ID="OscType" Value="4.0"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="clone_forward6" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Shape" Value="0.2000000029802322"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Shape" Value="0.0">
         <Connections>
           <Connection NodeId="global_mod3" ParameterId="Value"/>
           <Connection NodeId="global_mod15" ParameterId="Value"/>
@@ -5609,7 +5691,7 @@
           <Connection NodeId="pma17" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="ShapeMod" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="ShapeMod" Value="0.0">
         <Connections>
           <Connection NodeId="global_mod3" ParameterId="Intensity"/>
           <Connection NodeId="global_mod15" ParameterId="Intensity"/>
@@ -5618,7 +5700,7 @@
           <Connection NodeId="pma17" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="ShapeSrc" Value="4.0"
+      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1.0" ID="ShapeSrc" Value="4.0"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch8" ParameterId="Index"/>
@@ -5655,8 +5737,7 @@
           <Connection NodeId="pma43" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CyclePosMod" Value="0.02578125000000009"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CyclePosMod" Value="0.0">
         <Connections>
           <Connection NodeId="global_mod4" ParameterId="Intensity"/>
           <Connection NodeId="pma18" ParameterId="Multiply"/>
@@ -5665,8 +5746,8 @@
           <Connection NodeId="global_mod19" ParameterId="Intensity"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1" ID="CyclePosSrc"
-                 Value="4.0" ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
+      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1" ID="CyclePosSrc" Value="4.0"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch9" ParameterId="Index"/>
         </Connections>
@@ -5682,13 +5763,12 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1" ID="CyclePosAuxSrc"
-                 Value="4.0" ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
+                 Value="1.0" ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="branch5" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="CycleShape" Value="0.5064453125"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="CycleShape" Value="0.5" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod5" ParameterId="Value"/>
           <Connection NodeId="global_mod21" ParameterId="Value"/>
@@ -5706,14 +5786,13 @@
           <Connection NodeId="pma45" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1" ID="CycleShapeSrc"
+      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1" ID="CycleShapeSrc"
                  Value="4.0" ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch10" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CycleShapeAux" Value="0.05683593750000004"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CycleShapeAux" Value="0.0">
         <Connections>
           <Connection NodeId="pma31" ParameterId="Multiply"/>
           <Connection NodeId="pma32" ParameterId="Multiply"/>
@@ -5729,7 +5808,7 @@
           <Connection NodeId="branch6" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.7097656250000001"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.7599999904632568"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod6" ParameterId="Value"/>
@@ -5748,7 +5827,7 @@
           <Connection NodeId="pma47" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1" ID="FxValueSrc" Value="1.0"
+      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1" ID="FxValueSrc" Value="1.0"
                  ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="branch11" ParameterId="Index"/>
@@ -5772,11 +5851,9 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0">
-        <Connections>
-          <Connection NodeId="clone_forward10" ParameterId="Value"/>
-        </Connections>
+        <Connections/>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxDiv" Value="4.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxDiv" Value="7.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_forward9" ParameterId="Value"/>
@@ -5793,10 +5870,10 @@
           <Connection NodeId="clone_cable5" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="2000.0" ID="FxSmooth" Value="0.0" ExternalModulation="Disabled"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FxSmooth" Value="0.0" ExternalModulation="Disabled"
                  ModColour="0">
         <Connections>
-          <Connection NodeId="clone_forward16" ParameterId="Value"/>
+          <Connection NodeId="clone_cable6" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoPitch" Value="0.0" ExternalModulation="Disabled"
@@ -5828,14 +5905,14 @@
           <Connection NodeId="pma49" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="CutSrc" MinValue="1.0" MaxValue="17.0" ModColour="0" ExternalModulation="Disabled"
+      <Parameter ID="CutSrc" MinValue="1.0" MaxValue="5.0" ModColour="0" ExternalModulation="Disabled"
                  Value="4.0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch13" ParameterId="Index"/>
         </Connections>
       </Parameter>
       <Parameter ID="CutAux" MinValue="-1.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.111328125">
+                 DefaultValue="" Value="0.0">
         <Connections>
           <Connection NodeId="pma67" ParameterId="Multiply"/>
           <Connection NodeId="pma68" ParameterId="Multiply"/>
@@ -5846,7 +5923,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="CutAuxSrc" MinValue="1.0" MaxValue="6.0" ModColour="0" ExternalModulation="Disabled"
-                 Value="2.064453125" DefaultValue="1.0">
+                 Value="2.0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch12" ParameterId="Index"/>
         </Connections>
@@ -5858,7 +5935,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="Res" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.0">
+                 DefaultValue="" Value="0.8199999928474426">
         <Connections>
           <Connection NodeId="global_mod13" ParameterId="Value"/>
           <Connection NodeId="global_mod30" ParameterId="Value"/>
@@ -5868,7 +5945,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="ResMod" MinValue="-1.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="1.0">
+                 DefaultValue="" Value="0.0">
         <Connections>
           <Connection NodeId="global_mod13" ParameterId="Intensity"/>
           <Connection NodeId="pma50" ParameterId="Multiply"/>
@@ -5877,7 +5954,7 @@
           <Connection NodeId="global_mod31" ParameterId="Intensity"/>
         </Connections>
       </Parameter>
-      <Parameter ID="ResSrc" MinValue="1.0" MaxValue="17.0" StepSize="1" ModColour="0"
+      <Parameter ID="ResSrc" MinValue="1.0" MaxValue="5.0" StepSize="1" ModColour="0"
                  ExternalModulation="Disabled" Value="1.0">
         <Connections>
           <Connection NodeId="branch16" ParameterId="Index"/>
@@ -5900,7 +5977,8 @@
           <Connection NodeId="branch14" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.9700000286102295"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod14" ParameterId="Value"/>
           <Connection NodeId="global_mod33" ParameterId="Value"/>
@@ -5919,7 +5997,7 @@
           <Connection NodeId="global_mod33" ParameterId="Intensity"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FilterMixSrc" MinValue="1.0" MaxValue="17.0" StepSize="1.0"
+      <Parameter ID="FilterMixSrc" MinValue="1.0" MaxValue="5.0" StepSize="1.0"
                  ModColour="0" ExternalModulation="Disabled" Value="2.0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch17" ParameterId="Index"/>
@@ -5954,14 +6032,14 @@
           <Connection NodeId="clone_forward21" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoGain" Value="0.0" ExternalModulation="Disabled"
-                 ModColour="0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoGain" Value="1.0" ExternalModulation="Disabled"
+                 ModColour="0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable1" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="EnvTempo1"
-                 Value="0.0" TextToValueConverter="">
+                 Value="1.0" TextToValueConverter="" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="Env3" ParameterId="Tempo"/>
         </Connections>
@@ -5973,13 +6051,14 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" ID="EnvA1" Value="0.0" TextToValueConverter="">
+                 SkewFactor="0.1976716816425323" ID="EnvA1" Value="1152.000017166137"
+                 TextToValueConverter="" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="Env3" ParameterId="a"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" ID="EnvD1" Value="756.5000112727283"
+                 SkewFactor="0.1976716816425323" ID="EnvD1" Value="2913.900043420493"
                  DefaultValue="0.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="Env3" ParameterId="d"/>
@@ -5999,7 +6078,7 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" ID="EnvR1" Value="1615.500024072826"
+                 SkewFactor="0.1976716816425323" ID="EnvR1" Value="1786.000026613474"
                  DefaultValue="0.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="Env3" ParameterId="r"/>
