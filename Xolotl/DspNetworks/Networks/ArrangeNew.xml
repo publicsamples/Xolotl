@@ -12,25 +12,26 @@
                 <Nodes>
                   <Node ID="Env3" FactoryPath="project.Env2" Bypassed="0" Name="Env3">
                     <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Value="0.0"
-                                 DefaultValue="1.0"/>
-                      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Multi" Value="1.0"/>
+                      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" DefaultValue="1.0"
+                                 Automated="1"/>
+                      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Multi" DefaultValue="1.0"
+                                 Automated="1"/>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Sync" Value="1.0"/>
                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                  ID="Unsynced" Value="1.0"/>
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.1976716816425323" ID="a" Value="325.3000048473477"
-                                 DefaultValue="0.0"/>
+                                 SkewFactor="0.1976716816425323" ID="a" DefaultValue="0.0" Automated="1"/>
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.1976716816425323" ID="d" Value="22.90000034123659"
-                                 DefaultValue="143.5"/>
+                                 SkewFactor="0.1976716816425323" ID="d" DefaultValue="143.5" Automated="1"/>
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.1976716816425323" ID="h" Value="22.89999961853027"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="s" Value="0.0"/>
+                                 SkewFactor="0.1976716816425323" ID="h" DefaultValue="22.89999961853027"
+                                 Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="s" DefaultValue="0.0" Automated="1"/>
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.1976716816425323" ID="r" Value="5122.300076328217"
-                                 DefaultValue="166.8000030517578"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="trig" Value="1.0"/>
+                                 SkewFactor="0.1976716816425323" ID="r" DefaultValue="166.8000030517578"
+                                 Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="trig" DefaultValue="1.0"
+                                 Automated="1"/>
                     </Parameters>
                     <ComplexData>
                       <DisplayBuffers>
@@ -69,24 +70,26 @@
                 <Nodes>
                   <Node ID="Env4" FactoryPath="project.Env2" Bypassed="0" Name="Env3">
                     <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Value="0.0"
-                                 DefaultValue="1.0"/>
-                      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Multi" Value="1.0"/>
+                      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" DefaultValue="1.0"
+                                 Automated="1"/>
+                      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Multi" DefaultValue="1.0"
+                                 Automated="1"/>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Sync" Value="1.0"/>
                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                  ID="Unsynced" Value="1.0"/>
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.1976716816425323" ID="a" Value="0.0"/>
+                                 SkewFactor="0.1976716816425323" ID="a" DefaultValue="0.0" Automated="1"/>
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.1976716816425323" ID="d" Value="144.3000021502375"
-                                 DefaultValue="143.5"/>
+                                 SkewFactor="0.1976716816425323" ID="d" DefaultValue="143.5" Automated="1"/>
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.1976716816425323" ID="h" Value="22.89999961853027"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="s" Value="0.0"/>
+                                 SkewFactor="0.1976716816425323" ID="h" DefaultValue="22.89999961853027"
+                                 Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="s" DefaultValue="0.0" Automated="1"/>
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.1976716816425323" ID="r" Value="5122.300076328217"
-                                 DefaultValue="166.8000030517578"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="trig" Value="1.0"/>
+                                 SkewFactor="0.1976716816425323" ID="r" DefaultValue="166.8000030517578"
+                                 Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="trig" DefaultValue="1.0"
+                                 Automated="1"/>
                     </Parameters>
                     <ComplexData>
                       <DisplayBuffers>
@@ -5637,8 +5640,8 @@
           <Connection NodeId="branch4" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="3.0" ID="VoiceMode" Value="3.0" ExternalModulation="Disabled"
-                 ModColour="0" DefaultValue="1.0">
+      <Parameter MinValue="1.0" MaxValue="3.0" ID="VoiceMode" Value="1.0" ExternalModulation="Disabled"
+                 ModColour="0">
         <Connections>
           <Connection NodeId="clone_forward7" ParameterId="Value"/>
         </Connections>
@@ -5726,7 +5729,7 @@
           <Connection NodeId="branch6" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.6277343750000001"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.7097656250000001"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod6" ParameterId="Value"/>
@@ -5832,7 +5835,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="CutAux" MinValue="-1.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.0">
+                 DefaultValue="" Value="0.111328125">
         <Connections>
           <Connection NodeId="pma67" ParameterId="Multiply"/>
           <Connection NodeId="pma68" ParameterId="Multiply"/>
@@ -5843,7 +5846,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="CutAuxSrc" MinValue="1.0" MaxValue="6.0" ModColour="0" ExternalModulation="Disabled"
-                 Value="2.0" DefaultValue="1.0">
+                 Value="2.064453125" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch12" ParameterId="Index"/>
         </Connections>
@@ -5864,7 +5867,8 @@
           <Connection NodeId="pma51" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="ResMod" MinValue="-1.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled">
+      <Parameter ID="ResMod" MinValue="-1.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="1.0">
         <Connections>
           <Connection NodeId="global_mod13" ParameterId="Intensity"/>
           <Connection NodeId="pma50" ParameterId="Multiply"/>
@@ -5954,6 +5958,109 @@
                  ModColour="0">
         <Connections>
           <Connection NodeId="clone_cable1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="EnvTempo1"
+                 Value="0.0" TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="Env3" ParameterId="Tempo"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="EnvDiv1" Value="1.0"
+                 DefaultValue="0.0" TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="Env3" ParameterId="Multi"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.1976716816425323" ID="EnvA1" Value="0.0" TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="Env3" ParameterId="a"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.1976716816425323" ID="EnvD1" Value="756.5000112727283"
+                 DefaultValue="0.0" TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="Env3" ParameterId="d"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.1976716816425323" ID="EnvH1" Value="8.900000132620333"
+                 DefaultValue="0.0" TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="Env3" ParameterId="h"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="EnvS1" Value="0.1549224853515625"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="Env3" ParameterId="s"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.1976716816425323" ID="EnvR1" Value="1615.500024072826"
+                 DefaultValue="0.0" TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="Env3" ParameterId="r"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="EnvTrig1" Value="1.0"
+                 DefaultValue="0.0" TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="Env3" ParameterId="trig"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="EnvTempo2" MinValue="0.0" MaxValue="18.0" StepSize="1.0"
+                 ModColour="0" ExternalModulation="Disabled" TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="Env4" ParameterId="Tempo"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="EnvDiv2" MinValue="1.0" MaxValue="16.0" StepSize="1.0" ModColour="0"
+                 ExternalModulation="Disabled" DefaultValue="" TextToValueConverter=""
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="Env4" ParameterId="Multi"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="EnvA2" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.1976716816425323" ModColour="0" ExternalModulation="Disabled"
+                 TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="Env4" ParameterId="a"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="EnvD2" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.1976716816425323" ModColour="0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="0.0" TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="Env4" ParameterId="d"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="EnvH2" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.1976716816425323" ModColour="0" ExternalModulation="Disabled"
+                 TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="Env4" ParameterId="h"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="EnvS2" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled">
+        <Connections>
+          <Connection NodeId="Env4" ParameterId="s"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="EnvR2" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.1976716816425323" ModColour="0" ExternalModulation="Disabled"
+                 TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="Env4" ParameterId="r"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="EnvTrig2" MinValue="0.0" MaxValue="1.0" StepSize="1.0" ModColour="0"
+                 ExternalModulation="Disabled" TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="Env4" ParameterId="trig"/>
         </Connections>
       </Parameter>
     </Parameters>
