@@ -2139,6 +2139,10 @@
                              Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2202,6 +2206,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner1" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2265,6 +2273,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner2" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2328,6 +2340,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner3" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2391,6 +2407,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner4" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2454,6 +2474,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner5" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2517,6 +2541,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner6" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2580,6 +2608,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner7" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2643,6 +2675,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner8" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2706,6 +2742,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner9" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2769,6 +2809,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner10" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2832,6 +2876,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner11" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2895,6 +2943,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner12" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2958,6 +3010,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner13" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3021,6 +3077,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner14" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3084,6 +3144,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner15" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3147,6 +3211,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner16" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3210,6 +3278,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner17" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3273,6 +3345,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner18" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3336,6 +3412,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner19" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3399,6 +3479,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner20" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3462,6 +3546,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner21" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3525,6 +3613,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner22" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3588,6 +3680,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner23" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3651,6 +3747,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner24" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3714,6 +3814,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner25" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3777,6 +3881,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner26" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3840,6 +3948,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner27" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3903,6 +4015,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner28" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3966,6 +4082,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner29" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4029,6 +4149,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner30" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4092,6 +4216,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="rel" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="crv" Value="0.4449523892402649"
                              DefaultValue="0.5132473111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.332625687122345"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.515625"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210598111152649"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner31" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">

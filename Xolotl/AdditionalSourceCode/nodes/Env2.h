@@ -22,8 +22,12 @@ using tempo_sync_t = wrap::mod<parameter::plain<ramp_t<NV>, 0>,
                                control::tempo_sync<NV>>;
 
 template <int NV>
-using ahdsr_multimod = parameter::list<parameter::plain<math::add<NV>, 0>, 
-                                       parameter::empty>;
+using ahdsr_c0 = parameter::chain<ranges::Identity, 
+                                  parameter::plain<math::add<NV>, 0>, 
+                                  parameter::plain<routing::public_mod, 0>>;
+
+template <int NV>
+using ahdsr_multimod = parameter::list<ahdsr_c0<NV>, parameter::empty>;
 
 template <int NV>
 using ahdsr_t = wrap::no_data<envelope::ahdsr<NV, ahdsr_multimod<NV>>>;
@@ -42,6 +46,8 @@ using chain_t = container::chain<parameter::empty,
                                  peak_t<NV>, 
                                  input_toggle_t<NV>, 
                                  math::clear<NV>>;
+using peak1_t = wrap::data<core::peak, 
+                           data::external::displaybuffer<0>>;
 
 namespace Env2_t_parameters
 {
@@ -89,11 +95,14 @@ template <int NV>
 using Env2_t_ = container::chain<Env2_t_parameters::Env2_t_plist<NV>, 
                                  wrap::fix<1, chain_t<NV>>, 
                                  ahdsr_t<NV>, 
-                                 math::add<NV>>;
+                                 math::add<NV>, 
+                                 routing::public_mod, 
+                                 peak1_t>;
 
 // =================================| Root node initialiser class |=================================
 
-template <int NV> struct instance: public Env2_impl::Env2_t_<NV>
+template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
+                                    public routing::public_mod_target
 {
 	
 	struct metadata
@@ -102,14 +111,14 @@ template <int NV> struct instance: public Env2_impl::Env2_t_<NV>
 		static const int NumSliderPacks = 0;
 		static const int NumAudioFiles = 0;
 		static const int NumFilters = 0;
-		static const int NumDisplayBuffers = 0;
+		static const int NumDisplayBuffers = 1;
 		
 		SNEX_METADATA_ID(Env2);
 		SNEX_METADATA_NUM_CHANNELS(1);
 		SNEX_METADATA_ENCODED_PARAMETERS(156)
 		{
 			0x005C, 0x0000, 0x0000, 0x6554, 0x706D, 0x006F, 0x0000, 0x0000, 
-            0x0000, 0x9000, 0x0041, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 
+            0x0000, 0x9000, 0x0041, 0x4000, 0x0040, 0x8000, 0x003F, 0x8000, 
             0x5C3F, 0x0100, 0x0000, 0x4D00, 0x6C75, 0x6974, 0x0000, 0x0000, 
             0x3F80, 0x0000, 0x4180, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 
             0x3F80, 0x005C, 0x0002, 0x0000, 0x7953, 0x636E, 0x0000, 0x0000, 
@@ -117,14 +126,14 @@ template <int NV> struct instance: public Env2_impl::Env2_t_<NV>
             0x3F80, 0x005C, 0x0003, 0x0000, 0x6E55, 0x7973, 0x636E, 0x6465, 
             0x0000, 0x0000, 0x0000, 0x0000, 0x447A, 0x0000, 0x3F80, 0x0000, 
             0x3F80, 0xCCCD, 0x3DCC, 0x005C, 0x0004, 0x0000, 0x0061, 0x0000, 
-            0x0000, 0x0000, 0x1C40, 0x0046, 0x0E74, 0x7246, 0x4A6A, 0xCD3E, 
+            0x0000, 0x0000, 0x1C40, 0x0046, 0x0000, 0x7200, 0x4A6A, 0xCD3E, 
             0xCCCC, 0x5C3D, 0x0500, 0x0000, 0x6400, 0x0000, 0x0000, 0x0000, 
-            0x4000, 0x461C, 0x0000, 0x0000, 0x6A72, 0x3E4A, 0xCCCD, 0x3DCC, 
+            0x4000, 0x461C, 0xC000, 0x439D, 0x6A72, 0x3E4A, 0xCCCD, 0x3DCC, 
             0x005C, 0x0006, 0x0000, 0x0068, 0x0000, 0x0000, 0x0000, 0x1C40, 
             0x0046, 0x0000, 0x7200, 0x4A6A, 0xCD3E, 0xCCCC, 0x5C3D, 0x0700, 
-            0x0000, 0x7300, 0x0000, 0x0000, 0x0000, 0x0000, 0x3F80, 0x47AE, 
-            0x3E61, 0x0000, 0x3F80, 0x0000, 0x0000, 0x005C, 0x0008, 0x0000, 
-            0x0072, 0x0000, 0x0000, 0x0000, 0x1C40, 0x0046, 0x4600, 0x7243, 
+            0x0000, 0x7300, 0x0000, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 
+            0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x005C, 0x0008, 0x0000, 
+            0x0072, 0x0000, 0x0000, 0x0000, 0x1C40, 0x0046, 0x8180, 0x7243, 
             0x4A6A, 0xCD3E, 0xCCCC, 0x5C3D, 0x0900, 0x0000, 0x7400, 0x6972, 
             0x0067, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 0x8000, 0x003F, 
             0x8000, 0x003F, 0x8000, 0x003F
@@ -151,6 +160,8 @@ template <int NV> struct instance: public Env2_impl::Env2_t_<NV>
 		auto& clear = this->getT(0).getT(5);        // math::clear<NV>
 		auto& ahdsr = this->getT(1);                // Env2_impl::ahdsr_t<NV>
 		auto& add = this->getT(2);                  // math::add<NV>
+		auto& public_mod = this->getT(3);           // routing::public_mod
+		auto& peak1 = this->getT(4);                // Env2_impl::peak1_t
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -179,8 +190,13 @@ template <int NV> struct instance: public Env2_impl::Env2_t_<NV>
 		tempo_sync.getParameter().connectT(0, ramp); // tempo_sync -> ramp::PeriodTime
 		auto& ahdsr_p = ahdsr.getWrappedObject().getParameter();
 		ahdsr_p.getParameterT(0).connectT(0, add);                         // ahdsr -> add::Value
+		ahdsr_p.getParameterT(0).connectT(1, public_mod);                  // ahdsr -> public_mod::Value
 		input_toggle.getWrappedObject().getParameter().connectT(0, ahdsr); // input_toggle -> ahdsr::Gate
 		peak.getParameter().connectT(0, input_toggle);                     // peak -> input_toggle::Value2
+		
+		// Public Mod Connection -------------------------------------------------------------------
+		
+		public_mod.connect(*this);
 		
 		// Default Values --------------------------------------------------------------------------
 		
@@ -213,15 +229,17 @@ template <int NV> struct instance: public Env2_impl::Env2_t_<NV>
 		
 		; // add::Value is automated
 		
-		this->setParameterT(0, 1.);
+		; // public_mod::Value is automated
+		
+		this->setParameterT(0, 3.);
 		this->setParameterT(1, 1.);
 		this->setParameterT(2, 1.);
 		this->setParameterT(3, 1);
-		this->setParameterT(4, 9117.);
-		this->setParameterT(5, 0.);
+		this->setParameterT(4, 0.);
+		this->setParameterT(5, 315.5);
 		this->setParameterT(6, 0.);
-		this->setParameterT(7, 0.22);
-		this->setParameterT(8, 198.);
+		this->setParameterT(7, 0.);
+		this->setParameterT(8, 259.);
 		this->setParameterT(9, 1.);
 		this->setExternalData({}, -1);
 	}
@@ -247,6 +265,7 @@ template <int NV> struct instance: public Env2_impl::Env2_t_<NV>
 		this->getT(0).getT(1).setExternalData(b, index); // Env2_impl::ramp_t<NV>
 		this->getT(0).getT(3).setExternalData(b, index); // Env2_impl::peak_t<NV>
 		this->getT(1).setExternalData(b, index);         // Env2_impl::ahdsr_t<NV>
+		this->getT(4).setExternalData(b, index);         // Env2_impl::peak1_t
 	}
 };
 }

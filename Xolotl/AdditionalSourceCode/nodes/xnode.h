@@ -21,20 +21,61 @@ template <int NV> using oscillator11_t = oscillator9_t<NV>;
 template <int NV>
 using file_player5_t = wrap::data<core::file_player<NV>, 
                                   data::external::audiofile<0>>;
+
 template <int NV> using oscillator13_t = oscillator9_t<NV>;
+template <int NV> using oscillator15_t = oscillator9_t<NV>;
 
 template <int NV>
-using pma_unscaled3_t = control::pma_unscaled<NV, 
-                                              parameter::plain<filters::ladder<NV>, 0>>;
-template <int NV>
-using converter4_t = control::converter<parameter::plain<pma_unscaled3_t<NV>, 2>, 
-                                        conversion_logic::midi2freq>;
-template <int NV>
-using midi2_t = wrap::mod<parameter::plain<converter4_t<NV>, 0>, 
-                          control::midi<midi_logic::notenumber<NV>>>;
+using pma_unscaled3_mod = parameter::chain<ranges::Identity, 
+                                           parameter::plain<oscillator13_t<NV>, 2>, 
+                                           parameter::plain<oscillator15_t<NV>, 2>>;
 
 template <int NV>
-using normaliser_t = control::normaliser<parameter::plain<pma_unscaled3_t<NV>, 0>>;
+using pma_unscaled3_t = control::pma_unscaled<NV, pma_unscaled3_mod<NV>>;
+
+DECLARE_PARAMETER_RANGE_SKEW(xfader_c0Range, 
+                             -100., 
+                             0., 
+                             5.42227);
+
+template <int NV>
+using xfader_c0 = parameter::from0To1<core::gain<NV>, 
+                                      0, 
+                                      xfader_c0Range>;
+
+template <int NV> using xfader_c1 = xfader_c0<NV>;
+
+template <int NV>
+using xfader_multimod = parameter::list<xfader_c0<NV>, xfader_c1<NV>>;
+
+template <int NV>
+using xfader_t = control::xfader<xfader_multimod<NV>, faders::overlap>;
+
+template <int NV>
+using chain2_t = container::chain<parameter::empty, 
+                                  wrap::fix<2, oscillator13_t<NV>>, 
+                                  core::gain<NV>>;
+
+template <int NV>
+using chain7_t = container::chain<parameter::empty, 
+                                  wrap::fix<2, oscillator15_t<NV>>, 
+                                  core::gain<NV>>;
+
+template <int NV>
+using split_t = container::split<parameter::empty, 
+                                 wrap::fix<2, chain2_t<NV>>, 
+                                 chain7_t<NV>>;
+
+template <int NV>
+using chain1_t = container::chain<parameter::empty, 
+                                  wrap::fix<2, xfader_t<NV>>, 
+                                  split_t<NV>>;
+
+template <int NV>
+using converter_t = control::converter<parameter::plain<fx::sampleandhold<NV>, 0>, 
+                                       conversion_logic::freq2samples>;
+template <int NV>
+using normaliser_t = control::normaliser<parameter::plain<converter_t<NV>, 0>>;
 
 namespace chain45_t_parameters
 {
@@ -58,12 +99,11 @@ using harm = parameter::chain<harm_InputRange, harm_0<NV>>;
 
 template <int NV>
 using chain45_t = container::chain<chain45_t_parameters::harm<NV>, 
-                                   wrap::fix<2, oscillator13_t<NV>>, 
-                                   midi2_t<NV>, 
-                                   converter4_t<NV>, 
+                                   wrap::fix<2, pma_unscaled3_t<NV>>, 
+                                   chain1_t<NV>, 
                                    normaliser_t<NV>, 
-                                   pma_unscaled3_t<NV>, 
-                                   filters::ladder<NV>>;
+                                   converter_t<NV>, 
+                                   fx::sampleandhold<NV>>;
 template <int NV> using oscillator12_t = oscillator9_t<NV>;
 template <int NV> using oscillator14_t = oscillator9_t<NV>;
 
@@ -83,40 +123,24 @@ using pma_unscaled1_mod = parameter::chain<ranges::Identity,
 template <int NV>
 using pma_unscaled1_t = control::pma_unscaled<NV, pma_unscaled1_mod<NV>>;
 template <int NV>
-using pma_unscaled2_t = control::pma_unscaled<NV, 
-                                              parameter::plain<pma_unscaled1_t<NV>, 2>>;
-template <int NV>
 using pma_unscaled_t = control::pma_unscaled<NV, 
-                                             parameter::plain<pma_unscaled2_t<NV>, 2>>;
+                                             parameter::plain<pma_unscaled1_t<NV>, 2>>;
 template <int NV>
 using minmax_t = control::minmax<NV, 
                                  parameter::plain<pma_unscaled_t<NV>, 2>>;
 
 template <int NV>
-using midi_cc_t = control::midi_cc<parameter::plain<pma_unscaled2_t<NV>, 0>>;
-
-template <int NV>
 using modchain1_t_ = container::chain<parameter::empty, 
                                       wrap::fix<1, minmax_t<NV>>, 
                                       pma_unscaled_t<NV>, 
-                                      midi_cc_t<NV>, 
-                                      pma_unscaled2_t<NV>, 
                                       pma_unscaled1_t<NV>>;
 
 template <int NV>
 using modchain1_t = wrap::control_rate<modchain1_t_<NV>>;
 
-DECLARE_PARAMETER_RANGE_SKEW(xfader2_c0Range, 
-                             -100., 
-                             0., 
-                             5.42227);
+template <int NV> using xfader2_c0 = xfader_c0<NV>;
 
-template <int NV>
-using xfader2_c0 = parameter::from0To1<core::gain<NV>, 
-                                       0, 
-                                       xfader2_c0Range>;
-
-template <int NV> using xfader2_c1 = xfader2_c0<NV>;
+template <int NV> using xfader2_c1 = xfader_c0<NV>;
 
 template <int NV>
 using xfader2_multimod = parameter::list<xfader2_c0<NV>, xfader2_c1<NV>>;
@@ -317,7 +341,7 @@ using pma_mod = parameter::chain<ranges::Identity,
 template <int NV>
 using pma_t = control::pma<NV, pma_mod<NV>>;
 
-template <int NV> using pma1_mod = xfader2_c0<NV>;
+template <int NV> using pma1_mod = xfader_c0<NV>;
 
 template <int NV>
 using pma1_t = control::pma<NV, pma1_mod<NV>>;
@@ -326,7 +350,8 @@ template <int NV>
 using peak_mod = parameter::chain<ranges::Identity, 
                                   parameter::plain<pma_unscaled1_t<NV>, 0>, 
                                   parameter::plain<pma_t<NV>, 0>, 
-                                  parameter::plain<pma1_t<NV>, 0>>;
+                                  parameter::plain<pma1_t<NV>, 0>, 
+                                  parameter::plain<pma_unscaled3_t<NV>, 0>>;
 
 template <int NV>
 using peak_t = wrap::mod<peak_mod<NV>, 
@@ -341,9 +366,9 @@ using modchain8_t_ = container::chain<parameter::empty,
 template <int NV>
 using modchain8_t = wrap::control_rate<modchain8_t_<NV>>;
 
-template <int NV> using xfader1_c0 = xfader2_c0<NV>;
+template <int NV> using xfader1_c0 = xfader_c0<NV>;
 
-template <int NV> using xfader1_c1 = xfader2_c0<NV>;
+template <int NV> using xfader1_c1 = xfader_c0<NV>;
 
 template <int NV>
 using xfader1_multimod = parameter::list<xfader1_c0<NV>, xfader1_c1<NV>>;
@@ -549,6 +574,11 @@ using FxValue = parameter::chain<ranges::Identity,
                                  FxValue_0<NV>, 
                                  FxValue_1<NV>>;
 
+template <int NV>
+using shPitch = parameter::chain<ranges::Identity, 
+                                 parameter::plain<xnode_impl::pma_unscaled1_t<NV>, 1>, 
+                                 parameter::plain<xnode_impl::pma_unscaled3_t<NV>, 1>>;
+
 DECLARE_PARAMETER_RANGE_SKEW(FilterRes_InputRange, 
                              0.3, 
                              1., 
@@ -585,31 +615,26 @@ using ShSmooth = parameter::chain<ranges::Identity,
                                   parameter::plain<core::smoother<NV>, 0>, 
                                   parameter::plain<core::smoother<NV>, 0>>;
 
-template <int NV>
-using OscShapes_1 = parameter::from0To1<filters::ladder<NV>, 
-                                        1, 
-                                        FilterRes_0Range>;
-
-DECLARE_PARAMETER_RANGE_STEP(OscShapes_2Range, 
+DECLARE_PARAMETER_RANGE_STEP(OscShapes_1Range, 
                              0., 
                              20., 
                              0.1);
 
 template <int NV>
-using OscShapes_2 = parameter::from0To1<core::gain<NV>, 
+using OscShapes_1 = parameter::from0To1<core::gain<NV>, 
                                         0, 
-                                        OscShapes_2Range>;
+                                        OscShapes_1Range>;
 
-template <int NV> using OscShapes_3 = OscShapes_2<NV>;
+template <int NV> using OscShapes_2 = OscShapes_1<NV>;
 
 template <int NV>
 using OscShapes = parameter::chain<ranges::Identity, 
                                    parameter::plain<xnode_impl::smoothed_parameter3_t<NV>, 0>, 
                                    OscShapes_1<NV>, 
                                    OscShapes_2<NV>, 
-                                   OscShapes_3<NV>, 
                                    parameter::plain<xnode_impl::xfader2_t<NV>, 0>, 
-                                   parameter::plain<core::fm, 1>>;
+                                   parameter::plain<core::fm, 1>, 
+                                   parameter::plain<xnode_impl::xfader_t<NV>, 0>>;
 
 DECLARE_PARAMETER_RANGE_STEP(TYPE_InputRange, 
                              1., 
@@ -636,12 +661,12 @@ using ShSinMix = parameter::from0To1<xnode_impl::branch1_t<NV>,
 template <int NV>
 using UserInput = parameter::from0To1<core::gain<NV>, 
                                       0, 
-                                      xnode_impl::xfader2_c0Range>;
+                                      xnode_impl::xfader_c0Range>;
 
 template <int NV>
 using snap_0 = parameter::from0To1<core::gain<NV>, 
                                    2, 
-                                   xnode_impl::xfader2_c0Range>;
+                                   xnode_impl::xfader_c0Range>;
 
 template <int NV> using snap_1 = snap_0<NV>;
 
@@ -695,9 +720,6 @@ using FxShDiv = parameter::plain<xnode_impl::tempo_sync_t<NV>,
 template <int NV>
 using FxShSync = parameter::plain<xnode_impl::tempo_sync_t<NV>, 
                                   2>;
-template <int NV>
-using shPitch = parameter::plain<xnode_impl::pma_unscaled1_t<NV>, 
-                                 1>;
 template <int NV>
 using FilterMix = parameter::plain<xnode_impl::xfader1_t<NV>, 
                                    0>;
@@ -765,7 +787,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		SNEX_METADATA_ENCODED_PARAMETERS(434)
 		{
 			0x005C, 0x0000, 0x0000, 0x6148, 0x6D72, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x3F80, 0xDE9C, 0x3E94, 0x0000, 0x3F80, 0x0000, 0x0000, 
+            0x0000, 0x3F80, 0xDE9C, 0x3ED0, 0x0000, 0x3F80, 0x0000, 0x0000, 
             0x005C, 0x0001, 0x0000, 0x696D, 0x006E, 0x0000, 0x8000, 0x003F, 
             0x8000, 0x0041, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x5C3F, 
             0x0200, 0x0000, 0x6D00, 0x7861, 0x0000, 0x0000, 0x3F80, 0x0000, 
@@ -773,7 +795,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
             0x0003, 0x0000, 0x7473, 0x7065, 0x0000, 0x0000, 0x0000, 0x0000, 
             0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x005C, 
             0x0004, 0x0000, 0x6F4D, 0x6564, 0x0000, 0x0000, 0x3F80, 0x0000, 
-            0x40C0, 0x0000, 0x4080, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x005C, 
+            0x40C0, 0x0000, 0x40C0, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x005C, 
             0x0005, 0x0000, 0x7846, 0x694D, 0x0078, 0x0000, 0x0000, 0x0000, 
             0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x5C00, 
             0x0600, 0x0000, 0x4600, 0x5678, 0x6C61, 0x6575, 0x0000, 0x0000, 
@@ -784,7 +806,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
             0x6E79, 0x0063, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 0x8000, 
             0x003F, 0x8000, 0x003F, 0x8000, 0x5C3F, 0x0900, 0x0000, 0x7300, 
             0x5068, 0x7469, 0x6863, 0x0000, 0x0000, 0xBF80, 0x0000, 0x3F80, 
-            0x590B, 0xBC88, 0x0000, 0x3F80, 0x0000, 0x0000, 0x005C, 0x000A, 
+            0x0000, 0xBD20, 0x0000, 0x3F80, 0x0000, 0x0000, 0x005C, 0x000A, 
             0x0000, 0x6946, 0x746C, 0x7265, 0x694D, 0x0078, 0x0000, 0x0000, 
             0x0000, 0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 
             0x5C00, 0x0B00, 0x0000, 0x4600, 0x6C69, 0x6574, 0x5472, 0x7079, 
@@ -837,9 +859,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& modchain1 = this->getT(0).getT(0);                                                  // xnode_impl::modchain1_t<NV>
 		auto& minmax = this->getT(0).getT(0).getT(0);                                             // xnode_impl::minmax_t<NV>
 		auto& pma_unscaled = this->getT(0).getT(0).getT(1);                                       // xnode_impl::pma_unscaled_t<NV>
-		auto& midi_cc = this->getT(0).getT(0).getT(2);                                            // xnode_impl::midi_cc_t<NV>
-		auto& pma_unscaled2 = this->getT(0).getT(0).getT(3);                                      // xnode_impl::pma_unscaled2_t<NV>
-		auto& pma_unscaled1 = this->getT(0).getT(0).getT(4);                                      // xnode_impl::pma_unscaled1_t<NV>
+		auto& pma_unscaled1 = this->getT(0).getT(0).getT(2);                                      // xnode_impl::pma_unscaled1_t<NV>
 		auto& chain9 = this->getT(0).getT(1);                                                     // xnode_impl::chain9_t<NV>
 		auto& chain32 = this->getT(0).getT(1).getT(0);                                            // xnode_impl::chain32_t<NV>
 		auto& branch = this->getT(0).getT(1).getT(0).getT(0);                                     // xnode_impl::branch_t<NV>
@@ -901,18 +921,38 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& rect1 = this->getT(0).getT(1).getT(0).getT(0).                                      // math::rect<NV>
                       getT(0).getT(0).getT(4).getT(4);
 		auto& chain45 = this->getT(0).getT(1).getT(0).getT(0).getT(0).getT(0).getT(5);            // xnode_impl::chain45_t<NV>
-		auto& oscillator13 = this->getT(0).getT(1).getT(0).getT(0).                               // xnode_impl::oscillator13_t<NV>
-                             getT(0).getT(0).getT(5).getT(0);
-		auto& midi2 = this->getT(0).getT(1).getT(0).getT(0).                                      // xnode_impl::midi2_t<NV>
-                      getT(0).getT(0).getT(5).getT(1);
-		auto& converter4 = this->getT(0).getT(1).getT(0).getT(0).                                 // xnode_impl::converter4_t<NV>
-                           getT(0).getT(0).getT(5).getT(2);
-		auto& normaliser = this->getT(0).getT(1).getT(0).getT(0).                                 // xnode_impl::normaliser_t<NV>
-                           getT(0).getT(0).getT(5).getT(3);
 		auto& pma_unscaled3 = this->getT(0).getT(1).getT(0).getT(0).                              // xnode_impl::pma_unscaled3_t<NV>
-                              getT(0).getT(0).getT(5).getT(4);
-		auto& ladder = this->getT(0).getT(1).getT(0).getT(0).                                     // filters::ladder<NV>
-                       getT(0).getT(0).getT(5).getT(5);
+                              getT(0).getT(0).getT(5).getT(0);
+		auto& chain1 = this->getT(0).getT(1).getT(0).getT(0).                                     // xnode_impl::chain1_t<NV>
+                       getT(0).getT(0).getT(5).getT(1);
+		auto& xfader = this->getT(0).getT(1).getT(0).getT(0).                                     // xnode_impl::xfader_t<NV>
+                       getT(0).getT(0).getT(5).getT(1).
+                       getT(0);
+		auto& split = this->getT(0).getT(1).getT(0).getT(0).                                      // xnode_impl::split_t<NV>
+                      getT(0).getT(0).getT(5).getT(1).
+                      getT(1);
+		auto& chain2 = this->getT(0).getT(1).getT(0).getT(0).getT(0).                             // xnode_impl::chain2_t<NV>
+                       getT(0).getT(5).getT(1).getT(1).getT(0);
+		auto& oscillator13 = this->getT(0).getT(1).getT(0).getT(0).getT(0).                       // xnode_impl::oscillator13_t<NV>
+                             getT(0).getT(5).getT(1).getT(1).getT(0).
+                             getT(0);
+		auto& gain = this->getT(0).getT(1).getT(0).getT(0).getT(0).                               // core::gain<NV>
+                     getT(0).getT(5).getT(1).getT(1).getT(0).
+                     getT(1);
+		auto& chain7 = this->getT(0).getT(1).getT(0).getT(0).getT(0).                             // xnode_impl::chain7_t<NV>
+                       getT(0).getT(5).getT(1).getT(1).getT(1);
+		auto& oscillator15 = this->getT(0).getT(1).getT(0).getT(0).getT(0).                       // xnode_impl::oscillator15_t<NV>
+                             getT(0).getT(5).getT(1).getT(1).getT(1).
+                             getT(0);
+		auto& gain7 = this->getT(0).getT(1).getT(0).getT(0).getT(0).                              // core::gain<NV>
+                      getT(0).getT(5).getT(1).getT(1).getT(1).
+                      getT(1);
+		auto& normaliser = this->getT(0).getT(1).getT(0).getT(0).                                 // xnode_impl::normaliser_t<NV>
+                           getT(0).getT(0).getT(5).getT(2);
+		auto& converter = this->getT(0).getT(1).getT(0).getT(0).                                  // xnode_impl::converter_t<NV>
+                          getT(0).getT(0).getT(5).getT(3);
+		auto& sampleandhold2 = this->getT(0).getT(1).getT(0).getT(0).                             // fx::sampleandhold<NV>
+                               getT(0).getT(0).getT(5).getT(4);
 		auto& chain15 = this->getT(0).getT(1).getT(0).getT(0).getT(1);                            // xnode_impl::chain15_t<NV>
 		auto& chain37 = this->getT(0).getT(1).getT(0).getT(0).getT(1).getT(0);                    // xnode_impl::chain37_t<NV>
 		auto& file_player5 = this->getT(0).getT(1).getT(0).getT(0).getT(1).getT(0).getT(0);       // xnode_impl::file_player5_t<NV>
@@ -989,7 +1029,9 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		this->getParameterT(8).connectT(0, tempo_sync); // FxShSync -> tempo_sync::Enabled
 		
-		this->getParameterT(9).connectT(0, pma_unscaled1); // shPitch -> pma_unscaled1::Multiply
+		auto& shPitch_p = this->getParameterT(9);
+		shPitch_p.connectT(0, pma_unscaled1); // shPitch -> pma_unscaled1::Multiply
+		shPitch_p.connectT(1, pma_unscaled3); // shPitch -> pma_unscaled3::Multiply
 		
 		this->getParameterT(10).connectT(0, xfader1); // FilterMix -> xfader1::Value
 		
@@ -1014,11 +1056,11 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		auto& OscShapes_p = this->getParameterT(17);
 		OscShapes_p.connectT(0, smoothed_parameter3); // OscShapes -> smoothed_parameter3::Value
-		OscShapes_p.connectT(1, ladder);              // OscShapes -> ladder::Q
-		OscShapes_p.connectT(2, gain4);               // OscShapes -> gain4::Gain
-		OscShapes_p.connectT(3, gain6);               // OscShapes -> gain6::Gain
-		OscShapes_p.connectT(4, xfader2);             // OscShapes -> xfader2::Value
-		OscShapes_p.connectT(5, fm);                  // OscShapes -> fm::Modulator
+		OscShapes_p.connectT(1, gain4);               // OscShapes -> gain4::Gain
+		OscShapes_p.connectT(2, gain6);               // OscShapes -> gain6::Gain
+		OscShapes_p.connectT(3, xfader2);             // OscShapes -> xfader2::Value
+		OscShapes_p.connectT(4, fm);                  // OscShapes -> fm::Modulator
+		OscShapes_p.connectT(5, xfader);              // OscShapes -> xfader::Value
 		
 		this->getParameterT(18).connectT(0, branch); // TYPE -> branch::Index
 		
@@ -1042,24 +1084,25 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		// Modulation Connections ------------------------------------------------------------------
 		
-		pma_unscaled3.getWrappedObject().getParameter().connectT(0, ladder);        // pma_unscaled3 -> ladder::Frequency
-		converter4.getWrappedObject().getParameter().connectT(0, pma_unscaled3);    // converter4 -> pma_unscaled3::Add
-		midi2.getParameter().connectT(0, converter4);                               // midi2 -> converter4::Value
-		normaliser.getWrappedObject().getParameter().connectT(0, pma_unscaled3);    // normaliser -> pma_unscaled3::Value
-		pma_unscaled1.getWrappedObject().getParameter().connectT(0, oscillator9);   // pma_unscaled1 -> oscillator9::FreqRatio
-		pma_unscaled1.getWrappedObject().getParameter().connectT(1, phasor4);       // pma_unscaled1 -> phasor4::FreqRatio
-		pma_unscaled1.getWrappedObject().getParameter().connectT(2, oscillator11);  // pma_unscaled1 -> oscillator11::FreqRatio
-		pma_unscaled1.getWrappedObject().getParameter().connectT(3, file_player5);  // pma_unscaled1 -> file_player5::FreqRatio
-		pma_unscaled1.getWrappedObject().getParameter().connectT(4, phasor5);       // pma_unscaled1 -> phasor5::FreqRatio
-		pma_unscaled1.getWrappedObject().getParameter().connectT(5, chain45);       // pma_unscaled1 -> chain45::harm
-		pma_unscaled1.getWrappedObject().getParameter().connectT(6, oscillator12);  // pma_unscaled1 -> oscillator12::FreqRatio
-		pma_unscaled1.getWrappedObject().getParameter().connectT(7, phasor);        // pma_unscaled1 -> phasor::FreqRatio
-		pma_unscaled1.getWrappedObject().getParameter().connectT(8, fm);            // pma_unscaled1 -> fm::FreqMultiplier
-		pma_unscaled1.getWrappedObject().getParameter().connectT(9, oscillator14);  // pma_unscaled1 -> oscillator14::FreqRatio
-		pma_unscaled2.getWrappedObject().getParameter().connectT(0, pma_unscaled1); // pma_unscaled2 -> pma_unscaled1::Add
-		pma_unscaled.getWrappedObject().getParameter().connectT(0, pma_unscaled2);  // pma_unscaled -> pma_unscaled2::Add
-		minmax.getWrappedObject().getParameter().connectT(0, pma_unscaled);         // minmax -> pma_unscaled::Add
-		midi_cc.getWrappedObject().getParameter().connectT(0, pma_unscaled2);       // midi_cc -> pma_unscaled2::Value
+		pma_unscaled3.getWrappedObject().getParameter().connectT(0, oscillator13); // pma_unscaled3 -> oscillator13::FreqRatio
+		pma_unscaled3.getWrappedObject().getParameter().connectT(1, oscillator15); // pma_unscaled3 -> oscillator15::FreqRatio
+		auto& xfader_p = xfader.getWrappedObject().getParameter();
+		xfader_p.getParameterT(0).connectT(0, gain);                               // xfader -> gain::Gain
+		xfader_p.getParameterT(1).connectT(0, gain7);                              // xfader -> gain7::Gain
+		converter.getWrappedObject().getParameter().connectT(0, sampleandhold2);   // converter -> sampleandhold2::Counter
+		normaliser.getWrappedObject().getParameter().connectT(0, converter);       // normaliser -> converter::Value
+		pma_unscaled1.getWrappedObject().getParameter().connectT(0, oscillator9);  // pma_unscaled1 -> oscillator9::FreqRatio
+		pma_unscaled1.getWrappedObject().getParameter().connectT(1, phasor4);      // pma_unscaled1 -> phasor4::FreqRatio
+		pma_unscaled1.getWrappedObject().getParameter().connectT(2, oscillator11); // pma_unscaled1 -> oscillator11::FreqRatio
+		pma_unscaled1.getWrappedObject().getParameter().connectT(3, file_player5); // pma_unscaled1 -> file_player5::FreqRatio
+		pma_unscaled1.getWrappedObject().getParameter().connectT(4, phasor5);      // pma_unscaled1 -> phasor5::FreqRatio
+		pma_unscaled1.getWrappedObject().getParameter().connectT(5, chain45);      // pma_unscaled1 -> chain45::harm
+		pma_unscaled1.getWrappedObject().getParameter().connectT(6, oscillator12); // pma_unscaled1 -> oscillator12::FreqRatio
+		pma_unscaled1.getWrappedObject().getParameter().connectT(7, phasor);       // pma_unscaled1 -> phasor::FreqRatio
+		pma_unscaled1.getWrappedObject().getParameter().connectT(8, fm);           // pma_unscaled1 -> fm::FreqMultiplier
+		pma_unscaled1.getWrappedObject().getParameter().connectT(9, oscillator14); // pma_unscaled1 -> oscillator14::FreqRatio
+		pma_unscaled.getWrappedObject().getParameter().connectT(0, pma_unscaled1); // pma_unscaled -> pma_unscaled1::Add
+		minmax.getWrappedObject().getParameter().connectT(0, pma_unscaled);        // minmax -> pma_unscaled::Add
 		auto& xfader2_p = xfader2.getWrappedObject().getParameter();
 		xfader2_p.getParameterT(0).connectT(0, gain26);             // xfader2 -> gain26::Gain
 		xfader2_p.getParameterT(1).connectT(0, gain27);             // xfader2 -> gain27::Gain
@@ -1076,6 +1119,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		peak.getParameter().connectT(0, pma_unscaled1);             // peak -> pma_unscaled1::Value
 		peak.getParameter().connectT(1, pma);                       // peak -> pma::Value
 		peak.getParameter().connectT(2, pma1);                      // peak -> pma1::Value
+		peak.getParameter().connectT(3, pma_unscaled3);             // peak -> pma_unscaled3::Value
 		auto& xfader1_p = xfader1.getWrappedObject().getParameter();
 		xfader1_p.getParameterT(0).connectT(0, gain2);                   // xfader1 -> gain2::Gain
 		xfader1_p.getParameterT(1).connectT(0, gain3);                   // xfader1 -> gain3::Gain
@@ -1093,14 +1137,6 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		;                                  // pma_unscaled::Value is automated
 		pma_unscaled.setParameterT(1, 1.); // control::pma_unscaled::Multiply
 		;                                  // pma_unscaled::Add is automated
-		
-		midi_cc.setParameterT(0, 128.); // control::midi_cc::CCNumber
-		midi_cc.setParameterT(1, 0.);   // control::midi_cc::EnableMPE
-		midi_cc.setParameterT(2, 0.);   // control::midi_cc::DefaultValue
-		
-		;                                   // pma_unscaled2::Value is automated
-		pma_unscaled2.setParameterT(1, 1.); // control::pma_unscaled::Multiply
-		;                                   // pma_unscaled2::Add is automated
 		
 		; // pma_unscaled1::Value is automated
 		; // pma_unscaled1::Multiply is automated
@@ -1187,27 +1223,39 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		; // chain45::harm is automated
 		
+		;                                   // pma_unscaled3::Value is automated
+		;                                   // pma_unscaled3::Multiply is automated
+		pma_unscaled3.setParameterT(2, 2.); // control::pma_unscaled::Add
+		
+		; // xfader::Value is automated
+		
 		oscillator13.setParameterT(0, 4.);   // core::oscillator::Mode
 		oscillator13.setParameterT(1, 220.); // core::oscillator::Frequency
-		oscillator13.setParameterT(2, 1.);   // core::oscillator::FreqRatio
+		;                                    // oscillator13::FreqRatio is automated
 		oscillator13.setParameterT(3, 1.);   // core::oscillator::Gate
 		oscillator13.setParameterT(4, 0.);   // core::oscillator::Phase
 		oscillator13.setParameterT(5, 1.);   // core::oscillator::Gain
 		
-		; // converter4::Value is automated
+		;                           // gain::Gain is automated
+		gain.setParameterT(1, 20.); // core::gain::Smoothing
+		gain.setParameterT(2, 0.);  // core::gain::ResetValue
+		
+		oscillator15.setParameterT(0, 0.);   // core::oscillator::Mode
+		oscillator15.setParameterT(1, 220.); // core::oscillator::Frequency
+		;                                    // oscillator15::FreqRatio is automated
+		oscillator15.setParameterT(3, 1.);   // core::oscillator::Gate
+		oscillator15.setParameterT(4, 0.);   // core::oscillator::Phase
+		oscillator15.setParameterT(5, 1.);   // core::oscillator::Gain
+		
+		;                            // gain7::Gain is automated
+		gain7.setParameterT(1, 20.); // core::gain::Smoothing
+		gain7.setParameterT(2, 0.);  // core::gain::ResetValue
 		
 		; // normaliser::Value is automated
 		
-		;                                   // pma_unscaled3::Value is automated
-		pma_unscaled3.setParameterT(1, 1.); // control::pma_unscaled::Multiply
-		;                                   // pma_unscaled3::Add is automated
+		; // converter::Value is automated
 		
-		;                              // ladder::Frequency is automated
-		;                              // ladder::Q is automated
-		ladder.setParameterT(2, 0.);   // filters::ladder::Gain
-		ladder.setParameterT(3, 0.01); // filters::ladder::Smoothing
-		ladder.setParameterT(4, 0.);   // filters::ladder::Mode
-		ladder.setParameterT(5, 1.);   // filters::ladder::Enabled
+		; // sampleandhold2::Counter is automated
 		
 		file_player5.setParameterT(0, 2.);   // core::file_player::PlaybackMode
 		file_player5.setParameterT(1, 1.);   // core::file_player::Gate
@@ -1339,16 +1387,16 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		gain5.setParameterT(1, 167.6); // core::gain::Smoothing
 		;                              // gain5::ResetValue is automated
 		
-		this->setParameterT(0, 0.290761);
+		this->setParameterT(0, 0.407948);
 		this->setParameterT(1, 1.);
 		this->setParameterT(2, 16.);
 		this->setParameterT(3, 1.);
-		this->setParameterT(4, 4.);
+		this->setParameterT(4, 6.);
 		this->setParameterT(5, 0.);
 		this->setParameterT(6, 0.846977);
 		this->setParameterT(7, 18.);
 		this->setParameterT(8, 1.);
-		this->setParameterT(9, -0.016644);
+		this->setParameterT(9, -0.0390625);
 		this->setParameterT(10, 0.);
 		this->setParameterT(11, 3.);
 		this->setParameterT(12, 0.3);
@@ -1393,8 +1441,12 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
         getT(0).getT(0).getT(1).getT(0).setExternalData(b, index);
 		this->getT(0).getT(1).getT(0).getT(0).                                                   // xnode_impl::oscillator14_t<NV>
         getT(0).getT(0).getT(3).getT(0).setExternalData(b, index);
-		this->getT(0).getT(1).getT(0).getT(0).                                                   // xnode_impl::oscillator13_t<NV>
-        getT(0).getT(0).getT(5).getT(0).setExternalData(b, index);
+		this->getT(0).getT(1).getT(0).getT(0).getT(0).                                           // xnode_impl::oscillator13_t<NV>
+        getT(0).getT(5).getT(1).getT(1).getT(0).
+        getT(0).setExternalData(b, index);
+		this->getT(0).getT(1).getT(0).getT(0).getT(0).                                           // xnode_impl::oscillator15_t<NV>
+        getT(0).getT(5).getT(1).getT(1).getT(1).
+        getT(0).setExternalData(b, index);
 		this->getT(0).getT(1).getT(0).getT(0).getT(1).getT(0).getT(0).setExternalData(b, index); // xnode_impl::file_player5_t<NV>
 		this->getT(0).getT(1).getT(0).getT(0).getT(2).getT(0).getT(4).setExternalData(b, index); // xnode_impl::file_player6_t<NV>
 		this->getT(0).getT(2).getT(1).getT(0).getT(2).setExternalData(b, index);                 // xnode_impl::oscillator_t<NV>
