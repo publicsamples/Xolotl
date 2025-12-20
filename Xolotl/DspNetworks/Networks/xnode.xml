@@ -35,6 +35,22 @@
                              DefaultValue="1.0"/>
                 </Parameters>
               </Node>
+              <Node ID="smoothed_parameter_unscaled" FactoryPath="control.smoothed_parameter_unscaled"
+                    Bypassed="0" Name="smoothed_parameter_unscaled">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="pma_unscaled1" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" TextToValueConverter="Time" DefaultValue="100.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
               <Node ID="pma_unscaled1" FactoryPath="control.pma_unscaled" Bypassed="0"
                     Name="pma_unscaled">
                 <ModulationTargets>
@@ -871,10 +887,10 @@
               </Node>
               <Node ID="peak" FactoryPath="core.peak" Bypassed="0" Name="peak">
                 <ModulationTargets>
-                  <Connection NodeId="pma_unscaled1" ParameterId="Value"/>
-                  <Connection NodeId="pma" ParameterId="Value"/>
                   <Connection NodeId="pma1" ParameterId="Value"/>
                   <Connection NodeId="pma_unscaled3" ParameterId="Value"/>
+                  <Connection NodeId="smoothed_parameter_unscaled" ParameterId="Value"/>
+                  <Connection NodeId="smoothed_parameter1" ParameterId="Value"/>
                 </ModulationTargets>
                 <ComplexData>
                   <DisplayBuffers>
@@ -932,6 +948,22 @@
                       <Node ID="modchain2" FactoryPath="container.modchain" Bypassed="0"
                             Name="modchain2">
                         <Nodes>
+                          <Node ID="smoothed_parameter1" FactoryPath="control.smoothed_parameter"
+                                Bypassed="0" Name="smoothed_parameter1">
+                            <Properties>
+                              <Property ID="Mode" Value="Linear Ramp"/>
+                            </Properties>
+                            <ModulationTargets>
+                              <Connection NodeId="pma" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         ID="SmoothingTime" TextToValueConverter="Time" DefaultValue="100.0"
+                                         Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
                           <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
                             <ModulationTargets>
                               <Connection NodeId="svf" ParameterId="Frequency"/>
@@ -1103,8 +1135,8 @@
               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                          SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.3000000044703484"
-                         DefaultValue="20.0"/>
+                         SkewFactor="0.3010300099849701" ID="Smoothing" DefaultValue="20.0"
+                         Automated="1"/>
               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                          SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
             </Parameters>
@@ -1148,7 +1180,7 @@
           <Connection NodeId="minmax" ParameterId="Step"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Mode" MinValue="1.0" MaxValue="6.0" StepSize="1.0" Value="4.0"
+      <Parameter ID="Mode" MinValue="1.0" MaxValue="6.0" StepSize="1.0" Value="1.0"
                  ExternalModulation="Disabled" TextToValueConverter="" DefaultValue="5.0">
         <Connections>
           <Connection NodeId="branch3" ParameterId="Index"/>
@@ -1178,7 +1210,7 @@
           <Connection NodeId="tempo_sync" ParameterId="Enabled"/>
         </Connections>
       </Parameter>
-      <Parameter ID="shPitch" MinValue="-1.0" MaxValue="1.0" Value="1.0" DefaultValue="-0.02781201171875003">
+      <Parameter ID="shPitch" MinValue="-1.0" MaxValue="1.0" Value="0.0" DefaultValue="-0.02781201171875003">
         <Connections>
           <Connection NodeId="pma_unscaled1" ParameterId="Multiply"/>
           <Connection NodeId="pma_unscaled3" ParameterId="Multiply"/>
@@ -1230,6 +1262,9 @@
           <Connection NodeId="ramp" ParameterId="LoopStart"/>
           <Connection NodeId="ramp1" ParameterId="LoopStart"/>
           <Connection NodeId="ramp3" ParameterId="LoopStart"/>
+          <Connection NodeId="gain9" ParameterId="Smoothing"/>
+          <Connection NodeId="smoothed_parameter_unscaled" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter1" ParameterId="SmoothingTime"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes" Value="0.0">
@@ -1249,8 +1284,8 @@
           <Connection NodeId="branch" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="ShSinMix" Value="1.0" ExternalModulation="Disabled"
-                 ModColour="0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="ShSinMix" Value="0.8109714673913043"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch1" ParameterId="Index"/>
         </Connections>
@@ -1278,8 +1313,7 @@
           <Connection NodeId="gain2" ParameterId="ResetValue"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="0.5210597826086957"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma1" ParameterId="Multiply"/>
           <Connection NodeId="cable_table" ParameterId="Value"/>

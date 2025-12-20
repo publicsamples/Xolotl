@@ -203,9 +203,19 @@ using branch1_t = container::branch<parameter::empty,
                                     chain44_t<NV>, 
                                     chain45_t<NV>>;
 
+using chain2_t = chain1_t;
+using peak1_t = wrap::data<core::peak, 
+                           data::external::displaybuffer<0>>;
+
 template <int NV>
-using peak2_t = wrap::mod<parameter::plain<math::add<NV>, 0>, 
-                          wrap::data<core::peak, data::external::displaybuffer<0>>>;
+using chain6_t = container::chain<parameter::empty, 
+                                  wrap::fix<1, peak1_t>, 
+                                  math::clear<NV>>;
+
+template <int NV>
+using split_t = container::split<parameter::empty, 
+                                 wrap::fix<1, chain2_t>, 
+                                 chain6_t<NV>>;
 
 namespace modtest1_t_parameters
 {
@@ -255,9 +265,7 @@ using modtest1_t_ = container::chain<modtest1_t_parameters::modtest1_t_plist<NV>
                                      peak_t, 
                                      pma_t<NV>, 
                                      branch1_t<NV>, 
-                                     peak2_t<NV>, 
-                                     wrap::no_process<math::clear<NV>>, 
-                                     math::add<NV>>;
+                                     split_t<NV>>;
 
 // =================================| Root node initialiser class |=================================
 
@@ -283,7 +291,7 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
             0x005C, 0x0002, 0x0000, 0x6F4D, 0x6964, 0x6966, 0x7265, 0x0073, 
             0x0000, 0x0000, 0x0000, 0x8000, 0x0040, 0x0000, 0x0000, 0x8000, 
             0x003F, 0x8000, 0x5C3F, 0x0300, 0x0000, 0x4F00, 0x5455, 0x5550, 
-            0x0054, 0x0000, 0x0000, 0x0000, 0x4000, 0x0040, 0x0000, 0x0000, 
+            0x0054, 0x0000, 0x0000, 0x0000, 0x0000, 0x0040, 0x0000, 0x0000, 
             0x8000, 0x003F, 0x8000, 0x5C3F, 0x0400, 0x0000, 0x5300, 0x6E79, 
             0x0063, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 0x8000, 0x003F, 
             0x8000, 0x003F, 0x8000, 0x5C3F, 0x0500, 0x0000, 0x5500, 0x736E, 
@@ -341,9 +349,11 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		auto& expr8 = this->getT(6).getT(3).getT(0);          // math::expr<NV, custom::expr8>
 		auto& chain45 = this->getT(6).getT(4);                // modtest1_impl::chain45_t<NV>
 		auto& expr9 = this->getT(6).getT(4).getT(0);          // math::expr<NV, custom::expr9>
-		auto& peak2 = this->getT(7);                          // modtest1_impl::peak2_t<NV>
-		auto& clear3 = this->getT(8);                         // wrap::no_process<math::clear<NV>>
-		auto& add1 = this->getT(9);                           // math::add<NV>
+		auto& split = this->getT(7);                          // modtest1_impl::split_t<NV>
+		auto& chain2 = this->getT(7).getT(0);                 // modtest1_impl::chain2_t
+		auto& chain6 = this->getT(7).getT(1);                 // modtest1_impl::chain6_t<NV>
+		auto& peak1 = this->getT(7).getT(1).getT(0);          // modtest1_impl::peak1_t
+		auto& clear3 = this->getT(7).getT(1).getT(1);         // math::clear<NV>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -373,7 +383,6 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		pma.getWrappedObject().getParameter().connectT(1, expr5); // pma -> expr5::Value
 		pma.getWrappedObject().getParameter().connectT(2, expr8); // pma -> expr8::Value
 		pma.getWrappedObject().getParameter().connectT(3, expr9); // pma -> expr9::Value
-		peak2.getParameter().connectT(0, add1);                   // peak2 -> add1::Value
 		
 		// Default Values --------------------------------------------------------------------------
 		
@@ -447,8 +456,6 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		
 		clear3.setParameterT(0, 0.); // math::clear::Value
 		
-		; // add1::Value is automated
-		
 		this->setParameterT(0, 0.);
 		this->setParameterT(1, 1.);
 		this->setParameterT(2, 0.);
@@ -482,7 +489,7 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		this->getT(2).setExternalData(b, index);                 // modtest1_impl::ramp1_t<NV>
 		this->getT(3).getT(3).getT(0).setExternalData(b, index); // modtest1_impl::oscillator_t<NV>
 		this->getT(4).setExternalData(b, index);                 // modtest1_impl::peak_t
-		this->getT(7).setExternalData(b, index);                 // modtest1_impl::peak2_t<NV>
+		this->getT(7).getT(1).getT(0).setExternalData(b, index); // modtest1_impl::peak1_t
 	}
 };
 }

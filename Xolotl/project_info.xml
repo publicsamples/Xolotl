@@ -2,7 +2,7 @@
 
 <ProjectSettings>
   <Name value="Xolotl"/>
-  <Version value="0.8.1"/>
+  <Version value="0.8.2"/>
   <Description value=""/>
   <BundleIdentifier value="com.modularsamples.product"/>
   <PluginCode value="Msxp"/>
@@ -34,9 +34,9 @@
   <EmbedUserPresets value="0"/>
   <EnableGlobalPreprocessor value="No"/>
   <VST3Category value=""/>
-  <OverwriteOldUserPresets value="1"/>
+  <OverwriteOldUserPresets value="0"/>
   <UseGlobalAppDataFolderWindows value="1"/>
-  <UseGlobalAppDataFolderMacOS value="0"/>
+  <UseGlobalAppDataFolderMacOS value="1"/>
   <DefaultUserPreset value=""/>
   <ExtraDefinitionsNetworkDll value=""/>
   <CompileWithPerfetto value="No"/>
