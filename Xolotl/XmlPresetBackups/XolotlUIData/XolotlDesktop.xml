@@ -537,11 +537,11 @@
   <Component type="ScriptPanel" id="filter" x="391.0" y="199.0" width="310.0"
              height="195.0" itemColour="4281808695" itemColour2="4281808695"
              bgColour="4278282413" textColour="4280296744" locked="1">
-    <Component type="ScriptPanel" id="ScriptPanel5" x="68.0" y="29.0" width="190"
-               height="130" parentComponent="filter" itemColour="4281346602"
+    <Component type="ScriptPanel" id="ScriptPanel5" x="68.0" y="29.0" width="190.0"
+               height="130.0" parentComponent="filter" itemColour="4281346602"
                itemColour2="4282069554">
-      <Component type="ScriptSliderPack" id="pitch-sp4" x="10.0" y="10.0" width="170"
-                 height="110" parentComponent="ScriptPanel5" processorId="HARMONIC"
+      <Component type="ScriptSliderPack" id="pitch-sp4" x="10.0" y="10.0" width="170.0"
+                 height="110.0" parentComponent="ScriptPanel5" processorId="HARMONIC"
                  itemColour="4292480514" itemColour2="14465590" textColour="0"
                  bgColour="16711680" flashActive="0" defaultValue="0.0" SliderPackIndex="2"/>
     </Component>
@@ -909,7 +909,7 @@
                  isVertical="0" scaleFactor="0.6000000238418579" showTextBox="0"
                  showValuePopup="Below"/>
       <Component type="ScriptComboBox" id="OscWave1" x="8.0" y="8.0" width="60.0"
-                 height="25.0" max="6" parentComponent="OSC" items="Tri/Sine&#10;Sine Harminics&#10;Saw&#10;FM&#10;Pulse&#10;S&amp;H"
+                 height="25.0" max="6" parentComponent="OSC" items="Tri/Sine&#10;Sine Harminics&#10;Saw&#10;FM&#10;Pulse&#10;Noise S&amp;H"
                  bgColour="4291475358" itemColour2="4291475358" textColour="4291475358"
                  itemColour="4291475358"/>
       <Component type="ScriptLabel" id="WAVE5" x="4.0" y="36.0" width="70.0" height="20.0"

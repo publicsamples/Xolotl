@@ -21,64 +21,246 @@ template <int NV> using oscillator11_t = oscillator9_t<NV>;
 template <int NV>
 using file_player5_t = wrap::data<core::file_player<NV>, 
                                   data::external::audiofile<0>>;
-
 template <int NV> using oscillator13_t = oscillator9_t<NV>;
-template <int NV> using oscillator15_t = oscillator9_t<NV>;
-
-template <int NV>
-using pma_unscaled3_mod = parameter::chain<ranges::Identity, 
-                                           parameter::plain<oscillator13_t<NV>, 2>, 
-                                           parameter::plain<oscillator15_t<NV>, 2>>;
-
-template <int NV>
-using pma_unscaled3_t = control::pma_unscaled<NV, pma_unscaled3_mod<NV>>;
-
-DECLARE_PARAMETER_RANGE_SKEW(xfader_c0Range, 
-                             -100., 
-                             0., 
-                             5.42227);
-
-template <int NV>
-using xfader_c0 = parameter::from0To1<core::gain<NV>, 
-                                      0, 
-                                      xfader_c0Range>;
-
-template <int NV> using xfader_c1 = xfader_c0<NV>;
-
-template <int NV>
-using xfader_multimod = parameter::list<xfader_c0<NV>, xfader_c1<NV>>;
-
-template <int NV>
-using xfader_t = control::xfader<xfader_multimod<NV>, faders::overlap>;
 
 template <int NV>
 using chain2_t = container::chain<parameter::empty, 
-                                  wrap::fix<2, oscillator13_t<NV>>, 
-                                  core::gain<NV>>;
-
-template <int NV>
-using chain7_t = container::chain<parameter::empty, 
-                                  wrap::fix<2, oscillator15_t<NV>>, 
-                                  core::gain<NV>>;
-
-template <int NV>
-using split_t = container::split<parameter::empty, 
-                                 wrap::fix<2, chain2_t<NV>>, 
-                                 chain7_t<NV>>;
-
-template <int NV>
-using chain1_t = container::chain<parameter::empty, 
-                                  wrap::fix<2, xfader_t<NV>>, 
-                                  split_t<NV>>;
+                                  wrap::fix<2, oscillator13_t<NV>>>;
 
 template <int NV>
 using tempo_sync2_t = wrap::mod<parameter::plain<fx::sampleandhold<NV>, 0>, 
                                 control::tempo_sync<NV>>;
+DECLARE_PARAMETER_RANGE_STEP(cable_table1_modRange, 
+                             1., 
+                             16., 
+                             1.);
 
 template <int NV>
-using chain45_t = container::chain<parameter::empty, 
-                                   wrap::fix<2, pma_unscaled3_t<NV>>, 
-                                   chain1_t<NV>, 
+using cable_table1_mod = parameter::from0To1<tempo_sync2_t<NV>, 
+                                             1, 
+                                             cable_table1_modRange>;
+
+struct cable_table1_t_data
+{
+	span<float, 512> data =
+	{
+		1.f, 0.998043f, 0.996086f, 0.994129f, 0.992172f, 0.990215f,
+		0.988258f, 0.986301f, 0.984344f, 0.982387f, 0.980431f, 0.978474f,
+		0.976517f, 0.97456f, 0.972603f, 0.970646f, 0.968689f, 0.966732f,
+		0.964775f, 0.962818f, 0.960861f, 0.958904f, 0.956947f, 0.95499f,
+		0.953033f, 0.951076f, 0.949119f, 0.947162f, 0.945205f, 0.943249f,
+		0.941292f, 0.939335f, 0.937378f, 0.935421f, 0.933464f, 0.931507f,
+		0.92955f, 0.927593f, 0.925636f, 0.923679f, 0.921722f, 0.919765f,
+		0.917808f, 0.915851f, 0.913894f, 0.911937f, 0.90998f, 0.908023f,
+		0.906067f, 0.90411f, 0.902153f, 0.900196f, 0.898239f, 0.896282f,
+		0.894325f, 0.892368f, 0.890411f, 0.888454f, 0.886497f, 0.88454f,
+		0.882583f, 0.880626f, 0.878669f, 0.876712f, 0.874755f, 0.872798f,
+		0.870842f, 0.868885f, 0.866928f, 0.864971f, 0.863014f, 0.861057f,
+		0.8591f, 0.857143f, 0.855186f, 0.853229f, 0.851272f, 0.849315f,
+		0.847358f, 0.845401f, 0.843444f, 0.841487f, 0.83953f, 0.837573f,
+		0.835616f, 0.833659f, 0.831703f, 0.829746f, 0.827789f, 0.825832f,
+		0.823875f, 0.821918f, 0.819961f, 0.818004f, 0.816047f, 0.81409f,
+		0.812133f, 0.810176f, 0.808219f, 0.806262f, 0.804305f, 0.802348f,
+		0.800391f, 0.798434f, 0.796477f, 0.794521f, 0.792564f, 0.790607f,
+		0.78865f, 0.786693f, 0.784736f, 0.782779f, 0.780822f, 0.778865f,
+		0.776908f, 0.774951f, 0.772994f, 0.771037f, 0.76908f, 0.767123f,
+		0.765166f, 0.763209f, 0.761252f, 0.759295f, 0.757339f, 0.755382f,
+		0.753425f, 0.751468f, 0.749511f, 0.747554f, 0.745597f, 0.74364f,
+		0.741683f, 0.739726f, 0.737769f, 0.735812f, 0.733855f, 0.731898f,
+		0.729941f, 0.727984f, 0.726027f, 0.72407f, 0.722113f, 0.720157f,
+		0.7182f, 0.716243f, 0.714286f, 0.712329f, 0.710372f, 0.708415f,
+		0.706458f, 0.704501f, 0.702544f, 0.700587f, 0.69863f, 0.696673f,
+		0.694716f, 0.692759f, 0.690802f, 0.688845f, 0.686888f, 0.684932f,
+		0.682975f, 0.681018f, 0.679061f, 0.677104f, 0.675147f, 0.67319f,
+		0.671233f, 0.669276f, 0.667319f, 0.665362f, 0.663405f, 0.661448f,
+		0.659491f, 0.657534f, 0.655577f, 0.65362f, 0.651663f, 0.649706f,
+		0.64775f, 0.645793f, 0.643836f, 0.641879f, 0.639922f, 0.637965f,
+		0.636008f, 0.634051f, 0.632094f, 0.630137f, 0.62818f, 0.626223f,
+		0.624266f, 0.622309f, 0.620352f, 0.618395f, 0.616438f, 0.614481f,
+		0.612524f, 0.610568f, 0.608611f, 0.606654f, 0.604697f, 0.60274f,
+		0.600783f, 0.598826f, 0.596869f, 0.594912f, 0.592955f, 0.590998f,
+		0.589041f, 0.587084f, 0.585127f, 0.58317f, 0.581213f, 0.579256f,
+		0.577299f, 0.575342f, 0.573385f, 0.571429f, 0.569472f, 0.567515f,
+		0.565558f, 0.563601f, 0.561644f, 0.559687f, 0.55773f, 0.555773f,
+		0.553816f, 0.551859f, 0.549902f, 0.547945f, 0.545988f, 0.544031f,
+		0.542074f, 0.540117f, 0.53816f, 0.536204f, 0.534247f, 0.53229f,
+		0.530333f, 0.528376f, 0.526419f, 0.524462f, 0.522505f, 0.520548f,
+		0.518591f, 0.516634f, 0.514677f, 0.51272f, 0.510763f, 0.508806f,
+		0.506849f, 0.504892f, 0.502935f, 0.500978f, 0.499022f, 0.497065f,
+		0.495108f, 0.493151f, 0.491194f, 0.489237f, 0.48728f, 0.485323f,
+		0.483366f, 0.481409f, 0.479452f, 0.477495f, 0.475538f, 0.473581f,
+		0.471624f, 0.469667f, 0.46771f, 0.465753f, 0.463796f, 0.46184f,
+		0.459883f, 0.457926f, 0.455969f, 0.454012f, 0.452055f, 0.450098f,
+		0.448141f, 0.446184f, 0.444227f, 0.44227f, 0.440313f, 0.438356f,
+		0.436399f, 0.434442f, 0.432485f, 0.430528f, 0.428571f, 0.426614f,
+		0.424658f, 0.422701f, 0.420744f, 0.418787f, 0.41683f, 0.414873f,
+		0.412916f, 0.410959f, 0.409002f, 0.407045f, 0.405088f, 0.403131f,
+		0.401174f, 0.399217f, 0.39726f, 0.395303f, 0.393346f, 0.391389f,
+		0.389432f, 0.387476f, 0.385519f, 0.383562f, 0.381605f, 0.379648f,
+		0.377691f, 0.375734f, 0.373777f, 0.37182f, 0.369863f, 0.367906f,
+		0.365949f, 0.363992f, 0.362035f, 0.360078f, 0.358121f, 0.356164f,
+		0.354207f, 0.352251f, 0.350294f, 0.348337f, 0.34638f, 0.344423f,
+		0.342466f, 0.340509f, 0.338552f, 0.336595f, 0.334638f, 0.332681f,
+		0.330724f, 0.328767f, 0.32681f, 0.324853f, 0.322896f, 0.320939f,
+		0.318982f, 0.317025f, 0.315068f, 0.313112f, 0.311155f, 0.309198f,
+		0.307241f, 0.305284f, 0.303327f, 0.30137f, 0.299413f, 0.297456f,
+		0.295499f, 0.293542f, 0.291585f, 0.289628f, 0.287671f, 0.285714f,
+		0.283757f, 0.2818f, 0.279843f, 0.277887f, 0.27593f, 0.273973f,
+		0.272016f, 0.270059f, 0.268102f, 0.266145f, 0.264188f, 0.262231f,
+		0.260274f, 0.258317f, 0.25636f, 0.254403f, 0.252446f, 0.250489f,
+		0.248532f, 0.246575f, 0.244618f, 0.242661f, 0.240704f, 0.238748f,
+		0.236791f, 0.234834f, 0.232877f, 0.23092f, 0.228963f, 0.227006f,
+		0.225049f, 0.223092f, 0.221135f, 0.219178f, 0.217221f, 0.215264f,
+		0.213307f, 0.21135f, 0.209393f, 0.207436f, 0.205479f, 0.203523f,
+		0.201566f, 0.199609f, 0.197652f, 0.195695f, 0.193738f, 0.191781f,
+		0.189824f, 0.187867f, 0.18591f, 0.183953f, 0.181996f, 0.180039f,
+		0.178082f, 0.176125f, 0.174168f, 0.172211f, 0.170254f, 0.168297f,
+		0.166341f, 0.164384f, 0.162427f, 0.16047f, 0.158513f, 0.156556f,
+		0.154599f, 0.152642f, 0.150685f, 0.148728f, 0.146771f, 0.144814f,
+		0.142857f, 0.1409f, 0.138943f, 0.136986f, 0.135029f, 0.133072f,
+		0.131115f, 0.129158f, 0.127202f, 0.125245f, 0.123288f, 0.121331f,
+		0.119374f, 0.117417f, 0.11546f, 0.113503f, 0.111546f, 0.109589f,
+		0.107632f, 0.105675f, 0.103718f, 0.101761f, 0.0998043f, 0.0978474f,
+		0.0958903f, 0.0939335f, 0.0919765f, 0.0900196f, 0.0880627f, 0.0861056f,
+		0.0841488f, 0.0821917f, 0.0802348f, 0.0782779f, 0.0763209f, 0.0743641f,
+		0.072407f, 0.0704501f, 0.0684931f, 0.0665362f, 0.0645792f, 0.0626223f,
+		0.0606654f, 0.0587084f, 0.0567515f, 0.0547945f, 0.0528376f, 0.0508806f,
+		0.0489237f, 0.0469668f, 0.0450097f, 0.0430529f, 0.0410959f, 0.039139f,
+		0.037182f, 0.035225f, 0.0332682f, 0.0313111f, 0.0293542f, 0.0273973f,
+		0.0254403f, 0.0234835f, 0.0215264f, 0.0195695f, 0.0176125f, 0.0156556f,
+		0.0136986f, 0.0117417f, 0.00978482f, 0.00782776f, 0.00587088f, 0.00391382f,
+		0.00195694f, 0.f
+	};
+};
+
+template <int NV>
+using cable_table1_t = wrap::data<control::cable_table<cable_table1_mod<NV>>, 
+                                  data::embedded::table<cable_table1_t_data>>;
+
+DECLARE_PARAMETER_RANGE_STEP(cable_table2_modRange, 
+                             0., 
+                             18., 
+                             1.);
+
+template <int NV>
+using cable_table2_mod = parameter::from0To1<tempo_sync2_t<NV>, 
+                                             0, 
+                                             cable_table2_modRange>;
+
+struct cable_table2_t_data
+{
+	span<float, 512> data =
+	{
+		1.f, 0.998043f, 0.996086f, 0.994129f, 0.992172f, 0.990215f,
+		0.988258f, 0.986301f, 0.984344f, 0.982387f, 0.980431f, 0.978474f,
+		0.976517f, 0.97456f, 0.972603f, 0.970646f, 0.968689f, 0.966732f,
+		0.964775f, 0.962818f, 0.960861f, 0.958904f, 0.956947f, 0.95499f,
+		0.953033f, 0.951076f, 0.949119f, 0.947162f, 0.945205f, 0.943249f,
+		0.941292f, 0.939335f, 0.937378f, 0.935421f, 0.933464f, 0.931507f,
+		0.92955f, 0.927593f, 0.925636f, 0.923679f, 0.921722f, 0.919765f,
+		0.917808f, 0.915851f, 0.913894f, 0.911937f, 0.90998f, 0.908023f,
+		0.906067f, 0.90411f, 0.902153f, 0.900196f, 0.898239f, 0.896282f,
+		0.894325f, 0.892368f, 0.890411f, 0.888454f, 0.886497f, 0.88454f,
+		0.882583f, 0.880626f, 0.878669f, 0.876712f, 0.874755f, 0.872798f,
+		0.870842f, 0.868885f, 0.866928f, 0.864971f, 0.863014f, 0.861057f,
+		0.8591f, 0.857143f, 0.855186f, 0.853229f, 0.851272f, 0.849315f,
+		0.847358f, 0.845401f, 0.843444f, 0.841487f, 0.83953f, 0.837573f,
+		0.835616f, 0.833659f, 0.831703f, 0.829746f, 0.827789f, 0.825832f,
+		0.823875f, 0.821918f, 0.819961f, 0.818004f, 0.816047f, 0.81409f,
+		0.812133f, 0.810176f, 0.808219f, 0.806262f, 0.804305f, 0.802348f,
+		0.800391f, 0.798434f, 0.796477f, 0.794521f, 0.792564f, 0.790607f,
+		0.78865f, 0.786693f, 0.784736f, 0.782779f, 0.780822f, 0.778865f,
+		0.776908f, 0.774951f, 0.772994f, 0.771037f, 0.76908f, 0.767123f,
+		0.765166f, 0.763209f, 0.761252f, 0.759295f, 0.757339f, 0.755382f,
+		0.753425f, 0.751468f, 0.749511f, 0.747554f, 0.745597f, 0.74364f,
+		0.741683f, 0.739726f, 0.737769f, 0.735812f, 0.733855f, 0.731898f,
+		0.729941f, 0.727984f, 0.726027f, 0.72407f, 0.722113f, 0.720157f,
+		0.7182f, 0.716243f, 0.714286f, 0.712329f, 0.710372f, 0.708415f,
+		0.706458f, 0.704501f, 0.702544f, 0.700587f, 0.69863f, 0.696673f,
+		0.694716f, 0.692759f, 0.690802f, 0.688845f, 0.686888f, 0.684932f,
+		0.682975f, 0.681018f, 0.679061f, 0.677104f, 0.675147f, 0.67319f,
+		0.671233f, 0.669276f, 0.667319f, 0.665362f, 0.663405f, 0.661448f,
+		0.659491f, 0.657534f, 0.655577f, 0.65362f, 0.651663f, 0.649706f,
+		0.64775f, 0.645793f, 0.643836f, 0.641879f, 0.639922f, 0.637965f,
+		0.636008f, 0.634051f, 0.632094f, 0.630137f, 0.62818f, 0.626223f,
+		0.624266f, 0.622309f, 0.620352f, 0.618395f, 0.616438f, 0.614481f,
+		0.612524f, 0.610568f, 0.608611f, 0.606654f, 0.604697f, 0.60274f,
+		0.600783f, 0.598826f, 0.596869f, 0.594912f, 0.592955f, 0.590998f,
+		0.589041f, 0.587084f, 0.585127f, 0.58317f, 0.581213f, 0.579256f,
+		0.577299f, 0.575342f, 0.573385f, 0.571429f, 0.569472f, 0.567515f,
+		0.565558f, 0.563601f, 0.561644f, 0.559687f, 0.55773f, 0.555773f,
+		0.553816f, 0.551859f, 0.549902f, 0.547945f, 0.545988f, 0.544031f,
+		0.542074f, 0.540117f, 0.53816f, 0.536204f, 0.534247f, 0.53229f,
+		0.530333f, 0.528376f, 0.526419f, 0.524462f, 0.522505f, 0.520548f,
+		0.518591f, 0.516634f, 0.514677f, 0.51272f, 0.510763f, 0.508806f,
+		0.506849f, 0.504892f, 0.502935f, 0.500978f, 0.499022f, 0.497065f,
+		0.495108f, 0.493151f, 0.491194f, 0.489237f, 0.48728f, 0.485323f,
+		0.483366f, 0.481409f, 0.479452f, 0.477495f, 0.475538f, 0.473581f,
+		0.471624f, 0.469667f, 0.46771f, 0.465753f, 0.463796f, 0.46184f,
+		0.459883f, 0.457926f, 0.455969f, 0.454012f, 0.452055f, 0.450098f,
+		0.448141f, 0.446184f, 0.444227f, 0.44227f, 0.440313f, 0.438356f,
+		0.436399f, 0.434442f, 0.432485f, 0.430528f, 0.428571f, 0.426614f,
+		0.424658f, 0.422701f, 0.420744f, 0.418787f, 0.41683f, 0.414873f,
+		0.412916f, 0.410959f, 0.409002f, 0.407045f, 0.405088f, 0.403131f,
+		0.401174f, 0.399217f, 0.39726f, 0.395303f, 0.393346f, 0.391389f,
+		0.389432f, 0.387476f, 0.385519f, 0.383562f, 0.381605f, 0.379648f,
+		0.377691f, 0.375734f, 0.373777f, 0.37182f, 0.369863f, 0.367906f,
+		0.365949f, 0.363992f, 0.362035f, 0.360078f, 0.358121f, 0.356164f,
+		0.354207f, 0.352251f, 0.350294f, 0.348337f, 0.34638f, 0.344423f,
+		0.342466f, 0.340509f, 0.338552f, 0.336595f, 0.334638f, 0.332681f,
+		0.330724f, 0.328767f, 0.32681f, 0.324853f, 0.322896f, 0.320939f,
+		0.318982f, 0.317025f, 0.315068f, 0.313112f, 0.311155f, 0.309198f,
+		0.307241f, 0.305284f, 0.303327f, 0.30137f, 0.299413f, 0.297456f,
+		0.295499f, 0.293542f, 0.291585f, 0.289628f, 0.287671f, 0.285714f,
+		0.283757f, 0.2818f, 0.279843f, 0.277887f, 0.27593f, 0.273973f,
+		0.272016f, 0.270059f, 0.268102f, 0.266145f, 0.264188f, 0.262231f,
+		0.260274f, 0.258317f, 0.25636f, 0.254403f, 0.252446f, 0.250489f,
+		0.248532f, 0.246575f, 0.244618f, 0.242661f, 0.240704f, 0.238748f,
+		0.236791f, 0.234834f, 0.232877f, 0.23092f, 0.228963f, 0.227006f,
+		0.225049f, 0.223092f, 0.221135f, 0.219178f, 0.217221f, 0.215264f,
+		0.213307f, 0.21135f, 0.209393f, 0.207436f, 0.205479f, 0.203523f,
+		0.201566f, 0.199609f, 0.197652f, 0.195695f, 0.193738f, 0.191781f,
+		0.189824f, 0.187867f, 0.18591f, 0.183953f, 0.181996f, 0.180039f,
+		0.178082f, 0.176125f, 0.174168f, 0.172211f, 0.170254f, 0.168297f,
+		0.166341f, 0.164384f, 0.162427f, 0.16047f, 0.158513f, 0.156556f,
+		0.154599f, 0.152642f, 0.150685f, 0.148728f, 0.146771f, 0.144814f,
+		0.142857f, 0.1409f, 0.138943f, 0.136986f, 0.135029f, 0.133072f,
+		0.131115f, 0.129158f, 0.127202f, 0.125245f, 0.123288f, 0.121331f,
+		0.119374f, 0.117417f, 0.11546f, 0.113503f, 0.111546f, 0.109589f,
+		0.107632f, 0.105675f, 0.103718f, 0.101761f, 0.0998043f, 0.0978474f,
+		0.0958903f, 0.0939335f, 0.0919765f, 0.0900196f, 0.0880627f, 0.0861056f,
+		0.0841488f, 0.0821917f, 0.0802348f, 0.0782779f, 0.0763209f, 0.0743641f,
+		0.072407f, 0.0704501f, 0.0684931f, 0.0665362f, 0.0645792f, 0.0626223f,
+		0.0606654f, 0.0587084f, 0.0567515f, 0.0547945f, 0.0528376f, 0.0508806f,
+		0.0489237f, 0.0469668f, 0.0450097f, 0.0430529f, 0.0410959f, 0.039139f,
+		0.037182f, 0.035225f, 0.0332682f, 0.0313111f, 0.0293542f, 0.0273973f,
+		0.0254403f, 0.0234835f, 0.0215264f, 0.0195695f, 0.0176125f, 0.0156556f,
+		0.0136986f, 0.0117417f, 0.00978482f, 0.00782776f, 0.00587088f, 0.00391382f,
+		0.00195694f, 0.f
+	};
+};
+
+template <int NV>
+using cable_table2_t = wrap::data<control::cable_table<cable_table2_mod<NV>>, 
+                                  data::embedded::table<cable_table2_t_data>>;
+
+namespace chain45_t_parameters
+{
+DECLARE_PARAMETER_RANGE(harm_InputRange, 
+                        1., 
+                        16.);
+
+template <int NV>
+using harm = parameter::chain<harm_InputRange, 
+                              parameter::plain<xnode_impl::cable_table1_t<NV>, 0>>;
+
+}
+
+template <int NV>
+using chain45_t = container::chain<chain45_t_parameters::harm<NV>, 
+                                   wrap::fix<2, chain2_t<NV>>, 
+                                   cable_table1_t<NV>, 
+                                   cable_table2_t<NV>, 
                                    tempo_sync2_t<NV>, 
                                    fx::sampleandhold<NV>>;
 template <int NV> using oscillator12_t = oscillator9_t<NV>;
@@ -96,8 +278,7 @@ using pma_unscaled1_mod = parameter::chain<ranges::Identity,
                                            parameter::plain<core::phasor<NV>, 2>, 
                                            parameter::plain<wrap::no_process<core::fm>, 2>, 
                                            parameter::plain<oscillator14_t<NV>, 2>, 
-                                           parameter::plain<core::phasor_fm<NV>, 2>, 
-                                           parameter::plain<tempo_sync2_t<NV>, 1>>;
+                                           parameter::plain<core::phasor_fm<NV>, 2>>;
 
 template <int NV>
 using pma_unscaled1_t = control::pma_unscaled<NV, pma_unscaled1_mod<NV>>;
@@ -122,9 +303,17 @@ using modchain1_t_ = container::chain<parameter::empty,
 template <int NV>
 using modchain1_t = wrap::control_rate<modchain1_t_<NV>>;
 
-template <int NV> using xfader2_c0 = xfader_c0<NV>;
+DECLARE_PARAMETER_RANGE_SKEW(xfader2_c0Range, 
+                             -100., 
+                             0., 
+                             5.42227);
 
-template <int NV> using xfader2_c1 = xfader_c0<NV>;
+template <int NV>
+using xfader2_c0 = parameter::from0To1<core::gain<NV>, 
+                                       0, 
+                                       xfader2_c0Range>;
+
+template <int NV> using xfader2_c1 = xfader2_c0<NV>;
 
 template <int NV>
 using xfader2_multimod = parameter::list<xfader2_c0<NV>, xfader2_c1<NV>>;
@@ -367,7 +556,7 @@ using branch1_t = container::branch<parameter::empty,
                                     chain24_t<NV>, 
                                     chain27_t<NV>>;
 
-template <int NV> using pma1_mod = xfader_c0<NV>;
+template <int NV> using pma1_mod = xfader2_c0<NV>;
 
 template <int NV>
 using pma1_t = control::pma<NV, pma1_mod<NV>>;
@@ -407,7 +596,6 @@ using smoothed_parameter1_t = wrap::mod<parameter::plain<pma_t<NV>, 0>,
 template <int NV>
 using peak_mod = parameter::chain<ranges::Identity, 
                                   parameter::plain<pma1_t<NV>, 0>, 
-                                  parameter::plain<pma_unscaled3_t<NV>, 0>, 
                                   parameter::plain<smoothed_parameter_unscaled_t<NV>, 0>, 
                                   parameter::plain<smoothed_parameter1_t<NV>, 0>>;
 
@@ -424,9 +612,9 @@ using modchain8_t_ = container::chain<parameter::empty,
 template <int NV>
 using modchain8_t = wrap::control_rate<modchain8_t_<NV>>;
 
-template <int NV> using xfader1_c0 = xfader_c0<NV>;
+template <int NV> using xfader1_c0 = xfader2_c0<NV>;
 
-template <int NV> using xfader1_c1 = xfader_c0<NV>;
+template <int NV> using xfader1_c1 = xfader2_c0<NV>;
 
 template <int NV>
 using xfader1_multimod = parameter::list<xfader1_c0<NV>, xfader1_c1<NV>>;
@@ -596,15 +784,10 @@ namespace xnode_t_parameters
 {
 // Parameter list for xnode_impl::xnode_t ----------------------------------------------------------
 
-DECLARE_PARAMETER_RANGE_STEP(Harm_1Range, 
-                             0., 
-                             18., 
-                             1.);
-
 template <int NV>
 using Harm_1 = parameter::from0To1<xnode_impl::tempo_sync1_t<NV>, 
                                    0, 
-                                   Harm_1Range>;
+                                   xnode_impl::cable_table2_modRange>;
 
 template <int NV>
 using Harm = parameter::chain<ranges::Identity, 
@@ -641,7 +824,7 @@ using FxMix = parameter::from0To1<xnode_impl::simple_ar_t<NV>,
 template <int NV>
 using FxValue_0 = parameter::from0To1<xnode_impl::tempo_sync_t<NV>, 
                                       0, 
-                                      Harm_1Range>;
+                                      xnode_impl::cable_table2_modRange>;
 
 DECLARE_PARAMETER_RANGE_STEP(FxValue_1Range, 
                              0., 
@@ -657,11 +840,6 @@ template <int NV>
 using FxValue = parameter::chain<ranges::Identity, 
                                  FxValue_0<NV>, 
                                  FxValue_1<NV>>;
-
-template <int NV>
-using shPitch = parameter::chain<ranges::Identity, 
-                                 parameter::plain<xnode_impl::pma_unscaled1_t<NV>, 1>, 
-                                 parameter::plain<xnode_impl::pma_unscaled3_t<NV>, 1>>;
 
 DECLARE_PARAMETER_RANGE_SKEW(FilterRes_InputRange, 
                              0.3, 
@@ -749,16 +927,12 @@ template <int NV> using ShSmooth_12 = ShSmooth_3<NV>;
 
 template <int NV> using ShSmooth_13 = ShSmooth_3<NV>;
 
-template <int NV> using ShSmooth_14 = ShSmooth_3<NV>;
-
-template <int NV> using ShSmooth_15 = ShSmooth_3<NV>;
-
 template <int NV>
-using ShSmooth_16 = parameter::from0To1<xnode_impl::smoothed_parameter3_t<NV>, 
+using ShSmooth_14 = parameter::from0To1<xnode_impl::smoothed_parameter3_t<NV>, 
                                         1, 
                                         ShSmooth_4Range>;
 
-template <int NV> using ShSmooth_17 = ShSmooth_3<NV>;
+template <int NV> using ShSmooth_15 = ShSmooth_3<NV>;
 
 template <int NV>
 using ShSmooth = parameter::chain<ShSmooth_InputRange, 
@@ -777,9 +951,7 @@ using ShSmooth = parameter::chain<ShSmooth_InputRange,
                                   ShSmooth_12<NV>, 
                                   ShSmooth_13<NV>, 
                                   ShSmooth_14<NV>, 
-                                  ShSmooth_15<NV>, 
-                                  ShSmooth_16<NV>, 
-                                  ShSmooth_17<NV>>;
+                                  ShSmooth_15<NV>>;
 
 DECLARE_PARAMETER_RANGE_STEP(OscShapes_1Range, 
                              0., 
@@ -793,15 +965,15 @@ using OscShapes_1 = parameter::from0To1<core::gain<NV>,
 
 template <int NV> using OscShapes_2 = OscShapes_1<NV>;
 
-DECLARE_PARAMETER_RANGE_STEP(OscShapes_6Range, 
+DECLARE_PARAMETER_RANGE_STEP(OscShapes_5Range, 
                              0., 
                              24., 
                              0.1);
 
 template <int NV>
-using OscShapes_6 = parameter::from0To1<core::gain<NV>, 
+using OscShapes_5 = parameter::from0To1<core::gain<NV>, 
                                         0, 
-                                        OscShapes_6Range>;
+                                        OscShapes_5Range>;
 
 template <int NV>
 using OscShapes = parameter::chain<ranges::Identity, 
@@ -810,8 +982,8 @@ using OscShapes = parameter::chain<ranges::Identity,
                                    OscShapes_2<NV>, 
                                    parameter::plain<xnode_impl::xfader2_t<NV>, 0>, 
                                    parameter::plain<wrap::no_process<core::fm>, 1>, 
-                                   parameter::plain<xnode_impl::xfader_t<NV>, 0>, 
-                                   OscShapes_6<NV>>;
+                                   OscShapes_5<NV>, 
+                                   parameter::plain<xnode_impl::cable_table2_t<NV>, 0>>;
 
 DECLARE_PARAMETER_RANGE_STEP(TYPE_InputRange, 
                              1., 
@@ -960,7 +1132,7 @@ using UserInput = parameter::chain<UserInput_InputRange, UserInput_0<NV>>;
 template <int NV>
 using snap_0 = parameter::from0To1<core::gain<NV>, 
                                    2, 
-                                   xnode_impl::xfader_c0Range>;
+                                   xnode_impl::xfader2_c0Range>;
 
 template <int NV> using snap_1 = snap_0<NV>;
 
@@ -1033,6 +1205,9 @@ template <int NV>
 using FxShSync = parameter::plain<xnode_impl::tempo_sync_t<NV>, 
                                   2>;
 template <int NV>
+using shPitch = parameter::plain<xnode_impl::pma_unscaled1_t<NV>, 
+                                 1>;
+template <int NV>
 using FilterMix = parameter::plain<xnode_impl::xfader1_t<NV>, 
                                    0>;
 template <int NV>
@@ -1104,7 +1279,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		SNEX_METADATA_ENCODED_PARAMETERS(488)
 		{
 			0x005C, 0x0000, 0x0000, 0x6148, 0x6D72, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 
+            0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 
             0x005C, 0x0001, 0x0000, 0x696D, 0x006E, 0x0000, 0x8000, 0x003F, 
             0x8000, 0x0041, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x5C3F, 
             0x0200, 0x0000, 0x6D00, 0x7861, 0x0000, 0x0000, 0x3F80, 0x0000, 
@@ -1141,7 +1316,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
             0x6F6D, 0x746F, 0x0068, 0x0000, 0x0000, 0x0000, 0xFA00, 0x0044, 
             0x0000, 0x6900, 0x6CEE, 0xCD3E, 0xCCCC, 0x5C3D, 0x1100, 0x0000, 
             0x4F00, 0x6373, 0x6853, 0x7061, 0x7365, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 
+            0x0000, 0x3F80, 0x590B, 0x3ED2, 0x0000, 0x3F80, 0x0000, 0x0000, 
             0x005C, 0x0012, 0x0000, 0x5954, 0x4550, 0x0000, 0x0000, 0x3F80, 
             0x0000, 0x4040, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 
             0x005C, 0x0013, 0x0000, 0x6853, 0x6953, 0x4D6E, 0x7869, 0x0000, 
@@ -1255,36 +1430,19 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& rect1 = this->getT(0).getT(1).getT(0).getT(0).                                // math::rect<NV>
                       getT(0).getT(0).getT(4).getT(4);
 		auto& chain45 = this->getT(0).getT(1).getT(0).getT(0).getT(0).getT(0).getT(5);      // xnode_impl::chain45_t<NV>
-		auto& pma_unscaled3 = this->getT(0).getT(1).getT(0).getT(0).                        // xnode_impl::pma_unscaled3_t<NV>
-                              getT(0).getT(0).getT(5).getT(0);
-		auto& chain1 = this->getT(0).getT(1).getT(0).getT(0).                               // xnode_impl::chain1_t<NV>
-                       getT(0).getT(0).getT(5).getT(1);
-		auto& xfader = this->getT(0).getT(1).getT(0).getT(0).                               // xnode_impl::xfader_t<NV>
-                       getT(0).getT(0).getT(5).getT(1).
-                       getT(0);
-		auto& split = this->getT(0).getT(1).getT(0).getT(0).                                // xnode_impl::split_t<NV>
-                      getT(0).getT(0).getT(5).getT(1).
-                      getT(1);
-		auto& chain2 = this->getT(0).getT(1).getT(0).getT(0).getT(0).                       // xnode_impl::chain2_t<NV>
-                       getT(0).getT(5).getT(1).getT(1).getT(0);
-		auto& oscillator13 = this->getT(0).getT(1).getT(0).getT(0).getT(0).                 // xnode_impl::oscillator13_t<NV>
-                             getT(0).getT(5).getT(1).getT(1).getT(0).
+		auto& chain2 = this->getT(0).getT(1).getT(0).getT(0).                               // xnode_impl::chain2_t<NV>
+                       getT(0).getT(0).getT(5).getT(0);
+		auto& oscillator13 = this->getT(0).getT(1).getT(0).getT(0).                         // xnode_impl::oscillator13_t<NV>
+                             getT(0).getT(0).getT(5).getT(0).
                              getT(0);
-		auto& gain = this->getT(0).getT(1).getT(0).getT(0).getT(0).                         // core::gain<NV>
-                     getT(0).getT(5).getT(1).getT(1).getT(0).
-                     getT(1);
-		auto& chain7 = this->getT(0).getT(1).getT(0).getT(0).getT(0).                       // xnode_impl::chain7_t<NV>
-                       getT(0).getT(5).getT(1).getT(1).getT(1);
-		auto& oscillator15 = this->getT(0).getT(1).getT(0).getT(0).getT(0).                 // xnode_impl::oscillator15_t<NV>
-                             getT(0).getT(5).getT(1).getT(1).getT(1).
-                             getT(0);
-		auto& gain7 = this->getT(0).getT(1).getT(0).getT(0).getT(0).                        // core::gain<NV>
-                      getT(0).getT(5).getT(1).getT(1).getT(1).
-                      getT(1);
+		auto& cable_table1 = this->getT(0).getT(1).getT(0).getT(0).                         // xnode_impl::cable_table1_t<NV>
+                             getT(0).getT(0).getT(5).getT(1);
+		auto& cable_table2 = this->getT(0).getT(1).getT(0).getT(0).                         // xnode_impl::cable_table2_t<NV>
+                             getT(0).getT(0).getT(5).getT(2);
 		auto& tempo_sync2 = this->getT(0).getT(1).getT(0).getT(0).                          // xnode_impl::tempo_sync2_t<NV>
-                            getT(0).getT(0).getT(5).getT(2);
+                            getT(0).getT(0).getT(5).getT(3);
 		auto& sampleandhold2 = this->getT(0).getT(1).getT(0).getT(0).                       // fx::sampleandhold<NV>
-                               getT(0).getT(0).getT(5).getT(3);
+                               getT(0).getT(0).getT(5).getT(4);
 		auto& chain15 = this->getT(0).getT(1).getT(0).getT(0).getT(1);                      // xnode_impl::chain15_t<NV>
 		auto& chain37 = this->getT(0).getT(1).getT(0).getT(0).getT(1).getT(0);              // xnode_impl::chain37_t<NV>
 		auto& file_player5 = this->getT(0).getT(1).getT(0).getT(0).getT(1).getT(0).getT(0); // xnode_impl::file_player5_t<NV>
@@ -1399,6 +1557,8 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
+		chain45.getParameterT(0).connectT(0, cable_table1); // harm -> cable_table1::Value
+		chain45.getParameterT(0).connectT(0, cable_table1); // harm -> cable_table1::Value
 		auto& Harm_p = this->getParameterT(0);
 		Harm_p.connectT(0, minmax);      // Harm -> minmax::Value
 		Harm_p.connectT(1, tempo_sync1); // Harm -> tempo_sync1::Tempo
@@ -1421,9 +1581,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		this->getParameterT(8).connectT(0, tempo_sync); // FxShSync -> tempo_sync::Enabled
 		
-		auto& shPitch_p = this->getParameterT(9);
-		shPitch_p.connectT(0, pma_unscaled1); // shPitch -> pma_unscaled1::Multiply
-		shPitch_p.connectT(1, pma_unscaled3); // shPitch -> pma_unscaled3::Multiply
+		this->getParameterT(9).connectT(0, pma_unscaled1); // shPitch -> pma_unscaled1::Multiply
 		
 		this->getParameterT(10).connectT(0, xfader1); // FilterMix -> xfader1::Value
 		
@@ -1456,10 +1614,8 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		ShSmooth_p.connectT(11, allpass);                    // ShSmooth -> allpass::Smoothing
 		ShSmooth_p.connectT(12, gain3);                      // ShSmooth -> gain3::Smoothing
 		ShSmooth_p.connectT(13, gain2);                      // ShSmooth -> gain2::Smoothing
-		ShSmooth_p.connectT(14, gain);                       // ShSmooth -> gain::Smoothing
-		ShSmooth_p.connectT(15, gain7);                      // ShSmooth -> gain7::Smoothing
-		ShSmooth_p.connectT(16, smoothed_parameter3);        // ShSmooth -> smoothed_parameter3::SmoothingTime
-		ShSmooth_p.connectT(17, gain4);                      // ShSmooth -> gain4::Smoothing
+		ShSmooth_p.connectT(14, smoothed_parameter3);        // ShSmooth -> smoothed_parameter3::SmoothingTime
+		ShSmooth_p.connectT(15, gain4);                      // ShSmooth -> gain4::Smoothing
 		
 		auto& OscShapes_p = this->getParameterT(17);
 		OscShapes_p.connectT(0, smoothed_parameter3); // OscShapes -> smoothed_parameter3::Value
@@ -1467,8 +1623,8 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		OscShapes_p.connectT(2, gain6);               // OscShapes -> gain6::Gain
 		OscShapes_p.connectT(3, xfader2);             // OscShapes -> xfader2::Value
 		OscShapes_p.connectT(4, fm);                  // OscShapes -> fm::Modulator
-		OscShapes_p.connectT(5, xfader);              // OscShapes -> xfader::Value
-		OscShapes_p.connectT(6, gain1);               // OscShapes -> gain1::Gain
+		OscShapes_p.connectT(5, gain1);               // OscShapes -> gain1::Gain
+		OscShapes_p.connectT(6, cable_table2);        // OscShapes -> cable_table2::Value
 		
 		this->getParameterT(18).connectT(0, branch); // TYPE -> branch::Index
 		
@@ -1510,12 +1666,9 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		// Modulation Connections ------------------------------------------------------------------
 		
-		pma_unscaled3.getWrappedObject().getParameter().connectT(0, oscillator13); // pma_unscaled3 -> oscillator13::FreqRatio
-		pma_unscaled3.getWrappedObject().getParameter().connectT(1, oscillator15); // pma_unscaled3 -> oscillator15::FreqRatio
-		auto& xfader_p = xfader.getWrappedObject().getParameter();
-		xfader_p.getParameterT(0).connectT(0, gain);                               // xfader -> gain::Gain
-		xfader_p.getParameterT(1).connectT(0, gain7);                              // xfader -> gain7::Gain
 		tempo_sync2.getParameter().connectT(0, sampleandhold2);                    // tempo_sync2 -> sampleandhold2::Counter
+		cable_table1.getWrappedObject().getParameter().connectT(0, tempo_sync2);   // cable_table1 -> tempo_sync2::Multiplier
+		cable_table2.getWrappedObject().getParameter().connectT(0, tempo_sync2);   // cable_table2 -> tempo_sync2::Tempo
 		pma_unscaled1.getWrappedObject().getParameter().connectT(0, oscillator9);  // pma_unscaled1 -> oscillator9::FreqRatio
 		pma_unscaled1.getWrappedObject().getParameter().connectT(1, phasor4);      // pma_unscaled1 -> phasor4::FreqRatio
 		pma_unscaled1.getWrappedObject().getParameter().connectT(2, oscillator11); // pma_unscaled1 -> oscillator11::FreqRatio
@@ -1527,7 +1680,6 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		pma_unscaled1.getWrappedObject().getParameter().connectT(8, fm);           // pma_unscaled1 -> fm::FreqMultiplier
 		pma_unscaled1.getWrappedObject().getParameter().connectT(9, oscillator14); // pma_unscaled1 -> oscillator14::FreqRatio
 		pma_unscaled1.getWrappedObject().getParameter().connectT(10, phasor_fm);   // pma_unscaled1 -> phasor_fm::FreqRatio
-		pma_unscaled1.getWrappedObject().getParameter().connectT(11, tempo_sync2); // pma_unscaled1 -> tempo_sync2::Multiplier
 		pma_unscaled.getWrappedObject().getParameter().connectT(0, pma_unscaled1); // pma_unscaled -> pma_unscaled1::Add
 		minmax.getWrappedObject().getParameter().connectT(0, pma_unscaled);        // minmax -> pma_unscaled::Add
 		smoothed_parameter_unscaled.getParameter().connectT(0, pma_unscaled1);     // smoothed_parameter_unscaled -> pma_unscaled1::Value
@@ -1551,9 +1703,8 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		pma.getWrappedObject().getParameter().connectT(3, allpass);   // pma -> allpass::Frequency
 		smoothed_parameter1.getParameter().connectT(0, pma);          // smoothed_parameter1 -> pma::Value
 		peak.getParameter().connectT(0, pma1);                        // peak -> pma1::Value
-		peak.getParameter().connectT(1, pma_unscaled3);               // peak -> pma_unscaled3::Value
-		peak.getParameter().connectT(2, smoothed_parameter_unscaled); // peak -> smoothed_parameter_unscaled::Value
-		peak.getParameter().connectT(3, smoothed_parameter1);         // peak -> smoothed_parameter1::Value
+		peak.getParameter().connectT(1, smoothed_parameter_unscaled); // peak -> smoothed_parameter_unscaled::Value
+		peak.getParameter().connectT(2, smoothed_parameter1);         // peak -> smoothed_parameter1::Value
 		auto& xfader1_p = xfader1.getWrappedObject().getParameter();
 		xfader1_p.getParameterT(0).connectT(0, gain2);                   // xfader1 -> gain2::Gain
 		xfader1_p.getParameterT(1).connectT(0, gain3);                   // xfader1 -> gain3::Gain
@@ -1676,35 +1827,18 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		; // chain45::harm is automated
 		
-		;                                   // pma_unscaled3::Value is automated
-		;                                   // pma_unscaled3::Multiply is automated
-		pma_unscaled3.setParameterT(2, 2.); // control::pma_unscaled::Add
+		oscillator13.setParameterT(0, 4.);        // core::oscillator::Mode
+		oscillator13.setParameterT(1, 220.);      // core::oscillator::Frequency
+		oscillator13.setParameterT(2, 0.);        // core::oscillator::FreqRatio
+		oscillator13.setParameterT(3, 1.);        // core::oscillator::Gate
+		oscillator13.setParameterT(4, 0.0379688); // core::oscillator::Phase
+		oscillator13.setParameterT(5, 1.);        // core::oscillator::Gain
 		
-		; // xfader::Value is automated
+		; // cable_table1::Value is automated
 		
-		oscillator13.setParameterT(0, 4.);   // core::oscillator::Mode
-		oscillator13.setParameterT(1, 220.); // core::oscillator::Frequency
-		;                                    // oscillator13::FreqRatio is automated
-		oscillator13.setParameterT(3, 1.);   // core::oscillator::Gate
-		oscillator13.setParameterT(4, 0.);   // core::oscillator::Phase
-		oscillator13.setParameterT(5, 1.);   // core::oscillator::Gain
+		; // cable_table2::Value is automated
 		
-		;                          // gain::Gain is automated
-		;                          // gain::Smoothing is automated
-		gain.setParameterT(2, 0.); // core::gain::ResetValue
-		
-		oscillator15.setParameterT(0, 0.);   // core::oscillator::Mode
-		oscillator15.setParameterT(1, 220.); // core::oscillator::Frequency
-		;                                    // oscillator15::FreqRatio is automated
-		oscillator15.setParameterT(3, 1.);   // core::oscillator::Gate
-		oscillator15.setParameterT(4, 0.);   // core::oscillator::Phase
-		oscillator15.setParameterT(5, 1.);   // core::oscillator::Gain
-		
-		;                           // gain7::Gain is automated
-		;                           // gain7::Smoothing is automated
-		gain7.setParameterT(2, 0.); // core::gain::ResetValue
-		
-		tempo_sync2.setParameterT(0, 14.);  // control::tempo_sync::Tempo
+		;                                   // tempo_sync2::Tempo is automated
 		;                                   // tempo_sync2::Multiplier is automated
 		tempo_sync2.setParameterT(2, 1.);   // control::tempo_sync::Enabled
 		tempo_sync2.setParameterT(3, 200.); // control::tempo_sync::UnsyncedTime
@@ -1885,7 +2019,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		gain5.setParameterT(1, 167.6); // core::gain::Smoothing
 		;                              // gain5::ResetValue is automated
 		
-		this->setParameterT(0, 0.);
+		this->setParameterT(0, 1.);
 		this->setParameterT(1, 1.);
 		this->setParameterT(2, 16.);
 		this->setParameterT(3, 1.);
@@ -1902,7 +2036,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		this->setParameterT(14, 0.00713315);
 		this->setParameterT(15, 1.00288);
 		this->setParameterT(16, 0.);
-		this->setParameterT(17, 0.);
+		this->setParameterT(17, 0.410836);
 		this->setParameterT(18, 1.);
 		this->setParameterT(19, 0.810971);
 		this->setParameterT(20, 0.);
@@ -1942,12 +2076,13 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
         getT(0).getT(0).getT(1).getT(0).setExternalData(b, index);
 		this->getT(0).getT(1).getT(0).getT(0).                                                   // xnode_impl::oscillator14_t<NV>
         getT(0).getT(0).getT(3).getT(0).setExternalData(b, index);
-		this->getT(0).getT(1).getT(0).getT(0).getT(0).                                           // xnode_impl::oscillator13_t<NV>
-        getT(0).getT(5).getT(1).getT(1).getT(0).
+		this->getT(0).getT(1).getT(0).getT(0).                                                   // xnode_impl::oscillator13_t<NV>
+        getT(0).getT(0).getT(5).getT(0).
         getT(0).setExternalData(b, index);
-		this->getT(0).getT(1).getT(0).getT(0).getT(0).                                           // xnode_impl::oscillator15_t<NV>
-        getT(0).getT(5).getT(1).getT(1).getT(1).
-        getT(0).setExternalData(b, index);
+		this->getT(0).getT(1).getT(0).getT(0).                                                   // xnode_impl::cable_table1_t<NV>
+        getT(0).getT(0).getT(5).getT(1).setExternalData(b, index);
+		this->getT(0).getT(1).getT(0).getT(0).                                                   // xnode_impl::cable_table2_t<NV>
+        getT(0).getT(0).getT(5).getT(2).setExternalData(b, index);
 		this->getT(0).getT(1).getT(0).getT(0).getT(1).getT(0).getT(0).setExternalData(b, index); // xnode_impl::file_player5_t<NV>
 		this->getT(0).getT(1).getT(0).getT(0).                                                   // xnode_impl::file_player6_t<NV>
         getT(2).getT(0).getT(1).getT(3).setExternalData(b, index);
