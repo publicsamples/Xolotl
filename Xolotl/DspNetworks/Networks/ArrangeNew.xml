@@ -472,6 +472,29 @@
                                          DefaultValue="1.0" Automated="1"/>
                             </Parameters>
                           </Node>
+                          <Node ID="clone_forward3" FactoryPath="control.clone_forward" Bypassed="0"
+                                Name="clone_forward3">
+                            <ModulationTargets>
+                              <Connection NodeId="xnode1" ParameterId="PosDiv"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         DefaultValue="1.0" Automated="1"/>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1" ID="Value" DefaultValue="1.0"
+                                         Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="clone_forward4" FactoryPath="control.clone_forward" Bypassed="0"
+                                Name="clone_forward3">
+                            <ModulationTargets>
+                              <Connection NodeId="xnode1" ParameterId="FileMode"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         DefaultValue="1.0" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                            </Parameters>
+                          </Node>
                           <Node ID="split2" FactoryPath="container.split" Bypassed="0" Name="split2">
                             <Nodes>
                               <Node ID="clone_pack" FactoryPath="control.clone_pack" Bypassed="0"
@@ -545,6 +568,18 @@
                                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
                                              DefaultValue="1.0" Automated="1"/>
                                   <Parameter MinValue="1.0" MaxValue="3.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="clone_forward8" FactoryPath="control.clone_forward" Bypassed="0"
+                                    Name="clone_forward">
+                                <ModulationTargets>
+                                  <Connection NodeId="xnode1" ParameterId="PosQuant"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Automated="1"/>
+                                  <Parameter MinValue="1.0" MaxValue="10.0" ID="Value" DefaultValue="1.0"
+                                             Automated="1"/>
                                 </Parameters>
                               </Node>
                             </Nodes>
@@ -1598,6 +1633,9 @@
                               </DisplayBuffers>
                             </ComplexData>
                             <Parameters/>
+                            <ModulationTargets>
+                              <Connection NodeId="clone_cable3" ParameterId="Value"/>
+                            </ModulationTargets>
                           </Node>
                           <Node ID="clear4" FactoryPath="math.clear" Bypassed="0" Name="clear">
                             <Parameters>
@@ -1609,17 +1647,6 @@
                       </Node>
                       <Node ID="no_midi7" FactoryPath="container.no_midi" Bypassed="0" Name="no_midi7">
                         <Nodes>
-                          <Node ID="pma54" FactoryPath="control.pma" Bypassed="0" Name="pma54">
-                            <ModulationTargets>
-                              <Connection NodeId="clone_cable3" ParameterId="Value"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.000976656" ID="Add"
-                                         Value="0.90829008" DefaultValue="0.0"/>
-                            </Parameters>
-                          </Node>
                           <Node ID="clone_cable3" FactoryPath="control.clone_cable" Bypassed="0"
                                 Name="clone_cable">
                             <Properties>
@@ -1631,7 +1658,7 @@
                             <Parameters>
                               <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
                                          DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                             </Parameters>
                           </Node>
@@ -3687,7 +3714,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -3740,6 +3767,14 @@
                              Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
                              Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -3758,7 +3793,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -3797,6 +3832,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -3816,7 +3859,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -3855,6 +3898,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -3874,7 +3925,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -3913,6 +3964,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -3932,7 +3991,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -3971,6 +4030,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -3990,7 +4057,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4029,6 +4096,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4048,7 +4123,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4087,6 +4162,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4106,7 +4189,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4145,6 +4228,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4164,7 +4255,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4203,6 +4294,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4222,7 +4321,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4261,6 +4360,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4280,7 +4387,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4319,6 +4426,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4338,7 +4453,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4377,6 +4492,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4396,7 +4519,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4435,6 +4558,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4454,7 +4585,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4493,6 +4624,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4512,7 +4651,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4551,6 +4690,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4570,7 +4717,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4609,6 +4756,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4628,7 +4783,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4667,6 +4822,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4686,7 +4849,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4725,6 +4888,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4744,7 +4915,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4783,6 +4954,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4802,7 +4981,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4841,6 +5020,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4860,7 +5047,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4899,6 +5086,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4918,7 +5113,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4957,6 +5152,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -4976,7 +5179,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5015,6 +5218,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -5034,7 +5245,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5073,6 +5284,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -5092,7 +5311,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5131,6 +5350,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -5150,7 +5377,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5189,6 +5416,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -5208,7 +5443,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5247,6 +5482,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -5266,7 +5509,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5305,6 +5548,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -5324,7 +5575,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5363,6 +5614,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -5382,7 +5641,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5421,6 +5680,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -5440,7 +5707,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5480,6 +5747,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
                              Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
+                             Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner30" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5498,7 +5773,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="262144"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5537,6 +5812,14 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" DefaultValue="0.06759510934352875"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" DefaultValue="0.167119562625885"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="SHInput" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Quant" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
                 </Parameters>
               </Node>
@@ -5559,7 +5842,7 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Stages" Value="4.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Stages" Value="10.0"
                  DefaultValue="1.0" ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="clone" ParameterId="NumClones"/>
@@ -5596,7 +5879,7 @@
           <Connection NodeId="pack_resizer4" ParameterId="NumSliders"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0">
         <Connections>
           <Connection NodeId="global_mod" ParameterId="Value"/>
           <Connection NodeId="global_mod7" ParameterId="Value"/>
@@ -5614,8 +5897,9 @@
           <Connection NodeId="global_mod2" ParameterId="Intensity"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1.0" ID="HarmSrc" Value="1.0"
-                 ExternalModulation="Disabled" ModColour="0" TextToValueConverter="">
+      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1.0" ID="HarmSrc" Value="3.0"
+                 ExternalModulation="Disabled" ModColour="0" TextToValueConverter=""
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch" ParameterId="Index"/>
         </Connections>
@@ -5643,19 +5927,19 @@
           <Connection NodeId="clone_forward" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Max" Value="8.0"
-                 DefaultValue="1.0" ExternalModulation="Disabled" ModColour="0">
+      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Max" Value="10.0"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="clone_forward2" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0">
         <Connections>
           <Connection NodeId="clone_forward1" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Detune" Value="0.009999999776482582"
-                 ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Detune" Value="-1.0" ExternalModulation="Disabled"
+                 ModColour="0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod1" ParameterId="Value"/>
           <Connection NodeId="global_mod9" ParameterId="Value"/>
@@ -5673,7 +5957,7 @@
           <Connection NodeId="pma15" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1.0" ID="DetuneSrc" Value="4.0"
+      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1.0" ID="DetuneSrc" Value="3.0"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch3" ParameterId="Index"/>
@@ -5696,7 +5980,7 @@
           <Connection NodeId="branch2" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1" ID="OscType" Value="2.0"
+      <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1" ID="OscType" Value="6.0"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="clone_forward6" ParameterId="Value"/>
@@ -5711,7 +5995,7 @@
           <Connection NodeId="pma17" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="ShapeMod" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="ShapeMod" Value="0.0">
         <Connections>
           <Connection NodeId="global_mod3" ParameterId="Intensity"/>
           <Connection NodeId="global_mod15" ParameterId="Intensity"/>
@@ -5720,7 +6004,7 @@
           <Connection NodeId="pma17" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1.0" ID="ShapeSrc" Value="2.0"
+      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1.0" ID="ShapeSrc" Value="4.0"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch8" ParameterId="Index"/>
@@ -5742,14 +6026,13 @@
           <Connection NodeId="branch4" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="3.0" ID="VoiceMode" Value="3.0" ExternalModulation="Disabled"
-                 ModColour="0" DefaultValue="1.0">
+      <Parameter MinValue="1.0" MaxValue="3.0" ID="VoiceMode" Value="1.0" ExternalModulation="Disabled"
+                 ModColour="0">
         <Connections>
           <Connection NodeId="clone_forward7" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="CyclePos" Value="0.449999988079071"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="CyclePos" Value="0.0">
         <Connections>
           <Connection NodeId="global_mod4" ParameterId="Value"/>
           <Connection NodeId="global_mod18" ParameterId="Value"/>
@@ -5758,7 +6041,8 @@
           <Connection NodeId="pma43" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CyclePosMod" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CyclePosMod" Value="0.5099999904632568"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod4" ParameterId="Intensity"/>
           <Connection NodeId="pma18" ParameterId="Multiply"/>
@@ -5767,8 +6051,8 @@
           <Connection NodeId="global_mod19" ParameterId="Intensity"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1" ID="CyclePosSrc" Value="2.0"
-                 ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
+      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1" ID="CyclePosSrc" Value="1.0"
+                 ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="branch9" ParameterId="Index"/>
         </Connections>
@@ -5789,7 +6073,7 @@
           <Connection NodeId="branch5" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="CycleShape" Value="0.449999988079071"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="CycleShape" Value="0.07999999821186066"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod5" ParameterId="Value"/>
@@ -5830,7 +6114,8 @@
           <Connection NodeId="branch6" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FxValue" Value="0.07999999821186066"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod6" ParameterId="Value"/>
           <Connection NodeId="global_mod24" ParameterId="Value"/>
@@ -5871,7 +6156,8 @@
           <Connection NodeId="branch7" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FxMix" Value="0.4130859375000001"
+                 DefaultValue="0.0">
         <Connections/>
       </Parameter>
       <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxDiv" Value="1.0"
@@ -5880,12 +6166,12 @@
           <Connection NodeId="clone_forward9" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FxSync" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FxSync" Value="0.0">
         <Connections>
           <Connection NodeId="clone_forward11" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="3.0" ID="FxSinSh" Value="3.0" StepSize="1"
+      <Parameter MinValue="1.0" MaxValue="3.0" ID="FxSinSh" Value="2.0" StepSize="1"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="clone_cable5" ParameterId="Value"/>
@@ -5897,8 +6183,8 @@
           <Connection NodeId="clone_cable6" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoPitch" Value="0.0" ExternalModulation="Disabled"
-                 ModColour="0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoPitch" Value="0.02999999932944775"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_forward12" ParameterId="Value"/>
         </Connections>
@@ -5908,7 +6194,7 @@
           <Connection NodeId="clone_forward13" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Cut" Value="0.07000000029802322"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Cut" Value="0.6700000166893005"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod11" ParameterId="Value"/>
@@ -5918,7 +6204,7 @@
           <Connection NodeId="pma49" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CutMod" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CutMod" Value="0.0">
         <Connections>
           <Connection NodeId="global_mod11" ParameterId="Intensity"/>
           <Connection NodeId="global_mod27" ParameterId="Intensity"/>
@@ -5951,13 +6237,13 @@
         </Connections>
       </Parameter>
       <Parameter ID="FilterMode" MinValue="1.0" MaxValue="4.0" StepSize="1.0"
-                 ModColour="0" ExternalModulation="Disabled" DefaultValue="" Value="2.0">
+                 ModColour="0" ExternalModulation="Disabled" DefaultValue="" Value="1.0">
         <Connections>
           <Connection NodeId="clone_cable14" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter ID="Res" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.8399999737739563">
+                 DefaultValue="" Value="0.9300000071525574">
         <Connections>
           <Connection NodeId="global_mod13" ParameterId="Value"/>
           <Connection NodeId="global_mod30" ParameterId="Value"/>
@@ -6025,7 +6311,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="FilterMixAux" MinValue="-1.0" MaxValue="1.0" ModColour="0"
-                 ExternalModulation="Disabled">
+                 ExternalModulation="Disabled" DefaultValue="" Value="0.0">
         <Connections>
           <Connection NodeId="pma85" ParameterId="Multiply"/>
           <Connection NodeId="pma86" ParameterId="Multiply"/>
@@ -6048,19 +6334,19 @@
         </Connections>
       </Parameter>
       <Parameter ID="Snap" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.1899999976158142">
+                 DefaultValue="" Value="0.0">
         <Connections>
           <Connection NodeId="clone_forward21" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoGain" Value="1.0" ExternalModulation="Disabled"
-                 ModColour="0" DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoGain" Value="0.07999999821186066"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable1" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="EnvTempo1"
-                 Value="1.0" TextToValueConverter="" DefaultValue="0.0">
+                 Value="11.0" TextToValueConverter="" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="Env3" ParameterId="Tempo"/>
         </Connections>
@@ -6072,41 +6358,41 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" ID="EnvA1" Value="1152.000017166137"
+                 SkewFactor="0.1976716816425323" ID="EnvA1" Value="10.00000014901161"
                  TextToValueConverter="" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="Env3" ParameterId="a"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" ID="EnvD1" Value="2913.900043420493"
+                 SkewFactor="0.1976716816425323" ID="EnvD1" Value="119.5000017806887"
                  DefaultValue="0.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="Env3" ParameterId="d"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" ID="EnvH1" Value="8.900000132620333"
-                 DefaultValue="0.0" TextToValueConverter="">
+                 SkewFactor="0.1976716816425323" ID="EnvH1" Value="10.00000014901161"
+                 TextToValueConverter="" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="Env3" ParameterId="h"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="EnvS1" Value="0.1549224853515625"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="EnvS1" Value="0.1000000014901161"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="Env3" ParameterId="s"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" ID="EnvR1" Value="1786.000026613474"
+                 SkewFactor="0.1976716816425323" ID="EnvR1" Value="1119.000016674399"
                  DefaultValue="0.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="Env3" ParameterId="r"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="EnvTrig1" Value="1.0"
-                 DefaultValue="0.0" TextToValueConverter="">
+      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="EnvTrig1" Value="0.0"
+                 TextToValueConverter="">
         <Connections>
           <Connection NodeId="Env3" ParameterId="trig"/>
         </Connections>
@@ -6126,34 +6412,34 @@
       </Parameter>
       <Parameter ID="EnvA2" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                  SkewFactor="0.1976716816425323" ModColour="0" ExternalModulation="Disabled"
-                 TextToValueConverter="" DefaultValue="" Value="10.00000014901161">
+                 TextToValueConverter="" DefaultValue="" Value="2245.000033453106">
         <Connections>
           <Connection NodeId="Env4" ParameterId="a"/>
         </Connections>
       </Parameter>
       <Parameter ID="EnvD2" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                  SkewFactor="0.1976716816425323" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="10.00000014901161" TextToValueConverter="">
+                 DefaultValue="" Value="10000.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="Env4" ParameterId="d"/>
         </Connections>
       </Parameter>
       <Parameter ID="EnvH2" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                  SkewFactor="0.1976716816425323" ModColour="0" ExternalModulation="Disabled"
-                 TextToValueConverter="" DefaultValue="" Value="10.00000014901161">
+                 TextToValueConverter="" DefaultValue="" Value="1231.3000183478">
         <Connections>
           <Connection NodeId="Env4" ParameterId="h"/>
         </Connections>
       </Parameter>
       <Parameter ID="EnvS2" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.8100000023841858">
+                 DefaultValue="" Value="1.0">
         <Connections>
           <Connection NodeId="Env4" ParameterId="s"/>
         </Connections>
       </Parameter>
       <Parameter ID="EnvR2" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                  SkewFactor="0.1976716816425323" ModColour="0" ExternalModulation="Disabled"
-                 TextToValueConverter="" DefaultValue="" Value="1322.000019699335">
+                 TextToValueConverter="" DefaultValue="" Value="10000.0">
         <Connections>
           <Connection NodeId="Env4" ParameterId="r"/>
         </Connections>
@@ -6162,6 +6448,31 @@
                  ExternalModulation="Disabled" TextToValueConverter="">
         <Connections>
           <Connection NodeId="Env4" ParameterId="trig"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="32.0" ID="Stages2" Value="10.0" DefaultValue="0.0"
+                 StepSize="1.0">
+        <Connections>
+          <Connection NodeId="clone_forward3" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward4" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward8" ParameterId="NumClones"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="32.0" ID="posdiv" Value="2.0" DefaultValue="0.0"
+                 StepSize="1.0" TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="clone_forward3" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="PosMode" Value="0.0" TextToValueConverter="">
+        <Connections>
+          <Connection NodeId="clone_forward4" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1" ID="Quant" Value="5.0"
+                 DefaultValue="1.0" ExternalModulation="Disabled" ModColour="0">
+        <Connections>
+          <Connection NodeId="clone_forward8" ParameterId="Value"/>
         </Connections>
       </Parameter>
     </Parameters>

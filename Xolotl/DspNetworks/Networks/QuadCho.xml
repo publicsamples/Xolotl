@@ -575,6 +575,19 @@
                                  Value="2.0"/>
                     </Parameters>
                   </Node>
+                  <Node ID="gain2" FactoryPath="core.gain" Bypassed="0" Name="gain2">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" TextToValueConverter="Decibel"
+                                 Value="-15.39999873936178" DefaultValue="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" TextToValueConverter="Time"
+                                 Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" TextToValueConverter="Decibel"
+                                 Value="0.0"/>
+                    </Parameters>
+                  </Node>
                 </Nodes>
                 <Parameters/>
               </Node>
@@ -596,36 +609,36 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Offset" Value="0.4199999868869781"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Offset" Value="0.6000000238418579"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_pack" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="LP" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="LP" Value="0.8999999761581421"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FB" Value="0.6399999856948853"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FB" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable1" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Mod" Value="0.05000000074505806"
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Mod" Value="0.1700000017881393"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable2" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="0.6499999761581421"
-                 ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="0.0" ExternalModulation="Disabled"
+                 ModColour="0">
         <Connections>
           <Connection NodeId="xfader" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Range" Value="0.6899999976158142"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Range" Value="0.4900000095367432"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable3" ParameterId="Value"/>

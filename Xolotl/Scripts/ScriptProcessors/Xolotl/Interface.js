@@ -202,26 +202,31 @@ inline function onStagesControl(component, value)
 		{	 
 		Engine.allNotesOff();
 			HARMONIC.setAttribute(HARMONIC.Stages, 4);
+			HARMONIC.setAttribute(HARMONIC.Stages2, 4);
 			}
 		if(value == 2)
 				{	 
 				Engine.allNotesOff();
 			HARMONIC.setAttribute(HARMONIC.Stages, 8);
+			HARMONIC.setAttribute(HARMONIC.Stages2, 8);
 					}	
 		if(value == 3)
 						{	
 						Engine.allNotesOff(); 
 					HARMONIC.setAttribute(HARMONIC.Stages, 16);
+					HARMONIC.setAttribute(HARMONIC.Stages2, 16);
 							}				
 			if(value == 4)
 							{	 
 							Engine.allNotesOff();
 						HARMONIC.setAttribute(HARMONIC.Stages, 24);
+						HARMONIC.setAttribute(HARMONIC.Stages2, 24);
 								}	
 	if(value == 5)
 							{	
 							Engine.allNotesOff(); 
 						HARMONIC.setAttribute(HARMONIC.Stages, 32);
+						HARMONIC.setAttribute(HARMONIC.Stages2, 32);
 								}								
 };
 
