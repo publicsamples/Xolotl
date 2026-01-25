@@ -280,13 +280,14 @@ inline function onModShapeControl(component, value)
 Content.getComponent("ModShape").setControlCallback(onModShapeControl);
 
 
+
 //USer Wave
 
 const var HARMONICWave = Synth.getAudioSampleProcessor("HARMONIC");
 
 inline function onWaveLoadControl(component, value)
 {
-	
+	SynthesiserGroup1.setBypassed(value);
 
 	if (value)
 			{
@@ -300,6 +301,7 @@ if(value == 1)
 	
 		{
 	Engine.allNotesOff();
+
 	
 }
 
