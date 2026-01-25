@@ -4,6 +4,8 @@ Content.makeFrontInterface(850, 580);
 
 include("UISTUFF.js");
 
+
+
 //const eventdata = rm.getEventData(0, 0);
 const var harm = Synth.getAudioSampleProcessor("HARMONIC");
                 
@@ -122,6 +124,7 @@ inline function onOscWaveControl(component, value)
 	    OSC.showControl(1);
 	    MULTI.showControl(0);
 	     USER.showControl(0);
+	     Engine.setMaximumBlockSize(256);
 	   
 	}
 	
@@ -131,6 +134,7 @@ inline function onOscWaveControl(component, value)
 		    OSC.showControl(0);
 	           MULTI.showControl(0);
 	           USER.showControl(1);
+	           Engine.setMaximumBlockSize(8);
 
 	}
 	
@@ -139,7 +143,8 @@ inline function onOscWaveControl(component, value)
 			HARMONIC.setAttribute(HARMONIC.VoiceMode, 2);
 			OSC.showControl(0);
 			MULTI.showControl(1);
-			USER.showControl(0);	     
+			USER.showControl(0);
+			Engine.setMaximumBlockSize(256);	     
 	
 		}
 		
@@ -235,7 +240,7 @@ Content.getComponent("Stages").setControlCallback(onStagesControl);
 const var ModSp1 = Content.getComponent("ModSp1");
 const var ModSp2 = Content.getComponent("ModSp2");
 const var ModSp3 = Content.getComponent("ModSp3");
-const var ModSp4 = Content.getComponent("ModSp4");
+
 
 inline function onModShapeControl(component, value)
 {
@@ -245,7 +250,6 @@ inline function onModShapeControl(component, value)
 	ModSp1.showControl(1);
 	ModSp2.showControl(0);
 	ModSp3.showControl(0);
-	ModSp4.showControl(0);
     	}
 	if(value == 2)
 		{
@@ -253,7 +257,6 @@ inline function onModShapeControl(component, value)
 	ModSp1.showControl(1);
 	ModSp2.showControl(0);
 	ModSp3.showControl(0);
-	ModSp4.showControl(0);
     	}
 	if(value == 3)
 		{
@@ -261,7 +264,7 @@ inline function onModShapeControl(component, value)
 	ModSp1.showControl(1);
 	ModSp2.showControl(0);
 	ModSp3.showControl(0);
-	ModSp4.showControl(0);
+
     	}
 	if(value == 4)
 		{
@@ -269,7 +272,7 @@ inline function onModShapeControl(component, value)
 	ModSp1.showControl(0);
 	ModSp2.showControl(1);
 	ModSp3.showControl(1);
-	ModSp4.showControl(1);
+
     	}
 
 };
