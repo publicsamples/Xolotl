@@ -117,6 +117,8 @@ const var UserParam = Content.getComponent("UserParam");
 
 inline function onOscWaveControl(component, value)
 {
+	Engine.allNotesOff();
+
 
 	if(value == 1)
 	{	 
@@ -124,7 +126,7 @@ inline function onOscWaveControl(component, value)
 	    OSC.showControl(1);
 	    MULTI.showControl(0);
 	     USER.showControl(0);
-	     Engine.setMaximumBlockSize(256);
+	  
 	   
 	}
 	
@@ -134,7 +136,7 @@ inline function onOscWaveControl(component, value)
 		    OSC.showControl(0);
 	           MULTI.showControl(0);
 	           USER.showControl(1);
-	           Engine.setMaximumBlockSize(8);
+	          
 
 	}
 	
@@ -144,7 +146,7 @@ inline function onOscWaveControl(component, value)
 			OSC.showControl(0);
 			MULTI.showControl(1);
 			USER.showControl(0);
-			Engine.setMaximumBlockSize(256);	     
+		     
 	
 		}
 		
@@ -206,32 +208,38 @@ inline function onStagesControl(component, value)
 		if(value == 1)
 		{	 
 		Engine.allNotesOff();
-			HARMONIC.setAttribute(HARMONIC.Stages, 4);
-			HARMONIC.setAttribute(HARMONIC.Stages2, 4);
+			HARMONIC.setAttribute(HARMONIC.V1, 4);
+			HARMONIC.setAttribute(HARMONIC.V2, 4);
+			HARMONIC.setAttribute(HARMONIC.V3, 4);
+			
 			}
 		if(value == 2)
 				{	 
 				Engine.allNotesOff();
-			HARMONIC.setAttribute(HARMONIC.Stages, 8);
-			HARMONIC.setAttribute(HARMONIC.Stages2, 8);
+			HARMONIC.setAttribute(HARMONIC.V1, 8);
+			HARMONIC.setAttribute(HARMONIC.V2, 8);
+			HARMONIC.setAttribute(HARMONIC.V3, 8);
 					}	
 		if(value == 3)
 						{	
 						Engine.allNotesOff(); 
-					HARMONIC.setAttribute(HARMONIC.Stages, 16);
-					HARMONIC.setAttribute(HARMONIC.Stages2, 16);
+			HARMONIC.setAttribute(HARMONIC.V1, 16);
+			HARMONIC.setAttribute(HARMONIC.V2, 16);
+			HARMONIC.setAttribute(HARMONIC.V3, 16);
 							}				
 			if(value == 4)
 							{	 
 							Engine.allNotesOff();
-						HARMONIC.setAttribute(HARMONIC.Stages, 24);
-						HARMONIC.setAttribute(HARMONIC.Stages2, 24);
+					HARMONIC.setAttribute(HARMONIC.V1, 24);
+			HARMONIC.setAttribute(HARMONIC.V2, 24);
+			HARMONIC.setAttribute(HARMONIC.V3, 14);
 								}	
 	if(value == 5)
 							{	
 							Engine.allNotesOff(); 
-						HARMONIC.setAttribute(HARMONIC.Stages, 32);
-						HARMONIC.setAttribute(HARMONIC.Stages2, 32);
+			HARMONIC.setAttribute(HARMONIC.V1, 32);
+			HARMONIC.setAttribute(HARMONIC.V2, 32);
+			HARMONIC.setAttribute(HARMONIC.V3, 32);
 								}								
 };
 
