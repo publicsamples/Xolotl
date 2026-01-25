@@ -67,30 +67,7 @@
                   <Property ID="ClassId" Value="boob"/>
                   <Property ID="NumParameters" Value="0"/>
                 </Properties>
-                <Parameters>
-                  <Parameter MinValue="0.009999999776482582" MaxValue="4.0" StepSize="0.009999999776482582"
-                             ID="A" Value="0.009999999776482582"/>
-                  <Parameter MinValue="0.009999999776482582" MaxValue="8.0" StepSize="0.009999999776482582"
-                             ID="D" Value="2.719999939203262" DefaultValue="0.6000000238418579"/>
-                  <Parameter MinValue="0.009999999776482582" MaxValue="8.0" StepSize="0.009999999776482582"
-                             ID="R" Value="3.489999921992421" DefaultValue="0.800000011920929"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.009999999776482582"
-                             ID="S" Value="0.2000000029802322"/>
-                  <Parameter MinValue="-2.0" MaxValue="2.0" StepSize="0.009999999776482582"
-                             ID="bend" Value="-0.420000035315752" DefaultValue="0.0"/>
-                  <Parameter MinValue="20.0" MaxValue="20000.0" StepSize="1.0" ID="freq" Value="20.0"
-                             DefaultValue="440.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.009999999776482582"
-                             ID="gain" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="gate" Value="1.0"
-                             DefaultValue="0.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
-                             ID="lfoDepth" Value="0.0"/>
-                  <Parameter MinValue="0.009999999776482582" MaxValue="10.0" StepSize="0.001000000047497451"
-                             ID="lfoFreq" Value="3.060000144643709" DefaultValue="0.1000000014901161"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.009999999776482582"
-                             ID="waveTravel" Value="0.0"/>
-                </Parameters>
+                <Parameters/>
                 <SwitchTargets/>
               </Node>
             </Nodes>

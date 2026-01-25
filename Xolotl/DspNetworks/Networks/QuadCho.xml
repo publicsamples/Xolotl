@@ -7,7 +7,7 @@
       <Node ID="clone_pack" FactoryPath="control.clone_pack" Bypassed="0"
             Name="clone_pack">
         <ModulationTargets>
-          <Connection NodeId="global_mod" ParameterId="Value"/>
+          <Connection NodeId="pma" ParameterId="Add"/>
         </ModulationTargets>
         <ComplexData>
           <SliderPacks>
@@ -78,7 +78,7 @@
           <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
         </Parameters>
         <ModulationTargets>
-          <Connection NodeId="global_mod" ParameterId="Intensity"/>
+          <Connection NodeId="pma" ParameterId="Multiply"/>
         </ModulationTargets>
       </Node>
       <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0" Name="xfader">
@@ -139,24 +139,27 @@
                                          Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="global_mod" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+                          <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                                Name="global_cable" NodeColour="4282954411">
+                            <Properties>
+                              <Property ID="Connection" Value="lfo1"/>
+                            </Properties>
+                            <ModulationTargets>
+                              <Connection NodeId="pma" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
                             <ModulationTargets>
                               <Connection NodeId="smoothed_parameter" ParameterId="Value"/>
                             </ModulationTargets>
-                            <ComplexData>
-                              <DisplayBuffers>
-                                <DisplayBuffer Index="-1"/>
-                              </DisplayBuffers>
-                            </ComplexData>
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Value="0.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ProcessSignal"
-                                         Value="0.0"/>
-                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Value="1.0"
-                                         DefaultValue="0.0"/>
-                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Intensity" DefaultValue="1.0"
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" DefaultValue="1.0"
                                          Automated="1"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Automated="1"/>
                             </Parameters>
                           </Node>
                           <Node ID="smoothed_parameter" FactoryPath="control.smoothed_parameter"
@@ -244,38 +247,41 @@
                       <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
                             Name="clone_child" NodeColour="4287927444">
                         <Nodes>
-                          <Node ID="receive1" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+                          <Node ID="receive4" FactoryPath="routing.receive" Bypassed="0" Name="receive">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" DefaultValue="0.5209313354492187"/>
                             </Parameters>
                           </Node>
-                          <Node ID="global_mod4" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+                          <Node ID="global_cable1" FactoryPath="routing.global_cable" Bypassed="0"
+                                Name="global_cable" NodeColour="4282954411">
+                            <Properties>
+                              <Property ID="Connection" Value="lfo1"/>
+                            </Properties>
                             <ModulationTargets>
-                              <Connection NodeId="smoothed_parameter1" ParameterId="Value"/>
+                              <Connection NodeId="pma1" ParameterId="Value"/>
                             </ModulationTargets>
-                            <ComplexData>
-                              <DisplayBuffers>
-                                <DisplayBuffer Index="-1"/>
-                              </DisplayBuffers>
-                            </ComplexData>
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Value="0.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ProcessSignal"
-                                         Value="0.0"/>
-                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Value="1.0"
-                                         DefaultValue="0.0"/>
-                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Intensity" DefaultValue="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="smoothed_parameter1" FactoryPath="control.smoothed_parameter"
+                          <Node ID="pma1" FactoryPath="control.pma" Bypassed="0" Name="pma">
+                            <ModulationTargets>
+                              <Connection NodeId="smoothed_parameter4" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="smoothed_parameter4" FactoryPath="control.smoothed_parameter"
                                 Bypassed="0" Name="smoothed_parameter">
                             <Properties>
                               <Property ID="Mode" Value="Linear Ramp"/>
                             </Properties>
                             <ModulationTargets>
-                              <Connection NodeId="jdelay1" ParameterId="DelayTime"/>
-                              <Connection NodeId="jdelay1" ParameterId="DelayTime"/>
+                              <Connection NodeId="fix_delay4" ParameterId="DelayTime"/>
+                              <Connection NodeId="jdelay4" ParameterId="DelayTime"/>
                             </ModulationTargets>
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -284,23 +290,23 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="jdelay1" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                          <Node ID="jdelay4" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                         ID="Limit" DefaultValue="1000.0" Automated="1"/>
+                                         ID="Limit" DefaultValue="1000.0"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
                                          ID="DelayTime" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="fix_delay1" FactoryPath="core.fix_delay" Bypassed="1" Name="fix_delay">
+                          <Node ID="fix_delay4" FactoryPath="core.fix_delay" Bypassed="1" Name="fix_delay">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                         SkewFactor="0.3010300099849701" ID="DelayTime"/>
+                                         SkewFactor="0.3010300099849701" ID="DelayTime" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1024.0" StepSize="1.0" ID="FadeTime"
                                          Value="1024.0" DefaultValue="369.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="svf_eq1" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                          <Node ID="svf_eq4" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
                             <ComplexData>
                               <Filters>
                                 <Filter Index="-1"/>
@@ -321,7 +327,7 @@
                                          DefaultValue="0.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="comp1" FactoryPath="dynamics.comp" Bypassed="0" Name="comp">
+                          <Node ID="comp4" FactoryPath="dynamics.comp" Bypassed="0" Name="comp">
                             <ComplexData>
                               <DisplayBuffers>
                                 <DisplayBuffer Index="-1"/>
@@ -341,9 +347,9 @@
                               <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Sidechain" Value="0.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="send1" FactoryPath="routing.send" Bypassed="0" Name="send">
+                          <Node ID="send4" FactoryPath="routing.send" Bypassed="0" Name="send">
                             <Properties>
-                              <Property ID="Connection" Value="receive1"/>
+                              <Property ID="Connection" Value="receive4"/>
                             </Properties>
                             <Parameters/>
                           </Node>
@@ -353,38 +359,41 @@
                       <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
                             Name="clone_child" NodeColour="4287927444">
                         <Nodes>
-                          <Node ID="receive2" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+                          <Node ID="receive5" FactoryPath="routing.receive" Bypassed="0" Name="receive">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" DefaultValue="0.5209313354492187"/>
                             </Parameters>
                           </Node>
-                          <Node ID="global_mod5" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+                          <Node ID="global_cable2" FactoryPath="routing.global_cable" Bypassed="0"
+                                Name="global_cable" NodeColour="4282954411">
+                            <Properties>
+                              <Property ID="Connection" Value="lfo1"/>
+                            </Properties>
                             <ModulationTargets>
-                              <Connection NodeId="smoothed_parameter2" ParameterId="Value"/>
+                              <Connection NodeId="pma2" ParameterId="Value"/>
                             </ModulationTargets>
-                            <ComplexData>
-                              <DisplayBuffers>
-                                <DisplayBuffer Index="-1"/>
-                              </DisplayBuffers>
-                            </ComplexData>
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Value="0.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ProcessSignal"
-                                         Value="0.0"/>
-                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Value="1.0"
-                                         DefaultValue="0.0"/>
-                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Intensity" DefaultValue="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="smoothed_parameter2" FactoryPath="control.smoothed_parameter"
+                          <Node ID="pma2" FactoryPath="control.pma" Bypassed="0" Name="pma">
+                            <ModulationTargets>
+                              <Connection NodeId="smoothed_parameter5" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="smoothed_parameter5" FactoryPath="control.smoothed_parameter"
                                 Bypassed="0" Name="smoothed_parameter">
                             <Properties>
                               <Property ID="Mode" Value="Linear Ramp"/>
                             </Properties>
                             <ModulationTargets>
-                              <Connection NodeId="jdelay2" ParameterId="DelayTime"/>
-                              <Connection NodeId="jdelay2" ParameterId="DelayTime"/>
+                              <Connection NodeId="fix_delay5" ParameterId="DelayTime"/>
+                              <Connection NodeId="jdelay5" ParameterId="DelayTime"/>
                             </ModulationTargets>
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -393,23 +402,23 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="jdelay2" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                          <Node ID="jdelay5" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                         ID="Limit" DefaultValue="1000.0" Automated="1"/>
+                                         ID="Limit" DefaultValue="1000.0"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
                                          ID="DelayTime" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="fix_delay2" FactoryPath="core.fix_delay" Bypassed="1" Name="fix_delay">
+                          <Node ID="fix_delay5" FactoryPath="core.fix_delay" Bypassed="1" Name="fix_delay">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                         SkewFactor="0.3010300099849701" ID="DelayTime"/>
+                                         SkewFactor="0.3010300099849701" ID="DelayTime" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1024.0" StepSize="1.0" ID="FadeTime"
                                          Value="1024.0" DefaultValue="369.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="svf_eq2" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                          <Node ID="svf_eq5" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
                             <ComplexData>
                               <Filters>
                                 <Filter Index="-1"/>
@@ -430,7 +439,7 @@
                                          DefaultValue="0.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="comp2" FactoryPath="dynamics.comp" Bypassed="0" Name="comp">
+                          <Node ID="comp5" FactoryPath="dynamics.comp" Bypassed="0" Name="comp">
                             <ComplexData>
                               <DisplayBuffers>
                                 <DisplayBuffer Index="-1"/>
@@ -450,9 +459,9 @@
                               <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Sidechain" Value="0.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="send2" FactoryPath="routing.send" Bypassed="0" Name="send">
+                          <Node ID="send5" FactoryPath="routing.send" Bypassed="0" Name="send">
                             <Properties>
-                              <Property ID="Connection" Value="receive2"/>
+                              <Property ID="Connection" Value="receive5"/>
                             </Properties>
                             <Parameters/>
                           </Node>
@@ -462,38 +471,41 @@
                       <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
                             Name="clone_child" NodeColour="4287927444">
                         <Nodes>
-                          <Node ID="receive3" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+                          <Node ID="receive6" FactoryPath="routing.receive" Bypassed="0" Name="receive">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" DefaultValue="0.5209313354492187"/>
                             </Parameters>
                           </Node>
-                          <Node ID="global_mod6" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+                          <Node ID="global_cable3" FactoryPath="routing.global_cable" Bypassed="0"
+                                Name="global_cable" NodeColour="4282954411">
+                            <Properties>
+                              <Property ID="Connection" Value="lfo1"/>
+                            </Properties>
                             <ModulationTargets>
-                              <Connection NodeId="smoothed_parameter3" ParameterId="Value"/>
+                              <Connection NodeId="pma3" ParameterId="Value"/>
                             </ModulationTargets>
-                            <ComplexData>
-                              <DisplayBuffers>
-                                <DisplayBuffer Index="-1"/>
-                              </DisplayBuffers>
-                            </ComplexData>
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Value="0.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ProcessSignal"
-                                         Value="0.0"/>
-                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Value="1.0"
-                                         DefaultValue="0.0"/>
-                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Intensity" DefaultValue="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="smoothed_parameter3" FactoryPath="control.smoothed_parameter"
+                          <Node ID="pma3" FactoryPath="control.pma" Bypassed="0" Name="pma">
+                            <ModulationTargets>
+                              <Connection NodeId="smoothed_parameter6" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="smoothed_parameter6" FactoryPath="control.smoothed_parameter"
                                 Bypassed="0" Name="smoothed_parameter">
                             <Properties>
                               <Property ID="Mode" Value="Linear Ramp"/>
                             </Properties>
                             <ModulationTargets>
-                              <Connection NodeId="jdelay3" ParameterId="DelayTime"/>
-                              <Connection NodeId="jdelay3" ParameterId="DelayTime"/>
+                              <Connection NodeId="fix_delay6" ParameterId="DelayTime"/>
+                              <Connection NodeId="jdelay6" ParameterId="DelayTime"/>
                             </ModulationTargets>
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -502,23 +514,23 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="jdelay3" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                          <Node ID="jdelay6" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                         ID="Limit" DefaultValue="1000.0" Automated="1"/>
+                                         ID="Limit" DefaultValue="1000.0"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
                                          ID="DelayTime" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="fix_delay3" FactoryPath="core.fix_delay" Bypassed="1" Name="fix_delay">
+                          <Node ID="fix_delay6" FactoryPath="core.fix_delay" Bypassed="1" Name="fix_delay">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                         SkewFactor="0.3010300099849701" ID="DelayTime"/>
+                                         SkewFactor="0.3010300099849701" ID="DelayTime" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1024.0" StepSize="1.0" ID="FadeTime"
                                          Value="1024.0" DefaultValue="369.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="svf_eq3" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                          <Node ID="svf_eq6" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
                             <ComplexData>
                               <Filters>
                                 <Filter Index="-1"/>
@@ -539,7 +551,7 @@
                                          DefaultValue="0.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="comp3" FactoryPath="dynamics.comp" Bypassed="0" Name="comp">
+                          <Node ID="comp6" FactoryPath="dynamics.comp" Bypassed="0" Name="comp">
                             <ComplexData>
                               <DisplayBuffers>
                                 <DisplayBuffer Index="-1"/>
@@ -559,9 +571,9 @@
                               <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Sidechain" Value="0.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="send3" FactoryPath="routing.send" Bypassed="0" Name="send">
+                          <Node ID="send6" FactoryPath="routing.send" Bypassed="0" Name="send">
                             <Properties>
-                              <Property ID="Connection" Value="receive3"/>
+                              <Property ID="Connection" Value="receive6"/>
                             </Properties>
                             <Parameters/>
                           </Node>
@@ -609,37 +621,35 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Offset" Value="0.6000000238418579"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Offset" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_pack" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="LP" Value="0.8999999761581421"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="LP" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FB" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FB" Value="0.5699999928474426"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable1" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Mod" Value="0.1700000017881393"
-                 ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Mod" Value="0.0" ExternalModulation="Disabled"
+                 ModColour="0">
         <Connections>
           <Connection NodeId="clone_cable2" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="0.0" ExternalModulation="Disabled"
-                 ModColour="0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="1.0" ExternalModulation="Disabled"
+                 ModColour="0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="xfader" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Range" Value="0.4900000095367432"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Range" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable3" ParameterId="Value"/>
         </Connections>

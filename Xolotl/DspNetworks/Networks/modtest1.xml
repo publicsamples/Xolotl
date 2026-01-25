@@ -333,6 +333,89 @@
         </Nodes>
         <Parameters/>
       </Node>
+      <Node ID="branch" FactoryPath="container.branch" Bypassed="0" Name="branch"
+            ShowParameters="1">
+        <Nodes>
+          <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="peak2" FactoryPath="core.peak" Bypassed="0" Name="peak2">
+                <ModulationTargets>
+                  <Connection NodeId="global_cable" ParameterId="Value"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <DisplayBuffers>
+                    <DisplayBuffer Index="-1"/>
+                  </DisplayBuffers>
+                </ComplexData>
+                <Parameters/>
+              </Node>
+              <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4282954411">
+                <Properties>
+                  <Property ID="Connection" Value="lfo1"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="peak4" FactoryPath="core.peak" Bypassed="0" Name="peak2">
+                <ModulationTargets>
+                  <Connection NodeId="global_cable2" ParameterId="Value"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <DisplayBuffers>
+                    <DisplayBuffer Index="-1"/>
+                  </DisplayBuffers>
+                </ComplexData>
+                <Parameters/>
+              </Node>
+              <Node ID="global_cable2" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4282954412">
+                <Properties>
+                  <Property ID="Connection" Value="lfo2"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="peak3" FactoryPath="core.peak" Bypassed="0" Name="peak2">
+                <ModulationTargets>
+                  <Connection NodeId="global_cable1" ParameterId="Value"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <DisplayBuffers>
+                    <DisplayBuffer Index="-1"/>
+                  </DisplayBuffers>
+                </ComplexData>
+                <Parameters/>
+              </Node>
+              <Node ID="global_cable1" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4282954413">
+                <Properties>
+                  <Property ID="Connection" Value="lfo3"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="2" StepSize="1.0" ID="Index" Automated="1"/>
+        </Parameters>
+      </Node>
     </Nodes>
     <Parameters>
       <Parameter ID="Tempo" MinValue="0.0" MaxValue="18.0" Value="0.0" StepSize="1.0"
@@ -355,7 +438,9 @@
       </Parameter>
       <Parameter ID="OUTPUT" MinValue="0.0" MaxValue="2.0" Value="0.0" StepSize="1.0"
                  ExternalModulation="Disabled" ModColour="0">
-        <Connections/>
+        <Connections>
+          <Connection NodeId="branch" ParameterId="Index"/>
+        </Connections>
       </Parameter>
       <Parameter ID="Sync" MinValue="0.0" MaxValue="1.0" StepSize="1.0" Value="1.0">
         <Connections>
