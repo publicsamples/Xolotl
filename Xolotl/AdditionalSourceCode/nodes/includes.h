@@ -7,10 +7,6 @@
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// Include third party header files ----------------
-
-#include "boob.h"
-
 // Include compiled network files ------------------
 
 #include "ArrangeNew_networkdata.h"
@@ -30,10 +26,12 @@
 #include "harmnode_networkdata.h"
 #include "harmo_networkdata.h"
 #include "Htwentyfour_networkdata.h"
+#include "LFO.h"
 #include "modconnet_networkdata.h"
 #include "modtest1.h"
 #include "mod_networkdata.h"
 #include "pb_networkdata.h"
+#include "PhunWithPhasor_networkdata.h"
 #include "QuadCho_networkdata.h"
 #include "TRACK_LFO_networkdata.h"
 #include "Xarrange_networkdata.h"

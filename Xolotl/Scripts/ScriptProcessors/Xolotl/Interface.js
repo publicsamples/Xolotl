@@ -211,6 +211,7 @@ inline function onStagesControl(component, value)
 			HARMONIC.setAttribute(HARMONIC.V1, 4);
 			HARMONIC.setAttribute(HARMONIC.V2, 4);
 			HARMONIC.setAttribute(HARMONIC.V3, 4);
+			HARMONIC.setAttribute(HARMONIC.V5, 5);
 			
 			}
 		if(value == 2)
@@ -219,6 +220,7 @@ inline function onStagesControl(component, value)
 			HARMONIC.setAttribute(HARMONIC.V1, 8);
 			HARMONIC.setAttribute(HARMONIC.V2, 8);
 			HARMONIC.setAttribute(HARMONIC.V3, 8);
+			HARMONIC.setAttribute(HARMONIC.V5, 9);
 					}	
 		if(value == 3)
 						{	
@@ -226,13 +228,15 @@ inline function onStagesControl(component, value)
 			HARMONIC.setAttribute(HARMONIC.V1, 16);
 			HARMONIC.setAttribute(HARMONIC.V2, 16);
 			HARMONIC.setAttribute(HARMONIC.V3, 16);
+			HARMONIC.setAttribute(HARMONIC.V5, 17);
 							}				
 			if(value == 4)
 							{	 
 							Engine.allNotesOff();
 					HARMONIC.setAttribute(HARMONIC.V1, 24);
 			HARMONIC.setAttribute(HARMONIC.V2, 24);
-			HARMONIC.setAttribute(HARMONIC.V3, 14);
+			HARMONIC.setAttribute(HARMONIC.V3, 24);
+			HARMONIC.setAttribute(HARMONIC.V5, 25);
 								}	
 	if(value == 5)
 							{	
@@ -240,6 +244,7 @@ inline function onStagesControl(component, value)
 			HARMONIC.setAttribute(HARMONIC.V1, 32);
 			HARMONIC.setAttribute(HARMONIC.V2, 32);
 			HARMONIC.setAttribute(HARMONIC.V3, 32);
+			HARMONIC.setAttribute(HARMONIC.V5, 33);
 								}								
 };
 
@@ -325,27 +330,6 @@ const var UserB3 = Content.getComponent("UserB3");
 
 const var SynthesiserGroup1 = Synth.getChildSynth("Synthesiser Group1");
 const var Knob5 = Content.getComponent("Knob5");
-
-// PRESETS ///////////////////////
-const var pmenu = Content.getComponent("pmenu");
-var menuItems = [];
-
-const var x = Engine.getUserPresetList(); 
-for (i in x)
-	menuItems.insert(-1, i);
-
-menuItems = menuItems.join("\n");
-pmenu.set("items", menuItems);
-
-inline function onpmenuControl(component, value)
-{
-	Engine.loadUserPreset(pmenu.getItemText() + ".preset");
-};
-
-Content.getComponent("pmenu").setControlCallback(onpmenuControl);
-
-
-
 
 function onNoteOn()
 {
