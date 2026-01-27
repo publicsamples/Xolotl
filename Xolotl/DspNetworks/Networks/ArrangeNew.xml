@@ -32,11 +32,15 @@
                                  Automated="1"/>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="trig" DefaultValue="1.0"
                                  Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="mode" Automated="1"/>
                     </Parameters>
                     <ComplexData>
                       <DisplayBuffers>
                         <DisplayBuffer Index="-1"/>
                       </DisplayBuffers>
+                      <Tables>
+                        <Table Index="1"/>
+                      </Tables>
                     </ComplexData>
                   </Node>
                   <Node ID="peak2" FactoryPath="core.peak" Bypassed="0" Name="peak2">
@@ -90,11 +94,15 @@
                                  Automated="1"/>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="trig" DefaultValue="1.0"
                                  Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="mode" Automated="1"/>
                     </Parameters>
                     <ComplexData>
                       <DisplayBuffers>
                         <DisplayBuffer Index="-1"/>
                       </DisplayBuffers>
+                      <Tables>
+                        <Table Index="2"/>
+                      </Tables>
                     </ComplexData>
                   </Node>
                   <Node ID="peak7" FactoryPath="core.peak" Bypassed="0" Name="peak2">
@@ -2373,7 +2381,8 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="split9" FactoryPath="container.split" Bypassed="0" Name="FX">
+          <Node ID="split9" FactoryPath="container.split" Bypassed="0" Name="FX"
+                Folded="1">
             <Nodes>
               <Node ID="chain54" FactoryPath="container.chain" Bypassed="0" Name="chain">
                 <Nodes>
@@ -4447,7 +4456,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4606,7 +4615,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4754,7 +4763,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4902,7 +4911,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5050,7 +5059,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5198,7 +5207,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5346,7 +5355,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5494,7 +5503,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5642,7 +5651,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5790,7 +5799,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5938,7 +5947,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -6086,7 +6095,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -6234,7 +6243,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -6382,7 +6391,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -6530,7 +6539,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -6678,7 +6687,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -6826,7 +6835,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -6974,7 +6983,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -7122,7 +7131,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -7270,7 +7279,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -7418,7 +7427,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -7566,7 +7575,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -7714,7 +7723,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -7862,7 +7871,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -8010,7 +8019,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -8158,7 +8167,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -8306,7 +8315,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -8454,7 +8463,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -8602,7 +8611,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -8750,7 +8759,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -8898,7 +8907,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -9046,7 +9055,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="604799"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="131072"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -9120,7 +9129,7 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.949999988079071"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.5400000214576721"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma" ParameterId="Add"/>
@@ -9130,7 +9139,8 @@
           <Connection NodeId="pma54" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="HarmMod" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="HarmMod" Value="0.8799999952316284"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma" ParameterId="Multiply"/>
           <Connection NodeId="pma13" ParameterId="Multiply"/>
@@ -9146,8 +9156,7 @@
           <Connection NodeId="branch" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="HarmAux" Value="2.081668171172169e-17"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="HarmAux" Value="0.0">
         <Connections>
           <Connection NodeId="pma1" ParameterId="Multiply"/>
           <Connection NodeId="pma2" ParameterId="Multiply"/>
@@ -9158,7 +9167,7 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="HarmAuxSrc"
-                 Value="1.0" ExternalModulation="Disabled" ModColour="0">
+                 Value="2.0" ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch1" ParameterId="Index"/>
         </Connections>
@@ -9169,7 +9178,7 @@
           <Connection NodeId="clone_forward" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Max" Value="16.0"
+      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Max" Value="9.0"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="clone_forward2" ParameterId="Value"/>
@@ -9222,13 +9231,13 @@
           <Connection NodeId="branch2" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1" ID="OscType" Value="1.0"
-                 ExternalModulation="Disabled" ModColour="0">
+      <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1" ID="OscType" Value="2.0"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="clone_forward6" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Shape" Value="0.449999988079071"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Shape" Value="0.1299999952316284"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma16" ParameterId="Add"/>
@@ -9269,13 +9278,14 @@
           <Connection NodeId="branch4" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="3.0" ID="VoiceMode" Value="1.0" ExternalModulation="Disabled"
-                 ModColour="0">
+      <Parameter MinValue="1.0" MaxValue="3.0" ID="VoiceMode" Value="2.0" ExternalModulation="Disabled"
+                 ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="clone_forward7" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="CyclePos" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="CyclePos" Value="0.2599999904632568"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma18" ParameterId="Add"/>
           <Connection NodeId="pma43" ParameterId="Add"/>
@@ -9284,7 +9294,7 @@
           <Connection NodeId="pma65" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CyclePosMod" Value="0.5" DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CyclePosMod" Value="0.0">
         <Connections>
           <Connection NodeId="pma18" ParameterId="Multiply"/>
           <Connection NodeId="pma43" ParameterId="Multiply"/>
@@ -9293,14 +9303,13 @@
           <Connection NodeId="pma65" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1" ID="CyclePosSrc" Value="1.0"
-                 ExternalModulation="Disabled" ModColour="0">
+      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1" ID="CyclePosSrc" Value="4.0"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch9" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CyclePosAux" Value="-1.0"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CyclePosAux" Value="0.0">
         <Connections>
           <Connection NodeId="pma25" ParameterId="Multiply"/>
           <Connection NodeId="pma26" ParameterId="Multiply"/>
@@ -9325,8 +9334,7 @@
           <Connection NodeId="pma74" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CycleShapeMod" Value="0.4900000095367432"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CycleShapeMod" Value="0.0">
         <Connections>
           <Connection NodeId="pma44" ParameterId="Multiply"/>
           <Connection NodeId="pma45" ParameterId="Multiply"/>
@@ -9336,7 +9344,7 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1" ID="CycleShapeSrc"
-                 Value="2.0" ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
+                 Value="4.0" ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch10" ParameterId="Index"/>
         </Connections>
@@ -9352,12 +9360,12 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="CycleShapeAuxSrc"
-                 Value="4.0" ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
+                 Value="2.0" ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch6" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="18.0" ID="FxValue" Value="2.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="18.0" ID="FxValue" Value="10.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma46" ParameterId="Add"/>
           <Connection NodeId="pma47" ParameterId="Add"/>
@@ -9402,7 +9410,7 @@
                  DefaultValue="0.0">
         <Connections/>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxDiv" Value="2.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxDiv" Value="15.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_forward9" ParameterId="Value"/>
@@ -9418,12 +9426,6 @@
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="clone_cable5" ParameterId="Value"/>
-        </Connections>
-      </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FxSmooth" Value="0.0" ExternalModulation="Disabled"
-                 ModColour="0">
-        <Connections>
-          <Connection NodeId="clone_cable6" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoPitch" Value="0.0" ExternalModulation="Disabled"
@@ -9448,7 +9450,7 @@
           <Connection NodeId="pma93" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CutMod" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CutMod" Value="0.5" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma48" ParameterId="Multiply"/>
           <Connection NodeId="pma49" ParameterId="Multiply"/>
@@ -9497,7 +9499,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="ResMod" MinValue="-1.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.0">
+                 DefaultValue="" Value="1.0">
         <Connections>
           <Connection NodeId="pma50" ParameterId="Multiply"/>
           <Connection NodeId="pma51" ParameterId="Multiply"/>
@@ -9513,7 +9515,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="ResAux" MinValue="-1.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.0">
+                 DefaultValue="" Value="1.0">
         <Connections>
           <Connection NodeId="pma79" ParameterId="Multiply"/>
           <Connection NodeId="pma80" ParameterId="Multiply"/>
@@ -9529,7 +9531,8 @@
           <Connection NodeId="branch14" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.5899999737739563"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma52" ParameterId="Add"/>
           <Connection NodeId="pma53" ParameterId="Add"/>
@@ -9549,7 +9552,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="FilterMixSrc" MinValue="1.0" MaxValue="5.0" StepSize="1.0"
-                 ModColour="0" ExternalModulation="Disabled" Value="2.0" DefaultValue="1.0">
+                 ModColour="0" ExternalModulation="Disabled" Value="1.0">
         <Connections>
           <Connection NodeId="branch17" ParameterId="Index"/>
         </Connections>
@@ -9572,13 +9575,13 @@
         </Connections>
       </Parameter>
       <Parameter ID="Spread" MinValue="-1.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.2599999904632568">
+                 DefaultValue="" Value="0.0">
         <Connections>
           <Connection NodeId="clone_cable13" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter ID="Snap" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.1299999952316284">
+                 DefaultValue="" Value="0.0">
         <Connections>
           <Connection NodeId="clone_forward21" ParameterId="Value"/>
         </Connections>
@@ -9591,7 +9594,7 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="EnvTempo1"
-                 Value="1.0" TextToValueConverter="" DefaultValue="0.0">
+                 Value="0.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="Env3" ParameterId="Tempo"/>
         </Connections>
@@ -9603,35 +9606,30 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" ID="EnvA1" Value="3070.000045746564"
-                 TextToValueConverter="" DefaultValue="0.0">
+                 SkewFactor="0.1976716816425323" ID="EnvA1" Value="0.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="Env3" ParameterId="a"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" ID="EnvD1" Value="2913.900043420493"
-                 DefaultValue="0.0" TextToValueConverter="">
+                 SkewFactor="0.1976716816425323" ID="EnvD1" Value="0.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="Env3" ParameterId="d"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" ID="EnvH1" Value="8.900000132620333"
-                 TextToValueConverter="" DefaultValue="0.0">
+                 SkewFactor="0.1976716816425323" ID="EnvH1" Value="0.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="Env3" ParameterId="h"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="EnvS1" Value="0.3499999940395355"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="EnvS1" Value="0.0">
         <Connections>
           <Connection NodeId="Env3" ParameterId="s"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" ID="EnvR1" Value="1786.000026613474"
-                 DefaultValue="0.0" TextToValueConverter="">
+                 SkewFactor="0.1976716816425323" ID="EnvR1" Value="0.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="Env3" ParameterId="r"/>
         </Connections>
@@ -9643,7 +9641,8 @@
         </Connections>
       </Parameter>
       <Parameter ID="EnvTempo2" MinValue="0.0" MaxValue="18.0" StepSize="1.0"
-                 ModColour="0" ExternalModulation="Disabled" TextToValueConverter="">
+                 ModColour="0" ExternalModulation="Disabled" TextToValueConverter=""
+                 DefaultValue="" Value="9.0">
         <Connections>
           <Connection NodeId="Env4" ParameterId="Tempo"/>
         </Connections>
@@ -9691,12 +9690,12 @@
       </Parameter>
       <Parameter ID="EnvTrig2" MinValue="0.0" MaxValue="1.0" StepSize="1.0" ModColour="0"
                  ExternalModulation="Disabled" TextToValueConverter="" DefaultValue=""
-                 Value="0.0">
+                 Value="1.0">
         <Connections>
           <Connection NodeId="Env4" ParameterId="trig"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" ID="Stages2" Value="32.0" DefaultValue="0.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" ID="Stages2" Value="2.0" DefaultValue="0.0"
                  StepSize="1.0">
         <Connections>
           <Connection NodeId="clone_forward3" ParameterId="NumClones"/>
@@ -9704,19 +9703,20 @@
           <Connection NodeId="clone_forward8" ParameterId="NumClones"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" ID="posdiv" Value="1.0" DefaultValue="0.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" ID="posdiv" Value="2.0" DefaultValue="0.0"
                  StepSize="1.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="clone_forward3" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="PosMode" Value="0.0" TextToValueConverter="">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="PosMode" Value="1.0" TextToValueConverter=""
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_forward4" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1" ID="Quant" Value="1.0"
-                 ExternalModulation="Disabled" ModColour="0">
+      <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1" ID="Quant" Value="8.0"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="clone_forward8" ParameterId="Value"/>
         </Connections>
@@ -9752,12 +9752,12 @@
           <Connection NodeId="clone_cable24" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShpSprd" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShpSprd" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable27" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="V1" Value="4.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="V1" Value="8.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pack_resizer" ParameterId="NumSliders"/>
@@ -9779,7 +9779,7 @@
           <Connection NodeId="clone_cable27" ParameterId="NumClones"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="V2" Value="4.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="V2" Value="8.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_pack2" ParameterId="NumClones"/>
@@ -9809,21 +9809,37 @@
           <Connection NodeId="pack_resizer4" ParameterId="NumSliders"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="V3" Value="4.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="V3" Value="8.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone" ParameterId="NumClones"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModPhase" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModPhase" Value="0.05000000074505806"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable9" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="33.0" StepSize="1.0" ID="V5" Value="4.0"
+      <Parameter MinValue="1.0" MaxValue="33.0" StepSize="1.0" ID="V5" Value="9.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable9" ParameterId="NumClones"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="SMOOTH" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable6" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="EnvMode1" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="Env3" ParameterId="mode"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="EnvMode2" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="Env4" ParameterId="mode"/>
         </Connections>
       </Parameter>
     </Parameters>

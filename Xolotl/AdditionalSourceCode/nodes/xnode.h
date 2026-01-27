@@ -446,10 +446,17 @@ using branch4_t = container::branch<parameter::empty,
 template <int NV>
 using file_player6_t = wrap::data<core::file_player<NV>, 
                                   data::external::audiofile<1>>;
+template <int NV>
+using file_player7_t = wrap::data<core::file_player<NV>, 
+                                  data::external::audiofile<2>>;
+template <int NV>
+using branch6_t = container::branch<parameter::empty, 
+                                    wrap::fix<2, file_player6_t<NV>>, 
+                                    file_player7_t<NV>>;
 
 template <int NV>
 using chain1_t = container::chain<parameter::empty, 
-                                  wrap::fix<2, file_player6_t<NV>>>;
+                                  wrap::fix<2, branch6_t<NV>>>;
 
 template <int NV>
 using chain43_t = container::chain<parameter::empty, 
@@ -1133,7 +1140,9 @@ using FilterFxMod = parameter::plain<xnode_impl::pma_t<NV>, 1>;
 template <int NV>
 using DET = parameter::plain<xnode_impl::pma_unscaled_t<NV>, 
                              0>;
-using snap = FxMix;
+template <int NV>
+using snap = parameter::plain<xnode_impl::branch6_t<NV>, 
+                              0>;
 template <int NV>
 using PosDiv = parameter::plain<xnode_impl::tempo_sync1_t<NV>, 
                                 1>;
@@ -1163,7 +1172,7 @@ using xnode_t_plist = parameter::list<Harm<NV>,
                                       ShSinMix<NV>, 
                                       UserPs<NV>, 
                                       UserInput<NV>, 
-                                      snap, 
+                                      snap<NV>, 
                                       ShToGain<NV>, 
                                       SHInput<NV>, 
                                       PosDiv<NV>, 
@@ -1184,7 +1193,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 	{
 		static const int NumTables = 1;
 		static const int NumSliderPacks = 0;
-		static const int NumAudioFiles = 2;
+		static const int NumAudioFiles = 3;
 		static const int NumFilters = 0;
 		static const int NumDisplayBuffers = 0;
 		
@@ -1200,7 +1209,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
             0x0000, 0x3F80, 0x0000, 0x3F80, 0x035B, 0x0000, 0x7300, 0x6574, 
             0x0070, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 
             0x3F80, 0x0000, 0x0000, 0x045B, 0x0000, 0x4D00, 0x646F, 0x0065, 
-            0x0000, 0x3F80, 0x0000, 0x40C0, 0x0000, 0x40C0, 0x0000, 0x3F80, 
+            0x0000, 0x3F80, 0x0000, 0x40C0, 0x0000, 0x4080, 0x0000, 0x3F80, 
             0x0000, 0x3F80, 0x055B, 0x0000, 0x4600, 0x4D78, 0x7869, 0x0000, 
             0x0000, 0x0000, 0x8000, 0x163F, 0x98B2, 0x003D, 0x8000, 0x003F, 
             0x0000, 0x5B00, 0x0006, 0x0000, 0x7846, 0x6156, 0x756C, 0x0065, 
@@ -1400,9 +1409,13 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
                      getT(9);
 		auto& chain1 = this->getT(0).getT(1).getT(0).getT(0).                              // xnode_impl::chain1_t<NV>
                        getT(2).getT(0).getT(1).getT(3);
-		auto& file_player6 = this->getT(0).getT(1).getT(0).getT(0).                        // xnode_impl::file_player6_t<NV>
-                             getT(2).getT(0).getT(1).getT(3).
-                             getT(0);
+		auto& branch6 = this->getT(0).getT(1).getT(0).getT(0).                             // xnode_impl::branch6_t<NV>
+                        getT(2).getT(0).getT(1).getT(3).
+                        getT(0);
+		auto& file_player6 = this->getT(0).getT(1).getT(0).getT(0).getT(2).                // xnode_impl::file_player6_t<NV>
+                             getT(0).getT(1).getT(3).getT(0).getT(0);
+		auto& file_player7 = this->getT(0).getT(1).getT(0).getT(0).getT(2).                // xnode_impl::file_player7_t<NV>
+                             getT(0).getT(1).getT(3).getT(0).getT(1);
 		auto& modchain8 = this->getT(0).getT(2);                                           // xnode_impl::modchain8_t<NV>
 		auto& midi = this->getT(0).getT(2).getT(0);                                        // xnode_impl::midi_t<NV>
 		auto& no_midi = this->getT(0).getT(2).getT(1);                                     // xnode_impl::no_midi_t<NV>
@@ -1526,6 +1539,8 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		UserPs_p.connectT(9, add1);  // UserPs -> add1::Value
 		
 		this->getParameterT(21).connectT(0, gain11); // UserInput -> gain11::Gain
+		
+		this->getParameterT(22).connectT(0, branch6); // snap -> branch6::Index
 		
 		auto& ShToGain_p = this->getParameterT(23);
 		ShToGain_p.connectT(0, pma1);        // ShToGain -> pma1::Multiply
@@ -1742,7 +1757,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		phasor6.setParameterT(3, 0.); // core::phasor::Phase
 		
 		;                               // gain11::Gain is automated
-		gain11.setParameterT(1, 0.);    // core::gain::Smoothing
+		gain11.setParameterT(1, 20.8);  // core::gain::Smoothing
 		gain11.setParameterT(2, -100.); // core::gain::ResetValue
 		
 		; // branch4::Index is automated
@@ -1767,10 +1782,17 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		; // add9::Value is automated
 		
+		; // branch6::Index is automated
+		
 		file_player6.setParameterT(0, 1.);   // core::file_player::PlaybackMode
 		file_player6.setParameterT(1, 1.);   // core::file_player::Gate
 		file_player6.setParameterT(2, 440.); // core::file_player::RootFrequency
 		file_player6.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player7.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player7.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player7.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player7.setParameterT(3, 1.);   // core::file_player::FreqRatio
 		
 		; // tempo_sync::Tempo is automated
 		; // tempo_sync::Multiplier is automated
@@ -1883,7 +1905,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		this->setParameterT(1, 1.);
 		this->setParameterT(2, 10.);
 		this->setParameterT(3, 1.);
-		this->setParameterT(4, 6.);
+		this->setParameterT(4, 4.);
 		this->setParameterT(5, 0.0745584);
 		this->setParameterT(6, 0.);
 		this->setParameterT(7, 1.);
@@ -1944,9 +1966,10 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		this->getT(0).getT(1).getT(0).getT(0).                                                   // xnode_impl::cable_table2_t<NV>
         getT(0).getT(0).getT(5).getT(2).setExternalData(b, index);
 		this->getT(0).getT(1).getT(0).getT(0).getT(1).getT(0).getT(0).setExternalData(b, index); // xnode_impl::file_player5_t<NV>
-		this->getT(0).getT(1).getT(0).getT(0).                                                   // xnode_impl::file_player6_t<NV>
-        getT(2).getT(0).getT(1).getT(3).
-        getT(0).setExternalData(b, index);
+		this->getT(0).getT(1).getT(0).getT(0).getT(2).                                           // xnode_impl::file_player6_t<NV>
+        getT(0).getT(1).getT(3).getT(0).getT(0).setExternalData(b, index);
+		this->getT(0).getT(1).getT(0).getT(0).getT(2).                                   // xnode_impl::file_player7_t<NV>
+        getT(0).getT(1).getT(3).getT(0).getT(1).setExternalData(b, index);
 		this->getT(0).getT(2).getT(2).setExternalData(b, index);                         // xnode_impl::peak1_t<NV>
 		this->getT(0).getT(2).getT(4).getT(0).getT(2).setExternalData(b, index);         // xnode_impl::oscillator_t<NV>
 		this->getT(0).getT(2).getT(4).getT(3).getT(0).getT(0).setExternalData(b, index); // xnode_impl::cable_table3_t<NV>

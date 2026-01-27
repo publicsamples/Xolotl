@@ -589,7 +589,8 @@
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                                  ID="Gain" Automated="1"/>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.80000030994415"
+                                                 DefaultValue="0.0"/>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                                  SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="0.0"
                                                  Value="-100.0"/>
@@ -662,23 +663,49 @@
                                       <Parameter MinValue="0.0" MaxValue="9" StepSize="1.0" ID="Index" Automated="1"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain1">
+                                  <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain1"
+                                        ShowParameters="1">
                                     <Nodes>
-                                      <Node ID="file_player6" FactoryPath="core.file_player" Bypassed="0"
-                                            Name="file_player5">
-                                        <ComplexData>
-                                          <AudioFiles>
-                                            <AudioFile Index="1" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
-                                                       MaxValue="131072"/>
-                                          </AudioFiles>
-                                        </ComplexData>
+                                      <Node ID="branch6" FactoryPath="container.branch" Bypassed="0" Name="branch6"
+                                            ShowParameters="1">
+                                        <Nodes>
+                                          <Node ID="file_player6" FactoryPath="core.file_player" Bypassed="0"
+                                                Name="file_player5">
+                                            <ComplexData>
+                                              <AudioFiles>
+                                                <AudioFile Index="1" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                                           MaxValue="131072"/>
+                                              </AudioFiles>
+                                            </ComplexData>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                                         Value="1.0" DefaultValue="0.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                              <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                                         ID="FreqRatio" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="file_player7" FactoryPath="core.file_player" Bypassed="0"
+                                                Name="file_player5">
+                                            <ComplexData>
+                                              <AudioFiles>
+                                                <AudioFile Index="2" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                                           MaxValue="131072"/>
+                                              </AudioFiles>
+                                            </ComplexData>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                                         Value="1.0" DefaultValue="0.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                              <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                                         ID="FreqRatio" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
                                         <Parameters>
-                                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                                                     Value="1.0" DefaultValue="0.0"/>
-                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
-                                                     ID="FreqRatio" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1" StepSize="1.0" ID="Index" Automated="1"/>
                                         </Parameters>
                                       </Node>
                                     </Nodes>
@@ -1321,7 +1348,9 @@
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="1.0" ID="snap" Value="0.1896142578125"
                  DefaultValue="0.0" ExternalModulation="Disabled" ModColour="0">
-        <Connections/>
+        <Connections>
+          <Connection NodeId="branch6" ParameterId="Index"/>
+        </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="1.0" DefaultValue="0.0">
         <Connections>

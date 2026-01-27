@@ -4,12 +4,143 @@ Content.makeFrontInterface(850, 580);
 
 include("UISTUFF.js");
 
+const var AudioList = Engine.loadAudioFilesIntoPool();
 
+const var SampleA = Content.getComponent("SampleA");
+const var SampleBank = Content.getComponent("SampleBank");
 
-//const eventdata = rm.getEventData(0, 0);
 const var harm = Synth.getAudioSampleProcessor("HARMONIC");
                 
 const slot = harm.getAudioFile(0);
+
+const var foldersV1 = [];        // Top-level Genre foldersV1
+const var instrumentsV1 = {};    // Maps Genre to Instruments
+const var samplesV1 = {};  
+
+
+inline function sortAudioFilesListV1() {
+	
+///	for (file in samplesArray) {
+	               
+for (file in AudioList) {
+
+        local fullPath = file.split("}")[1];
+
+        local pathParts = fullPath.split("/");
+    
+        local genreFolder = pathParts[0];
+        local instrumentFolder = pathParts[1];
+        local sampleFile = pathParts[2];
+        
+     
+	
+	
+
+     
+       if (foldersV1.indexOf(genreFolder) == -1) {
+           foldersV1.push(genreFolder);
+           instrumentsV1[genreFolder] = []; 
+        }
+
+       
+        if (instrumentsV1[genreFolder].indexOf(instrumentFolder) == -1) {
+            instrumentsV1[genreFolder].push(instrumentFolder);
+            samplesV1[instrumentFolder] = []; 
+        }
+
+
+       samplesV1[instrumentFolder].push(sampleFile);
+  
+  
+    }
+
+
+   SampleBank.set("items", foldersV1.join("\n"));
+ //  SampleA.set("items", foldersV1.join("\n"));
+
+}
+
+
+
+// Run the sorting function
+sortAudioFilesListV1();
+
+
+inline function onSampleBankControl(component, value)
+{
+  if (value >= 0) {
+        // Get the selected Genre
+        local selectedGenre = foldersV1[value-1];
+     //   Console.print("Selected Genre: " + selectedGenre);
+
+        // Update InstrumentV1 dropdown with instrumentsV1 in the selected Genre
+        if (instrumentsV1[selectedGenre]) {
+            SampleA.set("items", instrumentsV1[selectedGenre].join("\n"));
+
+     
+        } else {
+            SampleA.set("items", "no file");
+
+
+
+        }
+
+        // Clear SampleV1 as no Instrument is selected yet
+
+        
+     //   FirstCB.setValue(value);
+		SampleA.setValue(value);
+         
+    }
+}
+
+Content.getComponent("SampleBank").setControlCallback(onSampleBankControl);
+
+
+
+inline function onSampleAControl(component, value)
+{if (value >= 0) {
+
+		local selectedSample = SampleA.get("items").split("\n")[value - 1];
+
+       // Construct the full path to the sample
+       local selectedGenre = SampleBank.getItemText();
+      // local selectedInstrument = SecondCB.getItemText();
+       local fullPath = "{PROJECT_FOLDER}" + selectedGenre + "/" + selectedSample;
+
+	
+	SynthesiserGroup1.setBypassed(false);
+	reg voc1 = value-1;
+	
+	Content.callAfterDelay(300, function()
+	{
+		Engine.allNotesOff();
+	
+		SynthesiserGroup1.setBypassed(true);
+		
+		Content.callAfterDelay(300, function()
+		{
+	
+	
+		SynthesiserGroup1.setBypassed(false);
+
+   
+        // Load the sample using the full path
+        slot1.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA.getItemText());
+      //  Console.print("Sample loaded successfully!");
+    
+    
+    }, this);
+
+	}, ScriptnodeSynthesiser1);
+}
+}
+
+Content.getComponent("SampleA").setControlCallback(onSampleAControl);
+
+
+//const eventdata = rm.getEventData(0, 0);
+
 const slot1 = harm.getAudioFile(1);
 
 //const cable1 = rm.getCable("mod1");
@@ -294,6 +425,7 @@ Content.getComponent("ModShape").setControlCallback(onModShapeControl);
 
 
 
+
 //USer Wave
 
 const var HARMONICWave = Synth.getAudioSampleProcessor("HARMONIC");
@@ -304,7 +436,7 @@ inline function onWaveLoadControl(component, value)
 
 	if (value)
 			{
-			FileSystem.browse (FileSystem.AudioFiles, false, "*.wav,*.aif ", function (f) 
+			FileSystem.browse (FileSystem.Music, false, "*.wav,*.aif ", function (f) 
 		{
 
 	slot1.loadFile( (f.toString(File.FullPath)));
@@ -330,6 +462,39 @@ const var UserB3 = Content.getComponent("UserB3");
 
 const var SynthesiserGroup1 = Synth.getChildSynth("Synthesiser Group1");
 const var Knob5 = Content.getComponent("Knob5");
+
+
+//mod buttons 
+
+const var EnvSliders1 = Content.getComponent("EnvSliders1");
+const var ModTable1 = Content.getComponent("ModTable1");
+
+
+inline function onModMode1Control(component, value)
+{
+	EnvSliders1.showControl(value-1);
+	ModTable1.showControl(value);
+	HARMONIC.setAttribute(HARMONIC.EnvMode1, value);
+};
+
+Content.getComponent("ModMode1").setControlCallback(onModMode1Control);
+
+//mod buttons 
+
+const var EnvSliders2 = Content.getComponent("EnvSliders2");
+const var ModTable2 = Content.getComponent("ModTable2");
+
+
+inline function onModMode2Control(component, value)
+{
+	EnvSliders2.showControl(value-1);
+	ModTable2.showControl(value);
+	HARMONIC.setAttribute(HARMONIC.EnvMode2, value);
+};
+
+Content.getComponent("ModMode2").setControlCallback(onModMode2Control);
+
+
 
 function onNoteOn()
 {

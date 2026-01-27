@@ -253,7 +253,7 @@
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" ID="Value" Automated="1"/>
                                       <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                                 ID="SmoothingTime" Value="100.0"/>
+                                                 ID="SmoothingTime" Value="187.9000027999282" DefaultValue="100.0"/>
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
@@ -300,7 +300,7 @@
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" ID="Value" Automated="1"/>
                                       <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                                 ID="SmoothingTime" Value="100.0"/>
+                                                 ID="SmoothingTime" Value="276.7000041231512" DefaultValue="100.0"/>
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
@@ -625,7 +625,7 @@
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" ID="Value" Automated="1"/>
                                       <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                                 ID="SmoothingTime" Value="100.0"/>
+                                                 ID="SmoothingTime" Value="187.9000027999282"/>
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
@@ -671,7 +671,7 @@
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" ID="Value" Automated="1"/>
                                       <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                                 ID="SmoothingTime" Value="100.0"/>
+                                                 ID="SmoothingTime" Value="276.7000041231512"/>
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
@@ -992,7 +992,7 @@
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" ID="Value" Automated="1"/>
                                       <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                                 ID="SmoothingTime" Value="100.0"/>
+                                                 ID="SmoothingTime" Value="187.9000027999282"/>
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
@@ -1038,7 +1038,7 @@
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" ID="Value" Automated="1"/>
                                       <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                                 ID="SmoothingTime" Value="100.0"/>
+                                                 ID="SmoothingTime" Value="276.7000041231512"/>
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
@@ -1359,7 +1359,7 @@
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" ID="Value" Automated="1"/>
                                       <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                                 ID="SmoothingTime" Value="100.0"/>
+                                                 ID="SmoothingTime" Value="187.9000027999282"/>
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
@@ -1405,7 +1405,7 @@
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" ID="Value" Automated="1"/>
                                       <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                                 ID="SmoothingTime" Value="100.0"/>
+                                                 ID="SmoothingTime" Value="276.7000041231512"/>
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
@@ -1710,19 +1710,18 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Offset" Value="0.6939538043478261"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Offset" Value="0.9599999785423279"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_pack1" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="LP" Value="0.800000011920929"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="LP" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FB" Value="0.8770380434782609"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FB" Value="0.6299999952316284"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable1" ParameterId="Value"/>
@@ -1734,7 +1733,7 @@
           <Connection NodeId="clone_cable2" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="0.8799999952316284"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="0.6600000262260437"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="xfader" ParameterId="Value"/>
@@ -1743,24 +1742,23 @@
       <Parameter MinValue="0.0" MaxValue="1.0" ID="Range" Value="1.0" DefaultValue="0.0">
         <Connections/>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="sync" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="sync" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable4" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="PingPong" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="PingPong" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable5" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1" ID="Div" Value="1.0"
+      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1" ID="Div" Value="8.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable6" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="OffsetR" Value="0.4274796195652174"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="OffsetR" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_pack2" ParameterId="Value"/>
         </Connections>
