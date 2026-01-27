@@ -481,7 +481,7 @@
                                              Value="2.0" DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
                                   <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                  <Parameter MinValue="0.0" MaxValue="1.999999955296516" StepSize="0.009999999776482582"
                                              ID="FreqRatio" DefaultValue="1.0" Automated="1"/>
                                 </Parameters>
                               </Node>
@@ -1230,8 +1230,8 @@
           <Connection NodeId="branch3" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FxMix" MinValue="0.0" MaxValue="1.0" Value="0.07455842391304347"
-                 DefaultValue="0.0" ExternalModulation="Disabled" ModColour="0">
+      <Parameter ID="FxMix" MinValue="0.0" MaxValue="1.0" Value="0.0" ExternalModulation="Disabled"
+                 ModColour="0">
         <Connections/>
       </Parameter>
       <Parameter ID="FxValue" MinValue="0.0" MaxValue="1.0" Value="0.0" DefaultValue="0.5586939697265625">
