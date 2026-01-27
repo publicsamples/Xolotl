@@ -795,7 +795,7 @@ using chain_t = container::chain<parameter::empty,
                                  chain4_t<NV>, 
                                  modchain7_t<NV>, 
                                  core::gain<NV>, 
-                                 wrap::no_process<core::gain<NV>>>;
+                                 core::gain<NV>>;
 
 namespace xnode_t_parameters
 {
@@ -902,10 +902,13 @@ using ShSmooth_1 = parameter::from0To1<core::gain<NV>,
                                        1, 
                                        ShSmooth_1Range>;
 
+template <int NV> using ShSmooth_2 = ShSmooth_1<NV>;
+
 template <int NV>
 using ShSmooth = parameter::chain<ShSmooth_InputRange, 
                                   ShSmooth_0<NV>, 
-                                  ShSmooth_1<NV>>;
+                                  ShSmooth_1<NV>, 
+                                  ShSmooth_2<NV>>;
 
 DECLARE_PARAMETER_RANGE_STEP(OscShapes_1Range, 
                              0., 
@@ -1211,7 +1214,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
             0x3F80, 0x0000, 0x0000, 0x045B, 0x0000, 0x4D00, 0x646F, 0x0065, 
             0x0000, 0x3F80, 0x0000, 0x40C0, 0x0000, 0x4080, 0x0000, 0x3F80, 
             0x0000, 0x3F80, 0x055B, 0x0000, 0x4600, 0x4D78, 0x7869, 0x0000, 
-            0x0000, 0x0000, 0x8000, 0x163F, 0x98B2, 0x003D, 0x8000, 0x003F, 
+            0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 
             0x0000, 0x5B00, 0x0006, 0x0000, 0x7846, 0x6156, 0x756C, 0x0065, 
             0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 
             0x0000, 0x0000, 0x075B, 0x0000, 0x4600, 0x5378, 0x4468, 0x7669, 
@@ -1466,7 +1469,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& cable_table = this->getT(0).getT(4).getT(0).getT(0);                         // xnode_impl::cable_table_t<NV>
 		auto& pma1 = this->getT(0).getT(4).getT(0).getT(1);                                // xnode_impl::pma1_t<NV>
 		auto& gain9 = this->getT(0).getT(5);                                               // core::gain<NV>
-		auto& gain5 = this->getT(0).getT(6);                                               // wrap::no_process<core::gain<NV>>
+		auto& gain5 = this->getT(0).getT(6);                                               // core::gain<NV>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -1513,6 +1516,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& ShSmooth_p = this->getParameterT(16);
 		ShSmooth_p.connectT(0, smoothed_parameter1); // ShSmooth -> smoothed_parameter1::SmoothingTime
 		ShSmooth_p.connectT(1, gain9);               // ShSmooth -> gain9::Smoothing
+		ShSmooth_p.connectT(2, gain11);              // ShSmooth -> gain11::Smoothing
 		
 		auto& OscShapes_p = this->getParameterT(17);
 		OscShapes_p.connectT(0, smoothed_parameter3); // OscShapes -> smoothed_parameter3::Value
@@ -1757,7 +1761,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		phasor6.setParameterT(3, 0.); // core::phasor::Phase
 		
 		;                               // gain11::Gain is automated
-		gain11.setParameterT(1, 20.8);  // core::gain::Smoothing
+		;                               // gain11::Smoothing is automated
 		gain11.setParameterT(2, -100.); // core::gain::ResetValue
 		
 		; // branch4::Index is automated
@@ -1839,9 +1843,9 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		; // xfader1::Value is automated
 		
-		;                              // gain2::Gain is automated
-		gain2.setParameterT(1, 5.1);   // core::gain::Smoothing
-		gain2.setParameterT(2, -100.); // core::gain::ResetValue
+		;                             // gain2::Gain is automated
+		gain2.setParameterT(1, 5.1);  // core::gain::Smoothing
+		gain2.setParameterT(2, -19.); // core::gain::ResetValue
 		
 		;                                         // smoothed_parameter1::Value is automated
 		;                                         // smoothed_parameter1::SmoothingTime is automated
@@ -1883,9 +1887,9 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		tanh1.setParameterT(0, 1.); // math::tanh::Value
 		
-		;                              // gain3::Gain is automated
-		gain3.setParameterT(1, 16.5);  // core::gain::Smoothing
-		gain3.setParameterT(2, -100.); // core::gain::ResetValue
+		;                             // gain3::Gain is automated
+		gain3.setParameterT(1, 16.5); // core::gain::Smoothing
+		gain3.setParameterT(2, -19.); // core::gain::ResetValue
 		
 		; // cable_table::Value is automated
 		
@@ -1906,7 +1910,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		this->setParameterT(2, 10.);
 		this->setParameterT(3, 1.);
 		this->setParameterT(4, 4.);
-		this->setParameterT(5, 0.0745584);
+		this->setParameterT(5, 0.);
 		this->setParameterT(6, 0.);
 		this->setParameterT(7, 1.);
 		this->setParameterT(8, 1.);

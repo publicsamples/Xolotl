@@ -4456,7 +4456,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4467,6 +4467,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Automated="1"/>
@@ -4520,6 +4525,26 @@
                              Automated="1"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"
                              Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4615,7 +4640,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4626,6 +4651,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -4668,6 +4698,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner16" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4763,7 +4813,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4774,6 +4824,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -4816,6 +4871,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner17" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -4911,7 +4986,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -4922,6 +4997,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -4964,6 +5044,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner18" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5059,7 +5159,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5070,6 +5170,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -5112,6 +5217,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner19" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5207,7 +5332,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5218,6 +5343,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -5260,6 +5390,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner20" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5355,7 +5505,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5366,6 +5516,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -5408,6 +5563,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner21" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5503,7 +5678,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5514,6 +5689,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -5556,6 +5736,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner22" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5651,7 +5851,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5662,6 +5862,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -5704,6 +5909,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner23" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5799,7 +6024,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5810,6 +6035,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -5852,6 +6082,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner24" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -5947,7 +6197,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -5958,6 +6208,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -6000,6 +6255,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner25" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -6095,7 +6370,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -6106,6 +6381,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -6148,6 +6428,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner26" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -6243,7 +6543,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -6254,6 +6554,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -6296,6 +6601,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner27" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -6391,7 +6716,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -6402,6 +6727,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -6444,6 +6774,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner28" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -6539,7 +6889,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -6550,6 +6900,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -6592,6 +6947,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner29" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -6687,7 +7062,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -6698,6 +7073,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -6740,6 +7120,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner30" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -6835,7 +7235,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -6846,6 +7246,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -6888,6 +7293,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner31" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -6983,7 +7408,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -6994,6 +7419,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -7036,6 +7466,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner32" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -7131,7 +7581,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -7142,6 +7592,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -7184,6 +7639,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner33" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -7279,7 +7754,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -7290,6 +7765,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -7332,6 +7812,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner34" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -7427,7 +7927,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -7438,6 +7938,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -7480,6 +7985,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner35" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -7575,7 +8100,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -7586,6 +8111,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -7628,6 +8158,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner36" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -7723,7 +8273,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -7734,6 +8284,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -7776,6 +8331,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner37" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -7871,7 +8446,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -7882,6 +8457,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -7924,6 +8504,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner38" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -8019,7 +8619,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -8030,6 +8630,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -8072,6 +8677,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner39" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -8167,7 +8792,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -8178,6 +8803,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -8220,6 +8850,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner40" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -8315,7 +8965,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -8326,6 +8976,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -8368,6 +9023,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner41" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -8463,7 +9138,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -8474,6 +9149,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -8516,6 +9196,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner42" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -8611,7 +9311,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -8622,6 +9322,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -8664,6 +9369,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner43" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -8759,7 +9484,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -8770,6 +9495,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -8812,6 +9542,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner44" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -8907,7 +9657,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -8918,6 +9668,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -8960,6 +9715,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner45" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -9055,7 +9830,7 @@
                 <ComplexData>
                   <AudioFiles>
                     <AudioFile Index="0" MinValue="0" MaxValue="0"/>
-                    <AudioFile Index="1" MinValue="0" MaxValue="357209"/>
+                    <AudioFile Index="1" MinValue="0" MaxValue="73"/>
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                   <DisplayBuffers>
@@ -9066,6 +9841,11 @@
                   <Tables>
                     <Table Index="0"/>
                   </Tables>
+                  <SliderPacks>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm"/>
@@ -9108,6 +9888,26 @@
                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="PosDiv" DefaultValue="8.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="FileMode" DefaultValue="0.0"/>
                   <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1.0" ID="PosQuant" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="OscType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PitchMode" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="MultiModTempo" Value="0.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="MultiModDiv"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="pitchbend" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modPitch" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="FilterMod" Value="0.300000011920929"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2313782125711441" ID="Smooth" Value="0.300000011920929"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PbMode" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="ModType" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="FilePosition" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4562588930130005"
+                             ID="FileGain" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="oscVar" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="modGain" Value="0.03600543364882469"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="modPhase" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="FileSync" Value="1.0"/>
                 </Parameters>
               </Node>
               <Node ID="jpanner46" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">

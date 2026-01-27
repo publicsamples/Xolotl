@@ -589,8 +589,8 @@
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                                  ID="Gain" Automated="1"/>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.80000030994415"
-                                                 DefaultValue="0.0"/>
+                                                 SkewFactor="0.3010300099849701" ID="Smoothing" DefaultValue="0.0"
+                                                 Automated="1"/>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                                  SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="0.0"
                                                  Value="-100.0"/>
@@ -980,7 +980,7 @@
                                      Value="5.100000075995921"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                      SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="0.0"
-                                     Value="-100.0"/>
+                                     Value="-19.39999879896642"/>
                         </Parameters>
                       </Node>
                     </Nodes>
@@ -1125,7 +1125,7 @@
                                      Value="16.50000024586916"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                      SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="0.0"
-                                     Value="-100.0"/>
+                                     Value="-19.39999879896642"/>
                         </Parameters>
                       </Node>
                     </Nodes>
@@ -1185,7 +1185,7 @@
                          SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
             </Parameters>
           </Node>
-          <Node ID="gain5" FactoryPath="core.gain" Bypassed="1" Name="gain5">
+          <Node ID="gain5" FactoryPath="core.gain" Bypassed="0" Name="gain5">
             <Parameters>
               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                          SkewFactor="5.422270774841309" ID="Gain" Value="-25.89999889582397"
@@ -1300,6 +1300,7 @@
         <Connections>
           <Connection NodeId="smoothed_parameter1" ParameterId="SmoothingTime"/>
           <Connection NodeId="gain9" ParameterId="Smoothing"/>
+          <Connection NodeId="gain11" ParameterId="Smoothing"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes" Value="0.2944972826086957"
