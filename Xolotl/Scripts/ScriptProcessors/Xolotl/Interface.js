@@ -495,6 +495,16 @@ inline function onModMode2Control(component, value)
 Content.getComponent("ModMode2").setControlCallback(onModMode2Control);
 
 
+const var SmooPanel = Content.getComponent("SmooPanel");
+
+
+inline function onShowSmooControl(component, value)
+{
+	SmooPanel.showControl(value);
+};
+
+Content.getComponent("ShowSmoo").setControlCallback(onShowSmooControl);
+
 
 function onNoteOn()
 {
