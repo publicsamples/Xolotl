@@ -72,6 +72,105 @@
                              DefaultValue="1.0"/>
                 </Parameters>
               </Node>
+              <Node ID="sliderbank" FactoryPath="control.sliderbank" Bypassed="0"
+                    Name="sliderbank">
+                <Properties>
+                  <Property ID="NumParameters" Value="5"/>
+                </Properties>
+                <SwitchTargets>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain26" ParameterId="Smoothing"/>
+                      <Connection NodeId="gain27" ParameterId="Smoothing"/>
+                      <Connection NodeId="smoothed_parameter3" ParameterId="SmoothingTime"/>
+                      <Connection NodeId="gain6" ParameterId="Smoothing"/>
+                      <Connection NodeId="gain11" ParameterId="Smoothing"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="smoothed_parameter" ParameterId="SmoothingTime"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain2" ParameterId="Smoothing"/>
+                      <Connection NodeId="gain3" ParameterId="Smoothing"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="smoothed_parameter1" ParameterId="SmoothingTime"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain9" ParameterId="Smoothing"/>
+                    </Connections>
+                  </SwitchTarget>
+                </SwitchTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="0" EmbeddedData="20....f+....9C...3O...f+....9C"/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0" DefaultValue="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="sliderbank1" FactoryPath="control.sliderbank" Bypassed="0"
+                    Name="sliderbank">
+                <Properties>
+                  <Property ID="NumParameters" Value="7"/>
+                </Properties>
+                <SwitchTargets>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain26" ParameterId="ResetValue"/>
+                      <Connection NodeId="gain27" ParameterId="ResetValue"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain4" ParameterId="ResetValue"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain6" ParameterId="ResetValue"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain11" ParameterId="ResetValue"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain2" ParameterId="ResetValue"/>
+                      <Connection NodeId="gain3" ParameterId="ResetValue"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain9" ParameterId="ResetValue"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain5" ParameterId="ResetValue"/>
+                    </Connections>
+                  </SwitchTarget>
+                </SwitchTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="1" EmbeddedData="20....f+....9C...3O...f+....9C"/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0" DefaultValue="0.0"/>
+                </Parameters>
+              </Node>
             </Nodes>
             <Parameters/>
           </Node>
@@ -140,10 +239,10 @@
                                                          SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                          SkewFactor="0.3010300099849701" ID="Smoothing" DefaultValue="20.0"
-                                                         Value="6.800000101327895"/>
+                                                         Automated="1"/>
                                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="-8.499998636543765"
-                                                         DefaultValue="0.0"/>
+                                                         SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="0.0"
+                                                         Automated="1"/>
                                             </Parameters>
                                           </Node>
                                         </Nodes>
@@ -176,10 +275,10 @@
                                                          SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                          SkewFactor="0.3010300099849701" ID="Smoothing" DefaultValue="20.0"
-                                                         Value="1.500000022351742"/>
+                                                         Automated="1"/>
                                               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="-13.39999870955945"
-                                                         DefaultValue="0.0"/>
+                                                         SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="0.0"
+                                                         Automated="1"/>
                                             </Parameters>
                                           </Node>
                                         </Nodes>
@@ -222,7 +321,7 @@
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                       <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                                 ID="SmoothingTime" DefaultValue="100.0" Value="184.9000027552247"/>
+                                                 ID="SmoothingTime" DefaultValue="100.0" Automated="1"/>
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
@@ -264,7 +363,8 @@
                                                  SkewFactor="0.3010300099849701" ID="Smoothing" DefaultValue="20.0"
                                                  Value="103.6000015437603"/>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                                 SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="0.0"
+                                                 Automated="1"/>
                                     </Parameters>
                                   </Node>
                                   <Node ID="fmod1" FactoryPath="math.fmod" Bypassed="0" Name="fmod1">
@@ -347,10 +447,11 @@
                                       <Parameter MinValue="0.0" MaxValue="20.0" StepSize="0.1000000014901161"
                                                  ID="Gain" Automated="1"/>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="99.10000147670506"
-                                                 DefaultValue="20.0"/>
+                                                 SkewFactor="0.3010300099849701" ID="Smoothing" DefaultValue="20.0"
+                                                 Automated="1"/>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                                 SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="0.0"
+                                                 Automated="1"/>
                                     </Parameters>
                                   </Node>
                                   <Node ID="pi1" FactoryPath="math.pi" Bypassed="0" Name="pi">
@@ -593,7 +694,31 @@
                                                  Automated="1"/>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                                  SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="0.0"
-                                                 Value="-100.0"/>
+                                                 Automated="1"/>
+                                    </Parameters>
+                                  </Node>
+                                  <Node ID="smoothed_parameter" FactoryPath="control.smoothed_parameter"
+                                        Bypassed="0" Name="smoothed_parameter">
+                                    <Properties>
+                                      <Property ID="Mode" Value="Linear Ramp"/>
+                                    </Properties>
+                                    <ModulationTargets>
+                                      <Connection NodeId="add1" ParameterId="Value"/>
+                                      <Connection NodeId="add4" ParameterId="Value"/>
+                                      <Connection NodeId="add11" ParameterId="Value"/>
+                                      <Connection NodeId="add3" ParameterId="Value"/>
+                                      <Connection NodeId="add10" ParameterId="Value"/>
+                                      <Connection NodeId="add5" ParameterId="Value"/>
+                                      <Connection NodeId="add6" ParameterId="Value"/>
+                                      <Connection NodeId="add7" ParameterId="Value"/>
+                                      <Connection NodeId="add8" ParameterId="Value"/>
+                                      <Connection NodeId="add9" ParameterId="Value"/>
+                                    </ModulationTargets>
+                                    <Parameters>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                      <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                 ID="SmoothingTime" DefaultValue="100.0" Automated="1"/>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
                                   <Node ID="branch4" FactoryPath="container.branch" Bypassed="0" Name="branch4"
@@ -733,7 +858,7 @@
             <Parameters/>
           </Node>
           <Node ID="modchain8" FactoryPath="container.modchain" Bypassed="0"
-                Name="modchain8">
+                Name="modchain8" Folded="1">
             <Nodes>
               <Node ID="midi" FactoryPath="control.midi" Bypassed="0" Name="midi">
                 <Properties>
@@ -977,10 +1102,10 @@
                                      SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                      SkewFactor="0.3010300099849701" ID="Smoothing" DefaultValue="20.0"
-                                     Value="5.100000075995921"/>
+                                     Automated="1"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                      SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="0.0"
-                                     Value="-19.39999879896642"/>
+                                     Automated="1"/>
                         </Parameters>
                       </Node>
                     </Nodes>
@@ -1122,10 +1247,10 @@
                                      SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                      SkewFactor="0.3010300099849701" ID="Smoothing" DefaultValue="20.0"
-                                     Value="16.50000024586916"/>
+                                     Automated="1"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                      SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="0.0"
-                                     Value="-19.39999879896642"/>
+                                     Automated="1"/>
                         </Parameters>
                       </Node>
                     </Nodes>
@@ -1182,7 +1307,8 @@
                          SkewFactor="0.3010300099849701" ID="Smoothing" DefaultValue="20.0"
                          Automated="1"/>
               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                         SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="0.0"
+                         Automated="1"/>
             </Parameters>
           </Node>
           <Node ID="gain5" FactoryPath="core.gain" Bypassed="0" Name="gain5">
@@ -1193,7 +1319,8 @@
               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                          SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0" DefaultValue="167.6000024974346"/>
               <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                         SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="-12.19999869167806"/>
+                         SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="-12.19999869167806"
+                         Automated="1"/>
             </Parameters>
           </Node>
         </Nodes>
@@ -1297,11 +1424,7 @@
       <Parameter MinValue="0.0" MaxValue="2000.0" ID="ShSmooth" Value="9.50000014156103"
                  StepSize="0.1000000014901161" ExternalModulation="Disabled" SkewFactor="0.2313782125711441"
                  ModColour="0" DefaultValue="0.0">
-        <Connections>
-          <Connection NodeId="smoothed_parameter1" ParameterId="SmoothingTime"/>
-          <Connection NodeId="gain9" ParameterId="Smoothing"/>
-          <Connection NodeId="gain11" ParameterId="Smoothing"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapes" Value="0.2944972826086957"
                  DefaultValue="0.0">
@@ -1326,23 +1449,14 @@
           <Connection NodeId="branch1" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.0" ExternalModulation="Disabled"
-                 ModColour="0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="UserPs" Value="0.2715692934782609"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
         <Connections>
-          <Connection NodeId="add3" ParameterId="Value"/>
-          <Connection NodeId="add4" ParameterId="Value"/>
-          <Connection NodeId="add11" ParameterId="Value"/>
-          <Connection NodeId="add10" ParameterId="Value"/>
-          <Connection NodeId="add5" ParameterId="Value"/>
-          <Connection NodeId="add6" ParameterId="Value"/>
-          <Connection NodeId="add7" ParameterId="Value"/>
-          <Connection NodeId="add8" ParameterId="Value"/>
-          <Connection NodeId="add9" ParameterId="Value"/>
-          <Connection NodeId="add1" ParameterId="Value"/>
+          <Connection NodeId="smoothed_parameter" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="1.0" ID="UserInput" Value="1.0" DefaultValue="0.0"
-                 ExternalModulation="Disabled" ModColour="0" SkewFactor="0.4562588917372243">
+                 ExternalModulation="Disabled" ModColour="0" SkewFactor="0.8326886530951592">
         <Connections>
           <Connection NodeId="gain11" ParameterId="Gain"/>
         </Connections>
