@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Preset Version="0.8.6">
+  <Content Processor="Interface">
+    <Control type="ScriptSliderPack" id="SliderPack1" value="3.0" data="16...............3O......"/>
+    <Control type="ScriptComboBox" id="ComboBox1" value="1.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider9" value="0.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider10" value="4.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider19" value="0.0"/>
+    <Control type="ScriptSliderPack" id="SliderPack2" value="1.0" data="16.35QQ+fqGE8C..........."/>
+    <Control type="ScriptComboBox" id="ComboBox2" value="1.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider11" value="0.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider14" value="8.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider20" value="0.0"/>
+    <Control type="ScriptSliderPack" id="SliderPack3" value="3.0" data="16......zLyL8C.........+."/>
+    <Control type="ScriptComboBox" id="ComboBox3" value="1.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider15" value="5.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider16" value="4.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider21" value="0.2700000107288361"/>
+    <Control type="ScriptButton" id="modtype8" value="1.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider5" value="8.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider6" value="5.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider12" value="0.0"/>
+    <Control type="ScriptTable" id="ModTable1" value="0.0" data="60...............vOgdgd+3Ci68iQnpuOfefe+.........vO...f+.........vO...f+fw8q8C...vO"/>
+    <Control type="ScriptSlider" id="RELEASE1" value="1786.0"/>
+    <Control type="ScriptSlider" id="SUSTAIN1" value="0.1400000005960464"/>
+    <Control type="ScriptSlider" id="DECAY1" value="4998.47998046875"/>
+    <Control type="ScriptSlider" id="ATTACK1" value="422.0"/>
+    <Control type="ScriptButton" id="ModMode1" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD36" value="0.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD5" value="20.00000190734863"/>
+    <Control type="ScriptSlider" id="Knob1" value="6197.0"/>
+    <Control type="ScriptSlider" id="Knob3" value="13665.740234375"/>
+    <Control type="ScriptSlider" id="Knob4" value="0.9000000357627869"/>
+    <Control type="ScriptSlider" id="Knob5" value="1479.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD19" value="0.5600000023841858"/>
+    <Control type="ScriptSlider" id="SHAPEMOD6" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD7" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD8" value="0.8999999761581421"/>
+    <Control type="ScriptSlider" id="SHAPEMOD21" value="0.8799999952316284"/>
+    <Control type="ScriptSlider" id="SHAPEMOD27" value="0.449999988079071"/>
+    <Control type="ScriptSlider" id="SHAPEMOD28" value="1.0"/>
+    <Control type="ScriptSliderPack" id="ScriptSliderPack1" value="3.0" data="16.6Qga+HEtd8CtdTzOZlYF+."/>
+    <Control type="ScriptSlider" id="SHAPEMOD30" value="0.4699999988079071"/>
+    <Control type="ScriptSliderPack" id="ScriptSliderPack2" value="3.0" data="16.ZlYF+LyLy7SyLyzOrGEd+."/>
+    <Control type="ScriptButton" id="ScriptButton4" value="1.0"/>
+    <Control type="ScriptButton" id="ScriptButton5" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD22" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD32" value="0.9300000071525574"/>
+    <Control type="ScriptSliderPack" id="pitch-sp4" value="31.0" data="128.OJbc+35Qg8C...vOov0C+DtdT7iT35wOJb8H+XlYl7yv0ixOWOJL+fT357C...zOw0iR+ziBW8iYlY1OyLyb+fT358CRgq2OrGEd+LyLy8yLyL2O6Qga+Lb8n8iBWO1OtdTX+XOJb8ilYl0O8nvU+T35Q8SyLyzO35QQ+7nv07C"/>
+    <Control type="ScriptComboBox" id="ScriptComboBox8" value="3.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD33" value="0.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD1" value="0.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD3" value="0.800000011920929"/>
+    <Control type="ScriptSlider" id="SHAPEMOD4" value="0.8799999952316284"/>
+    <Control type="ScriptComboBox" id="ScriptComboBox1" value="2.0"/>
+    <Control type="ScriptComboBox" id="ScriptComboBox3" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD18" value="0.3400000035762787"/>
+    <Control type="ScriptComboBox" id="ScriptComboBox10" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD44" value="0.0"/>
+    <Control type="ScriptComboBox" id="ScriptComboBox4" value="2.0"/>
+    <Control type="ScriptComboBox" id="ScriptComboBox9" value="1.0"/>
+    <Control type="ScriptComboBox" id="ScriptComboBox11" value="2.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD2" value="0.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD34" value="0.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD45" value="0.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD20" value="0.6800000071525574"/>
+    <Control type="ScriptSlider" id="SHAPE9" value="0.02999999932944775"/>
+    <Control type="ScriptSliderPack" id="ModSp2" value="1.0" data="128......7nv00SyLybOJb8H97Qgq4CtdTnOgqGk9vdT35SyLyrO8nv0935Qg6yiBWuO35QA+jBWO7i8nvwOtdTH+Lb8n7ydT3xOOJbM+PJb87CtdTzOMyLS+ziBW8iT350OJb8X+Lb8n8ydT31OyLyb+vdT38CRgq2OHEtd+....9C"/>
+    <Control type="ScriptTable" id="ModSp3" value="2.0" data="72.................Am.m6.........vOAm.m6XlYF8iJb8nO6G6G+.........vOrere+.....f+++yO...f+.........vO"/>
+    <Control type="ScriptSliderPack" id="ModSp1" value="1.0" data="128......7nv00SyLybOJb8H97Qgq4CtdTnOgqGk9vdT35SyLyrO8nv0935Qg6yiBWuO35QA+jBWO7i8nvwOtdTH+Lb8n7ydT3xOOJbM+PJb87CtdTzOMyLS+ziBW8iT350OJb8X+Lb8n8ydT31OyLyb+vdT38CRgq2OHEtd+....9C"/>
+    <Control type="ScriptComboBox" id="SOURC4" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD13" value="7.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD16" value="2.081668171172169e-17"/>
+    <Control type="ScriptComboBox" id="SOURC6" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD24" value="0.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD29" value="4.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD26" value="0.0"/>
+    <Control type="ScriptComboBox" id="ModShape" value="2.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD35" value="-1.0"/>
+    <Control type="ScriptSliderPack" id="ScriptSliderPack3" value="-1" data="8....f+....9C"/>
+    <Control type="ScriptSlider" id="GainModSmooth" value="0.0"/>
+    <Control type="ScriptComboBox" id="OscWave" value="3.0"/>
+    <Control type="ScriptComboBox" id="SOURC3" value="2.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD11" value="0.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD12" value="0.3199999928474426"/>
+    <Control type="ScriptSlider" id="SHAPEMOD15" value="0.0"/>
+    <Control type="ScriptComboBox" id="SOURC5" value="5.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD37" value="1.0"/>
+    <Control type="ScriptSliderPack" id="pitch-sp7" value="31.0" data="128.OJbc8vdT33ilYloOCWOp9Lb8n5iT35oOgqGk9DWOJ5C...nOeT3Z9ziBW4C6QgiO6QgK9nv0i3iBWOhOrGEN97Qgq4CWOJrOT35A+DtdT7ydT3xOHEtN+v0iB8CEtdzOw0iR+zLyL8SyLyzOMyLS+zLyL8SyLyzOMyLS+jBWO8C"/>
+    <Control type="ScriptComboBox" id="SOURC7" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD38" value="0.0"/>
+    <Control type="ScriptComboBox" id="SOURC8" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD39" value="0.0"/>
+    <Control type="ScriptComboBox" id="OscWave1" value="1.0"/>
+    <Control type="ScriptButton" id="ScriptButton9" value="1.0"/>
+    <Control type="ScriptSliderPack" id="pitch-sp6" value="31.0" data="128.OJbc8vdT33ilYloOCWOp9Lb8n5iT35oOgqGk9DWOJ5C...nOeT3Z9ziBW4C6QgiO6QgK9nv0i3iBWOhOrGEN97Qgq4CWOJrOT35A+DtdT7ydT3xOHEtN+v0iB8CEtdzOw0iR+zLyL8SyLyzOMyLS+zLyL8SyLyzOMyLS+jBWO8C"/>
+    <Control type="ScriptLabel" id="WAVELABEL1" value="Strings_Z1_1"/>
+    <Control type="ScriptLabel" id="WAVELABEL2" value="CATEGORIES"/>
+    <Control type="ScriptSliderPack" id="pitch-sp5" value="31.0" data="128.OJbc8vdT33ilYloOCWOp9Lb8n5iT35oOgqGk9DWOJ5C...nOeT3Z9ziBW4C6QgiO6QgK9nv0i3iBWOhOrGEN97Qgq4CWOJrOT35A+DtdT7ydT3xOHEtN+v0iB8CEtdzOw0iR+zLyL8SyLyzOMyLS+zLyL8SyLyzOMyLS+jBWO8C"/>
+    <Control type="ScriptSlider" id="SHAPEMOD40" value="0.4900000095367432"/>
+    <Control type="ScriptComboBox" id="SOURC9" value="5.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD41" value="0.25"/>
+    <Control type="ScriptComboBox" id="SOURC10" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD42" value="0.0"/>
+    <Control type="ScriptAudioWaveform" id="Wf1" value="0.0" data="{PROJECT_FOLDER}Misc/rad.wav"
+             rangeStart="0" rangeEnd="199385"/>
+    <Control type="ScriptSlider" id="SHAPEMOD43" value="0.0"/>
+    <Control type="ScriptComboBox" id="SOURC11" value="2.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD46" value="0.0"/>
+    <Control type="ScriptComboBox" id="SOURC12" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD50" value="0.2800000011920929"/>
+    <Control type="ScriptSlider" id="SHAPEMOD51" value="32.0"/>
+    <Control type="ScriptButton" id="Possync" value="0.0"/>
+    <Control type="ScriptComboBox" id="SOURC13" value="2.0"/>
+    <Control type="ScriptButton" id="Possync1" value="0.0"/>
+    <Control type="ScriptButton" id="Possync2" value="0.0"/>
+    <Control type="ScriptComboBox" id="SampleBank" value="2.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD47" value="0.5"/>
+    <Control type="ScriptSlider" id="SHAPEMOD52" value="0.5"/>
+    <Control type="ScriptSlider" id="SHAPEMOD53" value="0.5"/>
+    <Control type="ScriptSlider" id="SHAPE" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPE6" value="16.0"/>
+    <Control type="ScriptSlider" id="SHAPE7" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD48" value="0.0"/>
+    <Control type="ScriptComboBox" id="SOURC18" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPE8" value="0.0"/>
+    <Control type="ScriptSlider" id="SHAPE1" value="0.0"/>
+    <Control type="ScriptComboBox" id="SOURC19" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD49" value="2.081668171172169e-17"/>
+    <Control type="ScriptButton" id="leATO" value="0.0"/>
+    <Control type="ScriptButton" id="ScriptButton3" value="0.0"/>
+    <Control type="ScriptComboBox" id="Stages" value="5.0"/>
+    <Control type="ScriptButton" id="modtype9" value="1.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider7" value="6.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider8" value="0.0"/>
+    <Control type="ScriptSlider" id="ScriptSlider13" value="0.0"/>
+    <Control type="ScriptTable" id="ModTable2" value="0.0" data="36...............vOA+.+6.........vO...f+....9C...vO"/>
+    <Control type="ScriptSlider" id="RELEASE2" value="2159.0"/>
+    <Control type="ScriptSlider" id="SUSTAIN2" value="0.6399999856948853"/>
+    <Control type="ScriptSlider" id="DECAY2" value="6213.669921875"/>
+    <Control type="ScriptSlider" id="ATTACK2" value="4395.0"/>
+    <Control type="ScriptButton" id="ModMode2" value="1.0"/>
+    <Control type="ScriptSliderPack" id="SliderPack4" value="-1" data="8....f+....9C"/>
+    <Control type="ScriptSliderPack" id="SliderPack5" value="-1" data="28....f+....9C...3O...f+....9C...3O...f+."/>
+    <Control type="ScriptButton" id="ShowSmoo" value="0.0"/>
+  </Content>
+  <MidiAutomation>
+    <Controller Controller="2" Channel="-1" Processor="Interface" MacroIndex="-1"
+                Start="0.0" End="1.0" FullStart="0.0" FullEnd="1.0" Skew="1.0"
+                Interval="0.01" Converter="37.nT6K8CBGgC..VEFa0U1Pu4lckIGckIG.ADPXiQWZ1UF.ADv..."
+                Attribute="Label66" Inverted="0"/>
+  </MidiAutomation>
+  <MPEData Enabled="0"/>
+</Preset>

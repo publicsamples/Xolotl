@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Preset Version="0.8.6">
+<Preset Version="0.8.3">
   <Content Processor="Interface">
     <Control type="ScriptAudioWaveform" id="AudioWaveform2" value="0.0" data=""
              rangeStart="0" rangeEnd="0"/>
@@ -111,7 +111,7 @@
     <Control type="ScriptSlider" id="SHAPEMOD42" value="0.0"/>
     <Control type="ScriptAudioWaveform" id="Wf1" value="0.0" data="" rangeStart="0"
              rangeEnd="0"/>
-    <Control type="ScriptButton" id="WaveLoad" value="0.0"/>
+    ="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD43" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC11" value="3.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD46" value="0.0"/>

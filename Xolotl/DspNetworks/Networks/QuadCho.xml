@@ -620,7 +620,7 @@
           <Connection NodeId="clone_cable" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FB" Value="0.6700000166893005"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FB" Value="0.9800000190734863"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable1" ParameterId="Value"/>
@@ -632,7 +632,7 @@
           <Connection NodeId="clone_cable2" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="1.0" ExternalModulation="Disabled"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="0.5" ExternalModulation="Disabled"
                  ModColour="0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="xfader" ParameterId="Value"/>
@@ -641,17 +641,17 @@
       <Parameter MinValue="0.0" MaxValue="1.0" ID="Range" Value="1.0" DefaultValue="0.0">
         <Connections/>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="sync" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="sync" Value="0.0">
         <Connections>
           <Connection NodeId="clone_cable4" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="PingPong" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="PingPong" Value="0.0">
         <Connections>
           <Connection NodeId="clone_cable5" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1" ID="Div" Value="1.0"
+      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1" ID="Div" Value="6.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable6" ParameterId="Value"/>

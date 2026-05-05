@@ -28,7 +28,6 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		// Node registrations -------------------------------------------------------------
 		
 		registerPolyNode<project::Env2<1>, project::Env2<NUM_POLYPHONIC_VOICES>>();
-		registerPolyNode<project::LFO<1>, wrap::illegal_poly<project::LFO<1>>>();
 		registerPolyNode<project::modtest1<1>, project::modtest1<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::xnode<1>, project::xnode<NUM_POLYPHONIC_VOICES>>();
 		registerDataNode<project::ArrangeNew_networkdata>();
@@ -49,6 +48,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::harmo_networkdata>();
 		registerDataNode<project::Htwentyfour_networkdata>();
 		registerDataNode<project::_networkdata>();
+		registerDataNode<project::LFO_networkdata>();
 		registerDataNode<project::mod_networkdata>();
 		registerDataNode<project::modconnet_networkdata>();
 		registerDataNode<project::pb_networkdata>();

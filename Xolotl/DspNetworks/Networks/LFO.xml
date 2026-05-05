@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="LFO" Version="0.0.0" CompileChannelAmount="1" AllowCompilation="1">
+<Network ID="LFO" Version="0.0.0" CompileChannelAmount="1">
   <Node FactoryPath="container.chain" ID="LFO" Bypassed="0" ShowParameters="1"
         Name="LFO">
     <Nodes>

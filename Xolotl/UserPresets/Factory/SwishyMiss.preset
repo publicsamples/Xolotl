@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Preset Version="0.8.6">
+<Preset Version="0.8.3">
   <Content Processor="Interface">
-    <Control type="ScriptAudioWaveform" id="AudioWaveform2" value="0.0" data=""
-             rangeStart="0" rangeEnd="0"/>
-    <Control type="ScriptAudioWaveform" id="AudioWaveform3" value="0.0" data=""
-             rangeStart="0" rangeEnd="0"/>
+
     <Control type="ScriptSliderPack" id="SliderPack1" value="0.0" data="16.rGEd+................."/>
     <Control type="ScriptComboBox" id="ComboBox1" value="1.0"/>
     <Control type="ScriptButton" id="Button1" value="0.0"/>
@@ -107,9 +104,9 @@
     <Control type="ScriptSlider" id="SHAPEMOD41" value="0.3100000023841858"/>
     <Control type="ScriptComboBox" id="SOURC10" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD42" value="0.0"/>
-    <Control type="ScriptAudioWaveform" id="Wf1" value="0.0" data="/Users/rick/Library/Application Support/modularsamples/Xolotl/AudioFiles/WaveTable/SAWHARM.WAV"
+    <Control type="ScriptAudioWaveform" id="Wf1" value="0.0" data=""
              rangeStart="0" rangeEnd="262144"/>
-    <Control type="ScriptButton" id="WaveLoad" value="0.0"/>
+    ="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD43" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC11" value="2.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD46" value="0.01999999955296516"/>
