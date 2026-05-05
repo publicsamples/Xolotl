@@ -1,8 +1,40 @@
 Synth.deferCallbacks(true);
 
+// Complex UI components that carry heavy `data` payloads.
+const var COMPLEX_PRESET_IDS = [
+	"ModSp1", "ModSp2", "ModSp3",
+	"ModTable1", "ModTable2",
+	"ScriptSliderPack1", "ScriptSliderPack2", "ScriptSliderPack3",
+	"SliderPack1", "SliderPack2", "SliderPack3", "SliderPack4", "SliderPack5",
+	"pitch-sp4", "pitch-sp5", "pitch-sp6", "pitch-sp7"
+];
+
+inline function isComplexPresetId(id)
+{
+	return COMPLEX_PRESET_IDS.indexOf(id) != -1;
+}
+
+inline function setComplexPresetSavingEnabled(shouldSaveInPreset)
+{
+	for (id in COMPLEX_PRESET_IDS)
+	{
+		local c = Content.getComponent(id);
+		if (isDefined(c))
+			c.set("saveInPreset", shouldSaveInPreset);
+	}
+}
+
+setComplexPresetSavingEnabled(true);
+
 inline function onOscWaveControl(component, value)
 {
+	if (!isDefined(value))
+		return;
+
 	if (g_presetRestoreBusy)
+		return;
+
+	if (!isDefined(HARMONIC) || !isDefined(OSC) || !isDefined(MULTI) || !isDefined(USER))
 		return;
 
 	Engine.allNotesOff();
@@ -50,6 +82,12 @@ const var LFO3 = Synth.getModulator("LFO3");
 
 inline function onComboBox1Control(component, value)
 {
+if (!isDefined(value))
+	return;
+
+if (!isDefined(LFO1))
+	return;
+
 LFO1.setAttribute(LFO1.Modifiers, value-1);
 };
 
@@ -58,6 +96,12 @@ Content.getComponent("ComboBox1").setControlCallback(onComboBox1Control);
 
 inline function onComboBox2Control(component, value)
 {
+if (!isDefined(value))
+	return;
+
+if (!isDefined(LFO2))
+	return;
+
 LFO2.setAttribute(LFO2.Modifiers, value-1);
 };
 
@@ -66,6 +110,12 @@ Content.getComponent("ComboBox2").setControlCallback(onComboBox2Control);
 
 inline function onComboBox3Control(component, value)
 {
+if (!isDefined(value))
+	return;
+
+if (!isDefined(LFO3))
+	return;
+
 LFO3.setAttribute(LFO3.Modifiers, value-1);
 };
 
@@ -74,10 +124,13 @@ Content.getComponent("ComboBox3").setControlCallback(onComboBox3Control);
 
 inline function onOscWave1Control(component, value)
 {
-	if (g_presetRestoreBusy)
+	if (!isDefined(value))
 		return;
 
-Engine.allNotesOff();
+	if (!isDefined(HARMONIC))
+		return;
+
+	Engine.allNotesOff();
 
  HARMONIC.setAttribute(HARMONIC.OscType, value);
 };
@@ -89,11 +142,12 @@ const var Stages = Content.getComponent("Stages");
 
 inline function onStagesControl(component, value)
 {
-	if (g_presetRestoreBusy)
+	if (!isDefined(value))
 		return;
 
-	
-	
+	if (!isDefined(HARMONIC))
+		return;
+
 		if(value == 1)
 		{	 
 		Engine.allNotesOff();
@@ -146,7 +200,10 @@ const var ModSp3 = Content.getComponent("ModSp3");
 
 inline function onModShapeControl(component, value)
 {
-	if (g_presetRestoreBusy)
+	if (!isDefined(value))
+		return;
+
+	if (!isDefined(HARMONIC) || !isDefined(ModSp1) || !isDefined(ModSp2) || !isDefined(ModSp3))
 		return;
 
 	if(value == 1)
@@ -201,6 +258,12 @@ const var ModTable1 = Content.getComponent("ModTable1");
 
 inline function onModMode1Control(component, value)
 {
+	if (!isDefined(value))
+		return;
+
+	if (!isDefined(HARMONIC) || !isDefined(EnvSliders1) || !isDefined(ModTable1))
+		return;
+
 	EnvSliders1.showControl(value-1);
 	ModTable1.showControl(value);
 	HARMONIC.setAttribute(HARMONIC.EnvMode1, value);

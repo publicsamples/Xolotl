@@ -2,7 +2,7 @@ Content.makeFrontInterface(850, 580);
 
 //const var rm = Engine.getGlobalRoutingManager();
 
-//include("UISTUFF.js");
+include("UISTUFF.js");
 
 const var PRESETS = Content.getComponent("PRESETS");
 

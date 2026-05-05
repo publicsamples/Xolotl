@@ -145,7 +145,7 @@ inline function onSampleAControl(component, value)
     
     }, this);
 
-	}, ScriptnodeSynthesiser1);
+	});
 }
 
 Content.getComponent("SampleA").setControlCallback(onSampleAControl);
