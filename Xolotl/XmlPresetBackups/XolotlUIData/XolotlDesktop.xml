@@ -320,9 +320,9 @@
     <Component type="ScriptSlider" id="SHAPEMOD5" x="28" y="120" width="35"
                height="35" parentComponent="AMP" processorId="Simple Gain1"
                parameterId="Gain" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" middlePosition="0.0" isPluginParameter="1"
+               numStrips="125.0" middlePosition="-18.0" isPluginParameter="1"
                pluginParameterName="AMP VOLUME" scaleFactor="0.1800000071525574"
-               mode="Decibel" min="-100.0" max="36.0" stepSize="0.1000000014901161"
+               mode="Decibel" min="-100.0" max="0.0" stepSize="0.1000000014901161"
                suffix=" dB" isVertical="0" showValuePopup="Below"/>
     <Component type="ScriptSlider" id="Knob1" x="11" y="35" width="20" height="70"
                parentComponent="AMP" processorId="ENV1" parameterId="Attack"
@@ -834,7 +834,7 @@
                  scaleFactor="0.2000000029802322" processorId="HARMONIC" parameterId="OscShapeSpread"
                  isPluginParameter="1" pluginParameterName="OSC SHAPE SPREAD"/>
     </Component>
-    <Component type="ScriptPanel" id="MULTI" x="90" y="5" width="260" height="290"
+    <Component type="ScriptPanel" id="MULTI" x="88" y="4" width="260" height="290"
                parentComponent="osc1" itemColour="4281346602" itemColour2="4282069554"
                visible="0">
       <Component type="ScriptSliderPack" id="pitch-sp6" x="9" y="76" width="240"
@@ -842,9 +842,9 @@
                  itemColour2="14465590" textColour="10318162" bgColour="16711680"
                  flashActive="0" defaultValue="0.0" sliderAmount="32.0"/>
       <Component type="ScriptComboBox" id="BankA" x="138" y="8" width="110" height="25"
-                 max="47" parentComponent="MULTI" fontSize="1.0" textColour="4291475358"
+                 max="21" parentComponent="MULTI" fontSize="1.0" textColour="4291475358"
                  itemColour2="4291475358" itemColour="4291475358" bgColour="4291475358"
-                 defaultValue="0.0" saveInPreset="0" items="Lead_2ndFinger&#10;Lead_Astonish&#10;Lead_Astonished&#10;Lead_Bargain&#10;Lead_Basic&#10;Lead_Brew&#10;Lead_Cream&#10;Lead_CrumbFlute&#10;Lead_Crunch&#10;Lead_Crunchy&#10;Lead_CupCake&#10;Lead_Curious&#10;Lead_DF1&#10;Lead_Day3&#10;Lead_Drink&#10;Lead_Egg&#10;Lead_FakeSync&#10;Lead_Fingers&#10;Lead_Grizzle&#10;Lead_K30L&#10;Lead_K_Legs&#10;Lead_Log&#10;Lead_Lozange&#10;Lead_Messin&#10;Lead_PseudoSync&#10;Lead_RavST&#10;Lead_Rodge&#10;Lead_SadRing&#10;Lead_Sayer&#10;Lead_SaysThings&#10;Lead_Scream&#10;Lead_Screamer&#10;Lead_ShRes&#10;Lead_Simple&#10;Lead_SimpleJx&#10;Lead_SlwRing1&#10;Lead_SlwRing2&#10;Lead_SlwRing3&#10;Lead_TSync&#10;Lead_Tinkle&#10;Lead_funny&#10;Lead_harsh&#10;Lead_k30l2&#10;Lead_mth&#10;Lead_rude&#10;Lead_sawd&#10;Lead_stix"/>
+                 defaultValue="0.0" saveInPreset="0" items="FX_CrazyLFO&#10;FX_Devistate&#10;FX_Drama&#10;FX_FMRings&#10;FX_FeedFwd&#10;FX_Gooey&#10;FX_HiYearner&#10;FX_LickElectric&#10;FX_LoopG&#10;FX_MagicResin&#10;FX_S&amp;H&#10;FX_Zap&#10;FX_Bypass&#10;FX_heartache&#10;FX_BeastMode&#10;FX_BrainSeq&#10;FX_BseqSmooth&#10;FX_Burd&#10;FX_SmearedToy&#10;FX_Swish&#10;FX_WowOhWow"/>
       <Component type="ScriptComboBox" id="Categories" x="14" y="8" width="110"
                  height="25" parentComponent="MULTI" fontSize="1.0" itemColour2="4291475358"
                  itemColour="4291475358" bgColour="4291475358" items="Bells &amp; Keys&#10;FX&#10;Kits &amp; Seq&#10;Leads&#10;Misc&#10;Pads&#10;Basic Waves"
@@ -871,7 +871,7 @@
                  editable="0" itemColour2="4291475358" textColour="4291475358"
                  bgColour="4281808695"/>
     </Component>
-    <Component type="ScriptPanel" id="USER" x="88" y="5" width="260" height="290"
+    <Component type="ScriptPanel" id="USER" x="88" y="4" width="260" height="290"
                parentComponent="osc1" itemColour="4281346602" itemColour2="4282069554"
                textColour="16777215" visible="0">
       <Component type="ScriptSliderPack" id="pitch-sp5" x="9" y="171" width="240"
@@ -1343,6 +1343,6 @@
              filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.2000000029802322"
              isVertical="0" visible="0"/>
   <Component type="ScriptComboBox" id="cmbPresets" x="287" y="-2" saveInPreset="0"
-             useCustomPopup="1" width="120" height="20" visible="0" items="&#10;Chords::stabby&#10;Factory::Monkey&#10;Factory::More than one&#10;Factory::Sawed Off&#10;Factory::Soft32&#10;Factory::Some Sines&#10;Factory::SwishyMiss&#10;Factory::SyncBass&#10;Factory::WheelTest&#10;FX::Hard times&#10;FX::Rave forever&#10;Keys::organ&#10;Keys::Talky Finger Box&#10;Keys::Way More&#10;Leads::Doom&#10;Leads::Subtract&#10;Pads::Lost Groove&#10;Pads::Sawring&#10;Pads::SPLIT&#10;Pads::Stay afloat&#10;Sequences::Giddy&#10;Sequences::Made up story&#10;Sequences::pring prong&#10;Sequences::reconstituted&#10;Sequences::Seq2Seq&#10;Sequences::seqswarm&#10;Sequences::simple&#10;Sequences::The Bones&#10;Strings::ZZ1"
-             max="29"/>
+             useCustomPopup="1" width="120" height="20" visible="0" items="&#10;Chords::stabby&#10;Factory::Monkey&#10;Factory::More than one&#10;Factory::Sawed Off&#10;Factory::Soft32&#10;Factory::Some Sines&#10;Factory::SwishyMiss&#10;Factory::SyncBass&#10;Factory::WheelTest&#10;FX::Hard times&#10;FX::Rave forever&#10;Keys::organ&#10;Keys::Talky Finger Box&#10;Keys::Way More&#10;Leads::Doom&#10;Leads::Subtract&#10;Pads::Lost Groove&#10;Pads::Sawring&#10;Pads::SPLIT&#10;Pads::Stay afloat&#10;Sequences::boner&#10;Sequences::Giddy&#10;Sequences::Made up story&#10;Sequences::pring prong&#10;Sequences::reconstituted&#10;Sequences::Seq2Seq&#10;Sequences::seqswarm&#10;Sequences::simple&#10;Sequences::The Bones&#10;Strings::ZZ1"
+             max="30"/>
 </ContentProperties>

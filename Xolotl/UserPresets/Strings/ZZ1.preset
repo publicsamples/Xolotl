@@ -103,8 +103,6 @@
     <Control type="ScriptSlider" id="SHAPEMOD41" value="0.25"/>
     <Control type="ScriptComboBox" id="SOURC10" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD42" value="0.0"/>
-    <Control type="ScriptAudioWaveform" id="Wf1" value="0.0" data="{PROJECT_FOLDER}Misc/rad.wav"
-             rangeStart="0" rangeEnd="199385"/>
     <Control type="ScriptSlider" id="SHAPEMOD43" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC11" value="2.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD46" value="0.0"/>
@@ -145,11 +143,5 @@
     <Control type="ScriptSliderPack" id="SliderPack5" value="-1" data="28....f+....9C...3O...f+....9C...3O...f+."/>
     <Control type="ScriptButton" id="ShowSmoo" value="0.0"/>
   </Content>
-  <MidiAutomation>
-    <Controller Controller="2" Channel="-1" Processor="Interface" MacroIndex="-1"
-                Start="0.0" End="1.0" FullStart="0.0" FullEnd="1.0" Skew="1.0"
-                Interval="0.01" Converter="37.nT6K8CBGgC..VEFa0U1Pu4lckIGckIG.ADPXiQWZ1UF.ADv..."
-                Attribute="Label66" Inverted="0"/>
-  </MidiAutomation>
   <MPEData Enabled="0"/>
 </Preset>

@@ -2,7 +2,22 @@ Content.makeFrontInterface(850, 580);
 
 //const var rm = Engine.getGlobalRoutingManager();
 
-include("UISTUFF.js");
+//include("UISTUFF.js");
+
+const var PRESETS = Content.getComponent("PRESETS");
+
+const var PRESETBUTTON = Content.getComponent("PRESETBUTTON");
+
+
+inline function onPRESETBUTTONControl(component, value)
+{
+
+      PRESETS.showControl(value);
+};
+
+Content.getComponent("PRESETBUTTON").setControlCallback(onPRESETBUTTONControl);
+
+
 
 const var AudioList = Engine.loadAudioFilesIntoPool();
 

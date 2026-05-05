@@ -2,6 +2,9 @@ Synth.deferCallbacks(true);
 
 inline function onOscWaveControl(component, value)
 {
+	if (g_presetRestoreBusy)
+		return;
+
 	Engine.allNotesOff();
 
 
@@ -71,6 +74,8 @@ Content.getComponent("ComboBox3").setControlCallback(onComboBox3Control);
 
 inline function onOscWave1Control(component, value)
 {
+	if (g_presetRestoreBusy)
+		return;
 
 Engine.allNotesOff();
 
@@ -84,6 +89,8 @@ const var Stages = Content.getComponent("Stages");
 
 inline function onStagesControl(component, value)
 {
+	if (g_presetRestoreBusy)
+		return;
 
 	
 	
@@ -139,6 +146,9 @@ const var ModSp3 = Content.getComponent("ModSp3");
 
 inline function onModShapeControl(component, value)
 {
+	if (g_presetRestoreBusy)
+		return;
+
 	if(value == 1)
 		{
 	HARMONIC.setAttribute(HARMONIC.FxSinSh, 1);
@@ -212,4 +222,3 @@ inline function onModMode2Control(component, value)
 };
 
 Content.getComponent("ModMode2").setControlCallback(onModMode2Control);
-

@@ -1,18 +1,5 @@
 Synth.deferCallbacks(true);
 
-const var PRESETS = Content.getComponent("PRESETS");
-
-const var PRESETBUTTON = Content.getComponent("PRESETBUTTON");
-
-
-inline function onPRESETBUTTONControl(component, value)
-{
-
-      PRESETS.showControl(value);
-};
-
-Content.getComponent("PRESETBUTTON").setControlCallback(onPRESETBUTTONControl);
-
 
 
 const var modB1 = Content.getComponent("modB1");
@@ -109,6 +96,7 @@ rb1.setRingBufferProperties(properties);
 
 
 const var Waveform1 = Content.getComponent("Waveform1");
+const var ENABLE_WAVEFORM_REPAINT_TIMERS = false;
 
 
 Waveform1.setTimerCallback(function()
@@ -121,7 +109,8 @@ Waveform1.setTimerCallback(function()
 	this.repaint();
 });
 
-Waveform1.startTimer(30);
+if(ENABLE_WAVEFORM_REPAINT_TIMERS)
+	Waveform1.startTimer(30);
 
 Waveform1.setPaintRoutine(function(g)
 {
@@ -159,7 +148,8 @@ Waveform2.setTimerCallback(function()
 	this.repaint();
 });
 
-Waveform2.startTimer(30);
+if(ENABLE_WAVEFORM_REPAINT_TIMERS)
+	Waveform2.startTimer(30);
 
 Waveform2.setPaintRoutine(function(g)
 {
@@ -197,7 +187,8 @@ Waveform3.setTimerCallback(function()
 	this.repaint();
 });
 
-Waveform3.startTimer(30);
+if(ENABLE_WAVEFORM_REPAINT_TIMERS)
+	Waveform3.startTimer(30);
 
 Waveform3.setPaintRoutine(function(g)
 {
@@ -205,5 +196,4 @@ Waveform3.setPaintRoutine(function(g)
 	g.setColour(0xCC843E38);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
-
 

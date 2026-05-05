@@ -1,5 +1,8 @@
 Synth.deferCallbacks(true);
 
+// Global preset-restore lock shared by active scripts.
+var g_presetRestoreBusy = false;
+
 inline function sortAudioFilesListV1() {
 	
 	Synth.deferCallbacks(true);
@@ -87,6 +90,9 @@ Content.getComponent("SampleBank").setControlCallback(onSampleBankControl);
 
 inline function onSampleAControl(component, value)
 {
+	if (g_presetRestoreBusy)
+		return;
+
 	if (value <= 0)
 		return;
 
@@ -114,7 +120,7 @@ inline function onSampleAControl(component, value)
 	SynthesiserGroup1.setBypassed(false);
 	reg voc1 = value-1;
 	
-	Content.callAfterDelay(300, function()
+	Content.callAfterDelay(300, function [loadToken, fullPath]()
 	{
 		if (loadToken != g_sampleLoadToken)
 			return;
@@ -123,7 +129,7 @@ inline function onSampleAControl(component, value)
 	
 		SynthesiserGroup1.setBypassed(true);
 		
-		Content.callAfterDelay(300, function()
+		Content.callAfterDelay(300, function [loadToken, fullPath]()
 		{
 			if (loadToken != g_sampleLoadToken)
 				return;
@@ -195,6 +201,7 @@ Categories.set("items", SMAPS.join("\n"));
 var g_pendingSampleMapId = "";
 var g_isSampleMapLoadScheduled = false;
 var g_lastLoadedSampleMapId = "";
+var g_sampleMapLoadToken = 0;
 
 inline function isValidSampleMapId(id)
 {
@@ -203,19 +210,31 @@ inline function isValidSampleMapId(id)
 
 inline function requestSampleMapLoad(mapId)
 {
+	if (g_presetRestoreBusy)
+		return;
+
 	if (!isValidSampleMapId(mapId))
 		return;
 
 	g_pendingSampleMapId = mapId;
+	g_sampleMapLoadToken = g_sampleMapLoadToken + 1;
+	local loadToken = g_sampleMapLoadToken;
 
 	if (g_isSampleMapLoadScheduled)
 		return;
 
 	g_isSampleMapLoadScheduled = true;
 
-	Content.callAfterDelay(50, function()
+	Content.callAfterDelay(500, function [loadToken]()
 	{
-		local id = g_pendingSampleMapId;
+		if (loadToken != g_sampleMapLoadToken)
+		{
+			g_isSampleMapLoadScheduled = false;
+			requestSampleMapLoad(g_pendingSampleMapId);
+			return;
+		}
+
+		var id = g_pendingSampleMapId;
 		g_pendingSampleMapId = "";
 		g_isSampleMapLoadScheduled = false;
 
@@ -247,12 +266,9 @@ Content.getComponent("Categories").setControlCallback(onCategoriesControl);
 
 inline function onWAVELABEL1Control(component, value)
 {
-	local mapId = WAVELABEL1.get("text");
-
-	if (!isValidSampleMapId(mapId))
-		return;
-
-	requestSampleMapLoad(mapId);
+	// Diagnostic guard: preset restore can fire this label callback in bursty
+	// order; avoid sample-map loads from label state and load only via BankA.
+	return;
 };
 
 Content.getComponent("WAVELABEL1").setControlCallback(onWAVELABEL1Control);
@@ -263,6 +279,9 @@ Content.getComponent("WAVELABEL1").setControlCallback(onWAVELABEL1Control);
 
 inline function onBankAControl(component, value)
 {
+	if (g_presetRestoreBusy)
+		return;
+
 	if (value <= 0)
 		return;
 
@@ -284,6 +303,21 @@ inline function onBankAControl(component, value)
 
 Content.getComponent("BankA").setControlCallback(onBankAControl);
 
+inline function reconcileSampleStateAfterPreset()
+{
+	local catValue = Categories.getValue();
+	if (catValue > 0 && catValue <= Maps.length)
+		onCategoriesControl(Categories, catValue);
+
+	local bankValue = BankA.getValue();
+	if (bankValue > 0)
+		onBankAControl(BankA, bankValue);
+
+	local sampleValue = SampleA.getValue();
+	if (sampleValue > 0)
+		onSampleAControl(SampleA, sampleValue);
+}
+
 
 //USer Wave
 
@@ -291,6 +325,9 @@ const var HARMONICWave = Synth.getAudioSampleProcessor("HARMONIC");
 
 inline function onWaveLoadControl(component, value)
 {
+	if (g_presetRestoreBusy)
+		return;
+
 	Engine.allNotesOff();
 
 	SynthesiserGroup1.setBypassed(value);

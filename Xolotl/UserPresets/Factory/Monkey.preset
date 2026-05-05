@@ -71,8 +71,6 @@
     <Control type="ScriptComboBox" id="SOURC4" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD13" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD16" value="0.0"/>
-    <Control type="ScriptButton" id="ScriptButton1" value="1.0"/>
-    <Control type="ScriptButton" id="ScriptButton2" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC6" value="2.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD24" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD29" value="16.0"/>
@@ -102,9 +100,6 @@
     <Control type="ScriptSlider" id="SHAPEMOD41" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC10" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD42" value="0.0"/>
-    <Control type="ScriptAudioWaveform" id="Wf1" value="0.0" data=""
-             rangeStart="0" rangeEnd="357209"/>
-    ="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD43" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC11" value="3.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD46" value="0.0"/>
@@ -126,7 +121,6 @@
     <Control type="ScriptSlider" id="SHAPE1" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC19" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD49" value="0.001299072289839387"/>
-    <Control type="ScriptSlider" id="smoothglobal" value="0.5"/>
     <Control type="ScriptButton" id="leATO" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton3" value="0.0"/>
     <Control type="ScriptLabel" id="LoadEx3" value=""/>
@@ -142,11 +136,5 @@
     <Control type="ScriptSlider" id="ATTACK2" value="0.0"/>
     <Control type="ScriptButton" id="ModMode2" value="0.0"/>
   </Content>
-  <MidiAutomation>
-    <Controller Controller="2" Channel="-1" Processor="Interface" MacroIndex="-1"
-                Start="0.0" End="1.0" FullStart="0.0" FullEnd="1.0" Skew="1.0"
-                Interval="0.01" Converter="37.nT6K8CBGgC..VEFa0U1Pu4lckIGckIG.ADPXiQWZ1UF.ADv..."
-                Attribute="Label63" Inverted="0"/>
-  </MidiAutomation>
   <MPEData Enabled="0"/>
 </Preset>
