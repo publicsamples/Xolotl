@@ -9535,7 +9535,8 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Harm" Value="0.6499999761581421"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma" ParameterId="Add"/>
           <Connection NodeId="pma13" ParameterId="Add"/>
@@ -9553,7 +9554,7 @@
           <Connection NodeId="pma55" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1.0" ID="HarmSrc" Value="4.0"
+      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1.0" ID="HarmSrc" Value="5.0"
                  ExternalModulation="Disabled" ModColour="0" TextToValueConverter=""
                  DefaultValue="1.0">
         <Connections>
@@ -9571,18 +9572,18 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="HarmAuxSrc"
-                 Value="3.0" ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
+                 Value="2.0" ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch1" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Min" Value="8.0"
+      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Min" Value="1.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_forward" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Max" Value="16.0"
+      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Max" Value="9.0"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="clone_forward2" ParameterId="Value"/>
@@ -9593,8 +9594,8 @@
           <Connection NodeId="clone_forward1" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Detune" Value="0.02999999932944775"
-                 ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Detune" Value="0.0" ExternalModulation="Disabled"
+                 ModColour="0">
         <Connections>
           <Connection NodeId="pma14" ParameterId="Add"/>
           <Connection NodeId="pma15" ParameterId="Add"/>
@@ -9612,8 +9613,8 @@
           <Connection NodeId="pma58" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1.0" ID="DetuneSrc" Value="2.0"
-                 ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
+      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1.0" ID="DetuneSrc" Value="1.0"
+                 ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="branch3" ParameterId="Index"/>
         </Connections>
@@ -9630,7 +9631,7 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="DetuneAuxSrc"
-                 Value="4.0" ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
+                 Value="1.0" ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="branch2" ParameterId="Index"/>
         </Connections>
@@ -9641,7 +9642,7 @@
           <Connection NodeId="clone_forward6" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Shape" Value="0.3194921910762787"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Shape" Value="0.300000011920929"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma16" ParameterId="Add"/>
@@ -9651,8 +9652,7 @@
           <Connection NodeId="pma61" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="ShapeMod" Value="0.1099999994039536"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="ShapeMod" Value="0.0">
         <Connections>
           <Connection NodeId="pma16" ParameterId="Multiply"/>
           <Connection NodeId="pma17" ParameterId="Multiply"/>
@@ -9661,14 +9661,13 @@
           <Connection NodeId="pma62" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1.0" ID="ShapeSrc" Value="2.0"
-                 ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
+      <Parameter MinValue="1.0" MaxValue="5.0" StepSize="1.0" ID="ShapeSrc" Value="1.0"
+                 ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="branch8" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="ShapeAux" Value="0.3499999940395355"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="ShapeAux" Value="0.0">
         <Connections>
           <Connection NodeId="pma19" ParameterId="Multiply"/>
           <Connection NodeId="pma20" ParameterId="Multiply"/>
@@ -9679,7 +9678,7 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1.0" ID="ShapeAuxSrc"
-                 Value="6.0" ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
+                 Value="1.0" ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="branch4" ParameterId="Index"/>
         </Connections>
@@ -9690,8 +9689,7 @@
           <Connection NodeId="clone_forward7" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="CyclePos" Value="0.7300000190734863"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="CyclePos" Value="0.0">
         <Connections>
           <Connection NodeId="pma18" ParameterId="Add"/>
           <Connection NodeId="pma43" ParameterId="Add"/>
@@ -9700,7 +9698,7 @@
           <Connection NodeId="pma65" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CyclePosMod" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CyclePosMod" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma18" ParameterId="Multiply"/>
           <Connection NodeId="pma43" ParameterId="Multiply"/>
@@ -9731,8 +9729,7 @@
           <Connection NodeId="branch5" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="CycleShape" Value="0.4300000071525574"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="CycleShape" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma44" ParameterId="Add"/>
           <Connection NodeId="pma45" ParameterId="Add"/>
@@ -9741,8 +9738,7 @@
           <Connection NodeId="pma74" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CycleShapeMod" Value="-0.2841796875"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CycleShapeMod" Value="0.0">
         <Connections>
           <Connection NodeId="pma44" ParameterId="Multiply"/>
           <Connection NodeId="pma45" ParameterId="Multiply"/>
@@ -9757,8 +9753,7 @@
           <Connection NodeId="branch10" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CycleShapeAux" Value="0.01933593749999996"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="CycleShapeAux" Value="0.0">
         <Connections>
           <Connection NodeId="pma31" ParameterId="Multiply"/>
           <Connection NodeId="pma32" ParameterId="Multiply"/>
@@ -9774,8 +9769,7 @@
           <Connection NodeId="branch6" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="18.0" ID="FxValue" Value="3.116015625"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="18.0" ID="FxValue" Value="5.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma46" ParameterId="Add"/>
           <Connection NodeId="pma47" ParameterId="Add"/>
@@ -9784,8 +9778,7 @@
           <Connection NodeId="pma77" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxValueMod" Value="-0.01230468750000002"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxValueMod" Value="0.0">
         <Connections>
           <Connection NodeId="pma46" ParameterId="Multiply"/>
           <Connection NodeId="pma47" ParameterId="Multiply"/>
@@ -9812,7 +9805,7 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="1.0" MaxValue="6.0" StepSize="1" ID="FxValueAuxSrvc"
-                 Value="4.0" ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
+                 Value="1.0" ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="branch7" ParameterId="Index"/>
         </Connections>
@@ -9821,7 +9814,7 @@
                  DefaultValue="0.0">
         <Connections/>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxDiv" Value="16.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="FxDiv" Value="1.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_forward9" ParameterId="Value"/>
@@ -9831,7 +9824,7 @@
       <Parameter MinValue="0.0" MaxValue="1.0" ID="FxSync" Value="1.0" DefaultValue="0.0">
         <Connections/>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="3.0" ID="FxSinSh" Value="2.0" StepSize="1"
+      <Parameter MinValue="1.0" MaxValue="3.0" ID="FxSinSh" Value="3.0" StepSize="1"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="clone_cable5" ParameterId="Value"/>
@@ -9844,14 +9837,14 @@
           <Connection NodeId="clone_cable19" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoCut" Value="-0.07999999821186066"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoCut" Value="0.0">
         <Connections>
           <Connection NodeId="clone_forward13" ParameterId="Value"/>
           <Connection NodeId="clone_cable21" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Cut" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Cut" Value="0.550000011920929"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma48" ParameterId="Add"/>
           <Connection NodeId="pma49" ParameterId="Add"/>
@@ -9870,7 +9863,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="CutSrc" MinValue="1.0" MaxValue="5.0" ModColour="0" ExternalModulation="Disabled"
-                 Value="4.0" DefaultValue="1.0">
+                 Value="2.0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch13" ParameterId="Index"/>
         </Connections>
@@ -9899,7 +9892,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="Res" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.800000011920929">
+                 DefaultValue="" Value="0.9100000262260437">
         <Connections>
           <Connection NodeId="pma50" ParameterId="Add"/>
           <Connection NodeId="pma51" ParameterId="Add"/>
@@ -9909,7 +9902,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="ResMod" MinValue="-1.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.0">
+                 DefaultValue="" Value="0.02999999932944775">
         <Connections>
           <Connection NodeId="pma50" ParameterId="Multiply"/>
           <Connection NodeId="pma51" ParameterId="Multiply"/>
@@ -9941,7 +9934,7 @@
           <Connection NodeId="branch14" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FilterMix" Value="0.0">
         <Connections>
           <Connection NodeId="pma52" ParameterId="Add"/>
           <Connection NodeId="pma53" ParameterId="Add"/>
@@ -9961,7 +9954,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="FilterMixSrc" MinValue="1.0" MaxValue="5.0" StepSize="1.0"
-                 ModColour="0" ExternalModulation="Disabled" Value="4.0" DefaultValue="1.0">
+                 ModColour="0" ExternalModulation="Disabled" Value="3.0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch17" ParameterId="Index"/>
         </Connections>
@@ -9978,13 +9971,13 @@
         </Connections>
       </Parameter>
       <Parameter ID="FilterMixAuxSrc" MinValue="1.0" MaxValue="6.0" StepSize="1"
-                 ModColour="0" ExternalModulation="Disabled" Value="4.0" DefaultValue="1.0">
+                 ModColour="0" ExternalModulation="Disabled" Value="1.0">
         <Connections>
           <Connection NodeId="branch15" ParameterId="Index"/>
         </Connections>
       </Parameter>
       <Parameter ID="Spread" MinValue="-1.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.0">
+                 DefaultValue="" Value="-0.5699999928474426">
         <Connections>
           <Connection NodeId="clone_cable13" ParameterId="Value"/>
         </Connections>
@@ -9993,34 +9986,34 @@
                  DefaultValue="" Value="0.0">
         <Connections/>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoGain" Value="0.5199999809265137"
-                 ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="FxtoGain" Value="1.0" ExternalModulation="Disabled"
+                 ModColour="0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable1" ParameterId="Value"/>
           <Connection NodeId="clone_cable12" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="EnvTempo1"
-                 Value="2.0" TextToValueConverter="" DefaultValue="0.0">
+                 Value="10.0" TextToValueConverter="" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="Env3" ParameterId="Tempo"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="EnvDiv1" Value="2.0"
+      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="EnvDiv1" Value="1.0"
                  DefaultValue="0.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="Env3" ParameterId="Multi"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" ID="EnvA1" Value="1573.000023439526"
+                 SkewFactor="0.1976716816425323" ID="EnvA1" Value="422.00000628829"
                  TextToValueConverter="" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="Env3" ParameterId="a"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" ID="EnvD1" Value="1712.400025516748"
+                 SkewFactor="0.1976716816425323" ID="EnvD1" Value="4998.500074483453"
                  TextToValueConverter="" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="Env3" ParameterId="d"/>
@@ -10032,13 +10025,14 @@
           <Connection NodeId="Env3" ParameterId="h"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="EnvS1" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="EnvS1" Value="0.1400000005960464"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="Env3" ParameterId="s"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" ID="EnvR1" Value="528.000007867813"
+                 SkewFactor="0.1976716816425323" ID="EnvR1" Value="1786.000026613474"
                  TextToValueConverter="" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="Env3" ParameterId="r"/>
@@ -10059,48 +10053,48 @@
       </Parameter>
       <Parameter ID="EnvDiv2" MinValue="1.0" MaxValue="16.0" StepSize="1.0" ModColour="0"
                  ExternalModulation="Disabled" DefaultValue="" TextToValueConverter=""
-                 Value="1.0">
+                 Value="6.0">
         <Connections>
           <Connection NodeId="Env4" ParameterId="Multi"/>
         </Connections>
       </Parameter>
       <Parameter ID="EnvA2" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                  SkewFactor="0.1976716816425323" ModColour="0" ExternalModulation="Disabled"
-                 TextToValueConverter="" DefaultValue="" Value="2245.000033453106">
+                 TextToValueConverter="" DefaultValue="" Value="4395.000065490603">
         <Connections>
           <Connection NodeId="Env4" ParameterId="a"/>
         </Connections>
       </Parameter>
       <Parameter ID="EnvD2" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                  SkewFactor="0.1976716816425323" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="10000.0" TextToValueConverter="">
+                 DefaultValue="" Value="6213.700092591344" TextToValueConverter="">
         <Connections>
           <Connection NodeId="Env4" ParameterId="d"/>
         </Connections>
       </Parameter>
       <Parameter ID="EnvH2" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                  SkewFactor="0.1976716816425323" ModColour="0" ExternalModulation="Disabled"
-                 TextToValueConverter="" DefaultValue="" Value="1231.3000183478">
+                 TextToValueConverter="" DefaultValue="" Value="0.0">
         <Connections>
           <Connection NodeId="Env4" ParameterId="h"/>
         </Connections>
       </Parameter>
       <Parameter ID="EnvS2" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="1.0">
+                 DefaultValue="" Value="0.6399999856948853">
         <Connections>
           <Connection NodeId="Env4" ParameterId="s"/>
         </Connections>
       </Parameter>
       <Parameter ID="EnvR2" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                  SkewFactor="0.1976716816425323" ModColour="0" ExternalModulation="Disabled"
-                 TextToValueConverter="" DefaultValue="" Value="10000.0">
+                 TextToValueConverter="" DefaultValue="" Value="2159.000032171607">
         <Connections>
           <Connection NodeId="Env4" ParameterId="r"/>
         </Connections>
       </Parameter>
       <Parameter ID="EnvTrig2" MinValue="0.0" MaxValue="1.0" StepSize="1.0" ModColour="0"
                  ExternalModulation="Disabled" TextToValueConverter="" DefaultValue=""
-                 Value="0.0">
+                 Value="1.0">
         <Connections>
           <Connection NodeId="Env4" ParameterId="trig"/>
         </Connections>
@@ -10111,7 +10105,7 @@
           <Connection NodeId="clone_forward8" ParameterId="NumClones"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" ID="posdiv" Value="16.0" DefaultValue="0.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" ID="posdiv" Value="8.0" DefaultValue="0.0"
                  StepSize="1.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="clone_cable32" ParameterId="Value"/>
@@ -10122,13 +10116,13 @@
           <Connection NodeId="clone_cable31" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1" ID="Quant" Value="9.0"
+      <Parameter MinValue="1.0" MaxValue="10.0" StepSize="1" ID="Quant" Value="6.0"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="clone_forward8" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="PosSpread" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="PosSpread" Value="0.0">
         <Connections>
           <Connection NodeId="clone_cable8" ParameterId="Value"/>
         </Connections>
@@ -10153,7 +10147,8 @@
           <Connection NodeId="clone_cable22" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapeSpread" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="OscShapeSpread" Value="1.0"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable24" ParameterId="Value"/>
         </Connections>
@@ -10163,7 +10158,7 @@
           <Connection NodeId="clone_cable27" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="V1" Value="16.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="V1" Value="4.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pack_resizer" ParameterId="NumSliders"/>
@@ -10188,7 +10183,7 @@
           <Connection NodeId="clone_cable30" ParameterId="NumClones"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="V2" Value="16.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="V2" Value="4.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_pack2" ParameterId="NumClones"/>
@@ -10220,46 +10215,44 @@
           <Connection NodeId="clone_cable31" ParameterId="NumClones"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="V3" Value="16.0"
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="V3" Value="4.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone" ParameterId="NumClones"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModPhase" Value="0.2700000107288361"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModPhase" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable9" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="33.0" StepSize="1.0" ID="V5" Value="17.0"
+      <Parameter MinValue="1.0" MaxValue="33.0" StepSize="1.0" ID="V5" Value="5.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable9" ParameterId="NumClones"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="SMOOTH" Value="0.5" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="SMOOTH" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable6" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="EnvMode1" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="EnvMode1" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="Env3" ParameterId="mode"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="EnvMode2" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="EnvMode2" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="Env4" ParameterId="mode"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FileGainRest" Value="0.5" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FileGainRest" Value="0.0">
         <Connections>
           <Connection NodeId="clone_forward11" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FileGainSmooth" Value="0.5"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FileGainSmooth" Value="0.0">
         <Connections>
           <Connection NodeId="clone_forward14" ParameterId="Value"/>
         </Connections>
