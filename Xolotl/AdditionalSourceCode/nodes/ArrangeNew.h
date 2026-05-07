@@ -2710,18 +2710,6 @@ using V3 = parameter::chain<ranges::Identity,
                             parameter::plain<ArrangeNew_impl::clone_t<NV>, 0>, 
                             parameter::plain<ArrangeNew_impl::clone_cable20_t<NV>, 0>>;
 
-DECLARE_PARAMETER_RANGE_STEP(V5_InputRange, 
-                             1., 
-                             32., 
-                             1.);
-template <int NV>
-using V5_0 = parameter::from0To1<ArrangeNew_impl::clone_cable9_t<NV>, 
-                                 0, 
-                                 Stages2_0Range>;
-
-template <int NV>
-using V5 = parameter::chain<V5_InputRange, V5_0<NV>>;
-
 template <int NV>
 using EnvMode1 = parameter::from0To1<ArrangeNew_impl::Env3_t<NV>, 
                                      10, 
@@ -2828,6 +2816,9 @@ using OscShpSprd = parameter::plain<ArrangeNew_impl::clone_cable27_t<NV>,
 template <int NV>
 using ModPhase = parameter::plain<ArrangeNew_impl::clone_cable9_t<NV>, 
                                   1>;
+template <int NV>
+using V5 = parameter::plain<ArrangeNew_impl::clone_cable9_t<NV>, 
+                            0>;
 template <int NV>
 using SMOOTH = parameter::plain<ArrangeNew_impl::clone_cable6_t<NV>, 
                                 1>;
@@ -3169,7 +3160,7 @@ template <int NV> struct instance: public ArrangeNew_impl::ArrangeNew_t_<NV>
             0x3F80, 0x005C, 0x005A, 0x0000, 0x6F4D, 0x5064, 0x6168, 0x6573, 
             0x0000, 0x0000, 0xBF80, 0x0000, 0x3F80, 0x0000, 0xBF80, 0x0000, 
             0x3F80, 0x0000, 0x0000, 0x005C, 0x005B, 0x0000, 0x3556, 0x0000, 
-            0x0000, 0x3F80, 0x0000, 0x4200, 0x0000, 0x4200, 0x0000, 0x3F80, 
+            0x0000, 0x3F80, 0x0000, 0x4204, 0x0000, 0x4200, 0x0000, 0x3F80, 
             0x0000, 0x3F80, 0x005C, 0x005C, 0x0000, 0x4D53, 0x4F4F, 0x4854, 
             0x0000, 0x0000, 0x0000, 0x0000, 0x3F80, 0x5C29, 0x3E8F, 0x0000, 
             0x3F80, 0x0000, 0x0000, 0x005C, 0x005D, 0x0000, 0x6E45, 0x4D76, 
