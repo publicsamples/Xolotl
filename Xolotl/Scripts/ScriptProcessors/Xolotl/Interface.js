@@ -24,6 +24,7 @@ const var AudioList = Engine.loadAudioFilesIntoPool();
 const var SampleA = Content.getComponent("SampleA");
 const var SampleBank = Content.getComponent("SampleBank");
 
+
 const var harm = Synth.getAudioSampleProcessor("HARMONIC");
                 
 const slot = harm.getAudioFile(0);
@@ -44,7 +45,7 @@ const var SampleLoad = [Content.getComponent("SAMPLE"),
                         Content.getComponent("Categories"),
                         Content.getComponent("BankA")];
 
-const var HARMONIC = Synth.getEffect("HARMONIC");
+const var HARMONIC = Synth.getChildSynth("HARMONIC");
 const var OscWave = Content.getComponent("OscWave");
 const var OSC = Content.getComponent("OSC");
 const var MULTI = Content.getComponent("MULTI");

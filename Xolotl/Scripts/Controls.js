@@ -1,4 +1,4 @@
-Synth.deferCallbacks(true);
+ Synth.deferCallbacks(true);
 
 // Complex UI components that carry heavy `data` payloads.
 const var COMPLEX_PRESET_IDS = [
@@ -187,7 +187,7 @@ inline function onStagesControl(component, value)
 			HARMONIC.setAttribute(HARMONIC.V1, 32);
 			HARMONIC.setAttribute(HARMONIC.V2, 32);
 			HARMONIC.setAttribute(HARMONIC.V3, 32);
-			HARMONIC.setAttribute(HARMONIC.V5, 33);
+			HARMONIC.setAttribute(HARMONIC.V5, 32);
 								}								
 };
 
@@ -200,11 +200,7 @@ const var ModSp3 = Content.getComponent("ModSp3");
 
 inline function onModShapeControl(component, value)
 {
-	if (!isDefined(value))
-		return;
 
-	if (!isDefined(HARMONIC) || !isDefined(ModSp1) || !isDefined(ModSp2) || !isDefined(ModSp3))
-		return;
 
 	if(value == 1)
 		{
@@ -226,8 +222,8 @@ inline function onModShapeControl(component, value)
 	ModSp1.showControl(1);
 	ModSp2.showControl(0);
 	ModSp3.showControl(0);
-
-    	}
+	}
+	if(value == 4)
     	{
     	HARMONIC.setAttribute(HARMONIC.FxSinSh, 4);
     	ModSp1.showControl(1);
@@ -237,7 +233,7 @@ inline function onModShapeControl(component, value)
     	    	}
 	if(value == 5)
 		{
-	HARMONIC.setAttribute(HARMONIC.FxSinSh, 4);
+	HARMONIC.setAttribute(HARMONIC.FxSinSh, 5);
 	ModSp1.showControl(0);
 	ModSp2.showControl(1);
 	ModSp3.showControl(1);
@@ -253,9 +249,9 @@ Content.getComponent("ModShape").setControlCallback(onModShapeControl);
 
 
 
-const var SilentSynth1 = Synth.getChildSynth("Silent Synth1");
+//const var SilentSynth1 = Synth.getChildSynth("Silent Synth1");
 
-const var SynthesiserGroup1 = Synth.getChildSynth("Synthesiser Group1");
+const var SynthesiserGroup1 = Synth.getChildSynth("HARMONIC");
 
 //mod buttons 
 
