@@ -236,10 +236,10 @@
     <Component type="ScriptTable" id="ModTable1" x="12" y="28" width="130" height="115"
                parentComponent="env1" processorId="HARMONIC" tableIndex="1"
                bgColour="13285278" itemColour="4291475358" itemColour2="4288611589"
-               customColours="1"/>
+               customColours="1" visible="0"/>
     <Component type="ScriptPanel" id="EnvSliders1" x="12" y="28" width="130"
                height="120" parentComponent="env1" locked="1" itemColour="0"
-               itemColour2="0" textColour="16777215" visible="0">
+               itemColour2="0" textColour="16777215">
       <Component type="ScriptImage" id="ScriptImage2" x="10" y="4" width="120"
                  height="100" parentComponent="EnvSliders1" fileName="{PROJECT_FOLDER}sliderbgs.png"/>
       <Component type="ScriptLabel" id="Label7" x="9" y="104" width="30" height="10"
@@ -853,7 +853,7 @@
                  height="15" parentComponent="MULTI" text="EXPANSION" editable="0"
                  fontName="Montserrat" textColour="4281344270"/>
       <Component type="ScriptLabel" id="WAVELABEL1" x="144" y="11" width="100"
-                 height="20" parentComponent="MULTI" text="Lead_Sayer" saveInPreset="1"
+                 height="20" parentComponent="MULTI" text="Lead_DF1" saveInPreset="1"
                  editable="0" itemColour2="4291475358" textColour="4291475358"
                  bgColour="4281808695" deferControlCallback="1"/>
       <Component type="ScriptLabel" id="WAVE1" x="14" y="36" width="110" height="20"
@@ -867,7 +867,7 @@
                  parentComponent="MULTI" editable="0" text="SAMPLE" fontSize="14.0"
                  fontName="Montserrat" textColour="4291475358"/>
       <Component type="ScriptLabel" id="WAVELABEL2" x="19" y="11" width="100"
-                 height="20" parentComponent="MULTI" text="CATEGORIES" saveInPreset="1"
+                 height="20" parentComponent="MULTI" text="" saveInPreset="1"
                  editable="0" itemColour2="4291475358" textColour="4291475358"
                  bgColour="4281808695"/>
     </Component>
@@ -974,8 +974,8 @@
       <Component type="ScriptComboBox" id="SampleA" x="200" y="42" width="50"
                  height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
                  itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
-                 items="MFFMA1.WAV&#10;MFFMA2.WAV&#10;MFFMA3.WAV&#10;MFFMA4.WAV&#10;MFFMA5.WAV&#10;MFFMA6.WAV&#10;MFFMA7.WAV&#10;MFFMA8.WAV&#10;MFFMB1.WAV&#10;MFFMB2.WAV&#10;MFFMB3.WAV&#10;MFFMB4.WAV&#10;MFFMB5.WAV&#10;MFFMB6.WAV&#10;MFFMB7.WAV&#10;MFFMB8.WAV&#10;MRS1.WAV&#10;MRS2.WAV&#10;MRS3.WAV&#10;MRS4.WAV&#10;MRS5.WAV&#10;MRS6.WAV&#10;MRS7.WAV&#10;MRS8.WAV&#10;Noisy1.wav&#10;RES1.WAV&#10;RES2.WAV&#10;RES3.WAV&#10;RES4.WAV&#10;RES5.WAV&#10;RES6.WAV&#10;RES7.WAV&#10;RES8.WAV&#10;resB1.wav&#10;Saw1.wav&#10;Saw2.wav&#10;saw3.wav&#10;Saw4.wav&#10;SHAPERA1.WAV&#10;SHAPERA2.WAV&#10;SHAPERA3.WAV&#10;SHAPERA4.WAV&#10;SHAPERA5.WAV&#10;SHAPERA6.WAV&#10;SHAPERA7.WAV&#10;SHAPERA8.WAV&#10;SHPB1.WAV&#10;SHPB2.WAV&#10;SHPB3.WAV&#10;SHPB4.WAV&#10;SHPB5.WAV&#10;SHPB6.WAV&#10;SHPB7.WAV&#10;SHPB8.WAV&#10;shSin.wav&#10;Sine1.wav&#10;SQR1.WAV&#10;SQR2.WAV&#10;SQR3.WAV&#10;SQR4.WAV&#10;SQR5.WAV&#10;SQR6.WAV&#10;SQR7.WAV&#10;SQR8.WAV&#10;Square1.wav&#10;square2.wav&#10;square3.wav&#10;square4.wav&#10;square5.wav&#10;square6.wav&#10;STRING1.WAV&#10;STRING2.WAV&#10;STRING3.WAV&#10;STRING4.WAV&#10;STRING5.WAV&#10;STRING6.WAV&#10;STRING7.WAV&#10;STRING8.WAV&#10;THIN1.WAV&#10;THIN2.WAV&#10;THIN3.WAV&#10;THIN4.WAV&#10;THIN5.WAV&#10;THIN6.WAV&#10;THIN7.WAV&#10;THIN8.WAV&#10;Trap1.wav&#10;trap2.wav&#10;WEDITDRAW1.wav"
-                 saveInPreset="0" max="89" deferControlCallback="1"/>
+                 items="daft.wav&#10;DelSnare.wav&#10;DF1.wav&#10;DF2.wav&#10;DF3.wav&#10;DF4.wav&#10;Fall.wav&#10;grace.wav&#10;Lambs.wav&#10;meta6.wav&#10;mloop.wav&#10;ngy72.wav&#10;OptoGroove1.wav&#10;OptoGroove2.wav&#10;SimpleDirty.wav&#10;slightchordswav.wav&#10;Spiffy slow.wav&#10;Split2.wav"
+                 saveInPreset="0" max="18" deferControlCallback="1"/>
       <Component type="ScriptLabel" id="WAVE13" x="123" y="142" width="60" height="20"
                  parentComponent="USER" editable="0" text="SHAPE" fontSize="14.0"
                  fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"
@@ -1101,7 +1101,7 @@
   </Component>
   <Component type="ScriptPanel" id="PRESETS" x="34" y="29" width="350" height="360"
              itemColour="4281808695" itemColour2="4281808695" bgColour="4278282413"
-             textColour="4278324243" visible="0">
+             textColour="4278324243">
     <Component type="ScriptImage" id="ScriptImage1" x="485" y="186" width="230"
                height="170" parentComponent="PRESETS" fileName="{PROJECT_FOLDER}expansions.png"
                visible="0"/>
@@ -1231,10 +1231,10 @@
     <Component type="ScriptTable" id="ModTable2" x="12" y="28" width="130" height="115"
                parentComponent="env2" processorId="HARMONIC" tableIndex="2"
                bgColour="13285278" itemColour="4291475358" itemColour2="4288611589"
-               customColours="1"/>
+               customColours="1" visible="0"/>
     <Component type="ScriptPanel" id="EnvSliders2" x="12" y="28" width="130"
                height="120" parentComponent="env2" locked="1" itemColour="0"
-               itemColour2="0" textColour="16777215" visible="0">
+               itemColour2="0" textColour="16777215">
       <Component type="ScriptImage" id="ScriptImage3" x="10" y="4" width="120"
                  height="100" parentComponent="EnvSliders2" fileName="{PROJECT_FOLDER}sliderbgs.png"/>
       <Component type="ScriptLabel" id="Label12" x="9" y="104" width="30" height="10"

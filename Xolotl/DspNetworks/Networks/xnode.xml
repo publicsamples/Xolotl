@@ -1264,19 +1264,19 @@
           <Connection NodeId="minmax" ParameterId="Minimum"/>
         </Connections>
       </Parameter>
-      <Parameter ID="max" MinValue="1.0" MaxValue="16.0" Value="10.0" StepSize="1.0"
-                 DefaultValue="1.0">
+      <Parameter ID="max" MinValue="1.0" MaxValue="16.0" Value="1.0" StepSize="1.0">
         <Connections>
           <Connection NodeId="minmax" ParameterId="Maximum"/>
         </Connections>
       </Parameter>
-      <Parameter ID="step" MinValue="0.0" MaxValue="1.0" Value="1.0" DefaultValue="0.01645996093749998">
+      <Parameter ID="step" MinValue="0.0" MaxValue="1.0" Value="0.0" DefaultValue="0.01645996093749998">
         <Connections>
           <Connection NodeId="minmax" ParameterId="Step"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Mode" MinValue="1.0" MaxValue="6.0" StepSize="1.0" Value="5.0"
-                 ExternalModulation="Disabled" TextToValueConverter="" ModColour="0">
+      <Parameter ID="Mode" MinValue="1.0" MaxValue="6.0" StepSize="1.0" Value="1.0"
+                 ExternalModulation="Disabled" TextToValueConverter="" ModColour="0"
+                 DefaultValue="5.0">
         <Connections>
           <Connection NodeId="branch3" ParameterId="Index"/>
         </Connections>
@@ -1293,13 +1293,14 @@
           <Connection NodeId="tempo_sync" ParameterId="UnsyncedTime"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FxShDiv" MinValue="1.0" MaxValue="32.0" Value="1.0" StepSize="1.0">
+      <Parameter ID="FxShDiv" MinValue="1.0" MaxValue="32.0" Value="31.0" StepSize="1.0"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="tempo_sync" ParameterId="Multiplier"/>
         </Connections>
       </Parameter>
-      <Parameter ID="GainReset" MinValue="0.0" MaxValue="1.0" Value="0.7976665649414063"
-                 StepSize="0" DefaultValue="1.0">
+      <Parameter ID="GainReset" MinValue="0.0" MaxValue="1.0" Value="0.0" StepSize="0"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="gain11" ParameterId="ResetValue"/>
         </Connections>
@@ -1348,9 +1349,9 @@
           <Connection NodeId="pma_unscaled" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="2000.0" ID="ShSmooth" Value="9.50000014156103"
-                 StepSize="0.1000000014901161" ExternalModulation="Disabled" SkewFactor="0.2313782125711441"
-                 ModColour="0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="2000.0" ID="ShSmooth" Value="0.0" StepSize="0.1000000014901161"
+                 ExternalModulation="Disabled" SkewFactor="0.2313782125711441"
+                 ModColour="0">
         <Connections>
           <Connection NodeId="smoothed_parameter" ParameterId="SmoothingTime"/>
         </Connections>
@@ -1401,7 +1402,7 @@
           <Connection NodeId="cable_table" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" Value="0.2650305706521739"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" Value="0.5100203804347826"
                  DefaultValue="0.0" ExternalModulation="Disabled" ModColour="0">
         <Connections>
           <Connection NodeId="phasor1" ParameterId="Phase"/>

@@ -16,7 +16,11 @@ namespace Env2_impl
 // ==============================| Node & Parameter type declarations |==============================
 
 template <int NV>
-using ramp_t = wrap::no_data<core::ramp<NV, false>>;
+using cable_table_t = wrap::data<control::cable_table<parameter::plain<math::add<NV>, 0>>, 
+                                 data::external::table<0>>;
+template <int NV>
+using ramp_t = wrap::mod<parameter::plain<cable_table_t<NV>, 0>, 
+                         wrap::no_data<core::ramp<NV, false>>>;
 template <int NV>
 using tempo_sync_t = wrap::mod<parameter::plain<ramp_t<NV>, 0>, 
                                control::tempo_sync<NV>>;
@@ -42,18 +46,9 @@ using ahdsr_multimod = parameter::list<ahdsr_c0<NV>, parameter::empty>;
 
 template <int NV>
 using ahdsr_t = wrap::no_data<envelope::ahdsr<NV, ahdsr_multimod<NV>>>;
-
 template <int NV>
-using cable_table_t = wrap::data<control::cable_table<parameter::plain<math::add<NV>, 0>>, 
-                                 data::external::table<0>>;
-
-template <int NV>
-using input_toggle_mod = parameter::chain<ranges::Identity, 
-                                          parameter::plain<ahdsr_t<NV>, 8>, 
-                                          parameter::plain<cable_table_t<NV>, 0>>;
-
-template <int NV>
-using input_toggle_t = control::input_toggle<NV, input_toggle_mod<NV>>;
+using input_toggle_t = control::input_toggle<NV, 
+                                             parameter::plain<ahdsr_t<NV>, 8>>;
 template <int NV>
 using peak_t = wrap::mod<parameter::plain<input_toggle_t<NV>, 2>, 
                          wrap::no_data<core::peak>>;
@@ -87,6 +82,25 @@ namespace Env2_t_parameters
 {
 // Parameter list for Env2_impl::Env2_t ------------------------------------------------------------
 
+DECLARE_PARAMETER_RANGE_STEP(trig_InputRange, 
+                             0., 
+                             1., 
+                             1.);
+DECLARE_PARAMETER_RANGE_STEP(trig_0Range, 
+                             0., 
+                             1., 
+                             1.);
+
+template <int NV>
+using trig_0 = parameter::from0To1<Env2_impl::input_toggle_t<NV>, 
+                                   0, 
+                                   trig_0Range>;
+
+template <int NV>
+using trig = parameter::chain<trig_InputRange, 
+                              trig_0<NV>, 
+                              parameter::plain<Env2_impl::ramp_t<NV>, 1>>;
+
 template <int NV>
 using mode = parameter::chain<ranges::Identity, 
                               parameter::plain<Env2_impl::branch_t<NV>, 0>, 
@@ -115,9 +129,6 @@ using s = parameter::plain<Env2_impl::ahdsr_t<NV>, 4>;
 template <int NV>
 using r = parameter::plain<Env2_impl::ahdsr_t<NV>, 5>;
 template <int NV>
-using trig = parameter::plain<Env2_impl::input_toggle_t<NV>, 
-                              0>;
-template <int NV>
 using Env2_t_plist = parameter::list<Tempo<NV>, 
                                      Multi<NV>, 
                                      Sync<NV>, 
@@ -136,7 +147,8 @@ using Env2_t_ = container::chain<Env2_t_parameters::Env2_t_plist<NV>,
                                  wrap::fix<1, chain_t<NV>>, 
                                  branch_t<NV>, 
                                  routing::public_mod, 
-                                 peak1_t>;
+                                 peak1_t, 
+                                 math::clear<NV>>;
 
 // =================================| Root node initialiser class |=================================
 
@@ -176,7 +188,7 @@ template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
             0x4A6A, 0xCD3E, 0xCCCC, 0x5C3D, 0x0900, 0x0000, 0x7400, 0x6972, 
             0x0067, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 0x8000, 0x003F, 
             0x8000, 0x003F, 0x8000, 0x5C3F, 0x0A00, 0x0000, 0x6D00, 0x646F, 
-            0x0065, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x0000, 
+            0x0065, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 0x8000, 0x003F, 
             0x8000, 0x003F, 0x8000, 0x003F
 		};
 		SNEX_METADATA_ENCODED_MOD_INFO(2)
@@ -208,6 +220,7 @@ template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
 		auto& add1 = this->getT(1).getT(1).getT(1);         // math::add<NV>
 		auto& public_mod = this->getT(2);                   // routing::public_mod
 		auto& peak1 = this->getT(3);                        // Env2_impl::peak1_t
+		auto& clear1 = this->getT(4);                       // math::clear<NV>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -229,7 +242,9 @@ template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
 		
 		this->getParameterT(8).connectT(0, ahdsr); // r -> ahdsr::Release
 		
-		this->getParameterT(9).connectT(0, input_toggle); // trig -> input_toggle::Input
+		auto& trig_p = this->getParameterT(9);
+		trig_p.connectT(0, input_toggle); // trig -> input_toggle::Input
+		trig_p.connectT(1, ramp);         // trig -> ramp::LoopStart
 		
 		auto& mode_p = this->getParameterT(10);
 		mode_p.connectT(0, branch);  // mode -> branch::Index
@@ -237,14 +252,14 @@ template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
 		
 		// Modulation Connections ------------------------------------------------------------------
 		
-		tempo_sync.getParameter().connectT(0, ramp); // tempo_sync -> ramp::PeriodTime
+		cable_table.getWrappedObject().getParameter().connectT(0, add1); // cable_table -> add1::Value
+		ramp.getParameter().connectT(0, cable_table);                    // ramp -> cable_table::Value
+		tempo_sync.getParameter().connectT(0, ramp);                     // tempo_sync -> ramp::PeriodTime
 		auto& ahdsr_p = ahdsr.getWrappedObject().getParameter();
-		ahdsr_p.getParameterT(0).connectT(0, add);                               // ahdsr -> add::Value
-		ahdsr_p.getParameterT(0).connectT(1, public_mod);                        // ahdsr -> public_mod::Value
-		cable_table.getWrappedObject().getParameter().connectT(0, add1);         // cable_table -> add1::Value
-		input_toggle.getWrappedObject().getParameter().connectT(0, ahdsr);       // input_toggle -> ahdsr::Gate
-		input_toggle.getWrappedObject().getParameter().connectT(1, cable_table); // input_toggle -> cable_table::Value
-		peak.getParameter().connectT(0, input_toggle);                           // peak -> input_toggle::Value2
+		ahdsr_p.getParameterT(0).connectT(0, add);                         // ahdsr -> add::Value
+		ahdsr_p.getParameterT(0).connectT(1, public_mod);                  // ahdsr -> public_mod::Value
+		input_toggle.getWrappedObject().getParameter().connectT(0, ahdsr); // input_toggle -> ahdsr::Gate
+		peak.getParameter().connectT(0, input_toggle);                     // peak -> input_toggle::Value2
 		
 		// Public Mod Connection -------------------------------------------------------------------
 		
@@ -258,7 +273,7 @@ template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
 		; // tempo_sync::UnsyncedTime is automated
 		
 		;                          // ramp::PeriodTime is automated
-		ramp.setParameterT(1, 0.); // core::ramp::LoopStart
+		;                          // ramp::LoopStart is automated
 		ramp.setParameterT(2, 1.); // core::ramp::Gate
 		
 		; // branch1::Index is automated
@@ -291,6 +306,8 @@ template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
 		
 		; // public_mod::Value is automated
 		
+		clear1.setParameterT(0, 0.); // math::clear::Value
+		
 		this->setParameterT(0, 3.);
 		this->setParameterT(1, 1.);
 		this->setParameterT(2, 1.);
@@ -301,7 +318,7 @@ template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
 		this->setParameterT(7, 0.);
 		this->setParameterT(8, 259.);
 		this->setParameterT(9, 1.);
-		this->setParameterT(10, 0.);
+		this->setParameterT(10, 1.);
 		this->setExternalData({}, -1);
 	}
 	~instance() override
