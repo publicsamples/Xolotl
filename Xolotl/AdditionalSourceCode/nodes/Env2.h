@@ -26,6 +26,10 @@ using tempo_sync_t = wrap::mod<parameter::plain<ramp_t<NV>, 0>,
                                control::tempo_sync<NV>>;
 
 template <int NV>
+using minmax_t = control::minmax<NV, 
+                                 parameter::plain<ramp_t<NV>, 1>>;
+
+template <int NV>
 using chain3_t = container::chain<parameter::empty, 
                                   wrap::fix<1, math::rect<NV>>>;
 
@@ -56,6 +60,7 @@ using peak_t = wrap::mod<parameter::plain<input_toggle_t<NV>, 2>,
 template <int NV>
 using chain_t = container::chain<parameter::empty, 
                                  wrap::fix<1, tempo_sync_t<NV>>, 
+                                 minmax_t<NV>, 
                                  ramp_t<NV>, 
                                  branch1_t<NV>, 
                                  peak_t<NV>, 
@@ -99,7 +104,7 @@ using trig_0 = parameter::from0To1<Env2_impl::input_toggle_t<NV>,
 template <int NV>
 using trig = parameter::chain<trig_InputRange, 
                               trig_0<NV>, 
-                              parameter::plain<Env2_impl::ramp_t<NV>, 1>>;
+                              parameter::plain<Env2_impl::minmax_t<NV>, 0>>;
 
 template <int NV>
 using mode = parameter::chain<ranges::Identity, 
@@ -147,8 +152,7 @@ using Env2_t_ = container::chain<Env2_t_parameters::Env2_t_plist<NV>,
                                  wrap::fix<1, chain_t<NV>>, 
                                  branch_t<NV>, 
                                  routing::public_mod, 
-                                 peak1_t, 
-                                 math::clear<NV>>;
+                                 peak1_t>;
 
 // =================================| Root node initialiser class |=================================
 
@@ -203,14 +207,15 @@ template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
 		
 		auto& chain = this->getT(0);                        // Env2_impl::chain_t<NV>
 		auto& tempo_sync = this->getT(0).getT(0);           // Env2_impl::tempo_sync_t<NV>
-		auto& ramp = this->getT(0).getT(1);                 // Env2_impl::ramp_t<NV>
-		auto& branch1 = this->getT(0).getT(2);              // Env2_impl::branch1_t<NV>
-		auto& chain3 = this->getT(0).getT(2).getT(0);       // Env2_impl::chain3_t<NV>
-		auto& rect = this->getT(0).getT(2).getT(0).getT(0); // math::rect<NV>
-		auto& chain4 = this->getT(0).getT(2).getT(1);       // Env2_impl::chain4_t
-		auto& peak = this->getT(0).getT(3);                 // Env2_impl::peak_t<NV>
-		auto& input_toggle = this->getT(0).getT(4);         // Env2_impl::input_toggle_t<NV>
-		auto& clear = this->getT(0).getT(5);                // math::clear<NV>
+		auto& minmax = this->getT(0).getT(1);               // Env2_impl::minmax_t<NV>
+		auto& ramp = this->getT(0).getT(2);                 // Env2_impl::ramp_t<NV>
+		auto& branch1 = this->getT(0).getT(3);              // Env2_impl::branch1_t<NV>
+		auto& chain3 = this->getT(0).getT(3).getT(0);       // Env2_impl::chain3_t<NV>
+		auto& rect = this->getT(0).getT(3).getT(0).getT(0); // math::rect<NV>
+		auto& chain4 = this->getT(0).getT(3).getT(1);       // Env2_impl::chain4_t
+		auto& peak = this->getT(0).getT(4);                 // Env2_impl::peak_t<NV>
+		auto& input_toggle = this->getT(0).getT(5);         // Env2_impl::input_toggle_t<NV>
+		auto& clear = this->getT(0).getT(6);                // math::clear<NV>
 		auto& branch = this->getT(1);                       // Env2_impl::branch_t<NV>
 		auto& chain1 = this->getT(1).getT(0);               // Env2_impl::chain1_t<NV>
 		auto& ahdsr = this->getT(1).getT(0).getT(0);        // Env2_impl::ahdsr_t<NV>
@@ -220,7 +225,6 @@ template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
 		auto& add1 = this->getT(1).getT(1).getT(1);         // math::add<NV>
 		auto& public_mod = this->getT(2);                   // routing::public_mod
 		auto& peak1 = this->getT(3);                        // Env2_impl::peak1_t
-		auto& clear1 = this->getT(4);                       // math::clear<NV>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -244,7 +248,7 @@ template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
 		
 		auto& trig_p = this->getParameterT(9);
 		trig_p.connectT(0, input_toggle); // trig -> input_toggle::Input
-		trig_p.connectT(1, ramp);         // trig -> ramp::LoopStart
+		trig_p.connectT(1, minmax);       // trig -> minmax::Value
 		
 		auto& mode_p = this->getParameterT(10);
 		mode_p.connectT(0, branch);  // mode -> branch::Index
@@ -255,6 +259,7 @@ template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
 		cable_table.getWrappedObject().getParameter().connectT(0, add1); // cable_table -> add1::Value
 		ramp.getParameter().connectT(0, cable_table);                    // ramp -> cable_table::Value
 		tempo_sync.getParameter().connectT(0, ramp);                     // tempo_sync -> ramp::PeriodTime
+		minmax.getWrappedObject().getParameter().connectT(0, ramp);      // minmax -> ramp::LoopStart
 		auto& ahdsr_p = ahdsr.getWrappedObject().getParameter();
 		ahdsr_p.getParameterT(0).connectT(0, add);                         // ahdsr -> add::Value
 		ahdsr_p.getParameterT(0).connectT(1, public_mod);                  // ahdsr -> public_mod::Value
@@ -271,6 +276,13 @@ template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
 		; // tempo_sync::Multiplier is automated
 		; // tempo_sync::Enabled is automated
 		; // tempo_sync::UnsyncedTime is automated
+		
+		;                            // minmax::Value is automated
+		minmax.setParameterT(1, 0.); // control::minmax::Minimum
+		minmax.setParameterT(2, 1.); // control::minmax::Maximum
+		minmax.setParameterT(3, 1.); // control::minmax::Skew
+		minmax.setParameterT(4, 0.); // control::minmax::Step
+		minmax.setParameterT(5, 1.); // control::minmax::Polarity
 		
 		;                          // ramp::PeriodTime is automated
 		;                          // ramp::LoopStart is automated
@@ -306,8 +318,6 @@ template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
 		
 		; // public_mod::Value is automated
 		
-		clear1.setParameterT(0, 0.); // math::clear::Value
-		
 		this->setParameterT(0, 3.);
 		this->setParameterT(1, 1.);
 		this->setParameterT(2, 1.);
@@ -340,8 +350,8 @@ template <int NV> struct instance:  public Env2_impl::Env2_t_<NV>,
 	{
 		// External Data Connections ---------------------------------------------------------------
 		
-		this->getT(0).getT(1).setExternalData(b, index);         // Env2_impl::ramp_t<NV>
-		this->getT(0).getT(3).setExternalData(b, index);         // Env2_impl::peak_t<NV>
+		this->getT(0).getT(2).setExternalData(b, index);         // Env2_impl::ramp_t<NV>
+		this->getT(0).getT(4).setExternalData(b, index);         // Env2_impl::peak_t<NV>
 		this->getT(1).getT(0).getT(0).setExternalData(b, index); // Env2_impl::ahdsr_t<NV>
 		this->getT(1).getT(1).getT(0).setExternalData(b, index); // Env2_impl::cable_table_t<NV>
 		this->getT(3).setExternalData(b, index);                 // Env2_impl::peak1_t

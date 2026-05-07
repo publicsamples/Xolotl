@@ -1434,33 +1434,17 @@ template <int NV>
 using no_midi9_t = wrap::no_midi<no_midi9_t_<NV>>;
 
 template <int NV>
-using input_toggle33_t = control::input_toggle<NV, 
-                                               parameter::plain<xnode1_t<NV>, 7>>;
-template <int NV>
-using clone_forward9_cable_mod = parameter::cloned<parameter::plain<input_toggle33_t<NV>, 1>>;
-template <int NV>
-using clone_forward9_t = control::clone_forward<clone_forward9_cable_mod<NV>>;
+using clone_cable17_mod = parameter::from0To1<xnode1_t<NV>, 
+                                              7, 
+                                              clone_cable32_modRange>;
 
 template <int NV>
-using clone_cable17_cable_mod = parameter::cloned<parameter::plain<input_toggle33_t<NV>, 2>>;
-template <int NV>
-using clone_cable17_t = control::clone_cable<clone_cable17_cable_mod<NV>, 
-                                             duplilogic::spread>;
-
-template <int NV>
-using clone_cable18_mod = parameter::from0To1<input_toggle33_t<NV>, 
-                                              0, 
-                                              clone_cable28_modRange>;
-
-template <int NV>
-using clone_cable18_t = control::clone_cable<parameter::cloned<clone_cable18_mod<NV>>, 
+using clone_cable17_t = control::clone_cable<parameter::cloned<clone_cable17_mod<NV>>, 
                                              duplilogic::fixed>;
 
 template <int NV>
 using split13_t = container::split<parameter::empty, 
-                                   wrap::fix<1, clone_forward9_t<NV>>, 
-                                   clone_cable17_t<NV>, 
-                                   clone_cable18_t<NV>>;
+                                   wrap::fix<1, clone_cable17_t<NV>>>;
 
 template <int NV>
 using no_midi10_t_ = container::chain<parameter::empty, 
@@ -1750,7 +1734,7 @@ using pack_resizer3_t = wrap::data<control::pack_resizer,
 
 DECLARE_PARAMETER_RANGE_STEP(clone_cable14_modRange, 
                              0., 
-                             3., 
+                             4., 
                              1.);
 
 template <int NV>
@@ -2140,7 +2124,6 @@ template <int NV>
 using chain74_t = container::chain<parameter::empty, 
                                    wrap::fix<2, input_toggle_t<NV>>, 
                                    input_toggle32_t<NV>, 
-                                   input_toggle33_t<NV>, 
                                    input_toggle35_t<NV>, 
                                    input_toggle34_t<NV>, 
                                    input_toggle36_t<NV>, 
@@ -2179,15 +2162,10 @@ DECLARE_PARAMETER_RANGE_STEP(HarmSrc_InputRange,
                              1., 
                              5., 
                              1.);
-DECLARE_PARAMETER_RANGE_STEP(HarmSrc_0Range, 
-                             0., 
-                             4., 
-                             1.);
-
 template <int NV>
 using HarmSrc_0 = parameter::from0To1<ArrangeNew_impl::branch_t<NV>, 
                                       0, 
-                                      HarmSrc_0Range>;
+                                      ArrangeNew_impl::clone_cable14_modRange>;
 
 template <int NV>
 using HarmSrc = parameter::chain<HarmSrc_InputRange, HarmSrc_0<NV>>;
@@ -2245,7 +2223,7 @@ DECLARE_PARAMETER_RANGE_STEP(DetuneSrc_InputRange,
 template <int NV>
 using DetuneSrc_0 = parameter::from0To1<ArrangeNew_impl::branch3_t<NV>, 
                                         0, 
-                                        HarmSrc_0Range>;
+                                        ArrangeNew_impl::clone_cable14_modRange>;
 
 template <int NV>
 using DetuneSrc = parameter::chain<DetuneSrc_InputRange, DetuneSrc_0<NV>>;
@@ -2295,7 +2273,7 @@ DECLARE_PARAMETER_RANGE_STEP(ShapeSrc_InputRange,
 template <int NV>
 using ShapeSrc_0 = parameter::from0To1<ArrangeNew_impl::branch8_t<NV>, 
                                        0, 
-                                       HarmSrc_0Range>;
+                                       ArrangeNew_impl::clone_cable14_modRange>;
 
 template <int NV>
 using ShapeSrc = parameter::chain<ShapeSrc_InputRange, ShapeSrc_0<NV>>;
@@ -2344,7 +2322,7 @@ DECLARE_PARAMETER_RANGE_STEP(CyclePosSrc_InputRange,
 template <int NV>
 using CyclePosSrc_0 = parameter::from0To1<ArrangeNew_impl::branch9_t<NV>, 
                                           0, 
-                                          HarmSrc_0Range>;
+                                          ArrangeNew_impl::clone_cable14_modRange>;
 
 template <int NV>
 using CyclePosSrc = parameter::chain<CyclePosSrc_InputRange, CyclePosSrc_0<NV>>;
@@ -2394,7 +2372,7 @@ DECLARE_PARAMETER_RANGE_STEP(CycleShapeSrc_InputRange,
 template <int NV>
 using CycleShapeSrc_0 = parameter::from0To1<ArrangeNew_impl::branch10_t<NV>, 
                                             0, 
-                                            HarmSrc_0Range>;
+                                            ArrangeNew_impl::clone_cable14_modRange>;
 
 template <int NV>
 using CycleShapeSrc = parameter::chain<CycleShapeSrc_InputRange, 
@@ -2449,7 +2427,7 @@ DECLARE_PARAMETER_RANGE_STEP(FxValueSrc_InputRange,
 template <int NV>
 using FxValueSrc_0 = parameter::from0To1<ArrangeNew_impl::branch11_t<NV>, 
                                          0, 
-                                         HarmSrc_0Range>;
+                                         ArrangeNew_impl::clone_cable14_modRange>;
 
 template <int NV>
 using FxValueSrc = parameter::chain<FxValueSrc_InputRange, FxValueSrc_0<NV>>;
@@ -2480,19 +2458,14 @@ DECLARE_PARAMETER_RANGE_STEP(FxDiv_InputRange,
                              1., 
                              32., 
                              1.);
-template <int NV>
-using FxDiv_1 = parameter::from0To1<ArrangeNew_impl::clone_cable17_t<NV>, 
-                                    1, 
-                                    ArrangeNew_impl::peak1_mod_0Range>;
 
 template <int NV>
 using FxDiv = parameter::chain<FxDiv_InputRange, 
-                               parameter::plain<ArrangeNew_impl::clone_forward9_t<NV>, 1>, 
-                               FxDiv_1<NV>>;
+                               parameter::plain<ArrangeNew_impl::clone_cable17_t<NV>, 1>>;
 
 DECLARE_PARAMETER_RANGE_STEP(FxSinSh_InputRange, 
                              1., 
-                             3., 
+                             4., 
                              1.);
 
 template <int NV>
@@ -2531,7 +2504,7 @@ DECLARE_PARAMETER_RANGE(CutSrc_InputRange,
 template <int NV>
 using CutSrc_0 = parameter::from0To1<ArrangeNew_impl::branch13_t<NV>, 
                                      0, 
-                                     HarmSrc_0Range>;
+                                     ArrangeNew_impl::clone_cable14_modRange>;
 
 template <int NV>
 using CutSrc = parameter::chain<CutSrc_InputRange, CutSrc_0<NV>>;
@@ -2588,7 +2561,7 @@ DECLARE_PARAMETER_RANGE_STEP(ResSrc_InputRange,
 template <int NV>
 using ResSrc_0 = parameter::from0To1<ArrangeNew_impl::branch16_t<NV>, 
                                      0, 
-                                     HarmSrc_0Range>;
+                                     ArrangeNew_impl::clone_cable14_modRange>;
 
 template <int NV>
 using ResSrc = parameter::chain<ResSrc_InputRange, ResSrc_0<NV>>;
@@ -2637,7 +2610,7 @@ DECLARE_PARAMETER_RANGE_STEP(FilterMixSrc_InputRange,
 template <int NV>
 using FilterMixSrc_0 = parameter::from0To1<ArrangeNew_impl::branch17_t<NV>, 
                                            0, 
-                                           HarmSrc_0Range>;
+                                           ArrangeNew_impl::clone_cable14_modRange>;
 
 template <int NV>
 using FilterMixSrc = parameter::chain<FilterMixSrc_InputRange, 
@@ -2716,10 +2689,8 @@ using V2 = parameter::chain<ranges::Identity,
                             parameter::plain<ArrangeNew_impl::clone_forward11_t<NV>, 0>, 
                             parameter::plain<ArrangeNew_impl::clone_cable1_t<NV>, 0>, 
                             parameter::plain<ArrangeNew_impl::clone_cable12_t<NV>, 0>, 
-                            parameter::plain<ArrangeNew_impl::clone_forward9_t<NV>, 0>, 
                             parameter::plain<ArrangeNew_impl::clone_cable15_t<NV>, 0>, 
                             parameter::plain<ArrangeNew_impl::clone_cable17_t<NV>, 0>, 
-                            parameter::plain<ArrangeNew_impl::clone_cable18_t<NV>, 0>, 
                             parameter::plain<ArrangeNew_impl::clone_forward12_t<NV>, 0>, 
                             parameter::plain<ArrangeNew_impl::clone_cable19_t<NV>, 0>, 
                             parameter::plain<ArrangeNew_impl::clone_forward13_t<NV>, 0>, 
@@ -2856,9 +2827,7 @@ using PosSpread = parameter::plain<ArrangeNew_impl::clone_cable8_t<NV>,
 template <int NV>
 using FxToGainSpread = parameter::plain<ArrangeNew_impl::clone_cable15_t<NV>, 
                                         1>;
-template <int NV>
-using FxDivSprd = parameter::plain<ArrangeNew_impl::clone_cable18_t<NV>, 
-                                   1>;
+using FxDivSprd = FxMix;
 template <int NV>
 using FxToPitchSprd = parameter::plain<ArrangeNew_impl::clone_cable20_t<NV>, 
                                        1>;
@@ -2969,7 +2938,7 @@ using ArrangeNew_t_plist = parameter::list<Harm<NV>,
                                            Quant<NV>, 
                                            PosSpread<NV>, 
                                            FxToGainSpread<NV>, 
-                                           FxDivSprd<NV>, 
+                                           FxDivSprd, 
                                            FxToPitchSprd<NV>, 
                                            FxFilterSprd<NV>, 
                                            OscShapeSpread<NV>, 
@@ -3075,15 +3044,15 @@ template <int NV> struct instance: public ArrangeNew_impl::ArrangeNew_t_<NV>
             0x6168, 0x6570, 0x7253, 0x0063, 0x0000, 0x8000, 0x003F, 0xA000, 
             0x0040, 0x8000, 0x0040, 0x8000, 0x003F, 0x8000, 0x5C3F, 0x1C00, 
             0x0000, 0x4300, 0x6379, 0x656C, 0x6853, 0x7061, 0x4165, 0x7875, 
-            0x0000, 0x0000, 0xBF80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 
+            0x0000, 0x0000, 0xBF80, 0x0000, 0x3F80, 0x3333, 0xBF75, 0x0000, 
             0x3F80, 0x0000, 0x0000, 0x005C, 0x001D, 0x0000, 0x7943, 0x6C63, 
             0x5365, 0x6168, 0x6570, 0x7541, 0x5378, 0x6372, 0x0000, 0x0000, 
-            0x3F80, 0x0000, 0x40C0, 0x0000, 0x4040, 0x0000, 0x3F80, 0x0000, 
+            0x3F80, 0x0000, 0x40C0, 0x0000, 0x4000, 0x0000, 0x3F80, 0x0000, 
             0x3F80, 0x005C, 0x001E, 0x0000, 0x7846, 0x6156, 0x756C, 0x0065, 
-            0x0000, 0x0000, 0x0000, 0x9000, 0x0041, 0x8000, 0x003F, 0x8000, 
+            0x0000, 0x0000, 0x0000, 0x9000, 0x0041, 0x8E40, 0x003F, 0x8000, 
             0x003F, 0x0000, 0x5C00, 0x1F00, 0x0000, 0x4600, 0x5678, 0x6C61, 
-            0x6575, 0x6F4D, 0x0064, 0x0000, 0x8000, 0x00BF, 0x8000, 0x003F, 
-            0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x5C00, 0x2000, 0x0000, 
+            0x6575, 0x6F4D, 0x0064, 0x0000, 0x8000, 0x00BF, 0x8000, 0xCD3F, 
+            0x50CC, 0x003D, 0x8000, 0x003F, 0x0000, 0x5C00, 0x2000, 0x0000, 
             0x4600, 0x5678, 0x6C61, 0x6575, 0x7253, 0x0063, 0x0000, 0x8000, 
             0x003F, 0xA000, 0x0040, 0x0000, 0x0040, 0x8000, 0x003F, 0x8000, 
             0x5C3F, 0x2100, 0x0000, 0x4600, 0x5678, 0x6C61, 0x6575, 0x7541, 
@@ -3094,18 +3063,18 @@ template <int NV> struct instance: public ArrangeNew_impl::ArrangeNew_t_<NV>
             0x5C3F, 0x2300, 0x0000, 0x4600, 0x4D78, 0x7869, 0x0000, 0x0000, 
             0x0000, 0x0000, 0x3F80, 0x8000, 0x3ED3, 0x0000, 0x3F80, 0x0000, 
             0x0000, 0x005C, 0x0024, 0x0000, 0x7846, 0x6944, 0x0076, 0x0000, 
-            0x8000, 0x003F, 0x0000, 0x0042, 0x8000, 0x003F, 0x8000, 0x003F, 
+            0x8000, 0x003F, 0x0000, 0x0042, 0x5000, 0x0041, 0x8000, 0x003F, 
             0x8000, 0x5C3F, 0x2500, 0x0000, 0x4600, 0x5378, 0x6E79, 0x0063, 
-            0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 
+            0x0000, 0x0000, 0x0000, 0x8000, 0x9A3F, 0x74F9, 0x003F, 0x8000, 
             0x003F, 0x0000, 0x5C00, 0x2600, 0x0000, 0x4600, 0x5378, 0x6E69, 
-            0x6853, 0x0000, 0x0000, 0x3F80, 0x0000, 0x4040, 0x0000, 0x4000, 
+            0x6853, 0x0000, 0x0000, 0x3F80, 0x0000, 0x4080, 0x0000, 0x3F80, 
             0x0000, 0x3F80, 0x0000, 0x3F80, 0x005C, 0x0027, 0x0000, 0x7846, 
             0x6F74, 0x6950, 0x6374, 0x0068, 0x0000, 0x8000, 0x00BF, 0x8000, 
-            0x8F3F, 0xF5C2, 0x003C, 0x8000, 0x003F, 0x0000, 0x5C00, 0x2800, 
+            0x5C3F, 0x828F, 0x003C, 0x8000, 0x003F, 0x0000, 0x5C00, 0x2800, 
             0x0000, 0x4600, 0x7478, 0x436F, 0x7475, 0x0000, 0x0000, 0xBF80, 
             0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 
             0x005C, 0x0029, 0x0000, 0x7543, 0x0074, 0x0000, 0x0000, 0x0000, 
-            0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x003F, 0x0000, 0x5C00, 
+            0x8000, 0x003F, 0x7F40, 0x003F, 0x8000, 0x003F, 0x0000, 0x5C00, 
             0x2A00, 0x0000, 0x4300, 0x7475, 0x6F4D, 0x0064, 0x0000, 0x8000, 
             0x00BF, 0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 
             0x5C00, 0x2B00, 0x0000, 0x4300, 0x7475, 0x7253, 0x0063, 0x0000, 
@@ -4055,15 +4024,9 @@ template <int NV> struct instance: public ArrangeNew_impl::ArrangeNew_t_<NV>
 		auto& no_midi10 = this->getT(0).getT(2).getT(0).getT(0).getT(1).getT(3).getT(5);     // ArrangeNew_impl::no_midi10_t<NV>
 		auto& split13 = this->getT(0).getT(2).getT(0).getT(0).                               // ArrangeNew_impl::split13_t<NV>
                         getT(1).getT(3).getT(5).getT(0);
-		auto& clone_forward9 = this->getT(0).getT(2).getT(0).getT(0).                        // ArrangeNew_impl::clone_forward9_t<NV>
-                               getT(1).getT(3).getT(5).getT(0).
-                               getT(0);
 		auto& clone_cable17 = this->getT(0).getT(2).getT(0).getT(0).                         // ArrangeNew_impl::clone_cable17_t<NV>
                               getT(1).getT(3).getT(5).getT(0).
-                              getT(1);
-		auto& clone_cable18 = this->getT(0).getT(2).getT(0).getT(0).                         // ArrangeNew_impl::clone_cable18_t<NV>
-                              getT(1).getT(3).getT(5).getT(0).
-                              getT(2);
+                              getT(0);
 		auto& no_midi11 = this->getT(0).getT(2).getT(0).getT(0).getT(1).getT(3).getT(6);     // ArrangeNew_impl::no_midi11_t<NV>
 		auto& split14 = this->getT(0).getT(2).getT(0).getT(0).                               // ArrangeNew_impl::split14_t<NV>
                         getT(1).getT(3).getT(6).getT(0);
@@ -4474,12 +4437,11 @@ template <int NV> struct instance: public ArrangeNew_impl::ArrangeNew_t_<NV>
 		auto chain74 = this->getT(1).getT(0);                                        // ArrangeNew_impl::chain74_t<NV>
 		auto input_toggle = this->getT(1).getT(0).getT(0);                           // ArrangeNew_impl::input_toggle_t<NV>
 		auto input_toggle32 = this->getT(1).getT(0).getT(1);                         // ArrangeNew_impl::input_toggle32_t<NV>
-		auto input_toggle33 = this->getT(1).getT(0).getT(2);                         // ArrangeNew_impl::input_toggle33_t<NV>
-		auto input_toggle35 = this->getT(1).getT(0).getT(3);                         // ArrangeNew_impl::input_toggle35_t<NV>
-		auto input_toggle34 = this->getT(1).getT(0).getT(4);                         // ArrangeNew_impl::input_toggle34_t<NV>
-		auto input_toggle36 = this->getT(1).getT(0).getT(5);                         // ArrangeNew_impl::input_toggle36_t<NV>
-		auto input_toggle37 = this->getT(1).getT(0).getT(6);                         // ArrangeNew_impl::input_toggle37_t<NV>
-		auto input_toggle38 = this->getT(1).getT(0).getT(7);                         // ArrangeNew_impl::input_toggle38_t<NV>
+		auto input_toggle35 = this->getT(1).getT(0).getT(2);                         // ArrangeNew_impl::input_toggle35_t<NV>
+		auto input_toggle34 = this->getT(1).getT(0).getT(3);                         // ArrangeNew_impl::input_toggle34_t<NV>
+		auto input_toggle36 = this->getT(1).getT(0).getT(4);                         // ArrangeNew_impl::input_toggle36_t<NV>
+		auto input_toggle37 = this->getT(1).getT(0).getT(5);                         // ArrangeNew_impl::input_toggle37_t<NV>
+		auto input_toggle38 = this->getT(1).getT(0).getT(6);                         // ArrangeNew_impl::input_toggle38_t<NV>
 		auto xnode1 = this->getT(1).getT(1);                                         // ArrangeNew_impl::xnode1_t<NV>
 		auto jpanner = this->getT(1).getT(2);                                        // jdsp::jpanner<NV>
 		
@@ -4651,9 +4613,7 @@ template <int NV> struct instance: public ArrangeNew_impl::ArrangeNew_t_<NV>
 		
 		this->getParameterT(34).connectT(0, branch7); // FxValueAuxSrvc -> branch7::Index
 		
-		auto& FxDiv_p = this->getParameterT(36);
-		FxDiv_p.connectT(0, clone_forward9); // FxDiv -> clone_forward9::Value
-		FxDiv_p.connectT(1, clone_cable17);  // FxDiv -> clone_cable17::Value
+		this->getParameterT(36).connectT(0, clone_cable17); // FxDiv -> clone_cable17::Value
 		
 		this->getParameterT(38).connectT(0, clone_cable5); // FxSinSh -> clone_cable5::Value
 		
@@ -4795,8 +4755,6 @@ template <int NV> struct instance: public ArrangeNew_impl::ArrangeNew_t_<NV>
 		
 		this->getParameterT(81).connectT(0, clone_cable15); // FxToGainSpread -> clone_cable15::Value
 		
-		this->getParameterT(82).connectT(0, clone_cable18); // FxDivSprd -> clone_cable18::Value
-		
 		this->getParameterT(83).connectT(0, clone_cable20); // FxToPitchSprd -> clone_cable20::Value
 		
 		this->getParameterT(84).connectT(0, clone_cable22); // FxFilterSprd -> clone_cable22::Value
@@ -4832,29 +4790,27 @@ template <int NV> struct instance: public ArrangeNew_impl::ArrangeNew_t_<NV>
 		V2_p.connectT(1, clone_forward11);  // V2 -> clone_forward11::NumClones
 		V2_p.connectT(2, clone_cable1);     // V2 -> clone_cable1::NumClones
 		V2_p.connectT(3, clone_cable12);    // V2 -> clone_cable12::NumClones
-		V2_p.connectT(4, clone_forward9);   // V2 -> clone_forward9::NumClones
-		V2_p.connectT(5, clone_cable15);    // V2 -> clone_cable15::NumClones
-		V2_p.connectT(6, clone_cable17);    // V2 -> clone_cable17::NumClones
-		V2_p.connectT(7, clone_cable18);    // V2 -> clone_cable18::NumClones
-		V2_p.connectT(8, clone_forward12);  // V2 -> clone_forward12::NumClones
-		V2_p.connectT(9, clone_cable19);    // V2 -> clone_cable19::NumClones
-		V2_p.connectT(10, clone_forward13); // V2 -> clone_forward13::NumClones
-		V2_p.connectT(11, clone_cable21);   // V2 -> clone_cable21::NumClones
-		V2_p.connectT(12, clone_cable22);   // V2 -> clone_cable22::NumClones
-		V2_p.connectT(13, clone_cable6);    // V2 -> clone_cable6::NumClones
-		V2_p.connectT(14, clone_cable5);    // V2 -> clone_cable5::NumClones
-		V2_p.connectT(15, clone_pack3);     // V2 -> clone_pack3::NumClones
-		V2_p.connectT(16, pack_resizer3);   // V2 -> pack_resizer3::NumSliders
-		V2_p.connectT(17, clone_cable14);   // V2 -> clone_cable14::NumClones
-		V2_p.connectT(18, clone_cable13);   // V2 -> clone_cable13::NumClones
-		V2_p.connectT(19, clone_cable10);   // V2 -> clone_cable10::NumClones
-		V2_p.connectT(20, clone_cable11);   // V2 -> clone_cable11::NumClones
-		V2_p.connectT(21, pack_resizer2);   // V2 -> pack_resizer2::NumSliders
-		V2_p.connectT(22, pack_resizer5);   // V2 -> pack_resizer5::NumSliders
-		V2_p.connectT(23, pack_resizer4);   // V2 -> pack_resizer4::NumSliders
-		V2_p.connectT(24, clone_forward14); // V2 -> clone_forward14::NumClones
-		V2_p.connectT(25, clone_cable32);   // V2 -> clone_cable32::NumClones
-		V2_p.connectT(26, clone_cable31);   // V2 -> clone_cable31::NumClones
+		V2_p.connectT(4, clone_cable15);    // V2 -> clone_cable15::NumClones
+		V2_p.connectT(5, clone_cable17);    // V2 -> clone_cable17::NumClones
+		V2_p.connectT(6, clone_forward12);  // V2 -> clone_forward12::NumClones
+		V2_p.connectT(7, clone_cable19);    // V2 -> clone_cable19::NumClones
+		V2_p.connectT(8, clone_forward13);  // V2 -> clone_forward13::NumClones
+		V2_p.connectT(9, clone_cable21);    // V2 -> clone_cable21::NumClones
+		V2_p.connectT(10, clone_cable22);   // V2 -> clone_cable22::NumClones
+		V2_p.connectT(11, clone_cable6);    // V2 -> clone_cable6::NumClones
+		V2_p.connectT(12, clone_cable5);    // V2 -> clone_cable5::NumClones
+		V2_p.connectT(13, clone_pack3);     // V2 -> clone_pack3::NumClones
+		V2_p.connectT(14, pack_resizer3);   // V2 -> pack_resizer3::NumSliders
+		V2_p.connectT(15, clone_cable14);   // V2 -> clone_cable14::NumClones
+		V2_p.connectT(16, clone_cable13);   // V2 -> clone_cable13::NumClones
+		V2_p.connectT(17, clone_cable10);   // V2 -> clone_cable10::NumClones
+		V2_p.connectT(18, clone_cable11);   // V2 -> clone_cable11::NumClones
+		V2_p.connectT(19, pack_resizer2);   // V2 -> pack_resizer2::NumSliders
+		V2_p.connectT(20, pack_resizer5);   // V2 -> pack_resizer5::NumSliders
+		V2_p.connectT(21, pack_resizer4);   // V2 -> pack_resizer4::NumSliders
+		V2_p.connectT(22, clone_forward14); // V2 -> clone_forward14::NumClones
+		V2_p.connectT(23, clone_cable32);   // V2 -> clone_cable32::NumClones
+		V2_p.connectT(24, clone_cable31);   // V2 -> clone_cable31::NumClones
 		
 		auto& V3_p = this->getParameterT(89);
 		V3_p.connectT(0, clone);         // V3 -> clone::NumClones
@@ -5068,10 +5024,7 @@ template <int NV> struct instance: public ArrangeNew_impl::ArrangeNew_t_<NV>
 		clone_cable1.getWrappedObject().getParameter().connectT(0, input_toggle32);    // clone_cable1 -> input_toggle32::Value1
 		clone_cable12.getWrappedObject().getParameter().connectT(0, input_toggle32);   // clone_cable12 -> input_toggle32::Value2
 		clone_cable15.getWrappedObject().getParameter().connectT(0, input_toggle32);   // clone_cable15 -> input_toggle32::Input
-		input_toggle33.getWrappedObject().getParameter().connectT(0, xnode1);          // input_toggle33 -> xnode1::FxShDiv
-		clone_forward9.getWrappedObject().getParameter().connectT(0, input_toggle33);  // clone_forward9 -> input_toggle33::Value1
-		clone_cable17.getWrappedObject().getParameter().connectT(0, input_toggle33);   // clone_cable17 -> input_toggle33::Value2
-		clone_cable18.getWrappedObject().getParameter().connectT(0, input_toggle33);   // clone_cable18 -> input_toggle33::Input
+		clone_cable17.getWrappedObject().getParameter().connectT(0, xnode1);           // clone_cable17 -> xnode1::FxShDiv
 		input_toggle35.getWrappedObject().getParameter().connectT(0, xnode1);          // input_toggle35 -> xnode1::shPitch
 		clone_forward12.getWrappedObject().getParameter().connectT(0, input_toggle35); // clone_forward12 -> input_toggle35::Value1
 		clone_cable19.getWrappedObject().getParameter().connectT(0, input_toggle35);   // clone_cable19 -> input_toggle35::Value2
@@ -5834,16 +5787,9 @@ template <int NV> struct instance: public ArrangeNew_impl::ArrangeNew_t_<NV>
 		;                                   // clone_cable15::Value is automated
 		clone_cable15.setParameterT(2, 0.); // control::clone_cable::Gamma
 		
-		; // clone_forward9::NumClones is automated
-		; // clone_forward9::Value is automated
-		
 		;                                   // clone_cable17::NumClones is automated
 		;                                   // clone_cable17::Value is automated
 		clone_cable17.setParameterT(2, 0.); // control::clone_cable::Gamma
-		
-		;                                   // clone_cable18::NumClones is automated
-		;                                   // clone_cable18::Value is automated
-		clone_cable18.setParameterT(2, 0.); // control::clone_cable::Gamma
 		
 		; // clone_forward12::NumClones is automated
 		; // clone_forward12::Value is automated
@@ -6177,10 +6123,6 @@ template <int NV> struct instance: public ArrangeNew_impl::ArrangeNew_t_<NV>
 		; // input_toggle32::Value1 is automated
 		; // input_toggle32::Value2 is automated
 		
-		; // input_toggle33::Input is automated
-		; // input_toggle33::Value1 is automated
-		; // input_toggle33::Value2 is automated
-		
 		; // input_toggle35::Input is automated
 		; // input_toggle35::Value1 is automated
 		; // input_toggle35::Value2 is automated
@@ -6261,20 +6203,20 @@ template <int NV> struct instance: public ArrangeNew_impl::ArrangeNew_t_<NV>
 		this->setParameterT(25, 0.85);
 		this->setParameterT(26, 0.);
 		this->setParameterT(27, 4.);
-		this->setParameterT(28, 0.);
-		this->setParameterT(29, 3.);
-		this->setParameterT(30, 1.);
-		this->setParameterT(31, 0.);
+		this->setParameterT(28, -0.957812);
+		this->setParameterT(29, 2.);
+		this->setParameterT(30, 1.11133);
+		this->setParameterT(31, 0.0509766);
 		this->setParameterT(32, 2.);
 		this->setParameterT(33, 0.);
 		this->setParameterT(34, 1.);
 		this->setParameterT(35, 0.413086);
-		this->setParameterT(36, 1.);
-		this->setParameterT(37, 1.);
-		this->setParameterT(38, 2.);
-		this->setParameterT(39, 0.03);
+		this->setParameterT(36, 13.);
+		this->setParameterT(37, 0.956934);
+		this->setParameterT(38, 1.);
+		this->setParameterT(39, 0.0159375);
 		this->setParameterT(40, 0.);
-		this->setParameterT(41, 1.);
+		this->setParameterT(41, 0.99707);
 		this->setParameterT(42, 0.);
 		this->setParameterT(43, 4.);
 		this->setParameterT(44, 0.);

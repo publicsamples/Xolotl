@@ -48,7 +48,6 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::harmo_networkdata>();
 		registerDataNode<project::Htwentyfour_networkdata>();
 		registerDataNode<project::_networkdata>();
-		registerDataNode<project::LFO_networkdata>();
 		registerDataNode<project::mod_networkdata>();
 		registerDataNode<project::modconnet_networkdata>();
 		registerDataNode<project::pb_networkdata>();

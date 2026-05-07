@@ -228,7 +228,14 @@ inline function onModShapeControl(component, value)
 	ModSp3.showControl(0);
 
     	}
-	if(value == 4)
+    	{
+    	HARMONIC.setAttribute(HARMONIC.FxSinSh, 4);
+    	ModSp1.showControl(1);
+    	ModSp2.showControl(0);
+    	ModSp3.showControl(0);
+    	
+    	    	}
+	if(value == 5)
 		{
 	HARMONIC.setAttribute(HARMONIC.FxSinSh, 4);
 	ModSp1.showControl(0);

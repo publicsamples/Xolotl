@@ -96,7 +96,6 @@ rb1.setRingBufferProperties(properties);
 
 
 const var Waveform1 = Content.getComponent("Waveform1");
-const var ENABLE_WAVEFORM_REPAINT_TIMERS = false;
 
 
 Waveform1.setTimerCallback(function()
@@ -109,8 +108,7 @@ Waveform1.setTimerCallback(function()
 	this.repaint();
 });
 
-if(ENABLE_WAVEFORM_REPAINT_TIMERS)
-	Waveform1.startTimer(30);
+Waveform1.startTimer(30);
 
 Waveform1.setPaintRoutine(function(g)
 {
@@ -148,8 +146,7 @@ Waveform2.setTimerCallback(function()
 	this.repaint();
 });
 
-if(ENABLE_WAVEFORM_REPAINT_TIMERS)
-	Waveform2.startTimer(30);
+Waveform2.startTimer(30);
 
 Waveform2.setPaintRoutine(function(g)
 {
@@ -187,8 +184,7 @@ Waveform3.setTimerCallback(function()
 	this.repaint();
 });
 
-if(ENABLE_WAVEFORM_REPAINT_TIMERS)
-	Waveform3.startTimer(30);
+Waveform3.startTimer(30);
 
 Waveform3.setPaintRoutine(function(g)
 {
