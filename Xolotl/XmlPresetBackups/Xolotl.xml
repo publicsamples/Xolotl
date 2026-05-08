@@ -211,24 +211,24 @@
         <Processor Type="ModulatorChain" ID="Global Modulators" Bypassed="0" Intensity="1.0">
           <ChildProcessors>
             <Processor Type="HardcodedTimevariantModulator" ID="LFO1" Bypassed="0" Intensity="1.0"
-                       Bipolar="0" Network="modtest1" Tempo="10.0" Div="1.0" Modifiers="0.0"
-                       OUTPUT="0.0" Sync="1.0" Unsync="1.0" ModiAdjust="0.0">
+                       Bipolar="0" Network="modtest1" Tempo="0.0" Div="1.0" Modifiers="0.0"
+                       OUTPUT="0.0" Sync="1.0" Unsync="1.0" ModiAdjust="0.2653863728046417">
               <ChildProcessors/>
               <SliderPacks>
                 <SliderPack EmbeddedData="16.6Qga+................."/>
               </SliderPacks>
             </Processor>
             <Processor Type="HardcodedTimevariantModulator" ID="LFO2" Bypassed="0" Intensity="1.0"
-                       Bipolar="0" Network="modtest1" Tempo="0.0" Div="8.0" Modifiers="0.0"
-                       OUTPUT="1.0" Sync="1.0" Unsync="1.0" ModiAdjust="0.5099999904632568">
+                       Bipolar="0" Network="modtest1" Tempo="0.0" Div="1.0" Modifiers="0.0"
+                       OUTPUT="1.0" Sync="1.0" Unsync="1.0" ModiAdjust="0.2653863728046417">
               <ChildProcessors/>
               <SliderPacks>
                 <SliderPack EmbeddedData="16....f+................."/>
               </SliderPacks>
             </Processor>
             <Processor Type="HardcodedTimevariantModulator" ID="LFO3" Bypassed="0" Intensity="1.0"
-                       Bipolar="0" Network="modtest1" Tempo="5.0" Div="4.0" Modifiers="0.0"
-                       OUTPUT="2.0" Sync="1.0" Unsync="1.0" ModiAdjust="0.2700000107288361">
+                       Bipolar="0" Network="modtest1" Tempo="0.0" Div="1.0" Modifiers="0.0"
+                       OUTPUT="2.0" Sync="1.0" Unsync="1.0" ModiAdjust="0.2653863728046417">
               <ChildProcessors/>
               <SliderPacks>
                 <SliderPack EmbeddedData="16.....+...........EtdD+."/>
@@ -304,11 +304,11 @@
         </Processor>
         <Processor Type="HardcodedSynth" ID="HARMONIC" Bypassed="0" Gain="0.25"
                    Balance="0.0" VoiceLimit="6.0" KillFadeTime="20.0" IconColour="0"
-                   Network="ArrangeNew" Harm="1.0" HarmMod="0.0" HarmSrc="4.0" HarmAux="0.0"
-                   HarmAuxSrc="2.0" Min="1.0" Max="16.0" Step="1.0" Detune="0.0"
-                   DetuneMod="0.0" DetuneSrc="1.0" DetuneAux="2.081668171172169e-17"
+                   Network="ArrangeNew" Harm="0.7699999809265137" HarmMod="0.0"
+                   HarmSrc="4.0" HarmAux="0.0" HarmAuxSrc="2.0" Min="1.0" Max="16.0"
+                   Step="1.0" Detune="0.0" DetuneMod="0.0" DetuneSrc="1.0" DetuneAux="2.081668171172169e-17"
                    DetuneAuxSrc="1.0" OscType="1.0" Shape="1.0" ShapeMod="0.0" ShapeSrc="1.0"
-                   ShapeAux="0.0" ShapeAuxSrc="1.0" VoiceMode="1.0" CyclePos="0.0"
+                   ShapeAux="0.0" ShapeAuxSrc="1.0" VoiceMode="2.0" CyclePos="0.0"
                    CyclePosMod="0.0" CyclePosSrc="1.0" CyclePosAux="0.0" CyclePosAuxSrc="1.0"
                    CycleShape="0.7799999713897705" CycleShapeMod="0.0" CycleShapeSrc="1.0"
                    CycleShapeAux="0.0" CycleShapeAuxSrc="2.0" FxValue="0.0" FxValueMod="0.0"
@@ -320,15 +320,16 @@
                    ResAux="0.0" ResAuxSrc="2.0" FilterMix="0.6200000047683716" FilterMixMod="0.0"
                    FilterMixSrc="3.0" FilterMixAux="0.0" FilterMixAuxSrc="1.0" Spread="0.0"
                    Snap="0.0" FxtoGain="1.0" EnvTempo1="5.0" EnvDiv1="8.0" EnvA1="422.0"
-                   EnvD1="4998.5" EnvH1="0.0" EnvS1="0.1400000005960464" EnvR1="1786.0"
-                   EnvTrig1="0.0" EnvTempo2="0.0" EnvDiv2="6.0" EnvA2="4395.0" EnvD2="6213.7001953125"
-                   EnvH2="0.0" EnvS2="0.6399999856948853" EnvR2="2159.0" EnvTrig2="1.0"
-                   Stages2="2.0" posdiv="32.0" PosMode="0.0" Quant="1.0" PosSpread="0.0"
-                   FxToGainSpread="0.0" FxDivSprd="0.0" FxToPitchSprd="0.004999999888241291"
-                   FxFilterSprd="0.0" OscShapeSpread="0.0" OscShpSprd="0.0" V1="32.0"
-                   V2="32.0" V3="32.0" ModPhase="-1.0" V5="32.0" SMOOTH="0.2800000011920929"
-                   EnvMode1="1.0" EnvMode2="1.0" FileGainRest="0.4199999868869781"
-                   FileGainSmooth="0.5799999833106995" DetSprd="0.0" PitchSmooth="0.0">
+                   EnvD1="4998.47998046875" EnvH1="0.0" EnvS1="0.1400000005960464"
+                   EnvR1="1786.0" EnvTrig1="0.0" EnvTempo2="0.0" EnvDiv2="6.0" EnvA2="4395.0"
+                   EnvD2="6213.669921875" EnvH2="0.0" EnvS2="0.6399999856948853"
+                   EnvR2="2159.0" EnvTrig2="1.0" Stages2="2.0" posdiv="32.0" PosMode="0.0"
+                   Quant="1.0" PosSpread="0.0" FxToGainSpread="0.0" FxDivSprd="0.0"
+                   FxToPitchSprd="0.004999999888241291" FxFilterSprd="0.0" OscShapeSpread="0.0"
+                   OscShpSprd="0.0" V1="32.0" V2="32.0" V3="32.0" ModPhase="1.0"
+                   V5="32.0" SMOOTH="0.2800000011920929" EnvMode1="1.0" EnvMode2="1.0"
+                   FileGainRest="0.4199999868869781" FileGainSmooth="0.5799999833106995"
+                   DetSprd="0.0" PitchSmooth="0.0">
           <ChildProcessors>
             <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
               <ChildProcessors/>

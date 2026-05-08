@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="mods" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="mods" Bypassed="0" Name="mods">
+    <Nodes>
+      <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
+        <Nodes>
+          <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                Name="global_cable" NodeColour="4282954411">
+            <Properties>
+              <Property ID="Connection" Value="lfo1"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="global_cable1" FactoryPath="routing.global_cable" Bypassed="0"
+                Name="global_cable" NodeColour="4282954412">
+            <Properties>
+              <Property ID="Connection" Value="lfo2"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="global_cable2" FactoryPath="routing.global_cable" Bypassed="0"
+                Name="global_cable" NodeColour="4282954413">
+            <Properties>
+              <Property ID="Connection" Value="lfo3"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>

@@ -136,8 +136,7 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="Osc"
-                Folded="1">
+          <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="Osc">
             <Nodes>
               <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
                 <Nodes>
@@ -257,10 +256,10 @@
                                           <Connection NodeId="add" ParameterId="Value"/>
                                         </ModulationTargets>
                                         <Parameters>
-                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="0.0" Automated="1"/>
                                           <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" DefaultValue="1.0"
                                                      Automated="1"/>
-                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" DefaultValue="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" DefaultValue="0.0" Automated="1"/>
                                         </Parameters>
                                       </Node>
                                       <Node ID="add" FactoryPath="math.add" Bypassed="0" Name="add">

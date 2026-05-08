@@ -50,6 +50,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::_networkdata>();
 		registerDataNode<project::mod_networkdata>();
 		registerDataNode<project::modconnet_networkdata>();
+		registerDataNode<project::mods_networkdata>();
 		registerDataNode<project::pb_networkdata>();
 		registerDataNode<project::PhunWithPhasor_networkdata>();
 		registerDataNode<project::_networkdata>();
