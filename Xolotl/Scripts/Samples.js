@@ -192,6 +192,8 @@ const SMAPS = ["Bells & Keys", "FX","Kits & Seq", "Leads", "Misc", "Pads", "Basi
 //BankA.set("items", "");
 //BankA.set("items", maps.join("\n"));
 const var WAVELABEL1 = Content.getComponent("WAVELABEL1");
+const var WAVELABEL2 = Content.getComponent("WAVELABEL2");
+
 
 
 const var Categories = Content.getComponent("Categories");
@@ -257,6 +259,7 @@ inline function onCategoriesControl(component, value)
 	BankA.set("items", [].join("\n")); 
 	BankA.set("items", Maps[value-1].join("\n"));
 //	BankA.setValue(1);
+	WAVELABEL2.set("text", Categories.getItemText());
 	
 
 };

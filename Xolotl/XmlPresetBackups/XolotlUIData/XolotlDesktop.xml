@@ -627,14 +627,15 @@
       <Component type="ScriptSliderPack" id="ModSp2" x="8" y="7" width="210" height="40"
                  parentComponent="ScriptPanel4" processorId="HARMONIC" itemColour="4286801664"
                  itemColour2="14465590" textColour="0" bgColour="16711680" flashActive="0"
-                 defaultValue="0.0" SliderPackIndex="1"/>
+                 defaultValue="0.0" SliderPackIndex="1" visible="0"/>
       <Component type="ScriptTable" id="ModSp3" x="12" y="53" width="210" height="40"
                  parentComponent="ScriptPanel4" processorId="HARMONIC" bgColour="2199958"
-                 customColours="1" itemColour="4280390038" itemColour2="4288611589"/>
+                 customColours="1" itemColour="4280390038" itemColour2="4288611589"
+                 visible="0"/>
       <Component type="ScriptSliderPack" id="ModSp1" x="9" y="8" width="210" height="80"
                  parentComponent="ScriptPanel4" processorId="HARMONIC" itemColour="4286801664"
                  itemColour2="14465590" textColour="0" bgColour="16711680" flashActive="0"
-                 defaultValue="0.0" SliderPackIndex="1" visible="0"/>
+                 defaultValue="0.0" SliderPackIndex="1"/>
     </Component>
     <Component type="ScriptComboBox" id="SOURC4" x="34" y="97" max="6" width="20"
                height="20" items="Velocity&#10;Track&#10;Random&#10;Mod Wheel&#10;Pitch Bend&#10;Aftertouch"
@@ -787,7 +788,7 @@
                textColour="4291475358" fontName="Montserrat" itemColour2="4291475358"/>
     <Component type="ScriptPanel" id="OSC" x="88" y="4" width="260" height="290"
                parentComponent="osc1" itemColour="4281346602" itemColour2="4282069554"
-               textColour="16777215" visible="0">
+               textColour="16777215">
       <Component type="ScriptSlider" id="SHAPEMOD37" x="76" y="0" width="40" height="40"
                  parentComponent="OSC" processorId="HARMONIC" parameterId="Shape"
                  middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
@@ -840,26 +841,26 @@
     </Component>
     <Component type="ScriptPanel" id="MULTI" x="88" y="4" width="260" height="290"
                parentComponent="osc1" itemColour="4281346602" itemColour2="4282069554"
-               textColour="16777215">
+               textColour="16777215" visible="0">
       <Component type="ScriptSliderPack" id="pitch-sp6" x="9" y="76" width="240"
                  height="210" parentComponent="MULTI" processorId="HARMONIC" itemColour="4281632678"
                  itemColour2="14465590" textColour="10318162" bgColour="16711680"
                  flashActive="0" defaultValue="0.0" sliderAmount="32.0"/>
       <Component type="ScriptComboBox" id="BankA" x="138" y="8" width="110" height="25"
-                 max="37" parentComponent="MULTI" fontSize="1.0" textColour="4291475358"
+                 max="18" parentComponent="MULTI" fontSize="1.0" textColour="4291475358"
                  itemColour2="4291475358" itemColour="4291475358" bgColour="4291475358"
-                 defaultValue="0.0" saveInPreset="0" items="Misc_EM25_1&#10;Misc_EM25_2&#10;Misc_EM25_3&#10;Misc_Gdad_1&#10;Misc_Gdad_2&#10;Misc_Gdad_3&#10;Misc_Gdad_4&#10;Misc_Gdad_5&#10;Misc_Meta_1&#10;Misc_Meta_2&#10;Misc_Meta_3&#10;Misc_Meta_4&#10;Misc_Meta_5&#10;Misc_SplGit&#10;Misc_Spook&#10;Misc_Toes&#10;Misc_Vibe&#10;Misc_WBrass&#10;Misc_Wet&#10;Pluck_Gater&#10;Pluck_PluckSH&#10;Bass_BooBass&#10;Bass_Bz&#10;Bass_Double&#10;Bass_Gooey&#10;Bass_HardBass&#10;Bass_HellCat&#10;Bass_Lilbass&#10;Bass_RM&#10;Bass_Round&#10;Bass_ShakeyBass&#10;Bass_Shrp&#10;Bass_Slap&#10;Bass_eBass&#10;Bass_hard&#10;Bass_nsty1&#10;Bass_nsty2"/>
-      <Component type="ScriptComboBox" id="Categories" x="14" y="8" width="110"
+                 defaultValue="0.0" saveInPreset="0" items="Bell_Belles&#10;Bell_More&#10;Bell_Src&#10;Keys_DCOPiano&#10;Keys_Darkly&#10;Keys_EM25_1&#10;Keys_EM25_2&#10;Keys_EM25_3&#10;Keys_EM25_4&#10;Keys_EP1&#10;Keys_EP2&#10;Keys_EP3&#10;Keys_Euro&#10;Keys_Odd&#10;Keys_Swoosh1&#10;Keys_Swoosh2&#10;Keys_Swoosh3&#10;Keys_pswp"/>
+      <Component type="ScriptComboBox" id="Categories" x="14" y="7" width="110"
                  height="25" parentComponent="MULTI" fontSize="1.0" itemColour2="4291475358"
                  itemColour="4291475358" bgColour="4291475358" items="Bells &amp; Keys&#10;FX&#10;Kits &amp; Seq&#10;Leads&#10;Misc&#10;Pads&#10;Basic Waves"
                  defaultValue="0.0" max="7" saveInPreset="0" textColour="4291475358"/>
       <Component type="ScriptLabel" id="PITCH-MABEL14" x="-69" y="187" width="70"
                  height="15" parentComponent="MULTI" text="EXPANSION" editable="0"
                  fontName="Montserrat" textColour="4281344270"/>
-      <Component type="ScriptLabel" id="WAVELABEL1" x="144" y="11" width="100"
-                 height="20" parentComponent="MULTI" text="Pluck_PluckSH" saveInPreset="1"
+      <Component type="ScriptLabel" id="WAVELABEL1" x="143" y="10" width="100"
+                 height="20" parentComponent="MULTI" text="FX_Zap" saveInPreset="1"
                  editable="0" itemColour2="4291475358" textColour="4291475358"
-                 bgColour="4281808695" deferControlCallback="1"/>
+                 bgColour="4281808695" deferControlCallback="1" fontName="Montserrat"/>
       <Component type="ScriptLabel" id="WAVE1" x="14" y="36" width="110" height="20"
                  parentComponent="MULTI" editable="0" text="BANK" fontSize="14.0"
                  fontName="Montserrat" textColour="4291475358"/>
@@ -870,10 +871,10 @@
       <Component type="ScriptLabel" id="WAVE2" x="137" y="34" width="110" height="20"
                  parentComponent="MULTI" editable="0" text="SAMPLE" fontSize="14.0"
                  fontName="Montserrat" textColour="4291475358"/>
-      <Component type="ScriptLabel" id="WAVELABEL2" x="19" y="11" width="100"
-                 height="20" parentComponent="MULTI" text="CATEGORIES" saveInPreset="1"
-                 editable="0" itemColour2="4291475358" textColour="4291475358"
-                 bgColour="4281808695"/>
+      <Component type="ScriptLabel" id="WAVELABEL2" x="19" y="10" width="100"
+                 height="20" parentComponent="MULTI" text="Bells &amp; Keys" editable="0"
+                 itemColour2="4291475358" textColour="4291475358" bgColour="4281808695"
+                 fontName="Montserrat" saveInPreset="1"/>
     </Component>
     <Component type="ScriptPanel" id="USER" x="88" y="4" width="260" height="290"
                parentComponent="osc1" itemColour="4281346602" itemColour2="4282069554"
@@ -978,8 +979,8 @@
       <Component type="ScriptComboBox" id="SampleA" x="200" y="42" width="50"
                  height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
                  itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
-                 items="MFFMA1.WAV&#10;MFFMA2.WAV&#10;MFFMA3.WAV&#10;MFFMA4.WAV&#10;MFFMA5.WAV&#10;MFFMA6.WAV&#10;MFFMA7.WAV&#10;MFFMA8.WAV&#10;MFFMB1.WAV&#10;MFFMB2.WAV&#10;MFFMB3.WAV&#10;MFFMB4.WAV&#10;MFFMB5.WAV&#10;MFFMB6.WAV&#10;MFFMB7.WAV&#10;MFFMB8.WAV&#10;MRS1.WAV&#10;MRS2.WAV&#10;MRS3.WAV&#10;MRS4.WAV&#10;MRS5.WAV&#10;MRS6.WAV&#10;MRS7.WAV&#10;MRS8.WAV&#10;Noisy1.wav&#10;RES1.WAV&#10;RES2.WAV&#10;RES3.WAV&#10;RES4.WAV&#10;RES5.WAV&#10;RES6.WAV&#10;RES7.WAV&#10;RES8.WAV&#10;resB1.wav&#10;Saw1.wav&#10;Saw2.wav&#10;saw3.wav&#10;Saw4.wav&#10;SHAPERA1.WAV&#10;SHAPERA2.WAV&#10;SHAPERA3.WAV&#10;SHAPERA4.WAV&#10;SHAPERA5.WAV&#10;SHAPERA6.WAV&#10;SHAPERA7.WAV&#10;SHAPERA8.WAV&#10;SHPB1.WAV&#10;SHPB2.WAV&#10;SHPB3.WAV&#10;SHPB4.WAV&#10;SHPB5.WAV&#10;SHPB6.WAV&#10;SHPB7.WAV&#10;SHPB8.WAV&#10;shSin.wav&#10;Sine1.wav&#10;SQR1.WAV&#10;SQR2.WAV&#10;SQR3.WAV&#10;SQR4.WAV&#10;SQR5.WAV&#10;SQR6.WAV&#10;SQR7.WAV&#10;SQR8.WAV&#10;Square1.wav&#10;square2.wav&#10;square3.wav&#10;square4.wav&#10;square5.wav&#10;square6.wav&#10;STRING1.WAV&#10;STRING2.WAV&#10;STRING3.WAV&#10;STRING4.WAV&#10;STRING5.WAV&#10;STRING6.WAV&#10;STRING7.WAV&#10;STRING8.WAV&#10;THIN1.WAV&#10;THIN2.WAV&#10;THIN3.WAV&#10;THIN4.WAV&#10;THIN5.WAV&#10;THIN6.WAV&#10;THIN7.WAV&#10;THIN8.WAV&#10;Trap1.wav&#10;trap2.wav&#10;WEDITDRAW1.wav"
-                 saveInPreset="0" max="89" deferControlCallback="1"/>
+                 items="AD-Draw1.wav&#10;AD-Draw2.wav&#10;AD-Draw4.wav&#10;AD_DRAW3.wav&#10;amp1.wav&#10;BELEM.WAV&#10;Cheb1.wav&#10;chirp.wav&#10;FBELL1.WAV&#10;FBELL2.WAV&#10;FBELL3.WAV&#10;FBELL4.WAV&#10;Filp1.wav&#10;flip2.wav&#10;flip3.wav&#10;flip4.wav&#10;FM1.WAV&#10;FM2.WAV&#10;FM3.WAV&#10;FM4.WAV&#10;FM5.WAV&#10;FM6.WAV&#10;FM7.WAV&#10;FM8.WAV&#10;FM9.WAV&#10;FORMA1.WAV&#10;FORMA2.WAV&#10;FORMA3.WAV&#10;FORMA4.WAV&#10;FORMB1.WAV&#10;FORMB2.WAV&#10;FORMB3.WAV&#10;FORMB4.WAV&#10;FORMB5.WAV&#10;FORMB6.WAV&#10;FORMB7.WAV&#10;FORMB8.WAV&#10;HARMA1.WAV&#10;HARMA2.WAV&#10;HARMA3.WAV&#10;HARMA4.WAV&#10;HARMA5.WAV&#10;HARMA6.WAV&#10;HARMA7.WAV&#10;HARMA8.WAV&#10;HARMB1.WAV&#10;HARMB2.WAV&#10;HARMB3.WAV&#10;HARMB4.WAV&#10;HARMB5.WAV&#10;HARMB6.WAV&#10;HARMB7.WAV&#10;HARMB8.WAV&#10;HARMC1.WAV&#10;HARMC2.WAV&#10;HARMC3.WAV&#10;HARMC4.WAV&#10;HARMC5.WAV&#10;HARMC6.WAV&#10;HARMC7.WAV&#10;HARMC8.WAV&#10;HRQ2.WAV&#10;HRSAW1.WAV&#10;HRSAW2.WAV&#10;HRSAW3.WAV&#10;HRSAW4.WAV&#10;HRSAW5.WAV&#10;HRSAW6.WAV&#10;HRSAW7.WAV&#10;HRSAW8.WAV&#10;HRTRI1.WAV&#10;HRTRI2.WAV&#10;HRTRI3.WAV&#10;HRTRI4.WAV&#10;HRTRI5.WAV&#10;HRTRI6.WAV&#10;HRTRI7.WAV&#10;HRTRI8.WAV&#10;LowQ.wav"
+                 saveInPreset="0" max="79" deferControlCallback="1"/>
       <Component type="ScriptLabel" id="WAVE13" x="123" y="142" width="60" height="20"
                  parentComponent="USER" editable="0" text="SHAPE" fontSize="14.0"
                  fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"
