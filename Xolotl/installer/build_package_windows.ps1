@@ -74,12 +74,10 @@ if (-not $Vst3Path) {
     $Vst3Path = Join-Path $RepoRoot "Binaries\Compiled\VST3\$ProjectName.vst3"
 }
 
-$AudioFilesDir = Join-Path $RepoRoot "AudioFiles"
-$ExpansionsDir = Join-Path $RepoRoot "Expansions"
-$UserPresetsDir = Join-Path $RepoRoot "UserPresets"
+$InstallerContentDir = Join-Path $ScriptDir "Xolotl"
 $SamplesDir = Join-Path $RepoRoot "Samples"
 
-foreach ($pathToCheck in @($Vst3Path, $AudioFilesDir, $ExpansionsDir, $UserPresetsDir, $SamplesDir)) {
+foreach ($pathToCheck in @($Vst3Path, $InstallerContentDir, $SamplesDir)) {
     if (-not (Test-Path -LiteralPath $pathToCheck)) {
         Fail "Missing required path: $pathToCheck"
     }
@@ -90,41 +88,37 @@ New-Item -ItemType Directory -Path $OutputDir -Force | Out-Null
 
 $WorkDir = Join-Path ([System.IO.Path]::GetTempPath()) "$ProjectSlug-win-installer"
 $StageRoot = Join-Path $WorkDir "stage"
-$AppSupportStage = Join-Path $StageRoot "AppSupport"
-$SamplesStage = Join-Path $StageRoot "SamplesRoot\Samples"
+$ProgramDataStage = Join-Path $StageRoot "ProgramDataXolotl"
 $IssPath = Join-Path $WorkDir "$ProjectSlug-installer.iss"
+$SamplesPayloadDir = Join-Path $OutputDir "Samples"
 
 if (Test-Path -LiteralPath $WorkDir) {
     Remove-Item -LiteralPath $WorkDir -Recurse -Force
 }
 
-New-Item -ItemType Directory -Path $AppSupportStage -Force | Out-Null
-New-Item -ItemType Directory -Path $SamplesStage -Force | Out-Null
+New-Item -ItemType Directory -Path $ProgramDataStage -Force | Out-Null
 
-Write-Log "Staging Application Support content"
-Copy-Item -LiteralPath $AudioFilesDir -Destination (Join-Path $AppSupportStage "AudioFiles") -Recurse
-Copy-Item -LiteralPath $ExpansionsDir -Destination (Join-Path $AppSupportStage "Expansions") -Recurse
-Copy-Item -LiteralPath $UserPresetsDir -Destination (Join-Path $AppSupportStage "User Presets") -Recurse
-
-$GeneralSettingsPath = Join-Path $AppSupportStage "GeneralSettings.xml"
-$LinkWindowsPath = Join-Path $AppSupportStage "LinkWindows"
-
-@'
-<?xml version="1.0" encoding="UTF-8"?>
-
-<GLOBAL_SETTINGS DISK_MODE="0" SCALE_FACTOR="1.0" VOICE_AMOUNT_MULTIPLIER="8"
-                 MIDI_CHANNELS="1" SAMPLES_FOUND="1" OPEN_GL="0"/>
-'@ | Set-Content -LiteralPath $GeneralSettingsPath -Encoding UTF8
-
-[System.IO.File]::WriteAllText($LinkWindowsPath, "")
+Write-Log "Staging ProgramData content from installer\\Xolotl"
+Copy-Item -Path (Join-Path $InstallerContentDir "*") -Destination $ProgramDataStage -Recurse
 
 Write-Log "Staging sample library"
-Copy-Item -Path (Join-Path $SamplesDir "*") -Destination $SamplesStage -Recurse
+$SampleFiles = @(Get-ChildItem -Path $SamplesDir -Recurse -File -ErrorAction SilentlyContinue)
+$HasSampleFiles = $SampleFiles.Count -gt 0
+
+if ($HasSampleFiles) {
+    if (Test-Path -LiteralPath $SamplesPayloadDir) {
+        Remove-Item -LiteralPath $SamplesPayloadDir -Recurse -Force
+    }
+    New-Item -ItemType Directory -Path $SamplesPayloadDir -Force | Out-Null
+    Copy-Item -Path (Join-Path $SamplesDir "*") -Destination $SamplesPayloadDir -Recurse
+    Write-Log "Sample payload prepared at $SamplesPayloadDir"
+} else {
+    Fail "No sample files found in $SamplesDir. Populate this folder before packaging samples."
+}
 
 $SafeOutputDir = $OutputDir.Replace('\', '\\')
 $SafeVst3Path = $Vst3Path.Replace('\', '\\')
-$SafeAppSupportStage = $AppSupportStage.Replace('\', '\\')
-$SafeSamplesStage = $SamplesStage.Replace('\', '\\')
+$SafeProgramDataStage = $ProgramDataStage.Replace('\', '\\')
 
 $IssContent = @"
 #define MyAppName "$ProjectName"
@@ -132,8 +126,7 @@ $IssContent = @"
 #define MyAppPublisher "modularsamples"
 #define MyAppSlug "$ProjectSlug"
 #define MyVst3Source "$SafeVst3Path"
-#define MyAppSupportSource "$SafeAppSupportStage"
-#define MySamplesSource "$SafeSamplesStage"
+#define MyProgramDataSource "$SafeProgramDataStage"
 
 [Setup]
 AppId={{8CDE9C1C-4F79-4E75-9380-5E44A0F23B7A}
@@ -151,6 +144,8 @@ SolidCompression=yes
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 WizardStyle=modern
+CloseApplications=yes
+RestartApplications=no
 
 [Types]
 Name: "full"; Description: "Full installation"; Flags: iscustom
@@ -160,20 +155,69 @@ Name: "vst3"; Description: "VST3 plugin"; Types: full; Flags: fixed
 Name: "content"; Description: "Shared content and sample library"; Types: full; Flags: fixed
 
 [Dirs]
-Name: "{commonappdata}\Common Files\modularsamples\Xolotl"; Components: content
-Name: "{code:GetMusicInstallRoot}\modularsamples\Xolotl\Samples"; Components: content
+Name: "{commonappdata}\modularsamples\Xolotl"; Components: content
+Name: "{code:GetSamplesInstallDir}"; Components: content
 
 [Files]
-Source: "{#MyVst3Source}"; DestDir: "{commoncf}\VST3"; DestName: "{#MyAppName}.vst3"; Flags: ignoreversion; Components: vst3
-Source: "{#MyAppSupportSource}\*"; DestDir: "{commonappdata}\Common Files\modularsamples\Xolotl"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: content
-Source: "{#MySamplesSource}\*"; DestDir: "{code:GetMusicInstallRoot}\modularsamples\Xolotl\Samples"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: content
+Source: "{#MyVst3Source}"; DestDir: "{commoncf}\VST3"; DestName: "{#MyAppName}.vst3"; Flags: ignoreversion restartreplace; Components: vst3
+Source: "{#MyProgramDataSource}\*"; DestDir: "{commonappdata}\modularsamples\Xolotl"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: content
+Source: "{src}\Samples\*"; DestDir: "{code:GetSamplesInstallDir}"; Flags: external ignoreversion recursesubdirs createallsubdirs; Components: content
 
 [Code]
-function GetMusicInstallRoot(Param: String): String;
+function GetUserShellFolderValue(const ValueName: String; const DefaultPath: String): String;
 begin
-  if not RegQueryStringValue(HKCU, 'Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders', 'My Music', Result) then
-    Result := ExpandConstant('{userprofile}') + '\Music';
-  Result := ExpandConstant(Result);
+  if not RegQueryStringValue(HKCU, 'Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders', ValueName, Result) then
+  begin
+    if not RegQueryStringValue(HKCU, 'Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders', ValueName, Result) then
+      Result := DefaultPath;
+  end;
+  Result := RemoveBackslashUnlessRoot(ExpandConstant(Result));
+end;
+
+function ResolveSamplesRoot: String;
+var
+  MusicRoot: String;
+  DocumentsRoot: String;
+  UserHome: String;
+  PreferredSamplesDir: String;
+  FallbackSamplesDir: String;
+  ProbeFile: String;
+begin
+  DocumentsRoot := GetUserShellFolderValue('Personal', ExpandConstant('{userdocs}'));
+  UserHome := ExtractFileDir(DocumentsRoot);
+  MusicRoot := GetUserShellFolderValue('My Music', UserHome + '\Music');
+
+  PreferredSamplesDir := MusicRoot + '\modularsamples\Xolotl\Samples';
+  FallbackSamplesDir := DocumentsRoot + '\modularsamples\Xolotl\Samples';
+
+  if not DirExists(PreferredSamplesDir) then
+  begin
+    try
+      ForceDirectories(PreferredSamplesDir);
+    except
+    end;
+  end;
+
+  if DirExists(PreferredSamplesDir) then
+  begin
+    ProbeFile := PreferredSamplesDir + '\.__xolotl_write_probe';
+    if SaveStringToFile(ProbeFile, 'ok', False) then
+    begin
+      DeleteFile(ProbeFile);
+      Result := PreferredSamplesDir;
+      exit;
+    end;
+  end;
+
+  if not DirExists(FallbackSamplesDir) then
+    ForceDirectories(FallbackSamplesDir);
+
+  Result := FallbackSamplesDir;
+end;
+
+function GetSamplesInstallDir(Param: String): String;
+begin
+  Result := ResolveSamplesRoot();
 end;
 
 procedure CurStepChanged(CurStep: TSetupStep);
@@ -183,8 +227,8 @@ var
 begin
   if CurStep = ssPostInstall then
   begin
-    LinkTarget := GetMusicInstallRoot('') + '\modularsamples\Xolotl\Samples';
-    LinkFile := ExpandConstant('{commonappdata}\Common Files\modularsamples\Xolotl\LinkWindows');
+    LinkTarget := ResolveSamplesRoot();
+    LinkFile := ExpandConstant('{commonappdata}\modularsamples\Xolotl\LinkWindows');
     SaveStringToFile(LinkFile, LinkTarget, False);
   end;
 end;
