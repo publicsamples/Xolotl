@@ -847,9 +847,9 @@
                  itemColour2="14465590" textColour="10318162" bgColour="16711680"
                  flashActive="0" defaultValue="0.0" sliderAmount="32.0"/>
       <Component type="ScriptComboBox" id="BankA" x="138" y="8" width="110" height="25"
-                 max="30" parentComponent="MULTI" fontSize="1.0" textColour="4291475358"
+                 max="18" parentComponent="MULTI" fontSize="1.0" textColour="4291475358"
                  itemColour2="4291475358" itemColour="4291475358" bgColour="4291475358"
-                 defaultValue="0.0" items="Pad_BigElectric&#10;Pad_Bumpy&#10;Pad_Busy&#10;Pad_CsShock&#10;Pad_DF2&#10;Pad_DS&#10;Pad_Gravel&#10;Pad_GreatST&#10;Pad_Lfade&#10;Pad_Lingo&#10;Pad_OChord&#10;Pad_PulseString&#10;Pad_RLD&#10;Pad_Rouse&#10;Pad_Rust&#10;Pad_Scratchy&#10;Pad_Scrd&#10;Pad_SlowOne&#10;Pad_Special&#10;Pad_Swish&#10;Pad_Tortoise&#10;Pad_Trouble&#10;Pad_XpSea&#10;Pad_simr&#10;Strings_Classy&#10;Strings_EM25_1&#10;Strings_EM25_2&#10;Strings_EM25_3&#10;Strings_Z1_1&#10;Strings_Z1_2"/>
+                 defaultValue="0.0" items="Bell_Belles&#10;Bell_More&#10;Bell_Src&#10;Keys_DCOPiano&#10;Keys_Darkly&#10;Keys_EM25_1&#10;Keys_EM25_2&#10;Keys_EM25_3&#10;Keys_EM25_4&#10;Keys_EP1&#10;Keys_EP2&#10;Keys_EP3&#10;Keys_Euro&#10;Keys_Odd&#10;Keys_Swoosh1&#10;Keys_Swoosh2&#10;Keys_Swoosh3&#10;Keys_pswp"/>
       <Component type="ScriptComboBox" id="Categories" x="14" y="7" width="110"
                  height="25" parentComponent="MULTI" fontSize="1.0" itemColour2="4291475358"
                  itemColour="4291475358" bgColour="4291475358" items="Bells &amp; Keys&#10;FX&#10;Kits &amp; Seq&#10;Leads&#10;Misc&#10;Pads&#10;Basic Waves"
