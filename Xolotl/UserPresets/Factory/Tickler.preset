@@ -28,7 +28,7 @@
     <Control type="ScriptSlider" id="ATTACK1" value="422.0"/>
     <Control type="ScriptButton" id="ModMode1" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD36" value="0.0"/>
-    <Control type="ScriptSlider" id="SHAPEMOD5" value="5.000001430511475"/>
+    <Control type="ScriptSlider" id="SHAPEMOD5" value="12.60000133514404"/>
     <Control type="ScriptSlider" id="Knob1" value="0.0"/>
     <Control type="ScriptSlider" id="Knob3" value="14125.099609375"/>
     <Control type="ScriptSlider" id="Knob4" value="0.0"/>
@@ -75,36 +75,36 @@
     <Control type="ScriptComboBox" id="SOURC6" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD24" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD29" value="1.0"/>
-    <Control type="ScriptSlider" id="SHAPEMOD26" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD26" value="0.8600000143051147"/>
     <Control type="ScriptComboBox" id="ModShape" value="4.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD35" value="1.0"/>
     <Control type="ScriptSliderPack" id="ScriptSliderPack3" value="0.0" data="8.8nvU97Qgq4C"/>
     <Control type="ScriptSlider" id="GainModSmooth" value="0.0"/>
-    <Control type="ScriptComboBox" id="OscWave" value="2.0"/>
+    <Control type="ScriptComboBox" id="OscWave" value="1.0"/>
     <Control type="ScriptComboBox" id="SOURC3" value="2.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD11" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD12" value="0.7699999809265137"/>
     <Control type="ScriptSlider" id="SHAPEMOD15" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC5" value="4.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD37" value="1.0"/>
-    <Control type="ScriptSliderPack" id="pitch-sp7" value="32.0" data="132.OJbc8zLyL2ydT3hOeT3Z9fqGE5ilYloO6Qgq9zLyL6yGEttO....+jBWO7iYlYxOrGEN+zLyL8iqGE1OZlYV+jBWO8CWOJzOyLyL+nv0i7ilYlwO35QA+XlYl6CWOJrOZlYl9fqGE5SyLyjOb8nP9fqGE3iqGEdOrGEt8nv0izC....."/>
+    <Control type="ScriptSliderPack" id="pitch-sp7" value="32.0" data="128.OJbc8zLyL2ydT3hOeT3Z9fqGE5ilYloO6Qgq9zLyL6yGEttO....+jBWO7iYlYxOrGEN+zLyL8iqGE1OZlYV+jBWO8CWOJzOyLyL+nv0i7ilYlwO35QA+XlYl6CWOJrOZlYl9fqGE5SyLyjOb8nP9fqGE3iqGEdOrGEt8nv0izC"/>
     <Control type="ScriptComboBox" id="SOURC7" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD38" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC8" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD39" value="0.0"/>
     <Control type="ScriptComboBox" id="OscWave1" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton9" value="0.0"/>
-    <Control type="ScriptSliderPack" id="pitch-sp6" value="32.0" data="132.OJbc8zLyL2ydT3hOeT3Z9fqGE5ilYloO6Qgq9zLyL6yGEttO....+jBWO7iYlYxOrGEN+zLyL8iqGE1OZlYV+jBWO8CWOJzOyLyL+nv0i7ilYlwO35QA+XlYl6CWOJrOZlYl9fqGE5SyLyjOb8nP9fqGE3iqGEdOrGEt8nv0izC....."/>
+    <Control type="ScriptSliderPack" id="pitch-sp6" value="32.0" data="128.OJbc8zLyL2ydT3hOeT3Z9fqGE5ilYloO6Qgq9zLyL6yGEttO....+jBWO7iYlYxOrGEN+zLyL8iqGE1OZlYV+jBWO8CWOJzOyLyL+nv0i7ilYlwO35QA+XlYl6CWOJrOZlYl9fqGE5SyLyjOb8nP9fqGE3iqGEdOrGEt8nv0izC"/>
     <Control type="ScriptLabel" id="WAVELABEL1" value="Bell_Belles"/>
     <Control type="ScriptLabel" id="WAVELABEL2" value="CATEGORIES"/>
-    <Control type="ScriptSliderPack" id="pitch-sp5" value="32.0" data="132.OJbc8zLyL2ydT3hOeT3Z9fqGE5ilYloO6Qgq9zLyL6yGEttO....+jBWO7iYlYxOrGEN+zLyL8iqGE1OZlYV+jBWO8CWOJzOyLyL+nv0i7ilYlwO35QA+XlYl6CWOJrOZlYl9fqGE5SyLyjOb8nP9fqGE3iqGEdOrGEt8nv0izC....."/>
+    <Control type="ScriptSliderPack" id="pitch-sp5" value="32.0" data="128.OJbc8zLyL2ydT3hOeT3Z9fqGE5ilYloO6Qgq9zLyL6yGEttO....+jBWO7iYlYxOrGEN+zLyL8iqGE1OZlYV+jBWO8CWOJzOyLyL+nv0i7ilYlwO35QA+XlYl6CWOJrOZlYl9fqGE5SyLyjOb8nP9fqGE3iqGEdOrGEt8nv0izC"/>
     <Control type="ScriptSlider" id="SHAPEMOD40" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC9" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD41" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC10" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD42" value="0.0"/>
-    <Control type="ScriptAudioWaveform" id="Wf1" value="0.0" data="{PROJECT_FOLDER}Single Cycle 2/MFFMB8.WAV"
-             rangeStart="0" rangeEnd="1024"/>
+    <Control type="ScriptAudioWaveform" id="Wf1" value="0.0" data="{AUDIO_FILES}Single Cycle 2/MRS6.WAV"
+             rangeStart="0" rangeEnd="256"/>
     <Control type="ScriptSlider" id="SHAPEMOD43" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC11" value="2.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD46" value="0.0"/>
