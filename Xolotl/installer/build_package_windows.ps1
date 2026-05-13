@@ -145,7 +145,6 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 WizardStyle=modern
 CloseApplications=yes
-ForceCloseApplications=yes
 RestartApplications=no
 
 [Types]

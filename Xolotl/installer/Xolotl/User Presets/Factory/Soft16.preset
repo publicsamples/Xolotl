@@ -103,7 +103,7 @@
     <Control type="ScriptSlider" id="SHAPEMOD41" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC10" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD42" value="0.0"/>
-    <Control type="ScriptAudioWaveform" id="Wf1" value="0.0" data="{PROJECT_FOLDER}Single Cycle 1/HRTRI8.WAV"
+    <Control type="ScriptAudioWaveform" id="Wf1" value="0.0" data="{AUDIO_FILES}Single Cycle 1/HRTRI8.WAV"
              rangeStart="0" rangeEnd="256"/>
     <Control type="ScriptSlider" id="SHAPEMOD43" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC11" value="4.0"/>

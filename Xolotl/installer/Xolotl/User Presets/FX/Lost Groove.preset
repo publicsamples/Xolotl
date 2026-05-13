@@ -103,7 +103,7 @@
     <Control type="ScriptSlider" id="SHAPEMOD41" value="0.1599999964237213"/>
     <Control type="ScriptComboBox" id="SOURC10" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD42" value="0.0"/>
-    <Control type="ScriptAudioWaveform" id="Wf1" value="0.0" data="{PROJECT_FOLDER}Loops 1/OptoGroove1.wav"
+    <Control type="ScriptAudioWaveform" id="Wf1" value="0.0" data="{AUDIO_FILES}Loops 1/OptoGroove1.wav"
              rangeStart="0" rangeEnd="151200"/>
     <Control type="ScriptSlider" id="SHAPEMOD43" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC11" value="2.0"/>
