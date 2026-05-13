@@ -259,7 +259,8 @@ inline function onCategoriesControl(component, value)
 	BankA.set("items", [].join("\n")); 
 	BankA.set("items", Maps[value-1].join("\n"));
 //	BankA.setValue(1);
-	WAVELABEL2.set("text", Categories.getItemText());
+
+
 	
 
 };
@@ -267,14 +268,6 @@ inline function onCategoriesControl(component, value)
 Content.getComponent("Categories").setControlCallback(onCategoriesControl);
 
 
-inline function onWAVELABEL1Control(component, value)
-{
-	// Diagnostic guard: preset restore can fire this label callback in bursty
-	// order; avoid sample-map loads from label state and load only via BankA.
-	return;
-};
-
-Content.getComponent("WAVELABEL1").setControlCallback(onWAVELABEL1Control);
 
 
 
@@ -298,7 +291,6 @@ inline function onBankAControl(component, value)
 	if (!isValidSampleMapId(mapId))
 		return;
 
-	WAVELABEL1.set("text", mapId);
 	
 	requestSampleMapLoad(mapId);
 //	slot.loadFile("{XYZ::SampleMap}" + (maps[value-1]));
@@ -306,19 +298,17 @@ inline function onBankAControl(component, value)
 
 Content.getComponent("BankA").setControlCallback(onBankAControl);
 
-inline function reconcileSampleStateAfterPreset()
+inline function syncSampleMenusAfterPresetLoad()
 {
 	local catValue = Categories.getValue();
+
 	if (catValue > 0 && catValue <= Maps.length)
 		onCategoriesControl(Categories, catValue);
 
 	local bankValue = BankA.getValue();
+
 	if (bankValue > 0)
 		onBankAControl(BankA, bankValue);
-
-	local sampleValue = SampleA.getValue();
-	if (sampleValue > 0)
-		onSampleAControl(SampleA, sampleValue);
 }
 
 

@@ -95,8 +95,17 @@
     <Control type="ScriptComboBox" id="OscWave1" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton9" value="0.0"/>
     <Control type="ScriptSliderPack" id="pitch-sp6" value="0.0" data="64......jBWO3C6QgiOeT3Z9DtdT5yv0ipOb8nv9XOJb6yiBWuO35QA+T35Q7iT35wOCWOJ+7nv07CWOJzOMyLS+."/>
-    <Control type="ScriptLabel" id="WAVELABEL1" value="Bell_Belles"/>
-    <Control type="ScriptLabel" id="WAVELABEL2" value="Bells &amp; Keys"/>
+    <Control type="ScriptComboBox" id="BankA" value="26.0"/>
+    <Control type="ScriptComboBox" id="Categories" value="4.0"/>
+    <Control type="ScriptSlider" id="SHAPE" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPE6" value="16.0"/>
+    <Control type="ScriptSlider" id="SHAPE7" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD48" value="0.0"/>
+    <Control type="ScriptComboBox" id="SOURC18" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPE8" value="0.009999999776482582"/>
+    <Control type="ScriptSlider" id="SHAPE1" value="0.0"/>
+    <Control type="ScriptComboBox" id="SOURC19" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD49" value="2.081668171172169e-17"/>
     <Control type="ScriptSliderPack" id="pitch-sp5" value="0.0" data="64......jBWO3C6QgiOeT3Z9DtdT5yv0ipOb8nv9XOJb6yiBWuO35QA+T35Q7iT35wOCWOJ+7nv07CWOJzOMyLS+."/>
     <Control type="ScriptSlider" id="SHAPEMOD40" value="0.0"/>
     <Control type="ScriptComboBox" id="SOURC9" value="1.0"/>
@@ -119,15 +128,8 @@
     <Control type="ScriptSlider" id="SHAPEMOD47" value="0.2800000011920929"/>
     <Control type="ScriptSlider" id="SHAPEMOD52" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD53" value="0.0"/>
-    <Control type="ScriptSlider" id="SHAPE" value="1.0"/>
-    <Control type="ScriptSlider" id="SHAPE6" value="16.0"/>
-    <Control type="ScriptSlider" id="SHAPE7" value="1.0"/>
-    <Control type="ScriptSlider" id="SHAPEMOD48" value="0.0"/>
-    <Control type="ScriptComboBox" id="SOURC18" value="1.0"/>
-    <Control type="ScriptSlider" id="SHAPE8" value="0.009999999776482582"/>
-    <Control type="ScriptSlider" id="SHAPE1" value="0.0"/>
-    <Control type="ScriptComboBox" id="SOURC19" value="1.0"/>
-    <Control type="ScriptSlider" id="SHAPEMOD49" value="2.081668171172169e-17"/>
+    <Control type="ScriptAudioWaveform" id="Wf2" value="0.0" data="{XYZ::SampleMap}Lead_RavST"
+             rangeStart="0" rangeEnd="0"/>
     <Control type="ScriptButton" id="leATO" value="0.0"/>
     <Control type="ScriptButton" id="ScriptButton3" value="0.0"/>
     <Control type="ScriptComboBox" id="Stages" value="3.0"/>

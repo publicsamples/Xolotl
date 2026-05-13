@@ -10,8 +10,7 @@ inline function finishQueuedPresetLoad()
 	{
 		g_presetRestoreBusy = false;
 		g_userPresetLoadInProgress = false;
-
-		reconcileSampleStateAfterPreset();
+		syncSampleMenusAfterPresetLoad();
 
 		if (g_userPresetQueuedName.length == 0)
 			return;
