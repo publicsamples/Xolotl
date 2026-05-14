@@ -627,15 +627,14 @@
       <Component type="ScriptSliderPack" id="ModSp2" x="8" y="7" width="210" height="40"
                  parentComponent="ScriptPanel4" processorId="HARMONIC" itemColour="4286801664"
                  itemColour2="14465590" textColour="0" bgColour="16711680" flashActive="0"
-                 defaultValue="0.0" SliderPackIndex="1" visible="0"/>
+                 defaultValue="0.0" SliderPackIndex="1"/>
       <Component type="ScriptTable" id="ModSp3" x="12" y="53" width="210" height="40"
                  parentComponent="ScriptPanel4" processorId="HARMONIC" bgColour="2199958"
-                 customColours="1" itemColour="4280390038" itemColour2="4288611589"
-                 visible="0"/>
+                 customColours="1" itemColour="4280390038" itemColour2="4288611589"/>
       <Component type="ScriptSliderPack" id="ModSp1" x="9" y="8" width="210" height="80"
                  parentComponent="ScriptPanel4" processorId="HARMONIC" itemColour="4286801664"
                  itemColour2="14465590" textColour="0" bgColour="16711680" flashActive="0"
-                 defaultValue="0.0" SliderPackIndex="1"/>
+                 defaultValue="0.0" SliderPackIndex="1" visible="0"/>
     </Component>
     <Component type="ScriptComboBox" id="SOURC4" x="34" y="97" max="6" width="20"
                height="20" items="Velocity&#10;Track&#10;Random&#10;Mod Wheel&#10;Pitch Bend&#10;Aftertouch"
@@ -847,13 +846,13 @@
                  itemColour2="14465590" textColour="10318162" bgColour="16711680"
                  flashActive="0" defaultValue="0.0" sliderAmount="32.0"/>
       <Component type="ScriptComboBox" id="BankA" x="138" y="8" width="110" height="25"
-                 max="18" parentComponent="MULTI" fontSize="1.0" textColour="4291475358"
+                 max="37" parentComponent="MULTI" fontSize="1.0" textColour="4291475358"
                  itemColour2="4291475358" itemColour="4291475358" bgColour="4291475358"
-                 defaultValue="0.0" items="Bell_Belles&#10;Bell_More&#10;Bell_Src&#10;Keys_DCOPiano&#10;Keys_Darkly&#10;Keys_EM25_1&#10;Keys_EM25_2&#10;Keys_EM25_3&#10;Keys_EM25_4&#10;Keys_EP1&#10;Keys_EP2&#10;Keys_EP3&#10;Keys_Euro&#10;Keys_Odd&#10;Keys_Swoosh1&#10;Keys_Swoosh2&#10;Keys_Swoosh3&#10;Keys_pswp"/>
+                 defaultValue="0.0" items="Misc_EM25_1&#10;Misc_EM25_2&#10;Misc_EM25_3&#10;Misc_Gdad_1&#10;Misc_Gdad_2&#10;Misc_Gdad_3&#10;Misc_Gdad_4&#10;Misc_Gdad_5&#10;Misc_Meta_1&#10;Misc_Meta_2&#10;Misc_Meta_3&#10;Misc_Meta_4&#10;Misc_Meta_5&#10;Misc_SplGit&#10;Misc_Spook&#10;Misc_Toes&#10;Misc_Vibe&#10;Misc_WBrass&#10;Misc_Wet&#10;Pluck_Gater&#10;Pluck_PluckSH&#10;Bass_BooBass&#10;Bass_Bz&#10;Bass_Double&#10;Bass_Gooey&#10;Bass_HardBass&#10;Bass_HellCat&#10;Bass_Lilbass&#10;Bass_RM&#10;Bass_Round&#10;Bass_ShakeyBass&#10;Bass_Shrp&#10;Bass_Slap&#10;Bass_eBass&#10;Bass_hard&#10;Bass_nsty1&#10;Bass_nsty2"/>
       <Component type="ScriptComboBox" id="Categories" x="14" y="7" width="110"
                  height="25" parentComponent="MULTI" fontSize="1.0" itemColour2="4291475358"
                  itemColour="4291475358" bgColour="4291475358" items="Bells &amp; Keys&#10;FX&#10;Kits &amp; Seq&#10;Leads&#10;Misc&#10;Pads&#10;Basic Waves"
-                 defaultValue="0.0" max="7" textColour="4291475358"/>
+                 defaultValue="0.0" max="7" textColour="4291475358" saveInPreset="0"/>
       <Component type="ScriptLabel" id="PITCH-MABEL14" x="-69" y="187" width="70"
                  height="15" parentComponent="MULTI" text="EXPANSION" editable="0"
                  fontName="Montserrat" textColour="4281344270"/>
@@ -1346,4 +1345,7 @@
   <Component type="ScriptComboBox" id="cmbPresets" x="287" y="-2" saveInPreset="0"
              useCustomPopup="1" width="120" height="20" visible="0" items="&#10;Chords::stabby&#10;Factory::blinky&#10;Factory::Creep Cycle&#10;Factory::Doom&#10;Factory::gpad&#10;Factory::Monkey&#10;Factory::Old Grace&#10;Factory::pring prong&#10;Factory::Sawed Off&#10;Factory::Soft16&#10;Factory::SyncBass&#10;Factory::Tickler&#10;FX::Gdad Trouble&#10;FX::Lost Groove&#10;FX::More than one&#10;FX::Rave forever&#10;Keys::organ&#10;Keys::Plucky Fellow&#10;Keys::Spacey Bell&#10;Pads::Sawring&#10;Pads::Subtract&#10;Pads::Way More&#10;Sequences::Made up story&#10;Sequences::Messin&#10;Sequences::reconstituted&#10;Sequences::Seq2Seq90&#10;Sequences::simple&#10;Sequences::The Bones&#10;Strings::z1-a&#10;Strings::z1-b"
              max="30"/>
+  <Component type="ScriptLabel" id="WAVELABEL1" x="260" y="0" text="Bass_Double"
+             editable="0"/>
+  <Component type="ScriptLabel" id="WAVELABEL2" x="230" y="290" text="SEQ_TwistingMellow1"/>
 </ContentProperties>

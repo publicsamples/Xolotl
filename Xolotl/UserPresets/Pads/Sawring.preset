@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Preset Version="0.9.0">
+<Preset Version="0.9.1">
   <Content Processor="Interface">
     <Control type="ScriptSliderPack" id="SliderPack1" value="3.0" data="16...............3O......"/>
     <Control type="ScriptComboBox" id="ComboBox1" value="1.0"/>
@@ -95,7 +95,7 @@
     <Control type="ScriptComboBox" id="OscWave1" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton9" value="1.0"/>
     <Control type="ScriptSliderPack" id="pitch-sp6" value="28.0" data="128.WOJb+XlYl8SOJbkOEtdT+XOJb6Cov0yOyLyL+b8nv8iqGExOMyLy8T35Q7Sb8nvOHEtN+zLyL0iqGEtOEtdz9v0iB6ydT3pOZlYF+DtdT5yiBWOOOJbc9Lb8n7CWOJjO6QgK9....7yiBWeOMyLy87nv08SyLyTOOJb87......"/>
-    <Control type="ScriptComboBox" id="BankA" value="46.0"/>
+    <Control type="ScriptLabel" id="WAVELABEL1" value="Lead_sawd"/>
     <Control type="ScriptComboBox" id="Categories" value="4.0"/>
     <Control type="ScriptSlider" id="SHAPE" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPE6" value="16.0"/>
@@ -128,8 +128,6 @@
     <Control type="ScriptSlider" id="SHAPEMOD47" value="0.5"/>
     <Control type="ScriptSlider" id="SHAPEMOD52" value="0.5"/>
     <Control type="ScriptSlider" id="SHAPEMOD53" value="0.5"/>
-    <Control type="ScriptAudioWaveform" id="Wf2" value="0.0" data="{XYZ::SampleMap}Lead_sawd"
-             rangeStart="0" rangeEnd="0"/>
     <Control type="ScriptButton" id="leATO" value="0.0"/>
     <Control type="ScriptButton" id="ScriptButton3" value="0.0"/>
     <Control type="ScriptComboBox" id="Stages" value="5.0"/>

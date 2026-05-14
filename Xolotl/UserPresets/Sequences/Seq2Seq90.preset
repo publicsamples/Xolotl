@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Preset Version="0.9.0">
+<Preset Version="0.9.1">
   <Content Processor="Interface">
     <Control type="ScriptSliderPack" id="SliderPack1" value="3.0" data="16....f+................."/>
     <Control type="ScriptComboBox" id="ComboBox1" value="1.0"/>
@@ -32,7 +32,7 @@
     <Control type="ScriptSlider" id="Knob1" value="0.0"/>
     <Control type="ScriptSlider" id="Knob3" value="9985.1396484375"/>
     <Control type="ScriptSlider" id="Knob4" value="0.9000000357627869"/>
-    <Control type="ScriptSlider" id="Knob5" value="120.0"/>
+    <Control type="ScriptSlider" id="Knob5" value="12860.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD19" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD6" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD7" value="0.0"/>
@@ -75,7 +75,7 @@
     <Control type="ScriptComboBox" id="SOURC6" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD24" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD29" value="2.0"/>
-    <Control type="ScriptSlider" id="SHAPEMOD26" value="1.0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD26" value="0.8100000023841858"/>
     <Control type="ScriptComboBox" id="ModShape" value="5.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD35" value="-1.0"/>
     <Control type="ScriptSliderPack" id="ScriptSliderPack3" value="-1.0" data="8....f+....9C"/>
@@ -95,7 +95,7 @@
     <Control type="ScriptComboBox" id="OscWave1" value="6.0"/>
     <Control type="ScriptButton" id="ScriptButton9" value="0.0"/>
     <Control type="ScriptSliderPack" id="pitch-sp6" value="7.0" data="32...........PJb8fOeT3Z9PJb85CWOJvOZlYF+T35Q8C"/>
-    <Control type="ScriptComboBox" id="BankA" value="11.0"/>
+    <Control type="ScriptLabel" id="WAVELABEL1" value="Seq_Lemon90"/>
     <Control type="ScriptComboBox" id="Categories" value="3.0"/>
     <Control type="ScriptSlider" id="SHAPE" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPE6" value="3.0"/>
@@ -128,8 +128,6 @@
     <Control type="ScriptSlider" id="SHAPEMOD47" value="0.5"/>
     <Control type="ScriptSlider" id="SHAPEMOD52" value="0.5"/>
     <Control type="ScriptSlider" id="SHAPEMOD53" value="0.5"/>
-    <Control type="ScriptAudioWaveform" id="Wf2" value="0.0" data="{XYZ::SampleMap}Seq_Lemon90"
-             rangeStart="0" rangeEnd="0"/>
     <Control type="ScriptButton" id="leATO" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton3" value="0.0"/>
     <Control type="ScriptComboBox" id="Stages" value="2.0"/>

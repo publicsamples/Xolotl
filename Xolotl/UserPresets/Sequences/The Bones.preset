@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Preset Version="0.9.0">
+<Preset Version="0.9.1">
   <Content Processor="Interface">
     <Control type="ScriptSliderPack" id="SliderPack1" value="3.0" data="16.................rGEd+."/>
     <Control type="ScriptComboBox" id="ComboBox1" value="1.0"/>
@@ -96,6 +96,7 @@
     <Control type="ScriptButton" id="ScriptButton9" value="1.0"/>
     <Control type="ScriptSliderPack" id="pitch-sp6" value="15.0" data="64......7nv04C.....ZlYF9LyLy5iT35oO.....DWOJ7C.....CWOp9.....fYlYtOgqGk9......6QgaOCWOp9."/>
     <Control type="ScriptComboBox" id="BankA" value="21.0"/>
+    <Control type="ScriptLabel" id="WAVELABEL1" value="FX_WowOhWow"/>
     <Control type="ScriptComboBox" id="Categories" value="2.0"/>
     <Control type="ScriptSlider" id="SHAPE" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPE6" value="16.0"/>

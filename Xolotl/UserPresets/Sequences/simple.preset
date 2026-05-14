@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Preset Version="0.8.6">
+<Preset Version="0.9.1">
   <Content Processor="Interface">
-
     <Control type="ScriptSliderPack" id="SliderPack1" value="2.0" data="16...............3O......"/>
     <Control type="ScriptComboBox" id="ComboBox1" value="1.0"/>
     <Control type="ScriptSlider" id="ScriptSlider9" value="0.0"/>

@@ -716,9 +716,35 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
+                      <Node ID="chain19" FactoryPath="container.chain" Bypassed="0" Name="chain19">
+                        <Nodes>
+                          <Node ID="snex_node" FactoryPath="core.snex_node" Bypassed="0" Name="snex_node">
+                            <Properties>
+                              <Property ID="ClassId" Value="one_shot_player"/>
+                            </Properties>
+                            <ComplexData>
+                              <Tables/>
+                              <SliderPacks/>
+                              <AudioFiles>
+                                <AudioFile Index="1" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                              </AudioFiles>
+                              <Filters/>
+                              <DisplayBuffers/>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Pitch" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Loop" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="freeze" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="scrub" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="32000.0" ID="grainSize" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
                     </Nodes>
                     <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="2" StepSize="1.0" ID="Index" DefaultValue="0.0"
+                      <Parameter MinValue="0.0" MaxValue="3" StepSize="1.0" ID="Index" DefaultValue="0.0"
                                  Automated="1"/>
                     </Parameters>
                   </Node>
@@ -1355,8 +1381,8 @@
           <Connection NodeId="cable_table2" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="pbTYPE" Value="1.0"
-                 ExternalModulation="Disabled">
+      <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="pbTYPE" Value="2.0"
+                 ExternalModulation="Disabled" DefaultValue="1.0" ModColour="0">
         <Connections>
           <Connection NodeId="branch" ParameterId="Index"/>
         </Connections>
