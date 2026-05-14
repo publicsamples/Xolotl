@@ -31,6 +31,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerPolyNode<project::Env2<1>, project::Env2<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::modtest1<1>, project::modtest1<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::xnode<1>, project::xnode<NUM_POLYPHONIC_VOICES>>();
+		registerDataNode<project::AmpEnv_networkdata>();
 		registerDataNode<project::bbdish_networkdata>();
 		registerDataNode<project::dlay_networkdata>();
 		registerDataNode<project::_networkdata>();

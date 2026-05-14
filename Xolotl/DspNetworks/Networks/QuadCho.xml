@@ -1682,7 +1682,7 @@
                         <Parameters>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                      SkewFactor="5.422270774841309" ID="Gain" TextToValueConverter="Decibel"
-                                     Value="-15.39999873936178" DefaultValue="0.0"/>
+                                     Value="-10.09999866038562" DefaultValue="0.0"/>
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                      SkewFactor="0.3010300099849701" ID="Smoothing" TextToValueConverter="Time"
                                      Value="20.0"/>
@@ -1715,7 +1715,8 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Offset" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Offset" Value="0.6800000071525574"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_pack1" ParameterId="Value"/>
         </Connections>
@@ -1726,7 +1727,7 @@
           <Connection NodeId="clone_cable" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="FB" Value="0.6100000143051147"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="FB" Value="0.4799999892711639"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable1" ParameterId="Value"/>
@@ -1738,7 +1739,7 @@
           <Connection NodeId="clone_cable2" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="0.8799999952316284"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="0.4900000095367432"
                  ExternalModulation="Disabled" ModColour="0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="xfader" ParameterId="Value"/>
@@ -1747,7 +1748,7 @@
       <Parameter MinValue="0.0" MaxValue="1.0" ID="Range" Value="1.0" DefaultValue="0.0">
         <Connections/>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="sync" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="sync" Value="0.0">
         <Connections>
           <Connection NodeId="clone_cable4" ParameterId="Value"/>
         </Connections>
@@ -1757,7 +1758,7 @@
           <Connection NodeId="clone_cable5" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1" ID="Div" Value="11.0"
+      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1" ID="Div" Value="6.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable6" ParameterId="Value"/>

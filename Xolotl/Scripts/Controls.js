@@ -26,55 +26,6 @@ inline function setComplexPresetSavingEnabled(shouldSaveInPreset)
 
 setComplexPresetSavingEnabled(true);
 
-inline function onOscWaveControl(component, value)
-{
-	if (!isDefined(value))
-		return;
-
-	if (g_presetRestoreBusy)
-		return;
-
-	if (!isDefined(HARMONIC) || !isDefined(OSC) || !isDefined(MULTI) || !isDefined(USER))
-		return;
-
-	Engine.allNotesOff();
-
-
-	if(value == 1)
-	{	 
-	    HARMONIC.setAttribute(HARMONIC.VoiceMode, 1);
-	    OSC.showControl(1);
-	    MULTI.showControl(0);
-	     USER.showControl(0);
-	  
-	   
-	}
-	
-		if(value == 2)
-	{
-		HARMONIC.setAttribute(HARMONIC.VoiceMode, 3);
-		    OSC.showControl(0);
-	           MULTI.showControl(0);
-	           USER.showControl(1);
-	          
-
-	}
-	
-			if(value == 3)
-		{
-			HARMONIC.setAttribute(HARMONIC.VoiceMode, 2);
-			OSC.showControl(0);
-			MULTI.showControl(1);
-			USER.showControl(0);
-		     
-	
-		}
-		
-																
-};
-
-Content.getComponent("OscWave").setControlCallback(onOscWaveControl);
-
 const var LFO1 = Synth.getModulator("LFO1");
 const var LFO2 = Synth.getModulator("LFO2");
 const var LFO3 = Synth.getModulator("LFO3");

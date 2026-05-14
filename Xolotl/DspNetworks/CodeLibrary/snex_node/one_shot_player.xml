@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Parameters>
-  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"
-             ID="Pitch" Value="0.0" DefaultValue="0.0"/>
+  <Parameter MinValue="0.5" MaxValue="2.0" StepSize="0.0" SkewFactor="0.6309297535714574"
+             ID="FreqRatio" Value="1.0" DefaultValue="1.0"/>
   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"
              ID="Loop" Value="0.0" DefaultValue="0.0"/>
   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"
@@ -14,4 +14,10 @@
   <Parameter MinValue="0.0" MaxValue="500.0" StepSize="0.0" SkewFactor="1.0"
              ID="grainSize" TextToValueConverter="Undefined" Page="" SubGroup=""
              Value="0.0" DefaultValue="0.0"/>
+  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"
+             ID="loopStart" Value="0.0" DefaultValue="0.0"/>
+  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"
+             ID="loopEnd" Value="1.0" DefaultValue="1.0"/>
+  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" SkewFactor="1.0"
+             ID="scrubMode" Value="0.0" DefaultValue="0.0"/>
 </Parameters>

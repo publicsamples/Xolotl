@@ -49,6 +49,8 @@ const var Menus = [Content.getComponent("OscWave"),
                    Content.getComponent("ComboBox1"),
                    Content.getComponent("Categories"),
                    Content.getComponent("BankA"),
+                   Content.getComponent("cmbPresets"),
+                   
                                       Content.getComponent("SampleBank"),
                                       Content.getComponent("SampleA"),
                                       Content.getComponent("SOURC12"),

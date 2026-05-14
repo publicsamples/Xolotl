@@ -92,7 +92,7 @@
     <Component type="ScriptLabel" id="Label61" x="3" y="0" width="50" height="20"
                fontSize="15.0" alignment="left" text="LFO 2" editable="0" fontName="Montserrat"
                textColour="4291475358" parentComponent="modB2"/>
-    <Component type="ScriptImage" id="ScriptImage14" x="-450" y="-429" width="280"
+    <Component type="ScriptImage" id="ScriptImage14" x="-418" y="-447" width="280"
                height="30" fileName="{PROJECT_FOLDER}h-trim.jpg" parentComponent="modB2"/>
     <Component type="ScriptSlider" id="ScriptSlider11" x="5" y="18" width="35"
                height="35" parentComponent="modB2" processorId="LFO2" parameterId="Tempo"
@@ -325,33 +325,32 @@
                mode="Decibel" min="-100.0" max="24.0" stepSize="0.1000000014901161"
                suffix=" dB" isVertical="0" showValuePopup="Below"/>
     <Component type="ScriptSlider" id="Knob1" x="11" y="35" width="20" height="70"
-               parentComponent="AMP" processorId="ENV1" parameterId="Attack"
-               mode="Time" max="20000.0" stepSize="1.0" middlePosition="1000.0"
-               textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
-               bgColour="1024528657" isPluginParameter="1" pluginParameterName="AMP A"
-               filmstripImage="{PROJECT_FOLDER}fadertip.png" numStrips="125.0"
-               scaleFactor="0.4000000059604645" isVertical="0" showValuePopup="Below"/>
-    <Component type="ScriptSlider" id="Knob3" x="36" y="35" width="20" height="70"
-               parentComponent="AMP" processorId="ENV1" parameterId="Decay"
-               max="20000.0" middlePosition="1000.0" textColour="16777215" itemColour="2399119104"
+               parentComponent="AMP" mode="Time" max="30000.0" stepSize="1.0"
+               middlePosition="1000.0" textColour="16777215" itemColour="2399119104"
                itemColour2="1307368892" bgColour="1024528657" isPluginParameter="1"
-               pluginParameterName="AMP D" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+               pluginParameterName="AMP A" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+               numStrips="125.0" scaleFactor="0.4000000059604645" isVertical="0"
+               showValuePopup="Below" processorId="ENV1" parameterId="A"/>
+    <Component type="ScriptSlider" id="Knob3" x="36" y="35" width="20" height="70"
+               parentComponent="AMP" max="30000.0" middlePosition="1000.0" textColour="16777215"
+               itemColour="2399119104" itemColour2="1307368892" bgColour="1024528657"
+               isPluginParameter="1" pluginParameterName="AMP D" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                scaleFactor="0.4000000059604645" numStrips="125.0" isVertical="0"
-               showValuePopup="Below"/>
+               showValuePopup="Below" processorId="ENV1" parameterId="d"/>
     <Component type="ScriptSlider" id="Knob4" x="60" y="35" width="20" height="70"
-               parentComponent="AMP" processorId="ENV1" parameterId="Sustain"
-               textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
-               bgColour="1024528657" stepSize="0.1000000014901161" middlePosition="-12.0"
-               isPluginParameter="1" pluginParameterName="AMP S" filmstripImage="{PROJECT_FOLDER}fadertip.png"
-               scaleFactor="0.4000000059604645" numStrips="125.0" isVertical="0"
-               showValuePopup="Below" mode="Decibel" min="-100.0" max="0.0"/>
-    <Component type="ScriptSlider" id="Knob5" x="83" y="35" width="20" height="70"
-               parentComponent="AMP" processorId="ENV1" parameterId="Release"
-               mode="Time" max="20000.0" stepSize="1.0" middlePosition="1000.0"
-               textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
-               bgColour="1024528657" isPluginParameter="1" pluginParameterName="AMP R"
+               parentComponent="AMP" textColour="16777215" itemColour="2399119104"
+               itemColour2="1307368892" bgColour="1024528657" stepSize="0.0"
+               middlePosition="0.5" isPluginParameter="1" pluginParameterName="AMP S"
                filmstripImage="{PROJECT_FOLDER}fadertip.png" scaleFactor="0.4000000059604645"
-               numStrips="125.0" isVertical="0" showValuePopup="Below" min="100.0"/>
+               numStrips="125.0" isVertical="0" showValuePopup="Below" processorId="ENV1"
+               parameterId="s"/>
+    <Component type="ScriptSlider" id="Knob5" x="83" y="35" width="20" height="70"
+               parentComponent="AMP" mode="Time" max="30000.0" stepSize="1.0"
+               middlePosition="1000.0" textColour="16777215" itemColour="2399119104"
+               itemColour2="1307368892" bgColour="1024528657" isPluginParameter="1"
+               pluginParameterName="AMP R" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+               scaleFactor="0.4000000059604645" numStrips="125.0" isVertical="0"
+               showValuePopup="Below" min="10.0" processorId="ENV1" parameterId="r"/>
     <Component type="ScriptLabel" id="Label29" x="33" y="3" width="60" height="30"
                fontSize="20.0" alignment="left" text="AMP" editable="0" parentComponent="AMP"
                fontName="Montserrat" textColour="4291475358"/>
@@ -374,10 +373,11 @@
                scaleFactor="0.1800000071525574" isVertical="0" showValuePopup="Below"
                min="-1.0"/>
     <Component type="ScriptSlider" id="SHAPEMOD7" x="0" y="120" width="35" height="35"
-               parentComponent="AMP" processorId="ENV1" parameterId="Hold" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" middlePosition="1000.0" mode="Time" max="20000.0"
+               parentComponent="AMP" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" middlePosition="1000.0" mode="Time" max="30000.0"
                stepSize="1.0" isPluginParameter="1" pluginParameterName="AMP H"
-               scaleFactor="0.1800000071525574" isVertical="0" showValuePopup="Below"/>
+               scaleFactor="0.1800000071525574" isVertical="0" showValuePopup="Below"
+               processorId="ENV1" parameterId="h"/>
     <Component type="ScriptLabel" id="Label35" x="0" y="152" width="40" height="20"
                fontSize="11.0" alignment="left" text="HOLD" editable="0" parentComponent="AMP"
                fontName="Montserrat" textColour="4291475358"/>
@@ -477,6 +477,14 @@
                isPluginParameter="1" pluginParameterName="DELAY RIGHT OFFSET"
                scaleFactor="0.1599999964237213" middlePosition="0.5" isVertical="0"
                showValuePopup="Below"/>
+    <Component type="ScriptSlider" id="SHAPEMOD23" x="86" y="1" width="30" height="20"
+               parentComponent="AMP" processorId="ENV1" parameterId="crv" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" isPluginParameter="1" pluginParameterName="AMP VELOCITY"
+               scaleFactor="0.1200000047683716" isVertical="0" showValuePopup="Below"
+               defaultValue="0.5" middlePosition="0.5"/>
+    <Component type="ScriptLabel" id="Label27" x="84" y="22" width="30" height="10"
+               fontSize="11.0" alignment="left" text="CRV" editable="0" parentComponent="AMP"
+               fontName="Montserrat" textColour="4291475358"/>
   </Component>
   <Component type="ScriptPanel" id="filter" x="391" y="201" width="310" height="195"
              itemColour="4281808695" itemColour2="4281808695" bgColour="4278282413"
@@ -627,14 +635,15 @@
       <Component type="ScriptSliderPack" id="ModSp2" x="8" y="7" width="210" height="40"
                  parentComponent="ScriptPanel4" processorId="HARMONIC" itemColour="4286801664"
                  itemColour2="14465590" textColour="0" bgColour="16711680" flashActive="0"
-                 defaultValue="0.0" SliderPackIndex="1"/>
+                 defaultValue="0.0" SliderPackIndex="1" visible="0"/>
       <Component type="ScriptTable" id="ModSp3" x="12" y="53" width="210" height="40"
                  parentComponent="ScriptPanel4" processorId="HARMONIC" bgColour="2199958"
-                 customColours="1" itemColour="4280390038" itemColour2="4288611589"/>
+                 customColours="1" itemColour="4280390038" itemColour2="4288611589"
+                 visible="0"/>
       <Component type="ScriptSliderPack" id="ModSp1" x="9" y="8" width="210" height="80"
                  parentComponent="ScriptPanel4" processorId="HARMONIC" itemColour="4286801664"
                  itemColour2="14465590" textColour="0" bgColour="16711680" flashActive="0"
-                 defaultValue="0.0" SliderPackIndex="1" visible="0"/>
+                 defaultValue="0.0" SliderPackIndex="1"/>
     </Component>
     <Component type="ScriptComboBox" id="SOURC4" x="34" y="97" max="6" width="20"
                height="20" items="Velocity&#10;Track&#10;Random&#10;Mod Wheel&#10;Pitch Bend&#10;Aftertouch"
@@ -734,7 +743,7 @@
                parentComponent="osc1" editable="0" text="MODE" fontSize="14.0"
                fontName="Montserrat" textColour="4291475358" itemColour2="4291475358"/>
     <Component type="ScriptComboBox" id="OscWave" x="15" y="13" width="60" height="25"
-               max="3" parentComponent="osc1" items="OSCILATOR&#10;SAMPLES&#10;MULTI-SAMPLES"
+               max="4" parentComponent="osc1" items="OSCILLATOR&#10;SINGLE-CYCLE&#10;SAMPLE/SCRUB&#10;MULTI-SAMPLES"
                bgColour="4291475358" itemColour2="4291475358" textColour="4291475358"
                itemColour="4291475358" isPluginParameter="1" pluginParameterName="Mode"
                deferControlCallback="1"/>
@@ -845,25 +854,29 @@
                  height="210" parentComponent="MULTI" processorId="HARMONIC" itemColour="4281632678"
                  itemColour2="14465590" textColour="10318162" bgColour="16711680"
                  flashActive="0" defaultValue="0.0" sliderAmount="32.0"/>
-      <Component type="ScriptComboBox" id="BankA" x="138" y="8" width="110" height="25"
-                 max="37" parentComponent="MULTI" fontSize="1.0" textColour="4291475358"
+      <Component type="ScriptComboBox" id="BankA" x="138" y="10" width="110" height="25"
+                 max="30" parentComponent="MULTI" fontSize="1.0" textColour="4291475358"
                  itemColour2="4291475358" itemColour="4291475358" bgColour="4291475358"
-                 defaultValue="0.0" items="Misc_EM25_1&#10;Misc_EM25_2&#10;Misc_EM25_3&#10;Misc_Gdad_1&#10;Misc_Gdad_2&#10;Misc_Gdad_3&#10;Misc_Gdad_4&#10;Misc_Gdad_5&#10;Misc_Meta_1&#10;Misc_Meta_2&#10;Misc_Meta_3&#10;Misc_Meta_4&#10;Misc_Meta_5&#10;Misc_SplGit&#10;Misc_Spook&#10;Misc_Toes&#10;Misc_Vibe&#10;Misc_WBrass&#10;Misc_Wet&#10;Pluck_Gater&#10;Pluck_PluckSH&#10;Bass_BooBass&#10;Bass_Bz&#10;Bass_Double&#10;Bass_Gooey&#10;Bass_HardBass&#10;Bass_HellCat&#10;Bass_Lilbass&#10;Bass_RM&#10;Bass_Round&#10;Bass_ShakeyBass&#10;Bass_Shrp&#10;Bass_Slap&#10;Bass_eBass&#10;Bass_hard&#10;Bass_nsty1&#10;Bass_nsty2"/>
-      <Component type="ScriptComboBox" id="Categories" x="14" y="7" width="110"
+                 defaultValue="0.0" saveInPreset="0" items="Pad_BigElectric&#10;Pad_Bumpy&#10;Pad_Busy&#10;Pad_CsShock&#10;Pad_DF2&#10;Pad_DS&#10;Pad_Gravel&#10;Pad_GreatST&#10;Pad_Lfade&#10;Pad_Lingo&#10;Pad_OChord&#10;Pad_PulseString&#10;Pad_RLD&#10;Pad_Rouse&#10;Pad_Rust&#10;Pad_Scratchy&#10;Pad_Scrd&#10;Pad_SlowOne&#10;Pad_Special&#10;Pad_Swish&#10;Pad_Tortoise&#10;Pad_Trouble&#10;Pad_XpSea&#10;Pad_simr&#10; Strings_Classy&#10;Strings_EM25_1&#10;Strings_EM25_2&#10;Strings_EM25_3&#10;Strings_Z1_1&#10;Strings_Z1_2">
+        <Component type="ScriptLabel" id="WAVELABEL1" x="6" y="2" width="100" height="20"
+                   parentComponent="BankA" fontName="Montserrat" bgColour="4281346602"
+                   textColour="4291475358" text="Strings_Z1_2" editable="0" saveInPreset="1"/>
+      </Component>
+      <Component type="ScriptComboBox" id="Categories" x="13" y="10" width="110"
                  height="25" parentComponent="MULTI" fontSize="1.0" itemColour2="4291475358"
                  itemColour="4291475358" bgColour="4291475358" items="Bells &amp; Keys&#10;FX&#10;Kits &amp; Seq&#10;Leads&#10;Misc&#10;Pads&#10;Basic Waves"
-                 defaultValue="0.0" max="7" textColour="4291475358" saveInPreset="0"/>
+                 defaultValue="0.0" max="7" textColour="4291475358"/>
       <Component type="ScriptLabel" id="PITCH-MABEL14" x="-69" y="187" width="70"
                  height="15" parentComponent="MULTI" text="EXPANSION" editable="0"
                  fontName="Montserrat" textColour="4281344270"/>
-      <Component type="ScriptLabel" id="WAVE1" x="14" y="36" width="110" height="20"
+      <Component type="ScriptLabel" id="WAVE1" x="14" y="38" width="110" height="20"
                  parentComponent="MULTI" editable="0" text="BANK" fontSize="14.0"
                  fontName="Montserrat" textColour="4291475358"/>
       <Component type="ScriptLabel" id="PITCH-MABEL44" x="18" y="51" width="50"
                  height="15" parentComponent="MULTI" text="DETUNE" editable="0"
                  fontSize="11.0" fontName="Montserrat" textColour="4281344270"
                  enabled="0"/>
-      <Component type="ScriptLabel" id="WAVE2" x="137" y="34" width="110" height="20"
+      <Component type="ScriptLabel" id="WAVE2" x="137" y="38" width="110" height="20"
                  parentComponent="MULTI" editable="0" text="SAMPLE" fontSize="14.0"
                  fontName="Montserrat" textColour="4291475358"/>
     </Component>
@@ -941,147 +954,191 @@
                  numStrips="125.0" isPluginParameter="1" isVertical="0" scaleFactor="0.6000000238418579"
                  showValuePopup="Below" min="-1.0" pluginParameterName="PITCH AUX"/>
     </Component>
-    <Component type="ScriptPanel" id="USER" x="88" y="4" width="260" height="290"
-               parentComponent="osc1" itemColour="4281346602" itemColour2="4282069554"
+    <Component type="ScriptPanel" id="USER" x="88" y="4" width="260" height="80"
+               parentComponent="osc1" itemColour="4281346602" itemColour2="4281346602"
                textColour="16777215" visible="0">
-      <Component type="ScriptSliderPack" id="pitch-sp5" x="9" y="171" width="240"
-                 height="110" parentComponent="USER" processorId="HARMONIC" itemColour="4281632678"
-                 itemColour2="14465590" textColour="10318162" bgColour="16711680"
-                 flashActive="0" defaultValue="0.0" sliderAmount="32.0"/>
-      <Component type="ScriptSlider" id="SHAPEMOD40" x="10" y="96" width="50"
-                 height="50" parentComponent="USER" processorId="HARMONIC" parameterId="CyclePos"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-                 numStrips="125.0" defaultValue="0.5" isPluginParameter="1" pluginParameterName="FILE POSITION"
-                 scaleFactor="0.2800000011920929" isVertical="0" showValuePopup="Below"/>
-      <Component type="ScriptComboBox" id="SOURC9" x="92" y="108" max="5" width="20"
-                 height="20" items="LFO1&#10;LFO2&#10;LFO3&#10;Mod Env1&#10;Mod Env2"
-                 parentComponent="USER" textColour="4291475358" bgColour="4291475358"
-                 itemColour="4291475358" itemColour2="4291475358" fontName="Montserrat"
-                 processorId="HARMONIC" parameterId="CyclePosSrc"/>
-      <Component type="ScriptSlider" id="SHAPEMOD41" x="68" y="108" width="25"
-                 height="25" parentComponent="USER" processorId="HARMONIC" parameterId="CyclePosMod"
-                 min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bluekb.png"
-                 numStrips="125.0" isPluginParameter="1" pluginParameterName="POSITION MOD"
-                 isVertical="0" scaleFactor="0.6000000238418579" showValuePopup="Below"/>
-      <Component type="ScriptComboBox" id="SOURC10" x="92" y="138" max="6" width="20"
-                 height="20" items="Velocity&#10;Track&#10;Random&#10;Mod Wheel&#10;Pitch Bend&#10;Aftertouch"
-                 parentComponent="USER" textColour="4291475358" bgColour="4291475358"
-                 itemColour="4291475358" itemColour2="4291475358" fontName="Montserrat"
-                 processorId="HARMONIC" parameterId="CyclePosAuxSrc"/>
-      <Component type="ScriptSlider" id="SHAPEMOD42" x="68" y="139" width="25"
-                 height="25" parentComponent="USER" processorId="HARMONIC" parameterId="CyclePosAux"
-                 min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bluekb.png"
-                 numStrips="125.0" isPluginParameter="1" pluginParameterName="POSITION AUX"
-                 isVertical="0" scaleFactor="0.6000000238418579" showValuePopup="Below"/>
-      <Component type="ScriptLabel" id="WAVE12" x="6" y="143" width="60" height="20"
-                 parentComponent="USER" editable="0" text="POSITION" fontSize="14.0"
-                 fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"/>
-      <Component type="ScriptAudioWaveform" id="Wf1" x="11" y="7" width="180"
-                 height="60" parentComponent="USER" processorId="HARMONIC" sampleIndex="1"
+      <Component type="ScriptAudioWaveform" id="Wf1" x="11" y="27" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="1"
                  bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
-                 textColour="1387078178" itemColour3="3156522" enableRange="0"
-                 enabled="0" opaque="0" showFileName="0"/>
-      <Component type="ScriptButton" id="WaveLoad" x="12" y="6" width="30" height="30"
+                 textColour="11346466" itemColour3="3156522" enableRange="0" enabled="0"
+                 opaque="0" showFileName="0"/>
+      <Component type="ScriptButton" id="WaveLoad" x="191" y="0" width="30" height="20"
                  parentComponent="USER" isMomentary="1" filmstripImage="{PROJECT_FOLDER}SaveButton.png"
-                 isVertical="0" scaleFactor="0.300000011920929" saveInPreset="0"/>
-      <Component type="ScriptLabel" id="WAVE14" x="199" y="29" width="50" height="10"
+                 isVertical="0" scaleFactor="0.25" saveInPreset="0"/>
+      <Component type="ScriptLabel" id="WAVE14" x="65" y="2" width="40" height="20"
                  parentComponent="USER" editable="0" text="BANK" fontSize="14.0"
                  fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"/>
-      <Component type="ScriptSlider" id="SHAPEMOD43" x="180" y="139" width="25"
-                 height="25" parentComponent="USER" processorId="HARMONIC" parameterId="CycleShapeAux"
-                 min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bluekb.png"
-                 numStrips="125.0" isPluginParameter="1" pluginParameterName="FILE SHAPE AUX"
-                 isVertical="0" scaleFactor="0.6000000238418579" showValuePopup="Below"/>
-      <Component type="ScriptComboBox" id="SOURC11" x="203" y="138" max="6" width="20"
-                 height="20" items="Velocity&#10;Track&#10;Random&#10;Mod Wheel&#10;Pitch Bend&#10;Aftertouch"
-                 parentComponent="USER" textColour="4291475358" bgColour="4291475358"
-                 itemColour="4291475358" itemColour2="4291475358" fontName="Montserrat"
-                 processorId="HARMONIC" parameterId="CycleShapeAuxSrc"/>
-      <Component type="ScriptSlider" id="SHAPEMOD46" x="180" y="108" width="25"
-                 height="25" parentComponent="USER" processorId="HARMONIC" parameterId="CycleShapeMod"
-                 min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bluekb.png"
-                 numStrips="125.0" isPluginParameter="1" pluginParameterName="FILE SHAPE MOD"
-                 isVertical="0" scaleFactor="0.6000000238418579" showValuePopup="Below"/>
-      <Component type="ScriptComboBox" id="SOURC12" x="203" y="108" max="5" width="20"
-                 height="20" items="LFO1&#10;LFO2&#10;LFO3&#10;Mod Env1&#10;Mod Env2"
-                 parentComponent="USER" textColour="4291475358" bgColour="4291475358"
-                 itemColour="4291475358" itemColour2="4291475358" fontName="Montserrat"
-                 processorId="HARMONIC" parameterId="CycleShapeSrc"/>
-      <Component type="ScriptSlider" id="SHAPEMOD50" x="124" y="96" width="50"
-                 height="50" parentComponent="USER" processorId="HARMONIC" parameterId="CycleShape"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-                 numStrips="125.0" defaultValue="0.5" isPluginParameter="1" pluginParameterName="FILE SHAPE"
-                 scaleFactor="0.2800000011920929" isVertical="0" showValuePopup="Below"/>
-      <Component type="ScriptSlider" id="SHAPEMOD51" x="229" y="86" width="20"
-                 height="20" parentComponent="USER" processorId="HARMONIC" parameterId="posdiv"
-                 middlePosition="16.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-                 numStrips="125.0" defaultValue="1.0" isPluginParameter="1" pluginParameterName="OSC1 - OFFSET"
-                 scaleFactor="0.119999997317791" isVertical="0" showValuePopup="Below"
-                 min="1.0" max="32.0" stepSize="1.0"/>
-      <Component type="ScriptLabel" id="WAVE17" x="222" y="115" width="40" height="10"
-                 parentComponent="USER" editable="0" text="DIV" fontSize="10.0"
+      <Component type="ScriptComboBox" id="SampleA" x="106" y="2" width="50" height="20"
+                 parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="HS80-1.wav&#10;HS80-10.wav&#10;HS80-11.wav&#10;HS80-12.wav&#10;HS80-13.wav&#10;HS80-14.wav&#10;HS80-15.wav&#10;HS80-16.wav&#10;HS80-17.wav&#10;HS80-18.wav&#10;HS80-19.wav&#10;HS80-2.wav&#10;HS80-3.wav&#10;HS80-4.wav&#10;HS80-5.wav&#10;HS80-6.wav&#10;HS80-7.wav&#10;HS80-8.wav&#10;HS80-9.wav"
+                 saveInPreset="0" deferControlCallback="1" max="19"/>
+      <Component type="ScriptComboBox" id="SampleBank" x="12" y="2" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" max="15"
+                 bgColour="4291475358" itemColour="4291475358" itemColour2="4294967295"
+                 textColour="4291475358" items="Factory&#10;HS80&#10;HT&#10;JD800&#10;JP4&#10;jx3p&#10;Loops 1&#10;Loops 2&#10;Misc&#10;Modular 2&#10;Modular&#10;SH2&#10;Single Cycle 1&#10;Single Cycle 2&#10;Wavetables 1"
+                 deferControlCallback="1"/>
+      <Component type="ScriptLabel" id="WAVE16" x="158" y="2" width="40" height="20"
+                 parentComponent="USER" editable="0" text="FILE" fontSize="14.0"
                  fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"/>
-      <Component type="ScriptButton" id="Possync" x="234" y="130" width="20" height="20"
-                 parentComponent="USER" filmstripImage="{PROJECT_FOLDER}button6.png"
+      <Component type="ScriptLabel" id="WAVE19" x="216" y="2" width="40" height="20"
+                 parentComponent="USER" editable="0" text="USER" fontSize="14.0"
+                 fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"/>
+    </Component>
+    <Component type="ScriptPanel" id="SINGLECYC" x="89" y="74" width="260" height="230"
+               parentComponent="osc1" itemColour="0" itemColour2="0" textColour="16777215"
+               bgColour="16777215" visible="0">
+      <Component type="ScriptSliderPack" id="pitch-sp5" x="8" y="101" width="240"
+                 height="110" parentComponent="SINGLECYC" processorId="HARMONIC"
+                 itemColour="4281632678" itemColour2="14465590" textColour="10318162"
+                 bgColour="16711680" flashActive="0" defaultValue="0.0" sliderAmount="32.0"/>
+      <Component type="ScriptLabel" id="WAVE12" x="7" y="73" width="60" height="20"
+                 parentComponent="SINGLECYC" editable="0" text="POSITION" fontSize="14.0"
+                 fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"/>
+      <Component type="ScriptSlider" id="SHAPEMOD51" x="22" y="-1" width="30"
+                 height="30" parentComponent="SINGLECYC" processorId="HARMONIC"
+                 parameterId="posdiv" middlePosition="16.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+                 numStrips="125.0" defaultValue="1.0" isPluginParameter="1" pluginParameterName="OSC1 - OFFSET"
+                 scaleFactor="0.1299999952316284" isVertical="0" showValuePopup="Below"
+                 min="1.0" max="32.0" stepSize="1.0"/>
+      <Component type="ScriptLabel" id="WAVE17" x="45" y="2" width="40" height="20"
+                 parentComponent="SINGLECYC" editable="0" text="DIV" fontSize="14.0"
+                 fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"/>
+      <Component type="ScriptButton" id="Possync" x="87" y="5" width="20" height="20"
+                 parentComponent="SINGLECYC" filmstripImage="{PROJECT_FOLDER}button6.png"
                  isVertical="0" scaleFactor="0.1400000005960464" processorId="HARMONIC"
                  parameterId="PosMode"/>
-      <Component type="ScriptLabel" id="WAVE18" x="222" y="150" width="40" height="10"
-                 parentComponent="USER" editable="0" text="SYNC" fontSize="10.0"
+      <Component type="ScriptLabel" id="WAVE18" x="113" y="2" width="40" height="20"
+                 parentComponent="SINGLECYC" editable="0" text="SYNC" fontSize="14.0"
                  fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"/>
-      <Component type="ScriptComboBox" id="SOURC13" x="56" y="76" max="10" width="30"
-                 height="10" items="OFF&#10;4096&#10;2048&#10;1024&#10;512&#10;256&#10;128&#10;64&#10;32&#10;16"
-                 parentComponent="USER" textColour="4278237695" bgColour="4278237695"
-                 itemColour="4278237695" itemColour2="4278237695" fontName="Montserrat"
-                 processorId="HARMONIC" parameterId="Quant" fontSize="11.0"/>
-      <Component type="ScriptButton" id="Possync1" x="11" y="92" width="20" height="10"
-                 parentComponent="USER" filmstripImage="{PROJECT_FOLDER}Spread2.png"
-                 scaleFactor="0.2000000029802322" processorId="HARMONIC" parameterId="PosSpread"
-                 isPluginParameter="1" pluginParameterName="POSITION SPREAD"/>
-      <Component type="ScriptButton" id="Possync2" x="110" y="91" width="20" height="10"
-                 parentComponent="USER" filmstripImage="{PROJECT_FOLDER}Spread2.png"
-                 scaleFactor="0.2000000029802322" processorId="HARMONIC" parameterId="OscShpSprd"
-                 pluginParameterName="FILE SHAPE SPREAD"/>
-      <Component type="ScriptComboBox" id="SampleA" x="200" y="42" width="50"
-                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
-                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
-                 items="BpDualFilter.wav&#10;dfamsqrlp.wav&#10;DFAMSweep.wav&#10;ffm1.wav&#10;ffm2.wav&#10;ffm3.wav&#10;fm01.wav&#10;fmam.wav&#10;fmam2.wav&#10;fold.1.wav&#10;fold2.wav&#10;fsaw.wav&#10;hgsaw.wav&#10;hrsqr.wav&#10;lin1.wav&#10;lin2.wav&#10;lin3.wav&#10;LPtriWf.wav&#10;lthing.wav&#10;mring.wav&#10;mstring.wav&#10;noisyrandomseq01.wav&#10;nstring.wav&#10;pita.wav&#10;pm1.wav&#10;pm2.wav&#10;quant.wav&#10;rad.wav&#10;rmfilt.wav&#10;shpmod.wav&#10;SQR_AM.wav&#10;syncf.wav&#10;toy.wav&#10;triresr.wav&#10;tz1.wav&#10;tz2.wav&#10;usub.wav&#10;VA-Filtered.wav&#10;vowel.wav&#10;WFtriLpSweep.wav&#10;WSsweepLP.wav&#10;wtfm1.wav&#10;wtfm2.wav&#10;wtfm3.wav&#10;xm.wav&#10;xmod.wav"
-                 saveInPreset="0" max="46" deferControlCallback="1"/>
-      <Component type="ScriptLabel" id="WAVE13" x="123" y="142" width="60" height="20"
-                 parentComponent="USER" editable="0" text="SHAPE" fontSize="14.0"
+      <Component type="ScriptLabel" id="WAVE13" x="118" y="72" width="60" height="20"
+                 parentComponent="SINGLECYC" editable="0" text="SHAPE" fontSize="14.0"
                  fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"
                  pluginParameterName="FILE SHA"/>
-      <Component type="ScriptComboBox" id="SampleBank" x="200" y="6" width="50"
-                 height="20" parentComponent="USER" useCustomPopup="1" max="5"
-                 bgColour="4291475358" itemColour="4291475358" itemColour2="4294967295"
-                 textColour="4291475358" items="Loops 1&#10;Misc&#10;Single Cycle 1&#10;Single Cycle 2&#10;Wavetables 1"
-                 deferControlCallback="1"/>
-      <Component type="ScriptLabel" id="WAVE16" x="201" y="63" width="50" height="20"
-                 parentComponent="USER" editable="0" text="SAMPLE" fontSize="14.0"
+      <Component type="ScriptSlider" id="SHAPEMOD52" x="121" y="15" width="20"
+                 height="20" parentComponent="SINGLECYC" processorId="HARMONIC"
+                 parameterId="FileGainSmooth" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+                 numStrips="125.0" defaultValue="0.5" isPluginParameter="1" pluginParameterName="FILE POSITION"
+                 scaleFactor="0.119999997317791" isVertical="0" showValuePopup="Below"
+                 visible="0"/>
+      <Component type="ScriptLabel" id="WAVE20" x="49" y="21" width="40" height="10"
+                 parentComponent="SINGLECYC" editable="0" text="smooth" fontSize="11.0"
+                 fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"
+                 visible="0"/>
+      <Component type="ScriptLabel" id="WAVE21" x="143" y="22" width="40" height="10"
+                 parentComponent="SINGLECYC" editable="0" text="smooth" fontSize="11.0"
+                 fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"
+                 visible="0"/>
+      <Component type="ScriptSlider" id="SHAPEMOD53" x="156" y="0" width="20"
+                 height="20" parentComponent="SINGLECYC" processorId="HARMONIC"
+                 parameterId="FileGainRest" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+                 numStrips="125.0" defaultValue="0.5" isPluginParameter="1" pluginParameterName="FILE POSITION"
+                 scaleFactor="0.119999997317791" isVertical="0" showValuePopup="Below"
+                 visible="0"/>
+      <Component type="ScriptLabel" id="WAVE22" x="123" y="6" width="40" height="10"
+                 parentComponent="SINGLECYC" editable="0" text="reset" fontSize="11.0"
+                 fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"
+                 visible="0"/>
+    </Component>
+    <Component type="ScriptPanel" id="SAMPLELOOP" x="89" y="74" width="260"
+               height="230" parentComponent="osc1" itemColour="0" itemColour2="0"
+               textColour="16777215" bgColour="16777215" visible="0">
+      <Component type="ScriptSliderPack" id="pitch-sp8" x="8" y="101" width="240"
+                 height="110" parentComponent="SAMPLELOOP" processorId="HARMONIC"
+                 itemColour="4281632678" itemColour2="14465590" textColour="10318162"
+                 bgColour="16711680" flashActive="0" defaultValue="0.0" sliderAmount="32.0"/>
+      <Component type="ScriptLabel" id="WAVE15" x="11" y="68" width="50" height="30"
+                 parentComponent="SAMPLELOOP" editable="0" text="scrub/ loop start"
+                 fontSize="14.0" fontName="Montserrat" textColour="4290820529"
+                 itemColour2="4291475358"/>
+      <Component type="ScriptLabel" id="LOOP" x="30" y="1" width="50" height="20"
+                 parentComponent="SAMPLELOOP" editable="0" fontSize="14.0" fontName="Montserrat"
+                 textColour="4290820529" itemColour2="4291475358"/>
+      <Component type="ScriptButton" id="Possync3" x="10" y="1" width="20" height="20"
+                 parentComponent="SAMPLELOOP" filmstripImage="{PROJECT_FOLDER}button6.png"
+                 isVertical="0" scaleFactor="0.2000000029802322" processorId="HARMONIC"
+                 parameterId="PosMode"/>
+      <Component type="ScriptLabel" id="WAVE26" x="128" y="68" width="40" height="30"
+                 parentComponent="SAMPLELOOP" editable="0" text="size/ end" fontSize="14.0"
+                 fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"
+                 pluginParameterName="FILE SHA"/>
+      <Component type="ScriptButton" id="Possync4" x="82" y="1" width="30" height="20"
+                 parentComponent="SAMPLELOOP" filmstripImage="{PROJECT_FOLDER}button6.png"
+                 isVertical="0" scaleFactor="0.2000000029802322" processorId="HARMONIC"
+                 parameterId="FileGainRest"/>
+      <Component type="ScriptLabel" id="LOOP1" x="104" y="1" width="60" height="20"
+                 parentComponent="SAMPLELOOP" editable="0" fontSize="14.0" fontName="Montserrat"
+                 textColour="4290820529" itemColour2="4291475358" text="SCRUB"/>
+    </Component>
+    <Component type="ScriptPanel" id="UserCont" x="92" y="90" width="250" height="80"
+               parentComponent="osc1" bgColour="16777215" itemColour="22" itemColour2="0"
+               textColour="16777215" visible="0">
+      <Component type="ScriptLabel" id="WAVE25" x="213" y="44" width="40" height="20"
+                 parentComponent="UserCont" editable="0" text="QUANT" fontSize="10.0"
                  fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"/>
-      <Component type="ScriptSlider" id="SHAPEMOD47" x="28" y="86" width="20"
-                 height="20" parentComponent="USER" processorId="HARMONIC" parameterId="SMOOTH"
+      <Component type="ScriptComboBox" id="SOURC13" x="222" y="23" max="10" width="20"
+                 height="20" items="OFF&#10;4096&#10;2048&#10;1024&#10;512&#10;256&#10;128&#10;64&#10;32&#10;16"
+                 parentComponent="UserCont" textColour="4278237695" bgColour="4278237695"
+                 itemColour="4278237695" itemColour2="4278237695" fontName="Montserrat"
+                 processorId="HARMONIC" parameterId="Quant" fontSize="11.0"/>
+      <Component type="ScriptSlider" id="SHAPEMOD40" x="6" y="4" width="50" height="50"
+                 parentComponent="UserCont" processorId="HARMONIC" parameterId="CyclePos"
                  middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                  numStrips="125.0" defaultValue="0.5" isPluginParameter="1" pluginParameterName="FILE POSITION"
-                 scaleFactor="0.119999997317791" isVertical="0" showValuePopup="Below"/>
-      <Component type="ScriptSlider" id="SHAPEMOD52" x="122" y="85" width="20"
-                 height="20" parentComponent="USER" processorId="HARMONIC" parameterId="FileGainSmooth"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-                 numStrips="125.0" defaultValue="0.5" isPluginParameter="1" pluginParameterName="FILE POSITION"
-                 scaleFactor="0.119999997317791" isVertical="0" showValuePopup="Below"/>
-      <Component type="ScriptLabel" id="WAVE20" x="50" y="91" width="40" height="10"
-                 parentComponent="USER" editable="0" text="smooth" fontSize="11.0"
-                 fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"/>
-      <Component type="ScriptLabel" id="WAVE21" x="144" y="92" width="40" height="10"
-                 parentComponent="USER" editable="0" text="smooth" fontSize="11.0"
-                 fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"/>
-      <Component type="ScriptSlider" id="SHAPEMOD53" x="157" y="70" width="20"
-                 height="20" parentComponent="USER" processorId="HARMONIC" parameterId="FileGainRest"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-                 numStrips="125.0" defaultValue="0.5" isPluginParameter="1" pluginParameterName="FILE POSITION"
-                 scaleFactor="0.119999997317791" isVertical="0" showValuePopup="Below"/>
-      <Component type="ScriptLabel" id="WAVE22" x="124" y="76" width="40" height="10"
-                 parentComponent="USER" editable="0" text="reset" fontSize="11.0"
-                 fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"/>
+                 scaleFactor="0.2800000011920929" isVertical="0" showValuePopup="Below"/>
+      <Component type="ScriptComboBox" id="SOURC9" x="84" y="16" max="5" width="20"
+                 height="20" items="LFO1&#10;LFO2&#10;LFO3&#10;Mod Env1&#10;Mod Env2"
+                 parentComponent="UserCont" textColour="4291475358" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" fontName="Montserrat"
+                 processorId="HARMONIC" parameterId="CyclePosSrc"/>
+      <Component type="ScriptSlider" id="SHAPEMOD41" x="60" y="16" width="25"
+                 height="25" parentComponent="UserCont" processorId="HARMONIC"
+                 parameterId="CyclePosMod" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bluekb.png"
+                 numStrips="125.0" isPluginParameter="1" pluginParameterName="POSITION MOD"
+                 isVertical="0" scaleFactor="0.6000000238418579" showValuePopup="Below"/>
+      <Component type="ScriptComboBox" id="SOURC10" x="84" y="46" max="6" width="20"
+                 height="20" items="Velocity&#10;Track&#10;Random&#10;Mod Wheel&#10;Pitch Bend&#10;Aftertouch"
+                 parentComponent="UserCont" textColour="4291475358" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" fontName="Montserrat"
+                 processorId="HARMONIC" parameterId="CyclePosAuxSrc"/>
+      <Component type="ScriptSlider" id="SHAPEMOD42" x="60" y="47" width="25"
+                 height="25" parentComponent="UserCont" processorId="HARMONIC"
+                 parameterId="CyclePosAux" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bluekb.png"
+                 numStrips="125.0" isPluginParameter="1" pluginParameterName="POSITION AUX"
+                 isVertical="0" scaleFactor="0.6000000238418579" showValuePopup="Below"/>
+      <Component type="ScriptSlider" id="SHAPEMOD43" x="166" y="47" width="25"
+                 height="25" parentComponent="UserCont" processorId="HARMONIC"
+                 parameterId="CycleShapeAux" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bluekb.png"
+                 numStrips="125.0" isPluginParameter="1" pluginParameterName="FILE SHAPE AUX"
+                 isVertical="0" scaleFactor="0.6000000238418579" showValuePopup="Below"/>
+      <Component type="ScriptComboBox" id="SOURC11" x="189" y="46" max="6" width="20"
+                 height="20" items="Velocity&#10;Track&#10;Random&#10;Mod Wheel&#10;Pitch Bend&#10;Aftertouch"
+                 parentComponent="UserCont" textColour="4291475358" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" fontName="Montserrat"
+                 processorId="HARMONIC" parameterId="CycleShapeAuxSrc"/>
+      <Component type="ScriptSlider" id="SHAPEMOD46" x="166" y="16" width="25"
+                 height="25" parentComponent="UserCont" processorId="HARMONIC"
+                 parameterId="CycleShapeMod" min="-1.0" middlePosition="0.0" filmstripImage="{PROJECT_FOLDER}bluekb.png"
+                 numStrips="125.0" isPluginParameter="1" pluginParameterName="FILE SHAPE MOD"
+                 isVertical="0" scaleFactor="0.6000000238418579" showValuePopup="Below"/>
+      <Component type="ScriptComboBox" id="SOURC12" x="189" y="16" max="5" width="20"
+                 height="20" items="LFO1&#10;LFO2&#10;LFO3&#10;Mod Env1&#10;Mod Env2"
+                 parentComponent="UserCont" textColour="4291475358" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" fontName="Montserrat"
+                 processorId="HARMONIC" parameterId="CycleShapeSrc"/>
+      <Component type="ScriptButton" id="Possync1" x="7" y="15" width="10" height="10"
+                 parentComponent="UserCont" filmstripImage="{PROJECT_FOLDER}Spread2.png"
+                 scaleFactor="0.2000000029802322" processorId="HARMONIC" parameterId="PosSpread"
+                 isPluginParameter="1" pluginParameterName="POSITION SPREAD"/>
+      <Component type="ScriptSlider" id="SHAPEMOD50" x="117" y="4" width="50"
+                 height="50" parentComponent="UserCont" processorId="HARMONIC"
+                 parameterId="CycleShape" middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+                 numStrips="125.0" defaultValue="0.5" isPluginParameter="1" pluginParameterName="FILE SHAPE"
+                 scaleFactor="0.2800000011920929" isVertical="0" showValuePopup="Below"/>
+      <Component type="ScriptButton" id="Possync2" x="114" y="10" width="10" height="10"
+                 parentComponent="UserCont" filmstripImage="{PROJECT_FOLDER}Spread2.png"
+                 scaleFactor="0.2000000029802322" processorId="HARMONIC" parameterId="OscShpSprd"
+                 pluginParameterName="FILE SHAPE SPREAD"/>
     </Component>
   </Component>
   <Component type="ScriptLabel" id="WAVE24" x="132" y="106" width="40" height="10"
@@ -1090,7 +1147,7 @@
   <Component type="ScriptAudioWaveform" id="Wf2" x="170" y="160" width="180"
              height="60" processorId="HARMONIC" bgColour="4278224127" itemColour2="4285672448"
              itemColour="4293197824" textColour="1387078178" itemColour3="3156522"
-             enableRange="0" enabled="0" opaque="0" visible="0"/>
+             enableRange="0" enabled="0" opaque="0" saveInPreset="0" visible="0"/>
   <Component type="ScriptPanel" id="AdditionalSounds" x="186" y="32" width="190"
              height="50" itemColour="4281808695" itemColour2="4281808695"
              allowCallbacks="Clicks Only" visible="0" bgColour="4278282413"
@@ -1099,7 +1156,7 @@
                height="30" parentComponent="AdditionalSounds" text="GET MORE SOUNDS"
                fontSize="20.0" textColour="4288120144" editable="0"/>
   </Component>
-  <Component type="ScriptPanel" id="PRESETS" x="34" y="29" width="350" height="360"
+  <Component type="ScriptPanel" id="PRESETS" x="28" y="25" width="674" height="374"
              itemColour="4281808695" itemColour2="4281808695" bgColour="4278282413"
              textColour="4278324243" visible="0">
     <Component type="ScriptImage" id="ScriptImage1" x="485" y="186" width="230"
@@ -1108,17 +1165,17 @@
     <Component type="ScriptPanel" id="expansionad" x="485" y="188" width="230"
                height="170" parentComponent="PRESETS" allowCallbacks="Clicks Only"
                visible="0"/>
-    <Component type="ScriptFloatingTile" id="ScriptFloatingTile2" x="6" y="261"
-               width="190" height="90" parentComponent="PRESETS" ContentType="CustomSettings"
+    <Component type="ScriptFloatingTile" id="ScriptFloatingTile2" x="23" y="295"
+               width="250" height="70" parentComponent="PRESETS" ContentType="CustomSettings"
                bgColour="4278190080" itemColour="4291411851" itemColour2="4291411851"
-               Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: false,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: false,&#10;  &quot;ClearMidiCC&quot;: false,&#10;  &quot;SampleLocation&quot;: false,&#10;  &quot;DebugMode&quot;: true,&#10;  &quot;UseOpenGL&quot;: false,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
+               Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: false,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: false,&#10;  &quot;ClearMidiCC&quot;: false,&#10;  &quot;SampleLocation&quot;: false,&#10;  &quot;DebugMode&quot;: false,&#10;  &quot;UseOpenGL&quot;: false,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
                itemColour3="4291411851" FontSize="12.0" Font="Montserrat" textColour="4291411851"/>
     <Component type="ScriptFloatingTile" id="ScriptFloatingTile1" x="16" y="11"
-               width="320" height="270" parentComponent="PRESETS" ContentType="PresetBrowser"
+               width="640" height="270" parentComponent="PRESETS" ContentType="PresetBrowser"
                bgColour="0" itemColour="4291411851" itemColour2="4291411851"
                Data="{&#10;  &quot;ShowSaveButton&quot;: true,&#10;  &quot;ShowExpansionsAsColumn&quot;: false,&#10;  &quot;ShowFolderButton&quot;: true,&#10;  &quot;ShowNotes&quot;: false,&#10;  &quot;ShowEditButtons&quot;: true,&#10;  &quot;EditButtonOffset&quot;: 10,&#10;  &quot;ShowAddButton&quot;: true,&#10;  &quot;ShowRenameButton&quot;: true,&#10;  &quot;ShowDeleteButton&quot;: true,&#10;  &quot;ShowSearchBar&quot;: false,&#10;  &quot;ShowFavoriteIcon&quot;: false,&#10;  &quot;FullPathFavorites&quot;: false,&#10;  &quot;ButtonsInsideBorder&quot;: false,&#10;  &quot;NumColumns&quot;: 2,&#10;  &quot;ColumnWidthRatio&quot;: [&#10;    0.3333333333333333,&#10;    0.3333333333333333,&#10;    0.3333333333333333&#10;  ],&#10;  &quot;ListAreaOffset&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;ColumnRowPadding&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;SearchBarBounds&quot;: [],&#10;  &quot;MoreButtonBounds&quot;: [],&#10;  &quot;SaveButtonBounds&quot;: [],&#10;  &quot;FavoriteButtonBounds&quot;: []&#10;}"
                textColour="4291411851" itemColour3="4291411851"/>
-    <Component type="ScriptFloatingTile" id="ScriptFloatingTile3" x="169" y="260"
+    <Component type="ScriptFloatingTile" id="ScriptFloatingTile3" x="280" y="275"
                width="190" height="90" parentComponent="PRESETS" ContentType="CustomSettings"
                bgColour="4278190080" itemColour="4291411851" itemColour2="4291411851"
                Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: false,&#10;  &quot;ScaleFactor&quot;: false,&#10;  &quot;VoiceAmountMultiplier&quot;: false,&#10;  &quot;ClearMidiCC&quot;: false,&#10;  &quot;SampleLocation&quot;: true,&#10;  &quot;DebugMode&quot;: false,&#10;  &quot;UseOpenGL&quot;: false,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
@@ -1157,20 +1214,26 @@
              bgColour="534431430" visible="0"/>
   <Component type="ScriptImage" id="ScriptImage16" x="2" y="-1" width="280"
              height="20" fileName="{PROJECT_FOLDER}h-trim.jpg"/>
-  <Component type="ScriptButton" id="leATO" x="119" y="-2" width="22" height="20"
+  <Component type="ScriptButton" id="leATO" x="246" y="-2" width="22" height="20"
              filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.2000000029802322"
              isVertical="0" processorId="Legato with Retrigger1" parameterId="Enabled"/>
-  <Component type="ScriptLabel" id="LoadEx2" x="142" y="-2" text="LEGATO"
+  <Component type="ScriptLabel" id="LoadEx2" x="269" y="-2" text="LEGATO"
              fontName="Montserrat" width="50" height="20" fontSize="12.0"
-             editable="0" alignment="left" itemColour2="4279308561" textColour="4291411851"
-             itemColour="4278190080" bgColour="3053453312"/>
-  <Component type="ScriptButton" id="PRESETBUTTON" x="29" y="-2" width="22"
+             editable="0" alignment="left" itemColour2="4291475358" textColour="4291475358"
+             itemColour="13285278" bgColour="3053453312"/>
+  <Component type="ScriptButton" id="PRESETBUTTON" x="31" y="-1" width="22"
              height="20" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.2000000029802322"
              isVertical="0" saveInPreset="0"/>
-  <Component type="ScriptLabel" id="PRESETSW" x="52" y="-2" text="PRESETS"
-             fontName="Montserrat" width="60" height="20" fontSize="12.0"
-             editable="0" alignment="left" itemColour2="4279308561" textColour="4291411851"
-             itemColour="4278190080" bgColour="3053453312"/>
+  <Component type="ScriptLabel" id="PRESETSW" x="52" y="0" text="PRESETS"
+             fontName="Montserrat" width="190" height="20" fontSize="12.0"
+             editable="0" alignment="left" itemColour2="4291475358" textColour="4291475358"
+             itemColour="13285278" bgColour="3053453312">
+    <Component type="ScriptComboBox" id="cmbPresets" x="66" y="3" saveInPreset="0"
+               useCustomPopup="1" width="120" height="15" bgColour="4291475358"
+               parentComponent="PRESETSW" text="SELECT PRESET" textColour="4291475358"
+               items="&#10;Chords::stabby&#10;Factory::blinky&#10;Factory::Creep Cycle&#10;Factory::Doom&#10;Factory::gpad&#10;Factory::Monkey&#10;Factory::Old Grace&#10;Factory::pring prong&#10;Factory::Sawed Off&#10;Factory::Soft16&#10;Factory::SyncBass&#10;Factory::Tickler&#10;FX::Gdad Trouble&#10;FX::Lost Groove&#10;FX::More than one&#10;FX::Rave forever&#10;Keys::organ&#10;Keys::Plucky Fellow&#10;Keys::Spacey Bell&#10;Pads::Sawring&#10;Pads::Subtract&#10;Pads::Way More&#10;Sequences::Made up story&#10;Sequences::Messin&#10;Sequences::reconstituted&#10;Sequences::Seq2Seq90&#10;Sequences::simple&#10;Sequences::The Bones&#10;Strings::z1-a&#10;Strings::z1-b"
+               max="30"/>
+  </Component>
   <Component type="ScriptButton" id="ScriptButton3" x="627" y="47" width="20"
              height="20" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.119999997317791"
              isVertical="0" processorId="HARMONIC" parameterId="FxSmooth"
@@ -1179,10 +1242,10 @@
              width="20" height="540"/>
   <Component type="ScriptImage" id="Image6" x="1" y="287" fileName="{PROJECT_FOLDER}vtrim.jpg"
              width="20" height="540"/>
-  <Component type="ScriptLabel" id="LoadEx3" x="199" y="-2" text="STAGES"
+  <Component type="ScriptLabel" id="LoadEx3" x="326" y="-2" text="STAGES"
              fontName="Montserrat" width="80" height="20" fontSize="12.0"
-             editable="0" alignment="right" itemColour2="4279308561" textColour="4291411851"
-             itemColour="4278190080" bgColour="3388997632">
+             editable="0" alignment="right" itemColour2="4291475358" textColour="4291475358"
+             itemColour="13285278" bgColour="3388997632">
     <Component type="ScriptComboBox" id="Stages" x="5" y="3" width="25" height="15"
                max="5" parentComponent="LoadEx3" items="4&#10;8&#10;16&#10;24&#10;32"
                bgColour="4291411851" itemColour="4291411851" itemColour2="4291411851"
@@ -1342,10 +1405,6 @@
   <Component type="ScriptButton" id="ShowSmoo" x="285" y="-2" width="22" height="20"
              filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.2000000029802322"
              isVertical="0" visible="0"/>
-  <Component type="ScriptComboBox" id="cmbPresets" x="287" y="-2" saveInPreset="0"
-             useCustomPopup="1" width="120" height="20" visible="0" items="&#10;Chords::stabby&#10;Factory::blinky&#10;Factory::Creep Cycle&#10;Factory::Doom&#10;Factory::gpad&#10;Factory::Monkey&#10;Factory::Old Grace&#10;Factory::pring prong&#10;Factory::Sawed Off&#10;Factory::Soft16&#10;Factory::SyncBass&#10;Factory::Tickler&#10;FX::Gdad Trouble&#10;FX::Lost Groove&#10;FX::More than one&#10;FX::Rave forever&#10;Keys::organ&#10;Keys::Plucky Fellow&#10;Keys::Spacey Bell&#10;Pads::Sawring&#10;Pads::Subtract&#10;Pads::Way More&#10;Sequences::Made up story&#10;Sequences::Messin&#10;Sequences::reconstituted&#10;Sequences::Seq2Seq90&#10;Sequences::simple&#10;Sequences::The Bones&#10;Strings::z1-a&#10;Strings::z1-b"
-             max="30"/>
-  <Component type="ScriptLabel" id="WAVELABEL1" x="260" y="0" text="Bass_Double"
-             editable="0"/>
-  <Component type="ScriptLabel" id="WAVELABEL2" x="230" y="290" text="SEQ_TwistingMellow1"/>
+  <Component type="ScriptLabel" id="WAVELABEL2" x="230" y="290" text="SEQ_TwistingMellow1"
+             visible="0"/>
 </ContentProperties>

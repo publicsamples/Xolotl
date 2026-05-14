@@ -9,6 +9,7 @@
 
 // Include compiled network files ------------------
 
+#include "AmpEnv_networkdata.h"
 #include "ArrangeNew.h"
 #include "bbdish_networkdata.h"
 #include "dlay_networkdata.h"

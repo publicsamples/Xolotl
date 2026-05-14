@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="AmpEnv" AllowPolyphonic="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="AmpEnv" Bypassed="0" Name="AmpEnv"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="cable_table" FactoryPath="control.cable_table" Bypassed="0"
+            Name="cable_table">
+        <ModulationTargets>
+          <Connection NodeId="flex_ahdsr" ParameterId="DecayCurve"/>
+          <Connection NodeId="flex_ahdsr" ParameterId="ReleaseCurve"/>
+        </ModulationTargets>
+        <ComplexData>
+          <Tables>
+            <Table Index="-1" EmbeddedData="24..........9C...vO...f+.........vO"/>
+          </Tables>
+        </ComplexData>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="flex_ahdsr" FactoryPath="envelope.flex_ahdsr" Bypassed="0"
+            Name="flex_ahdsr">
+        <Properties>
+          <Property ID="NumParameters" Value="2"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="add" ParameterId="Value"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections/>
+          </SwitchTarget>
+        </SwitchTargets>
+        <ComplexData>
+          <DisplayBuffers>
+            <DisplayBuffer Index="-1" EmbeddedData=""/>
+          </DisplayBuffers>
+        </ComplexData>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
+                     ID="Attack" TextToValueConverter="Time" DefaultValue="5.0" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
+                     ID="Hold" TextToValueConverter="Time" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
+                     ID="Decay" TextToValueConverter="Time" DefaultValue="100.0" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Sustain" TextToValueConverter="NormalizedPercentage"
+                     DefaultValue="0.5" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
+                     ID="Release" TextToValueConverter="Time" DefaultValue="300.0"
+                     Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Value="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackLevel" TextToValueConverter="NormalizedPercentage"
+                     Value="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackCurve" TextToValueConverter="NormalizedPercentage"
+                     DefaultValue="0.5" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="DecayCurve" TextToValueConverter="NormalizedPercentage"
+                     DefaultValue="0.5" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="ReleaseCurve" TextToValueConverter="NormalizedPercentage"
+                     DefaultValue="0.5" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="add" FactoryPath="math.add" Bypassed="0" Name="add">
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="A" MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
+                 ModColour="0" ExternalModulation="Disabled" DefaultValue="" Value="929.0"
+                 TextToValueConverter="Time">
+        <Connections>
+          <Connection NodeId="flex_ahdsr" ParameterId="Attack"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="h" MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
+                 ModColour="0" ExternalModulation="Disabled" DefaultValue="" Value="1.0"
+                 TextToValueConverter="Time">
+        <Connections>
+          <Connection NodeId="flex_ahdsr" ParameterId="Hold"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="d" MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
+                 ModColour="0" ExternalModulation="Disabled" DefaultValue="" Value="13665.740234375"
+                 TextToValueConverter="Time">
+        <Connections>
+          <Connection NodeId="flex_ahdsr" ParameterId="Decay"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="s" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="0.9000000357627869">
+        <Connections>
+          <Connection NodeId="flex_ahdsr" ParameterId="Sustain"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="r" MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
+                 ModColour="0" ExternalModulation="Disabled" DefaultValue="" TextToValueConverter="Time"
+                 Value="1951.0">
+        <Connections>
+          <Connection NodeId="flex_ahdsr" ParameterId="Release"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="crv" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="0.5">
+        <Connections>
+          <Connection NodeId="cable_table" ParameterId="Value"/>
+          <Connection NodeId="flex_ahdsr" ParameterId="AttackCurve"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

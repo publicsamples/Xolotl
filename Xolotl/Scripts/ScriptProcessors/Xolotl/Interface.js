@@ -4,6 +4,64 @@ Content.makeFrontInterface(850, 580);
 
 include("UISTUFF.js");
 
+const var USER = Content.getComponent("USER");
+const var SINGLECYC = Content.getComponent("SINGLECYC");
+const var SAMPLELOOP = Content.getComponent("SAMPLELOOP");
+const var OSC = Content.getComponent("OSC");
+const var MULTI = Content.getComponent("MULTI");
+const var UserCont = Content.getComponent("UserCont");
+
+inline function onOscWaveControl(component, value)
+{
+    Engine.allNotesOff();
+
+    if (value == 1)
+    {     
+        HARMONIC.setAttribute(HARMONIC.VoiceMode, 1);
+        OSC.showControl(1);
+        MULTI.showControl(0);
+        USER.showControl(0);
+        SAMPLELOOP.showControl(0);
+        SINGLECYC.showControl(0);
+        UserCont.showControl(0);
+    }
+
+    if (value == 2)
+    {
+        HARMONIC.setAttribute(HARMONIC.VoiceMode, 3);
+        OSC.showControl(0);
+        MULTI.showControl(0);
+        USER.showControl(1);
+        SAMPLELOOP.showControl(0);
+        SINGLECYC.showControl(1);
+        UserCont.showControl(1);
+    }
+
+    if (value == 3)
+    {
+        HARMONIC.setAttribute(HARMONIC.VoiceMode, 4);
+        OSC.showControl(0);
+        MULTI.showControl(0);
+        USER.showControl(1);
+        SAMPLELOOP.showControl(1);
+        SINGLECYC.showControl(0);
+        UserCont.showControl(1);
+    }
+
+    if (value == 4)
+    {
+        HARMONIC.setAttribute(HARMONIC.VoiceMode, 2);
+        OSC.showControl(0);
+        MULTI.showControl(1);
+        USER.showControl(0);
+        SAMPLELOOP.showControl(0);
+        SINGLECYC.showControl(0);
+        UserCont.showControl(0);
+    }
+}
+
+Content.getComponent("OscWave").setControlCallback(onOscWaveControl);
+
 const var PRESETS = Content.getComponent("PRESETS");
 
 const var PRESETBUTTON = Content.getComponent("PRESETBUTTON");
