@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Preset Version="0.9.1">
+<Preset Version="0.9.2">
   <Content Processor="Interface">
     <Control type="ScriptSliderPack" id="SliderPack1" value="2.0" data="16...............3O......"/>
     <Control type="ScriptComboBox" id="ComboBox1" value="1.0"/>
@@ -28,7 +28,7 @@
     <Control type="ScriptSlider" id="ATTACK1" value="3070.0"/>
     <Control type="ScriptButton" id="ModMode1" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD36" value="0.0"/>
-    <Control type="ScriptSlider" id="SHAPEMOD5" value="14.40000152587891"/>
+    <Control type="ScriptSlider" id="SHAPEMOD5" value="0.0"/>
     <Control type="ScriptSlider" id="Knob1" value="1000.0"/>
     <Control type="ScriptSlider" id="Knob3" value="9985.1396484375"/>
     <Control type="ScriptSlider" id="Knob4" value="0.9000000357627869"/>
