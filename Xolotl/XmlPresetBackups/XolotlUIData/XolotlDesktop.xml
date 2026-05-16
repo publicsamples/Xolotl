@@ -236,10 +236,10 @@
     <Component type="ScriptTable" id="ModTable1" x="12" y="28" width="130" height="115"
                parentComponent="env1" processorId="HARMONIC" tableIndex="1"
                bgColour="4278661418" itemColour="4285622092" itemColour2="4278661418"
-               customColours="1" visible="0"/>
+               customColours="1"/>
     <Component type="ScriptPanel" id="EnvSliders1" x="12" y="28" width="130"
                height="120" parentComponent="env1" locked="1" itemColour="0"
-               itemColour2="0" textColour="16777215">
+               itemColour2="0" textColour="16777215" visible="0">
       <Component type="ScriptImage" id="ScriptImage2" x="10" y="4" width="120"
                  height="100" parentComponent="EnvSliders1" fileName="{PROJECT_FOLDER}sliderbgs.png"/>
       <Component type="ScriptLabel" id="Label7" x="9" y="104" width="30" height="10"
@@ -302,8 +302,8 @@
                height="20" processorId="fx" parameterId="mod" middlePosition="0.0"
                filmstripImage="{PROJECT_FOLDER}bluekb.png" numStrips="125.0"
                min="-1.0" isPluginParameter="1" pluginParameterName="DELAY LFO1 MOD"
-               isVertical="0" scaleFactor="0.55" showValuePopup="Below" parentComponent="AMP"
-               bgColour="4291475358" itemColour="4291475358"/>
+               isVertical="0" scaleFactor="0.550000011920929" showValuePopup="Below"
+               parentComponent="AMP" bgColour="4291475358" itemColour="4291475358"/>
     <Component type="ScriptImage" id="ScriptImage4" x="15" y="35" width="90"
                height="70" parentComponent="AMP" fileName="{PROJECT_FOLDER}sliderbgs.png"
                processorId="ENV1"/>
@@ -735,7 +735,7 @@
                parentComponent="osc1" editable="0" text="MODE" fontSize="14.0"
                fontName="Montserrat" textColour="4291475358" itemColour2="4291475358"/>
     <Component type="ScriptComboBox" id="OscWave" x="15" y="13" width="60" height="25"
-               max="4" parentComponent="osc1" items="OSCILLATOR&#10;SINGLE-CYCLE&#10;SAMPLE/SCRUB&#10;MULTI-SAMPLES"
+               max="3" parentComponent="osc1" items="OSCILLATOR&#10;SINGLE-CYCLE&#10;SAMPLE/SCRUB"
                bgColour="4291475358" itemColour2="4291475358" textColour="4291475358"
                itemColour="4291475358" isPluginParameter="1" pluginParameterName="Mode"
                deferControlCallback="1"/>
@@ -788,7 +788,7 @@
                textColour="4291475358" fontName="Montserrat" itemColour2="4291475358"/>
     <Component type="ScriptPanel" id="OSC" x="88" y="4" width="260" height="290"
                parentComponent="osc1" itemColour="4281346602" itemColour2="4282069554"
-               textColour="16777215" visible="0">
+               textColour="16777215">
       <Component type="ScriptSlider" id="SHAPEMOD37" x="76" y="0" width="40" height="40"
                  parentComponent="OSC" processorId="HARMONIC" parameterId="Shape"
                  middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
@@ -841,18 +841,18 @@
     </Component>
     <Component type="ScriptPanel" id="MULTI" x="88" y="4" width="260" height="290"
                parentComponent="osc1" itemColour="4281346602" itemColour2="4282069554"
-               textColour="16777215">
+               textColour="16777215" visible="0">
       <Component type="ScriptSliderPack" id="pitch-sp6" x="9" y="76" width="240"
                  height="210" parentComponent="MULTI" processorId="HARMONIC" itemColour="4286678120"
                  itemColour2="14465590" textColour="10318162" bgColour="16711680"
                  flashActive="0" defaultValue="0.0" sliderAmount="32.0"/>
       <Component type="ScriptComboBox" id="BankA" x="138" y="10" width="110" height="25"
-                 max="34" parentComponent="MULTI" fontSize="1.0" textColour="4291475358"
+                 max="0" parentComponent="MULTI" fontSize="1.0" textColour="4291475358"
                  itemColour2="4291475358" itemColour="4291475358" bgColour="4291475358"
-                 defaultValue="0.0" saveInPreset="0" items="Misc_EM25_1&#10;Misc_EM25_2&#10;Misc_EM25_3&#10;Misc_Gdad_1&#10;Misc_Gdad_2&#10;Misc_Gdad_3&#10;Misc_Gdad_4&#10;Misc_Gdad_5&#10;Misc_Meta_1&#10;Misc_Meta_2&#10;Misc_Meta_3&#10;Misc_Meta_4&#10;Misc_Meta_5&#10;Misc_SplGit&#10;Misc_Spook&#10;Misc_Toes&#10;Misc_Vibe&#10;Misc_WBrass&#10;Misc_Wet&#10;Pluck_Gater&#10;Pluck_PluckSH&#10;Bass_BooBass&#10;Bass_Bz&#10;Bass_Double&#10;Bass_Gooey&#10;Bass_HardBass&#10;Bass_HellCat&#10;Bass_Lilbass&#10;Bass_RM&#10;Bass_Round&#10;Bass_Shrp&#10;Bass_Slap&#10;Bass_eBass&#10;Bass_hard">
+                 defaultValue="0.0" saveInPreset="0">
         <Component type="ScriptLabel" id="WAVELABEL1" x="6" y="2" width="100" height="20"
                    parentComponent="BankA" fontName="Montserrat" bgColour="4281346602"
-                   textColour="4291475358" text="Misc_Gdad_3" editable="0" saveInPreset="1"/>
+                   textColour="4291475358" text="Lead_Sayer" editable="0" saveInPreset="1"/>
       </Component>
       <Component type="ScriptComboBox" id="Categories" x="13" y="10" width="110"
                  height="25" parentComponent="MULTI" fontSize="1.0" itemColour2="4291475358"
@@ -1151,19 +1151,17 @@
   <Component type="ScriptPanel" id="PRESETS" x="28" y="25" width="674" height="374"
              itemColour="4281808695" itemColour2="4281808695" bgColour="4278282413"
              textColour="4278324243" visible="0">
-    <Component type="ScriptImage" id="ScriptImage1" x="485" y="186" width="230"
-               height="170" parentComponent="PRESETS" fileName="{PROJECT_FOLDER}expansions.png"
-               visible="0"/>
-    <Component type="ScriptPanel" id="expansionad" x="485" y="188" width="230"
-               height="170" parentComponent="PRESETS" allowCallbacks="Clicks Only"
-               visible="0"/>
+    <Component type="ScriptImage" id="ScriptImage1" x="432" y="55" width="230"
+               height="170" parentComponent="PRESETS" fileName="{PROJECT_FOLDER}expansions.png"/>
+    <Component type="ScriptPanel" id="expansionad" x="432" y="55" width="230"
+               height="170" parentComponent="PRESETS" allowCallbacks="Clicks Only"/>
     <Component type="ScriptFloatingTile" id="ScriptFloatingTile2" x="23" y="295"
                width="250" height="70" parentComponent="PRESETS" ContentType="CustomSettings"
                bgColour="4278190080" itemColour="4291411851" itemColour2="4291411851"
                Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: false,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: false,&#10;  &quot;ClearMidiCC&quot;: false,&#10;  &quot;SampleLocation&quot;: false,&#10;  &quot;DebugMode&quot;: false,&#10;  &quot;UseOpenGL&quot;: false,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
                itemColour3="4291411851" FontSize="12.0" Font="Montserrat" textColour="4291411851"/>
     <Component type="ScriptFloatingTile" id="ScriptFloatingTile1" x="16" y="11"
-               width="640" height="270" parentComponent="PRESETS" ContentType="PresetBrowser"
+               width="400" height="270" parentComponent="PRESETS" ContentType="PresetBrowser"
                bgColour="0" itemColour="4291411851" itemColour2="4291411851"
                Data="{&#10;  &quot;ShowSaveButton&quot;: true,&#10;  &quot;ShowExpansionsAsColumn&quot;: false,&#10;  &quot;ShowFolderButton&quot;: true,&#10;  &quot;ShowNotes&quot;: false,&#10;  &quot;ShowEditButtons&quot;: true,&#10;  &quot;EditButtonOffset&quot;: 10,&#10;  &quot;ShowAddButton&quot;: true,&#10;  &quot;ShowRenameButton&quot;: true,&#10;  &quot;ShowDeleteButton&quot;: true,&#10;  &quot;ShowSearchBar&quot;: false,&#10;  &quot;ShowFavoriteIcon&quot;: false,&#10;  &quot;FullPathFavorites&quot;: false,&#10;  &quot;ButtonsInsideBorder&quot;: false,&#10;  &quot;NumColumns&quot;: 2,&#10;  &quot;ColumnWidthRatio&quot;: [&#10;    0.3333333333333333,&#10;    0.3333333333333333,&#10;    0.3333333333333333&#10;  ],&#10;  &quot;ListAreaOffset&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;ColumnRowPadding&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;SearchBarBounds&quot;: [],&#10;  &quot;MoreButtonBounds&quot;: [],&#10;  &quot;SaveButtonBounds&quot;: [],&#10;  &quot;FavoriteButtonBounds&quot;: []&#10;}"
                textColour="4291411851" itemColour3="4291411851"/>

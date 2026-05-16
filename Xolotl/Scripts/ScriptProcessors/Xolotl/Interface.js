@@ -114,6 +114,24 @@ include("Controls.js");
 include("Presets.js");
 
 
+const var expansionad = Content.getComponent("expansionad");
+
+
+
+
+expansionad.setMouseCallback(function(event)
+{
+  if (event.clicked)
+  {
+    Engine.openWebsite("https://modularsamples.gumroad.com/l/rhnqwh");
+  } 
+  else 
+  {
+    link_hover = event.hover;
+    this.repaint();
+  }
+});
+
 
 
 
