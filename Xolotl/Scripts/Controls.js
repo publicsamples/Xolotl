@@ -75,11 +75,7 @@ Content.getComponent("ComboBox3").setControlCallback(onComboBox3Control);
 
 inline function onOscWave1Control(component, value)
 {
-	if (!isDefined(value))
-		return;
 
-	if (!isDefined(HARMONIC))
-		return;
 
 	Engine.allNotesOff();
 

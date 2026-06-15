@@ -70,7 +70,7 @@
     </Nodes>
     <Parameters>
       <Parameter ID="A" MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
-                 ModColour="0" ExternalModulation="Disabled" DefaultValue="" Value="929.0"
+                 ModColour="0" ExternalModulation="Disabled" DefaultValue="" Value="0.0"
                  TextToValueConverter="Time">
         <Connections>
           <Connection NodeId="flex_ahdsr" ParameterId="Attack"/>

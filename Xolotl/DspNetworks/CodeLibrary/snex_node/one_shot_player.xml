@@ -11,7 +11,7 @@
   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"
              ID="scrub" TextToValueConverter="Undefined" Page="" SubGroup=""
              Value="0.0" DefaultValue="0.0"/>
-  <Parameter MinValue="0.0" MaxValue="500.0" StepSize="0.0" SkewFactor="1.0"
+  <Parameter MinValue="20.0" MaxValue="500.0" StepSize="0.0" SkewFactor="1.0"
              ID="grainSize" TextToValueConverter="Undefined" Page="" SubGroup=""
              Value="0.0" DefaultValue="0.0"/>
   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"

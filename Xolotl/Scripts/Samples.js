@@ -1,5 +1,55 @@
 Synth.deferCallbacks(true);
 
+//Single Sample
+
+const var AudioList = Engine.loadAudioFilesIntoPool();
+
+const var SampleA = Content.getComponent("SampleA");
+const var SampleA1 = Content.getComponent("SampleA1");
+const var SampleA2 = Content.getComponent("SampleA2");
+const var SampleA3 = Content.getComponent("SampleA3");
+const var SampleA4 = Content.getComponent("SampleA4");
+const var SampleA5 = Content.getComponent("SampleA5");
+const var SampleA6 = Content.getComponent("SampleA6");
+const var SampleA7 = Content.getComponent("SampleA7");
+const var SampleA8 = Content.getComponent("SampleA8");
+const var SampleA9 = Content.getComponent("SampleA9");
+const var SampleA10 = Content.getComponent("SampleA10");
+const var SampleA11 = Content.getComponent("SampleA11");
+const var SampleA12 = Content.getComponent("SampleA12");
+const var SampleA13 = Content.getComponent("SampleA13");
+const var SampleA14 = Content.getComponent("SampleA14");
+const var SampleA15 = Content.getComponent("SampleA15");
+
+
+const var SampleBank = Content.getComponent("SampleBank");
+
+const var harm = Synth.getAudioSampleProcessor("HARMONIC");
+
+const var foldersV1 = [];        // Top-level Genre foldersV1
+const var instrumentsV1 = {};    // Maps Genre to Instruments
+const var samplesV1 = {};  
+
+
+const slot = harm.getAudioFile(0);
+
+const slot1 = harm.getAudioFile(1);
+const slot2 = harm.getAudioFile(2);
+const slot3 = harm.getAudioFile(3);
+const slot4 = harm.getAudioFile(4);
+const slot5 = harm.getAudioFile(5);
+const slot6 = harm.getAudioFile(6);
+const slot7 = harm.getAudioFile(7);
+const slot8 = harm.getAudioFile(8);
+const slot9 = harm.getAudioFile(9);
+const slot10 = harm.getAudioFile(10);
+const slot11 = harm.getAudioFile(11);
+const slot12 = harm.getAudioFile(12);
+const slot13 = harm.getAudioFile(13);
+const slot14 = harm.getAudioFile(14);
+const slot15 = harm.getAudioFile(15);
+const slot16 = harm.getAudioFile(16);
+
 inline function sortAudioFilesListV1() {
 	
 	Synth.deferCallbacks(true);
@@ -48,7 +98,6 @@ for (file in AudioList) {
 // Run the sorting function
 sortAudioFilesListV1();
 
-
 inline function onSampleBankControl(component, value)
 {
   if (value >= 0) {
@@ -59,13 +108,40 @@ inline function onSampleBankControl(component, value)
         // Update InstrumentV1 dropdown with instrumentsV1 in the selected Genre
         if (instrumentsV1[selectedGenre]) {
             SampleA.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA1.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA2.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA3.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA4.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA5.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA6.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA7.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA8.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA9.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA10.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA11.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA12.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA13.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA14.set("items", instrumentsV1[selectedGenre].join("\n"));
+			SampleA15.set("items", instrumentsV1[selectedGenre].join("\n"));
 
      
         } else {
             SampleA.set("items", "no file");
-
-
-
+            SampleA1.set("items", "no file");
+            SampleA2.set("items", "no file");
+            SampleA3.set("items", "no file");
+            SampleA4.set("items", "no file");
+			SampleA5.set("items", "no file");
+			SampleA6.set("items", "no file");
+			SampleA7.set("items", "no file");
+			SampleA8.set("items", "no file");
+			SampleA9.set("items", "no file");
+			SampleA10.set("items", "no file");
+			SampleA11.set("items", "no file");
+			SampleA12.set("items", "no file");
+			SampleA13.set("items", "no file");
+			SampleA14.set("items", "no file");
+			SampleA15.set("items", "no file");
         }
 
         // Clear SampleV1 as no Instrument is selected yet
@@ -73,16 +149,63 @@ inline function onSampleBankControl(component, value)
         
      //   FirstCB.setValue(value);
 		SampleA.setValue(value);
+	
          
     }
 }
 
 Content.getComponent("SampleBank").setControlCallback(onSampleBankControl);
 
+inline function loadIncrementalSamples(startIndex)
+
+{
+
+   slot1.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA.getItemText());
+        slot2.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA1.getItemText());
+        slot3.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA2.getItemText());
+        slot4.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA3.getItemText());
+        slot5.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA4.getItemText());
+        slot6.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA5.getItemText());
+        slot7.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA6.getItemText());
+        slot8.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA7.getItemText());
+        slot9.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA8.getItemText());
+        slot10.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA9.getItemText());
+        slot11.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA10.getItemText());
+        slot12.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA11.getItemText());
+        slot13.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA12.getItemText());
+        slot14.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA13.getItemText());
+        slot15.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA14.getItemText());
+        slot16.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA15.getItemText());
+        
+
+}
 
 
 inline function onSampleAControl(component, value)
-{if (value >= 0) {
+
+
+
+
+{
+	
+	SampleA1.setValue(value +1);
+		SampleA2.setValue(value +2);
+		SampleA3.setValue(value +3);
+		SampleA4.setValue(value +4);
+		SampleA5.setValue(value +5);
+		SampleA6.setValue(value +6);
+		SampleA7.setValue(value +7);
+		SampleA8.setValue(value +8);
+		SampleA9.setValue(value +9);
+		SampleA10.setValue(value +10);
+		SampleA11.setValue(value +11);
+		SampleA12.setValue(value +12);
+		SampleA13.setValue(value +13);
+		SampleA14.setValue(value +14);
+		SampleA15.setValue(value +15);
+		
+if (value >= 0) {
+	
 
 		local selectedSample = SampleA.get("items").split("\n")[value - 1];
 
@@ -107,10 +230,7 @@ inline function onSampleAControl(component, value)
 	
 		SynthesiserGroup1.setBypassed(false);
 
-   
-        // Load the sample using the full path
-        slot1.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA.getItemText());
-      //  Console.print("Sample loaded successfully!");
+ 		  loadIncrementalSamples(value - 1);
     
     
     }, this);
@@ -122,13 +242,7 @@ inline function onSampleAControl(component, value)
 Content.getComponent("SampleA").setControlCallback(onSampleAControl);
 
 
-//const eventdata = rm.getEventData(0, 0);
-
-const slot1 = harm.getAudioFile(1);
-
-//const cable1 = rm.getCable("mod1");
-//const cable2 = rm.getCable("mod2");
-//onst cable3 = rm.getCable("mod3");
+//Multi-sample
 
 const maps = Sampler.getSampleMapList();
 
@@ -201,7 +315,7 @@ Content.getComponent("WAVELABEL1").setControlCallback(onWAVELABEL1Control);
 
 
 
-//USer Wave
+//User Wave
 
 const var HARMONICWave = Synth.getAudioSampleProcessor("HARMONIC");
 
