@@ -76,23 +76,6 @@ inline function onPRESETBUTTONControl(component, value)
 Content.getComponent("PRESETBUTTON").setControlCallback(onPRESETBUTTONControl);
 
 
-
-const var AudioList = Engine.loadAudioFilesIntoPool();
-
-const var SampleA = Content.getComponent("SampleA");
-const var SampleBank = Content.getComponent("SampleBank");
-
-
-const var harm = Synth.getAudioSampleProcessor("HARMONIC");
-                
-const slot = harm.getAudioFile(0);
-
-const var foldersV1 = [];        // Top-level Genre foldersV1
-const var instrumentsV1 = {};    // Maps Genre to Instruments
-const var samplesV1 = {};  
-
-
-
 Settings.setVoiceMultiplier(8);
 
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");

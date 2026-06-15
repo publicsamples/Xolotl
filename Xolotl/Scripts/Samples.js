@@ -50,6 +50,36 @@ const slot14 = harm.getAudioFile(14);
 const slot15 = harm.getAudioFile(15);
 const slot16 = harm.getAudioFile(16);
 
+const var sampleSlots = [slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10, slot11, slot12, slot13, slot14, slot15, slot16];
+
+inline function getSampleItems()
+{
+	local items = SampleA.get("items");
+
+	if (items == "" || items == "no file")
+		return [];
+
+	return items.split("\n");
+}
+
+inline function getWrappedMenuValue(baseValue, offset, itemCount)
+{
+	if (itemCount <= 0)
+		return 0;
+
+	return ((baseValue - 1 + offset) % itemCount) + 1;
+}
+
+inline function getSafeSampleMenuValue(value)
+{
+	local itemCount = getSampleItems().length;
+
+	if (itemCount <= 0)
+		return 0;
+
+	return getWrappedMenuValue(value, 0, itemCount);
+}
+
 inline function sortAudioFilesListV1() {
 	
 	Synth.deferCallbacks(true);
@@ -100,7 +130,7 @@ sortAudioFilesListV1();
 
 inline function onSampleBankControl(component, value)
 {
-  if (value >= 0) {
+  if (value > 0) {
         // Get the selected Genre
         local selectedGenre = foldersV1[value-1];
      //   Console.print("Selected Genre: " + selectedGenre);
@@ -148,7 +178,7 @@ inline function onSampleBankControl(component, value)
 
         
      //   FirstCB.setValue(value);
-		SampleA.setValue(value);
+		SampleA.setValue(getSafeSampleMenuValue(1));
 	
          
     }
@@ -159,64 +189,92 @@ Content.getComponent("SampleBank").setControlCallback(onSampleBankControl);
 inline function loadIncrementalSamples(startIndex)
 
 {
+	local items = getSampleItems();
+	local itemCount = items.length;
+	local i;
+	local wrappedIndex;
+	local folderPath = "{PROJECT_FOLDER}" + SampleBank.getItemText() + "/";
 
-   slot1.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA.getItemText());
-        slot2.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA1.getItemText());
-        slot3.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA2.getItemText());
-        slot4.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA3.getItemText());
-        slot5.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA4.getItemText());
-        slot6.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA5.getItemText());
-        slot7.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA6.getItemText());
-        slot8.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA7.getItemText());
-        slot9.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA8.getItemText());
-        slot10.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA9.getItemText());
-        slot11.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA10.getItemText());
-        slot12.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA11.getItemText());
-        slot13.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA12.getItemText());
-        slot14.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA13.getItemText());
-        slot15.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA14.getItemText());
-        slot16.loadFile("{PROJECT_FOLDER}" + SampleBank.getItemText()  + "/" + SampleA15.getItemText());
-        
+	if (itemCount <= 0)
+		return;
+
+	for (i = 0; i < sampleSlots.length; i++)
+	{
+		wrappedIndex = (startIndex + i) % itemCount;
+		sampleSlots[i].loadFile(folderPath + items[wrappedIndex]);
+	}
 
 }
+
+inline function loadWrappedUserWaveSamples(selectedFile)
+{
+	local parentDir;
+	local siblingFiles;
+	local siblingPaths = [];
+	local selectedPath;
+	local itemCount;
+	local startIndex = -1;
+	local i;
+	local wrappedIndex;
+
+	if (!isDefined(selectedFile))
+		return;
+
+	parentDir = selectedFile.getParentDirectory();
+	siblingFiles = FileSystem.findFiles(parentDir, "*.wav,*.aif", false);
+	selectedPath = selectedFile.toString(File.FullPath);
+
+	for (i = 0; i < siblingFiles.length; i++)
+	{
+		if (!siblingFiles[i].isDirectory())
+			siblingPaths.push(siblingFiles[i].toString(File.FullPath));
+	}
+
+	if (siblingPaths.length == 0)
+		return;
+
+	siblingPaths.sortNatural();
+	itemCount = siblingPaths.length;
+
+	for (i = 0; i < itemCount; i++)
+	{
+		if (siblingPaths[i] == selectedPath)
+		{
+			startIndex = i;
+			break;
+		}
+	}
+
+	if (startIndex == -1)
+		startIndex = 0;
+
+	for (i = 0; i < sampleSlots.length; i++)
+	{
+		wrappedIndex = (startIndex + i) % itemCount;
+		sampleSlots[i].loadFile(siblingPaths[wrappedIndex]);
+	}
+}
+
+const var WAVELABEL3 = Content.getComponent("WAVELABEL3");
 
 
 inline function onSampleAControl(component, value)
 
-
-
-
 {
-	
-	SampleA1.setValue(value +1);
-		SampleA2.setValue(value +2);
-		SampleA3.setValue(value +3);
-		SampleA4.setValue(value +4);
-		SampleA5.setValue(value +5);
-		SampleA6.setValue(value +6);
-		SampleA7.setValue(value +7);
-		SampleA8.setValue(value +8);
-		SampleA9.setValue(value +9);
-		SampleA10.setValue(value +10);
-		SampleA11.setValue(value +11);
-		SampleA12.setValue(value +12);
-		SampleA13.setValue(value +13);
-		SampleA14.setValue(value +14);
-		SampleA15.setValue(value +15);
-		
-if (value >= 0) {
-	
+	WAVELABEL3.set("text", SampleA.get("items").split("\n")[value-1]);
 
-		local selectedSample = SampleA.get("items").split("\n")[value - 1];
+	local items = getSampleItems();
+	local startIndex;
 
-       // Construct the full path to the sample
-       local selectedGenre = SampleBank.getItemText();
-      // local selectedInstrument = SecondCB.getItemText();
-       local fullPath = "{PROJECT_FOLDER}" + selectedGenre + "/" + selectedSample;
+if (value > 0) {
+		if (value > items.length)
+			return;
+
+		startIndex = value - 1;
 
 	
 	SynthesiserGroup1.setBypassed(false);
-	reg voc1 = value-1;
+	reg voc1 = startIndex;
 	
 	Content.callAfterDelay(300, function()
 	{
@@ -230,7 +288,7 @@ if (value >= 0) {
 	
 		SynthesiserGroup1.setBypassed(false);
 
- 		  loadIncrementalSamples(value - 1);
+ 		  loadIncrementalSamples(voc1);
     
     
     }, this);
@@ -327,10 +385,9 @@ inline function onWaveLoadControl(component, value)
 
 	if (value)
 			{
-			FileSystem.browse (FileSystem.Music, false, "*.wav,*.aif ", function (f) 
+			FileSystem.browse (FileSystem.Music, false, "*.wav,*.aif", function (f) 
 		{
-
-	slot1.loadFile( (f.toString(File.FullPath)));
+			loadWrappedUserWaveSamples(f);
 	});	
 	
 

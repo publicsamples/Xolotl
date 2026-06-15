@@ -1025,13 +1025,76 @@ using chain9_t = container::chain<parameter::empty,
 template <int NV>
 using file_player6_t = wrap::data<core::file_player<NV>, 
                                   data::external::audiofile<1>>;
+template <int NV>
+using file_player7_t = wrap::data<core::file_player<NV>, 
+                                  data::external::audiofile<2>>;
+template <int NV>
+using file_player8_t = wrap::data<core::file_player<NV>, 
+                                  data::external::audiofile<3>>;
+template <int NV>
+using file_player9_t = wrap::data<core::file_player<NV>, 
+                                  data::external::audiofile<4>>;
+template <int NV>
+using file_player10_t = wrap::data<core::file_player<NV>, 
+                                   data::external::audiofile<5>>;
+template <int NV>
+using file_player11_t = wrap::data<core::file_player<NV>, 
+                                   data::external::audiofile<6>>;
+template <int NV>
+using file_player12_t = wrap::data<core::file_player<NV>, 
+                                   data::external::audiofile<7>>;
+template <int NV>
+using file_player13_t = wrap::data<core::file_player<NV>, 
+                                   data::external::audiofile<8>>;
+template <int NV>
+using file_player14_t = wrap::data<core::file_player<NV>, 
+                                   data::external::audiofile<9>>;
+template <int NV>
+using file_player15_t = wrap::data<core::file_player<NV>, 
+                                   data::external::audiofile<10>>;
+template <int NV>
+using file_player16_t = wrap::data<core::file_player<NV>, 
+                                   data::external::audiofile<11>>;
+template <int NV>
+using file_player17_t = wrap::data<core::file_player<NV>, 
+                                   data::external::audiofile<12>>;
+template <int NV>
+using file_player18_t = wrap::data<core::file_player<NV>, 
+                                   data::external::audiofile<13>>;
+template <int NV>
+using file_player19_t = wrap::data<core::file_player<NV>, 
+                                   data::external::audiofile<14>>;
+template <int NV>
+using file_player20_t = wrap::data<core::file_player<NV>, 
+                                   data::external::audiofile<15>>;
+template <int NV>
+using file_player21_t = wrap::data<core::file_player<NV>, 
+                                   data::external::audiofile<16>>;
+template <int NV>
+using branch8_t = container::branch<parameter::empty, 
+                                    wrap::fix<2, file_player6_t<NV>>, 
+                                    file_player7_t<NV>, 
+                                    file_player8_t<NV>, 
+                                    file_player9_t<NV>, 
+                                    file_player10_t<NV>, 
+                                    file_player11_t<NV>, 
+                                    file_player12_t<NV>, 
+                                    file_player13_t<NV>, 
+                                    file_player14_t<NV>, 
+                                    file_player15_t<NV>, 
+                                    file_player16_t<NV>, 
+                                    file_player17_t<NV>, 
+                                    file_player18_t<NV>, 
+                                    file_player19_t<NV>, 
+                                    file_player20_t<NV>, 
+                                    file_player21_t<NV>>;
 
 template <int NV>
 using chain43_t = container::chain<parameter::empty, 
                                    wrap::fix<2, branch5_t<NV>>, 
                                    core::gain<NV>, 
                                    chain9_t<NV>, 
-                                   file_player6_t<NV>>;
+                                   branch8_t<NV>>;
 
 template <int NV>
 using chain14_t = container::chain<parameter::empty, 
@@ -1820,15 +1883,25 @@ using UserInput = parameter::chain<UserInput_InputRange,
                                    UserInput_30<NV>, 
                                    UserInput_31<NV>>;
 
-DECLARE_PARAMETER_RANGE_STEP(PitchSmoothRange, 
+DECLARE_PARAMETER_RANGE_STEP(PitchSmooth_0Range, 
                              0., 
                              15., 
                              1.);
 
 template <int NV>
-using PitchSmooth = parameter::from0To1<xnode_impl::branch7_t<NV>, 
-                                        0, 
-                                        PitchSmoothRange>;
+using PitchSmooth_0 = parameter::from0To1<xnode_impl::branch7_t<NV>, 
+                                          0, 
+                                          PitchSmooth_0Range>;
+
+template <int NV>
+using PitchSmooth_1 = parameter::from0To1<xnode_impl::branch8_t<NV>, 
+                                          0, 
+                                          PitchSmooth_0Range>;
+
+template <int NV>
+using PitchSmooth = parameter::chain<ranges::Identity, 
+                                     PitchSmooth_0<NV>, 
+                                     PitchSmooth_1<NV>>;
 
 DECLARE_PARAMETER_RANGE(ShToGain_0Range, 
                         -1., 
@@ -2144,7 +2217,23 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& add7 = this->getT(1).getT(2).getT(1).getT(2).getT(1).getT(7);                 // math::add<NV>
 		auto& add8 = this->getT(1).getT(2).getT(1).getT(2).getT(1).getT(8);                 // math::add<NV>
 		auto& add9 = this->getT(1).getT(2).getT(1).getT(2).getT(1).getT(9);                 // math::add<NV>
-		auto& file_player6 = this->getT(1).getT(2).getT(1).getT(3);                         // xnode_impl::file_player6_t<NV>
+		auto& branch8 = this->getT(1).getT(2).getT(1).getT(3);                              // xnode_impl::branch8_t<NV>
+		auto& file_player6 = this->getT(1).getT(2).getT(1).getT(3).getT(0);                 // xnode_impl::file_player6_t<NV>
+		auto& file_player7 = this->getT(1).getT(2).getT(1).getT(3).getT(1);                 // xnode_impl::file_player7_t<NV>
+		auto& file_player8 = this->getT(1).getT(2).getT(1).getT(3).getT(2);                 // xnode_impl::file_player8_t<NV>
+		auto& file_player9 = this->getT(1).getT(2).getT(1).getT(3).getT(3);                 // xnode_impl::file_player9_t<NV>
+		auto& file_player10 = this->getT(1).getT(2).getT(1).getT(3).getT(4);                // xnode_impl::file_player10_t<NV>
+		auto& file_player11 = this->getT(1).getT(2).getT(1).getT(3).getT(5);                // xnode_impl::file_player11_t<NV>
+		auto& file_player12 = this->getT(1).getT(2).getT(1).getT(3).getT(6);                // xnode_impl::file_player12_t<NV>
+		auto& file_player13 = this->getT(1).getT(2).getT(1).getT(3).getT(7);                // xnode_impl::file_player13_t<NV>
+		auto& file_player14 = this->getT(1).getT(2).getT(1).getT(3).getT(8);                // xnode_impl::file_player14_t<NV>
+		auto& file_player15 = this->getT(1).getT(2).getT(1).getT(3).getT(9);                // xnode_impl::file_player15_t<NV>
+		auto& file_player16 = this->getT(1).getT(2).getT(1).getT(3).getT(10);               // xnode_impl::file_player16_t<NV>
+		auto& file_player17 = this->getT(1).getT(2).getT(1).getT(3).getT(11);               // xnode_impl::file_player17_t<NV>
+		auto& file_player18 = this->getT(1).getT(2).getT(1).getT(3).getT(12);               // xnode_impl::file_player18_t<NV>
+		auto& file_player19 = this->getT(1).getT(2).getT(1).getT(3).getT(13);               // xnode_impl::file_player19_t<NV>
+		auto& file_player20 = this->getT(1).getT(2).getT(1).getT(3).getT(14);               // xnode_impl::file_player20_t<NV>
+		auto& file_player21 = this->getT(1).getT(2).getT(1).getT(3).getT(15);               // xnode_impl::file_player21_t<NV>
 		auto& chain19 = this->getT(1).getT(3);                                              // xnode_impl::chain19_t<NV>
 		auto& modchain3 = this->getT(1).getT(3).getT(0);                                    // xnode_impl::modchain3_t<NV>
 		auto& chain26 = this->getT(1).getT(3).getT(0).getT(0);                              // xnode_impl::chain26_t<NV>
@@ -2344,7 +2433,9 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		UserInput_p.connectT(30, snex_node14); // UserInput -> snex_node14::grainSize
 		UserInput_p.connectT(31, snex_node15); // UserInput -> snex_node15::grainSize
 		
-		this->getParameterT(22).connectT(0, branch7); // PitchSmooth -> branch7::Index
+		auto& PitchSmooth_p = this->getParameterT(22);
+		PitchSmooth_p.connectT(0, branch7); // PitchSmooth -> branch7::Index
+		PitchSmooth_p.connectT(1, branch8); // PitchSmooth -> branch8::Index
 		
 		auto& ShToGain_p = this->getParameterT(23);
 		ShToGain_p.connectT(0, pma1);        // ShToGain -> pma1::Multiply
@@ -2683,10 +2774,87 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		
 		; // add9::Value is automated
 		
+		; // branch8::Index is automated
+		
 		file_player6.setParameterT(0, 1.);   // core::file_player::PlaybackMode
 		file_player6.setParameterT(1, 1.);   // core::file_player::Gate
 		file_player6.setParameterT(2, 440.); // core::file_player::RootFrequency
 		file_player6.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player7.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player7.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player7.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player7.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player8.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player8.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player8.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player8.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player9.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player9.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player9.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player9.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player10.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player10.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player10.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player10.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player11.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player11.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player11.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player11.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player12.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player12.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player12.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player12.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player13.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player13.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player13.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player13.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player14.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player14.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player14.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player14.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player15.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player15.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player15.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player15.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player16.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player16.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player16.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player16.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player17.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player17.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player17.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player17.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player18.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player18.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player18.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player18.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player19.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player19.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player19.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player19.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player20.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player20.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player20.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player20.setParameterT(3, 1.);   // core::file_player::FreqRatio
+		
+		file_player21.setParameterT(0, 1.);   // core::file_player::PlaybackMode
+		file_player21.setParameterT(1, 1.);   // core::file_player::Gate
+		file_player21.setParameterT(2, 440.); // core::file_player::RootFrequency
+		file_player21.setParameterT(3, 1.);   // core::file_player::FreqRatio
 		
 		;                                         // smoothed_parameter2::Value is automated
 		;                                         // smoothed_parameter2::SmoothingTime is automated
@@ -3020,7 +3188,22 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		this->getT(1).getT(0).getT(0).getT(5).getT(1).setExternalData(b, index);                 // xnode_impl::cable_table1_t<NV>
 		this->getT(1).getT(0).getT(0).getT(5).getT(2).setExternalData(b, index);                 // xnode_impl::cable_table2_t<NV>
 		this->getT(1).getT(1).getT(0).getT(0).setExternalData(b, index);                         // xnode_impl::file_player5_t<NV>
-		this->getT(1).getT(2).getT(1).getT(3).setExternalData(b, index);                         // xnode_impl::file_player6_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(0).setExternalData(b, index);                 // xnode_impl::file_player6_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(1).setExternalData(b, index);                 // xnode_impl::file_player7_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(2).setExternalData(b, index);                 // xnode_impl::file_player8_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(3).setExternalData(b, index);                 // xnode_impl::file_player9_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(4).setExternalData(b, index);                 // xnode_impl::file_player10_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(5).setExternalData(b, index);                 // xnode_impl::file_player11_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(6).setExternalData(b, index);                 // xnode_impl::file_player12_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(7).setExternalData(b, index);                 // xnode_impl::file_player13_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(8).setExternalData(b, index);                 // xnode_impl::file_player14_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(9).setExternalData(b, index);                 // xnode_impl::file_player15_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(10).setExternalData(b, index);                // xnode_impl::file_player16_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(11).setExternalData(b, index);                // xnode_impl::file_player17_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(12).setExternalData(b, index);                // xnode_impl::file_player18_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(13).setExternalData(b, index);                // xnode_impl::file_player19_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(14).setExternalData(b, index);                // xnode_impl::file_player20_t<NV>
+		this->getT(1).getT(2).getT(1).getT(3).getT(15).setExternalData(b, index);                // xnode_impl::file_player21_t<NV>
 		this->getT(1).getT(3).getT(0).getT(1).setExternalData(b, index);                         // xnode_impl::peak2_t<NV>
 		this->getT(1).getT(3).getT(1).getT(0).setExternalData(b, index);                         // xnode_impl::snex_node_t<NV>
 		this->getT(1).getT(3).getT(1).getT(1).setExternalData(b, index);                         // xnode_impl::snex_node1_t<NV>

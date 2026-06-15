@@ -238,10 +238,10 @@
     <Component type="ScriptTable" id="ModTable1" x="12" y="28" width="130" height="115"
                parentComponent="env1" processorId="HARMONIC" tableIndex="1"
                bgColour="4278661418" itemColour="4285622092" itemColour2="4278661418"
-               customColours="1"/>
+               customColours="1" visible="0"/>
     <Component type="ScriptPanel" id="EnvSliders1" x="12" y="28" width="130"
                height="120" parentComponent="env1" locked="1" itemColour="0"
-               itemColour2="0" textColour="16777215" visible="0">
+               itemColour2="0" textColour="16777215">
       <Component type="ScriptImage" id="ScriptImage2" x="10" y="4" width="120"
                  height="100" parentComponent="EnvSliders1" fileName="{PROJECT_FOLDER}sliderbgs.png"/>
       <Component type="ScriptLabel" id="Label7" x="9" y="104" width="30" height="10"
@@ -629,14 +629,15 @@
       <Component type="ScriptSliderPack" id="ModSp2" x="8" y="7" width="210" height="40"
                  parentComponent="ScriptPanel4" processorId="HARMONIC" itemColour="4286801664"
                  itemColour2="14465590" textColour="0" bgColour="16711680" flashActive="0"
-                 defaultValue="0.0" SliderPackIndex="1"/>
+                 defaultValue="0.0" SliderPackIndex="1" visible="0"/>
       <Component type="ScriptTable" id="ModSp3" x="12" y="53" width="210" height="40"
                  parentComponent="ScriptPanel4" processorId="HARMONIC" bgColour="2199958"
-                 customColours="1" itemColour="4286801664" itemColour2="4286678120"/>
+                 customColours="1" itemColour="4286801664" itemColour2="4286678120"
+                 visible="0"/>
       <Component type="ScriptSliderPack" id="ModSp1" x="9" y="8" width="210" height="80"
                  parentComponent="ScriptPanel4" processorId="HARMONIC" itemColour="4290359679"
                  itemColour2="14465590" textColour="0" bgColour="16711680" flashActive="0"
-                 defaultValue="0.0" SliderPackIndex="1" visible="0"/>
+                 defaultValue="0.0" SliderPackIndex="1"/>
     </Component>
     <Component type="ScriptComboBox" id="SOURC4" x="34" y="97" max="6" width="20"
                height="20" items="Velocity&#10;Track&#10;Random&#10;Mod Wheel&#10;Pitch Bend&#10;Aftertouch"
@@ -959,7 +960,16 @@
                  bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
                  textColour="11346466" itemColour3="16711680" enableRange="0"
                  enabled="0" showFileName="0" opaque="0"/>
-      <Component type="ScriptButton" id="WaveLoad" x="191" y="0" width="30" height="20"
+      <Component type="ScriptSlider" id="SHAPEMOD54" x="11" y="26" width="30"
+                 height="20" parentComponent="USER" processorId="HARMONIC" parameterId="PitchSmooth"
+                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+                 numStrips="125.0" defaultValue="1.0" isPluginParameter="1" pluginParameterName="File Spread"
+                 scaleFactor="0.12" isVertical="0" showValuePopup="Below" min="1.0"
+                 max="16.0" stepSize="1.0"/>
+      <Component type="ScriptLabel" id="LOOP2" x="31" y="28" width="80" height="20"
+                 parentComponent="USER" editable="0" fontSize="14.0" fontName="Montserrat"
+                 textColour="2663430577" itemColour2="4291475358" text="FILE SPREAD"/>
+      <Component type="ScriptButton" id="WaveLoad" x="191" y="0" width="22" height="20"
                  parentComponent="USER" isMomentary="1" filmstripImage="{PROJECT_FOLDER}SaveButton.png"
                  isVertical="0" scaleFactor="0.25" saveInPreset="0"/>
       <Component type="ScriptLabel" id="WAVE14" x="65" y="2" width="40" height="20"
@@ -968,11 +978,11 @@
       <Component type="ScriptComboBox" id="SampleA" x="106" y="2" width="50" height="20"
                  parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
                  itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
-                 items="HS80-1.wav&#10;HS80-10.wav&#10;HS80-11.wav&#10;HS80-12.wav&#10;HS80-13.wav&#10;HS80-14.wav&#10;HS80-15.wav&#10;HS80-16.wav&#10;HS80-17.wav&#10;HS80-18.wav&#10;HS80-19.wav&#10;HS80-2.wav&#10;HS80-3.wav&#10;HS80-4.wav&#10;HS80-5.wav&#10;HS80-6.wav&#10;HS80-7.wav&#10;HS80-8.wav&#10;HS80-9.wav"
-                 deferControlCallback="1" max="19" saveInPreset="0">
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0">
         <Component type="ScriptLabel" id="WAVELABEL3" x="1" y="2" width="48" height="15"
                    parentComponent="SampleA" fontName="Montserrat" bgColour="4281346602"
-                   textColour="4291475358" text="" editable="0" saveInPreset="1"
+                   textColour="4291475358" text="TuneMe90.wav" editable="0" saveInPreset="1"
                    fontSize="12.0"/>
       </Component>
       <Component type="ScriptComboBox" id="SampleBank" x="12" y="2" width="50"
@@ -986,6 +996,600 @@
       <Component type="ScriptLabel" id="WAVE19" x="216" y="2" width="40" height="20"
                  parentComponent="USER" editable="0" text="USER" fontSize="14.0"
                  fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"/>
+      <Component type="ScriptComboBox" id="SampleA1" x="125" y="21" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL4" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA1" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptComboBox" id="SampleA2" x="165" y="35" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL5" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA2" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL7" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA2" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL10" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA2" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL14" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA2" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL19" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA2" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL25" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA2" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL32" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA2" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL40" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA2" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL49" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA2" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL59" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA2" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL70" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA2" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL82" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA2" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL95" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA2" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL109" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA2" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptComboBox" id="SampleA3" x="165" y="35" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL6" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA3" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL9" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA3" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL13" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA3" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL18" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA3" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL24" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA3" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL31" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA3" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL39" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA3" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL48" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA3" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL58" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA3" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL69" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA3" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL81" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA3" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL94" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA3" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL108" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA3" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptComboBox" id="SampleA4" x="165" y="35" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL8" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA4" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL12" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA4" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL17" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA4" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL23" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA4" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL30" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA4" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL38" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA4" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL47" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA4" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL57" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA4" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL68" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA4" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL80" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA4" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL93" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA4" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL107" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA4" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptComboBox" id="SampleA5" x="165" y="35" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL11" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA5" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL16" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA5" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL22" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA5" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL29" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA5" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL37" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA5" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL46" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA5" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL56" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA5" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL67" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA5" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL79" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA5" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL92" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA5" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL106" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA5" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptComboBox" id="SampleA6" x="165" y="35" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL15" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA6" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL21" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA6" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL28" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA6" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL36" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA6" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL45" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA6" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL55" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA6" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL66" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA6" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL78" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA6" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL91" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA6" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL105" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA6" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptComboBox" id="SampleA7" x="165" y="35" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL20" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA7" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL27" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA7" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL35" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA7" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL44" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA7" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL54" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA7" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL65" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA7" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL77" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA7" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL90" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA7" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL104" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA7" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptComboBox" id="SampleA8" x="165" y="35" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL26" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA8" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL34" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA8" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL43" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA8" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL53" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA8" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL64" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA8" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL76" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA8" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL89" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA8" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL103" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA8" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptComboBox" id="SampleA9" x="165" y="35" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL33" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA9" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL42" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA9" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL52" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA9" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL63" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA9" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL75" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA9" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL88" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA9" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL102" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA9" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptComboBox" id="SampleA10" x="165" y="35" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL41" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA10" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL51" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA10" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL62" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA10" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL74" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA10" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL87" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA10" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL101" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA10" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptComboBox" id="SampleA11" x="165" y="35" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL50" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA11" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL61" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA11" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL73" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA11" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL86" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA11" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL100" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA11" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptComboBox" id="SampleA12" x="165" y="35" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL60" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA12" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL72" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA12" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL85" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA12" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL99" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA12" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptComboBox" id="SampleA13" x="165" y="35" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL71" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA13" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL84" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA13" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL98" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA13" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptComboBox" id="SampleA14" x="165" y="35" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL83" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA14" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+        <Component type="ScriptLabel" id="WAVELABEL97" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA14" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptComboBox" id="SampleA15" x="165" y="35" width="50"
+                 height="20" parentComponent="USER" useCustomPopup="1" bgColour="4291475358"
+                 itemColour="4291475358" itemColour2="4291475358" textColour="4291475358"
+                 items="about70.wav&#10;Birdlike.wav&#10;bounce.wav&#10;budg.wav&#10;budg2.wav&#10;ClimA-1.wav&#10;ClimA-2.wav&#10;DFRNG-129.wav&#10;Grumbler.wav&#10;Inst 1_bip.wav&#10;ngy72.wav&#10;perc133.wav&#10;RoundRound3.wav&#10;SISSMEAR.wav&#10;sistant.wav&#10;snowy.wav&#10;STBELL-130-01.wav&#10;STBELL-130-02.wav&#10;STBELL-130-03.wav&#10;STBELL-130-04.wav&#10;STBELL-130-05.wav&#10;StereoSqr.wav&#10;StereoTri-138.wav&#10;Tappers-01.wav&#10;Tappers-02.wav&#10;Tappers-03.wav&#10;Tappers-04.wav&#10;Tappers-05.wav&#10;TuneMe90.wav"
+                 deferControlCallback="1" max="29" saveInPreset="0" visible="0">
+        <Component type="ScriptLabel" id="WAVELABEL96" x="-1" y="-21" width="48"
+                   height="15" parentComponent="SampleA15" fontName="Montserrat"
+                   bgColour="4281346602" textColour="4291475358" text="" editable="0"
+                   saveInPreset="1" fontSize="12.0"/>
+      </Component>
+      <Component type="ScriptAudioWaveform" id="Wf3" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="2"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enabled="0" showFileName="0"
+                 opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf4" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="3"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf5" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="4"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf6" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="5"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf7" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="6"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf8" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="7"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf9" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="8"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf10" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="9"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf11" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="10"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf12" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="11"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf13" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="12"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf14" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="13"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf15" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="14"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf16" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="15"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf17" x="28" y="50" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="16"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
+      <Component type="ScriptAudioWaveform" id="Wf18" x="108" y="66" width="240"
+                 height="40" parentComponent="USER" processorId="HARMONIC" sampleIndex="17"
+                 bgColour="2426631" itemColour2="4285672448" itemColour="4282069554"
+                 textColour="11346466" itemColour3="16711680" enableRange="0"
+                 enabled="0" showFileName="0" opaque="0" visible="0"/>
     </Component>
     <Component type="ScriptPanel" id="SINGLECYC" x="89" y="74" width="260" height="230"
                parentComponent="osc1" itemColour="0" itemColour2="0" textColour="16777215"
@@ -1043,7 +1647,7 @@
                  visible="0"/>
     </Component>
     <Component type="ScriptPanel" id="SAMPLELOOP" x="89" y="74" width="260"
-               height="230" parentComponent="osc1" itemColour="0" itemColour2="0"
+               height="220" parentComponent="osc1" itemColour="0" itemColour2="0"
                textColour="16777215" bgColour="16777215" visible="0">
       <Component type="ScriptSliderPack" id="pitch-sp8" x="8" y="101" width="240"
                  height="110" parentComponent="SAMPLELOOP" processorId="HARMONIC"
@@ -1059,7 +1663,7 @@
       <Component type="ScriptButton" id="Possync3" x="10" y="1" width="20" height="20"
                  parentComponent="SAMPLELOOP" filmstripImage="{PROJECT_FOLDER}button6.png"
                  isVertical="0" scaleFactor="0.2000000029802322" processorId="HARMONIC"
-                 parameterId="PosMode"/>
+                 parameterId="PosMode" radioGroup="1"/>
       <Component type="ScriptLabel" id="WAVE26" x="128" y="68" width="40" height="30"
                  parentComponent="SAMPLELOOP" editable="0" text="size/ end" fontSize="14.0"
                  fontName="Montserrat" textColour="4290820529" itemColour2="4291475358"
@@ -1067,7 +1671,7 @@
       <Component type="ScriptButton" id="Possync4" x="82" y="1" width="30" height="20"
                  parentComponent="SAMPLELOOP" filmstripImage="{PROJECT_FOLDER}button6.png"
                  isVertical="0" scaleFactor="0.2000000029802322" processorId="HARMONIC"
-                 parameterId="FileGainRest"/>
+                 parameterId="FileGainRest" radioGroup="1"/>
       <Component type="ScriptLabel" id="LOOP1" x="104" y="1" width="60" height="20"
                  parentComponent="SAMPLELOOP" editable="0" fontSize="14.0" fontName="Montserrat"
                  textColour="4290820529" itemColour2="4291475358" text="SCRUB"/>
@@ -1128,7 +1732,7 @@
                  parentComponent="UserCont" textColour="4291475358" bgColour="4291475358"
                  itemColour="4291475358" itemColour2="4291475358" fontName="Montserrat"
                  processorId="HARMONIC" parameterId="CycleShapeSrc"/>
-      <Component type="ScriptButton" id="Possync1" x="7" y="15" width="10" height="10"
+      <Component type="ScriptButton" id="Possync1" x="7" y="10" width="10" height="10"
                  parentComponent="UserCont" filmstripImage="{PROJECT_FOLDER}Spread2.png"
                  scaleFactor="0.2000000029802322" processorId="HARMONIC" parameterId="PosSpread"
                  isPluginParameter="1" pluginParameterName="POSITION SPREAD"/>

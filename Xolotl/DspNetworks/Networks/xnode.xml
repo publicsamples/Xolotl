@@ -573,8 +573,7 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="chain14" FactoryPath="container.chain" Bypassed="0" Name="chain8"
-                Folded="1">
+          <Node ID="chain14" FactoryPath="container.chain" Bypassed="0" Name="chain8">
             <Nodes>
               <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Name="modchain">
                 <Nodes>
@@ -759,21 +758,284 @@
                     </Nodes>
                     <Parameters/>
                   </Node>
-                  <Node ID="file_player6" FactoryPath="core.file_player" Bypassed="0"
-                        Name="file_player5">
-                    <ComplexData>
-                      <AudioFiles>
-                        <AudioFile Index="1" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
-                                   MaxValue="306783"/>
-                      </AudioFiles>
-                    </ComplexData>
+                  <Node ID="branch8" FactoryPath="container.branch" Bypassed="0" Name="branch8"
+                        ShowParameters="1">
+                    <Nodes>
+                      <Node ID="file_player6" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="1" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="306783"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player7" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="2" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player8" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="3" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player9" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="4" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player10" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="5" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player11" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="6" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player12" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="7" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player13" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="8" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player14" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="9" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player15" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="10" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player16" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="11" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player17" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="12" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player18" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="13" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player19" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="14" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player20" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="15" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="file_player21" FactoryPath="core.file_player" Bypassed="0"
+                            Name="file_player5">
+                        <ComplexData>
+                          <AudioFiles>
+                            <AudioFile Index="16" EmbeddedData="{XYZ::SampleMap}Keys_Swoosh1" MinValue="0"
+                                       MaxValue="0"/>
+                          </AudioFiles>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                     Value="1.0" DefaultValue="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                     ID="FreqRatio" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
                     <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                                 Value="1.0" DefaultValue="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                      <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
-                                 ID="FreqRatio" Value="1.0"/>
+                      <Parameter MinValue="0.0" MaxValue="15" StepSize="1.0" ID="Index" Automated="1"/>
                     </Parameters>
                   </Node>
                 </Nodes>
@@ -923,7 +1185,7 @@
                 <Parameters/>
               </Node>
               <Node ID="branch7" FactoryPath="container.branch" Bypassed="0" Name="branch7"
-                    ShowParameters="1">
+                    ShowParameters="1" Folded="1">
                 <Nodes>
                   <Node ID="snex_node" FactoryPath="core.snex_node" Bypassed="0" Name="snex_node">
                     <Properties>
@@ -2065,6 +2327,7 @@
                  ModColour="0">
         <Connections>
           <Connection NodeId="branch7" ParameterId="Index"/>
+          <Connection NodeId="branch8" ParameterId="Index"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="1.0" ID="ShToGain" Value="1.0" DefaultValue="0.0">
