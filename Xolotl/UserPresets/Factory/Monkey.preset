@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Preset Version="0.9.2">
+<Preset Version="0.9.3">
   <Content Processor="Interface">
     <Control type="ScriptSliderPack" id="SliderPack1" value="3.0" data="16.................6Qga+."/>
     <Control type="ScriptComboBox" id="ComboBox1" value="1.0"/>
@@ -27,8 +27,9 @@
     <Control type="ScriptSlider" id="DECAY1" value="1819.819946289062"/>
     <Control type="ScriptSlider" id="ATTACK1" value="1613.0"/>
     <Control type="ScriptButton" id="ModMode1" value="0.0"/>
+    <Control type="ScriptComboBox" id="DelayModSrc" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD36" value="0.0"/>
-    <Control type="ScriptSlider" id="SHAPEMOD5" value="7.300001621246338"/>
+    <Control type="ScriptSlider" id="SHAPEMOD5" value="1.490116119384766e-6"/>
     <Control type="ScriptSlider" id="Knob1" value="5.0"/>
     <Control type="ScriptSlider" id="Knob3" value="20000.0"/>
     <Control type="ScriptSlider" id="Knob4" value="1.0"/>
@@ -40,9 +41,7 @@
     <Control type="ScriptSlider" id="SHAPEMOD21" value="0.5600000023841858"/>
     <Control type="ScriptSlider" id="SHAPEMOD27" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD28" value="0.1400000005960464"/>
-    <Control type="ScriptSliderPack" id="ScriptSliderPack1" value="3.0" data="16.35QA9DWOJ5y0iBuOZlYF+."/>
     <Control type="ScriptSlider" id="SHAPEMOD30" value="0.3600000143051147"/>
-    <Control type="ScriptSliderPack" id="ScriptSliderPack2" value="3.0" data="16.T35A+fT357C...3O...f+."/>
     <Control type="ScriptButton" id="ScriptButton4" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton5" value="0.0"/>
     <Control type="ScriptSlider" id="SHAPEMOD22" value="1.0"/>
@@ -98,6 +97,7 @@
     <Control type="ScriptSliderPack" id="pitch-sp6" value="0.0" data="16.Jb8H7jBWO1CWOJjOJb8n9."/>
     <Control type="ScriptLabel" id="WAVELABEL1" value=""/>
     <Control type="ScriptComboBox" id="Categories" value="0.0"/>
+    <Control type="ScriptLabel" id="BANKLABEL" value=""/>
     <Control type="ScriptSlider" id="SHAPE" value="1.0"/>
     <Control type="ScriptSlider" id="SHAPE6" value="16.0"/>
     <Control type="ScriptSlider" id="SHAPE7" value="0.0"/>
@@ -109,7 +109,147 @@
     <Control type="ScriptSlider" id="SHAPEMOD49" value="0.001299072289839387"/>
     <Control type="ScriptAudioWaveform" id="Wf1" value="0.0" data="" rangeStart="0"
              rangeEnd="0"/>
+    <Control type="ScriptSlider" id="SHAPEMOD54" value="1.0"/>
+    <Control type="ScriptLabel" id="WAVELABEL3" value=""/>
     <Control type="ScriptComboBox" id="SampleBank" value="1.0"/>
+    <Control type="ScriptLabel" id="WAVELABEL4" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL5" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL7" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL10" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL14" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL19" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL25" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL32" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL40" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL49" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL59" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL70" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL82" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL95" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL109" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL6" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL9" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL13" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL18" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL24" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL31" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL39" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL48" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL58" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL69" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL81" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL94" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL108" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL8" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL12" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL17" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL23" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL30" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL38" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL47" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL57" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL68" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL80" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL93" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL107" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL11" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL16" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL22" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL29" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL37" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL46" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL56" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL67" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL79" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL92" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL106" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL15" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL21" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL28" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL36" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL45" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL55" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL66" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL78" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL91" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL105" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL20" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL27" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL35" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL44" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL54" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL65" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL77" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL90" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL104" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL26" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL34" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL43" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL53" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL64" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL76" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL89" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL103" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL33" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL42" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL52" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL63" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL75" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL88" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL102" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL41" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL51" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL62" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL74" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL87" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL101" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL50" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL61" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL73" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL86" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL100" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL60" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL72" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL85" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL99" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL71" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL84" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL98" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL83" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL97" value=""/>
+    <Control type="ScriptLabel" id="WAVELABEL96" value=""/>
+    <Control type="ScriptAudioWaveform" id="Wf3" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf4" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf5" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf6" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf7" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf8" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf9" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf10" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf11" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf12" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf13" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf14" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf15" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf16" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf17" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
+    <Control type="ScriptAudioWaveform" id="Wf18" value="0.0" data="" rangeStart="0"
+             rangeEnd="0"/>
     <Control type="ScriptSliderPack" id="pitch-sp5" value="0.0" data="16.Jb8H7jBWO1CWOJjOJb8n9."/>
     <Control type="ScriptSlider" id="SHAPEMOD51" value="1.0"/>
     <Control type="ScriptButton" id="Possync" value="0.0"/>

@@ -6,7 +6,7 @@
   <Description value=""/>
   <BundleIdentifier value="com.modularsamples.product"/>
   <PluginCode value="Msxp"/>
-  <EmbedAudioFiles value="1"/>
+  <EmbedAudioFiles value="0"/>
   <EmbedImageFiles value="Yes"/>
   <SupportFullDynamicsHLAC value="No"/>
   <AdditionalDspLibraries value=""/>
@@ -31,10 +31,10 @@
   <ReadOnlyFactoryPresets value="No"/>
   <ForceStereoOutput value="No"/>
   <AdminPermissions value="No"/>
-  <EmbedUserPresets value="0"/>
+  <EmbedUserPresets value="1"/>
   <EnableGlobalPreprocessor value="No"/>
   <VST3Category value=""/>
-  <OverwriteOldUserPresets value="0"/>
+  <OverwriteOldUserPresets value="1"/>
   <UseGlobalAppDataFolderWindows value="1"/>
   <UseGlobalAppDataFolderMacOS value="0"/>
   <DefaultUserPreset value=""/>

@@ -534,7 +534,7 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 	
 	static constexpr bool hasTail() { return true; };
 	
-	static constexpr bool isSuspendedOnSilence() { return false; };
+	static constexpr bool isSuspendedOnSilence() { return true; };
 	
 	void connectToRuntimeTarget(bool addConnection, const runtime_target::connection& c)
 	{

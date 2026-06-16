@@ -10547,8 +10547,9 @@
           <Connection NodeId="branch12" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FilterMode" MinValue="1.0" MaxValue="4.0" StepSize="1.0"
-                 ModColour="0" ExternalModulation="Disabled" DefaultValue="" Value="3.0">
+      <Parameter ID="FilterMode" MinValue="1.0" MaxValue="5.0" StepSize="1.0"
+                 ModColour="0" ExternalModulation="Disabled" DefaultValue="1.0"
+                 Value="3.0">
         <Connections>
           <Connection NodeId="clone_cable14" ParameterId="Value"/>
         </Connections>

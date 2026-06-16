@@ -1354,10 +1354,16 @@ template <int NV> using pma_mod_1 = pma_mod_0<NV>;
 template <int NV> using pma_mod_2 = pma_mod_0<NV>;
 
 template <int NV>
+using pma_mod_3 = parameter::from0To1<filters::allpass<NV>, 
+                                      0, 
+                                      pma_mod_0Range>;
+
+template <int NV>
 using pma_mod = parameter::chain<ranges::Identity, 
                                  pma_mod_0<NV>, 
                                  pma_mod_1<NV>, 
-                                 pma_mod_2<NV>>;
+                                 pma_mod_2<NV>, 
+                                 pma_mod_3<NV>>;
 
 template <int NV>
 using pma_t = control::pma<NV, pma_mod<NV>>;
@@ -1416,7 +1422,8 @@ using branch2_t = container::branch<parameter::empty,
                                     wrap::fix<2, chain7_t>, 
                                     filters::svf<NV>, 
                                     filters::svf<NV>, 
-                                    filters::svf<NV>>;
+                                    filters::svf<NV>, 
+                                    filters::allpass<NV>>;
 
 template <int NV>
 using chain6_t = container::chain<parameter::empty, 
@@ -1625,23 +1632,6 @@ using shPitch = parameter::chain<ranges::Identity,
                                  parameter::plain<xnode_impl::pma_unscaled1_t<NV>, 1>, 
                                  parameter::plain<xnode_impl::pma_unscaled2_t<NV>, 1>>;
 
-DECLARE_PARAMETER_RANGE_STEP(FilterType_InputRange, 
-                             0., 
-                             4., 
-                             1.);
-DECLARE_PARAMETER_RANGE_STEP(FilterType_0Range, 
-                             0., 
-                             3., 
-                             1.);
-
-template <int NV>
-using FilterType_0 = parameter::from0To1<xnode_impl::branch2_t<NV>, 
-                                         0, 
-                                         FilterType_0Range>;
-
-template <int NV>
-using FilterType = parameter::chain<FilterType_InputRange, FilterType_0<NV>>;
-
 DECLARE_PARAMETER_RANGE_SKEW(FilterRes_InputRange, 
                              0.3, 
                              1., 
@@ -1660,11 +1650,22 @@ template <int NV> using FilterRes_1 = FilterRes_0<NV>;
 
 template <int NV> using FilterRes_2 = FilterRes_0<NV>;
 
+DECLARE_PARAMETER_RANGE_SKEW(FilterRes_3Range, 
+                             0.3, 
+                             9.4, 
+                             0.264718);
+
+template <int NV>
+using FilterRes_3 = parameter::from0To1<filters::allpass<NV>, 
+                                        1, 
+                                        FilterRes_3Range>;
+
 template <int NV>
 using FilterRes = parameter::chain<FilterRes_InputRange, 
                                    FilterRes_0<NV>, 
                                    FilterRes_1<NV>, 
-                                   FilterRes_2<NV>>;
+                                   FilterRes_2<NV>, 
+                                   FilterRes_3<NV>>;
 
 DECLARE_PARAMETER_RANGE(DET_InputRange, 
                         0., 
@@ -1732,10 +1733,15 @@ DECLARE_PARAMETER_RANGE_STEP(pbTYPE_InputRange,
                              1., 
                              4., 
                              1.);
+DECLARE_PARAMETER_RANGE_STEP(pbTYPE_0Range, 
+                             0., 
+                             3., 
+                             1.);
+
 template <int NV>
 using pbTYPE_0 = parameter::from0To1<xnode_impl::branch_t<NV>, 
                                      0, 
-                                     FilterType_0Range>;
+                                     pbTYPE_0Range>;
 
 template <int NV>
 using pbTYPE = parameter::chain<pbTYPE_InputRange, pbTYPE_0<NV>>;
@@ -2005,6 +2011,9 @@ using FxShDiv = parameter::plain<xnode_impl::tempo_sync_t<NV>,
 template <int NV>
 using FilterMix = parameter::plain<xnode_impl::xfader1_t<NV>, 
                                    0>;
+template <int NV>
+using FilterType = parameter::plain<xnode_impl::branch2_t<NV>, 
+                                    0>;
 template <int NV>
 using FilterCut = parameter::plain<xnode_impl::pma_t<NV>, 2>;
 template <int NV>
@@ -2311,6 +2320,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		auto& svf = this->getT(3).getT(0).getT(1).getT(1).getT(1).getT(1);                  // filters::svf<NV>
 		auto& svf2 = this->getT(3).getT(0).getT(1).getT(1).getT(1).getT(2);                 // filters::svf<NV>
 		auto& svf1 = this->getT(3).getT(0).getT(1).getT(1).getT(1).getT(3);                 // filters::svf<NV>
+		auto& allpass = this->getT(3).getT(0).getT(1).getT(1).getT(1).getT(4);              // filters::allpass<NV>
 		auto& gain3 = this->getT(3).getT(0).getT(1).getT(1).getT(2);                        // core::gain<NV>
 		auto& modchain7 = this->getT(3).getT(1);                                            // xnode_impl::modchain7_t<NV>
 		auto& chain40 = this->getT(3).getT(1).getT(0);                                      // xnode_impl::chain40_t<NV>
@@ -2368,9 +2378,10 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		this->getParameterT(11).connectT(0, branch2); // FilterType -> branch2::Index
 		
 		auto& FilterRes_p = this->getParameterT(12);
-		FilterRes_p.connectT(0, svf);  // FilterRes -> svf::Q
-		FilterRes_p.connectT(1, svf2); // FilterRes -> svf2::Q
-		FilterRes_p.connectT(2, svf1); // FilterRes -> svf1::Q
+		FilterRes_p.connectT(0, svf);     // FilterRes -> svf::Q
+		FilterRes_p.connectT(1, svf2);    // FilterRes -> svf2::Q
+		FilterRes_p.connectT(2, svf1);    // FilterRes -> svf1::Q
+		FilterRes_p.connectT(3, allpass); // FilterRes -> allpass::Q
 		
 		this->getParameterT(13).connectT(0, pma); // FilterCut -> pma::Add
 		
@@ -2574,6 +2585,7 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		pma.getWrappedObject().getParameter().connectT(0, svf);           // pma -> svf::Frequency
 		pma.getWrappedObject().getParameter().connectT(1, svf2);          // pma -> svf2::Frequency
 		pma.getWrappedObject().getParameter().connectT(2, svf1);          // pma -> svf1::Frequency
+		pma.getWrappedObject().getParameter().connectT(3, allpass);       // pma -> allpass::Frequency
 		smoothed_parameter1.getParameter().connectT(0, pma);              // smoothed_parameter1 -> pma::Value
 		peak.getParameter().connectT(0, pma1);                            // peak -> pma1::Value
 		peak.getParameter().connectT(1, smoothed_parameter_unscaled);     // peak -> smoothed_parameter_unscaled::Value
@@ -3112,6 +3124,13 @@ template <int NV> struct instance: public xnode_impl::xnode_t_<NV>
 		svf1.setParameterT(3, 0.); // filters::svf::Smoothing
 		svf1.setParameterT(4, 2.); // filters::svf::Mode
 		svf1.setParameterT(5, 1.); // filters::svf::Enabled
+		
+		;                               // allpass::Frequency is automated
+		;                               // allpass::Q is automated
+		allpass.setParameterT(2, 0.);   // filters::allpass::Gain
+		allpass.setParameterT(3, 0.01); // filters::allpass::Smoothing
+		allpass.setParameterT(4, 0.);   // filters::allpass::Mode
+		allpass.setParameterT(5, 1.);   // filters::allpass::Enabled
 		
 		;                            // gain3::Gain is automated
 		gain3.setParameterT(1, 9.5); // core::gain::Smoothing
